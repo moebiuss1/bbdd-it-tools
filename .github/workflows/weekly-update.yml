@@ -4,8 +4,6 @@ on:
   schedule:
     - cron: "7 6 * * 1"  # Cada lunes a las 06:07 UTC
   workflow_dispatch: {}    # Ejecución manual
-  push:
-    branches: [main]
 
 permissions:
   contents: write
@@ -31,22 +29,27 @@ jobs:
       - name: Instalar dependencias Python
         run: pip install -r scripts/requirements.txt
 
-      - name: Ejecutar pipeline de actualización
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
-        run: python scripts/run_all.py
+      - name: Actualizar datos semilla
+        run: python scripts/seed_tools.py
+
+      - name: Calcular rankings
+        run: python scripts/compute_rankings.py
+
+      - name: Validar datos
+        run: python scripts/validate.py
+
+      - name: Descargar logos
+        run: python scripts/fetch_logos.py
+        continue-on-error: true
 
       - name: Commit cambios de datos
         run: |
           git config user.name "bbdd-it-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/ src/data/rankings.ts public/logos/
+          git add -A
           git diff --cached --quiet && echo "Sin cambios" || \
             git commit -m "chore(data): actualización semanal $(date -u +%F)"
-
-      - name: Push cambios
-        run: git push
+          git push
 
   build:
     needs: update-data

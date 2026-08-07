@@ -39,4 +39,3 @@ Líder en Gartner MQ para ITAM. Su integración con ITSM en una única plataform
 ### Información de coste
 
 Licencia anual según número de activos gestionados.
-

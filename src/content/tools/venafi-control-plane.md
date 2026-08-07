@@ -37,4 +37,3 @@ Líder en gestión de identidades de máquinas. Venafi es el referente en PKI em
 ### Información de coste
 
 Licencia anual según número de certificados gestionados.
-

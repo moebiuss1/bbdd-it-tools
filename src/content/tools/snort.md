@@ -40,4 +40,3 @@ Snort es el IDS/IPS más longevo y ampliamente desplegado. Su motor de reglas es
 ### Información de coste
 
 Gratuito (GPLv2). Reglas de Cisco Talos disponibles por suscripción (~$30/año uso personal).
-

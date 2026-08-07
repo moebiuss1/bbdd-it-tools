@@ -41,4 +41,3 @@ Estándar de facto en automatización IT. Su arquitectura agentless (sin softwar
 ### Información de coste
 
 Gratuito (GPL). Ansible Automation Platform desde ~$13,000/año por 100 nodos.
-

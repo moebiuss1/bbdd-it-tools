@@ -38,4 +38,3 @@ Líder en Gartner MQ para SOAR. El marketplace de playbooks más extenso del mer
 ### Información de coste
 
 Licencia anual. Precio según número de playbooks y usuarios.
-
