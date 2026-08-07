@@ -90,26 +90,32 @@ def merge_frontmatter(
     - Campos escalares: solo se copian si existing está vacío/None
     - Listas: se concatenan (sin duplicados) si preserve_lists=True
     - last_verified: siempre se actualiza
-    - name y slug: NUNCA se sobrescriben
+    - name y slug: solo se protegen si ya existen (no se sobrescriben)
     """
     if existing is None:
         existing = {}
 
-    protected = {"name", "slug", "_body", "_raw"}
+    # Campos que no se sobrescriben si ya tienen valor
+    protected_if_exists = {"name", "slug"}
+    always_skip = {"_body", "_raw"}
+
     merged = dict(existing)
 
     for key, value in new_data.items():
-        if key in protected:
+        if key in always_skip:
             continue
         if key.startswith("_"):
             continue
 
         existing_val = existing.get(key)
 
+        # Proteger name/slug solo si ya existen
+        if key in protected_if_exists and existing_val:
+            continue
+
         if existing_val is None or existing_val == "" or existing_val == []:
             merged[key] = value
         elif isinstance(existing_val, list) and isinstance(value, list) and preserve_lists:
-            # Concatenar sin duplicados
             combined = list(existing_val)
             for item in value:
                 if item not in combined:
