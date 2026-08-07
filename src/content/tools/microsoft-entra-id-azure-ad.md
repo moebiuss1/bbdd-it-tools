@@ -33,6 +33,8 @@ slug: microsoft-entra-id-azure-ad
 sources: []
 last_verified: '2026-08-07'
 needs_review: false
+market_rank: 1
+logo: /logos/microsoft-entra-id-azure-ad.png
 ---
 
 ## Microsoft Entra ID (Azure AD)

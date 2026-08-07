@@ -26,6 +26,8 @@ slug: servicenow-grc
 last_verified: '2026-08-07'
 needs_review: false
 sources: []
+market_rank: 1
+logo: /logos/servicenow-grc.png
 ---
 
 ## ServiceNow GRC
@@ -39,4 +41,3 @@ Líder en Gartner MQ para IT Risk Management. Conecta GRC con ITSM, ITAM y SecOp
 ### Información de coste
 
 Licencia anual. Precio según módulos: Policy, Risk, Audit, Vendor Risk.
-

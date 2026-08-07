@@ -27,6 +27,8 @@ slug: suricata
 last_verified: '2026-08-07'
 needs_review: false
 sources: []
+market_rank: 2
+logo: /logos/suricata.png
 ---
 
 ## Suricata
@@ -40,4 +42,3 @@ Motor IDS/IPS open source más rápido gracias a su arquitectura multi-hilo. Ado
 ### Información de coste
 
 Gratuito (GPLv2). Suricata Enterprise con soporte comercial disponible.
-

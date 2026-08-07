@@ -33,12 +33,13 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 1
+market_rank: 2
 sources:
 - https://www.gartner.com/en/documents/access-management
 - https://itsm.tools/best-iam-solutions
 last_verified: '2026-08-07'
 needs_review: false
+logo: /logos/okta.png
 ---
 
 ## Okta Identity Cloud

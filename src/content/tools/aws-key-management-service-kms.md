@@ -31,6 +31,8 @@ slug: aws-key-management-service-kms
 last_verified: '2026-08-07'
 needs_review: false
 sources: []
+market_rank: 1
+logo: /logos/aws-key-management-service-kms.png
 ---
 
 ## AWS Key Management Service (KMS)
@@ -44,4 +46,3 @@ KMS más usado en entornos cloud. Su integración nativa con el ecosistema AWS y
 ### Información de coste
 
 $1/clave/mes + $0.03/10,000 operaciones. HSM desde $1.45/hora.
-

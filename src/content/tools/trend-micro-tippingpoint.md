@@ -27,6 +27,8 @@ slug: trend-micro-tippingpoint
 last_verified: '2026-08-07'
 needs_review: false
 sources: []
+market_rank: 1
+logo: /logos/trend-micro-tippingpoint.png
 ---
 
 ## Trend Micro TippingPoint
@@ -40,4 +42,3 @@ Líder en Gartner MQ para IPS. Enfoque de filtros de vulnerabilidad reduce falso
 ### Información de coste
 
 Modelos hardware TPS 5000-9000. Licencia Digital Vaccine (firmas de vulnerabilidad) incluida.
-

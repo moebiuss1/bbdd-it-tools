@@ -27,6 +27,8 @@ slug: forcepoint-dlp
 last_verified: '2026-08-07'
 needs_review: false
 sources: []
+market_rank: 2
+logo: /logos/forcepoint-dlp.png
 ---
 
 ## Forcepoint DLP
@@ -40,4 +42,3 @@ Líder en Gartner MQ para DLP. Su enfoque en análisis de comportamiento de usua
 ### Información de coste
 
 Licencia anual por usuario. Precio según módulos y número de endpoints.
-

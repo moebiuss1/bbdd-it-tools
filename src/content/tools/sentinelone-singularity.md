@@ -31,6 +31,8 @@ slug: sentinelone-singularity
 sources: []
 last_verified: '2026-08-07'
 needs_review: false
+market_rank: 2
+logo: /logos/sentinelone-singularity.png
 ---
 
 ## SentinelOne Singularity

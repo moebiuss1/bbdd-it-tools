@@ -41,6 +41,7 @@ sources:
 - https://itsm.tools/best-edr-solutions
 last_verified: '2026-08-07'
 needs_review: false
+logo: /logos/crowdstrike-falcon.png
 ---
 
 ## CrowdStrike Falcon

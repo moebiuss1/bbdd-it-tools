@@ -32,12 +32,13 @@ certifications:
 - ENS Alta
 company_size:
 - grande
-market_rank: 1
+market_rank: 2
 sources:
 - https://www.gartner.com/en/documents/siem-magic-quadrant
 - https://itsm.tools/best-siem-tools
 last_verified: '2026-08-07'
 needs_review: false
+logo: /logos/splunk-enterprise-security.png
 ---
 
 ## Splunk Enterprise Security

@@ -30,6 +30,8 @@ slug: microsoft-defender-for-endpoint
 sources: []
 last_verified: '2026-08-07'
 needs_review: false
+market_rank: 1
+logo: /logos/microsoft-defender-for-endpoint.png
 ---
 
 ## Microsoft Defender for Endpoint

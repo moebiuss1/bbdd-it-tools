@@ -41,6 +41,7 @@ sources:
 - https://itsm.tools/best-firewall-solutions
 last_verified: '2026-08-07'
 needs_review: false
+logo: /logos/palo-alto-firewall.png
 ---
 
 ## Palo Alto Networks NGFW
