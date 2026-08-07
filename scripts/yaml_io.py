@@ -62,8 +62,14 @@ def write_tool(slug: str, frontmatter: dict, body: str = "") -> str:
     path = tool_path(slug)
     os.makedirs(TOOLS_DIR, exist_ok=True)
 
-    # Eliminar claves internas
-    fm = {k: v for k, v in frontmatter.items() if not k.startswith("_")}
+    # Eliminar claves internas y valores None
+    fm = {}
+    for k, v in frontmatter.items():
+        if k.startswith("_"):
+            continue
+        if v is None:
+            continue
+        fm[k] = v
 
     yaml_str = yaml.dump(
         fm,
