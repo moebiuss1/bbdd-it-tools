@@ -1,0 +1,204 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCategories, toToolEntry } from "@lib/tools";
+import ToolLogo from "@components/tools/ToolLogo.tsx";
+import Badge from "@components/ui/Badge";
+import {
+  COST_MODEL_LABELS,
+  COMPANY_SIZE_LABELS,
+  TOOL_TYPE_LABELS,
+} from "@lib/constants";
+import { Globe, ExternalLink, Calendar, Github, Building2, Tag } from "lucide-react";
+
+export async function getStaticPaths() {
+  const rawTools = await getCollection("tools");
+  return rawTools.map((t) => ({ params: { slug: t.id.replace(/\.md$/, "") } }));
+}
+
+const { slug } = Astro.params;
+const rawTools = await getCollection("tools");
+const tools = rawTools.map(toToolEntry);
+const categories = await getCategories();
+const tool = tools.find((t) => t.slug === slug);
+
+if (!tool) {
+  return Astro.rewrite("/404");
+}
+
+const { data } = tool;
+const category = categories.find((c) => c.id === data.category);
+
+const related = tools
+  .filter((t) => t.slug !== data.slug && t.data.category === data.category)
+  .sort((a, b) => (a.data.market_rank ?? 999) - (b.data.market_rank ?? 999))
+  .slice(0, 3);
+---
+
+<BaseLayout
+  title={data.name}
+  description={data.description}
+>
+  <article class="py-12">
+    <div class="container-app">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-[#aeaeb2]">
+        <a href="/herramientas" class="hover:text-[#0071e3] transition-colors">Directorio</a>
+        <span>/</span>
+        {category && (
+          <>
+            <a href={`/categorias/${category.id}`} class="hover:text-[#0071e3] transition-colors">{category.name}</a>
+            <span>/</span>
+          </>
+        )}
+        <span class="text-[#6e6e73]">{data.name}</span>
+      </nav>
+
+      <header class="mb-10 flex flex-col gap-6 sm:flex-row sm:items-start">
+        <div class="shrink-0">
+          <ToolLogo name={data.name} logo={data.logo} size="lg" client:load />
+        </div>
+        <div class="flex-1">
+          <div class="mb-2 flex flex-wrap items-center gap-2">
+            <Badge label={TOOL_TYPE_LABELS[data.type] ?? data.type} color={data.type === "opensource" ? "green" : "blue"} size="md" />
+            {data.market_rank && (
+              <Badge label={`#${data.market_rank} en ${category?.name ?? data.category}`} color="amber" size="md" />
+            )}
+            {data.cost_model && (
+              <Badge label={COST_MODEL_LABELS[data.cost_model] ?? data.cost_model} color="gray" size="md" />
+            )}
+          </div>
+          <h1 class="text-3xl font-bold text-[#1d1d1f]">{data.name}</h1>
+          <p class="mt-3 text-lg text-[#6e6e73] leading-relaxed">{data.description}</p>
+        </div>
+      </header>
+
+      <div class="grid gap-10 lg:grid-cols-3">
+        <div class="lg:col-span-2 space-y-10">
+          <section class="prose prose-neutral max-w-none">
+            <h2 class="text-xl font-semibold text-[#1d1d1f]">Descripción</h2>
+            <div class="mt-3 text-[#1d1d1f] leading-relaxed" set:html={tool.body} />
+          </section>
+
+          <section class="rounded-2xl border border-[#e5e5ea] bg-[#f5f5f7] p-6">
+            <h2 class="mb-2 text-lg font-semibold text-[#1d1d1f]">Por qué es un referente</h2>
+            <p class="text-[#6e6e73] leading-relaxed">{data.why_reference}</p>
+          </section>
+
+          {related.length > 0 && (
+            <section>
+              <h2 class="mb-4 text-lg font-semibold text-[#1d1d1f]">Herramientas relacionadas</h2>
+              <div class="grid gap-4 sm:grid-cols-3">
+                {related.map((r) => (
+                  <a href={`/herramientas/${r.slug}`} class="card flex items-center gap-3 p-4 no-underline">
+                    <div class="shrink-0">
+                      <ToolLogo name={r.data.name} logo={r.data.logo} size="sm" client:load />
+                    </div>
+                    <span class="text-sm font-medium text-[#1d1d1f]">{r.data.name}</span>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
+
+        <aside class="space-y-6">
+          <div class="card space-y-4 p-5">
+            <div class="flex items-center gap-2 text-sm">
+              <Globe size={16} className="text-[#aeaeb2] shrink-0" />
+              <a href={data.website} target="_blank" rel="noopener noreferrer" class="text-[#0071e3] hover:underline truncate">
+                {new URL(data.website).hostname}
+                <ExternalLink size={12} className="inline ml-1" />
+              </a>
+            </div>
+
+            {data.repo && (
+              <div class="flex items-center gap-2 text-sm">
+                <Github size={16} className="text-[#aeaeb2] shrink-0" />
+                <a href={data.repo} target="_blank" rel="noopener noreferrer" class="text-[#0071e3] hover:underline truncate">
+                  Repositorio
+                  <ExternalLink size={12} className="inline ml-1" />
+                </a>
+              </div>
+            )}
+
+            {data.license && (
+              <div class="flex items-center gap-2 text-sm">
+                <Tag size={16} className="text-[#aeaeb2] shrink-0" />
+                <span class="text-[#1d1d1f]">{data.license}</span>
+              </div>
+            )}
+
+            {data.company_size.length > 0 && (
+              <div class="flex items-center gap-2 text-sm">
+                <Building2 size={16} className="text-[#aeaeb2] shrink-0" />
+                <span class="text-[#1d1d1f]">
+                  {data.company_size.map((s: string) => COMPANY_SIZE_LABELS[s] ?? s).join(" · ")}
+                </span>
+              </div>
+            )}
+
+            {data.last_verified && (
+              <div class="flex items-center gap-2 text-sm">
+                <Calendar size={16} className="text-[#aeaeb2] shrink-0" />
+                <span class="text-[#1d1d1f]">
+                  Verificado: {new Date(data.last_verified).toLocaleDateString("es-ES")}
+                </span>
+              </div>
+            )}
+          </div>
+
+          {data.cost_details && (
+            <div class="card p-5">
+              <h3 class="mb-2 text-sm font-semibold text-[#1d1d1f]">Coste</h3>
+              <p class="text-sm text-[#6e6e73] leading-relaxed">{data.cost_details}</p>
+            </div>
+          )}
+
+          {data.certifications.length > 0 && (
+            <div class="card p-5">
+              <h3 class="mb-3 text-sm font-semibold text-[#1d1d1f]">Certificaciones</h3>
+              <div class="flex flex-wrap gap-1.5">
+                {data.certifications.map((cert: string) => (
+                  <Badge label={cert} color="teal" size="sm" />
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div class="card p-5">
+            <h3 class="mb-3 text-sm font-semibold text-[#1d1d1f]">Etiquetas</h3>
+            <div class="flex flex-wrap gap-1.5">
+              {data.tags.map((tag: string) => (
+                <a href={`/herramientas?tag=${encodeURIComponent(tag)}`} class="no-underline">
+                  <Badge label={tag} color="gray" size="sm" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {data.sources.length > 0 && (
+            <div class="card p-5">
+              <h3 class="mb-3 text-sm font-semibold text-[#1d1d1f]">Fuentes</h3>
+              <ul class="space-y-2">
+                {data.sources.map((src: string) => (
+                  <li>
+                    <a href={src} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 text-xs text-[#0071e3] hover:underline">
+                      <ExternalLink size={10} />
+                      {new URL(src).hostname}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {data.needs_review && (
+            <div class="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800">
+              ⚠️ Esta ficha necesita revisión manual. Algunos datos pueden estar pendientes de verificación.
+            </div>
+          )}
+        </aside>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

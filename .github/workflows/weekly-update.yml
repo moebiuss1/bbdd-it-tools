@@ -1,0 +1,82 @@
+name: Actualización semanal y deploy
+
+on:
+  schedule:
+    - cron: "7 6 * * 1"  # Cada lunes a las 06:07 UTC
+  workflow_dispatch: {}    # Ejecución manual
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Instalar dependencias Python
+        run: pip install -r scripts/requirements.txt
+
+      - name: Ejecutar pipeline de actualización
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: python scripts/run_all.py
+
+      - name: Commit cambios de datos
+        run: |
+          git config user.name "bbdd-it-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/ src/data/rankings.ts public/logos/
+          git diff --cached --quiet && echo "Sin cambios" || \
+            git commit -m "chore(data): actualización semanal $(date -u +%F)"
+
+      - name: Push cambios
+        run: git push
+
+  build:
+    needs: update-data
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Instalar dependencias Node
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy a GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

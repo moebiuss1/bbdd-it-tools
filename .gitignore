@@ -1,0 +1,28 @@
+# Dependencias
+node_modules/
+
+# Build
+dist/
+.astro/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Datos cache (scripts)
+data/cache/
+data/candidates.json
+
+# Variables de entorno
+.env
+.env.local
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

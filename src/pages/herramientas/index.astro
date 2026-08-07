@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCategories, toToolEntry } from "@lib/tools";
+import DirectoryPage from "@components/filters/DirectoryPage.tsx";
+
+const rawTools = await getCollection("tools");
+const tools = rawTools.map(toToolEntry);
+const categories = await getCategories();
+---
+
+<BaseLayout
+  title="Directorio de Herramientas"
+  description="Listado completo de herramientas IT de seguridad, cumplimiento y auditoría. Filtra por categoría, etiquetas, tipo y tamaño de empresa."
+>
+  <section class="py-12">
+    <div class="container-app">
+      <h1 class="mb-2 text-3xl font-bold text-[#1d1d1f]">Directorio</h1>
+      <p class="mb-8 text-[#6e6e73]">
+        {tools.length} herramientas indexadas. Usa los filtros para encontrar lo que
+        necesitas.
+      </p>
+
+      <DirectoryPage
+        tools={tools.map((t) => ({
+          id: t.id,
+          slug: t.slug,
+          body: t.body,
+          data: { ...t.data, last_verified: undefined },
+        }))}
+        categories={categories}
+        client:load
+      />
+    </div>
+  </section>
+</BaseLayout>

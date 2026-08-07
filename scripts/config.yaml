@@ -1,0 +1,142 @@
+# Configuración del pipeline de actualización de herramientas IT
+# =============================================================
+
+# --- Categorías y sus queries de búsqueda ---
+categories:
+  antivirus:
+    queries:
+      - "best antivirus software 2026 enterprise"
+      - "top antivirus solutions gartner magic quadrant"
+      - "mejores antivirus empresariales 2026"
+  edr:
+    queries:
+      - "best EDR solutions 2026 gartner"
+      - "top endpoint detection response platforms"
+      - "mejores soluciones EDR endpoint 2026"
+  firewall:
+    queries:
+      - "best next generation firewall NGFW 2026"
+      - "top firewall solutions gartner magic quadrant"
+      - "mejores firewall empresariales 2026"
+  siem:
+    queries:
+      - "best SIEM solutions 2026 gartner"
+      - "top security information event management tools"
+      - "mejores SIEM herramientas seguridad 2026"
+  soar:
+    queries:
+      - "best SOAR platforms 2026"
+      - "top security orchestration automation response"
+      - "mejores plataformas SOAR automatizacion 2026"
+  identity-managers:
+    queries:
+      - "best IAM identity access management 2026"
+      - "top IAM solutions gartner magic quadrant"
+      - "mejores gestores identidades IAM 2026"
+  key-managers:
+    queries:
+      - "best secrets management tools 2026"
+      - "top key management HSM solutions enterprise"
+      - "mejores gestores claves secretos 2026"
+  kpi-ca-managers:
+    queries:
+      - "best KPI management compliance tools 2026"
+      - "top GRC governance risk compliance platforms"
+      - "mejores herramientas KPI compliance auditoria 2026"
+  it-asset-managers:
+    queries:
+      - "best ITAM IT asset management software 2026"
+      - "top IT asset management gartner"
+      - "mejores gestores activos IT inventario 2026"
+  config-managers:
+    queries:
+      - "best configuration management tools 2026"
+      - "top infrastructure as code configuration automation"
+      - "mejores gestores configuracion infraestructura IT"
+  dlp:
+    queries:
+      - "best DLP data loss prevention solutions 2026"
+      - "top DLP platforms gartner magic quadrant"
+      - "mejores soluciones DLP prevencion fuga datos 2026"
+  mdm:
+    queries:
+      - "best MDM mobile device management 2026"
+      - "top MDM solutions enterprise gartner"
+      - "mejores MDM gestion dispositivos moviles 2026"
+  cert-managers:
+    queries:
+      - "best certificate management PKI solutions 2026"
+      - "top PKI certificate lifecycle management"
+      - "mejores gestores certificados digitales PKI 2026"
+  ids:
+    queries:
+      - "best IDS intrusion detection systems 2026"
+      - "top network intrusion detection tools"
+      - "mejores sistemas deteccion intrusiones IDS 2026"
+  ips:
+    queries:
+      - "best IPS intrusion prevention systems 2026"
+      - "top network intrusion prevention tools"
+      - "mejores sistemas prevencion intrusiones IPS 2026"
+
+# --- Fuentes adicionales a escanear ---
+seed_sources:
+  - https://itsm.tools
+  - https://www.gartner.com/en/documents
+
+# --- Configuración de búsqueda ---
+search:
+  user_agent: "BBDD-IT-Tools/1.0 (research bot; contact@example.com)"
+  rate_limit_seconds: 1.5
+  max_results_per_query: 10
+  timeout_seconds: 15
+
+# --- API keys (se leen de variables de entorno) ---
+# SERPAPI_KEY  -> opcional, mejora la calidad de resultados de búsqueda web
+# GITHUB_TOKEN -> para GitHub API (buscar repos)
+
+# --- Pesos del ranking compuesto ---
+ranking_weights:
+  mention_count: 0.35
+  gartner_mentions: 0.25
+  github_stars_log10: 0.20
+  certification_count: 0.10
+  wikidata_sitelinks: 0.10
+
+# --- Umbrales de tier ---
+ranking_tiers:
+  lider: 80
+  visionario: 65
+  retador: 50
+  # por debajo de 50 -> Nicho
+
+# --- Certificaciones conocidas (regex patterns) ---
+known_certifications:
+  - "ISO 27001"
+  - "ISO 27017"
+  - "ISO 27018"
+  - "ISO 27701"
+  - "ISO 22301"
+  - "SOC 2"
+  - "SOC 2 Tipo I"
+  - "SOC 2 Tipo II"
+  - "SOC 3"
+  - "ENS Básica"
+  - "ENS Media"
+  - "ENS Alta"
+  - "Esquema Nacional de Seguridad"
+  - "RGPD"
+  - "GDPR"
+  - "HIPAA"
+  - "PCI DSS"
+  - "FedRAMP"
+  - "CSA STAR"
+  - "C5"
+  - "CCN-STIC"
+  - "Cyber Essentials"
+
+# --- Tamaño de empresa (basado en empleados) ---
+company_size_thresholds:
+  small_max: 100
+  medium_max: 1000
+  # > 1000 es large

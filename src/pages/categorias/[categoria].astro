@@ -1,0 +1,54 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCategories, toToolEntry } from "@lib/tools";
+import ToolCard from "@components/tools/ToolCard.tsx";
+
+export async function getStaticPaths() {
+  const categories = await getCategories();
+  return categories.map((c) => ({ params: { categoria: c.id } }));
+}
+
+const { categoria } = Astro.params;
+const categories = await getCategories();
+const cat = categories.find((c) => c.id === categoria);
+
+if (!cat) {
+  return Astro.rewrite("/404");
+}
+
+const rawTools = await getCollection("tools");
+const tools = rawTools.map(toToolEntry);
+const catTools = tools
+  .filter((t) => t.data.category === categoria)
+  .sort((a, b) => (a.data.market_rank ?? 999) - (b.data.market_rank ?? 999));
+---
+
+<BaseLayout title={cat.name} description={cat.description}>
+  <section class="py-12">
+    <div class="container-app">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-[#aeaeb2]">
+        <a href="/herramientas" class="hover:text-[#0071e3] transition-colors">Directorio</a>
+        <span>/</span>
+        <span class="text-[#6e6e73]">{cat.name}</span>
+      </nav>
+
+      <h1 class="mb-2 text-3xl font-bold text-[#1d1d1f]">{cat.name}</h1>
+      <p class="mb-8 text-[#6e6e73]">{cat.description}</p>
+
+      {
+        catTools.length === 0 ? (
+          <div class="rounded-2xl border border-[#e5e5ea] bg-[#f5f5f7] p-12 text-center">
+            <p class="text-[#6e6e73]">Próximamente — herramientas en esta categoría.</p>
+          </div>
+        ) : (
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {catTools.map((tool) => (
+              <ToolCard tool={tool} client:load />
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>
