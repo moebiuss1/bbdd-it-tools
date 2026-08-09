@@ -1,79 +1,35 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/layout/Header.astro";
+import Footer from "@components/layout/Footer.astro";
+const base = import.meta.env.BASE_URL;
 ---
-
-<BaseLayout
-  title="Acerca de"
-  description="Metodología, fuentes y funcionamiento del Directorio de Herramientas IT."
->
-  <section class="py-12">
-    <div class="container-app max-w-3xl">
-      <h1 class="mb-8 text-3xl font-bold text-[#1d1d1f]">Acerca de BBDD IT Tools</h1>
-
-      <div class="prose prose-neutral max-w-none space-y-8">
-        <section>
-          <h2 class="text-xl font-semibold text-[#1d1d1f]">¿Qué es esto?</h2>
-          <p class="text-[#6e6e73] leading-relaxed">
-            BBDD IT Tools es un directorio vivo de herramientas, servicios y
-            plataformas para profesionales de la seguridad de la información,
-            el cumplimiento normativo y la auditoría IT. No es un listado estático:
-            se actualiza <strong>automáticamente cada semana</strong> buscando en
-            Internet las herramientas más relevantes del momento.
-          </p>
-        </section>
-
-        <section>
-          <h2 class="text-xl font-semibold text-[#1d1d1f]">Metodología</h2>
-          <p class="text-[#6e6e73] leading-relaxed">
-            Cada semana, un pipeline automatizado busca información en las
-            siguientes fuentes:
-          </p>
-          <ul class="list-disc pl-5 text-[#6e6e73] space-y-1">
-            <li>Magic Quadrant de Gartner (resúmenes públicos y análisis)</li>
-            <li><a href="https://itsm.tools" class="text-[#0071e3] hover:underline">ITSM.tools</a> — comparativas y guías</li>
-            <li>Repositorios de GitHub (awesome-lists, proyectos destacados)</li>
-            <li>Webs especializadas en seguridad IT y cumplimiento</li>
-            <li>Búsquedas web automatizadas para descubrir nuevas fuentes</li>
+<BaseLayout title="Acerca de">
+  <Header />
+  <section class="py-10 sm:py-14">
+    <div class="container-app max-w-[680px]">
+      <h1 class="text-[28px] font-bold tracking-tight text-[var(--color-text-primary)]">Acerca de</h1>
+      <div class="mt-8 space-y-8 text-[15px] text-[var(--color-text-secondary)] leading-relaxed">
+        <p>BBDD IT Tools es un directorio vivo de herramientas para profesionales de seguridad de la información, cumplimiento normativo y auditoría IT. Se actualiza <strong class="text-[var(--color-text-primary)]">automáticamente cada lunes</strong> mediante un pipeline que busca y verifica información en fuentes referentes del mercado.</p>
+        <div>
+          <h2 class="mb-3 text-[18px] font-semibold text-[var(--color-text-primary)]">Fuentes</h2>
+          <ul class="space-y-2 list-disc pl-5">
+            <li><strong class="text-[var(--color-text-primary)]">Gartner Magic Quadrant</strong> — análisis de posicionamiento de mercado</li>
+            <li><strong class="text-[var(--color-text-primary)]">ITSM.tools</strong> — comparativas y guías del sector IT</li>
+            <li><strong class="text-[var(--color-text-primary)]">GitHub</strong> — repositorios open source destacados</li>
+            <li><strong class="text-[var(--color-text-primary)]">Webs especializadas</strong> — medios y blogs de seguridad IT</li>
           </ul>
-          <p class="text-[#6e6e73] leading-relaxed">
-            Los rankings se calculan mediante una puntuación compuesta que pondera:
-            frecuencia de menciones en fuentes referentes, posición en Magic Quadrant,
-            actividad en GitHub (para herramientas open source), número de
-            certificaciones y relevancia en la comunidad.
-          </p>
-        </section>
-
-        <section>
-          <h2 class="text-xl font-semibold text-[#1d1d1f]">Actualizaciones</h2>
-          <p class="text-[#6e6e73] leading-relaxed">
-            El pipeline se ejecuta <strong>cada lunes a las 06:00 UTC</strong> mediante
-            GitHub Actions. Los cambios se revisan y se publican automáticamente.
-            Las fichas incluyen la fecha de última verificación para que puedas
-            evaluar la frescura de cada dato.
-          </p>
-        </section>
-
-        <section>
-          <h2 class="text-xl font-semibold text-[#1d1d1f]">Categorías</h2>
-          <p class="text-[#6e6e73] leading-relaxed">
-            El directorio cubre 15 categorías principales: antivirus, EDR, firewall,
-            SIEM, SOAR, gestores de identidades, gestores de claves, gestores de KPI/CA,
-            gestores de activos IT, gestores de configuraciones, DLP, MDM, gestores de
-            certificados digitales, IDS e IPS. Las categorías pueden ampliarse según
-            evolucione el mercado.
-          </p>
-        </section>
-
-        <section>
-          <h2 class="text-xl font-semibold text-[#1d1d1f]">Contribuir</h2>
-          <p class="text-[#6e6e73] leading-relaxed">
-            Este proyecto es abierto. Puedes sugerir nuevas herramientas, corregir
-            datos o proponer categorías adicionales a través del repositorio de
-            GitHub. Las contribuciones humanas se preservan: el pipeline automático
-            nunca sobrescribe ediciones manuales en los campos que ya están completos.
-          </p>
-        </section>
+        </div>
+        <div>
+          <h2 class="mb-3 text-[18px] font-semibold text-[var(--color-text-primary)]">Rankings</h2>
+          <p>Los rankings se calculan con una puntuación compuesta que pondera: frecuencia de menciones en fuentes referentes, posición en Magic Quadrant, actividad en GitHub, número de certificaciones y relevancia en la comunidad. Cada herramienta recibe un tier: <strong class="text-[var(--color-text-primary)]">Líder</strong> (≥80), <strong class="text-[var(--color-text-primary)]">Visionario</strong> (65-79), <strong class="text-[var(--color-text-primary)]">Retador</strong> (50-64) o <strong class="text-[var(--color-text-primary)]">Nicho</strong> (&lt;50).</p>
+        </div>
+        <div>
+          <h2 class="mb-3 text-[18px] font-semibold text-[var(--color-text-primary)]">Metodología</h2>
+          <p>Los scripts de actualización nunca sobrescriben ediciones manuales. Los campos rellenados por humanos se preservan; el pipeline solo completa datos faltantes y actualiza la fecha de verificación. Si un dato no ha podido verificarse automáticamente, la herramienta se marca para revisión manual.</p>
+        </div>
       </div>
     </div>
   </section>
+  <Footer />
 </BaseLayout>

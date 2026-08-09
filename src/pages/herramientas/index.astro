@@ -1,36 +1,103 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/layout/Header.astro";
+import Footer from "@components/layout/Footer.astro";
 import { getCategories, toToolEntry } from "@lib/tools";
-import DirectoryPage from "@components/filters/DirectoryPage.tsx";
 
 const rawTools = await getCollection("tools");
 const tools = rawTools.map(toToolEntry);
 const categories = await getCategories();
+const base = import.meta.env.BASE_URL;
+
+const url = Astro.url;
+const q = url.searchParams.get("q") ?? "";
+const catFilter = url.searchParams.get("category") ?? "";
+const typeFilter = url.searchParams.get("type") ?? "";
+const tagFilter = url.searchParams.get("tag") ?? "";
+const sortBy = url.searchParams.get("sort") ?? "rank";
+
+let filtered = tools;
+if (q) { const lq = q.toLowerCase(); filtered = filtered.filter(t => t.data.name.toLowerCase().includes(lq) || t.data.description.toLowerCase().includes(lq) || t.data.tags.some(tag => tag.toLowerCase().includes(lq))); }
+if (catFilter) filtered = filtered.filter(t => t.data.category === catFilter);
+if (typeFilter) filtered = filtered.filter(t => t.data.type === typeFilter);
+if (tagFilter) filtered = filtered.filter(t => t.data.tags.includes(tagFilter));
+
+filtered.sort((a,b) => {
+  if (sortBy === "name") return a.data.name.localeCompare(b.data.name, "es");
+  if (sortBy === "updated") { const da = a.data.last_verified ? new Date(a.data.last_verified).getTime() : 0; const db = b.data.last_verified ? new Date(b.data.last_verified).getTime() : 0; return db - da; }
+  return (a.data.market_rank ?? 999) - (b.data.market_rank ?? 999);
+});
+
+const hasFilters = q || catFilter || typeFilter || tagFilter;
 ---
 
-<BaseLayout
-  title="Directorio de Herramientas"
-  description="Listado completo de herramientas IT de seguridad, cumplimiento y auditoría. Filtra por categoría, etiquetas, tipo y tamaño de empresa."
->
-  <section class="py-12">
-    <div class="container-app">
-      <h1 class="mb-2 text-3xl font-bold text-[#1d1d1f]">Directorio</h1>
-      <p class="mb-8 text-[#6e6e73]">
-        {tools.length} herramientas indexadas. Usa los filtros para encontrar lo que
-        necesitas.
-      </p>
+<BaseLayout title="Directorio de Herramientas" description={`${tools.length} herramientas IT de seguridad, cumplimiento y auditoría. Filtra por categoría, tipo y etiquetas.`}>
+  <Header />
 
-      <DirectoryPage
-        tools={tools.map((t) => ({
-          id: t.id,
-          slug: t.slug,
-          body: t.body,
-          data: { ...t.data, last_verified: undefined },
-        }))}
-        categories={categories}
-        client:load
-      />
+  <section class="py-10 sm:py-14">
+    <div class="container-app">
+      <h1 class="text-[28px] font-bold tracking-tight text-[var(--color-text-primary)]">Directorio</h1>
+      <p class="mt-1.5 text-[15px] text-[var(--color-text-secondary)]">{tools.length} herramientas en {categories.length} categorías</p>
+
+      <!-- Filtros rápidos: categorías -->
+      <div class="mt-8 flex flex-wrap gap-2">
+        <a href={`${base}herramientas${new URL(Astro.url).search.replace(/[?&]category=[^&]*/g, "").replace(/^&/, "?")}`} class={`inline-flex items-center rounded-full border px-3 py-1.5 text-[13px] font-medium transition-colors no-underline ${!catFilter ? 'border-[var(--color-accent)] bg-[var(--color-accent-subtle)] text-[var(--color-accent)]' : 'border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-text-tertiary)]'}`}>Todas</a>
+        {categories.map(cat => (
+          <a href={`${base}herramientas?category=${cat.id}${q ? '&q='+q : ''}${typeFilter ? '&type='+typeFilter : ''}`} class={`inline-flex items-center rounded-full border px-3 py-1.5 text-[13px] font-medium transition-colors no-underline ${catFilter === cat.id ? 'border-[var(--color-accent)] bg-[var(--color-accent-subtle)] text-[var(--color-accent)]' : 'border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-text-tertiary)]'}`}>{cat.name}</a>
+        ))}
+      </div>
+
+      <!-- Barra secundaria -->
+      <div class="mt-5 flex flex-wrap items-center gap-3 text-[13px]">
+        <a href={`${base}herramientas${q ? '?q='+q : ''}`} class={`rounded-full border px-3 py-1.5 transition-colors no-underline ${!typeFilter ? 'border-[var(--color-accent)] bg-[var(--color-accent-subtle)] text-[var(--color-accent)]' : 'border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-text-tertiary)]'}`}>Todos</a>
+        <a href={`${base}herramientas?type=comercial${q ? '&q='+q : ''}${catFilter ? '&category='+catFilter : ''}`} class={`rounded-full border px-3 py-1.5 transition-colors no-underline ${typeFilter === 'comercial' ? 'border-[var(--color-accent)] bg-[var(--color-accent-subtle)] text-[var(--color-accent)]' : 'border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-text-tertiary)]'}`}>Comercial</a>
+        <a href={`${base}herramientas?type=opensource${q ? '&q='+q : ''}${catFilter ? '&category='+catFilter : ''}`} class={`rounded-full border px-3 py-1.5 transition-colors no-underline ${typeFilter === 'opensource' ? 'border-[var(--color-accent)] bg-[var(--color-accent-subtle)] text-[var(--color-accent)]' : 'border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-text-tertiary)]'}`}>Open Source</a>
+        <span class="hidden sm:inline text-[var(--color-border)] mx-1">|</span>
+        <a href={`${base}herramientas?sort=rank`} class={`rounded-full px-3 py-1.5 transition-colors no-underline ${sortBy === 'rank' ? 'font-medium text-[var(--color-text-primary)]' : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]'}`}>Por ranking</a>
+        <a href={`${base}herramientas?sort=name`} class={`rounded-full px-3 py-1.5 transition-colors no-underline ${sortBy === 'name' ? 'font-medium text-[var(--color-text-primary)]' : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]'}`}>Alfabético</a>
+        <a href={`${base}herramientas?sort=updated`} class={`rounded-full px-3 py-1.5 transition-colors no-underline ${sortBy === 'updated' ? 'font-medium text-[var(--color-text-primary)]' : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]'}`}>Más reciente</a>
+      </div>
+
+      <!-- Resultados -->
+      <div class="mt-2 flex items-center gap-3 text-[13px] text-[var(--color-text-secondary)]">
+        <span>{filtered.length} resultado{filtered.length !== 1 ? 's' : ''}{hasFilters ? ' con filtros' : ''}</span>
+        {hasFilters && <a href={`${base}herramientas`} class="text-[var(--color-accent)] hover:underline no-underline">Limpiar filtros</a>}
+      </div>
+
+      {filtered.length === 0 ? (
+        <div class="mt-12 flex flex-col items-center py-16 text-center">
+          <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-bg-secondary)]">
+            <svg class="h-6 w-6 text-[var(--color-text-tertiary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+          <h3 class="text-[17px] font-semibold text-[var(--color-text-primary)]">Sin resultados</h3>
+          <p class="mt-1 text-[14px] text-[var(--color-text-secondary)]">Prueba con otros filtros o términos de búsqueda.</p>
+          <a href={`${base}herramientas`} class="mt-4 rounded-full bg-[var(--color-accent)] px-4 py-2 text-[13px] font-medium text-white no-underline hover:bg-[var(--color-accent-hover)] transition-colors">Ver todas las herramientas</a>
+        </div>
+      ) : (
+        <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {filtered.map(tool => (
+            <a href={`${base}herramientas/${tool.slug}`} class="group flex flex-col gap-3 rounded-2xl border border-[var(--color-border-subtle)] bg-white p-5 no-underline transition-shadow hover:shadow-[var(--shadow-card-hover)]">
+              <div class="flex items-start gap-3">
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--color-bg-secondary)] text-[13px] font-bold text-[var(--color-text-tertiary)]">{tool.data.name.charAt(0)}</div>
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-center gap-2">
+                    <h3 class="text-[15px] font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors truncate">{tool.data.name}</h3>
+                    {tool.data.market_rank && tool.data.market_rank <= 3 && <span class="shrink-0 rounded-full bg-amber-50 px-1.5 py-0.5 text-[10px] font-bold text-amber-600">#{tool.data.market_rank}</span>}
+                  </div>
+                  <p class="mt-1 text-[13px] text-[var(--color-text-secondary)] truncate-2">{tool.data.description}</p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-1.5">
+                <span class={`inline-flex rounded-full px-2 py-0.5 text-[11px] font-medium ${tool.data.type === 'opensource' ? 'bg-emerald-50 text-emerald-600' : 'bg-blue-50 text-blue-600'}`}>{tool.data.type === 'opensource' ? 'Open Source' : 'Comercial'}</span>
+                {tool.data.company_size.slice(0, 2).map(s => <span class="inline-flex rounded-full bg-gray-100 px-2 py-0.5 text-[11px] font-medium text-gray-500">{s.charAt(0).toUpperCase()+s.slice(1)}</span>)}
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
     </div>
   </section>
+
+  <Footer />
 </BaseLayout>

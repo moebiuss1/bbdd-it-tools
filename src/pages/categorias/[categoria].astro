@@ -1,8 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/layout/Header.astro";
+import Footer from "@components/layout/Footer.astro";
 import { getCategories, toToolEntry } from "@lib/tools";
-import ToolCard from "@components/tools/ToolCard.tsx";
 
 export async function getStaticPaths() {
   const categories = await getCategories();
@@ -12,43 +13,48 @@ export async function getStaticPaths() {
 const { categoria } = Astro.params;
 const categories = await getCategories();
 const cat = categories.find((c) => c.id === categoria);
-
-if (!cat) {
-  return Astro.rewrite("/404");
-}
+if (!cat) return Astro.rewrite("/404");
 
 const rawTools = await getCollection("tools");
 const tools = rawTools.map(toToolEntry);
+const base = import.meta.env.BASE_URL;
+
 const catTools = tools
   .filter((t) => t.data.category === categoria)
   .sort((a, b) => (a.data.market_rank ?? 999) - (b.data.market_rank ?? 999));
 ---
 
 <BaseLayout title={cat.name} description={cat.description}>
-  <section class="py-12">
-    <div class="container-app">
-      <nav class="mb-8 flex items-center gap-2 text-sm text-[#aeaeb2]">
-        <a href="/herramientas" class="hover:text-[#0071e3] transition-colors">Directorio</a>
+  <Header />
+  <section class="py-10 sm:py-14">
+    <div class="container-app max-w-[900px]">
+      <nav class="mb-8 flex items-center gap-2 text-[13px] text-[var(--color-text-tertiary)]">
+        <a href={`${base}herramientas`} class="text-[var(--color-accent)] no-underline hover:underline">Directorio</a>
         <span>/</span>
-        <span class="text-[#6e6e73]">{cat.name}</span>
+        <span class="text-[var(--color-text-secondary)]">{cat.name}</span>
       </nav>
-
-      <h1 class="mb-2 text-3xl font-bold text-[#1d1d1f]">{cat.name}</h1>
-      <p class="mb-8 text-[#6e6e73]">{cat.description}</p>
-
-      {
-        catTools.length === 0 ? (
-          <div class="rounded-2xl border border-[#e5e5ea] bg-[#f5f5f7] p-12 text-center">
-            <p class="text-[#6e6e73]">Próximamente — herramientas en esta categoría.</p>
-          </div>
-        ) : (
-          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {catTools.map((tool) => (
-              <ToolCard tool={tool} client:load />
-            ))}
-          </div>
-        )
-      }
+      <h1 class="text-[28px] font-bold tracking-tight text-[var(--color-text-primary)]">{cat.name}</h1>
+      <p class="mt-1.5 text-[15px] text-[var(--color-text-secondary)]">{cat.description}</p>
+      {catTools.length === 0 ? (
+        <div class="mt-12 rounded-2xl border border-[var(--color-border-subtle)] bg-[var(--color-bg-secondary)] p-10 text-center">
+          <p class="text-[15px] text-[var(--color-text-secondary)]">Próximamente — herramientas en esta categoría.</p>
+        </div>
+      ) : (
+        <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {catTools.map(tool => (
+            <a href={`${base}herramientas/${tool.slug}`} class="group flex flex-col gap-3 rounded-2xl border border-[var(--color-border-subtle)] bg-white p-5 no-underline transition-shadow hover:shadow-[var(--shadow-card-hover)]">
+              <div class="flex items-start gap-3">
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--color-bg-secondary)] text-[13px] font-bold text-[var(--color-text-tertiary)]">{tool.data.name.charAt(0)}</div>
+                <div class="min-w-0 flex-1">
+                  <h3 class="text-[15px] font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors truncate">{tool.data.name}</h3>
+                  <p class="mt-1 text-[13px] text-[var(--color-text-secondary)] truncate-2">{tool.data.description}</p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
     </div>
   </section>
+  <Footer />
 </BaseLayout>
