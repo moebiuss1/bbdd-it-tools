@@ -1,63 +1,40 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Header from "@components/layout/Header.astro";
-import Footer from "@components/layout/Footer.astro";
 import { getCategories, getRankings, toToolEntry } from "@lib/tools";
-
-const rawTools = await getCollection("tools");
-const tools = rawTools.map(toToolEntry);
+const base = import.meta.env.BASE_URL;
+const tools = (await getCollection("tools")).map(toToolEntry);
 const categories = await getCategories();
 const rankings = await getRankings();
-const base = import.meta.env.BASE_URL;
-
-const tierColors: Record<string,string> = { Líder: 'bg-amber-50 text-amber-700 border-amber-200', Visionario: 'bg-blue-50 text-blue-700 border-blue-200', Retador: 'bg-emerald-50 text-emerald-700 border-emerald-200', Nicho: 'bg-gray-50 text-gray-500 border-gray-200' };
+const tierColors: any = {Líder:'tier-lider',Visionario:'tier-visionario',Retador:'tier-retador',Nicho:'tier-nicho'};
 ---
 
-<BaseLayout title="Rankings" description="Mejores herramientas IT por categoría. Rankings generados a partir de consenso de mercado: Gartner, ITSM.tools, GitHub.">
-  <Header />
-  <section class="py-10 sm:py-14">
-    <div class="container-app max-w-[900px]">
-      <h1 class="text-[28px] font-bold tracking-tight text-[var(--color-text-primary)]">Rankings</h1>
-      <p class="mt-1.5 text-[15px] text-[var(--color-text-secondary)] max-w-[600px]">Las mejores herramientas por categoría según consenso de fuentes referentes: Gartner, ITSM.tools, repositorios GitHub y webs especializadas.</p>
+<BaseLayout title="Rankings">
+  <header class="sticky top-0 z-40 header"><nav class="container header-inner"><a href={base} class="brand">BBDD IT</a><div class="flex items-center gap-2"><a href={`${base}herramientas`} class="nav-link">Directorio</a><a href={`${base}ranking`} class="nav-link">Rankings</a><a href={`${base}about`} class="nav-link">Acerca de</a></div></nav></header>
 
-      {Object.keys(rankings).length === 0 ? (
-        <div class="mt-12 rounded-2xl border border-[var(--color-border-subtle)] bg-[var(--color-bg-secondary)] p-10 text-center">
-          <p class="text-[15px] text-[var(--color-text-secondary)]">Los rankings se generarán en la primera ejecución semanal del pipeline.</p>
-        </div>
-      ) : (
-        <div class="mt-10 space-y-12">
-          {Object.entries(rankings).map(([catId, entries]: [string, any[]]) => {
-            const cat = categories.find(c => c.id === catId);
-            if (!cat) return null;
-            return (
-              <section>
-                <h2 class="mb-4 text-[18px] font-semibold tracking-tight text-[var(--color-text-primary)]">{cat.name} <span class="text-[var(--color-text-tertiary)] font-normal">{entries.length}</span></h2>
-                <div class="overflow-hidden rounded-2xl border border-[var(--color-border-subtle)]">
-                  {entries.map((entry: any, i: number) => {
-                    const tool = tools.find(t => t.slug === entry.slug);
-                    if (!tool) return null;
-                    return (
-                      <a href={`${base}herramientas/${entry.slug}`} class={`flex items-center gap-4 border-b border-[var(--color-border-subtle)] px-5 py-4 no-underline transition-colors hover:bg-[var(--color-bg-secondary)] last:border-b-0 ${i === 0 ? 'bg-amber-50/40' : ''}`}>
-                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-bg-secondary)] text-[14px] font-bold text-[var(--color-text-primary)]">{entry.rank}</div>
-                        <div class="min-w-0 flex-1">
-                          <h3 class="text-[15px] font-semibold text-[var(--color-text-primary)]">{tool.data.name}</h3>
-                          <p class="mt-0.5 truncate text-[13px] text-[var(--color-text-secondary)]">{tool.data.description}</p>
-                        </div>
-                        <div class="shrink-0 text-right">
-                          <span class={`inline-block rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${tierColors[entry.tier] ?? tierColors.Nicho}`}>{entry.tier}</span>
-                          <p class="mt-1 text-[11px] text-[var(--color-text-tertiary)]">{entry.score} pts</p>
-                        </div>
-                      </a>
-                    );
-                  })}
-                </div>
-              </section>
-            );
-          })}
-        </div>
-      )}
+  <section class="py-10">
+    <div class="container max-w-900">
+      <h1 class="section-title" style="font-size:28px">Rankings</h1>
+      <p class="section-desc" style="max-width:600px">Las mejores herramientas por categoría según consenso de fuentes referentes.</p>
+
+      {Object.keys(rankings).length===0 ? <div class="text-center py-16"><p class="section-desc">Los rankings se generarán en la primera ejecución semanal.</p></div> :
+      <div class="space-y-12 mt-10">
+        {Object.entries(rankings).map(([catId, entries]: [string, any[]]) => {
+          const c = categories.find(x => x.id===catId); if (!c) return null;
+          return <section><h2 class="section-title mb-4">{c.name} <span style="color:#aeaeb2;font-weight:400">{entries.length}</span></h2>
+            <div class="card" style="overflow:hidden">
+              {entries.map((e:any,i:number) => { const t = tools.find(x=>x.slug===e.slug); if(!t) return null;
+                return <a href={`${base}herramientas/${e.slug}`} class={`rank-row ${i===0?'rank-row-first':''}`}>
+                  <div class="rank-num">{e.rank}</div><div class="rank-body"><h3 class="rank-name">{t.data.name}</h3><p class="rank-desc">{t.data.description}</p></div>
+                  <div class="text-right" style="flex-shrink:0"><span class={`tier ${tierColors[e.tier]??'tier-nicho'}`}>{e.tier}</span><div class="tier-score">{e.score} pts</div></div>
+                </a>;
+              })}
+            </div>
+          </section>;
+        })}
+      </div>}
     </div>
   </section>
-  <Footer />
+
+  <footer class="footer"><div class="container footer-grid"><div><p class="footer-brand">BBDD IT Tools</p><p class="footer-desc">Directorio actualizado cada lunes</p></div><div class="footer-links"><a href={`${base}herramientas`} class="nav-link" style="font-size:12px">Directorio</a><a href={`${base}ranking`} class="nav-link" style="font-size:12px">Rankings</a><a href={`${base}about`} class="nav-link" style="font-size:12px">Acerca de</a></div></div></footer>
 </BaseLayout>

@@ -1,124 +1,110 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Header from "@components/layout/Header.astro";
-import Footer from "@components/layout/Footer.astro";
 import { getCategories, toToolEntry } from "@lib/tools";
-
-const rawTools = await getCollection("tools");
-const tools = rawTools.map(toToolEntry);
-const categories = await getCategories();
 const base = import.meta.env.BASE_URL;
-
+const tools = (await getCollection("tools")).map(toToolEntry);
+const categories = await getCategories();
 const rank1 = tools.filter(t => t.data.market_rank === 1).sort((a,b) => a.data.name.localeCompare(b.data.name, "es"));
 const recent = tools.filter(t => t.data.last_verified).sort((a,b) => new Date(b.data.last_verified!).getTime() - new Date(a.data.last_verified!).getTime()).slice(0, 6);
 ---
 
-<BaseLayout title="Directorio de Herramientas IT" description="Repositorio vivo de herramientas para seguridad, cumplimiento y auditoría IT. 24 herramientas en 15 categorías. Actualizado semanalmente.">
-  <Header />
+<BaseLayout title="Directorio de Herramientas IT">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 header">
+    <nav class="container header-inner">
+      <a href={base} class="brand">BBDD IT</a>
+      <div class="flex items-center gap-2">
+        <a href={`${base}herramientas`} class="nav-link">Directorio</a>
+        <a href={`${base}ranking`} class="nav-link">Rankings</a>
+        <a href={`${base}about`} class="nav-link">Acerca de</a>
+      </div>
+      <div class="flex-1"></div>
+      <form action={`${base}herramientas`} method="get" style="max-width:220px;width:100%">
+        <input type="search" name="q" placeholder="Buscar" class="search-input">
+      </form>
+    </nav>
+  </header>
 
   <!-- Hero -->
-  <section class="border-b border-[var(--color-border-subtle)] bg-gradient-to-b from-[var(--color-bg-secondary)] to-white py-16 sm:py-24">
-    <div class="container-app max-w-[800px] text-center">
-      <span class="inline-block rounded-full border border-[var(--color-border-subtle)] bg-white px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-[var(--color-text-secondary)]">Actualizado el 10 de agosto</span>
-      <h1 class="mt-6 text-[2.5rem] font-bold tracking-tight text-[var(--color-text-primary)] leading-tight sm:text-[3.25rem]">
-        Herramientas IT.<br class="sm:hidden" /> Sin humo.
-      </h1>
-      <p class="mx-auto mt-5 max-w-[540px] text-[17px] text-[var(--color-text-secondary)] leading-relaxed">
-        Un directorio honesto y actualizado de software de seguridad, cumplimiento y auditoría. 24 herramientas en 15 categorías, rankeadas por consenso del mercado.
-      </p>
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-        <a href={`${base}herramientas`} class="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 py-2.5 text-[14px] font-medium text-white no-underline hover:bg-[var(--color-accent-hover)] transition-colors">
-          Ver directorio
-          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
-        </a>
-        <a href={`${base}ranking`} class="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-white px-5 py-2.5 text-[14px] font-medium text-[var(--color-text-primary)] no-underline hover:bg-[var(--color-bg-secondary)] transition-colors">
-          Ver rankings
-        </a>
+  <section class="hero">
+    <div class="container text-center max-w-800 mx-auto">
+      <span class="badge badge-outline badge-md" style="text-transform:uppercase;letter-spacing:.05em">Actualizado el 10 de agosto</span>
+      <h1 class="hero-title mt-6">Herramientas IT. Sin humo.</h1>
+      <p class="hero-subtitle mx-auto">Un directorio honesto y actualizado de software de seguridad, cumplimiento y auditoría. {tools.length} herramientas en {categories.length} categorías, rankeadas por consenso del mercado.</p>
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <a href={`${base}herramientas`} class="btn btn-primary">Ver directorio <span style="font-size:18px;line-height:1">→</span></a>
+        <a href={`${base}ranking`} class="btn btn-outline">Ver rankings</a>
       </div>
-      <div class="mt-10 flex flex-wrap items-center justify-center gap-8 text-center text-[13px] text-[var(--color-text-tertiary)]">
-        <div><span class="block text-2xl font-bold text-[var(--color-text-primary)]">{tools.length}</span> herramientas</div>
-        <div class="hidden sm:block h-8 w-px bg-[var(--color-border-subtle)]"></div>
-        <div><span class="block text-2xl font-bold text-[var(--color-text-primary)]">{categories.length}</span> categorías</div>
-        <div class="hidden sm:block h-8 w-px bg-[var(--color-border-subtle)]"></div>
-        <div><span class="block text-2xl font-bold text-[var(--color-text-primary)]">Cada lunes</span> actualización</div>
+      <div class="hero-stats mt-10">
+        <div><span class="hero-stat-num">{tools.length}</span> herramientas</div>
+        <div class="hero-divider hidden sm:block"></div>
+        <div><span class="hero-stat-num">{categories.length}</span> categorías</div>
+        <div class="hero-divider hidden sm:block"></div>
+        <div><span class="hero-stat-num">Cada lunes</span> actualización</div>
       </div>
     </div>
   </section>
 
-  <!-- Líderes por categoría -->
-  <section class="py-16 sm:py-20">
-    <div class="container-app">
-      <div class="mb-10 flex items-end justify-between">
+  <!-- Líderes -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
         <div>
-          <h2 class="text-[22px] font-semibold tracking-tight text-[var(--color-text-primary)]">Líderes del mercado</h2>
-          <p class="mt-1.5 text-[15px] text-[var(--color-text-secondary)]">Herramientas que encabezan sus categorías según fuentes referentes</p>
+          <h2 class="section-title">Líderes del mercado</h2>
+          <p class="section-desc">Herramientas que encabezan sus categorías</p>
         </div>
-        <a href={`${base}ranking`} class="hidden text-[14px] font-medium text-[var(--color-accent)] no-underline hover:underline sm:block">Ver rankings →</a>
+        <a href={`${base}ranking`} class="hidden sm:inline" style="font-size:14px;font-weight:500;color:#0071e3">Ver rankings →</a>
       </div>
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {rank1.slice(0, 9).map(tool => {
           const cat = categories.find(c => c.id === tool.data.category);
           return (
-            <a href={`${base}herramientas/${tool.slug}`} class="group flex items-start gap-4 rounded-2xl border border-[var(--color-border-subtle)] bg-white p-5 no-underline transition-shadow hover:shadow-[var(--shadow-card-hover)]">
-              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 text-sm font-bold text-gray-400">
-                {tool.data.name.charAt(0)}
-              </div>
-              <div class="min-w-0">
-                <h3 class="text-[15px] font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors truncate">{tool.data.name}</h3>
-                <p class="mt-0.5 text-[13px] text-[var(--color-text-secondary)] truncate-2">{tool.data.description}</p>
-                {cat && <span class="mt-2 inline-block text-[11px] font-medium text-[var(--color-text-tertiary)] uppercase tracking-wider">{cat.name}</span>}
+            <a href={`${base}herramientas/${tool.slug}`} class="card tool-card group">
+              <div class="tool-avatar">{tool.data.name.charAt(0)}</div>
+              <div class="min-w-0 flex-1">
+                <h3 class="tool-name" style="color:#1d1d1f">{tool.data.name}</h3>
+                <p class="tool-desc">{tool.data.description}</p>
+                {cat && <span class="tool-cat">{cat.name}</span>}
               </div>
             </a>
-          );
+          )
         })}
       </div>
     </div>
   </section>
 
   <!-- Categorías -->
-  <section class="border-t border-[var(--color-border-subtle)] bg-[var(--color-bg-secondary)] py-16 sm:py-20">
-    <div class="container-app">
-      <h2 class="mb-10 text-[22px] font-semibold tracking-tight text-[var(--color-text-primary)]">Explora por categoría</h2>
+  <section class="section-alt">
+    <div class="container">
+      <h2 class="section-title mb-10">Explora por categoría</h2>
       <div class="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         {categories.map(cat => {
           const count = tools.filter(t => t.data.category === cat.id).length;
           return (
-            <a href={`${base}categorias/${cat.id}`} class="flex items-center justify-between rounded-xl border border-[var(--color-border-subtle)] bg-white px-4 py-3 no-underline transition-shadow hover:shadow-[var(--shadow-card-hover)]">
-              <span class="text-[14px] font-medium text-[var(--color-text-primary)]">{cat.name}</span>
-              <span class="text-[12px] text-[var(--color-text-tertiary)]">{count}</span>
+            <a href={`${base}categorias/${cat.id}`} class="card cat-card">
+              <span class="cat-name">{cat.name}</span>
+              <span class="badge badge-gray badge-sm cat-count">{count}</span>
             </a>
-          );
+          )
         })}
       </div>
     </div>
   </section>
 
-  <!-- Recientes -->
-  <section class="py-16 sm:py-20">
-    <div class="container-app">
-      <div class="mb-10 flex items-end justify-between">
-        <div>
-          <h2 class="text-[22px] font-semibold tracking-tight text-[var(--color-text-primary)]">Actualizadas recientemente</h2>
-          <p class="mt-1.5 text-[15px] text-[var(--color-text-secondary)]">Últimas herramientas verificadas por el pipeline semanal</p>
-        </div>
-        <a href={`${base}herramientas`} class="hidden text-[14px] font-medium text-[var(--color-accent)] no-underline hover:underline sm:block">Ver todas →</a>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-brand">BBDD IT Tools</p>
+        <p class="footer-desc">Directorio actualizado cada lunes · {tools.length} herramientas en {categories.length} categorías</p>
       </div>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {recent.map(tool => (
-          <a href={`${base}herramientas/${tool.slug}`} class="group flex items-start gap-4 rounded-2xl border border-[var(--color-border-subtle)] bg-white p-5 no-underline transition-shadow hover:shadow-[var(--shadow-card-hover)]">
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 text-sm font-bold text-blue-500">
-              {tool.data.name.charAt(0)}
-            </div>
-            <div class="min-w-0">
-              <h3 class="text-[15px] font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors truncate">{tool.data.name}</h3>
-              <p class="mt-0.5 text-[13px] text-[var(--color-text-secondary)] truncate-2">{tool.data.description}</p>
-            </div>
-          </a>
-        ))}
+      <div class="footer-links">
+        <a href={`${base}herramientas`} class="nav-link" style="font-size:12px">Directorio</a>
+        <a href={`${base}ranking`} class="nav-link" style="font-size:12px">Rankings</a>
+        <a href={`${base}about`} class="nav-link" style="font-size:12px">Acerca de</a>
       </div>
     </div>
-  </section>
-
-  <Footer />
+  </footer>
 </BaseLayout>

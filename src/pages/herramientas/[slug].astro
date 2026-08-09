@@ -1,148 +1,90 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Header from "@components/layout/Header.astro";
-import Footer from "@components/layout/Footer.astro";
 import { getCategories, toToolEntry } from "@lib/tools";
-
-export async function getStaticPaths() {
-  const rawTools = await getCollection("tools");
-  return rawTools.map((t) => ({ params: { slug: t.id.replace(/\.md$/, "") } }));
-}
-
-const { slug } = Astro.params;
-const rawTools = await getCollection("tools");
-const tools = rawTools.map(toToolEntry);
-const categories = await getCategories();
-const tool = tools.find((t) => t.slug === slug);
-if (!tool) return Astro.rewrite("/404");
-
-const { data } = tool;
-const category = categories.find((c) => c.id === data.category);
+export async function getStaticPaths() { return (await getCollection("tools")).map(t => ({ params: { slug: t.id.replace(/\.md$/,"") } })); }
 const base = import.meta.env.BASE_URL;
-const ranked = categories.filter(c => tools.some(t => t.data.category === c.id && t.data.market_rank));
+const tools = (await getCollection("tools")).map(toToolEntry);
+const categories = await getCategories();
+const tool = tools.find(t => t.slug === Astro.params.slug);
+if (!tool) return Astro.rewrite("/404");
+const { data } = tool;
+const cat = categories.find(c => c.id === data.category);
 const typeLabel = data.type === 'opensource' ? 'Open Source' : 'Comercial';
-const sizeLabels: Record<string,string> = { pequeña: 'Pequeña empresa', mediana: 'Mediana empresa', grande: 'Gran empresa' };
-const costLabels: Record<string,string> = { gratis: 'Gratuito', freemium: 'Freemium', suscripción: 'Suscripción', 'licencia-perpetua': 'Licencia perpetua', 'pago-por-uso': 'Pago por uso', 'presupuesto-personalizado': 'Presupuesto personalizado' };
+const costLabel = (data.cost_model && ({gratis:'Gratuito',freemium:'Freemium',suscripción:'Suscripción','licencia-perpetua':'Licencia perpetua','pago-por-uso':'Pago por uso','presupuesto-personalizado':'Presupuesto personalizado'} as any)[data.cost_model]) ?? '';
+const sizeLabels: any = {pequeña:'Pequeña empresa',mediana:'Mediana empresa',grande:'Gran empresa'};
+const tierColors: any = {Líder:'tier-lider',Visionario:'tier-visionario',Retador:'tier-retador',Nicho:'tier-nicho'};
 ---
 
 <BaseLayout title={data.name} description={data.description}>
-  <Header />
+  <header class="sticky top-0 z-40 header">
+    <nav class="container header-inner">
+      <a href={base} class="brand">BBDD IT</a>
+      <div class="flex items-center gap-2">
+        <a href={`${base}herramientas`} class="nav-link">Directorio</a>
+        <a href={`${base}ranking`} class="nav-link">Rankings</a>
+        <a href={`${base}about`} class="nav-link">Acerca de</a>
+      </div>
+    </nav>
+  </header>
 
-  <article class="py-10 sm:py-14">
-    <div class="container-app max-w-[900px]">
-      <!-- Migas -->
-      <nav class="mb-8 flex items-center gap-2 text-[13px] text-[var(--color-text-tertiary)]">
-        <a href={`${base}herramientas`} class="text-[var(--color-accent)] no-underline hover:underline">Directorio</a>
-        <span>/</span>
-        {category && <><a href={`${base}categorias/${category.id}`} class="text-[var(--color-accent)] no-underline hover:underline">{category.name}</a><span>/</span></>}
-        <span class="text-[var(--color-text-secondary)] truncate">{data.name}</span>
+  <article class="py-10">
+    <div class="container max-w-900">
+      <nav class="mb-8 flex items-center gap-2" style="font-size:13px;color:#aeaeb2">
+        <a href={`${base}herramientas`} style="color:#0071e3">Directorio</a><span>/</span>
+        {cat && <><a href={`${base}categorias/${cat.id}`} style="color:#0071e3">{cat.name}</a><span>/</span></>}
+        <span class="truncate" style="color:#86868b">{data.name}</span>
       </nav>
 
-      <!-- Cabecera -->
-      <header class="mb-10">
-        <div class="flex flex-wrap items-center gap-2 mb-3">
-          <span class={`inline-flex items-center rounded-full px-2.5 py-1 text-[12px] font-medium ${data.type === 'opensource' ? 'bg-emerald-50 text-emerald-600' : 'bg-blue-50 text-blue-600'}`}>{typeLabel}</span>
-          {data.market_rank && category && (
-            <span class="inline-flex items-center rounded-full bg-amber-50 px-2.5 py-1 text-[12px] font-medium text-amber-700">#{data.market_rank} en {category.name}</span>
-          )}
-          {data.cost_model && <span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-1 text-[12px] font-medium text-gray-500">{costLabels[data.cost_model] ?? data.cost_model}</span>}
+      <header class="detail-header">
+        <div class="detail-badges">
+          <span class={`badge badge-md ${data.type==='opensource'?'badge-green':'badge-blue'}`}>{typeLabel}</span>
+          {data.market_rank && cat && <span class="badge badge-amber badge-md">#{data.market_rank} en {cat.name}</span>}
+          {costLabel && <span class="badge badge-gray badge-md">{costLabel}</span>}
         </div>
-        <h1 class="text-[2rem] font-bold tracking-tight text-[var(--color-text-primary)] leading-tight sm:text-[2.5rem]">{data.name}</h1>
-        <p class="mt-4 max-w-[680px] text-[17px] text-[var(--color-text-secondary)] leading-relaxed">{data.description}</p>
+        <h1 class="detail-name">{data.name}</h1>
+        <p class="detail-desc">{data.description}</p>
       </header>
 
-      <div class="grid gap-10 lg:grid-cols-[1fr_280px]">
-        <!-- Contenido -->
+      <div class="detail-grid">
         <div class="space-y-10">
           <section>
-            <h2 class="text-[18px] font-semibold tracking-tight text-[var(--color-text-primary)]">Descripción</h2>
-            <div class="mt-4 prose prose-neutral max-w-none text-[15px] text-[var(--color-text-primary)] leading-relaxed" set:html={tool.body || ''} />
+            <h2 class="section-title mb-4">Descripción</h2>
+            <div class="prose" set:html={tool.body || ''} />
           </section>
-
-          <section class="rounded-2xl border border-[var(--color-border-subtle)] bg-[var(--color-bg-secondary)] p-6">
-            <h2 class="text-[16px] font-semibold tracking-tight text-[var(--color-text-primary)]">Por qué es un referente</h2>
-            <p class="mt-2 text-[15px] text-[var(--color-text-secondary)] leading-relaxed">{data.why_reference}</p>
+          <section class="why-box">
+            <h2>Por qué es un referente</h2>
+            <p style="font-size:15px;color:#86868b;line-height:1.6">{data.why_reference}</p>
           </section>
         </div>
 
-        <!-- Sidebar -->
         <aside class="space-y-5">
-          <div class="rounded-2xl border border-[var(--color-border-subtle)] p-5 space-y-4">
-            <a href={data.website} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-[14px] text-[var(--color-accent)] font-medium no-underline hover:underline">
-              <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <div class="sidebar-box space-y-4">
+            <a href={data.website} target="_blank" rel="noopener" class="sidebar-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               {new URL(data.website).hostname}
             </a>
-            {data.repo && (
-              <a href={data.repo} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-[14px] text-[var(--color-accent)] font-medium no-underline hover:underline">
-                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                Repositorio
-              </a>
-            )}
-            {data.company_size.length > 0 && (
-              <div class="flex items-start gap-2 text-[14px] text-[var(--color-text-secondary)]">
-                <svg class="mt-0.5 h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="6" x2="15" y2="6"/><line x1="9" y1="10" x2="15" y2="10"/><line x1="9" y1="18" x2="12" y2="18"/></svg>
-                <span>{data.company_size.map((s: string) => sizeLabels[s] ?? s).join(" · ")}</span>
-              </div>
-            )}
-            {data.license && (
-              <div class="flex items-center gap-2 text-[14px] text-[var(--color-text-secondary)]">
-                <svg class="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                <span>{data.license}</span>
-              </div>
-            )}
-            {data.last_verified && (
-              <div class="flex items-center gap-2 text-[14px] text-[var(--color-text-secondary)]">
-                <svg class="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <span>Verificado: {new Date(data.last_verified).toLocaleDateString("es-ES")}</span>
-              </div>
-            )}
+            {data.repo && <a href={data.repo} target="_blank" rel="noopener" class="sidebar-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> Repositorio</a>}
+            {data.company_size.length > 0 && <div class="sidebar-text">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:2px;flex-shrink:0"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="6" x2="15" y2="6"/><line x1="9" y1="10" x2="15" y2="10"/></svg>
+              <span>{data.company_size.map((s:string) => sizeLabels[s]??s).join(" · ")}</span>
+            </div>}
+            {data.license && <div class="sidebar-text"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:2px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>{data.license}</span></div>}
+            {data.last_verified && <div class="sidebar-text"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:2px;flex-shrink:0"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Verificado: {new Date(data.last_verified).toLocaleDateString("es-ES")}</span></div>}
           </div>
 
-          {data.cost_details && (
-            <div class="rounded-2xl border border-[var(--color-border-subtle)] p-5">
-              <h3 class="text-[13px] font-semibold uppercase tracking-wider text-[var(--color-text-tertiary)]">Coste</h3>
-              <p class="mt-2 text-[14px] text-[var(--color-text-secondary)] leading-relaxed">{data.cost_details}</p>
-            </div>
-          )}
+          {data.cost_details && <div class="sidebar-box"><h3 class="sidebar-box-title">Coste</h3><p style="font-size:14px;color:#86868b;line-height:1.5">{data.cost_details}</p></div>}
 
-          {data.certifications.length > 0 && (
-            <div class="rounded-2xl border border-[var(--color-border-subtle)] p-5">
-              <h3 class="text-[13px] font-semibold uppercase tracking-wider text-[var(--color-text-tertiary)]">Certificaciones</h3>
-              <div class="mt-2.5 flex flex-wrap gap-1.5">
-                {data.certifications.map((cert: string) => (
-                  <span class="inline-flex rounded-full bg-teal-50 px-2 py-1 text-[11px] font-medium text-teal-700">{cert}</span>
-                ))}
-              </div>
-            </div>
-          )}
+          {data.certifications.length > 0 && <div class="sidebar-box"><h3 class="sidebar-box-title">Certificaciones</h3><div class="sidebar-tags">{data.certifications.map((c:string) => <span class="badge badge-teal badge-sm">{c}</span>)}</div></div>}
 
-          <div class="rounded-2xl border border-[var(--color-border-subtle)] p-5">
-            <h3 class="text-[13px] font-semibold uppercase tracking-wider text-[var(--color-text-tertiary)]">Etiquetas</h3>
-            <div class="mt-2.5 flex flex-wrap gap-1.5">
-              {data.tags.map((tag: string) => (
-                <a href={`${base}herramientas?tag=${encodeURIComponent(tag)}`} class="inline-flex rounded-full bg-gray-100 px-2 py-1 text-[11px] font-medium text-gray-500 no-underline hover:bg-gray-200 transition-colors">{tag}</a>
-              ))}
-            </div>
-          </div>
+          <div class="sidebar-box"><h3 class="sidebar-box-title">Etiquetas</h3><div class="sidebar-tags">{data.tags.map((t:string) => <a href={`${base}herramientas?tag=${encodeURIComponent(t)}`} class="sidebar-tag">{t}</a>)}</div></div>
 
-          {data.sources.length > 0 && (
-            <div class="rounded-2xl border border-[var(--color-border-subtle)] p-5">
-              <h3 class="text-[13px] font-semibold uppercase tracking-wider text-[var(--color-text-tertiary)]">Fuentes</h3>
-              <div class="mt-2.5 space-y-1.5">
-                {data.sources.map((src: string) => (
-                  <a href={src} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-[13px] text-[var(--color-accent)] no-underline hover:underline">
-                    <svg class="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                    {new URL(src).hostname}
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
+          {data.sources.length > 0 && <div class="sidebar-box"><h3 class="sidebar-box-title">Fuentes</h3><div class="sidebar-sources">{data.sources.map((s:string) => <div class="sidebar-source"><a href={s} target="_blank" rel="noopener" class="sidebar-link" style="font-size:13px">{new URL(s).hostname}</a></div>)}</div></div>}
         </aside>
       </div>
     </div>
   </article>
 
-  <Footer />
+  <footer class="footer"><div class="container footer-grid"><div><p class="footer-brand">BBDD IT Tools</p><p class="footer-desc">Directorio actualizado cada lunes</p></div><div class="footer-links"><a href={`${base}herramientas`} class="nav-link" style="font-size:12px">Directorio</a><a href={`${base}ranking`} class="nav-link" style="font-size:12px">Rankings</a><a href={`${base}about`} class="nav-link" style="font-size:12px">Acerca de</a></div></div></footer>
 </BaseLayout>
