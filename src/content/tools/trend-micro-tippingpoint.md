@@ -24,7 +24,7 @@ tags:
 - threat-hunting
 - on-premise
 slug: trend-micro-tippingpoint
-last_verified: '2026-08-07'
+last_verified: '2026-08-09'
 needs_review: false
 sources: []
 market_rank: 1

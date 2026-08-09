@@ -28,7 +28,7 @@ tags:
 - vulnerability-management
 slug: microsoft-defender-for-endpoint
 sources: []
-last_verified: '2026-08-07'
+last_verified: '2026-08-09'
 needs_review: false
 market_rank: 1
 logo: /logos/microsoft-defender-for-endpoint.png
