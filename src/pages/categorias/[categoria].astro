@@ -11,7 +11,7 @@ const catTools = tools.filter(t => (t.data.categories || [t.data.category]).incl
 ---
 
 <BaseLayout title={cat.name} description={cat.description}>
-  <header class="sticky top-0 z-40 header"><nav class="container header-inner"><a href={base} class="brand">BBDD IT</a><div class="flex items-center gap-2"><a href={`${base}herramientas`} class="nav-link">Directorio</a><a href={`${base}ranking`} class="nav-link">Rankings</a><a href={`${base}about`} class="nav-link">Acerca de</a></div></nav></header>
+  <header class="sticky top-0 z-40 header"><nav class="container header-inner"><a href={base} class="brand">BBDD IT</a><div class="flex items-center gap-2"><a href={`${base}herramientas`} class="nav-link">Directorio</a><a href={`${base}ranking`} class="nav-link">Rankings</a><a href={`${base}glosario`} class="nav-link">Glosario</a><a href={`${base}about`} class="nav-link">Acerca de</a></div></nav></header>
 
   <section class="py-10"><div class="container max-w-900">
     <nav class="mb-8 flex items-center gap-2" style="font-size:13px;color:#aeaeb2"><a href={`${base}herramientas`} style="color:#0071e3">Directorio</a><span>/</span><span style="color:#86868b">{cat.name}</span></nav>
@@ -22,5 +22,5 @@ const catTools = tools.filter(t => (t.data.categories || [t.data.category]).incl
     </div>}
   </div></section>
 
-  <footer class="footer"><div class="container footer-grid"><div><p class="footer-brand">BBDD IT Tools</p><p class="footer-desc">Directorio actualizado cada lunes</p></div><div class="footer-links"><a href={`${base}herramientas`} class="nav-link" style="font-size:12px">Directorio</a><a href={`${base}ranking`} class="nav-link" style="font-size:12px">Rankings</a><a href={`${base}about`} class="nav-link" style="font-size:12px">Acerca de</a></div></div></footer>
+  <footer class="footer"><div class="container footer-grid"><div><p class="footer-brand">BBDD IT Tools</p><p class="footer-desc">Directorio actualizado cada lunes</p></div><div class="footer-links"><a href={`${base}herramientas`} class="nav-link" style="font-size:12px">Directorio</a><a href={`${base}ranking`} class="nav-link" style="font-size:12px">Rankings</a><a href={`${base}glosario`} class="nav-link" style="font-size:12px">Glosario</a><a href={`${base}about`} class="nav-link" style="font-size:12px">Acerca de</a></div></div></footer>
 </BaseLayout>
