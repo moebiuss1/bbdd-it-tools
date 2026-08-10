@@ -6,11 +6,17 @@ const base = import.meta.env.BASE_URL;
 const tools = (await getCollection("tools")).map(toToolEntry);
 const categories = await getCategories();
 
-// Agrupar herramientas por categoría y ordenar por ranking
 const catTools = categories.map(cat => ({
   ...cat,
-  tools: tools.filter(t => t.data.category === cat.id).sort((a,b) => (a.data.market_rank??999)-(b.data.market_rank??999)).slice(0, 5)
+  tools: tools.filter(t => t.data.category === cat.id).sort((a,b) => (a.data.market_rank??999)-(b.data.market_rank??999))
 })).filter(c => c.tools.length > 0);
+
+// Destacados: top 3 herramientas globales por market_rank
+const destacadas = tools.filter(t => t.data.market_rank && t.data.market_rank <= 2).sort((a,b) => (a.data.market_rank??999)-(b.data.market_rank??999)).slice(0, 6);
+
+// Herramientas actualizadas esta semana
+const haceUnaSemana = Date.now() - 7 * 86400000;
+const recientes = tools.filter(t => t.data.last_verified && new Date(t.data.last_verified).getTime() > haceUnaSemana).sort((a,b) => new Date(b.data.last_verified!).getTime() - new Date(a.data.last_verified!).getTime()).slice(0, 6);
 ---
 
 <BaseLayout title="Directorio de Herramientas IT">
@@ -25,63 +31,115 @@ const catTools = categories.map(cat => ({
       </div>
       <div class="flex-1"></div>
       <form action={`${base}herramientas`} method="get" style="max-width:220px;width:100%">
-        <input type="search" name="q" placeholder="Buscar" class="search-input">
+        <input type="search" name="q" placeholder="Buscar herramientas..." class="search-input" id="hero-search" aria-label="Buscar herramientas">
       </form>
     </nav>
   </header>
 
   <section class="hero">
     <div class="container text-center max-w-800 mx-auto">
-      <span class="badge badge-outline badge-md" style="text-transform:uppercase;letter-spacing:.05em">Actualizado el 10 de agosto</span>
       <h1 class="hero-title mt-6">Herramientas IT. Sin humo.</h1>
-      <p class="hero-subtitle mx-auto">Un directorio honesto y actualizado de software de seguridad, cumplimiento y auditoría. {tools.length} herramientas en {categories.length} categorías, rankeadas por consenso del mercado.</p>
+      <p class="hero-subtitle mx-auto">{tools.length} herramientas en {categories.length} categorías, rankeadas por consenso del mercado. Actualizado cada lunes.</p>
       <div class="flex flex-wrap justify-center gap-3 mt-8">
-        <a href={`${base}herramientas`} class="btn btn-primary">Ver directorio <span style="font-size:18px;line-height:1">→</span></a>
+        <a href={`${base}herramientas`} class="btn btn-primary">Explorar directorio <span style="font-size:18px;line-height:1">→</span></a>
         <a href={`${base}ranking`} class="btn btn-outline">Ver rankings</a>
-      </div>
-      <div class="hero-stats mt-10">
-        <div><span class="hero-stat-num">{tools.length}</span> herramientas</div>
-        <div class="hero-divider hidden sm:block"></div>
-        <div><span class="hero-stat-num">{categories.length}</span> categorías</div>
-        <div class="hero-divider hidden sm:block"></div>
-        <div><span class="hero-stat-num">Cada lunes</span> actualización</div>
       </div>
     </div>
   </section>
 
-  <!-- Herramientas agrupadas por categoría -->
-  {catTools.map((cat, ci) => (
-    <section class={ci % 2 === 0 ? 'section' : 'section-alt'}>
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">{cat.name}</h2>
-            <p class="section-desc">{cat.description}</p>
-          </div>
-          <a href={`${base}categorias/${cat.id}`} class="hidden sm:inline" style="font-size:14px;font-weight:500;color:#0071e3">Ver las {cat.tools.length} →</a>
-        </div>
-        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {cat.tools.slice(0, 3).map(tool => (
-            <a href={`${base}herramientas/${tool.slug}`} class="card tool-card group">
-              <div class="tool-avatar">
-                {tool.data.logo ? <img src={`${base}${tool.data.logo.replace(/^\//,'')}`} alt={tool.data.name} width="40" height="40" style="border-radius:10px;object-fit:contain" loading="lazy" /> : tool.data.name.charAt(0)}
-              </div>
-              <div class="min-w-0 flex-1">
-                <div class="flex items-center gap-2">
-                  <h3 class="tool-name" style="color:#1d1d1f">{tool.data.name}</h3>
-                  {tool.data.market_rank && tool.data.market_rank <= 3 && <span class="badge badge-amber badge-sm">#{tool.data.market_rank}</span>}
-                </div>
-                <p class="tool-desc">{tool.data.description}</p>
-                <div class="flex flex-wrap gap-1.5 mt-2">
-                  <span class={`badge badge-sm ${tool.data.type==='opensource'?'badge-green':'badge-blue'}`}>{tool.data.type==='opensource'?'Open Source':'Comercial'}</span>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
+  <!-- Destacadas -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Destacadas</h2>
+        <a href={`${base}herramientas?sort=rank`} class="hidden sm:inline" style="font-size:14px;font-weight:500;color:#0071e3">Ver todas →</a>
       </div>
-    </section>
-  ))}
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {destacadas.map(tool => (
+          <a href={`${base}herramientas/${tool.slug}`} class="card tool-card group">
+            <div class="tool-avatar">
+              {tool.data.logo ? <img src={`${base}${tool.data.logo.replace(/^\//,'')}`} alt={tool.data.name} width="40" height="40" style="border-radius:10px;object-fit:contain" loading="lazy" /> : tool.data.name.charAt(0)}
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-2">
+                <h3 class="tool-name" style="color:#1d1d1f">{tool.data.name}</h3>
+                {tool.data.market_rank && tool.data.market_rank <= 3 && <span class="badge badge-amber badge-sm">#{tool.data.market_rank}</span>}
+              </div>
+              <p class="tool-desc">{tool.data.description}</p>
+              <div class="flex flex-wrap gap-1.5 mt-2">
+                <span class={`badge badge-sm ${tool.data.type==='opensource'?'badge-green':'badge-blue'}`}>{tool.data.type==='opensource'?'Open Source':'Comercial'}</span>
+                <span class="badge badge-gray badge-sm">{categories.find(c=>c.id===tool.data.category)?.name??tool.data.category}</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Actualizadas esta semana -->
+  {recientes.length > 0 && <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Actualizadas esta semana</h2>
+        <a href={`${base}herramientas?sort=updated`} class="hidden sm:inline" style="font-size:14px;font-weight:500;color:#0071e3">Ver todas →</a>
+      </div>
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {recientes.map(tool => (
+          <a href={`${base}herramientas/${tool.slug}`} class="card tool-card group">
+            <div class="tool-avatar">
+              {tool.data.logo ? <img src={`${base}${tool.data.logo.replace(/^\//,'')}`} alt={tool.data.name} width="40" height="40" style="border-radius:10px;object-fit:contain" loading="lazy" /> : tool.data.name.charAt(0)}
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-2">
+                <h3 class="tool-name" style="color:#1d1d1f">{tool.data.name}</h3>
+                {tool.data.last_verified && <span class="badge badge-green badge-sm" title={`Verificado: ${new Date(tool.data.last_verified).toLocaleDateString('es-ES')}`}>Nuevo</span>}
+              </div>
+              <p class="tool-desc">{tool.data.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>}
+
+  <!-- Categorías en acordeón -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title mb-8">Todas las categorías</h2>
+      <div class="space-y-2">
+        {catTools.map((cat, i) => (
+          <details class="accordion-cat" open={i < 4}>
+            <summary class="accordion-summary">
+              <span class="accordion-title">{cat.name}</span>
+              <span class="badge badge-gray badge-sm">{cat.tools.length}</span>
+              <svg class="accordion-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="accordion-body">
+              <p class="section-desc" style="margin-bottom:16px">{cat.description}</p>
+              <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {cat.tools.slice(0, 3).map(tool => (
+                  <a href={`${base}herramientas/${tool.slug}`} class="card tool-card group">
+                    <div class="tool-avatar">
+                      {tool.data.logo ? <img src={`${base}${tool.data.logo.replace(/^\//,'')}`} alt={tool.data.name} width="40" height="40" style="border-radius:10px;object-fit:contain" loading="lazy" /> : tool.data.name.charAt(0)}
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <div class="flex items-center gap-2">
+                        <h3 class="tool-name" style="color:#1d1d1f">{tool.data.name}</h3>
+                        {tool.data.market_rank && tool.data.market_rank <= 3 && <span class="badge badge-amber badge-sm">#{tool.data.market_rank}</span>}
+                      </div>
+                      <p class="tool-desc">{tool.data.description}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+              {cat.tools.length > 3 && <a href={`${base}categorias/${cat.id}`} class="btn btn-outline mt-3" style="font-size:13px">Ver las {cat.tools.length} herramientas en {cat.name} →</a>}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="container footer-grid">
@@ -97,3 +155,26 @@ const catTools = categories.map(cat => ({
     </div>
   </footer>
 </BaseLayout>
+
+<style>
+/* Accordion */
+.accordion-cat{border:1px solid #e8e8ed;border-radius:14px;overflow:hidden;transition:background .15s}
+.accordion-cat[open]{background:#fafafa}
+.accordion-summary{display:flex;align-items:center;gap:10px;padding:14px 18px;cursor:pointer;list-style:none;font-size:15px;font-weight:600;color:#1d1d1f;-webkit-user-select:none;user-select:none}
+.accordion-summary::-webkit-details-marker{display:none}
+.accordion-summary:hover{background:#f5f5f7}
+.accordion-title{flex:1}
+.accordion-chevron{flex-shrink:0;transition:transform .2s}
+.accordion-cat[open] .accordion-chevron{transform:rotate(180deg)}
+.accordion-body{padding:0 18px 20px}
+</style>
+
+<script>
+  // Atajo: "/" enfoca el buscador
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '/' && document.activeElement?.tagName !== 'INPUT' && document.activeElement?.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      document.getElementById('hero-search')?.focus();
+    }
+  });
+</script>

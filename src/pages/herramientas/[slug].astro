@@ -23,10 +23,10 @@ const freshnessScore = data.last_verified ? (() => { const days = (Date.now() - 
 const totalScore = Math.min(100, rankScore + certScore + sourcesScore + freshnessScore);
 
 const scoreBreakdown = [
-  { label: 'Ranking de mercado', value: rankScore, detail: data.market_rank ? `Posición #${data.market_rank} en su categoría` : 'Sin ranking asignado' },
-  { label: 'Certificaciones', value: certScore, detail: `${data.certifications?.length ?? 0} certificaciones verificadas` },
-  { label: 'Fuentes', value: sourcesScore, detail: `${data.sources?.length ?? 0} fuentes referenciadas` },
-  { label: 'Actualización', value: freshnessScore, detail: data.last_verified ? `Verificado el ${new Date(data.last_verified).toLocaleDateString('es-ES')}` : 'Sin fecha de verificación' },
+  { label: 'Ranking de mercado', value: rankScore, max: 40, detail: data.market_rank ? `Posición #${data.market_rank} en su categoría` : 'Sin ranking asignado' },
+  { label: 'Certificaciones', value: certScore, max: 30, detail: `${data.certifications?.length ?? 0} certificaciones verificadas` },
+  { label: 'Fuentes', value: sourcesScore, max: 20, detail: `${data.sources?.length ?? 0} fuentes referenciadas` },
+  { label: 'Actualización', value: freshnessScore, max: 10, detail: data.last_verified ? `Verificado el ${new Date(data.last_verified).toLocaleDateString('es-ES')}` : 'Sin fecha de verificación' },
 ];
 ---
 
@@ -94,21 +94,45 @@ const scoreBreakdown = [
           <div class="sidebar-box">
             <h3 class="sidebar-box-title">Puntuación BBDD IT</h3>
             <div class="flex items-center gap-3 mb-3">
-              <div style="width:48px;height:48px;border-radius:12px;background:{totalScore>=70?'#ecfdf5':totalScore>=40?'#fffbeb':'#fef2f2'};display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:{totalScore>=70?'#059669':totalScore>=40?'#d97706':'#dc2626'}">{totalScore}</div>
+              <div class="score-badge" style="
+                --score-bg: {totalScore>=70?'#ecfdf5':totalScore>=40?'#fffbeb':'#fef2f2'};
+                --score-color: {totalScore>=70?'#059669':totalScore>=40?'#d97706':'#dc2626'};
+                --score-pct: {totalScore}%;
+              ">
+                <svg width="52" height="52" viewBox="0 0 36 36" style="transform:rotate(-90deg)">
+                  <circle cx="18" cy="18" r="15" fill="none" stroke="#f5f5f7" stroke-width="4"/>
+                  <circle cx="18" cy="18" r="15" fill="none" stroke={totalScore>=70?'#059669':totalScore>=40?'#d97706':'#dc2626'} stroke-width="4"
+                    stroke-dasharray={`${totalScore} ${100-totalScore}`} stroke-linecap="round"/>
+                </svg>
+                <span style="position:absolute;font-size:15px;font-weight:700;color:#1d1d1f">{totalScore}</span>
+              </div>
               <div>
-                <div style="font-size:14px;font-weight:600;color:#1d1d1f">/100</div>
-                <div style="font-size:11px;color:#6e6e73">{totalScore>=70?'Excelente':totalScore>=50?'Notable':totalScore>=30?'Aceptable':'Pendiente'}</div>
+                <div style="font-size:14px;font-weight:600;color:#1d1d1f">{totalScore>=70?'Excelente':totalScore>=50?'Notable':totalScore>=30?'Aceptable':'Pendiente'}</div>
+                <div style="font-size:11px;color:#6e6e73">Puntuación sobre 100</div>
               </div>
             </div>
             <div class="space-y-1.5">
               {scoreBreakdown.map(s => (
-                <div class="flex items-center justify-between" style="font-size:11px" title={s.detail}>
-                  <span style="color:#6e6e73">{s.label}</span>
-                  <span style="color:#1d1d1f;font-weight:500;min-width:24px;text-align:right">{s.value}</span>
+                <div class="flex items-center justify-between" style="font-size:11px">
+                  <span style="color:#6e6e73;cursor:help" title={s.detail}>{s.label}</span>
+                  <div style="display:flex;align-items:center;gap:6px">
+                    <div style="width:40px;height:4px;background:#f5f5f7;border-radius:2px;overflow:hidden">
+                      <div style={`height:100%;width:${(s.value/s.max)*100}%;background:#0071e3;border-radius:2px`}></div>
+                    </div>
+                    <span style="color:#1d1d1f;font-weight:500;min-width:20px;text-align:right;font-size:11px">{s.value}</span>
+                  </div>
                 </div>
               ))}
             </div>
-            <p style="font-size:11px;color:#8e8e93;margin-top:8px;line-height:1.4">La puntuación combina: posición en ranking (máx 40 pts), certificaciones verificadas (máx 30 pts), fuentes referenciadas (máx 20 pts) y frescura de la verificación (máx 10 pts).</p>
+            <details style="margin-top:8px">
+              <summary style="font-size:11px;color:#6e6e73;cursor:pointer;list-style:none">¿Cómo se calcula?</summary>
+              <div style="font-size:11px;color:#6e6e73;line-height:1.5;margin-top:4px;padding-left:8px;border-left:2px solid #e8e8ed">
+                <p><strong>Ranking (máx 40 pts):</strong> 5 puntos por cada puesto en el top 8 de su categoría. #1 = 40 pts, #2 = 35 pts, etc.</p>
+                <p style="margin-top:4px"><strong>Certificaciones (máx 30 pts):</strong> 6 puntos por cada certificación verificada (ISO, SOC, PCI DSS, etc.).</p>
+                <p style="margin-top:4px"><strong>Fuentes (máx 20 pts):</strong> 5 puntos por cada fuente referenciada (Gartner, AV-Comparatives, etc.).</p>
+                <p style="margin-top:4px"><strong>Actualización (máx 10 pts):</strong> 10 pts si se verificó hace menos de 30 días, 7 pts si menos de 90, 5 pts si menos de 180, 3 pts si más.</p>
+              </div>
+            </details>
           </div>
 
           {data.certifications.length > 0 && <div class="sidebar-box"><h3 class="sidebar-box-title">Certificaciones</h3><div class="sidebar-tags">{data.certifications.map((c:string) => <span class="badge badge-teal badge-sm">{c}</span>)}</div></div>}

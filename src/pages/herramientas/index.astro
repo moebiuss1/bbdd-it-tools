@@ -102,10 +102,13 @@ const allCertsJson = JSON.stringify(allCerts);
 .filter-group-title::before{content:'';display:inline-block;width:16px;height:16px;background:#e8e8ed;border-radius:4px;transition:transform .15s;mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");mask-size:contain;-webkit-mask-size:contain}
 .filter-group[open] .filter-group-title::before{transform:rotate(90deg)}
 .filter-check-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:4px}
-.filter-check{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;font-size:13px;color:#1d1d1f;text-decoration:none;cursor:pointer;transition:background .15s;-webkit-user-select:none;user-select:none}
+.filter-check{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;font-size:13px;color:#1d1d1f;cursor:pointer;transition:background .15s}
 .filter-check:hover{background:#f5f5f7}
+.filter-check-input{position:absolute;opacity:0;width:0;height:0}
 .filter-check-box{width:18px;height:18px;border:2px solid #d2d2d7;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;color:#fff;transition:all .15s}
-.filter-check.on .filter-check-box{background:#0071e3;border-color:#0071e3}
+.filter-check-input:checked+.filter-check-box{background:#0071e3;border-color:#0071e3}
+.filter-check-input:checked+.filter-check-box::after{content:'\2713'}
+.filter-check-input:focus-visible+.filter-check-box{box-shadow:0 0 0 3px rgba(0,113,227,.15)}
 .filter-check-label{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .filter-check-count{font-size:11px;color:#8e8e93;flex-shrink:0}
 </style>
@@ -267,8 +270,9 @@ function renderModal() {
   // Tags
   let tagsHTML = `<details open class="filter-group"><summary class="filter-group-title">Etiquetas <span style="color:#8e8e93;font-weight:400">(${ALL_TAGS.length})</span></summary><div class="filter-check-grid mt-2">`;
   for (const [tag, count] of ALL_TAGS) {
-    const on = state.tags.includes(tag);
-    tagsHTML += `<div data-tag="${tag}" class="filter-check${on?' on':''}"><span class="filter-check-box">${on?'✓':''}</span><span class="filter-check-label">${tag}</span><span class="filter-check-count">${count}</span></div>`;
+    const id = `tag-${tag.replace(/[^a-z0-9]/g,'-')}`;
+    const checked = state.tags.includes(tag) ? ' checked' : '';
+    tagsHTML += `<label class="filter-check" for="${id}"><input type="checkbox" id="${id}" class="filter-check-input" value="${tag}"${checked}><span class="filter-check-box"></span><span class="filter-check-label">${tag}</span><span class="filter-check-count">${count}</span></label>`;
   }
   tagsHTML += `</div></details>`;
 
@@ -277,8 +281,9 @@ function renderModal() {
   if (ALL_CERTS.length > 0) {
     certsHTML = `<details class="filter-group"><summary class="filter-group-title">Certificaciones <span style="color:#8e8e93;font-weight:400">(${ALL_CERTS.length})</span></summary><div class="filter-check-grid mt-2">`;
     for (const c of ALL_CERTS) {
-      const on = state.certs.includes(c);
-      certsHTML += `<div data-cert="${c}" class="filter-check${on?' on':''}"><span class="filter-check-box">${on?'✓':''}</span><span class="filter-check-label">${c}</span></div>`;
+      const id = `cert-${c.replace(/[^a-z0-9]/g,'-')}`;
+      const checked = state.certs.includes(c) ? ' checked' : '';
+      certsHTML += `<label class="filter-check" for="${id}"><input type="checkbox" id="${id}" class="filter-check-input" value="${c}"${checked}><span class="filter-check-box"></span><span class="filter-check-label">${c}</span></label>`;
     }
     certsHTML += `</div></details>`;
   }
@@ -326,27 +331,18 @@ document.addEventListener('click', function(e) {
     return;
   }
 
-  // Tag toggle in modal
-  const tagEl = e.target.closest('.filter-check[data-tag]');
-  if (tagEl) {
-    e.preventDefault();
-    const tag = tagEl.dataset.tag;
-    const idx = state.tags.indexOf(tag);
-    if (idx >= 0) state.tags.splice(idx, 1);
-    else state.tags.push(tag);
-    pushState();
-    renderAll();
-    return;
-  }
-
-  // Cert toggle in modal
-  const certEl = e.target.closest('.filter-check[data-cert]');
-  if (certEl) {
-    e.preventDefault();
-    const cert = certEl.dataset.cert;
-    const idx = state.certs.indexOf(cert);
-    if (idx >= 0) state.certs.splice(idx, 1);
-    else state.certs.push(cert);
+  // Tag checkbox change in modal
+  if (e.target.classList.contains('filter-check-input')) {
+    const input = e.target;
+    if (input.closest('.filter-group')?.querySelector('.filter-group-title')?.textContent?.includes('Etiquetas')) {
+      const tag = input.value;
+      if (input.checked) { if (!state.tags.includes(tag)) state.tags.push(tag); }
+      else { state.tags = state.tags.filter(t => t !== tag); }
+    } else {
+      const cert = input.value;
+      if (input.checked) { if (!state.certs.includes(cert)) state.certs.push(cert); }
+      else { state.certs = state.certs.filter(c => c !== cert); }
+    }
     pushState();
     renderAll();
     return;
@@ -401,6 +397,15 @@ document.addEventListener('keydown', (e) => {
 window.addEventListener('popstate', () => {
   readURL();
   renderAll();
+});
+
+// Keyboard shortcut: "/" busca en el directorio
+document.addEventListener('keydown', (e) => {
+  if (e.key === '/' && document.activeElement?.tagName !== 'INPUT' && document.activeElement?.tagName !== 'TEXTAREA') {
+    e.preventDefault();
+    const q = document.querySelector('input[name="q"]');
+    if (q) (q as HTMLInputElement).focus();
+  }
 });
 
 // Initial render
