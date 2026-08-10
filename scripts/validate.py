@@ -35,10 +35,16 @@ def validate_all() -> list[str]:
         prefix = f"[{name}]"
 
         # Campos obligatorios
-        required = ["name", "slug", "category", "tags", "type", "website", "description", "why_reference"]
+        required = ["name", "slug", "tags", "type", "website", "description", "why_reference"]
+        category_fields = ["category", "categories"]
         for field in required:
             if not tool.get(field):
                 errors.append(f"❌ {prefix} Falta campo obligatorio: {field}")
+
+        # Al menos una categoría (legacy 'category' o nuevo 'categories')
+        has_cat = tool.get('category') or tool.get('categories')
+        if not has_cat:
+            errors.append(f"❌ {prefix} Falta campo obligatorio: category o categories")
 
         # Tipo válido
         tool_type = tool.get("type", "")
