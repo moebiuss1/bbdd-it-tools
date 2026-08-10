@@ -110,22 +110,22 @@ const allCertsJson = JSON.stringify(allCerts);
 .filter-check-count{font-size:11px;color:#8e8e93;flex-shrink:0}
 </style>
 
-<script is:inline>
-// Embedded data for the filter engine
-window.__BBDD_TOOLS = {toolsJson};
-window.__BBDD_CATEGORIES = {categoriesJson};
-window.__BBDD_TAGS = {allTagsJson};
-window.__BBDD_CERTS = {allCertsJson};
-window.__BBDD_BASE = "{base}";
-</script>
+<div id="app-data" style="display:none" aria-hidden="true"
+  data-tools={toolsJson.replace(/"/g, '&quot;')}
+  data-cats={categoriesJson.replace(/"/g, '&quot;')}
+  data-tags={allTagsJson.replace(/"/g, '&quot;')}
+  data-certs={allCertsJson.replace(/"/g, '&quot;')}>
+</div>
 <script>
 // @ts-nocheck
 // ===== CLIENT-SIDE FILTER ENGINE =====
-const BASE = window.__BBDD_BASE;
-const TOOLS = window.__BBDD_TOOLS;
-const CATEGORIES = window.__BBDD_CATEGORIES;
-const ALL_TAGS = window.__BBDD_TAGS;
-const ALL_CERTS = window.__BBDD_CERTS;
+const d = document.getElementById('app-data');
+const unescape = (s: string) => s.replace(/&quot;/g, '"');
+const BASE = "{base}";
+const TOOLS = JSON.parse(unescape(d!.getAttribute('data-tools')!));
+const CATEGORIES = JSON.parse(unescape(d!.getAttribute('data-cats')!));
+const ALL_TAGS = JSON.parse(unescape(d!.getAttribute('data-tags')!));
+const ALL_CERTS = JSON.parse(unescape(d!.getAttribute('data-certs')!));
 
 let state = { category: '', type: '', tags: [], certs: [], sort: 'rank', query: '' };
 
