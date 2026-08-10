@@ -51,7 +51,7 @@ const scoreBreakdown = [
       </nav>
 
       <header class="detail-header">
-        {data.logo && <div class="mb-4" style="width:56px;height:56px;border-radius:14px;background:#f5f5f7;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src={`${base}${data.logo.replace(/^\//,'')}`} alt={data.name} width="56" height="56" style="object-fit:contain" /></div>}
+        {data.logo && <div class="mb-4" style="width:56px;height:56px;border-radius:14px;background:#f5f5f7;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src={`${base}${data.logo.replace(/^\//,'')}`} alt={data.name} width="35" height="35" style="object-fit:contain" /></div>}
         <div class="detail-badges">
           <span class={`badge badge-md ${data.type==='opensource'?'badge-green':'badge-blue'}`}>{typeLabel}</span>
           {data.market_rank && cat && <span class="badge badge-amber badge-md">#{data.market_rank} en {cat.name}</span>}

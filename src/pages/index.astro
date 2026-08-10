@@ -58,7 +58,7 @@ const recientes = tools.filter(t => t.data.last_verified && new Date(t.data.last
         {destacadas.map(tool => (
           <a href={`${base}herramientas/${tool.slug}`} class="card tool-card group">
             <div class="tool-avatar">
-              {tool.data.logo ? <img src={`${base}${tool.data.logo.replace(/^\//,'')}`} alt={tool.data.name} width="40" height="40" style="border-radius:10px;object-fit:contain" loading="lazy" /> : tool.data.name.charAt(0)}
+              {tool.data.logo ? <img src={`${base}${tool.data.logo.replace(/^\//,'')}`} alt={tool.data.name} width="35" height="35" style="border-radius:10px;object-fit:contain" loading="lazy" /> : tool.data.name.charAt(0)}
             </div>
             <div class="min-w-0 flex-1">
               <div class="flex items-center gap-2">
@@ -88,7 +88,7 @@ const recientes = tools.filter(t => t.data.last_verified && new Date(t.data.last
         {recientes.map(tool => (
           <a href={`${base}herramientas/${tool.slug}`} class="card tool-card group">
             <div class="tool-avatar">
-              {tool.data.logo ? <img src={`${base}${tool.data.logo.replace(/^\//,'')}`} alt={tool.data.name} width="40" height="40" style="border-radius:10px;object-fit:contain" loading="lazy" /> : tool.data.name.charAt(0)}
+              {tool.data.logo ? <img src={`${base}${tool.data.logo.replace(/^\//,'')}`} alt={tool.data.name} width="35" height="35" style="border-radius:10px;object-fit:contain" loading="lazy" /> : tool.data.name.charAt(0)}
             </div>
             <div class="min-w-0 flex-1">
               <div class="flex items-center gap-2">
@@ -121,7 +121,7 @@ const recientes = tools.filter(t => t.data.last_verified && new Date(t.data.last
                 {cat.tools.slice(0, 3).map(tool => (
                   <a href={`${base}herramientas/${tool.slug}`} class="card tool-card group">
                     <div class="tool-avatar">
-                      {tool.data.logo ? <img src={`${base}${tool.data.logo.replace(/^\//,'')}`} alt={tool.data.name} width="40" height="40" style="border-radius:10px;object-fit:contain" loading="lazy" /> : tool.data.name.charAt(0)}
+                      {tool.data.logo ? <img src={`${base}${tool.data.logo.replace(/^\//,'')}`} alt={tool.data.name} width="35" height="35" style="border-radius:10px;object-fit:contain" loading="lazy" /> : tool.data.name.charAt(0)}
                     </div>
                     <div class="min-w-0 flex-1">
                       <div class="flex items-center gap-2">
