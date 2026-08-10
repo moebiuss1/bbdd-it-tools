@@ -51,14 +51,10 @@ plataforma completa de seguridad. Combina funcionalidades de SIEM (gestión de l
 correlación), HIDS (detección de intrusiones en host), evaluación de cumplimiento y
 gestión de vulnerabilidades.
 
-### Componentes clave
-
 - **Wazuh Agent**: Agente ligero desplegado en endpoints (Windows, Linux, macOS)
 - **Wazuh Server**: Motor de análisis, correlación y alertas
 - **Wazuh Indexer**: Basado en OpenSearch para almacenamiento y visualización
 - **Wazuh Dashboard**: Interfaz web con paneles de seguridad y cumplimiento
-
-### Módulos de cumplimiento destacados
 
 - PCI DSS (todos los requisitos técnicos)
 - HIPAA (controles administrativos y técnicos)

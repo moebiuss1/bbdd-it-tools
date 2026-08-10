@@ -44,16 +44,12 @@ herramientas, VMDR integra el descubrimiento continuo de activos, el escaneo de
 vulnerabilidades, la priorización con TruRisk y el despliegue de parches desde
 una única consola.
 
-### Funcionalidades clave
-
 - **Qualys Cloud Agent**: Agente ligero para escaneo continuo sin impacto de red
 - **TruRisk Score**: Priorización que combina CVSS, EPSS, inteligencia de amenazas y criticidad del activo
 - **Patch Management**: Despliegue automatizado de parches en Windows, Linux y aplicaciones
 - **CSAM (CyberSecurity Asset Management)**: Inventario de activos con correlación CMDB
 - **TotalCloud**: CSPM para seguridad en entornos multi-cloud
 - **Policy Compliance**: Evaluación automatizada contra CIS Benchmarks, DISA STIG, PCI DSS
-
-### Cumplimiento PCI DSS
 
 Qualys es la herramienta de referencia para cumplimiento PCI DSS:
 - Escaneo trimestral externo ASV aprobado por el PCI Council

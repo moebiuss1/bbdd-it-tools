@@ -37,10 +37,6 @@ logo: /logos/sentinelone-singularity.png
 
 Plataforma de seguridad autónoma que utiliza IA para prevenir, detectar y responder a amenazas en endpoints, containers, y dispositivos IoT.
 
-### Por qué es referente
-
 Líder en Gartner MQ. Primer EDR con motor de IA que opera de forma autónoma (sin necesidad de conexión cloud permanente). Su tecnología de rollback automatizado es un diferenciador clave.
-
-### Información de coste
 
 Desde ~$45/endpoint/año. Ediciones: Core, Control, Complete.

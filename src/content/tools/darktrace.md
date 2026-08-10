@@ -41,16 +41,12 @@ usuario y segmento de red. Cuando detecta una desviación sutil del patrón apre
 genera una alerta contextualizada sin depender de firmas, reglas ni inteligencia
 previa de amenazas.
 
-### Componentes de la plataforma
-
 - **DETECT**: Motor de detección de anomalías basado en autoaprendizaje continuo
 - **RESPOND**: Respuesta autónoma que contiene amenazas en segundos (Antigena)
 - **HEAL**: Restauración automatizada de sistemas afectados tras un incidente
 - **PREVENT**: Gestión proactiva de superficies de ataque y rutas de exposición
 - **Darktrace/Cloud**: Cobertura para entornos cloud (AWS, Azure, GCP)
 - **Darktrace/OT**: Monitorización de redes industriales y entornos OT
-
-### Diferenciación para auditores
 
 - Visibilidad de anomalías sin necesidad de definir qué es "malo" previamente
 - Alertas con narrativa en lenguaje natural explicando el comportamiento detectado

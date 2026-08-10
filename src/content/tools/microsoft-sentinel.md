@@ -37,10 +37,6 @@ logo: /logos/microsoft-sentinel.png
 
 SIEM cloud-native en Azure que combina SIEM y SOAR con inteligencia artificial a escala cloud. Analiza datos de toda la empresa sin necesidad de infraestructura propia.
 
-### Por qué es referente
-
 Líder en Gartner MQ para SIEM. Su arquitectura serverless elimina la gestión de infraestructura. Integración nativa con el ecosistema Microsoft 365 y Azure.
-
-### Información de coste
 
 Basado en volumen de datos analizados. Sin costes de infraestructura. Desde ~$2/GB ingerido.

@@ -42,16 +42,12 @@ Su tecnología CryptoGuard analiza el comportamiento del sistema de archivos y,
 al detectar cifrado malicioso, bloquea el proceso y revierte los cambios en
 milisegundos, minimizando el impacto operativo.
 
-### Funcionalidades destacadas
-
 - **Deep Learning Malware Detection**: Modelo de IA entrenado con cientos de millones de muestras
 - **Exploit Prevention**: Bloqueo de técnicas de exploit sin necesidad de firmas
 - **CryptoGuard**: Detección y rollback automático de ransomware
 - **Sophos Clean**: Eliminación de malware persistente y rootkits
 - **EDR integrado**: Investigación guiada de incidentes con consultas predefinidas
 - **Sincronized Security**: Compartición de inteligencia en tiempo real con firewalls Sophos
-
-### Para auditores
 
 - Dashboards de cumplimiento para PCI DSS, HIPAA e ISO 27001
 - Registro completo de eventos de seguridad con cadena de custodia

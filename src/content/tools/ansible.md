@@ -34,10 +34,6 @@ logo: /logos/ansible.png
 
 Herramienta de automatización de código abierto para gestión de configuraciones, despliegues y orquestación. Define el estado deseado de la infraestructura como código (YAML).
 
-### Por qué es referente
-
 Estándar de facto en automatización IT. Su arquitectura agentless (sin software en los nodos gestionados, solo SSH) simplifica la adopción. Adquirido por Red Hat/IBM en 2015, es la base de Ansible Automation Platform.
-
-### Información de coste
 
 Gratuito (GPL). Ansible Automation Platform desde ~$13,000/año por 100 nodos.

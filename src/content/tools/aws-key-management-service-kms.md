@@ -37,10 +37,6 @@ logo: /logos/aws-key-management-service-kms.png
 
 Servicio gestionado de claves criptográficas integrado con el ecosistema AWS. Permite crear, rotar y auditar claves con integración nativa en S3, RDS, Lambda y más de 100 servicios AWS.
 
-### Por qué es referente
-
 KMS más usado en entornos cloud. Su integración nativa con el ecosistema AWS y su soporte para claves gestionadas por el cliente (CMK) lo hacen la opción por defecto en AWS.
-
-### Información de coste
 
 $1/clave/mes + $0.03/10,000 operaciones. HSM desde $1.45/hora.

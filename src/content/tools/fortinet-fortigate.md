@@ -37,10 +37,6 @@ logo: /logos/fortinet-fortigate.png
 
 Firewall de nueva generación con procesador de seguridad propietario (SPU) que ofrece inspección SSL/TLS completa y prevención de amenazas a alto rendimiento.
 
-### Por qué es referente
-
 Líder en Gartner MQ para Network Firewalls. Su enfoque de ASIC propietario (FortiASIC) ofrece mejor relación precio/rendimiento que la competencia en gamas medias.
-
-### Información de coste
 
 Modelos FortiGate 40F a 4400F. Licencia FortiGuard desde ~$1,000/año.

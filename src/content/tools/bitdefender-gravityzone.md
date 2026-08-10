@@ -33,10 +33,6 @@ logo: /logos/bitdefender-gravityzone.png
 
 Plataforma de seguridad de endpoints con prevención de amenazas multicapa, EDR, y análisis de riesgo. Reconocida por su motor antimalware de alta eficacia.
 
-### Por qué es referente
-
 Consistentemente en el cuadrante de Líderes de Gartner. Motor antimalware con una de las tasas de detección más altas en tests independientes (AV-Comparatives, AV-Test).
-
-### Información de coste
 
 Desde ~$30/endpoint/año. Ediciones: Business, Enterprise, Elite.

@@ -32,10 +32,6 @@ logo: /logos/servicenow-grc.png
 
 Plataforma GRC integrada para gestión de riesgos, cumplimiento, auditoría y políticas. Automatiza la monitorización de controles y KPI de cumplimiento continuo.
 
-### Por qué es referente
-
 Líder en Gartner MQ para IT Risk Management. Conecta GRC con ITSM, ITAM y SecOps proporcionando una visión holística del riesgo y cumplimiento IT.
-
-### Información de coste
 
 Licencia anual. Precio según módulos: Policy, Risk, Audit, Vendor Risk.

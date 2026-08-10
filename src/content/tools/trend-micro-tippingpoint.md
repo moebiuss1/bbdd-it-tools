@@ -33,10 +33,6 @@ logo: /logos/trend-micro-tippingpoint.png
 
 NGIPS con inspección profunda de paquetes y filtros de vulnerabilidad Digital Vaccine actualizados continuamente. Enfoque en vulnerabilidades, no solo exploits.
 
-### Por qué es referente
-
 Líder en Gartner MQ para IPS. Enfoque de filtros de vulnerabilidad reduce falsos positivos drásticamente. Digital Vaccine es el feed de inteligencia de amenazas más completo para IPS.
-
-### Información de coste
 
 Modelos hardware TPS 5000-9000. Licencia Digital Vaccine (firmas de vulnerabilidad) incluida.

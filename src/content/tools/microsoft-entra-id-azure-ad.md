@@ -39,10 +39,6 @@ logo: /logos/microsoft-entra-id-azure-ad.png
 
 Plataforma de identidad y acceso cloud-native. Proporciona SSO, MFA, acceso condicional, identity governance, y privileged identity management.
 
-### Por qué es referente
-
 Líder en Gartner MQ para Access Management. Es el directorio de identidad más usado del mundo, con más de 400 millones de usuarios. Su integración con el ecosistema Microsoft 365 lo hace ubicuo en el entorno empresarial.
-
-### Información de coste
 
 Free para funciones básicas. Premium P1 (~$6/user/mes), P2 (~$9/user/mes).

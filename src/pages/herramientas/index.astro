@@ -12,8 +12,8 @@ const url = Astro.url;
 const q = (url.searchParams.get("q") ?? "").toLowerCase();
 const catFilter = url.searchParams.get("category") ?? "";
 const typeFilter = url.searchParams.get("type") ?? "";
-const tagFilter = url.searchParams.get("tag") ?? "";
-const certFilter = url.searchParams.get("cert") ?? "";
+const tagFilters = url.searchParams.getAll("tag");
+const certFilters = url.searchParams.getAll("cert");
 const sortBy = url.searchParams.get("sort") ?? "rank";
 
 function buildUrl(overrides: Record<string,string>) {
@@ -25,14 +25,33 @@ function buildUrl(overrides: Record<string,string>) {
   return `${base}herramientas${qs?'?'+qs:''}`;
 }
 
+// Build URL for multi-select toggles (tags & certs)
+function toggleUrl(param: string, value: string) {
+  const p = new URLSearchParams(url.searchParams.toString());
+  const current = p.getAll(param);
+  p.delete(param);
+  // If value is already selected, remove it; otherwise add it
+  const isSelected = current.includes(value);
+  if (!isSelected) {
+    for (const v of current) p.append(param, v);
+    p.append(param, value);
+  } else {
+    for (const v of current) {
+      if (v !== value) p.append(param, v);
+    }
+  }
+  const qs = p.toString();
+  return `${base}herramientas${qs?'?'+qs:''}`;
+}
+
 let filtered = tools;
-if (q) filtered = filtered.filter(t => t.data.name.toLowerCase().includes(q) || t.data.description.toLowerCase().includes(q) || t.data.tags.some(tag => tag.toLowerCase().includes(q)));
+if (q) filtered = filtered.filter(t => t.data.name.toLowerCase().includes(q) || t.data.description.toLowerCase().includes(q) || t.data.tags.some((tag: string) => tag.toLowerCase().includes(q)));
 if (catFilter) filtered = filtered.filter(t => t.data.category === catFilter);
 if (typeFilter) filtered = filtered.filter(t => t.data.type === typeFilter);
-if (tagFilter) filtered = filtered.filter(t => t.data.tags.map(x=>x.toLowerCase()).includes(tagFilter.toLowerCase()));
-if (certFilter) filtered = filtered.filter(t => (t.data.certifications ?? []).map((x:string)=>x.toLowerCase()).includes(certFilter.toLowerCase()));
+if (tagFilters.length > 0) filtered = filtered.filter(t => tagFilters.some(tf => t.data.tags.map((x:string)=>x.toLowerCase()).includes(tf.toLowerCase())));
+if (certFilters.length > 0) filtered = filtered.filter(t => certFilters.some(cf => (t.data.certifications ?? []).map((x:string)=>x.toLowerCase()).includes(cf.toLowerCase())));
 filtered.sort((a,b) => { if (sortBy==="name") return a.data.name.localeCompare(b.data.name,"es"); if (sortBy==="updated") { const da=a.data.last_verified?new Date(a.data.last_verified).getTime():0; const db=b.data.last_verified?new Date(b.data.last_verified).getTime():0; return db-da; } return (a.data.market_rank??999)-(b.data.market_rank??999); });
-const hasFilters = !!(q||catFilter||typeFilter||tagFilter||certFilter);
+const hasFilters = !!(q||catFilter||typeFilter||tagFilters.length||certFilters.length);
 ---
 
 <BaseLayout title="Directorio">
@@ -54,31 +73,30 @@ const hasFilters = !!(q||catFilter||typeFilter||tagFilter||certFilter);
         {categories.map(c => <a href={buildUrl({category:c.id})} class={`badge badge-md ${catFilter===c.id?'badge-blue':'badge-outline'}`}>{c.name}</a>)}
       </div>
 
-      <!-- Tipo + Ordenación (lo principal visible) -->
+      <!-- Tipo + Ordenación -->
       <div class="flex flex-wrap items-center gap-3 mt-5" style="font-size:13px">
         <a href={buildUrl({type:''})} class={`badge badge-md ${!typeFilter?'badge-blue':'badge-outline'}`}>Todos</a>
         <a href={buildUrl({type:'comercial'})} class={`badge badge-md ${typeFilter==='comercial'?'badge-blue':'badge-outline'}`}>Comercial</a>
         <a href={buildUrl({type:'opensource'})} class={`badge badge-md ${typeFilter==='opensource'?'badge-blue':'badge-outline'}`}>Open Source</a>
         <span style="color:#d2d2d7;margin:0 4px" class="hidden sm:inline">|</span>
-        <a href={buildUrl({sort:'rank'})} style={`color:${sortBy==='rank'?'#1d1d1f':'#86868b'};font-weight:${sortBy==='rank'?'500':'400'}`}>Por ranking</a>
-        <a href={buildUrl({sort:'name'})} style={`color:${sortBy==='name'?'#1d1d1f':'#86868b'};font-weight:${sortBy==='name'?'500':'400'}`}>Alfabético</a>
-        <a href={buildUrl({sort:'updated'})} style={`color:${sortBy==='updated'?'#1d1d1f':'#86868b'};font-weight:${sortBy==='updated'?'500':'400'}`}>Más reciente</a>
-        <!-- Botón para abrir modal de más filtros -->
+        <a href={buildUrl({sort:'rank'})} style={`color:${sortBy==='rank'?'#1d1d1f':'#6e6e73'};font-weight:${sortBy==='rank'?'500':'400'}`}>Por ranking</a>
+        <a href={buildUrl({sort:'name'})} style={`color:${sortBy==='name'?'#1d1d1f':'#6e6e73'};font-weight:${sortBy==='name'?'500':'400'}`}>Alfabético</a>
+        <a href={buildUrl({sort:'updated'})} style={`color:${sortBy==='updated'?'#1d1d1f':'#6e6e73'};font-weight:${sortBy==='updated'?'500':'400'}`}>Más reciente</a>
         <button type="button" id="btn-more-filters" class="badge badge-md" style="background:#f5f5f7;border:1px solid #d2d2d7;color:#6e6e73;cursor:pointer;margin-left:4px">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><circle cx="4" cy="12" r="2"/><circle cx="12" cy="10" r="2"/><circle cx="20" cy="14" r="2"/></svg>
-          Más filtros {(tagFilter||certFilter) ? '·'+(tagFilter?1:0)+(certFilter?1:0) : ''}
+          Más filtros {(tagFilters.length||certFilters.length) ? `(${tagFilters.length+certFilters.length})` : ''}
         </button>
       </div>
 
       <!-- Chips de filtros activos -->
-      {(tagFilter||certFilter) && <div class="flex flex-wrap items-center gap-2 mt-3" style="font-size:12px">
-        <span style="color:#aeaeb2">Filtros activos:</span>
-        {tagFilter && <span class="badge badge-blue badge-sm">{tagFilter} <a href={buildUrl({tag:''})} style="margin-left:4px;color:#0066cc;text-decoration:none" title="Quitar">×</a></span>}
-        {certFilter && <span class="badge badge-teal badge-sm">{certFilter} <a href={buildUrl({cert:''})} style="margin-left:4px;color:#0d9488;text-decoration:none" title="Quitar">×</a></span>}
+      {(tagFilters.length>0 || certFilters.length>0) && <div class="flex flex-wrap items-center gap-2 mt-3" style="font-size:12px">
+        <span style="color:#8e8e93">Filtros activos:</span>
+        {tagFilters.map(tf => <span class="badge badge-blue badge-sm">{tf} <a href={toggleUrl('tag', tf)} style="margin-left:4px;color:#0066cc;text-decoration:none" title="Quitar">×</a></span>)}
+        {certFilters.map(cf => <span class="badge badge-teal badge-sm">{cf} <a href={toggleUrl('cert', cf)} style="margin-left:4px;color:#0d9488;text-decoration:none" title="Quitar">×</a></span>)}
       </div>}
 
       <!-- Resultados -->
-      <div class="flex items-center gap-3 mt-4" style="font-size:13px;color:#86868b">
+      <div class="flex items-center gap-3 mt-4" style="font-size:13px;color:#6e6e73">
         <span>{filtered.length} resultado{filtered.length!==1?'s':''}{hasFilters?' con filtros':''}</span>
         {hasFilters && <a href={`${base}herramientas`} style="color:#0071e3">Limpiar filtros</a>}
       </div>
@@ -104,26 +122,39 @@ const hasFilters = !!(q||catFilter||typeFilter||tagFilter||certFilter);
     </div>
   </section>
 
-  <!-- MODAL de filtros avanzados -->
+  <!-- MODAL de filtros avanzados con checkboxes -->
   <div id="filter-modal" class="filter-modal-overlay" style="display:none">
-    <div class="filter-modal" role="dialog" aria-modal="true" aria-label="Filtros avanzados">
+    <div class="filter-modal" role="dialog" aria-modal="true">
       <div class="filter-modal-header">
         <h2 style="font-size:17px;font-weight:600">Filtros avanzados</h2>
-        <button id="btn-close-modal" style="background:none;border:none;cursor:pointer;font-size:20px;color:#86868b;line-height:1" aria-label="Cerrar">&times;</button>
+        <button id="btn-close-modal" style="background:none;border:none;cursor:pointer;font-size:20px;color:#6e6e73;line-height:1" aria-label="Cerrar">&times;</button>
       </div>
       <div class="filter-modal-body">
-        <!-- Etiquetas -->
+        <!-- Etiquetas con checkboxes -->
         <details open class="filter-group">
-          <summary class="filter-group-title">Etiquetas <span style="color:#aeaeb2;font-weight:400">({allTags.length})</span></summary>
-          <div class="flex flex-wrap gap-1.5 mt-2">
-            {allTags.map(([tag, count]) => <a href={buildUrl({tag: tagFilter===tag ? '' : tag})} class={`badge badge-sm ${tagFilter===tag?'badge-blue':'badge-outline'}`}>{tag} <span style="color:#aeaeb2">({count})</span></a>)}
+          <summary class="filter-group-title">Etiquetas <span style="color:#8e8e93;font-weight:400">({allTags.length})</span></summary>
+          <div class="filter-check-grid mt-2">
+            {allTags.map(([tag, count]) => {
+              const isChecked = tagFilters.includes(tag);
+              return <a href={toggleUrl('tag', tag)} class={`filter-check ${isChecked?'filter-check-on':''}`}>
+                <span class="filter-check-box">{isChecked ? '✓' : ''}</span>
+                <span class="filter-check-label">{tag}</span>
+                <span class="filter-check-count">{count}</span>
+              </a>;
+            })}
           </div>
         </details>
-        <!-- Certificaciones -->
+        <!-- Certificaciones con checkboxes -->
         {allCerts.length > 0 && <details class="filter-group">
-          <summary class="filter-group-title">Certificaciones <span style="color:#aeaeb2;font-weight:400">({allCerts.length})</span></summary>
-          <div class="flex flex-wrap gap-1.5 mt-2">
-            {allCerts.map(c => <a href={buildUrl({cert: certFilter===c ? '' : c})} class={`badge badge-sm ${certFilter===c?'badge-teal':'badge-outline'}`}>{c}</a>)}
+          <summary class="filter-group-title">Certificaciones <span style="color:#8e8e93;font-weight:400">({allCerts.length})</span></summary>
+          <div class="filter-check-grid mt-2">
+            {allCerts.map(c => {
+              const isChecked = certFilters.includes(c);
+              return <a href={toggleUrl('cert', c)} class={`filter-check ${isChecked?'filter-check-on':''}`}>
+                <span class="filter-check-box">{isChecked ? '✓' : ''}</span>
+                <span class="filter-check-label">{c}</span>
+              </a>;
+            })}
           </div>
         </details>}
       </div>
@@ -134,56 +165,34 @@ const hasFilters = !!(q||catFilter||typeFilter||tagFilter||certFilter);
 </BaseLayout>
 
 <style>
-/* Modal de filtros */
-.filter-modal-overlay {
-  position: fixed; inset: 0; background: rgba(0,0,0,.3); z-index: 100;
-  display: flex; align-items: center; justify-content: center;
-  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
-}
-.filter-modal {
-  background: #fff; border-radius: 20px; max-width: 600px; width: calc(100% - 32px);
-  max-height: 80vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,.15);
-  animation: modalIn .2s ease-out;
-}
-@keyframes modalIn { from { opacity:0; transform:scale(.96) translateY(8px); } to { opacity:1; transform:scale(1) translateY(0); } }
-.filter-modal-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 24px 0; position: sticky; top: 0; background: #fff;
-  border-radius: 20px 20px 0 0;
-}
-.filter-modal-body { padding: 16px 24px 24px; }
-.filter-group {
-  border: 1px solid #e8e8ed; border-radius: 12px; padding: 14px 16px;
-  margin-bottom: 12px;
-}
-.filter-group[open] { background: #fafafa; }
-.filter-group-title {
-  font-size: 14px; font-weight: 500; color: #1d1d1f; cursor: pointer;
-  list-style: none; display: flex; align-items: center; gap: 6px;
-}
-.filter-group-title::-webkit-details-marker { display: none; }
-.filter-group-title::before {
-  content: ''; display: inline-block; width: 16px; height: 16px;
-  background: #e8e8ed; border-radius: 4px; transition: background .15s;
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");
-  mask-size: contain; -webkit-mask-size: contain;
-}
-.filter-group[open] .filter-group-title::before { transform: rotate(90deg); }
+/* Modal */
+.filter-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:100;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.filter-modal{background:#fff;border-radius:20px;max-width:600px;width:calc(100% - 32px);max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.15);animation:modalIn .2s ease-out}
+@keyframes modalIn{from{opacity:0;transform:scale(.96) translateY(8px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.filter-modal-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px 0;position:sticky;top:0;background:#fff;border-radius:20px 20px 0 0;z-index:1}
+.filter-modal-body{padding:16px 24px 24px}
+.filter-group{border:1px solid #e8e8ed;border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.filter-group[open]{background:#fafafa}
+.filter-group-title{font-size:14px;font-weight:500;color:#1d1d1f;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px}
+.filter-group-title::-webkit-details-marker{display:none}
+.filter-group-title::before{content:'';display:inline-block;width:16px;height:16px;background:#e8e8ed;border-radius:4px;transition:transform .15s;mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");mask-size:contain;-webkit-mask-size:contain}
+.filter-group[open] .filter-group-title::before{transform:rotate(90deg)}
+/* Checkbox grid */
+.filter-check-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:6px}
+.filter-check{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;font-size:13px;color:#1d1d1f;text-decoration:none;transition:background .15s}
+.filter-check:hover{background:#f5f5f7;text-decoration:none}
+.filter-check-box{width:18px;height:18px;border:2px solid #d2d2d7;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;color:#fff;transition:all .15s}
+.filter-check-on .filter-check-box{background:#0071e3;border-color:#0071e3}
+.filter-check-label{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.filter-check-count{font-size:11px;color:#8e8e93;flex-shrink:0}
 </style>
 
 <script>
   const modal = document.getElementById('filter-modal');
   const btnOpen = document.getElementById('btn-more-filters');
   const btnClose = document.getElementById('btn-close-modal');
-  if (btnOpen && modal) {
-    btnOpen.addEventListener('click', () => { modal.style.display = 'flex'; });
-  }
-  if (btnClose && modal) {
-    btnClose.addEventListener('click', () => { modal.style.display = 'none'; });
-  }
-  if (modal) {
-    modal.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
-  }
+  if (btnOpen && modal) { btnOpen.addEventListener('click', () => { modal.style.display = 'flex'; }); }
+  if (btnClose && modal) { btnClose.addEventListener('click', () => { modal.style.display = 'none'; }); }
+  if (modal) { modal.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; }); }
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal && modal.style.display === 'flex') modal.style.display = 'none'; });
 </script>

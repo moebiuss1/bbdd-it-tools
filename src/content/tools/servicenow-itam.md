@@ -32,10 +32,6 @@ logo: /logos/servicenow-itam.png
 
 Gestión integral de activos IT en la plataforma ServiceNow. Cubre todo el ciclo de vida: adquisición, inventario, cumplimiento de licencias, y disposición.
 
-### Por qué es referente
-
 Líder en Gartner MQ para ITAM. Su integración con ITSM en una única plataforma (ServiceNow) elimina silos entre la gestión de activos y los procesos de soporte IT.
-
-### Información de coste
 
 Licencia anual según número de activos gestionados.

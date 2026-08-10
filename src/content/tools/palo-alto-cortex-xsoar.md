@@ -31,10 +31,6 @@ logo: /logos/palo-alto-cortex-xsoar.png
 
 Plataforma SOAR líder que automatiza y orquesta la respuesta a incidentes de seguridad. Incluye un marketplace con más de 900 playbooks predefinidos.
 
-### Por qué es referente
-
 Líder en Gartner MQ para SOAR. El marketplace de playbooks más extenso del mercado. Su capacidad de threat intelligence integrada y gestión de casos lo diferencian.
-
-### Información de coste
 
 Licencia anual. Precio según número de playbooks y usuarios.

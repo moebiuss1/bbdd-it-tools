@@ -40,15 +40,11 @@ en lugar de playbooks complejos que requieren semanas de desarrollo, Tines utili
 conectando acciones predefinidas. Su diseño API-first permite integrarse con
 prácticamente cualquier herramienta que exponga una API REST.
 
-### Características principales
-
 - **Stories**: Flujos de trabajo visuales con lógica condicional, bucles y transformaciones
 - **1,000+ plantillas**: Comunidad activa que comparte automatizaciones listas para usar
 - **Agentes**: Ejecución distribuida para entornos segmentados o multi-nube
 - **Event Triggers**: Activación por webhook, email, calendario o API
 - **Retry & Error Handling**: Gestión robusta de fallos con reintentos configurables
-
-### Para equipos de seguridad
 
 - Despliegue en minutos — no requiere consultoría ni formación especializada
 - Plan gratuito para probar y escalar según necesidad

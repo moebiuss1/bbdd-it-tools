@@ -32,13 +32,9 @@ logo: /logos/trellix-dlp.png
 
 Trellix DLP es una solución de referencia en la categoría dlp utilizada por organizaciones de todo el mundo para proteger, gestionar y auditar sus entornos IT.
 
-### Capacidades principales
-
 - Funcionalidad líder en el mercado según analistas independientes
 - Integración con los principales ecosistemas de seguridad y gestión IT
 - Dashboard centralizado con informes de cumplimiento y auditoría
-
-### Para cumplimiento y auditoría
 
 - Trazabilidad completa de acciones y cambios
 - Informes exportables para evidencias de auditoría

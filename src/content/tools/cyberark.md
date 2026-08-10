@@ -42,15 +42,11 @@ la gestión de accesos privilegiados. Su enfoque de "privilegio cero" (Zero Stan
 Privileges) elimina las credenciales permanentes, sustituyéndolas por acceso
 just-in-time con elevación temporal de privilegios.
 
-### Componentes principales
-
 - **CyberArk Privileged Access Manager**: Vaulting, rotación y sesiones de cuentas privilegiadas
 - **CyberArk Endpoint Privilege Manager (EPM)**: Principio de mínimo privilegio en endpoints
 - **CyberArk Conjur**: Gestión de secretos para pipelines CI/CD y entornos cloud-native
 - **CyberArk Secrets Hub**: Sincronización bidireccional con AWS/Azure/GCP secret managers
 - **CyberArk Secure Cloud Access**: Acceso just-in-time a consolas cloud sin credenciales permanentes
-
-### Valor para cumplimiento
 
 - Trazabilidad completa de quién accedió, a qué y qué hizo (grabación de sesiones)
 - Rotación automática de credenciales con intervalo configurable

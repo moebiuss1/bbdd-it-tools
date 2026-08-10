@@ -33,10 +33,6 @@ logo: /logos/suricata.png
 
 Motor IDS/IPS de red de alto rendimiento con inspección profunda de paquetes y análisis de protocolos. Soporta multi-threading nativo para redes de alta velocidad.
 
-### Por qué es referente
-
 Motor IDS/IPS open source más rápido gracias a su arquitectura multi-hilo. Adoptado por gobiernos y grandes empresas. Su motor de detección alimenta Elastic Security.
-
-### Información de coste
 
 Gratuito (GPLv2). Suricata Enterprise con soporte comercial disponible.

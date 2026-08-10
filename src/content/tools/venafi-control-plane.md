@@ -30,10 +30,6 @@ logo: /logos/venafi-control-plane.png
 
 Plataforma de gestión del ciclo de vida de certificados digitales y claves criptográficas para entornos empresariales. Automatiza emisión, renovación y revocación de certificados.
 
-### Por qué es referente
-
 Líder en gestión de identidades de máquinas. Venafi es el referente en PKI empresarial y machine identity management, protegiendo las identidades de máquinas que ya superan en número a las humanas.
-
-### Información de coste
 
 Licencia anual según número de certificados gestionados.

@@ -33,10 +33,6 @@ logo: /logos/snort.png
 
 Sistema de detección y prevención de intrusiones de red (IDS/IPS) open source mantenido por Cisco Talos, el equipo de inteligencia de amenazas más grande del mundo.
 
-### Por qué es referente
-
 Snort es el IDS/IPS más longevo y ampliamente desplegado. Su motor de reglas es el estándar de facto en detección de intrusiones, y la comunidad de Cisco Talos publica actualizaciones diarias de firmas.
-
-### Información de coste
 
 Gratuito (GPLv2). Reglas de Cisco Talos disponibles por suscripción (~$30/año uso personal).

@@ -40,16 +40,12 @@ categoría de User and Entity Behavior Analytics (UEBA). Combina SIEM, UEBA y SO
 en una arquitectura cloud-native que procesa y analiza datos de seguridad a escala
 de petabytes usando inteligencia artificial y machine learning.
 
-### Componentes principales
-
 - **SIEM Cloud**: Ingesta y correlación de eventos con más de 400 conectores predefinidos
 - **UEBA**: Analítica de comportamiento que detecta amenazas internas y cuentas comprometidas
 - **SOAR**: Automatización de respuesta con playbooks y case management integrados
 - **Autonomous Threat Sweeper (ATS)**: Threat hunting automatizado sin intervención humana
 - **Data Lake**: Data lake de seguridad con retención escalable y búsqueda rápida
 - **Investigation Workbench**: Herramienta de investigación visual con gráficos de relaciones
-
-### Para cumplimiento
 
 - Informes preconfigurados para PCI DSS, SOX, HIPAA, GDPR, NIST
 - Detección específica de patrones de acceso indebido a datos sensibles

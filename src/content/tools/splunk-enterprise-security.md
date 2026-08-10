@@ -46,8 +46,6 @@ construida sobre la plataforma de datos Splunk. Permite a los equipos de segurid
 obtener visibilidad completa de su entorno IT y OT mediante la ingesta y
 correlación de logs, métricas y eventos.
 
-### Funcionalidades clave
-
 - **Correlación avanzada**: Motor de reglas con lenguaje SPL para detectar patrones
 - **Investigación guiada**: Framework de investigación con pasos predefinidos
 - **Dashboards de cumplimiento**: Plantillas para ISO 27001, PCI DSS, HIPAA, SOX
@@ -55,13 +53,9 @@ correlación de logs, métricas y eventos.
 - **Risk-Based Alerting (RBA)**: Puntuación de riesgo para reducir falsos positivos
 - **MITRE ATT&CK Mapping**: Mapeo automático de detecciones al framework MITRE
 
-### Splunk SOAR (anteriormente Phantom)
-
 Splunk también ofrece capacidades SOAR integradas para automatizar playbooks de
 respuesta a incidentes, permitiendo orquestar acciones entre decenas de herramientas
 de seguridad.
-
-### Consideraciones para auditores
 
 - Proporciona evidencia forense inmutable con cadena de custodia digital
 - Permite auditorías de acceso y uso con granularidad a nivel de evento

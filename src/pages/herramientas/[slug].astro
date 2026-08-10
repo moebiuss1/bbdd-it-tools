@@ -14,6 +14,20 @@ const typeLabel = data.type === 'opensource' ? 'Open Source' : 'Comercial';
 const costLabel = (data.cost_model && ({gratis:'Gratuito',freemium:'Freemium',suscripción:'Suscripción','licencia-perpetua':'Licencia perpetua','pago-por-uso':'Pago por uso','presupuesto-personalizado':'Presupuesto personalizado'} as any)[data.cost_model]) ?? '';
 const sizeLabels: any = {pequeña:'Pequeña empresa',mediana:'Mediana empresa',grande:'Gran empresa'};
 const tierColors: any = {Líder:'tier-lider',Visionario:'tier-visionario',Retador:'tier-retador',Nicho:'tier-nicho'};
+
+// Sistema de puntuación BBDD IT (0-100)
+const rankScore = data.market_rank ? Math.max(0, 40 - ((data.market_rank - 1) * 5)) : 10; // #1=40pts, #3=30pts, #5=20pts, #8+=5pts
+const certScore = Math.min((data.certifications?.length ?? 0) * 6, 30); // Hasta 30pts por certificaciones (5 certs = 30)
+const sourcesScore = Math.min((data.sources?.length ?? 0) * 5, 20); // Hasta 20pts por fuentes
+const freshnessScore = data.last_verified ? (() => { const days = (Date.now() - new Date(data.last_verified).getTime()) / 86400000; return days < 30 ? 10 : days < 90 ? 7 : days < 180 ? 5 : 3; })() : 0;
+const totalScore = Math.min(100, rankScore + certScore + sourcesScore + freshnessScore);
+
+const scoreBreakdown = [
+  { label: 'Ranking de mercado', value: rankScore, detail: data.market_rank ? `Posición #${data.market_rank} en su categoría` : 'Sin ranking asignado' },
+  { label: 'Certificaciones', value: certScore, detail: `${data.certifications?.length ?? 0} certificaciones verificadas` },
+  { label: 'Fuentes', value: sourcesScore, detail: `${data.sources?.length ?? 0} fuentes referenciadas` },
+  { label: 'Actualización', value: freshnessScore, detail: data.last_verified ? `Verificado el ${new Date(data.last_verified).toLocaleDateString('es-ES')}` : 'Sin fecha de verificación' },
+];
 ---
 
 <BaseLayout title={data.name} description={data.description}>
@@ -74,7 +88,28 @@ const tierColors: any = {Líder:'tier-lider',Visionario:'tier-visionario',Retado
             {data.last_verified && <div class="sidebar-text"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:2px;flex-shrink:0"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Verificado: {new Date(data.last_verified).toLocaleDateString("es-ES")}</span></div>}
           </div>
 
-          {data.cost_details && <div class="sidebar-box"><h3 class="sidebar-box-title">Coste</h3><p style="font-size:14px;color:#86868b;line-height:1.5">{data.cost_details}</p></div>}
+          {data.cost_details && <div class="sidebar-box"><h3 class="sidebar-box-title">Coste</h3><p style="font-size:14px;color:#6e6e73;line-height:1.5">{data.cost_details}</p></div>}
+
+          <!-- Puntuación BBDD IT -->
+          <div class="sidebar-box">
+            <h3 class="sidebar-box-title">Puntuación BBDD IT</h3>
+            <div class="flex items-center gap-3 mb-3">
+              <div style="width:48px;height:48px;border-radius:12px;background:{totalScore>=70?'#ecfdf5':totalScore>=40?'#fffbeb':'#fef2f2'};display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:{totalScore>=70?'#059669':totalScore>=40?'#d97706':'#dc2626'}">{totalScore}</div>
+              <div>
+                <div style="font-size:14px;font-weight:600;color:#1d1d1f">/100</div>
+                <div style="font-size:11px;color:#6e6e73">{totalScore>=70?'Excelente':totalScore>=50?'Notable':totalScore>=30?'Aceptable':'Pendiente'}</div>
+              </div>
+            </div>
+            <div class="space-y-1.5">
+              {scoreBreakdown.map(s => (
+                <div class="flex items-center justify-between" style="font-size:11px" title={s.detail}>
+                  <span style="color:#6e6e73">{s.label}</span>
+                  <span style="color:#1d1d1f;font-weight:500;min-width:24px;text-align:right">{s.value}</span>
+                </div>
+              ))}
+            </div>
+            <p style="font-size:11px;color:#8e8e93;margin-top:8px;line-height:1.4">La puntuación combina: posición en ranking (máx 40 pts), certificaciones verificadas (máx 30 pts), fuentes referenciadas (máx 20 pts) y frescura de la verificación (máx 10 pts).</p>
+          </div>
 
           {data.certifications.length > 0 && <div class="sidebar-box"><h3 class="sidebar-box-title">Certificaciones</h3><div class="sidebar-tags">{data.certifications.map((c:string) => <span class="badge badge-teal badge-sm">{c}</span>)}</div></div>}
 

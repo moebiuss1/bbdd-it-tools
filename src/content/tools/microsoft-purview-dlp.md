@@ -34,10 +34,6 @@ logo: /logos/microsoft-purview-dlp.png
 
 Solución DLP integrada en el ecosistema Microsoft 365 que protege datos sensibles en endpoints, aplicaciones cloud, y servicios on-premise.
 
-### Por qué es referente
-
 Líder en Gartner MQ para DLP. Su capacidad de clasificación automática con machine learning y su integración nativa con Office 365, Teams, y SharePoint lo hacen el DLP más desplegado.
-
-### Información de coste
 
 Incluido en Microsoft 365 E5. Planes independientes desde ~$10/usuario/mes.

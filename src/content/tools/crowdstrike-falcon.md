@@ -50,8 +50,6 @@ un motor de inteligencia artificial entrenado sobre telemetría global para dete
 tanto malware conocido como ataques sin archivo (fileless) y técnicas de
 living-off-the-land.
 
-### Módulos principales
-
 - **Falcon Prevent**: Antivirus de nueva generación (NGAV)
 - **Falcon Insight**: EDR — detección y respuesta en endpoints
 - **Falcon OverWatch**: Servicio gestionado de threat hunting 24/7
@@ -59,8 +57,6 @@ living-off-the-land.
 - **Falcon Spotlight**: Gestión de vulnerabilidades
 - **Falcon X**: Inteligencia de amenazas automatizada
 - **Falcon Sandbox**: Análisis de malware en sandbox
-
-### Puntos clave para auditores
 
 - Cumple con los requisitos de monitorización continua de ISO 27001 (A.12.4)
 - La arquitectura cloud permite auditoría remota sin despliegue on-premise

@@ -50,15 +50,11 @@ paso único (Single Pass Architecture) procesa tráfico, aplica políticas y esc
 amenazas en una sola pasada, ofreciendo rendimiento predecible incluso con todas las
 funciones de seguridad activadas.
 
-### Capacidades clave
-
 - **App-ID**: Identifica aplicaciones independientemente del puerto o protocolo
 - **User-ID**: Políticas basadas en identidad del usuario (Active Directory, LDAP)
 - **Content-ID**: Prevención de amenazas conocidas y desconocidas en tiempo real
 - **WildFire**: Sandbox cloud para análisis de malware desconocido
 - **Panorama**: Gestión centralizada de múltiples firewalls
-
-### Relevancia para auditoría
 
 - Logging completo de todas las sesiones con metadata de aplicación/usuario
 - Informes predefinidos de cumplimiento PCI DSS, HIPAA, ISO 27001
