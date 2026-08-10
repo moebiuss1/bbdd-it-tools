@@ -139,7 +139,7 @@ const scoreBreakdown = [
             </details>
           </div>
 
-          {data.certifications.length > 0 && <div class="sidebar-box"><h3 class="sidebar-box-title">Certificaciones</h3><div class="sidebar-tags">{data.certifications.map((c:string) => <span class="badge badge-teal badge-sm">{c}</span>)}</div><p style="font-size:11px;color:#8e8e93;margin-top:8px;line-height:1.4">Verificables en <a href={data.website} target="_blank" rel="noopener" style="color:#0071e3">{new URL(data.website).hostname}</a></p></div>}
+          {data.certifications.length > 0 && <div class="sidebar-box"><h3 class="sidebar-box-title">Certificaciones</h3><div class="sidebar-tags">{data.certifications.map((c:string) => <span class="badge badge-teal badge-sm">{c}</span>)}</div><p style="font-size:11px;color:#8e8e93;margin-top:8px;line-height:1.4">Verificables en <a href={data.cert_url || data.website} target="_blank" rel="noopener" style="color:#0071e3">{new URL(data.cert_url || data.website).hostname}</a></p></div>}
 
           <div class="sidebar-box"><h3 class="sidebar-box-title">Etiquetas</h3><div class="sidebar-tags">{data.tags.map((t:string) => <a href={`${base}herramientas?tag=${encodeURIComponent(t)}`} class="sidebar-tag">{t}</a>)}</div></div>
 

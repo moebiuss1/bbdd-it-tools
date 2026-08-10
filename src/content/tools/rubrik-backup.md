@@ -30,6 +30,7 @@ certifications:
 company_size:
 - grande
 market_rank: 50
+cert_url: https://www.rubrik.com/trust
 sources:
 - https://www.gartner.com/reviews/market/enterprise-backup-and-recovery
 last_verified: '2026-08-10'

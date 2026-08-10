@@ -26,6 +26,7 @@ export interface ToolFrontmatter {
   logo?: string;
   repo?: string;
   license?: string;
+  cert_url?: string;
   sources: string[];
   last_verified?: Date;
   needs_review: boolean;

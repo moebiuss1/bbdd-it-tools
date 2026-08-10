@@ -39,6 +39,7 @@ company_size:
 - mediana
 - grande
 market_rank: 4
+cert_url: https://www.paloaltonetworks.com/trust
 sources:
 - https://www.gartner.com/en/documents/network-firewalls
 - https://itsm.tools/best-firewall-solutions

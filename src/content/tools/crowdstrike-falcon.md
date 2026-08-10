@@ -38,6 +38,7 @@ company_size:
 - grande
 - mediana
 market_rank: 3
+cert_url: https://trust.crowdstrike.com
 sources:
 - https://www.gartner.com/en/documents/endpoint-protection-platforms
 - https://itsm.tools/best-edr-solutions

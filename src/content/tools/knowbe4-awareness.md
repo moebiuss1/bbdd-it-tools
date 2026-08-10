@@ -26,6 +26,7 @@ company_size:
 - mediana
 - grande
 market_rank: 90
+cert_url: https://www.knowbe4.com/compliance
 sources:
 - https://www.gartner.com/reviews/market/security-awareness-training
 last_verified: '2026-08-10'

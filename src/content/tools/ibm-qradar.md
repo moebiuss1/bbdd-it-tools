@@ -31,6 +31,7 @@ certifications:
 company_size:
 - grande
 market_rank: 6
+cert_url: https://www.ibm.com/trust
 sources:
 - https://www.gartner.com/en/documents/siem-magic-quadrant
 - https://itsm.tools/best-siem-tools

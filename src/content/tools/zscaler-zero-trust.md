@@ -27,6 +27,7 @@ certifications:
 company_size:
 - grande
 market_rank: 123
+cert_url: https://trust.zscaler.com
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

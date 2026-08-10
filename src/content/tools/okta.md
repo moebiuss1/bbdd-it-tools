@@ -37,6 +37,7 @@ company_size:
 - mediana
 - grande
 market_rank: 1
+cert_url: https://trust.okta.com
 sources:
 - https://www.gartner.com/en/documents/access-management
 - https://itsm.tools/best-iam-solutions

@@ -32,6 +32,7 @@ company_size:
 - mediana
 - grande
 market_rank: 10
+cert_url: https://www.tenable.com/trust
 sources:
 - https://www.gartner.com/reviews/market/vulnerability-assessment
 - https://cipherssecurity.com/best-vulnerability-management-platform-2026/

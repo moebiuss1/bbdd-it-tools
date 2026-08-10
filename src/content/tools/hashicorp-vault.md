@@ -36,6 +36,7 @@ company_size:
 market_rank: 69
 repo: https://github.com/hashicorp/vault
 license: BSL
+cert_url: https://www.hashicorp.com/security
 sources:
 - https://itsm.tools/best-secrets-management
 - https://github.com/hashicorp/vault

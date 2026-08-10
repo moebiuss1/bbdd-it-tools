@@ -32,6 +32,7 @@ company_size:
 - mediana
 - grande
 market_rank: 2
+cert_url: https://learn.microsoft.com/en-us/azure/compliance/
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

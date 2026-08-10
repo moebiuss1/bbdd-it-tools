@@ -30,6 +30,7 @@ company_size:
 - mediana
 - grande
 market_rank: 5
+cert_url: https://cloud.google.com/security/compliance
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

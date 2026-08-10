@@ -29,6 +29,7 @@ company_size:
 - mediana
 - grande
 market_rank: 45
+cert_url: https://github.com/security
 sources:
 - https://www.gartner.com/reviews/market/devops-platforms
 last_verified: '2026-08-10'

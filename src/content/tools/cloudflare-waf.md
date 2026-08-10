@@ -31,6 +31,7 @@ company_size:
 - mediana
 - grande
 market_rank: 25
+cert_url: https://www.cloudflare.com/trust-hub/
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

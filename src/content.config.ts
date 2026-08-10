@@ -59,6 +59,7 @@ export const toolsCollection = defineCollection({
     logo: z.string().nullable().optional(),
     repo: z.string().url().nullable().optional(),
     license: z.string().nullable().optional(),
+    cert_url: z.string().url().nullable().optional(),
     sources: z.array(z.string().url()).default([]),
     last_verified: z.coerce.date().optional(),
     needs_review: z.boolean().default(false),

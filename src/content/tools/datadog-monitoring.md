@@ -30,6 +30,7 @@ company_size:
 - mediana
 - grande
 market_rank: 14
+cert_url: https://trust.datadoghq.com
 sources:
 - https://www.gartner.com/reviews/market/application-performance-monitoring
 last_verified: '2026-08-10'
