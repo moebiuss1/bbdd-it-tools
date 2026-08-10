@@ -21,6 +21,8 @@ company_size:
 - mediana
 - grande
 market_rank: 5
+repo: https://github.com/Security-Onion-Solutions/securityonion
+license: GPL-2.0
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

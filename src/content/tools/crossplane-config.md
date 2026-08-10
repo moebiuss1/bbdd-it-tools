@@ -19,6 +19,8 @@ company_size:
 - mediana
 - grande
 market_rank: 9
+repo: https://github.com/crossplane/crossplane
+license: Apache-2.0
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

@@ -20,6 +20,8 @@ company_size:
 - mediana
 - grande
 market_rank: 8
+repo: https://www.la-samhna.de/samhain/
+license: GPL-2.0
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
