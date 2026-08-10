@@ -30,8 +30,6 @@ market_rank: 1
 logo: /logos/servicenow-grc.png
 ---
 
-## ServiceNow GRC
-
 Plataforma GRC integrada para gestión de riesgos, cumplimiento, auditoría y políticas. Automatiza la monitorización de controles y KPI de cumplimiento continuo.
 
 ### Por qué es referente

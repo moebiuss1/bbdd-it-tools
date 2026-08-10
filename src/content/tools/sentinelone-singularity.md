@@ -35,8 +35,6 @@ market_rank: 2
 logo: /logos/sentinelone-singularity.png
 ---
 
-## SentinelOne Singularity
-
 Plataforma de seguridad autónoma que utiliza IA para prevenir, detectar y responder a amenazas en endpoints, containers, y dispositivos IoT.
 
 ### Por qué es referente

@@ -18,7 +18,7 @@ const tierColors: any = {Líder:'tier-lider',Visionario:'tier-visionario',Retado
       <p class="section-desc" style="max-width:600px">Las mejores herramientas por categoría según consenso de fuentes referentes.</p>
 
       {Object.keys(rankings).length===0 ? <div class="text-center py-16"><p class="section-desc">Los rankings se generarán en la primera ejecución semanal.</p></div> :
-      <div class="space-y-12 mt-10">
+      <div class="space-y-20 mt-10">
         {Object.entries(rankings).map(([catId, entries]: [string, any[]]) => {
           const c = categories.find(x => x.id===catId); if (!c) return null;
           return <section><h2 class="section-title mb-4">{c.name} <span style="color:#aeaeb2;font-weight:400">{entries.length}</span></h2>

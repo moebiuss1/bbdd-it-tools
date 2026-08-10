@@ -41,8 +41,6 @@ needs_review: false
 logo: /logos/splunk-enterprise-security.png
 ---
 
-## Splunk Enterprise Security
-
 Splunk Enterprise Security (ES) es la solución SIEM más consolidada del mercado,
 construida sobre la plataforma de datos Splunk. Permite a los equipos de seguridad
 obtener visibilidad completa de su entorno IT y OT mediante la ingesta y

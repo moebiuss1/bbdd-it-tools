@@ -37,8 +37,6 @@ market_rank: 1
 logo: /logos/microsoft-entra-id-azure-ad.png
 ---
 
-## Microsoft Entra ID (Azure AD)
-
 Plataforma de identidad y acceso cloud-native. Proporciona SSO, MFA, acceso condicional, identity governance, y privileged identity management.
 
 ### Por qué es referente

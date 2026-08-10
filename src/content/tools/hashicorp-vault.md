@@ -41,8 +41,6 @@ needs_review: false
 logo: /logos/hashicorp-vault.png
 ---
 
-## HashiCorp Vault
-
 Vault resuelve el problema de la dispersión de secretos (API keys, contraseñas,
 certificados, tokens) proporcionando una única fuente de verdad con cifrado,
 control de acceso detallado y auditoría completa.

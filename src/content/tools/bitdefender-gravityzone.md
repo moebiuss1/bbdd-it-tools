@@ -31,8 +31,6 @@ market_rank: 2
 logo: /logos/bitdefender-gravityzone.png
 ---
 
-## Bitdefender GravityZone
-
 Plataforma de seguridad de endpoints con prevención de amenazas multicapa, EDR, y análisis de riesgo. Reconocida por su motor antimalware de alta eficacia.
 
 ### Por qué es referente

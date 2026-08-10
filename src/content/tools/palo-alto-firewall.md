@@ -44,8 +44,6 @@ needs_review: false
 logo: /logos/palo-alto-firewall.png
 ---
 
-## Palo Alto Networks NGFW
-
 Los firewalls de nueva generación de Palo Alto Networks son el estándar de facto en
 protección perimetral y segmentación de red en grandes empresas. Su arquitectura de
 paso único (Single Pass Architecture) procesa tráfico, aplica políticas y escanea

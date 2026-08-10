@@ -35,8 +35,6 @@ market_rank: 1
 logo: /logos/microsoft-sentinel.png
 ---
 
-## Microsoft Sentinel
-
 SIEM cloud-native en Azure que combina SIEM y SOAR con inteligencia artificial a escala cloud. Analiza datos de toda la empresa sin necesidad de infraestructura propia.
 
 ### Por qué es referente

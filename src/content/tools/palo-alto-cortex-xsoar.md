@@ -29,8 +29,6 @@ market_rank: 1
 logo: /logos/palo-alto-cortex-xsoar.png
 ---
 
-## Palo Alto Cortex XSOAR
-
 Plataforma SOAR líder que automatiza y orquesta la respuesta a incidentes de seguridad. Incluye un marketplace con más de 900 playbooks predefinidos.
 
 ### Por qué es referente

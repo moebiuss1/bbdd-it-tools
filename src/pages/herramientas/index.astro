@@ -1,23 +1,39 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { getCategories, toToolEntry } from "@lib/tools";
+import { getCategories, getTagCounts, toToolEntry } from "@lib/tools";
 const base = import.meta.env.BASE_URL;
 const tools = (await getCollection("tools")).map(toToolEntry);
+const allCerts = [...new Set(tools.flatMap(t => t.data.certifications ?? []))].sort();
 const categories = await getCategories();
+const tagCounts = getTagCounts(tools);
+const topTags = [...tagCounts.entries()].sort((a,b) => b[1]-a[1]).slice(0, 12);
 const url = Astro.url;
 const q = (url.searchParams.get("q") ?? "").toLowerCase();
 const catFilter = url.searchParams.get("category") ?? "";
 const typeFilter = url.searchParams.get("type") ?? "";
 const tagFilter = url.searchParams.get("tag") ?? "";
+const certFilter = url.searchParams.get("cert") ?? "";
 const sortBy = url.searchParams.get("sort") ?? "rank";
+
+// Helper: build URL preserving current filters while overriding one param
+function buildUrl(overrides: Record<string,string>) {
+  const p = new URLSearchParams(url.searchParams.toString());
+  for (const [k,v] of Object.entries(overrides)) {
+    if (v) p.set(k,v); else p.delete(k);
+  }
+  const qs = p.toString();
+  return `${base}herramientas${qs?'?'+qs:''}`;
+}
+
 let filtered = tools;
 if (q) filtered = filtered.filter(t => t.data.name.toLowerCase().includes(q) || t.data.description.toLowerCase().includes(q) || t.data.tags.some(tag => tag.toLowerCase().includes(q)));
 if (catFilter) filtered = filtered.filter(t => t.data.category === catFilter);
 if (typeFilter) filtered = filtered.filter(t => t.data.type === typeFilter);
 if (tagFilter) filtered = filtered.filter(t => t.data.tags.includes(tagFilter));
+if (certFilter) filtered = filtered.filter(t => t.data.certifications?.includes(certFilter));
 filtered.sort((a,b) => { if (sortBy==="name") return a.data.name.localeCompare(b.data.name,"es"); if (sortBy==="updated") { const da=a.data.last_verified?new Date(a.data.last_verified).getTime():0; const db=b.data.last_verified?new Date(b.data.last_verified).getTime():0; return db-da; } return (a.data.market_rank??999)-(b.data.market_rank??999); });
-const hasFilters = !!(q||catFilter||typeFilter||tagFilter);
+const hasFilters = !!(q||catFilter||typeFilter||tagFilter||certFilter);
 ---
 
 <BaseLayout title="Directorio">
@@ -33,18 +49,30 @@ const hasFilters = !!(q||catFilter||typeFilter||tagFilter);
       <h1 class="section-title" style="font-size:28px">Directorio</h1>
       <p class="section-desc">{tools.length} herramientas en {categories.length} categorías</p>
       <div class="flex flex-wrap gap-2 mt-8">
-        <a href={`${base}herramientas`} class={`badge badge-md ${!catFilter?'badge-blue':'badge-outline'}`}>Todas</a>
-        {categories.map(c => <a href={`${base}herramientas?category=${c.id}`} class={`badge badge-md ${catFilter===c.id?'badge-blue':'badge-outline'}`}>{c.name}</a>)}
+        <a href={buildUrl({category:''})} class={`badge badge-md ${!catFilter?'badge-blue':'badge-outline'}`}>Todas</a>
+        {categories.map(c => <a href={buildUrl({category:c.id})} class={`badge badge-md ${catFilter===c.id?'badge-blue':'badge-outline'}`}>{c.name}</a>)}
       </div>
       <div class="flex flex-wrap items-center gap-3 mt-5" style="font-size:13px">
-        <a href={`${base}herramientas${q?'?q='+q:''}`} class={`badge badge-md ${!typeFilter?'badge-blue':'badge-outline'}`}>Todos</a>
-        <a href={`${base}herramientas?type=comercial${q?'&q='+q:''}`} class={`badge badge-md ${typeFilter==='comercial'?'badge-blue':'badge-outline'}`}>Comercial</a>
-        <a href={`${base}herramientas?type=opensource${q?'&q='+q:''}`} class={`badge badge-md ${typeFilter==='opensource'?'badge-blue':'badge-outline'}`}>Open Source</a>
+        <a href={buildUrl({type:''})} class={`badge badge-md ${!typeFilter?'badge-blue':'badge-outline'}`}>Todos</a>
+        <a href={buildUrl({type:'comercial'})} class={`badge badge-md ${typeFilter==='comercial'?'badge-blue':'badge-outline'}`}>Comercial</a>
+        <a href={buildUrl({type:'opensource'})} class={`badge badge-md ${typeFilter==='opensource'?'badge-blue':'badge-outline'}`}>Open Source</a>
         <span style="color:#d2d2d7;margin:0 4px" class="hidden sm:inline">|</span>
-        <a href={`${base}herramientas?sort=rank`} style={`color:${sortBy==='rank'?'#1d1d1f':'#86868b'};font-weight:${sortBy==='rank'?'500':'400'}`}>Por ranking</a>
-        <a href={`${base}herramientas?sort=name`} style={`color:${sortBy==='name'?'#1d1d1f':'#86868b'};font-weight:${sortBy==='name'?'500':'400'}`}>Alfabético</a>
-        <a href={`${base}herramientas?sort=updated`} style={`color:${sortBy==='updated'?'#1d1d1f':'#86868b'};font-weight:${sortBy==='updated'?'500':'400'}`}>Más reciente</a>
+        <a href={buildUrl({sort:'rank'})} style={`color:${sortBy==='rank'?'#1d1d1f':'#86868b'};font-weight:${sortBy==='rank'?'500':'400'}`}>Por ranking</a>
+        <a href={buildUrl({sort:'name'})} style={`color:${sortBy==='name'?'#1d1d1f':'#86868b'};font-weight:${sortBy==='name'?'500':'400'}`}>Alfabético</a>
+        <a href={buildUrl({sort:'updated'})} style={`color:${sortBy==='updated'?'#1d1d1f':'#86868b'};font-weight:${sortBy==='updated'?'500':'400'}`}>Más reciente</a>
       </div>
+      <!-- Filtro de etiquetas -->
+      <div class="flex flex-wrap gap-1.5 mt-4">
+        <span style="font-size:12px;color:#aeaeb2;margin-right:4px">Etiquetas:</span>
+        <a href={buildUrl({tag:''})} class={`badge badge-sm ${!tagFilter?'badge-blue':'badge-outline'}`}>Todas</a>
+        {topTags.map(([tag, count]) => <a href={buildUrl({tag})} class={`badge badge-sm ${tagFilter===tag?'badge-blue':'badge-outline'}`}>{tag} <span style="color:#aeaeb2">({count})</span></a>)}
+      </div>
+      <!-- Filtro de certificaciones -->
+      {allCerts.length > 0 && <div class="flex flex-wrap gap-1.5 mt-1.5">
+        <span style="font-size:12px;color:#aeaeb2;margin-right:4px">Certificación:</span>
+        <a href={buildUrl({cert:''})} class={`badge badge-sm ${!certFilter?'badge-teal':'badge-outline'}`}>Todas</a>
+        {allCerts.map(c => <a href={buildUrl({cert:c})} class={`badge badge-sm ${certFilter===c?'badge-teal':'badge-outline'}`}>{c}</a>)}
+      </div>}
       <div class="flex items-center gap-3 mt-4" style="font-size:13px;color:#86868b">
         <span>{filtered.length} resultado{filtered.length!==1?'s':''}{hasFilters?' con filtros':''}</span>
         {hasFilters && <a href={`${base}herramientas`} style="color:#0071e3">Limpiar filtros</a>}
@@ -54,7 +82,9 @@ const hasFilters = !!(q||catFilter||typeFilter||tagFilter);
       <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mt-8">
         {filtered.map(t => (
           <a href={`${base}herramientas/${t.slug}`} class="card tool-card group">
-            <div class="tool-avatar">{t.data.name.charAt(0)}</div>
+            <div class="tool-avatar">
+              {t.data.logo ? <img src={`${base}${t.data.logo.replace(/^\//,'')}`} alt={t.data.name} width="40" height="40" style="border-radius:10px;object-fit:contain" loading="lazy" /> : t.data.name.charAt(0)}
+            </div>
             <div class="min-w-0 flex-1">
               <div class="flex items-center gap-2"><h3 class="tool-name" style="color:#1d1d1f">{t.data.name}</h3>{t.data.market_rank&&t.data.market_rank<=3&&<span class="badge badge-amber badge-sm">#{t.data.market_rank}</span>}</div>
               <p class="tool-desc">{t.data.description}</p>

@@ -30,8 +30,6 @@ market_rank: 1
 logo: /logos/servicenow-itam.png
 ---
 
-## ServiceNow ITAM
-
 Gestión integral de activos IT en la plataforma ServiceNow. Cubre todo el ciclo de vida: adquisición, inventario, cumplimiento de licencias, y disposición.
 
 ### Por qué es referente

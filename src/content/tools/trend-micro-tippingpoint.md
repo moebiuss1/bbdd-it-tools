@@ -31,8 +31,6 @@ market_rank: 1
 logo: /logos/trend-micro-tippingpoint.png
 ---
 
-## Trend Micro TippingPoint
-
 NGIPS con inspección profunda de paquetes y filtros de vulnerabilidad Digital Vaccine actualizados continuamente. Enfoque en vulnerabilidades, no solo exploits.
 
 ### Por qué es referente

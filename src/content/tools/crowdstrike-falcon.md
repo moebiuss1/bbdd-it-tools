@@ -44,8 +44,6 @@ needs_review: false
 logo: /logos/crowdstrike-falcon.png
 ---
 
-## CrowdStrike Falcon
-
 CrowdStrike Falcon es la plataforma líder de protección de endpoints nativa en la
 nube. A diferencia de los antivirus tradicionales basados en firmas, Falcon utiliza
 un motor de inteligencia artificial entrenado sobre telemetría global para detectar

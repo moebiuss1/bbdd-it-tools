@@ -46,8 +46,6 @@ needs_review: false
 logo: /logos/wazuh.png
 ---
 
-## Wazuh
-
 Wazuh nació como un fork de OSSEC en 2015 y ha evolucionado hasta convertirse en una
 plataforma completa de seguridad. Combina funcionalidades de SIEM (gestión de logs y
 correlación), HIDS (detección de intrusiones en host), evaluación de cumplimiento y

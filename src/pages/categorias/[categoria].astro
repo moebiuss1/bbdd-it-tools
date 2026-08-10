@@ -18,7 +18,7 @@ const catTools = tools.filter(t => t.data.category === Astro.params.categoria).s
     <h1 class="section-title" style="font-size:28px">{cat.name}</h1><p class="section-desc">{cat.description}</p>
     {catTools.length===0 ? <div class="text-center py-16"><p class="section-desc">Próximamente — herramientas en esta categoría.</p></div> :
     <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mt-8">
-      {catTools.map(t => <a href={`${base}herramientas/${t.slug}`} class="card tool-card group"><div class="tool-avatar">{t.data.name.charAt(0)}</div><div class="min-w-0 flex-1"><h3 class="tool-name" style="color:#1d1d1f">{t.data.name}</h3><p class="tool-desc">{t.data.description}</p></div></a>)}
+      {catTools.map(t => <a href={`${base}herramientas/${t.slug}`} class="card tool-card group"><div class="tool-avatar">{t.data.logo ? <img src={`${base}${t.data.logo.replace(/^\//,'')}`} alt={t.data.name} width="40" height="40" style="border-radius:10px;object-fit:contain" loading="lazy" /> : t.data.name.charAt(0)}</div><div class="min-w-0 flex-1"><h3 class="tool-name" style="color:#1d1d1f">{t.data.name}</h3><p class="tool-desc">{t.data.description}</p></div></a>)}
     </div>}
   </div></section>
 

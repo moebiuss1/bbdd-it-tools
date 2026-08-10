@@ -32,8 +32,6 @@ market_rank: 1
 logo: /logos/microsoft-purview-dlp.png
 ---
 
-## Microsoft Purview DLP
-
 Solución DLP integrada en el ecosistema Microsoft 365 que protege datos sensibles en endpoints, aplicaciones cloud, y servicios on-premise.
 
 ### Por qué es referente

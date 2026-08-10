@@ -34,8 +34,6 @@ market_rank: 1
 logo: /logos/microsoft-defender-for-endpoint.png
 ---
 
-## Microsoft Defender for Endpoint
-
 Plataforma de protección de endpoints empresarial integrada en el ecosistema Microsoft 365. Combina antivirus de nueva generación, EDR, y gestión de vulnerabilidades.
 
 ### Por qué es referente

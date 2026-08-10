@@ -31,8 +31,6 @@ market_rank: 1
 logo: /logos/snort.png
 ---
 
-## Snort
-
 Sistema de detección y prevención de intrusiones de red (IDS/IPS) open source mantenido por Cisco Talos, el equipo de inteligencia de amenazas más grande del mundo.
 
 ### Por qué es referente

@@ -42,8 +42,6 @@ needs_review: false
 logo: /logos/okta.png
 ---
 
-## Okta Identity Cloud
-
 Okta es la plataforma de gestión de identidad líder para entornos cloud-first.
 Conecta a empleados, contratistas y partners con las aplicaciones que necesitan,
 desde cualquier dispositivo y ubicación, manteniendo controles de seguridad granulares.

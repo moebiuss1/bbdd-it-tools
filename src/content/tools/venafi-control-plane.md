@@ -28,8 +28,6 @@ market_rank: 1
 logo: /logos/venafi-control-plane.png
 ---
 
-## Venafi Control Plane
-
 Plataforma de gestión del ciclo de vida de certificados digitales y claves criptográficas para entornos empresariales. Automatiza emisión, renovación y revocación de certificados.
 
 ### Por qué es referente

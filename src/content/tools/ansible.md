@@ -32,8 +32,6 @@ market_rank: 1
 logo: /logos/ansible.png
 ---
 
-## Ansible
-
 Herramienta de automatización de código abierto para gestión de configuraciones, despliegues y orquestación. Define el estado deseado de la infraestructura como código (YAML).
 
 ### Por qué es referente

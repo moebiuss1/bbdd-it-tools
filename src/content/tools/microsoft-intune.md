@@ -33,8 +33,6 @@ market_rank: 1
 logo: /logos/microsoft-intune.png
 ---
 
-## Microsoft Intune
-
 Plataforma unificada de gestión de endpoints que combina MDM y MAM para dispositivos Windows, macOS, iOS, Android y Linux.
 
 ### Por qué es referente

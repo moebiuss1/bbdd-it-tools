@@ -31,8 +31,6 @@ market_rank: 2
 logo: /logos/forcepoint-dlp.png
 ---
 
-## Forcepoint DLP
-
 Solución DLP empresarial con análisis de comportamiento para prevenir fugas de datos en endpoints, red, email y aplicaciones cloud.
 
 ### Por qué es referente

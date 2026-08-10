@@ -35,8 +35,6 @@ market_rank: 2
 logo: /logos/fortinet-fortigate.png
 ---
 
-## Fortinet FortiGate
-
 Firewall de nueva generación con procesador de seguridad propietario (SPU) que ofrece inspección SSL/TLS completa y prevención de amenazas a alto rendimiento.
 
 ### Por qué es referente
