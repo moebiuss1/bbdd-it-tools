@@ -8,50 +8,24 @@ const allCerts = [...new Set(tools.flatMap(t => t.data.certifications ?? []))].s
 const categories = await getCategories();
 const tagCounts = getTagCounts(tools);
 const allTags = [...tagCounts.entries()].sort((a,b) => b[1]-a[1]);
-const url = Astro.url;
-const q = (url.searchParams.get("q") ?? "").toLowerCase();
-const catFilter = url.searchParams.get("category") ?? "";
-const typeFilter = url.searchParams.get("type") ?? "";
-const tagFilters = url.searchParams.getAll("tag");
-const certFilters = url.searchParams.getAll("cert");
-const sortBy = url.searchParams.get("sort") ?? "rank";
 
-function buildUrl(overrides: Record<string,string>) {
-  const p = new URLSearchParams(url.searchParams.toString());
-  for (const [k,v] of Object.entries(overrides)) {
-    if (v) p.set(k,v); else p.delete(k);
-  }
-  const qs = p.toString();
-  return `${base}herramientas${qs?'?'+qs:''}`;
-}
+// Preparar datos para filtrado cliente-side
+const toolsJson = JSON.stringify(tools.map(t => ({
+  slug: t.slug,
+  name: t.data.name,
+  description: t.data.description,
+  category: t.data.category,
+  type: t.data.type,
+  tags: t.data.tags,
+  certifications: t.data.certifications ?? [],
+  company_size: t.data.company_size,
+  market_rank: t.data.market_rank,
+  logo: t.data.logo,
+})));
 
-// Build URL for multi-select toggles (tags & certs)
-function toggleUrl(param: string, value: string) {
-  const p = new URLSearchParams(url.searchParams.toString());
-  const current = p.getAll(param);
-  p.delete(param);
-  // If value is already selected, remove it; otherwise add it
-  const isSelected = current.includes(value);
-  if (!isSelected) {
-    for (const v of current) p.append(param, v);
-    p.append(param, value);
-  } else {
-    for (const v of current) {
-      if (v !== value) p.append(param, v);
-    }
-  }
-  const qs = p.toString();
-  return `${base}herramientas${qs?'?'+qs:''}`;
-}
-
-let filtered = tools;
-if (q) filtered = filtered.filter(t => t.data.name.toLowerCase().includes(q) || t.data.description.toLowerCase().includes(q) || t.data.tags.some((tag: string) => tag.toLowerCase().includes(q)));
-if (catFilter) filtered = filtered.filter(t => t.data.category === catFilter);
-if (typeFilter) filtered = filtered.filter(t => t.data.type === typeFilter);
-if (tagFilters.length > 0) filtered = filtered.filter(t => tagFilters.some(tf => t.data.tags.map((x:string)=>x.toLowerCase()).includes(tf.toLowerCase())));
-if (certFilters.length > 0) filtered = filtered.filter(t => certFilters.some(cf => (t.data.certifications ?? []).map((x:string)=>x.toLowerCase()).includes(cf.toLowerCase())));
-filtered.sort((a,b) => { if (sortBy==="name") return a.data.name.localeCompare(b.data.name,"es"); if (sortBy==="updated") { const da=a.data.last_verified?new Date(a.data.last_verified).getTime():0; const db=b.data.last_verified?new Date(b.data.last_verified).getTime():0; return db-da; } return (a.data.market_rank??999)-(b.data.market_rank??999); });
-const hasFilters = !!(q||catFilter||typeFilter||tagFilters.length||certFilters.length);
+const categoriesJson = JSON.stringify(categories);
+const allTagsJson = JSON.stringify(allTags);
+const allCertsJson = JSON.stringify(allCerts);
 ---
 
 <BaseLayout title="Directorio">
@@ -65,99 +39,50 @@ const hasFilters = !!(q||catFilter||typeFilter||tagFilters.length||certFilters.l
   <section class="py-10">
     <div class="container">
       <h1 class="section-title" style="font-size:28px">Directorio</h1>
-      <p class="section-desc">{tools.length} herramientas en {categories.length} categorías</p>
+      <p class="section-desc"><span id="total-count">{tools.length}</span> herramientas en {categories.length} categorías</p>
 
       <!-- Categorías -->
-      <div class="flex flex-wrap gap-2 mt-8">
-        <a href={buildUrl({category:''})} class={`badge badge-md ${!catFilter?'badge-blue':'badge-outline'}`}>Todas</a>
-        {categories.map(c => <a href={buildUrl({category:c.id})} class={`badge badge-md ${catFilter===c.id?'badge-blue':'badge-outline'}`}>{c.name}</a>)}
-      </div>
+      <div class="flex flex-wrap gap-2 mt-8" id="category-filters"></div>
 
       <!-- Tipo + Ordenación -->
-      <div class="flex flex-wrap items-center gap-3 mt-5" style="font-size:13px">
-        <a href={buildUrl({type:''})} class={`badge badge-md ${!typeFilter?'badge-blue':'badge-outline'}`}>Todos</a>
-        <a href={buildUrl({type:'comercial'})} class={`badge badge-md ${typeFilter==='comercial'?'badge-blue':'badge-outline'}`}>Comercial</a>
-        <a href={buildUrl({type:'opensource'})} class={`badge badge-md ${typeFilter==='opensource'?'badge-blue':'badge-outline'}`}>Open Source</a>
-        <span style="color:#d2d2d7;margin:0 4px" class="hidden sm:inline">|</span>
-        <a href={buildUrl({sort:'rank'})} style={`color:${sortBy==='rank'?'#1d1d1f':'#6e6e73'};font-weight:${sortBy==='rank'?'500':'400'}`}>Por ranking</a>
-        <a href={buildUrl({sort:'name'})} style={`color:${sortBy==='name'?'#1d1d1f':'#6e6e73'};font-weight:${sortBy==='name'?'500':'400'}`}>Alfabético</a>
-        <a href={buildUrl({sort:'updated'})} style={`color:${sortBy==='updated'?'#1d1d1f':'#6e6e73'};font-weight:${sortBy==='updated'?'500':'400'}`}>Más reciente</a>
-        <button type="button" id="btn-more-filters" class="badge badge-md" style="background:#f5f5f7;border:1px solid #d2d2d7;color:#6e6e73;cursor:pointer;margin-left:4px">
+      <div class="flex flex-wrap items-center gap-3 mt-5" style="font-size:13px" id="type-filters"></div>
+
+      <!-- Botón modal -->
+      <div class="mt-3">
+        <button type="button" id="btn-more-filters" class="badge badge-md" style="background:#f5f5f7;border:1px solid #d2d2d7;color:#6e6e73;cursor:pointer">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><circle cx="4" cy="12" r="2"/><circle cx="12" cy="10" r="2"/><circle cx="20" cy="14" r="2"/></svg>
-          Más filtros {(tagFilters.length||certFilters.length) ? `(${tagFilters.length+certFilters.length})` : ''}
+          Más filtros <span id="active-filter-count"></span>
         </button>
       </div>
 
       <!-- Chips de filtros activos -->
-      {(tagFilters.length>0 || certFilters.length>0) && <div class="flex flex-wrap items-center gap-2 mt-3" style="font-size:12px">
-        <span style="color:#8e8e93">Filtros activos:</span>
-        {tagFilters.map(tf => <span class="badge badge-blue badge-sm">{tf} <a href={toggleUrl('tag', tf)} style="margin-left:4px;color:#0066cc;text-decoration:none" title="Quitar">×</a></span>)}
-        {certFilters.map(cf => <span class="badge badge-teal badge-sm">{cf} <a href={toggleUrl('cert', cf)} style="margin-left:4px;color:#0d9488;text-decoration:none" title="Quitar">×</a></span>)}
-      </div>}
+      <div class="flex flex-wrap items-center gap-2 mt-3" style="font-size:12px" id="active-chips"></div>
 
       <!-- Resultados -->
       <div class="flex items-center gap-3 mt-4" style="font-size:13px;color:#6e6e73">
-        <span>{filtered.length} resultado{filtered.length!==1?'s':''}{hasFilters?' con filtros':''}</span>
-        {hasFilters && <a href={`${base}herramientas`} style="color:#0071e3">Limpiar filtros</a>}
+        <span id="results-text">{tools.length} resultados</span>
+        <a href={`${base}herramientas`} id="clear-filters" style="color:#0071e3;display:none">Limpiar filtros</a>
       </div>
 
-      {filtered.length===0 ? <div class="text-center py-16"><p class="section-desc">Sin resultados. Prueba otros filtros.</p><a href={`${base}herramientas`} class="btn btn-primary mt-4">Ver todas</a></div> :
-      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mt-8">
-        {filtered.map(t => (
-          <a href={`${base}herramientas/${t.slug}`} class="card tool-card group">
-            <div class="tool-avatar">
-              {t.data.logo ? <img src={`${base}${t.data.logo.replace(/^\//,'')}`} alt={t.data.name} width="40" height="40" style="border-radius:10px;object-fit:contain" loading="lazy" /> : t.data.name.charAt(0)}
-            </div>
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-2"><h3 class="tool-name" style="color:#1d1d1f">{t.data.name}</h3>{t.data.market_rank&&t.data.market_rank<=3&&<span class="badge badge-amber badge-sm">#{t.data.market_rank}</span>}</div>
-              <p class="tool-desc">{t.data.description}</p>
-              <div class="flex flex-wrap gap-1.5 mt-2">
-                <span class={`badge badge-sm ${t.data.type==='opensource'?'badge-green':'badge-blue'}`}>{t.data.type==='opensource'?'Open Source':'Comercial'}</span>
-                {t.data.company_size.slice(0,2).map((s:string) => <span class="badge badge-gray badge-sm">{s.charAt(0).toUpperCase()+s.slice(1)}</span>)}
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>}
+      <!-- Grid de herramientas -->
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mt-8" id="tools-grid"></div>
+
+      <!-- Empty state -->
+      <div class="text-center py-16" id="empty-state" style="display:none">
+        <p class="section-desc">Sin resultados. Prueba otros filtros.</p>
+        <a href={`${base}herramientas`} class="btn btn-primary mt-4">Ver todas</a>
+      </div>
     </div>
   </section>
 
-  <!-- MODAL de filtros avanzados con checkboxes -->
+  <!-- MODAL -->
   <div id="filter-modal" class="filter-modal-overlay" style="display:none">
     <div class="filter-modal" role="dialog" aria-modal="true">
       <div class="filter-modal-header">
         <h2 style="font-size:17px;font-weight:600">Filtros avanzados</h2>
         <button id="btn-close-modal" style="background:none;border:none;cursor:pointer;font-size:20px;color:#6e6e73;line-height:1" aria-label="Cerrar">&times;</button>
       </div>
-      <div class="filter-modal-body">
-        <!-- Etiquetas con checkboxes -->
-        <details open class="filter-group">
-          <summary class="filter-group-title">Etiquetas <span style="color:#8e8e93;font-weight:400">({allTags.length})</span></summary>
-          <div class="filter-check-grid mt-2">
-            {allTags.map(([tag, count]) => {
-              const isChecked = tagFilters.includes(tag);
-              return <a href={toggleUrl('tag', tag)} class={`filter-check ${isChecked?'filter-check-on':''}`}>
-                <span class="filter-check-box">{isChecked ? '✓' : ''}</span>
-                <span class="filter-check-label">{tag}</span>
-                <span class="filter-check-count">{count}</span>
-              </a>;
-            })}
-          </div>
-        </details>
-        <!-- Certificaciones con checkboxes -->
-        {allCerts.length > 0 && <details class="filter-group">
-          <summary class="filter-group-title">Certificaciones <span style="color:#8e8e93;font-weight:400">({allCerts.length})</span></summary>
-          <div class="filter-check-grid mt-2">
-            {allCerts.map(c => {
-              const isChecked = certFilters.includes(c);
-              return <a href={toggleUrl('cert', c)} class={`filter-check ${isChecked?'filter-check-on':''}`}>
-                <span class="filter-check-box">{isChecked ? '✓' : ''}</span>
-                <span class="filter-check-label">{c}</span>
-              </a>;
-            })}
-          </div>
-        </details>}
-      </div>
+      <div class="filter-modal-body" id="modal-body"></div>
     </div>
   </div>
 
@@ -165,7 +90,6 @@ const hasFilters = !!(q||catFilter||typeFilter||tagFilters.length||certFilters.l
 </BaseLayout>
 
 <style>
-/* Modal */
 .filter-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:100;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
 .filter-modal{background:#fff;border-radius:20px;max-width:600px;width:calc(100% - 32px);max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.15);animation:modalIn .2s ease-out}
 @keyframes modalIn{from{opacity:0;transform:scale(.96) translateY(8px)}to{opacity:1;transform:scale(1) translateY(0)}}
@@ -177,22 +101,308 @@ const hasFilters = !!(q||catFilter||typeFilter||tagFilters.length||certFilters.l
 .filter-group-title::-webkit-details-marker{display:none}
 .filter-group-title::before{content:'';display:inline-block;width:16px;height:16px;background:#e8e8ed;border-radius:4px;transition:transform .15s;mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");mask-size:contain;-webkit-mask-size:contain}
 .filter-group[open] .filter-group-title::before{transform:rotate(90deg)}
-/* Checkbox grid */
-.filter-check-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:6px}
-.filter-check{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;font-size:13px;color:#1d1d1f;text-decoration:none;transition:background .15s}
-.filter-check:hover{background:#f5f5f7;text-decoration:none}
+.filter-check-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:4px}
+.filter-check{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;font-size:13px;color:#1d1d1f;text-decoration:none;cursor:pointer;transition:background .15s;-webkit-user-select:none;user-select:none}
+.filter-check:hover{background:#f5f5f7}
 .filter-check-box{width:18px;height:18px;border:2px solid #d2d2d7;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;color:#fff;transition:all .15s}
-.filter-check-on .filter-check-box{background:#0071e3;border-color:#0071e3}
+.filter-check.on .filter-check-box{background:#0071e3;border-color:#0071e3}
 .filter-check-label{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .filter-check-count{font-size:11px;color:#8e8e93;flex-shrink:0}
 </style>
 
+<script is:inline>
+// Embedded data for the filter engine
+window.__BBDD_TOOLS = {toolsJson};
+window.__BBDD_CATEGORIES = {categoriesJson};
+window.__BBDD_TAGS = {allTagsJson};
+window.__BBDD_CERTS = {allCertsJson};
+window.__BBDD_BASE = "{base}";
+</script>
 <script>
-  const modal = document.getElementById('filter-modal');
-  const btnOpen = document.getElementById('btn-more-filters');
-  const btnClose = document.getElementById('btn-close-modal');
-  if (btnOpen && modal) { btnOpen.addEventListener('click', () => { modal.style.display = 'flex'; }); }
-  if (btnClose && modal) { btnClose.addEventListener('click', () => { modal.style.display = 'none'; }); }
-  if (modal) { modal.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; }); }
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal && modal.style.display === 'flex') modal.style.display = 'none'; });
+// @ts-nocheck
+// ===== CLIENT-SIDE FILTER ENGINE =====
+const BASE = window.__BBDD_BASE;
+const TOOLS = window.__BBDD_TOOLS;
+const CATEGORIES = window.__BBDD_CATEGORIES;
+const ALL_TAGS = window.__BBDD_TAGS;
+const ALL_CERTS = window.__BBDD_CERTS;
+
+let state = { category: '', type: '', tags: [], certs: [], sort: 'rank', query: '' };
+
+function readURL() {
+  const p = new URLSearchParams(window.location.search);
+  state.category = p.get('category') ?? '';
+  state.type = p.get('type') ?? '';
+  state.tags = p.getAll('tag');
+  state.certs = p.getAll('cert');
+  state.sort = p.get('sort') ?? 'rank';
+  state.query = (p.get('q') ?? '').toLowerCase();
+}
+readURL();
+
+function buildURL(overrides) {
+  const s = { ...state, ...overrides, tags: overrides.tags ?? state.tags, certs: overrides.certs ?? state.certs };
+  const p = new URLSearchParams();
+  if (s.category) p.set('category', s.category);
+  if (s.type) p.set('type', s.type);
+  for (const t of s.tags) p.append('tag', t);
+  for (const c of s.certs) p.append('cert', c);
+  if (s.sort && s.sort !== 'rank') p.set('sort', s.sort);
+  if (s.query) p.set('q', s.query);
+  const qs = p.toString();
+  return BASE + 'herramientas' + (qs ? '?' + qs : '');
+}
+
+function pushState() {
+  const url = buildURL({});
+  if (window.location.href !== window.location.origin + url) {
+    window.history.pushState({}, '', url);
+  }
+}
+
+function getFiltered() {
+  let filtered = TOOLS;
+  if (state.query) {
+    const q = state.query;
+    filtered = filtered.filter(t => t.name.toLowerCase().includes(q) || t.description.toLowerCase().includes(q) || t.tags.some(tag => tag.toLowerCase().includes(q)));
+  }
+  if (state.category) filtered = filtered.filter(t => t.category === state.category);
+  if (state.type) filtered = filtered.filter(t => t.type === state.type);
+  if (state.tags.length > 0) filtered = filtered.filter(t => state.tags.some(tf => t.tags.map(x=>x.toLowerCase()).includes(tf.toLowerCase())));
+  if (state.certs.length > 0) filtered = filtered.filter(t => state.certs.some(cf => t.certifications.map(x=>x.toLowerCase()).includes(cf.toLowerCase())));
+  filtered.sort((a,b) => {
+    if (state.sort === 'name') return a.name.localeCompare(b.name, 'es');
+    if (state.sort === 'updated') return 0; // no date in client data
+    return (a.market_rank??999) - (b.market_rank??999);
+  });
+  return filtered;
+}
+
+// ===== RENDER =====
+function renderAll() {
+  renderCategoryFilters();
+  renderTypeFilters();
+  renderActiveChips();
+  renderResults();
+  renderModal();
+  updateBadge();
+}
+
+function renderCategoryFilters() {
+  const el = document.getElementById('category-filters');
+  let html = `<a href="#" data-cat="" class="badge badge-md ${!state.category?'badge-blue':'badge-outline'}">Todas</a>`;
+  for (const c of CATEGORIES) {
+    html += `<a href="#" data-cat="${c.id}" class="badge badge-md ${state.category===c.id?'badge-blue':'badge-outline'}">${c.name}</a>`;
+  }
+  el.innerHTML = html;
+}
+
+function renderTypeFilters() {
+  const el = document.getElementById('type-filters');
+  const sortLabels = { rank: 'Por ranking', name: 'Alfabético', updated: 'Más reciente' };
+  let html = `<a href="#" data-type="" class="badge badge-md ${!state.type?'badge-blue':'badge-outline'}">Todos</a>`;
+  html += `<a href="#" data-type="comercial" class="badge badge-md ${state.type==='comercial'?'badge-blue':'badge-outline'}">Comercial</a>`;
+  html += `<a href="#" data-type="opensource" class="badge badge-md ${state.type==='opensource'?'badge-blue':'badge-outline'}">Open Source</a>`;
+  html += `<span style="color:#d2d2d7;margin:0 4px" class="hidden sm:inline">|</span>`;
+  for (const [k, label] of Object.entries(sortLabels)) {
+    html += `<a href="#" data-sort="${k}" style="color:${state.sort===k?'#1d1d1f':'#6e6e73'};font-weight:${state.sort===k?'500':'400'};font-size:13px;text-decoration:none">${label}</a> `;
+  }
+  el.innerHTML = html;
+}
+
+function renderActiveChips() {
+  const el = document.getElementById('active-chips');
+  let html = '';
+  if (state.tags.length > 0 || state.certs.length > 0) {
+    html += '<span style="color:#8e8e93">Filtros activos:</span>';
+    for (const t of state.tags) {
+      html += `<span class="badge badge-blue badge-sm">${t} <span data-remove-tag="${t}" style="margin-left:4px;color:#0066cc;cursor:pointer;font-weight:700">&times;</span></span>`;
+    }
+    for (const c of state.certs) {
+      html += `<span class="badge badge-teal badge-sm">${c} <span data-remove-cert="${c}" style="margin-left:4px;color:#0d9488;cursor:pointer;font-weight:700">&times;</span></span>`;
+    }
+  }
+  el.innerHTML = html;
+}
+
+function renderToolCard(t) {
+  const typeLabel = t.type === 'opensource' ? 'Open Source' : 'Comercial';
+  const typeClass = t.type === 'opensource' ? 'badge-green' : 'badge-blue';
+  const rankBadge = t.market_rank && t.market_rank <= 3 ? `<span class="badge badge-amber badge-sm">#${t.market_rank}</span>` : '';
+  const logo = t.logo ? `<img src="${BASE}${t.logo.replace(/^\//,'')}" alt="${t.name}" width="40" height="40" style="border-radius:10px;object-fit:contain" loading="lazy" />` : t.name.charAt(0);
+  const sizes = (t.company_size || []).slice(0,2).map(s => `<span class="badge badge-gray badge-sm">${s.charAt(0).toUpperCase()+s.slice(1)}</span>`).join('');
+  return `<a href="${BASE}herramientas/${t.slug}" class="card tool-card group">
+    <div class="tool-avatar">${logo}</div>
+    <div class="min-w-0 flex-1">
+      <div class="flex items-center gap-2"><h3 class="tool-name" style="color:#1d1d1f">${t.name}</h3>${rankBadge}</div>
+      <p class="tool-desc">${t.description}</p>
+      <div class="flex flex-wrap gap-1.5 mt-2">
+        <span class="badge badge-sm ${typeClass}">${typeLabel}</span>
+        ${sizes}
+      </div>
+    </div>
+  </a>`;
+}
+
+function renderResults() {
+  const filtered = getFiltered();
+  document.getElementById('total-count').textContent = filtered.length;
+  document.getElementById('results-text').textContent = `${filtered.length} resultado${filtered.length!==1?'s':''}${hasActiveFilters()?' con filtros':''}`;
+  document.getElementById('clear-filters').style.display = hasActiveFilters() ? '' : 'none';
+
+  const grid = document.getElementById('tools-grid');
+  const empty = document.getElementById('empty-state');
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '';
+    empty.style.display = '';
+  } else {
+    empty.style.display = 'none';
+    grid.innerHTML = filtered.map(renderToolCard).join('');
+  }
+}
+
+function renderModal() {
+  const el = document.getElementById('modal-body');
+  // Tags
+  let tagsHTML = `<details open class="filter-group"><summary class="filter-group-title">Etiquetas <span style="color:#8e8e93;font-weight:400">(${ALL_TAGS.length})</span></summary><div class="filter-check-grid mt-2">`;
+  for (const [tag, count] of ALL_TAGS) {
+    const on = state.tags.includes(tag);
+    tagsHTML += `<div data-tag="${tag}" class="filter-check${on?' on':''}"><span class="filter-check-box">${on?'✓':''}</span><span class="filter-check-label">${tag}</span><span class="filter-check-count">${count}</span></div>`;
+  }
+  tagsHTML += `</div></details>`;
+
+  // Certs
+  let certsHTML = '';
+  if (ALL_CERTS.length > 0) {
+    certsHTML = `<details class="filter-group"><summary class="filter-group-title">Certificaciones <span style="color:#8e8e93;font-weight:400">(${ALL_CERTS.length})</span></summary><div class="filter-check-grid mt-2">`;
+    for (const c of ALL_CERTS) {
+      const on = state.certs.includes(c);
+      certsHTML += `<div data-cert="${c}" class="filter-check${on?' on':''}"><span class="filter-check-box">${on?'✓':''}</span><span class="filter-check-label">${c}</span></div>`;
+    }
+    certsHTML += `</div></details>`;
+  }
+  el.innerHTML = tagsHTML + certsHTML;
+}
+
+function hasActiveFilters() {
+  return !!(state.category || state.type || state.tags.length > 0 || state.certs.length > 0);
+}
+
+function updateBadge() {
+  const n = state.tags.length + state.certs.length;
+  document.getElementById('active-filter-count').textContent = n > 0 ? `(${n})` : '';
+}
+
+// ===== EVENT HANDLERS =====
+document.addEventListener('click', function(e) {
+  // Category filter
+  const catLink = e.target.closest('#category-filters a');
+  if (catLink) {
+    e.preventDefault();
+    state.category = catLink.dataset.cat;
+    pushState();
+    renderAll();
+    return;
+  }
+
+  // Type filter
+  const typeLink = e.target.closest('#type-filters a[data-type]');
+  if (typeLink) {
+    e.preventDefault();
+    state.type = typeLink.dataset.type;
+    pushState();
+    renderAll();
+    return;
+  }
+
+  // Sort
+  const sortLink = e.target.closest('#type-filters a[data-sort]');
+  if (sortLink) {
+    e.preventDefault();
+    state.sort = sortLink.dataset.sort;
+    pushState();
+    renderAll();
+    return;
+  }
+
+  // Tag toggle in modal
+  const tagEl = e.target.closest('.filter-check[data-tag]');
+  if (tagEl) {
+    e.preventDefault();
+    const tag = tagEl.dataset.tag;
+    const idx = state.tags.indexOf(tag);
+    if (idx >= 0) state.tags.splice(idx, 1);
+    else state.tags.push(tag);
+    pushState();
+    renderAll();
+    return;
+  }
+
+  // Cert toggle in modal
+  const certEl = e.target.closest('.filter-check[data-cert]');
+  if (certEl) {
+    e.preventDefault();
+    const cert = certEl.dataset.cert;
+    const idx = state.certs.indexOf(cert);
+    if (idx >= 0) state.certs.splice(idx, 1);
+    else state.certs.push(cert);
+    pushState();
+    renderAll();
+    return;
+  }
+
+  // Remove tag chip
+  const rmTag = e.target.closest('[data-remove-tag]');
+  if (rmTag) {
+    e.preventDefault();
+    state.tags = state.tags.filter(t => t !== rmTag.dataset.removeTag);
+    pushState();
+    renderAll();
+    return;
+  }
+
+  // Remove cert chip
+  const rmCert = e.target.closest('[data-remove-cert]');
+  if (rmCert) {
+    e.preventDefault();
+    state.certs = state.certs.filter(c => c !== rmCert.dataset.removeCert);
+    pushState();
+    renderAll();
+    return;
+  }
+
+  // Clear all filters
+  const clearLink = e.target.closest('#clear-filters');
+  if (clearLink) {
+    e.preventDefault();
+    state = { category: '', type: '', tags: [], certs: [], sort: 'rank', query: '' };
+    window.history.pushState({}, '', BASE + 'herramientas');
+    renderAll();
+    return;
+  }
+});
+
+// Modal open/close
+document.getElementById('btn-more-filters').addEventListener('click', () => {
+  document.getElementById('filter-modal').style.display = 'flex';
+});
+document.getElementById('btn-close-modal').addEventListener('click', () => {
+  document.getElementById('filter-modal').style.display = 'none';
+});
+document.getElementById('filter-modal').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) document.getElementById('filter-modal').style.display = 'none';
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') document.getElementById('filter-modal').style.display = 'none';
+});
+
+// Handle browser back/forward
+window.addEventListener('popstate', () => {
+  readURL();
+  renderAll();
+});
+
+// Initial render
+renderAll();
 </script>
