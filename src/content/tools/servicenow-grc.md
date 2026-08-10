@@ -1,7 +1,10 @@
 ---
 name: ServiceNow GRC
 categories:
+- audit-management
+- compliance-management
 - kpi-ca-managers
+- risk-management
 type: comercial
 cost_model: presupuesto-personalizado
 cost_details: 'Licencia anual. Precio según módulos: Policy, Risk, Audit, Vendor Risk.'

@@ -2,6 +2,7 @@
 name: IBM QRadar
 slug: ibm-qradar
 categories:
+- log-management
 - siem
 tags:
 - enterprise

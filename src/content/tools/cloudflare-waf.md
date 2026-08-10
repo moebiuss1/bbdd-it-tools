@@ -2,7 +2,9 @@
 name: Cloudflare WAF
 slug: cloudflare-waf
 categories:
+- dns-security
 - firewall
+- waf
 tags:
 - waf
 - ddos

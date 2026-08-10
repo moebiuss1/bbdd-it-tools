@@ -2,6 +2,7 @@
 name: AWS Key Management Service (KMS)
 categories:
 - key-managers
+- secrets-management
 type: comercial
 cost_model: pago-por-uso
 cost_details: $1/clave/mes + $0.03/10,000 operaciones. HSM desde $1.45/hora.

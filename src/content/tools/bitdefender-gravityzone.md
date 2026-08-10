@@ -2,6 +2,7 @@
 name: Bitdefender GravityZone
 categories:
 - antivirus
+- edr
 type: comercial
 cost_model: suscripción
 cost_details: 'Desde ~$30/endpoint/año. Ediciones: Business, Enterprise, Elite.'

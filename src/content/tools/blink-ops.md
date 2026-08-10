@@ -2,6 +2,7 @@
 name: Blink Ops
 slug: blink-ops
 categories:
+- incident-management
 - soar
 tags:
 - soar

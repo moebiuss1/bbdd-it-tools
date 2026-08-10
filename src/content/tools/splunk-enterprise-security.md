@@ -2,6 +2,7 @@
 name: Splunk Enterprise Security
 slug: splunk-enterprise-security
 categories:
+- log-management
 - siem
 tags:
 - monitorizacion

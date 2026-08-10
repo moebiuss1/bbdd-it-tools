@@ -3,6 +3,8 @@ name: Zscaler Zero Trust Exchange
 slug: zscaler-zero-trust
 categories:
 - firewall
+- swg
+- web-security
 tags:
 - sase
 - zero-trust

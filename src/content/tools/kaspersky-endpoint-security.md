@@ -3,6 +3,7 @@ name: Kaspersky Endpoint Security
 slug: kaspersky-endpoint-security
 categories:
 - antivirus
+- edr
 tags:
 - ngav
 - edr

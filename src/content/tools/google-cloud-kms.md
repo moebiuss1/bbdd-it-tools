@@ -3,6 +3,7 @@ name: Google Cloud KMS
 slug: google-cloud-kms
 categories:
 - key-managers
+- secrets-management
 tags:
 - kms
 - cloud

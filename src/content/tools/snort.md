@@ -2,6 +2,7 @@
 name: Snort
 categories:
 - ids
+- ips
 type: opensource
 cost_model: gratis
 cost_details: Gratuito (GPLv2). Reglas de Cisco Talos disponibles por suscripción (~$30/año uso personal).

@@ -2,6 +2,8 @@
 name: Wazuh
 slug: wazuh
 categories:
+- ids
+- log-management
 - siem
 tags:
 - open-source

@@ -2,6 +2,7 @@
 name: Cisco Secure Endpoint
 slug: cisco-secure-endpoint
 categories:
+- antivirus
 - edr
 tags:
 - edr

@@ -1,6 +1,7 @@
 ---
 name: SentinelOne Singularity
 categories:
+- antivirus
 - edr
 type: comercial
 cost_model: suscripción

@@ -2,7 +2,9 @@
 name: Elastic Defend
 slug: elastic-defend
 categories:
+- antivirus
 - edr
+- siem
 tags:
 - edr
 - open-source

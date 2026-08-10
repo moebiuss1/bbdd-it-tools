@@ -2,6 +2,7 @@
 name: Cyware Orchestrate
 slug: cyware-orchestrate
 categories:
+- incident-management
 - soar
 tags:
 - soar

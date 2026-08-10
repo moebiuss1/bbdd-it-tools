@@ -3,6 +3,7 @@ name: WithSecure Elements
 slug: withsecure-endpoint
 categories:
 - antivirus
+- edr
 tags:
 - ngav
 - edr

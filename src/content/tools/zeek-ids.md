@@ -3,6 +3,8 @@ name: Zeek
 slug: zeek-ids
 categories:
 - ids
+- ndr
+- nta
 tags:
 - open-source
 - network-analysis

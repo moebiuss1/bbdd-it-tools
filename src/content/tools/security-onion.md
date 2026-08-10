@@ -3,6 +3,8 @@ name: Security Onion
 slug: security-onion
 categories:
 - ids
+- log-management
+- siem
 tags:
 - ids
 - network-monitoring

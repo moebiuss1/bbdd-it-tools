@@ -3,6 +3,7 @@ name: Forcepoint NGFW
 slug: forcepoint-ngfw
 categories:
 - firewall
+- ngfw
 tags:
 - ngfw
 - data-centric

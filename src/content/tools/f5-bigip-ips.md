@@ -3,6 +3,8 @@ name: F5 BIG-IP Advanced WAF
 slug: f5-bigip-ips
 categories:
 - ips
+- load-balancers
+- waf
 tags:
 - waf
 - ips

@@ -3,6 +3,8 @@ name: OneLogin Identity
 slug: onelogin-identity
 categories:
 - identity-managers
+- mfa
+- sso
 tags:
 - iam
 - sso

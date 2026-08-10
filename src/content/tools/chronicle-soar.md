@@ -2,6 +2,7 @@
 name: Google SecOps SOAR
 slug: chronicle-soar
 categories:
+- incident-management
 - soar
 tags:
 - soar

@@ -3,6 +3,8 @@ name: Palo Alto Networks NGFW
 slug: palo-alto-firewall
 categories:
 - firewall
+- ips
+- ngfw
 tags:
 - red
 - cloud

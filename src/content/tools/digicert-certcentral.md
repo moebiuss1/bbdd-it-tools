@@ -3,6 +3,7 @@ name: DigiCert CertCentral
 slug: digicert-certcentral
 categories:
 - cert-managers
+- certificate-lifecycle
 tags:
 - pki
 - tls-ssl

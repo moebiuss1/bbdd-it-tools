@@ -3,6 +3,8 @@ name: JumpCloud
 slug: jumpcloud
 categories:
 - identity-managers
+- mfa
+- sso
 tags:
 - sso
 - mfa

@@ -2,6 +2,7 @@
 name: Tines
 slug: tines
 categories:
+- incident-management
 - soar
 tags:
 - no-code

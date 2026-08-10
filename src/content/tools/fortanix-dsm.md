@@ -3,6 +3,7 @@ name: Fortanix Data Security Manager
 slug: fortanix-dsm
 categories:
 - key-managers
+- secrets-management
 tags:
 - kms
 - confidential-computing

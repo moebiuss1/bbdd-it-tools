@@ -3,6 +3,7 @@ name: Saviynt IGA
 slug: saviynt-iga
 categories:
 - identity-managers
+- pam
 tags:
 - iga
 - sap

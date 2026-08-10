@@ -1,7 +1,9 @@
 ---
 name: Microsoft Sentinel
 categories:
+- log-management
 - siem
+- soar
 type: comercial
 cost_model: pago-por-uso
 cost_details: Basado en volumen de datos analizados. Sin costes de infraestructura. Desde ~$2/GB ingerido.

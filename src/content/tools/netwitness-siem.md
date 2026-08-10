@@ -2,6 +2,8 @@
 name: NetWitness SIEM
 slug: netwitness-siem
 categories:
+- ndr
+- nta
 - siem
 tags:
 - siem

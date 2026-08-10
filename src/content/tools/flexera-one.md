@@ -2,6 +2,7 @@
 name: Flexera One
 slug: flexera-one
 categories:
+- cloud-cost
 - it-asset-managers
 tags:
 - sam

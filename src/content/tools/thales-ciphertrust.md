@@ -2,7 +2,9 @@
 name: Thales CipherTrust Manager
 slug: thales-ciphertrust
 categories:
+- certificate-lifecycle
 - key-managers
+- secrets-management
 tags:
 - kms
 - hsm

@@ -3,6 +3,7 @@ name: ESET PROTECT
 slug: eset-protect
 categories:
 - antivirus
+- edr
 tags:
 - lightweight
 - multilayered

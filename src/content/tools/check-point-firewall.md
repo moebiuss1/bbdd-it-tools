@@ -3,6 +3,8 @@ name: Check Point Quantum
 slug: check-point-quantum
 categories:
 - firewall
+- ips
+- ngfw
 tags:
 - ngfw
 - ips

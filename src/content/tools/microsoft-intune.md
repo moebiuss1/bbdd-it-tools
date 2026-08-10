@@ -1,6 +1,7 @@
 ---
 name: Microsoft Intune
 categories:
+- mam
 - mdm
 type: comercial
 cost_model: suscripción

@@ -3,6 +3,7 @@ name: Sectigo Certificate Manager
 slug: sectigo-certificate-manager
 categories:
 - cert-managers
+- certificate-lifecycle
 tags:
 - clm
 - pki

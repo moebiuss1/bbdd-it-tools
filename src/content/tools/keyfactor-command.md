@@ -3,6 +3,7 @@ name: Keyfactor Command
 slug: keyfactor-command
 categories:
 - cert-managers
+- certificate-lifecycle
 tags:
 - pki
 - certificate-lifecycle

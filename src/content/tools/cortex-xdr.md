@@ -2,6 +2,7 @@
 name: Cortex XDR
 slug: cortex-xdr
 categories:
+- antivirus
 - edr
 tags:
 - xdr

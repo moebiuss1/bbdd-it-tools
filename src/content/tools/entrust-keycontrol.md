@@ -2,7 +2,9 @@
 name: Entrust KeyControl
 slug: entrust-keycontrol
 categories:
+- certificate-lifecycle
 - key-managers
+- secrets-management
 tags:
 - kms
 - hsm

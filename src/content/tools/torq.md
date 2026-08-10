@@ -2,6 +2,7 @@
 name: Torq
 slug: torq
 categories:
+- incident-management
 - soar
 tags:
 - ai

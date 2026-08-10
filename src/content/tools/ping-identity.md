@@ -3,6 +3,8 @@ name: Ping Identity
 slug: ping-identity
 categories:
 - identity-managers
+- mfa
+- sso
 tags:
 - federation
 - sso

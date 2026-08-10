@@ -3,6 +3,7 @@ name: Palo Alto Threat Prevention
 slug: palo-alto-threat-prevention
 categories:
 - ips
+- ngfw
 tags:
 - ips
 - threat-prevention

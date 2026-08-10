@@ -2,7 +2,9 @@
 name: MetricStream
 slug: metricstream
 categories:
+- compliance-management
 - kpi-ca-managers
+- risk-management
 tags:
 - grc
 - irm

@@ -2,6 +2,7 @@
 name: Rapid7 InsightConnect
 slug: rapid7-insightconnect
 categories:
+- incident-management
 - soar
 tags:
 - soar

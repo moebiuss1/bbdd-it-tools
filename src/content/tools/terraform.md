@@ -2,6 +2,7 @@
 name: Terraform
 slug: terraform
 categories:
+- cloud-migration
 - config-managers
 tags:
 - infrastructure-as-code

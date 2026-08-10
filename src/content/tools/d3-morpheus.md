@@ -2,6 +2,7 @@
 name: D3 Morpheus
 slug: d3-morpheus
 categories:
+- incident-management
 - soar
 tags:
 - soar

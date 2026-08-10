@@ -3,6 +3,7 @@ name: Sophos Intercept X
 slug: sophos-intercept-x
 categories:
 - antivirus
+- edr
 tags:
 - ransomware
 - ai

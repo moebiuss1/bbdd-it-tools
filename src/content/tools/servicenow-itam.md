@@ -1,6 +1,8 @@
 ---
 name: ServiceNow ITAM
 categories:
+- change-management
+- incident-management
 - it-asset-managers
 type: comercial
 cost_model: presupuesto-personalizado

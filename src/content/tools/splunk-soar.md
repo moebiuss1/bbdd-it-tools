@@ -2,6 +2,7 @@
 name: Splunk SOAR
 slug: splunk-soar
 categories:
+- incident-management
 - soar
 tags:
 - automation

@@ -2,6 +2,8 @@
 name: Elastic Security
 slug: elastic-security
 categories:
+- edr
+- log-management
 - siem
 tags:
 - open-source

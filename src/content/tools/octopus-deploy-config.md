@@ -2,6 +2,7 @@
 name: Octopus Deploy
 slug: octopus-deploy-config
 categories:
+- ci-cd
 - config-managers
 tags:
 - iac

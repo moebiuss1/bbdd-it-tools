@@ -2,6 +2,7 @@
 name: Omnissa Workspace ONE
 slug: omnissa-workspace-one
 categories:
+- mam
 - mdm
 tags:
 - uem

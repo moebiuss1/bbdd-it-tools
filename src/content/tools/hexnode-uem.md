@@ -2,6 +2,7 @@
 name: Hexnode UEM
 slug: hexnode-uem
 categories:
+- mam
 - mdm
 tags:
 - uem

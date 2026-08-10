@@ -2,7 +2,10 @@
 name: RSA Archer
 slug: rsa-archer
 categories:
+- audit-management
+- compliance-management
 - kpi-ca-managers
+- risk-management
 tags:
 - grc
 - irm

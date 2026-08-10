@@ -1,6 +1,7 @@
 ---
 name: Palo Alto Cortex XSOAR
 categories:
+- incident-management
 - soar
 type: comercial
 cost_model: presupuesto-personalizado

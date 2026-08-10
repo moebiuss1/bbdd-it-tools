@@ -1,7 +1,9 @@
 ---
 name: Suricata
 categories:
+- ids
 - ips
+- ndr
 type: opensource
 cost_model: gratis
 cost_details: Gratuito (GPLv2). Suricata Enterprise con soporte comercial disponible.

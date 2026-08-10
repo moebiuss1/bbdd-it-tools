@@ -2,6 +2,7 @@
 name: CrowdStrike Falcon
 slug: crowdstrike-falcon
 categories:
+- antivirus
 - edr
 tags:
 - endpoint

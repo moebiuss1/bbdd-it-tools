@@ -3,6 +3,7 @@ name: GlobalSign Certificate Manager
 slug: globalsign-certificate-manager
 categories:
 - cert-managers
+- certificate-lifecycle
 tags:
 - pki
 - iot

@@ -2,6 +2,7 @@
 name: Sumo Logic Cloud SIEM
 slug: sumo-logic-cloud-siem
 categories:
+- log-management
 - siem
 tags:
 - siem

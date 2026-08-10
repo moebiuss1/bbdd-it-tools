@@ -3,6 +3,7 @@ name: Keycloak
 slug: keycloak-identity
 categories:
 - identity-managers
+- sso
 tags:
 - iam
 - open-source

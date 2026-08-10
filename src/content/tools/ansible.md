@@ -1,6 +1,7 @@
 ---
 name: Ansible
 categories:
+- ci-cd
 - config-managers
 type: opensource
 cost_model: freemium

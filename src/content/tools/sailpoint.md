@@ -3,6 +3,7 @@ name: SailPoint
 slug: sailpoint
 categories:
 - identity-managers
+- pam
 tags:
 - iga
 - governance

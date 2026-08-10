@@ -3,6 +3,8 @@ name: Juniper SRX
 slug: juniper-srx
 categories:
 - firewall
+- ips
+- ngfw
 tags:
 - ngfw
 - ips

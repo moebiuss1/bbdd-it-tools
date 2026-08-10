@@ -3,6 +3,8 @@ name: ForgeRock Identity
 slug: forgerock-identity
 categories:
 - identity-managers
+- mfa
+- sso
 tags:
 - iam
 - ciam

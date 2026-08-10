@@ -2,6 +2,8 @@
 name: Microsoft Entra ID (Azure AD)
 categories:
 - identity-managers
+- mfa
+- sso
 type: comercial
 cost_model: freemium
 cost_details: Free para funciones básicas. Premium P1 (~$6/user/mes), P2 (~$9/user/mes).

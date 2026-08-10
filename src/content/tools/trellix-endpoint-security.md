@@ -2,6 +2,7 @@
 name: Trellix Endpoint Security
 slug: trellix-endpoint-security
 categories:
+- antivirus
 - edr
 tags:
 - xdr
