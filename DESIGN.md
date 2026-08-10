@@ -3,8 +3,8 @@ name: BBDD IT Tools
 description: Directorio vivo de herramientas IT para seguridad, cumplimiento y auditoría — diseño editorial, mínima distracción, máxima claridad
 colors:
   ink: "#1d1d1f"
-  ink-muted: "#86868b"
-  ink-faint: "#aeaeb2"
+  ink-muted: "#6e6e73"
+  ink-faint: "#8e8e93"
   paper: "#ffffff"
   paper-warm: "#f5f5f7"
   paper-footer: "#fafafa"
@@ -150,8 +150,8 @@ Una paleta restringida construida sobre la temperatura neutra del sistema operat
 
 ### Neutral
 - **Ink** (#1d1d1f): Texto principal. Casi negro, ligeramente cálido. Contraste ≥12:1 sobre blanco.
-- **Ink Muted** (#86868b): Texto secundario, descripciones, metadatos. Contraste ~3.5:1 — justo en el límite WCAG AA para 14px+. Usar solo en cuerpo pequeño (13px+) o labels.
-- **Ink Faint** (#aeaeb2): Metadatos de baja prioridad, placeholders, separadores visuales. No usar para texto que deba leerse.
+- **Ink Muted** (#6e6e73): Texto secundario, descripciones, metadatos. Contraste 5.07:1 sobre blanco — cumple WCAG AA para cualquier tamaño. Usar para body small (13px), descripciones y navegación secundaria.
+- **Ink Faint** (#8e8e93): Metadatos de baja prioridad, placeholders, separadores visuales. Contraste 3.23:1 — aceptable para texto decorativo ≤13px. No usar para body copy.
 - **Paper** (#ffffff): Fondo principal. Blanco puro.
 - **Paper Warm** (#f5f5f7): Fondo alternativo para secciones, hero gradient-to-white, hover de elementos. El gris casi-blanco de Apple.
 - **Paper Footer** (#fafafa): Fondo del footer. Un tono más cálido que Paper Warm para cerrar la página.

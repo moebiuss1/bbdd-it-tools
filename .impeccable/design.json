@@ -5,8 +5,8 @@
   "extensions": {
     "colorMeta": {
       "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#1d1d1f", "tonalRamp": ["#0a0a0b", "#121214", "#1d1d1f", "#2d2d30", "#3d3d42", "#4d4d53", "#6e6e73", "#aeaeb2"] },
-      "ink-muted": { "role": "neutral", "displayName": "Ink Muted", "canonical": "#86868b", "tonalRamp": ["#3d3d42", "#4d4d53", "#6e6e73", "#86868b", "#aeaeb2", "#c7c7cc", "#d2d2d7", "#e5e5ea"] },
-      "ink-faint": { "role": "neutral", "displayName": "Ink Faint", "canonical": "#aeaeb2", "tonalRamp": ["#6e6e73", "#86868b", "#aeaeb2", "#c7c7cc", "#d2d2d7", "#e5e5ea", "#f5f5f7", "#fafafa"] },
+      "ink-muted": { "role": "neutral", "displayName": "Ink Muted", "canonical": "#6e6e73", "tonalRamp": ["#3d3d42", "#4d4d53", "#6e6e73", "#86868b", "#aeaeb2", "#c7c7cc", "#d2d2d7", "#e5e5ea"] },
+      "ink-faint": { "role": "neutral", "displayName": "Ink Faint", "canonical": "#8e8e93", "tonalRamp": ["#6e6e73", "#86868b", "#aeaeb2", "#c7c7cc", "#d2d2d7", "#e5e5ea", "#f5f5f7", "#fafafa"] },
       "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#ffffff", "tonalRamp": ["#e5e5ea", "#ededf0", "#f5f5f7", "#fafafa", "#ffffff", "#ffffff", "#ffffff", "#ffffff"] },
       "paper-warm": { "role": "neutral", "displayName": "Paper Warm", "canonical": "#f5f5f7", "tonalRamp": ["#d2d2d7", "#e5e5ea", "#ededf0", "#f5f5f7", "#fafafa", "#ffffff", "#ffffff", "#ffffff"] },
       "paper-footer": { "role": "neutral", "displayName": "Paper Footer", "canonical": "#fafafa", "tonalRamp": ["#e5e5ea", "#ededf0", "#f5f5f7", "#fafafa", "#ffffff", "#ffffff", "#ffffff", "#ffffff"] },
