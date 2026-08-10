@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-10T10:00:00Z",
+  "title": "Design System: BBDD IT Tools",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#1d1d1f", "tonalRamp": ["#0a0a0b", "#121214", "#1d1d1f", "#2d2d30", "#3d3d42", "#4d4d53", "#6e6e73", "#aeaeb2"] },
+      "ink-muted": { "role": "neutral", "displayName": "Ink Muted", "canonical": "#86868b", "tonalRamp": ["#3d3d42", "#4d4d53", "#6e6e73", "#86868b", "#aeaeb2", "#c7c7cc", "#d2d2d7", "#e5e5ea"] },
+      "ink-faint": { "role": "neutral", "displayName": "Ink Faint", "canonical": "#aeaeb2", "tonalRamp": ["#6e6e73", "#86868b", "#aeaeb2", "#c7c7cc", "#d2d2d7", "#e5e5ea", "#f5f5f7", "#fafafa"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#ffffff", "tonalRamp": ["#e5e5ea", "#ededf0", "#f5f5f7", "#fafafa", "#ffffff", "#ffffff", "#ffffff", "#ffffff"] },
+      "paper-warm": { "role": "neutral", "displayName": "Paper Warm", "canonical": "#f5f5f7", "tonalRamp": ["#d2d2d7", "#e5e5ea", "#ededf0", "#f5f5f7", "#fafafa", "#ffffff", "#ffffff", "#ffffff"] },
+      "paper-footer": { "role": "neutral", "displayName": "Paper Footer", "canonical": "#fafafa", "tonalRamp": ["#e5e5ea", "#ededf0", "#f5f5f7", "#fafafa", "#ffffff", "#ffffff", "#ffffff", "#ffffff"] },
+      "border": { "role": "neutral", "displayName": "Border", "canonical": "#e8e8ed", "tonalRamp": ["#aeaeb2", "#c7c7cc", "#d2d2d7", "#e8e8ed", "#ededf0", "#f5f5f7", "#fafafa", "#ffffff"] },
+      "border-light": { "role": "neutral", "displayName": "Border Light", "canonical": "#d2d2d7", "tonalRamp": ["#aeaeb2", "#c7c7cc", "#d2d2d7", "#e5e5ea", "#e8e8ed", "#ededf0", "#f5f5f7", "#fafafa"] },
+      "blue-accent": { "role": "primary", "displayName": "Blue Accent", "canonical": "#0071e3", "tonalRamp": ["#001a3d", "#003380", "#004db3", "#0066cc", "#0071e3", "#1a85f0", "#4da1ff", "#80c1ff"] },
+      "blue-hover": { "role": "primary", "displayName": "Blue Hover", "canonical": "#0066cc", "tonalRamp": ["#001a3d", "#003380", "#004db3", "#0066cc", "#0071e3", "#1a85f0", "#4da1ff", "#80c1ff"] },
+      "blue-bg": { "role": "primary", "displayName": "Blue Background", "canonical": "#e8f2fd", "tonalRamp": ["#80c1ff", "#b3d9ff", "#d4e8ff", "#e8f2fd", "#f0f6ff", "#f5f9ff", "#fafcff", "#ffffff"] },
+      "green-bg": { "role": "semantic", "displayName": "Green Background", "canonical": "#ecfdf5", "tonalRamp": ["#72e5b9", "#a7f3d0", "#d1fae5", "#ecfdf5", "#f0fdf4", "#f5fdf9", "#fafefc", "#ffffff"] },
+      "green-text": { "role": "semantic", "displayName": "Green Text", "canonical": "#059669", "tonalRamp": ["#003320", "#00663f", "#00995e", "#059669", "#34c759", "#5cd98a", "#8febb0", "#bff5d0"] },
+      "amber-bg": { "role": "semantic", "displayName": "Amber Background", "canonical": "#fffbeb", "tonalRamp": ["#fed7aa", "#fde68a", "#fef3c7", "#fffbeb", "#fffdf5", "#fffefa", "#ffffff", "#ffffff"] },
+      "amber-text": { "role": "semantic", "displayName": "Amber Text", "canonical": "#d97706", "tonalRamp": ["#4d2800", "#663a00", "#995700", "#b45309", "#d97706", "#f59e0b", "#fbbf24", "#fde68a"] },
+      "teal-bg": { "role": "semantic", "displayName": "Teal Background", "canonical": "#f0fdfa", "tonalRamp": ["#5eead4", "#99f6e4", "#ccfbf1", "#f0fdfa", "#f5fdfc", "#fafefd", "#fcfffe", "#ffffff"] },
+      "teal-text": { "role": "semantic", "displayName": "Teal Text", "canonical": "#0d9488", "tonalRamp": ["#003330", "#006660", "#0d9488", "#14b8a6", "#2dd4bf", "#5eead4", "#99f6e4", "#ccfbf1"] },
+      "gray-bg": { "role": "semantic", "displayName": "Gray Background", "canonical": "#f3f4f6", "tonalRamp": ["#d2d2d7", "#e5e5ea", "#ededf0", "#f3f4f6", "#f5f5f7", "#fafafa", "#ffffff", "#ffffff"] },
+      "gray-text": { "role": "semantic", "displayName": "Gray Text", "canonical": "#6b7280", "tonalRamp": ["#2d2d30", "#3d3d42", "#4d4d53", "#6b7280", "#86868b", "#aeaeb2", "#c7c7cc", "#d2d2d7"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero principal. Una sola instancia por página." },
+      "headline": { "displayName": "Headline", "purpose": "Título de herramienta en página de detalle." },
+      "title": { "displayName": "Title", "purpose": "Títulos de sección y nombres de herramienta en cards." },
+      "body": { "displayName": "Body", "purpose": "Texto de lectura principal." },
+      "body-small": { "displayName": "Body Small", "purpose": "Descripciones en cards, metadatos, conteos." },
+      "label": { "displayName": "Label", "purpose": "Badges, chips, etiquetas, categorías." }
+    },
+    "shadows": [
+      { "name": "card-rest", "value": "0 1px 3px rgba(0,0,0,0.04)", "purpose": "Separación Z casi imperceptible de cards en reposo." },
+      { "name": "card-hover", "value": "0 4px 16px rgba(0,0,0,0.08)", "purpose": "Elevación suave al hover. La card se levanta." },
+      { "name": "focus-ring", "value": "0 0 0 3px rgba(0,113,227,0.15)", "purpose": "Anillo de foco sutil en inputs y elementos interactivos." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Default easing para transiciones de estado (hover, focus)." },
+      { "name": "duration-fast", "value": "150ms", "purpose": "Transiciones de hover/focus. Instantáneas pero suaves." },
+      { "name": "duration-card", "value": "200ms", "purpose": "Elevación de card en hover." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Call to action principal. Una instancia por sección como máximo.",
+      "html": "<button class=\"ds-btn-primary\">Ver directorio →</button>",
+      "css": ".ds-btn-primary { background: #0071e3; color: #fff; padding: 10px 20px; border-radius: 9999px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Helvetica Neue, Arial, sans-serif; font-size: 14px; font-weight: 500; border: none; cursor: pointer; transition: background 0.15s; display: inline-flex; align-items: center; gap: 6px; } .ds-btn-primary:hover { background: #0066cc; } .ds-btn-primary:focus-visible { box-shadow: 0 0 0 3px rgba(0,113,227,0.15); outline: none; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Acción secundaria. Usar junto a un Primary, nunca solo como CTA principal.",
+      "html": "<button class=\"ds-btn-ghost\">Ver rankings</button>",
+      "css": ".ds-btn-ghost { background: #fff; color: #1d1d1f; padding: 10px 20px; border-radius: 9999px; border: 1px solid #d2d2d7; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Helvetica Neue, Arial, sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.15s; } .ds-btn-ghost:hover { background: #f5f5f7; } .ds-btn-ghost:focus-visible { box-shadow: 0 0 0 3px rgba(0,113,227,0.15); outline: none; }"
+    },
+    {
+      "name": "Badge (Filled)",
+      "kind": "chip",
+      "refersTo": "badge-filled",
+      "description": "Chip para mostrar estado, tipo o categoría. Fondo semántico con texto del mismo tono.",
+      "html": "<span class=\"ds-badge ds-badge-blue\">Comercial</span>",
+      "css": ".ds-badge { display: inline-flex; align-items: center; border-radius: 9999px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Helvetica Neue, Arial, sans-serif; font-size: 11px; font-weight: 500; padding: 3px 10px; } .ds-badge-blue { background: #e8f2fd; color: #0066cc; } .ds-badge-green { background: #ecfdf5; color: #059669; } .ds-badge-amber { background: #fffbeb; color: #d97706; } .ds-badge-teal { background: #f0fdfa; color: #0d9488; } .ds-badge-gray { background: #f3f4f6; color: #6b7280; }"
+    },
+    {
+      "name": "Badge (Outline)",
+      "kind": "chip",
+      "refersTo": "badge-outline",
+      "description": "Chip inactivo/desactivado. Para filtros no seleccionados o etiquetas neutras.",
+      "html": "<span class=\"ds-badge-outline\">Todas</span>",
+      "css": ".ds-badge-outline { display: inline-flex; align-items: center; border-radius: 9999px; border: 1px solid #d2d2d7; color: #6e6e73; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Helvetica Neue, Arial, sans-serif; font-size: 12px; font-weight: 500; padding: 3px 10px; } .ds-badge-outline:hover { background: #f5f5f7; }"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "search-input",
+      "description": "Input de búsqueda en cápsula. Header y página de directorio.",
+      "html": "<input type=\"search\" class=\"ds-search-input\" placeholder=\"Buscar\">",
+      "css": ".ds-search-input { width: 100%; border-radius: 9999px; border: 1px solid #d2d2d7; background: #f5f5f7; padding: 6px 12px 6px 32px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Helvetica Neue, Arial, sans-serif; font-size: 13px; color: #1d1d1f; outline: none; transition: border-color 0.15s, box-shadow 0.15s, background 0.15s; } .ds-search-input::placeholder { color: #aeaeb2; } .ds-search-input:focus { border-color: #0071e3; background: #fff; box-shadow: 0 0 0 3px rgba(0,113,227,0.15); }"
+    },
+    {
+      "name": "Header",
+      "kind": "nav",
+      "refersTo": "header",
+      "description": "Header sticky con backdrop-blur. Fondo translúcido, altura 48px.",
+      "html": "<header class=\"ds-header\"><nav class=\"ds-header-inner\"><a href=\"/\" class=\"ds-brand\">BBDD IT</a><a href=\"/herramientas\" class=\"ds-nav-link\">Directorio</a><a href=\"/ranking\" class=\"ds-nav-link\">Rankings</a></nav></header>",
+      "css": ".ds-header { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid #e8e8ed; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); } .ds-header-inner { display: flex; align-items: center; height: 48px; gap: 24px; max-width: 1200px; margin: 0 auto; padding: 0 24px; } .ds-brand { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', Helvetica Neue, Arial, sans-serif; font-size: 15px; font-weight: 600; color: #1d1d1f; letter-spacing: -0.01em; text-decoration: none; } .ds-brand:hover { opacity: 0.7; } .ds-nav-link { border-radius: 9999px; padding: 6px 12px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Helvetica Neue, Arial, sans-serif; font-size: 13px; color: #86868b; text-decoration: none; transition: all 0.15s; } .ds-nav-link:hover { background: #f5f5f7; color: #1d1d1f; text-decoration: none; }"
+    },
+    {
+      "name": "Tool Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Card de herramienta en grid. Logo/avatar + nombre + descripción + badges.",
+      "html": "<a href=\"#\" class=\"ds-tool-card\"><div class=\"ds-tool-avatar\">C</div><div class=\"ds-tool-body\"><h3 class=\"ds-tool-name\">CrowdStrike Falcon</h3><p class=\"ds-tool-desc\">Plataforma de protección de endpoints nativa en la nube...</p><span class=\"ds-badge ds-badge-blue\">Comercial</span></div></a>",
+      "css": ".ds-tool-card { display: flex; align-items: flex-start; gap: 16px; padding: 20px; background: #fff; border: 1px solid #e8e8ed; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); transition: box-shadow 0.2s; text-decoration: none; } .ds-tool-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); text-decoration: none; } .ds-tool-avatar { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 12px; background: #f5f5f7; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', Helvetica Neue, Arial, sans-serif; font-size: 15px; font-weight: 700; color: #aeaeb2; flex-shrink: 0; } .ds-tool-body { min-width: 0; flex: 1; } .ds-tool-name { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', Helvetica Neue, Arial, sans-serif; font-size: 15px; font-weight: 600; color: #1d1d1f; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .ds-tool-desc { margin-top: 2px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Helvetica Neue, Arial, sans-serif; font-size: 13px; color: #86868b; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }"
+    },
+    {
+      "name": "Rank Row",
+      "kind": "custom",
+      "refersTo": "rank-row",
+      "description": "Fila de ranking: número + nombre + descripción + tier badge.",
+      "html": "<a href=\"#\" class=\"ds-rank-row\"><div class=\"ds-rank-num\">1</div><div class=\"ds-rank-body\"><h3 class=\"ds-rank-name\">CrowdStrike Falcon</h3><p class=\"ds-rank-desc\">Plataforma de protección de endpoints...</p></div><span class=\"ds-tier ds-tier-lider\">Líder</span></a>",
+      "css": ".ds-rank-row { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-bottom: 1px solid #e8e8ed; text-decoration: none; transition: background 0.15s; } .ds-rank-row:last-child { border-bottom: 0; } .ds-rank-row:hover { background: #f5f5f7; text-decoration: none; } .ds-rank-num { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 9999px; background: #f5f5f7; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', Helvetica Neue, Arial, sans-serif; font-size: 14px; font-weight: 700; color: #1d1d1f; flex-shrink: 0; } .ds-rank-body { min-width: 0; flex: 1; } .ds-rank-name { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', Helvetica Neue, Arial, sans-serif; font-size: 15px; font-weight: 600; color: #1d1d1f; } .ds-rank-desc { margin-top: 2px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Helvetica Neue, Arial, sans-serif; font-size: 13px; color: #86868b; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .ds-tier { display: inline-block; border-radius: 9999px; padding: 3px 10px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Helvetica Neue, Arial, sans-serif; font-size: 11px; font-weight: 500; border: 1px solid; } .ds-tier-lider { background: #fffbeb; color: #92400e; border-color: #fde68a; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La Base de Datos Tipográfica",
+    "overview": "BBDD IT Tools se viste como lo que es: una base de datos con criterio tipográfico. No es una revista, no es un SaaS, no es un portfolio. Es información estructurada que se lee con la misma fluidez que un informe bien maquetado. El diseño no compite con el contenido; lo sirve con la precisión de un editor, no con el entusiasmo de un marketer. La paleta es monocromática con un solo acento azul que aparece con moderación. Los fondos alternan entre blanco puro y grises casi-blancos para crear zonas sin recurrir a sombras decorativas. La tipografía es el sistema operativo: San Francisco en Apple, Helvetica Neue como respaldo, sin fuentes web que cargar.",
+    "keyCharacteristics": [
+      "Monocromático con un solo acento azul, usado con contención",
+      "Tipografía de sistema: cero fuentes web, carga instantánea",
+      "Espacios generosos, densidad controlada",
+      "Sin sombras decorativas: la profundidad responde al estado, no decora",
+      "Sin JavaScript innecesario: todo el filtrado es server-side vía URL params"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Blue Accent (#0071e3) ocupa ≤10% de la superficie de cualquier pantalla. Su rareza es el punto. Si dos elementos azules compiten por atención en el mismo viewport, uno debe degradarse a Ink Muted.", "section": "colors" },
+      { "name": "The Ink-Only Rule", "body": "Todo texto que no sea un enlace o un badge semántico se renderiza en Ink (#1d1d1f) o sus derivados (Muted, Faint). Nunca texto coloreado como decoración.", "section": "colors" },
+      { "name": "The Flat-By-Default Rule", "body": "Las superficies son planas en reposo. Las sombras aparecen solo en respuesta a estado (hover, focus). Prohibido usar sombras como decoración estática en cards, secciones o headers.", "section": "elevation" },
+      { "name": "The Ghost Focus Rule", "body": "El anillo de foco es azul (#0071e3) al 15% de opacidad, sin offset. Visible pero no estridente. Nunca usar el outline por defecto del navegador sin estilizar.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar el espacio negativo como elemento estructural. Secciones separadas por 80px, cards por 12-16px.",
+      "Do mantener una sola instancia de Blue Accent fuerte por viewport. Si compite, degradar.",
+      "Do mostrar siempre fuentes verificables. Si un dato no está confirmado, marcarlo como needs_review.",
+      "Do usar text-wrap: balance en headings, text-wrap: pretty en body copy.",
+      "Do respetar la jerarquía tipográfica: Display → Headline → Title → Body → Body Small → Label."
+    ],
+    "donts": [
+      "Don't usar gradientes, glassmorphism, sombras decorativas, o cualquier efecto que un auditor consideraría ruido visual.",
+      "Don't usar dark mode. La herramienta se usa en oficinas con luz natural; el fondo blanco es funcional.",
+      "Don't añadir animaciones de scroll, contadores animados, o ilustraciones vectoriales genéricas.",
+      "Don't usar texto coloreado como decoración. Si no es un enlace, un badge semántico o un estado de error, va en Ink.",
+      "Don't usar border-left o border-right mayor de 1px como acento decorativo en cards o callouts.",
+      "Don't escribir buzzwords (streamline, empower, next-generation). Cada herramienta se describe con datos, no con adjetivos.",
+      "Don't superar los 65-75 caracteres por línea en texto de lectura.",
+      "Don't usar más de una familia tipográfica. San Francisco cubre todos los pesos y tamaños necesarios."
+    ]
+  }
+}
