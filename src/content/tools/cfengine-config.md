@@ -21,7 +21,7 @@ certifications: []
 company_size:
 - mediana
 - grande
-market_rank: 140
+market_rank: 142
 repo: https://github.com/cfengine/core
 license: GPL-3.0
 sources:

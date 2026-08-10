@@ -23,7 +23,7 @@ certifications:
 company_size:
 - pequeña
 - mediana
-market_rank: 121
+market_rank: 123
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

@@ -26,7 +26,7 @@ certifications:
 - ISO 27001 SOC 2 Tipo II FedRAMP PCI DSS HIPAA
 company_size:
 - grande
-market_rank: 123
+market_rank: 125
 cert_url: https://trust.zscaler.com
 sources:
 - https://www.gartner.com/reviews/

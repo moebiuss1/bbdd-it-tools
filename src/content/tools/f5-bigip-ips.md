@@ -24,7 +24,7 @@ certifications:
 - FIPS 140-2 Common Criteria PCI DSS
 company_size:
 - grande
-market_rank: 122
+market_rank: 124
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
