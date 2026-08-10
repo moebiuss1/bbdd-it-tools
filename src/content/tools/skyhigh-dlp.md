@@ -1,7 +1,8 @@
 ---
 name: Skyhigh Security DLP
 slug: skyhigh-dlp
-category: dlp
+categories:
+- dlp
 tags:
 - dlp
 - cloud

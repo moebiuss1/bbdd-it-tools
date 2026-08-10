@@ -1,0 +1,58 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCategories, getFamilies } from "@lib/tools";
+const base = import.meta.env.BASE_URL;
+const categories = await getCategories();
+const families = await getFamilies();
+---
+
+<BaseLayout title="Glosario">
+  <header class="sticky top-0 z-40 header">
+    <nav class="container header-inner">
+      <a href={base} class="brand">BBDD IT</a>
+      <div class="flex items-center gap-2">
+        <a href={`${base}herramientas`} class="nav-link">Directorio</a>
+        <a href={`${base}ranking`} class="nav-link">Rankings</a>
+        <a href={`${base}glosario`} class="nav-link">Glosario</a>
+        <a href={`${base}about`} class="nav-link">Acerca de</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="py-10">
+    <div class="container max-w-900">
+      <h1 class="section-title" style="font-size:28px">Glosario</h1>
+      <p class="section-desc" style="max-width:600px">Diccionario de las {categories.length} categorías de producto organizadas en {families.length} familias.</p>
+
+      <div class="space-y-12 mt-10">
+        {families.map(fam => {
+          const famCats = categories.filter(c => c.family === fam.id);
+          if (famCats.length === 0) return null;
+          return (
+            <section id={`fam-${fam.id}`}>
+              <h2 class="section-title mb-2" style="display:flex;align-items:center;gap:10px">
+                <span style="font-size:22px">{fam.icon}</span>
+                {fam.name}
+                <span style="color:#8e8e93;font-weight:400;font-size:16px">{famCats.length}</span>
+              </h2>
+              <p class="section-desc mb-6">{fam.description}</p>
+              <div class="grid gap-3 sm:grid-cols-2">
+                {famCats.map(cat => (
+                  <a href={`${base}categorias/${cat.id}`} class="card" style="padding:16px 18px;text-decoration:none;display:block">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span style="font-size:16px">{cat.icon}</span>
+                      <h3 style="font-size:14px;font-weight:600;color:#1d1d1f">{cat.name}</h3>
+                    </div>
+                    <p style="font-size:13px;color:#6e6e73;line-height:1.5">{cat.description}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container footer-grid"><div><p class="footer-brand">BBDD IT Tools</p><p class="footer-desc">Directorio actualizado cada lunes</p></div><div class="footer-links"><a href={`${base}herramientas`} class="nav-link" style="font-size:12px">Directorio</a><a href={`${base}ranking`} class="nav-link" style="font-size:12px">Rankings</a><a href={`${base}glosario`} class="nav-link" style="font-size:12px">Glosario</a><a href={`${base}about`} class="nav-link" style="font-size:12px">Acerca de</a></div></div></footer>
+</BaseLayout>

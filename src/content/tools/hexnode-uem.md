@@ -1,7 +1,8 @@
 ---
 name: Hexnode UEM
 slug: hexnode-uem
-category: mdm
+categories:
+- mdm
 tags:
 - uem
 - kiosk

@@ -1,7 +1,8 @@
 ---
 name: Barracuda CloudGen Firewall
 slug: barracuda-cloudgen
-category: firewall
+categories:
+- firewall
 tags:
 - ngfw
 - sd-wan

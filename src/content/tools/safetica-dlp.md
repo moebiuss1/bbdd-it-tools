@@ -1,7 +1,8 @@
 ---
 name: Safetica DLP
 slug: safetica-dlp
-category: dlp
+categories:
+- dlp
 tags:
 - dlp
 - endpoint

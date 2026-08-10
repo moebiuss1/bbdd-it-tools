@@ -1,7 +1,8 @@
 ---
 name: D3 Morpheus
 slug: d3-morpheus
-category: soar
+categories:
+- soar
 tags:
 - soar
 - ai

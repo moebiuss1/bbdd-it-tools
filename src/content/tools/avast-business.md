@@ -1,7 +1,8 @@
 ---
 name: Avast Business Antivirus
 slug: avast-business
-category: antivirus
+categories:
+- antivirus
 tags:
 - ngav
 - smb

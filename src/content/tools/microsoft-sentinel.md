@@ -1,6 +1,7 @@
 ---
 name: Microsoft Sentinel
-category: siem
+categories:
+- siem
 type: comercial
 cost_model: pago-por-uso
 cost_details: Basado en volumen de datos analizados. Sin costes de infraestructura. Desde ~$2/GB ingerido.

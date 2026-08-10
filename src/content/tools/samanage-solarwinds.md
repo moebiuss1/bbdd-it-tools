@@ -1,7 +1,8 @@
 ---
 name: SolarWinds Service Desk
 slug: samanage-solarwinds
-category: it-asset-managers
+categories:
+- it-asset-managers
 tags:
 - itam
 - itsm

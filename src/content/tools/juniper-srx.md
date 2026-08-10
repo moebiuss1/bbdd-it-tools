@@ -1,7 +1,8 @@
 ---
 name: Juniper SRX
 slug: juniper-srx
-category: firewall
+categories:
+- firewall
 tags:
 - ngfw
 - ips

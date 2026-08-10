@@ -91,7 +91,7 @@ const chartColors = ['#0071e3','#5856d6','#af52de','#ff2d55','#ff9500','#ffcc02'
 
       <div class="space-y-20 mt-10">
         {categories.map(cat => {
-          const catTools = tools.filter(t => t.data.category === cat.id).sort((a,b) => (a.data.market_rank??999) - (b.data.market_rank??999));
+          const catTools = tools.filter(t => (t.data.categories || [t.data.category]).includes(cat.id)).sort((a,b) => (a.data.market_rank??999) - (b.data.market_rank??999));
           if (catTools.length === 0) return null;
           // Compute scores
           const scored = catTools.map((t, i) => {

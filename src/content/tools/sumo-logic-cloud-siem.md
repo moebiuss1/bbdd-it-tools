@@ -1,7 +1,8 @@
 ---
 name: Sumo Logic Cloud SIEM
 slug: sumo-logic-cloud-siem
-category: siem
+categories:
+- siem
 tags:
 - siem
 - cloud-native

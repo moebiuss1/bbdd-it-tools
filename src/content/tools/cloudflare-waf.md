@@ -1,7 +1,8 @@
 ---
 name: Cloudflare WAF
 slug: cloudflare-waf
-category: firewall
+categories:
+- firewall
 tags:
 - waf
 - ddos

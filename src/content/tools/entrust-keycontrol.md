@@ -1,7 +1,8 @@
 ---
 name: Entrust KeyControl
 slug: entrust-keycontrol
-category: key-managers
+categories:
+- key-managers
 tags:
 - kms
 - hsm

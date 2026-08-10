@@ -11,7 +11,8 @@ export type CostModel =
 export interface ToolFrontmatter {
   name: string;
   slug?: string;
-  category: string;
+  category?: string;
+  categories: string[];
   tags: string[];
   type: ToolType;
   cost_model?: CostModel;
@@ -41,6 +42,7 @@ export interface Category {
   id: string;
   name: string;
   description: string;
+  family: string;
   icon: string;
 }
 

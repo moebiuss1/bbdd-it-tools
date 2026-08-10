@@ -1,7 +1,8 @@
 ---
 name: Spacelift
 slug: spacelift-config
-category: config-managers
+categories:
+- config-managers
 tags:
 - iac
 - terraform

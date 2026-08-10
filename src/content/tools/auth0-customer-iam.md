@@ -1,7 +1,8 @@
 ---
 name: Auth0 (Okta Customer Identity)
 slug: auth0-customer-iam
-category: identity-managers
+categories:
+- identity-managers
 tags:
 - ciam
 - authentication

@@ -1,7 +1,8 @@
 ---
 name: Nexus Certificate Manager
 slug: nexus-certificate-manager
-category: cert-managers
+categories:
+- cert-managers
 tags:
 - pki
 - smart-card

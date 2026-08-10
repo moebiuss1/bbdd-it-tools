@@ -1,6 +1,7 @@
 ---
 name: Microsoft Purview DLP
-category: dlp
+categories:
+- dlp
 type: comercial
 cost_model: suscripción
 cost_details: Incluido en Microsoft 365 E5. Planes independientes desde ~$10/usuario/mes.

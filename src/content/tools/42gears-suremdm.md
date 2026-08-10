@@ -1,7 +1,8 @@
 ---
 name: 42Gears SureMDM
 slug: 42gears-suremdm
-category: mdm
+categories:
+- mdm
 tags:
 - mdm
 - uem

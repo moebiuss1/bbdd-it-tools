@@ -1,7 +1,8 @@
 ---
 name: Cisco Secure IDS
 slug: cisco-secure-ids
-category: ids
+categories:
+- ids
 tags:
 - ids
 - talos

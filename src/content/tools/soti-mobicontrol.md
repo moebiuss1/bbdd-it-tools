@@ -1,7 +1,8 @@
 ---
 name: SOTI MobiControl
 slug: soti-mobicontrol
-category: mdm
+categories:
+- mdm
 tags:
 - mdm
 - rugged

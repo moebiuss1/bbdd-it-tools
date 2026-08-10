@@ -1,7 +1,8 @@
 ---
 name: IBM QRadar
 slug: ibm-qradar
-category: siem
+categories:
+- siem
 tags:
 - enterprise
 - ai

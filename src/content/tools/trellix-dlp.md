@@ -1,7 +1,8 @@
 ---
 name: Trellix DLP
 slug: trellix-dlp
-category: dlp
+categories:
+- dlp
 tags:
 - dlp
 - xdr

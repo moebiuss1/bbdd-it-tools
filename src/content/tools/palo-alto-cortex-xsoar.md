@@ -1,6 +1,7 @@
 ---
 name: Palo Alto Cortex XSOAR
-category: soar
+categories:
+- soar
 type: comercial
 cost_model: presupuesto-personalizado
 cost_details: Licencia anual. Precio según número de playbooks y usuarios.

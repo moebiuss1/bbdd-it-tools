@@ -1,7 +1,8 @@
 ---
 name: Trend Micro Apex One
 slug: trend-micro-apex-one
-category: antivirus
+categories:
+- antivirus
 tags:
 - ngav
 - edr

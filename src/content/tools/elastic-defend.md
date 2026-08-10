@@ -1,7 +1,8 @@
 ---
 name: Elastic Defend
 slug: elastic-defend
-category: edr
+categories:
+- edr
 tags:
 - edr
 - open-source

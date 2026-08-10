@@ -1,7 +1,8 @@
 ---
 name: PDQ Inventory
 slug: pdq-inventory
-category: it-asset-managers
+categories:
+- it-asset-managers
 tags:
 - itam
 - inventory

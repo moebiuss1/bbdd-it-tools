@@ -1,6 +1,7 @@
 ---
 name: Fortinet FortiGate
-category: firewall
+categories:
+- firewall
 type: comercial
 cost_model: suscripción
 cost_details: Modelos FortiGate 40F a 4400F. Licencia FortiGuard desde ~$1,000/año.

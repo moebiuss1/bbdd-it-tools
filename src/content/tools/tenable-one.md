@@ -1,7 +1,8 @@
 ---
 name: Tenable One
 slug: tenable-one
-category: kpi-ca-managers
+categories:
+- kpi-ca-managers
 tags:
 - vulnerability-management
 - cspm

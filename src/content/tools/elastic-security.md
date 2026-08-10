@@ -1,7 +1,8 @@
 ---
 name: Elastic Security
 slug: elastic-security
-category: siem
+categories:
+- siem
 tags:
 - open-source
 - siem

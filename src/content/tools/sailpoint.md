@@ -1,7 +1,8 @@
 ---
 name: SailPoint
 slug: sailpoint
-category: identity-managers
+categories:
+- identity-managers
 tags:
 - iga
 - governance

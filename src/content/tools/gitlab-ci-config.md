@@ -1,7 +1,8 @@
 ---
 name: GitLab CI/CD
 slug: gitlab-ci-config
-category: config-managers
+categories:
+- config-managers
 tags:
 - iac
 - cicd

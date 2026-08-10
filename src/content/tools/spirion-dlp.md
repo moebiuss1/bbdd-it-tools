@@ -1,7 +1,8 @@
 ---
 name: Spirion Data Platform
 slug: spirion-dlp
-category: dlp
+categories:
+- dlp
 tags:
 - dlp
 - data-classification

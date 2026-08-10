@@ -1,7 +1,8 @@
 ---
 name: Huntress Managed EDR
 slug: huntress-edr
-category: edr
+categories:
+- edr
 tags:
 - edr
 - managed

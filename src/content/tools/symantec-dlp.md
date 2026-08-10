@@ -1,7 +1,8 @@
 ---
 name: Symantec DLP
 slug: symantec-dlp
-category: dlp
+categories:
+- dlp
 tags:
 - dlp
 - endpoint

@@ -1,7 +1,8 @@
 ---
 name: ForgeRock Identity
 slug: forgerock-identity
-category: identity-managers
+categories:
+- identity-managers
 tags:
 - iam
 - ciam

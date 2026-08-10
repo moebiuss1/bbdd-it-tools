@@ -1,7 +1,8 @@
 ---
 name: Splunk SOAR
 slug: splunk-soar
-category: soar
+categories:
+- soar
 tags:
 - automation
 - playbooks

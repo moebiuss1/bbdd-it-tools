@@ -1,7 +1,8 @@
 ---
 name: Flexera One
 slug: flexera-one
-category: it-asset-managers
+categories:
+- it-asset-managers
 tags:
 - sam
 - itam

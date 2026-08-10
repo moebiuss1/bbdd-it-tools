@@ -1,7 +1,8 @@
 ---
 name: Sagan
 slug: sagan-ids
-category: ids
+categories:
+- ids
 tags:
 - ids
 - open-source

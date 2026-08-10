@@ -1,7 +1,8 @@
 ---
 name: Octopus Deploy
 slug: octopus-deploy-config
-category: config-managers
+categories:
+- config-managers
 tags:
 - iac
 - deployment

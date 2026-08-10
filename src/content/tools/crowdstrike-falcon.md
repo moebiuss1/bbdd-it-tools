@@ -1,7 +1,8 @@
 ---
 name: CrowdStrike Falcon
 slug: crowdstrike-falcon
-category: edr
+categories:
+- edr
 tags:
 - endpoint
 - cloud

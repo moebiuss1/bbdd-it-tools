@@ -1,7 +1,8 @@
 ---
 name: Security Onion
 slug: security-onion
-category: ids
+categories:
+- ids
 tags:
 - ids
 - network-monitoring

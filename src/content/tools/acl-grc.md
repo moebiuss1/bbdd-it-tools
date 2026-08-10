@@ -1,7 +1,8 @@
 ---
 name: ACL GRC
 slug: acl-grc
-category: kpi-ca-managers
+categories:
+- kpi-ca-managers
 tags:
 - grc
 - audit

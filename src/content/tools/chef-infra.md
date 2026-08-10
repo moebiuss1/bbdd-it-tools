@@ -1,7 +1,8 @@
 ---
 name: Chef Infra
 slug: chef-infra
-category: config-managers
+categories:
+- config-managers
 tags:
 - iac
 - ruby

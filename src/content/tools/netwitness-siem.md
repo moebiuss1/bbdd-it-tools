@@ -1,7 +1,8 @@
 ---
 name: NetWitness SIEM
 slug: netwitness-siem
-category: siem
+categories:
+- siem
 tags:
 - siem
 - network-packets

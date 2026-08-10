@@ -1,6 +1,7 @@
 ---
 name: SentinelOne Singularity
-category: edr
+categories:
+- edr
 type: comercial
 cost_model: suscripción
 cost_details: 'Desde ~$45/endpoint/año. Ediciones: Core, Control, Complete.'

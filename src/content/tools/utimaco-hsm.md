@@ -1,7 +1,8 @@
 ---
 name: Utimaco HSM
 slug: utimaco-hsm
-category: key-managers
+categories:
+- key-managers
 tags:
 - hsm
 - government

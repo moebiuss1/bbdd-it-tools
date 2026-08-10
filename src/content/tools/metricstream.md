@@ -1,7 +1,8 @@
 ---
 name: MetricStream
 slug: metricstream
-category: kpi-ca-managers
+categories:
+- kpi-ca-managers
 tags:
 - grc
 - irm

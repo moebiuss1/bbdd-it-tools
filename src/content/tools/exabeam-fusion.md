@@ -1,7 +1,8 @@
 ---
 name: Exabeam Fusion SIEM
 slug: exabeam-fusion
-category: siem
+categories:
+- siem
 tags:
 - siem
 - ueba

@@ -1,7 +1,8 @@
 ---
 name: Puppet Enterprise
 slug: puppet-enterprise
-category: config-managers
+categories:
+- config-managers
 tags:
 - infrastructure-as-code
 - compliance

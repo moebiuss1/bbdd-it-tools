@@ -1,6 +1,7 @@
 ---
 name: Microsoft Defender for Endpoint
-category: antivirus
+categories:
+- antivirus
 type: comercial
 cost_model: suscripción
 cost_details: Incluido en Microsoft 365 E5. Plan autónomo desde ~$5/usuario/mes.

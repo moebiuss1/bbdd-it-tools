@@ -1,7 +1,8 @@
 ---
 name: Ivanti Neurons for ITAM
 slug: ivanti-neurons-itam
-category: it-asset-managers
+categories:
+- it-asset-managers
 tags:
 - itam
 - sam

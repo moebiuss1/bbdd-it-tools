@@ -1,7 +1,8 @@
 ---
 name: Swimlane Turbine
 slug: swimlane-turbine
-category: soar
+categories:
+- soar
 tags:
 - automation
 - case-management

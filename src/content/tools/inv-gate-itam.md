@@ -1,7 +1,8 @@
 ---
 name: InvGate Assets
 slug: inv-gate-itam
-category: it-asset-managers
+categories:
+- it-asset-managers
 tags:
 - itam
 - cmdb

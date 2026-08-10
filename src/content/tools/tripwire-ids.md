@@ -1,7 +1,8 @@
 ---
 name: Tripwire SecureCheq
 slug: tripwire-ids
-category: ips
+categories:
+- ips
 tags:
 - ips
 - fim

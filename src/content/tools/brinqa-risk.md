@@ -1,7 +1,8 @@
 ---
 name: Brinqa
 slug: brinqa-risk
-category: kpi-ca-managers
+categories:
+- kpi-ca-managers
 tags:
 - risk-management
 - analytics

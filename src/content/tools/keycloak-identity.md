@@ -1,7 +1,8 @@
 ---
 name: Keycloak
 slug: keycloak-identity
-category: identity-managers
+categories:
+- identity-managers
 tags:
 - iam
 - open-source

@@ -44,7 +44,8 @@ export const toolsCollection = defineCollection({
   schema: z.object({
     slug: z.string().optional(),
     name: z.string().min(1, "El nombre es obligatorio"),
-    category: z.string().min(1, "La categoría es obligatoria"),
+    category: z.string().optional(), // legacy — single category, kept for backwards compat
+    categories: z.array(z.string()).default([]), // new — multiple categories per tool
     tags: z.array(z.string()).min(1, "Al menos una etiqueta"),
     type: z.enum(TOOL_TYPES),
     cost_model: z.enum(COST_MODELS).optional(),

@@ -1,7 +1,8 @@
 ---
 name: HashiCorp Vault
 slug: hashicorp-vault
-category: key-managers
+categories:
+- key-managers
 tags:
 - encryption
 - pki

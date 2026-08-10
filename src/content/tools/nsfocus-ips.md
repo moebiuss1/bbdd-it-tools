@@ -1,7 +1,8 @@
 ---
 name: NSFOCUS NGIPS
 slug: nsfocus-ips
-category: ips
+categories:
+- ips
 tags:
 - ips
 - ddos

@@ -1,7 +1,8 @@
 ---
 name: SolarWinds Access Rights Manager
 slug: solarwinds-dlp
-category: dlp
+categories:
+- dlp
 tags:
 - dlp
 - access-management

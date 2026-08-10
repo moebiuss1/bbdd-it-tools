@@ -1,7 +1,8 @@
 ---
 name: Google Cloud KMS
 slug: google-cloud-kms
-category: key-managers
+categories:
+- key-managers
 tags:
 - kms
 - cloud

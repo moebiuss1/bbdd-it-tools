@@ -1,7 +1,8 @@
 ---
 name: Asset Panda
 slug: asset-panda
-category: it-asset-managers
+categories:
+- it-asset-managers
 tags:
 - itam
 - mobile

@@ -1,7 +1,8 @@
 ---
 name: Tines
 slug: tines
-category: soar
+categories:
+- soar
 tags:
 - no-code
 - automation

@@ -1,6 +1,7 @@
 ---
 name: ServiceNow ITAM
-category: it-asset-managers
+categories:
+- it-asset-managers
 type: comercial
 cost_model: presupuesto-personalizado
 cost_details: Licencia anual según número de activos gestionados.

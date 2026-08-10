@@ -1,6 +1,7 @@
 ---
 name: Ansible
-category: config-managers
+categories:
+- config-managers
 type: opensource
 cost_model: freemium
 cost_details: Gratuito (GPL). Ansible Automation Platform desde ~$13,000/año por 100 nodos.

@@ -1,7 +1,8 @@
 ---
 name: Scalefusion UEM
 slug: scalefusion-uem
-category: mdm
+categories:
+- mdm
 tags:
 - mdm
 - uem

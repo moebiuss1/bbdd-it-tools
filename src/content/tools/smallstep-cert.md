@@ -1,7 +1,8 @@
 ---
 name: Smallstep
 slug: smallstep-cert
-category: cert-managers
+categories:
+- cert-managers
 tags:
 - pki
 - acme

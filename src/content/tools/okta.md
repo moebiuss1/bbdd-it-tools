@@ -1,7 +1,8 @@
 ---
 name: Okta Identity Cloud
 slug: okta
-category: identity-managers
+categories:
+- identity-managers
 tags:
 - sso
 - mfa

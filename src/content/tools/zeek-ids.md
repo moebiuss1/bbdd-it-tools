@@ -1,7 +1,8 @@
 ---
 name: Zeek
 slug: zeek-ids
-category: ids
+categories:
+- ids
 tags:
 - open-source
 - network-analysis

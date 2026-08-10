@@ -1,7 +1,8 @@
 ---
 name: Cisco Secure Endpoint
 slug: cisco-secure-endpoint
-category: edr
+categories:
+- edr
 tags:
 - edr
 - xdr

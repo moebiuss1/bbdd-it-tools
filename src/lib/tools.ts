@@ -45,6 +45,11 @@ export async function getCategories(): Promise<Category[]> {
   return mod.default as Category[];
 }
 
+export async function getFamilies(): Promise<any[]> {
+  const mod = await import("@data/categories");
+  return mod.families as any[];
+}
+
 /**
  * Carga las etiquetas globales desde el módulo de datos.
  */

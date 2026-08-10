@@ -1,7 +1,8 @@
 ---
 name: SAI Global GRC
 slug: sai-global-grc
-category: kpi-ca-managers
+categories:
+- kpi-ca-managers
 tags:
 - grc
 - compliance

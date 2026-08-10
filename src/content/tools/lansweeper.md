@@ -1,7 +1,8 @@
 ---
 name: Lansweeper
 slug: lansweeper
-category: it-asset-managers
+categories:
+- it-asset-managers
 tags:
 - itam
 - asset-discovery

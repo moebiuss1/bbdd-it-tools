@@ -1,7 +1,8 @@
 ---
 name: F5 BIG-IP Advanced WAF
 slug: f5-bigip-ips
-category: ips
+categories:
+- ips
 tags:
 - waf
 - ips

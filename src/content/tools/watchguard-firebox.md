@@ -1,7 +1,8 @@
 ---
 name: WatchGuard Firebox
 slug: watchguard-firebox
-category: firewall
+categories:
+- firewall
 tags:
 - ngfw
 - smb

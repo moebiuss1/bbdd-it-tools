@@ -1,7 +1,8 @@
 ---
 name: AIDE
 slug: aids-ids
-category: ids
+categories:
+- ids
 tags:
 - ids
 - hids

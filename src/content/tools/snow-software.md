@@ -1,7 +1,8 @@
 ---
 name: Snow Software
 slug: snow-software
-category: it-asset-managers
+categories:
+- it-asset-managers
 tags:
 - sam
 - itam

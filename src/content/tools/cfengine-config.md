@@ -1,7 +1,8 @@
 ---
 name: CFEngine
 slug: cfengine-config
-category: config-managers
+categories:
+- config-managers
 tags:
 - iac
 - declarative

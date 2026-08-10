@@ -1,7 +1,8 @@
 ---
 name: ESET PROTECT
 slug: eset-protect
-category: antivirus
+categories:
+- antivirus
 tags:
 - lightweight
 - multilayered

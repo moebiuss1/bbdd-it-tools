@@ -1,7 +1,8 @@
 ---
 name: ServiceNow GRC
 slug: splunk-enterprise-security-grc
-category: kpi-ca-managers
+categories:
+- kpi-ca-managers
 tags:
 - grc
 - risk-management

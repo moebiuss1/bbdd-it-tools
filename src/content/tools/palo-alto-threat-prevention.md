@@ -1,7 +1,8 @@
 ---
 name: Palo Alto Threat Prevention
 slug: palo-alto-threat-prevention
-category: ips
+categories:
+- ips
 tags:
 - ips
 - threat-prevention

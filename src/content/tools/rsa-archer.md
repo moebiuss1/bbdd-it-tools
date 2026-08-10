@@ -1,7 +1,8 @@
 ---
 name: RSA Archer
 slug: rsa-archer
-category: kpi-ca-managers
+categories:
+- kpi-ca-managers
 tags:
 - grc
 - irm

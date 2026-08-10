@@ -1,6 +1,7 @@
 ---
 name: Forcepoint DLP
-category: dlp
+categories:
+- dlp
 type: comercial
 cost_model: presupuesto-personalizado
 cost_details: Licencia anual por usuario. Precio según módulos y número de endpoints.

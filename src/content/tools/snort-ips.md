@@ -1,7 +1,8 @@
 ---
 name: Cisco Secure IPS (Firepower)
 slug: snort-ips
-category: ips
+categories:
+- ips
 tags:
 - ips
 - talos

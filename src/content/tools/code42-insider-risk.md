@@ -1,7 +1,8 @@
 ---
 name: Code42 Incydr
 slug: code42-insider-risk
-category: dlp
+categories:
+- dlp
 tags:
 - dlp
 - insider-risk

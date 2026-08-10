@@ -1,7 +1,8 @@
 ---
 name: Graylog Security
 slug: graylog-security
-category: siem
+categories:
+- siem
 tags:
 - siem
 - log-management

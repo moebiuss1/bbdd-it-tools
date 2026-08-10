@@ -1,7 +1,8 @@
 ---
 name: Trellix Endpoint Security
 slug: trellix-endpoint-security
-category: edr
+categories:
+- edr
 tags:
 - xdr
 - endpoint

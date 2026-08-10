@@ -1,7 +1,8 @@
 ---
 name: CyberArk
 slug: cyberark
-category: key-managers
+categories:
+- key-managers
 tags:
 - pam
 - privileged-access

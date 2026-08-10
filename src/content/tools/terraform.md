@@ -1,7 +1,8 @@
 ---
 name: Terraform
 slug: terraform
-category: config-managers
+categories:
+- config-managers
 tags:
 - infrastructure-as-code
 - multi-cloud

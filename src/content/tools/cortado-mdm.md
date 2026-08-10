@@ -1,7 +1,8 @@
 ---
 name: Cortado MDM
 slug: cortado-mdm
-category: mdm
+categories:
+- mdm
 tags:
 - mdm
 - byod

@@ -1,7 +1,8 @@
 ---
 name: SaltStack
 slug: saltstack
-category: config-managers
+categories:
+- config-managers
 tags:
 - iac
 - automation

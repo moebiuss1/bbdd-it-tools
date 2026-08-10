@@ -1,7 +1,8 @@
 ---
 name: Rapid7 InsightConnect
 slug: rapid7-insightconnect
-category: soar
+categories:
+- soar
 tags:
 - soar
 - cloud-native

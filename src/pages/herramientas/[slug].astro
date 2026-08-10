@@ -9,7 +9,7 @@ const categories = await getCategories();
 const tool = tools.find(t => t.slug === Astro.params.slug);
 if (!tool) return Astro.rewrite("/404");
 const { data } = tool;
-const cat = categories.find(c => c.id === data.category);
+const cats = categories.filter(c => (data.categories || [((data.categories || [data.category])[0] || '')]).includes(c.id)); const cat = cats[0];
 const typeLabel = data.type === 'opensource' ? 'Open Source' : 'Comercial';
 const costLabel = (data.cost_model && ({gratis:'Gratuito',freemium:'Freemium',suscripción:'Suscripción','licencia-perpetua':'Licencia perpetua','pago-por-uso':'Pago por uso','presupuesto-personalizado':'Presupuesto personalizado'} as any)[data.cost_model]) ?? '';
 const sizeLabels: any = {pequeña:'Pequeña empresa',mediana:'Mediana empresa',grande:'Gran empresa'};

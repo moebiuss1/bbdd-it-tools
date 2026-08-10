@@ -7,7 +7,7 @@ const base = import.meta.env.BASE_URL;
 const categories = await getCategories();
 const cat = categories.find(c => c.id === Astro.params.categoria); if (!cat) return Astro.rewrite("/404");
 const tools = (await getCollection("tools")).map(toToolEntry);
-const catTools = tools.filter(t => t.data.category === Astro.params.categoria).sort((a,b) => (a.data.market_rank??999)-(b.data.market_rank??999));
+const catTools = tools.filter(t => (t.data.categories || [t.data.category]).includes(Astro.params.categoria)).sort((a,b) => (a.data.market_rank??999)-(b.data.market_rank??999));
 ---
 
 <BaseLayout title={cat.name} description={cat.description}>

@@ -1,7 +1,8 @@
 ---
 name: Samhain
 slug: samhain-ids
-category: ids
+categories:
+- ids
 tags:
 - ids
 - hids

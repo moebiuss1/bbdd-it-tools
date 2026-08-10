@@ -1,7 +1,8 @@
 ---
 name: Saviynt IGA
 slug: saviynt-iga
-category: identity-managers
+categories:
+- identity-managers
 tags:
 - iga
 - sap

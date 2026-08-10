@@ -1,7 +1,8 @@
 ---
 name: Digital Guardian DLP
 slug: digital-guardian-dlp
-category: dlp
+categories:
+- dlp
 tags:
 - data-protection
 - endpoint

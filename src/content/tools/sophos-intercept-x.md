@@ -1,7 +1,8 @@
 ---
 name: Sophos Intercept X
 slug: sophos-intercept-x
-category: antivirus
+categories:
+- antivirus
 tags:
 - ransomware
 - ai

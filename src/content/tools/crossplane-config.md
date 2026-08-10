@@ -1,7 +1,8 @@
 ---
 name: Crossplane
 slug: crossplane-config
-category: config-managers
+categories:
+- config-managers
 tags:
 - iac
 - kubernetes

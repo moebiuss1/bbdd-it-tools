@@ -1,6 +1,7 @@
 ---
 name: Microsoft Intune
-category: mdm
+categories:
+- mdm
 type: comercial
 cost_model: suscripción
 cost_details: Incluido en Microsoft 365 E3/E5. Plan autónomo desde ~$6/usuario/mes.

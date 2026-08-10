@@ -1,6 +1,7 @@
 ---
 name: Trend Micro TippingPoint
-category: ips
+categories:
+- ips
 type: comercial
 cost_model: suscripción
 cost_details: Modelos hardware TPS 5000-9000. Licencia Digital Vaccine (firmas de vulnerabilidad) incluida.

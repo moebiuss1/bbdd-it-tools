@@ -1,7 +1,8 @@
 ---
 name: HashiCorp Vault PKI
 slug: venafi-cloud
-category: cert-managers
+categories:
+- cert-managers
 tags:
 - pki
 - certificates

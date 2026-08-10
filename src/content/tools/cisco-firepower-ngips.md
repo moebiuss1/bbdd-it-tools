@@ -1,7 +1,8 @@
 ---
 name: Cisco Firepower NGIPS
 slug: cisco-firepower-ngips
-category: ips
+categories:
+- ips
 tags:
 - ngips
 - talos

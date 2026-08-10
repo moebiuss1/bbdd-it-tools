@@ -1,7 +1,8 @@
 ---
 name: Splunk Enterprise Security
 slug: splunk-enterprise-security
-category: siem
+categories:
+- siem
 tags:
 - monitorizacion
 - compliance

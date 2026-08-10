@@ -1,7 +1,8 @@
 ---
 name: ManageEngine MDM Plus
 slug: manageengine-mdm
-category: mdm
+categories:
+- mdm
 tags:
 - mdm
 - active-directory

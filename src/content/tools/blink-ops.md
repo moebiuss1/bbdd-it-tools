@@ -1,7 +1,8 @@
 ---
 name: Blink Ops
 slug: blink-ops
-category: soar
+categories:
+- soar
 tags:
 - soar
 - no-code

@@ -1,7 +1,8 @@
 ---
 name: Azure Key Vault
 slug: azure-key-vault
-category: key-managers
+categories:
+- key-managers
 tags:
 - kms
 - cloud

@@ -1,6 +1,7 @@
 ---
 name: Venafi Control Plane
-category: cert-managers
+categories:
+- cert-managers
 type: comercial
 cost_model: presupuesto-personalizado
 cost_details: Licencia anual según número de certificados gestionados.

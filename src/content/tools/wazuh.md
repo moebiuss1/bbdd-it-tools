@@ -1,7 +1,8 @@
 ---
 name: Wazuh
 slug: wazuh
-category: siem
+categories:
+- siem
 tags:
 - open-source
 - endpoint

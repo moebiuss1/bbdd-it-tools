@@ -1,7 +1,8 @@
 ---
 name: Mosyle Fuse
 slug: mosyle-fuse
-category: mdm
+categories:
+- mdm
 tags:
 - mdm
 - apple-only

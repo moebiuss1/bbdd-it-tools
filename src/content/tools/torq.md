@@ -1,7 +1,8 @@
 ---
 name: Torq
 slug: torq
-category: soar
+categories:
+- soar
 tags:
 - ai
 - automation

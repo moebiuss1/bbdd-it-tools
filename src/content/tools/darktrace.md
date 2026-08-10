@@ -1,7 +1,8 @@
 ---
 name: Darktrace DETECT
 slug: darktrace-detect
-category: ids
+categories:
+- ids
 tags:
 - ai
 - machine-learning

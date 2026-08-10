@@ -1,7 +1,8 @@
 ---
 name: Omnissa Workspace ONE
 slug: omnissa-workspace-one
-category: mdm
+categories:
+- mdm
 tags:
 - uem
 - multiplatform

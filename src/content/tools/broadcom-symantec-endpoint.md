@@ -1,7 +1,8 @@
 ---
 name: Symantec Endpoint Security
 slug: broadcom-symantec-endpoint
-category: antivirus
+categories:
+- antivirus
 tags:
 - ngav
 - edr

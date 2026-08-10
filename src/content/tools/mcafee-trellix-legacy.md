@@ -1,7 +1,8 @@
 ---
 name: McAfee Enterprise MVISION
 slug: mcafee-trellix-legacy
-category: antivirus
+categories:
+- antivirus
 tags:
 - ngav
 - edr

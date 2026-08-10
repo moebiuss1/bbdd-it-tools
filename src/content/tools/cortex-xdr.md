@@ -1,7 +1,8 @@
 ---
 name: Cortex XDR
 slug: cortex-xdr
-category: edr
+categories:
+- edr
 tags:
 - xdr
 - cross-domain

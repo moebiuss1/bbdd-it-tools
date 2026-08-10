@@ -1,7 +1,8 @@
 ---
 name: Skybox Security
 slug: skybox-security
-category: kpi-ca-managers
+categories:
+- kpi-ca-managers
 tags:
 - vulnerability-management
 - attack-path

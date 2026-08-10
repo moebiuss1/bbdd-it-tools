@@ -1,6 +1,7 @@
 ---
 name: Suricata
-category: ips
+categories:
+- ips
 type: opensource
 cost_model: gratis
 cost_details: Gratuito (GPLv2). Suricata Enterprise con soporte comercial disponible.

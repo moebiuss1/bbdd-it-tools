@@ -1,7 +1,8 @@
 ---
 name: VMware Carbon Black Cloud
 slug: vmware-carbon-black
-category: edr
+categories:
+- edr
 tags:
 - edr
 - cloud-native

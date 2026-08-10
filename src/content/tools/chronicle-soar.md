@@ -1,7 +1,8 @@
 ---
 name: Google SecOps SOAR
 slug: chronicle-soar
-category: soar
+categories:
+- soar
 tags:
 - soar
 - google-cloud

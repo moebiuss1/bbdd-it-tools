@@ -1,7 +1,8 @@
 ---
 name: McAfee Network Security (IPS)
 slug: mcafee-ips
-category: ips
+categories:
+- ips
 tags:
 - ips
 - ngips

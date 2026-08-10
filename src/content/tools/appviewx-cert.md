@@ -1,7 +1,8 @@
 ---
 name: AppViewX CERT+
 slug: appviewx-cert
-category: cert-managers
+categories:
+- cert-managers
 tags:
 - clm
 - pki

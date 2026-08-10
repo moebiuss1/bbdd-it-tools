@@ -1,7 +1,8 @@
 ---
 name: Rkhunter
 slug: rkhunter-ids
-category: ids
+categories:
+- ids
 tags:
 - ids
 - rootkit

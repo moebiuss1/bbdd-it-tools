@@ -1,7 +1,8 @@
 ---
 name: PrimeKey EJBCA Enterprise
 slug: primekey-ejbca-cert
-category: cert-managers
+categories:
+- cert-managers
 tags:
 - pki
 - ejbca

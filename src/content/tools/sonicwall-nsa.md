@@ -1,7 +1,8 @@
 ---
 name: SonicWall NSa
 slug: sonicwall-nsa
-category: firewall
+categories:
+- firewall
 tags:
 - ngfw
 - smb

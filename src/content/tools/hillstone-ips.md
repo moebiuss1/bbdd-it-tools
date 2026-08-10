@@ -1,7 +1,8 @@
 ---
 name: Hillstone NIPS
 slug: hillstone-ips
-category: ips
+categories:
+- ips
 tags:
 - ips
 - ngips

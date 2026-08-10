@@ -1,7 +1,8 @@
 ---
 name: Ocer ITAM
 slug: ocer-itam
-category: it-asset-managers
+categories:
+- it-asset-managers
 tags:
 - itam
 - sam

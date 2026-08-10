@@ -1,7 +1,8 @@
 ---
 name: AWS CloudHSM
 slug: aws-cloudhsm
-category: key-managers
+categories:
+- key-managers
 tags:
 - hsm
 - kms

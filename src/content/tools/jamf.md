@@ -1,7 +1,8 @@
 ---
 name: Jamf Pro
 slug: jamf-pro
-category: mdm
+categories:
+- mdm
 tags:
 - apple
 - macos

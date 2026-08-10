@@ -1,7 +1,8 @@
 ---
 name: Cyware Orchestrate
 slug: cyware-orchestrate
-category: soar
+categories:
+- soar
 tags:
 - soar
 - threat-intelligence

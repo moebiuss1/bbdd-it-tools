@@ -1,7 +1,8 @@
 ---
 name: Securonix Unified Defense
 slug: securonix-unified-defense
-category: siem
+categories:
+- siem
 tags:
 - ai
 - ueba

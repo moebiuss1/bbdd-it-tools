@@ -1,7 +1,8 @@
 ---
 name: Cybereason
 slug: cybereason-edr
-category: edr
+categories:
+- edr
 tags:
 - behavior-analytics
 - threat-hunting

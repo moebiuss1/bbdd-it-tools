@@ -1,7 +1,8 @@
 ---
 name: Ping Identity
 slug: ping-identity
-category: identity-managers
+categories:
+- identity-managers
 tags:
 - federation
 - sso

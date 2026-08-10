@@ -1,7 +1,8 @@
 ---
 name: OSSEC
 slug: ossec
-category: ids
+categories:
+- ids
 tags:
 - open-source
 - hids
