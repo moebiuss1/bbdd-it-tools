@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { getCategories, toToolEntry } from "@lib/tools";
+import { getCategories, getFamilies, toToolEntry } from "@lib/tools";
 export async function getStaticPaths() { return (await getCollection("tools")).map(t => ({ params: { slug: t.id.replace(/\.md$/,"") } })); }
 const base = import.meta.env.BASE_URL;
 const tools = (await getCollection("tools")).map(toToolEntry);
@@ -9,7 +9,9 @@ const categories = await getCategories();
 const tool = tools.find(t => t.slug === Astro.params.slug);
 if (!tool) return Astro.rewrite("/404");
 const { data } = tool;
+const families = await getFamilies();
 const cats = categories.filter(c => (data.categories || [((data.categories || [data.category])[0] || '')]).includes(c.id)); const cat = cats[0];
+const family = cat ? families.find((f: any) => f.id === cat.family) : null;
 const typeLabel = data.type === 'opensource' ? 'Open Source' : 'Comercial';
 const costLabel = (data.cost_model && ({gratis:'Gratuito',freemium:'Freemium',suscripción:'Suscripción','licencia-perpetua':'Licencia perpetua','pago-por-uso':'Pago por uso','presupuesto-personalizado':'Presupuesto personalizado'} as any)[data.cost_model]) ?? '';
 const sizeLabels: any = {pequeña:'Pequeña empresa',mediana:'Mediana empresa',grande:'Gran empresa'};
@@ -53,6 +55,7 @@ const scoreBreakdown = [
       <header class="detail-header">
         {data.logo && <div class="mb-4" style="width:56px;height:56px;border-radius:14px;background:#f5f5f7;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src={`${base}${data.logo.replace(/^\//,'')}`} alt={data.name} width="35" height="35" style="object-fit:contain" /></div>}
         <div class="detail-badges">
+          {family && <span class="badge badge-md" style="background:#f0fdfa;color:#0d9488">{family.icon} {family.name}</span>}
           <span class={`badge badge-md ${data.type==='opensource'?'badge-green':'badge-blue'}`}>{typeLabel}</span>
           {data.market_rank && cat && <span class="badge badge-amber badge-md">#{data.market_rank} en {cat.name}</span>}
           {costLabel && <span class="badge badge-gray badge-md">{costLabel}</span>}
@@ -136,7 +139,7 @@ const scoreBreakdown = [
             </details>
           </div>
 
-          {data.certifications.length > 0 && <div class="sidebar-box"><h3 class="sidebar-box-title">Certificaciones</h3><div class="sidebar-tags">{data.certifications.map((c:string) => <span class="badge badge-teal badge-sm">{c}</span>)}</div></div>}
+          {data.certifications.length > 0 && <div class="sidebar-box"><h3 class="sidebar-box-title">Certificaciones</h3><div class="sidebar-tags">{data.certifications.map((c:string) => <span class="badge badge-teal badge-sm">{c}</span>)}</div><p style="font-size:11px;color:#8e8e93;margin-top:8px;line-height:1.4">Verificables en <a href={data.website} target="_blank" rel="noopener" style="color:#0071e3">{new URL(data.website).hostname}</a></p></div>}
 
           <div class="sidebar-box"><h3 class="sidebar-box-title">Etiquetas</h3><div class="sidebar-tags">{data.tags.map((t:string) => <a href={`${base}herramientas?tag=${encodeURIComponent(t)}`} class="sidebar-tag">{t}</a>)}</div></div>
 
