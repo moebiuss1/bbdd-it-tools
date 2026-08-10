@@ -7,7 +7,7 @@ const tools = (await getCollection("tools")).map(toToolEntry);
 const allCerts = [...new Set(tools.flatMap(t => t.data.certifications ?? []))].sort();
 const categories = await getCategories();
 const tagCounts = getTagCounts(tools);
-const topTags = [...tagCounts.entries()].sort((a,b) => b[1]-a[1]).slice(0, 12);
+const allTags = [...tagCounts.entries()].sort((a,b) => b[1]-a[1]);
 const url = Astro.url;
 const q = (url.searchParams.get("q") ?? "").toLowerCase();
 const catFilter = url.searchParams.get("category") ?? "";
@@ -16,7 +16,6 @@ const tagFilter = url.searchParams.get("tag") ?? "";
 const certFilter = url.searchParams.get("cert") ?? "";
 const sortBy = url.searchParams.get("sort") ?? "rank";
 
-// Helper: build URL preserving current filters while overriding one param
 function buildUrl(overrides: Record<string,string>) {
   const p = new URLSearchParams(url.searchParams.toString());
   for (const [k,v] of Object.entries(overrides)) {
@@ -30,8 +29,8 @@ let filtered = tools;
 if (q) filtered = filtered.filter(t => t.data.name.toLowerCase().includes(q) || t.data.description.toLowerCase().includes(q) || t.data.tags.some(tag => tag.toLowerCase().includes(q)));
 if (catFilter) filtered = filtered.filter(t => t.data.category === catFilter);
 if (typeFilter) filtered = filtered.filter(t => t.data.type === typeFilter);
-if (tagFilter) filtered = filtered.filter(t => t.data.tags.includes(tagFilter));
-if (certFilter) filtered = filtered.filter(t => t.data.certifications?.includes(certFilter));
+if (tagFilter) filtered = filtered.filter(t => t.data.tags.map(x=>x.toLowerCase()).includes(tagFilter.toLowerCase()));
+if (certFilter) filtered = filtered.filter(t => (t.data.certifications ?? []).map((x:string)=>x.toLowerCase()).includes(certFilter.toLowerCase()));
 filtered.sort((a,b) => { if (sortBy==="name") return a.data.name.localeCompare(b.data.name,"es"); if (sortBy==="updated") { const da=a.data.last_verified?new Date(a.data.last_verified).getTime():0; const db=b.data.last_verified?new Date(b.data.last_verified).getTime():0; return db-da; } return (a.data.market_rank??999)-(b.data.market_rank??999); });
 const hasFilters = !!(q||catFilter||typeFilter||tagFilter||certFilter);
 ---
@@ -48,10 +47,14 @@ const hasFilters = !!(q||catFilter||typeFilter||tagFilter||certFilter);
     <div class="container">
       <h1 class="section-title" style="font-size:28px">Directorio</h1>
       <p class="section-desc">{tools.length} herramientas en {categories.length} categorías</p>
+
+      <!-- Categorías -->
       <div class="flex flex-wrap gap-2 mt-8">
         <a href={buildUrl({category:''})} class={`badge badge-md ${!catFilter?'badge-blue':'badge-outline'}`}>Todas</a>
         {categories.map(c => <a href={buildUrl({category:c.id})} class={`badge badge-md ${catFilter===c.id?'badge-blue':'badge-outline'}`}>{c.name}</a>)}
       </div>
+
+      <!-- Tipo + Ordenación (lo principal visible) -->
       <div class="flex flex-wrap items-center gap-3 mt-5" style="font-size:13px">
         <a href={buildUrl({type:''})} class={`badge badge-md ${!typeFilter?'badge-blue':'badge-outline'}`}>Todos</a>
         <a href={buildUrl({type:'comercial'})} class={`badge badge-md ${typeFilter==='comercial'?'badge-blue':'badge-outline'}`}>Comercial</a>
@@ -60,19 +63,21 @@ const hasFilters = !!(q||catFilter||typeFilter||tagFilter||certFilter);
         <a href={buildUrl({sort:'rank'})} style={`color:${sortBy==='rank'?'#1d1d1f':'#86868b'};font-weight:${sortBy==='rank'?'500':'400'}`}>Por ranking</a>
         <a href={buildUrl({sort:'name'})} style={`color:${sortBy==='name'?'#1d1d1f':'#86868b'};font-weight:${sortBy==='name'?'500':'400'}`}>Alfabético</a>
         <a href={buildUrl({sort:'updated'})} style={`color:${sortBy==='updated'?'#1d1d1f':'#86868b'};font-weight:${sortBy==='updated'?'500':'400'}`}>Más reciente</a>
+        <!-- Botón para abrir modal de más filtros -->
+        <button type="button" id="btn-more-filters" class="badge badge-md" style="background:#f5f5f7;border:1px solid #d2d2d7;color:#6e6e73;cursor:pointer;margin-left:4px">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><circle cx="4" cy="12" r="2"/><circle cx="12" cy="10" r="2"/><circle cx="20" cy="14" r="2"/></svg>
+          Más filtros {(tagFilter||certFilter) ? '·'+(tagFilter?1:0)+(certFilter?1:0) : ''}
+        </button>
       </div>
-      <!-- Filtro de etiquetas -->
-      <div class="flex flex-wrap gap-1.5 mt-4">
-        <span style="font-size:12px;color:#aeaeb2;margin-right:4px">Etiquetas:</span>
-        <a href={buildUrl({tag:''})} class={`badge badge-sm ${!tagFilter?'badge-blue':'badge-outline'}`}>Todas</a>
-        {topTags.map(([tag, count]) => <a href={buildUrl({tag})} class={`badge badge-sm ${tagFilter===tag?'badge-blue':'badge-outline'}`}>{tag} <span style="color:#aeaeb2">({count})</span></a>)}
-      </div>
-      <!-- Filtro de certificaciones -->
-      {allCerts.length > 0 && <div class="flex flex-wrap gap-1.5 mt-1.5">
-        <span style="font-size:12px;color:#aeaeb2;margin-right:4px">Certificación:</span>
-        <a href={buildUrl({cert:''})} class={`badge badge-sm ${!certFilter?'badge-teal':'badge-outline'}`}>Todas</a>
-        {allCerts.map(c => <a href={buildUrl({cert:c})} class={`badge badge-sm ${certFilter===c?'badge-teal':'badge-outline'}`}>{c}</a>)}
+
+      <!-- Chips de filtros activos -->
+      {(tagFilter||certFilter) && <div class="flex flex-wrap items-center gap-2 mt-3" style="font-size:12px">
+        <span style="color:#aeaeb2">Filtros activos:</span>
+        {tagFilter && <span class="badge badge-blue badge-sm">{tagFilter} <a href={buildUrl({tag:''})} style="margin-left:4px;color:#0066cc;text-decoration:none" title="Quitar">×</a></span>}
+        {certFilter && <span class="badge badge-teal badge-sm">{certFilter} <a href={buildUrl({cert:''})} style="margin-left:4px;color:#0d9488;text-decoration:none" title="Quitar">×</a></span>}
       </div>}
+
+      <!-- Resultados -->
       <div class="flex items-center gap-3 mt-4" style="font-size:13px;color:#86868b">
         <span>{filtered.length} resultado{filtered.length!==1?'s':''}{hasFilters?' con filtros':''}</span>
         {hasFilters && <a href={`${base}herramientas`} style="color:#0071e3">Limpiar filtros</a>}
@@ -99,5 +104,86 @@ const hasFilters = !!(q||catFilter||typeFilter||tagFilter||certFilter);
     </div>
   </section>
 
+  <!-- MODAL de filtros avanzados -->
+  <div id="filter-modal" class="filter-modal-overlay" style="display:none">
+    <div class="filter-modal" role="dialog" aria-modal="true" aria-label="Filtros avanzados">
+      <div class="filter-modal-header">
+        <h2 style="font-size:17px;font-weight:600">Filtros avanzados</h2>
+        <button id="btn-close-modal" style="background:none;border:none;cursor:pointer;font-size:20px;color:#86868b;line-height:1" aria-label="Cerrar">&times;</button>
+      </div>
+      <div class="filter-modal-body">
+        <!-- Etiquetas -->
+        <details open class="filter-group">
+          <summary class="filter-group-title">Etiquetas <span style="color:#aeaeb2;font-weight:400">({allTags.length})</span></summary>
+          <div class="flex flex-wrap gap-1.5 mt-2">
+            {allTags.map(([tag, count]) => <a href={buildUrl({tag: tagFilter===tag ? '' : tag})} class={`badge badge-sm ${tagFilter===tag?'badge-blue':'badge-outline'}`}>{tag} <span style="color:#aeaeb2">({count})</span></a>)}
+          </div>
+        </details>
+        <!-- Certificaciones -->
+        {allCerts.length > 0 && <details class="filter-group">
+          <summary class="filter-group-title">Certificaciones <span style="color:#aeaeb2;font-weight:400">({allCerts.length})</span></summary>
+          <div class="flex flex-wrap gap-1.5 mt-2">
+            {allCerts.map(c => <a href={buildUrl({cert: certFilter===c ? '' : c})} class={`badge badge-sm ${certFilter===c?'badge-teal':'badge-outline'}`}>{c}</a>)}
+          </div>
+        </details>}
+      </div>
+    </div>
+  </div>
+
   <footer class="footer"><div class="container footer-grid"><div><p class="footer-brand">BBDD IT Tools</p><p class="footer-desc">Directorio actualizado cada lunes</p></div><div class="footer-links"><a href={`${base}herramientas`} class="nav-link" style="font-size:12px">Directorio</a><a href={`${base}ranking`} class="nav-link" style="font-size:12px">Rankings</a><a href={`${base}about`} class="nav-link" style="font-size:12px">Acerca de</a></div></div></footer>
 </BaseLayout>
+
+<style>
+/* Modal de filtros */
+.filter-modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.3); z-index: 100;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+}
+.filter-modal {
+  background: #fff; border-radius: 20px; max-width: 600px; width: calc(100% - 32px);
+  max-height: 80vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,.15);
+  animation: modalIn .2s ease-out;
+}
+@keyframes modalIn { from { opacity:0; transform:scale(.96) translateY(8px); } to { opacity:1; transform:scale(1) translateY(0); } }
+.filter-modal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px 0; position: sticky; top: 0; background: #fff;
+  border-radius: 20px 20px 0 0;
+}
+.filter-modal-body { padding: 16px 24px 24px; }
+.filter-group {
+  border: 1px solid #e8e8ed; border-radius: 12px; padding: 14px 16px;
+  margin-bottom: 12px;
+}
+.filter-group[open] { background: #fafafa; }
+.filter-group-title {
+  font-size: 14px; font-weight: 500; color: #1d1d1f; cursor: pointer;
+  list-style: none; display: flex; align-items: center; gap: 6px;
+}
+.filter-group-title::-webkit-details-marker { display: none; }
+.filter-group-title::before {
+  content: ''; display: inline-block; width: 16px; height: 16px;
+  background: #e8e8ed; border-radius: 4px; transition: background .15s;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");
+  mask-size: contain; -webkit-mask-size: contain;
+}
+.filter-group[open] .filter-group-title::before { transform: rotate(90deg); }
+</style>
+
+<script>
+  const modal = document.getElementById('filter-modal');
+  const btnOpen = document.getElementById('btn-more-filters');
+  const btnClose = document.getElementById('btn-close-modal');
+  if (btnOpen && modal) {
+    btnOpen.addEventListener('click', () => { modal.style.display = 'flex'; });
+  }
+  if (btnClose && modal) {
+    btnClose.addEventListener('click', () => { modal.style.display = 'none'; });
+  }
+  if (modal) {
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+  }
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal && modal.style.display === 'flex') modal.style.display = 'none'; });
+</script>

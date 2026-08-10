@@ -7,6 +7,22 @@ const tools = (await getCollection("tools")).map(toToolEntry);
 const categories = await getCategories();
 const rankings = await getRankings();
 const tierColors: any = {Líder:'tier-lider',Visionario:'tier-visionario',Retador:'tier-retador',Nicho:'tier-nicho'};
+
+// Datos para gráficos
+const totalTools = tools.length;
+const openSource = tools.filter(t => t.data.type === 'opensource').length;
+const comercial = tools.filter(t => t.data.type === 'comercial').length;
+
+// Conteo de certificaciones
+const certCounts = new Map<string,number>();
+tools.forEach(t => (t.data.certifications ?? []).forEach(c => certCounts.set(c, (certCounts.get(c)??0)+1)));
+const topCerts = [...certCounts.entries()].sort((a,b) => b[1]-a[1]).slice(0, 10);
+const maxCert = topCerts[0]?.[1] ?? 1;
+
+// Colores Apple-style para gráficos
+const chartBlue = '#0071e3';
+const chartGreen = '#34c759';
+const chartColors = ['#0071e3','#5856d6','#af52de','#ff2d55','#ff9500','#ffcc02','#34c759','#5ac8fa','#007aff','#ff3b30'];
 ---
 
 <BaseLayout title="Rankings">
@@ -16,6 +32,52 @@ const tierColors: any = {Líder:'tier-lider',Visionario:'tier-visionario',Retado
     <div class="container max-w-900">
       <h1 class="section-title" style="font-size:28px">Rankings</h1>
       <p class="section-desc" style="max-width:600px">Las mejores herramientas por categoría según consenso de fuentes referentes.</p>
+
+      <!-- Gráficos resumen -->
+      <div class="charts-grid mt-10">
+        <!-- Donut: Open Source vs Comercial -->
+        <div class="card" style="padding:24px;text-align:center">
+          <h3 style="font-size:15px;font-weight:600;margin-bottom:8px;color:#1d1d1f">Tipo de herramienta</h3>
+          <div style="position:relative;width:160px;height:160px;margin:0 auto">
+            <svg viewBox="0 0 36 36" style="width:100%;height:100%">
+              <circle cx="18" cy="18" r="14" fill="none" stroke="#f5f5f7" stroke-width="6"/>
+              <circle cx="18" cy="18" r="14" fill="none" stroke={chartBlue} stroke-width="6"
+                stroke-dasharray={`${(comercial/totalTools)*100} ${100-(comercial/totalTools)*100}`}
+                stroke-dashoffset="25" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+              <circle cx="18" cy="18" r="14" fill="none" stroke={chartGreen} stroke-width="6"
+                stroke-dasharray={`${(openSource/totalTools)*100} ${100-(openSource/totalTools)*100}`}
+                stroke-dashoffset={25 - (comercial/totalTools)*100} stroke-linecap="round" transform="rotate(-90 18 18)"/>
+            </svg>
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+              <span style="font-size:24px;font-weight:700;color:#1d1d1f">{totalTools}</span>
+              <span style="font-size:11px;color:#aeaeb2">total</span>
+            </div>
+          </div>
+          <div class="flex justify-center gap-6 mt-3" style="font-size:13px">
+            <div class="flex items-center gap-2"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:{chartBlue}"></span> Comercial <strong>{comercial}</strong></div>
+            <div class="flex items-center gap-2"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:{chartGreen}"></span> Open Source <strong>{openSource}</strong></div>
+          </div>
+        </div>
+
+        <!-- Barras: Top certificaciones -->
+        <div class="card" style="padding:24px">
+          <h3 style="font-size:15px;font-weight:600;margin-bottom:16px;color:#1d1d1f;text-align:center">Certificaciones más comunes</h3>
+          {topCerts.length === 0 ? <p style="font-size:13px;color:#aeaeb2;text-align:center">Sin datos de certificaciones</p> :
+          <div class="space-y-3">
+            {topCerts.map(([cert, count], i) => (
+              <div>
+                <div class="flex items-center justify-between mb-1" style="font-size:12px">
+                  <span style="color:#6e6e73;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:70%">{cert}</span>
+                  <span style="color:#1d1d1f;font-weight:600">{count}</span>
+                </div>
+                <div style="height:6px;background:#f5f5f7;border-radius:3px;overflow:hidden">
+                  <div style={`height:100%;width:${(count/maxCert)*100}%;background:${chartColors[i]??chartBlue};border-radius:3px;transition:width .4s`}></div>
+                </div>
+              </div>
+            ))}
+          </div>}
+        </div>
+      </div>
 
       {Object.keys(rankings).length===0 ? <div class="text-center py-16"><p class="section-desc">Los rankings se generarán en la primera ejecución semanal.</p></div> :
       <div class="space-y-20 mt-10">
@@ -38,3 +100,12 @@ const tierColors: any = {Líder:'tier-lider',Visionario:'tier-visionario',Retado
 
   <footer class="footer"><div class="container footer-grid"><div><p class="footer-brand">BBDD IT Tools</p><p class="footer-desc">Directorio actualizado cada lunes</p></div><div class="footer-links"><a href={`${base}herramientas`} class="nav-link" style="font-size:12px">Directorio</a><a href={`${base}ranking`} class="nav-link" style="font-size:12px">Rankings</a><a href={`${base}about`} class="nav-link" style="font-size:12px">Acerca de</a></div></div></footer>
 </BaseLayout>
+
+<style>
+.charts-grid {
+  display: grid; gap: 16px;
+}
+@media (min-width: 640px) {
+  .charts-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
