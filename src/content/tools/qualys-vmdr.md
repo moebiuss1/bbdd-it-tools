@@ -36,6 +36,7 @@ sources:
 - https://cipherssecurity.com/best-vulnerability-management-platform-2026/
 last_verified: '2026-08-10'
 needs_review: false
+logo: /logos/qualys-vmdr.png
 ---
 
 Qualys VMDR es la plataforma cloud-native que unifica la gestión de vulnerabilidades

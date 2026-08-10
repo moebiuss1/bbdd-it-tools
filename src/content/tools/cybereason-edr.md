@@ -26,6 +26,7 @@ sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
+logo: /logos/cybereason-edr.png
 ---
 
 Cybereason es una solución de referencia en la categoría edr utilizada por organizaciones
