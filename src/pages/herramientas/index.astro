@@ -46,30 +46,30 @@ const quickCerts = ['ISO 27001', 'ENS Alta', 'ENS Media', 'SOC 2 Tipo II', 'Comm
       <h1 class="section-title" style="font-size:28px">Directorio</h1>
       <p class="section-desc">{tools.length} herramientas en {categories.length} categorías</p>
 
-      <!-- Filtros unificados: categoría + tipo como chips -->
-      <div class="mt-8">
-        <label style="font-size:11px;color:#8e8e93;display:block;margin-bottom:6px">Categoría</label>
-        <div class="flex flex-wrap gap-1.5">
-          <button class="filter-chip active" data-cat="">Todas</button>
-          {categories.map(c => <button class="filter-chip" data-cat={c.id}>{c.name}</button>)}
+      <!-- Filtros -->
+      <div class="flex flex-wrap items-end gap-3 mt-8">
+        <div>
+          <label style="font-size:11px;color:#8e8e93;display:block;margin-bottom:4px">Categoría</label>
+          <select id="cat-select" style="padding:8px 32px 8px 12px;border:1px solid #d2d2d7;border-radius:10px;font-size:14px;font-weight:500;color:#1d1d1f;background:#fff;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none;max-width:260px">
+            <option value="">Todas las categorías</option>
+            {categories.map(c => <option value={c.id}>{c.name} ({tools.filter(t=>(t.data.categories||[t.data.category]).includes(c.id)).length})</option>)}
+          </select>
         </div>
-      </div>
-      <div class="flex flex-wrap items-center justify-between gap-3 mt-3">
-        <div class="flex flex-wrap items-center gap-3">
+        <div>
           <span style="font-size:11px;color:#8e8e93">Tipo:</span>
           <button class="filter-chip-sm active" data-type="">Todos</button>
           <button class="filter-chip-sm" data-type="comercial">Comercial</button>
           <button class="filter-chip-sm" data-type="opensource">Open Source</button>
-          <span style="color:#d2d2d7;margin:0 2px">|</span>
-          <button class="sort-link active" data-sort="rank">Por ranking</button>
-          <button class="sort-link" data-sort="score">Por puntuación</button>
-          <button class="sort-link" data-sort="name">Alfabético</button>
-          <span style="color:#d2d2d7;margin:0 2px">|</span>
-          <span style="font-size:11px;color:#8e8e93">Cert:</span>
-          <button class="filter-chip-sm active" data-qcert="">Todas</button>
-          {quickCerts.map(c => <button class="filter-chip-sm" data-qcert={c}>{c}</button>)}
         </div>
-        <a href={`${base}herramientas`} id="clear-filters" style="color:#0071e3;font-size:12px;display:none">Limpiar filtros</a>
+        <span style="color:#d2d2d7;margin:0 2px">|</span>
+        <button class="sort-link active" data-sort="rank">Por ranking</button>
+        <button class="sort-link" data-sort="score">Por puntuación</button>
+        <button class="sort-link" data-sort="name">Alfabético</button>
+        <span style="color:#d2d2d7;margin:0 2px">|</span>
+        <span style="font-size:11px;color:#8e8e93">Cert:</span>
+        <button class="filter-chip-sm active" data-qcert="">Todas</button>
+        {quickCerts.map(c => <button class="filter-chip-sm" data-qcert={c}>{c}</button>)}
+        <a href={`${base}herramientas`} id="clear-filters" style="color:#0071e3;font-size:12px;display:none;margin-left:4px">Limpiar filtros</a>
       </div>
       <div style="font-size:15px;font-weight:600;color:#0071e3;margin-top:12px" id="results-count">{tools.length} herramientas</div>
 
@@ -149,7 +149,6 @@ const quickCerts = ['ISO 27001', 'ENS Alta', 'ENS Media', 'SOC 2 Tipo II', 'Comm
   }
 
   function updateUI() {
-    document.querySelectorAll('.filter-chip[data-cat]').forEach(b => b.classList.toggle('active', b.dataset.cat === activeCat));
     document.querySelectorAll('.filter-chip-sm[data-type]').forEach(b => b.classList.toggle('active', b.dataset.type === activeType));
     document.querySelectorAll('.filter-chip-sm[data-qcert]').forEach(b => b.classList.toggle('active', b.dataset.qcert === activeCert));
     document.querySelectorAll('.sort-link').forEach(b => b.classList.toggle('active', b.dataset.sort === activeSort));
@@ -164,11 +163,9 @@ const quickCerts = ['ISO 27001', 'ENS Alta', 'ENS Media', 'SOC 2 Tipo II', 'Comm
 
   // Event delegation
   document.addEventListener('click', function(e) {
-    // Category chips
-    const cchip = e.target.closest('.filter-chip[data-cat]');
-    if (cchip) {
-      e.preventDefault();
-      activeCat = activeCat === cchip.dataset.cat ? '' : cchip.dataset.cat;
+    // Category select
+    if (e.target.id === 'cat-select') {
+      activeCat = e.target.value;
       updateUI(); countVisible(); return;
     }
     // Type chips
