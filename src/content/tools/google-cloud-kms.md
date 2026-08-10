@@ -1,0 +1,36 @@
+---
+name: Google Cloud KMS
+slug: google-cloud-kms
+category: key-managers
+tags:
+- kms
+- cloud
+- google
+- hsm
+- ekm
+- fips
+type: comercial
+cost_model: suscripción
+cost_details: '$0.06/clave/mes + $0.03/10,000 operaciones.'
+website: https://cloud.google.com
+description: 'Servicio de gestión de claves criptográficas cloud-native con soporte para claves simétricas y asimétricas, envoltura de claves y HSM con certificación FIPS 140-2 Nivel 3. Integración con Cloud HSM y Cloud EKM.'
+why_reference: 'Google Cloud KMS destaca por su arquitectura de seguridad con claves residentes en HSM y su modelo de External Key Manager (EKM) que permite a las organizaciones mantener el control de las claves fuera de Google Cloud.'
+certifications:
+- ISO 27001
+- SOC 2 Tipo
+- II
+- FedRAMP
+- FIPS
+- 140-2
+company_size:
+- mediana
+- grande
+market_rank: 5
+sources:
+- https://www.gartner.com/reviews/
+last_verified: '2026-08-10'
+needs_review: false
+logo: null
+---
+
+Google Cloud KMS proporciona capacidades avanzadas en la categoría key-managers para organizaciones que necesitan proteger sus entornos IT con soluciones respaldadas por analistas independientes.
