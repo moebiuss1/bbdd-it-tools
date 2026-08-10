@@ -41,13 +41,12 @@ IBM QRadar SIEM es la plataforma de gestión de eventos e información de seguri
 para grandes organizaciones. Su arquitectura modular permite escalar desde
 despliegues todo-en-uno hasta arquitecturas distribuidas con procesamiento de
 más de 750,000 eventos por segundo.
-
-- **QRadar Console**: Interfaz centralizada de gestión, búsqueda y reporting
-- **QRadar Event Collector**: Recepción y normalización de eventos (protocolo syslog, API)
-- **QRadar Event Processor**: Motor de correlación basado en reglas y patrones
-- **QFlow Collector**: Análisis de tráfico de red con inspección profunda (DPI)
-- **IBM Watson for Cyber Security**: Análisis cognitivo de amenazas con NLP
-- **QRadar Risk Manager**: Análisis de configuración de red y modelado de amenazas
+- QRadar Console: Interfaz centralizada de gestión, búsqueda y reporting
+- QRadar Event Collector: Recepción y normalización de eventos (protocolo syslog, API)
+- QRadar Event Processor: Motor de correlación basado en reglas y patrones
+- QFlow Collector: Análisis de tráfico de red con inspección profunda (DPI)
+- IBM Watson for Cyber Security: Análisis cognitivo de amenazas con NLP
+- QRadar Risk Manager: Análisis de configuración de red y modelado de amenazas
 
 QRadar incluye paquetes de cumplimiento preconfigurados para:
 - ISO 27001 (gestión de incidentes A.16, registros A.12.4)

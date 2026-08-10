@@ -44,14 +44,12 @@ logo: /logos/hashicorp-vault.png
 Vault resuelve el problema de la dispersión de secretos (API keys, contraseñas,
 certificados, tokens) proporcionando una única fuente de verdad con cifrado,
 control de acceso detallado y auditoría completa.
-
-- **KV (Key-Value)**: Almacenamiento de secretos estáticos con versionado
-- **Dynamic Secrets**: Generación de credenciales temporales para bases de datos,
+- KV (Key-Value): Almacenamiento de secretos estáticos con versionado
+- Dynamic Secrets: Generación de credenciales temporales para bases de datos,
   nubes, etc.
-- **PKI**: Autoridad certificadora interna con emisión y revocación automatizada
-- **Transit**: Cifrado como servicio (encrypt/decrypt sin acceder a las claves)
-- **Kubernetes Auth**: Autenticación nativa para cargas de trabajo en Kubernetes
-
+- PKI: Autoridad certificadora interna con emisión y revocación automatizada
+- Transit: Cifrado como servicio (encrypt/decrypt sin acceder a las claves)
+- Kubernetes Auth: Autenticación nativa para cargas de trabajo en Kubernetes
 - Registro de auditoría inmutable de cada acceso a secretos
 - Políticas de acceso basadas en least privilege (HCL)
 - Cumplimiento con rotación automática de credenciales (requisito PCI DSS 3.6)

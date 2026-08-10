@@ -39,14 +39,12 @@ Jamf Pro es la plataforma de gestión de dispositivos Apple para empresas que
 necesitan control total sobre su flota Mac, iPad, iPhone y Apple TV. A diferencia
 de los MDM genéricos, Jamf está diseñado exclusivamente para el ecosistema Apple
 y aprovecha cada API y framework nativo.
-
-- **Zero-Touch Deployment**: Despliegue automatizado desde Apple Business Manager sin intervención de IT
-- **Jamf Self Service**: Catálogo de aplicaciones y configuraciones para autonomía del usuario
-- **Policy Management**: Aplicación de políticas de seguridad, configuraciones y scripts
-- **Jamf Protect**: Endpoint protection nativo para macOS con detección de amenazas
-- **Jamf Connect**: Autenticación cloud integrada con IdP (Okta, Entra ID) en el login de Mac
-- **Inventario**: Recolección automática de hardware, software y configuraciones de seguridad
-
+- Zero-Touch Deployment: Despliegue automatizado desde Apple Business Manager sin intervención de IT
+- Jamf Self Service: Catálogo de aplicaciones y configuraciones para autonomía del usuario
+- Policy Management: Aplicación de políticas de seguridad, configuraciones y scripts
+- Jamf Protect: Endpoint protection nativo para macOS con detección de amenazas
+- Jamf Connect: Autenticación cloud integrada con IdP (Okta, Entra ID) en el login de Mac
+- Inventario: Recolección automática de hardware, software y configuraciones de seguridad
 - Plantillas de hardening para CIS Benchmarks, NIST 800-53, DISA STIG para macOS/iOS
 - Informes de cumplimiento automatizados con evidencia de configuraciones
 - Registro de cambios de política y acceso para trazabilidad de auditoría

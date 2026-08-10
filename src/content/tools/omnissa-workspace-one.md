@@ -37,13 +37,11 @@ Omnissa Workspace ONE (anteriormente VMware) es la plataforma UEM más completa 
 mercado, diseñada para grandes organizaciones con flotas de dispositivos heterogéneas.
 Combina gestión unificada de endpoints, seguridad Zero Trust y automatización de
 cumplimiento en una sola plataforma.
-
 - Gestión de todos los SO: iOS, Android, Windows, macOS, Linux y ChromeOS
 - Cumplimiento en tiempo real con remediación automatizada
 - Integración Zero Trust con verificación continua de postura del dispositivo
 - Catálogo de aplicaciones empresariales con SSO integrado
 - Automatización de onboarding y offboarding de dispositivos
-
 - Políticas de cumplimiento configurables con acciones correctivas automáticas
 - Informes de conformidad para auditorías regulatorias
 - Registro completo de cambios de configuración y estado de dispositivos

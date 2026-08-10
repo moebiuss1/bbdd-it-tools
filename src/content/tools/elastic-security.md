@@ -44,14 +44,12 @@ Elastic Security integra SIEM, detección de amenazas y respuesta en endpoints s
 la plataforma Elastic (ELK). Aprovecha la velocidad de búsqueda y escalabilidad
 horizontal de Elasticsearch para ofrecer una experiencia de threat hunting en
 tiempo real difícil de igualar por los SIEM tradicionales.
-
-- **Elasticsearch**: Motor de búsqueda y almacenamiento distribuido de logs y eventos
-- **Kibana**: Interfaz de visualización con dashboards de seguridad y caso de uso
-- **Integrations**: Más de 300 integraciones predefinidas para ingestar datos de seguridad
-- **Elastic Defend**: Protección de endpoints con prevención de malware y ransomware
-- **Detection Engine**: 700+ reglas de detección alineadas con MITRE ATT&CK
-- **Osquery Manager**: Consultas SQL en tiempo real sobre endpoints para hunting
-
+- Elasticsearch: Motor de búsqueda y almacenamiento distribuido de logs y eventos
+- Kibana: Interfaz de visualización con dashboards de seguridad y caso de uso
+- Integrations: Más de 300 integraciones predefinidas para ingestar datos de seguridad
+- Elastic Defend: Protección de endpoints con prevención de malware y ransomware
+- Detection Engine: 700+ reglas de detección alineadas con MITRE ATT&CK
+- Osquery Manager: Consultas SQL en tiempo real sobre endpoints para hunting
 - Stack unificado que elimina la necesidad de herramientas separadas para logs, SIEM y endpoints
 - Búsqueda federada sobre datos históricos y en tiempo real desde una sola interfaz
 - Informes exportables con evidencia para requisitos de cumplimiento

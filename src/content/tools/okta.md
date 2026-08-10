@@ -45,13 +45,11 @@ logo: /logos/okta.png
 Okta es la plataforma de gestión de identidad líder para entornos cloud-first.
 Conecta a empleados, contratistas y partners con las aplicaciones que necesitan,
 desde cualquier dispositivo y ubicación, manteniendo controles de seguridad granulares.
-
-- **Okta SSO**: Single Sign-On para aplicaciones cloud y on-premise
-- **Okta MFA**: Autenticación multifactor adaptativa (riesgo, ubicación, dispositivo)
-- **Okta Lifecycle Management**: Provisioning y desprovisioning automatizado
-- **Okta Identity Governance**: Certificaciones de acceso y analíticas de identidad
-- **Okta Workflows**: Automatización de procesos de identidad sin código
-
+- Okta SSO: Single Sign-On para aplicaciones cloud y on-premise
+- Okta MFA: Autenticación multifactor adaptativa (riesgo, ubicación, dispositivo)
+- Okta Lifecycle Management: Provisioning y desprovisioning automatizado
+- Okta Identity Governance: Certificaciones de acceso y analíticas de identidad
+- Okta Workflows: Automatización de procesos de identidad sin código
 - Trazabilidad completa de accesos y autenticaciones
 - Políticas de acceso condicional documentables y auditables
 - Informes de cumplimiento predefinidos para SOX, HIPAA, PCI DSS

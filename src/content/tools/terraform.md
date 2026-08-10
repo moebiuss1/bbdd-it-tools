@@ -42,13 +42,11 @@ Puppet, Chef) que gestionan el software sobre servidores existentes, Terraform s
 centra en el aprovisionamiento de la infraestructura misma: redes, máquinas
 virtuales, bases de datos, balanceadores, clústeres Kubernetes y cientos de
 servicios cloud.
-
-- **HCL (HashiCorp Configuration Language)**: Lenguaje declarativo para definir infraestructura
-- **Providers**: Plugins para interactuar con APIs de AWS, Azure, GCP, Kubernetes, etc.
-- **State**: Archivo de estado que mapea la configuración declarada con los recursos reales
-- **Plan**: Vista previa de cambios antes de aplicarlos (plan → apply)
-- **Modules**: Componentes reutilizables de infraestructura
-
+- HCL (HashiCorp Configuration Language): Lenguaje declarativo para definir infraestructura
+- Providers: Plugins para interactuar con APIs de AWS, Azure, GCP, Kubernetes, etc.
+- State: Archivo de estado que mapea la configuración declarada con los recursos reales
+- Plan: Vista previa de cambios antes de aplicarlos (plan → apply)
+- Modules: Componentes reutilizables de infraestructura
 - Infraestructura como código versionada en Git con trazabilidad completa de cambios
 - Plan de ejecución revisable antes de cada despliegue
 - Integración con herramientas de policy-as-code (Sentinel/OPA) para controles automáticos

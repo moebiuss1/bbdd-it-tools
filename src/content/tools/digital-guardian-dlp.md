@@ -39,14 +39,12 @@ entornos más exigentes. A diferencia de las soluciones DLP tradicionales que
 dependen de la inspección de tráfico de red, Digital Guardian opera a nivel de
 endpoint con visibilidad completa incluso cuando los dispositivos están fuera de
 la red corporativa.
-
-- **DLP endpoint-first**: Visibilidad y control de datos dentro y fuera de la red
-- **Clasificación automática**: Etiquetado de datos sensibles basado en contenido y contexto
-- **Insider Threat Detection**: Detección de comportamientos anómalos de usuarios con datos
-- **Registro forense**: Captura de telemetría detallada para investigaciones post-incidente
-- **Data Discovery**: Escaneo de repositorios para localizar datos sensibles no protegidos
-- **Políticas granulares**: Control de copia a USB, impresión, email, upload a cloud, etc.
-
+- DLP endpoint-first: Visibilidad y control de datos dentro y fuera de la red
+- Clasificación automática: Etiquetado de datos sensibles basado en contenido y contexto
+- Insider Threat Detection: Detección de comportamientos anómalos de usuarios con datos
+- Registro forense: Captura de telemetría detallada para investigaciones post-incidente
+- Data Discovery: Escaneo de repositorios para localizar datos sensibles no protegidos
+- Políticas granulares: Control de copia a USB, impresión, email, upload a cloud, etc.
 - Plantillas de políticas preconfiguradas para GDPR, HIPAA, PCI DSS, ITAR
 - Registro completo de movimientos de datos con evidencia para auditoría
 - Informes de exposición de datos y tendencias de incidentes

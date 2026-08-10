@@ -49,13 +49,11 @@ protección perimetral y segmentación de red en grandes empresas. Su arquitectu
 paso único (Single Pass Architecture) procesa tráfico, aplica políticas y escanea
 amenazas en una sola pasada, ofreciendo rendimiento predecible incluso con todas las
 funciones de seguridad activadas.
-
-- **App-ID**: Identifica aplicaciones independientemente del puerto o protocolo
-- **User-ID**: Políticas basadas en identidad del usuario (Active Directory, LDAP)
-- **Content-ID**: Prevención de amenazas conocidas y desconocidas en tiempo real
-- **WildFire**: Sandbox cloud para análisis de malware desconocido
-- **Panorama**: Gestión centralizada de múltiples firewalls
-
+- App-ID: Identifica aplicaciones independientemente del puerto o protocolo
+- User-ID: Políticas basadas en identidad del usuario (Active Directory, LDAP)
+- Content-ID: Prevención de amenazas conocidas y desconocidas en tiempo real
+- WildFire: Sandbox cloud para análisis de malware desconocido
+- Panorama: Gestión centralizada de múltiples firewalls
 - Logging completo de todas las sesiones con metadata de aplicación/usuario
 - Informes predefinidos de cumplimiento PCI DSS, HIPAA, ISO 27001
 - Integración con SIEM vía syslog y API para correlación avanzada

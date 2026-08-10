@@ -41,14 +41,12 @@ Check Point Quantum es la familia de firewalls de siguiente generación de Check
 Software Technologies. Su arquitectura unificada de prevención de amenazas procesa
 todo el tráfico —incluyendo SSL/TLS inspeccionado— a través de un solo motor sin
 degradación de rendimiento gracias a su arquitectura HyperSync.
-
-- **Threat Prevention**: Motor unificado que combina IPS, antivirus, anti-bot y SandBlast Zero-Day
-- **Maestro Hyperscale**: Escalabilidad horizontal para superar 1 Tbps de throughput
-- **ThreatCloud AI**: Inteligencia colectiva alimentada por 150,000 gateways en tiempo real
-- **Quantum IoT Protect**: Descubrimiento y segmentación automática de dispositivos IoT/OT
-- **Harmony Endpoint**: Integración con endpoint protection para respuesta coordinada
-- **Smart-1**: Gestión centralizada de políticas con compliance blades
-
+- Threat Prevention: Motor unificado que combina IPS, antivirus, anti-bot y SandBlast Zero-Day
+- Maestro Hyperscale: Escalabilidad horizontal para superar 1 Tbps de throughput
+- ThreatCloud AI: Inteligencia colectiva alimentada por 150,000 gateways en tiempo real
+- Quantum IoT Protect: Descubrimiento y segmentación automática de dispositivos IoT/OT
+- Harmony Endpoint: Integración con endpoint protection para respuesta coordinada
+- Smart-1: Gestión centralizada de políticas con compliance blades
 - Compliance blade con informes predefinidos para PCI DSS, SOX, HIPAA, NIST
 - Registro completo de cambios de política con aprobación por flujo de trabajo
 - Segmentación de red documentada automáticamente para requisitos de alcance PCI

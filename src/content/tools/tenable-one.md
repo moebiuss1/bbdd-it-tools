@@ -44,14 +44,12 @@ vulnerabilidades tradicional con visibilidad de activos, seguridad cloud y
 análisis de superficies de ataque. Su enfoque de priorización basada en riesgo
 combina CVSS v4, EPSS y el catálogo KEV de CISA para reducir el backlog de
 remediación en un 70-90%.
-
-- **Nessus**: Escáner de vulnerabilidades de red con 219,000+ plugins
-- **Tenable Vulnerability Management**: Plataforma cloud de gestión de vulnerabilidades
-- **Tenable Security Center (sc)**: Gestión on-premise para entornos clasificados
-- **Tenable Cloud Security**: CSPM para AWS, Azure y GCP
-- **Tenable OT Security**: Visibilidad de activos industriales y redes OT/ICS
-- **Tenable Web App Scanning**: Escaneo dinámico de aplicaciones web (DAST)
-
+- Nessus: Escáner de vulnerabilidades de red con 219,000+ plugins
+- Tenable Vulnerability Management: Plataforma cloud de gestión de vulnerabilidades
+- Tenable Security Center (sc): Gestión on-premise para entornos clasificados
+- Tenable Cloud Security: CSPM para AWS, Azure y GCP
+- Tenable OT Security: Visibilidad de activos industriales y redes OT/ICS
+- Tenable Web App Scanning: Escaneo dinámico de aplicaciones web (DAST)
 - Informes de cumplimiento preconfigurados para PCI DSS, HIPAA, SOX, NIST
 - Seguimiento de remediación con SLA y evidencias de cierre
 - Métricas de riesgo agregadas para informes de gestión trimestrales

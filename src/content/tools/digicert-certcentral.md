@@ -42,14 +42,12 @@ DigiCert CertCentral es la plataforma empresarial de gestión de certificados
 digitales que unifica la emisión, renovación, revocación y monitorización de
 certificados TLS/SSL, firma de código, email (S/MIME) y dispositivos IoT desde
 una única consola.
-
-- **Automatización ACME**: Renovación automática de certificados TLS sin intervención manual
-- **API REST**: Integración con flujos DevOps y pipelines CI/CD
-- **Discovery**: Descubrimiento automático de certificados en la red (on-prem y cloud)
-- **Trust Lifecycle Manager**: Gestión centralizada de políticas de emisión y caducidad
-- **Post-Quantum Ready**: Soporte para algoritmos post-cuánticos (NIST PQC)
-- **Multi-CA Management**: Gestión de certificados de múltiples CAs (incluyendo Microsoft AD CS)
-
+- Automatización ACME: Renovación automática de certificados TLS sin intervención manual
+- API REST: Integración con flujos DevOps y pipelines CI/CD
+- Discovery: Descubrimiento automático de certificados en la red (on-prem y cloud)
+- Trust Lifecycle Manager: Gestión centralizada de políticas de emisión y caducidad
+- Post-Quantum Ready: Soporte para algoritmos post-cuánticos (NIST PQC)
+- Multi-CA Management: Gestión de certificados de múltiples CAs (incluyendo Microsoft AD CS)
 - Informes de inventario de certificados con fechas de caducidad y responsable
 - Alertas de caducidad configurables para prevenir interrupciones de servicio
 - Trazabilidad completa de emisión, renovación y revocación con registro de auditoría

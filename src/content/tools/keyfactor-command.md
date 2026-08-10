@@ -42,14 +42,12 @@ que permite a las organizaciones recuperar el control sobre su infraestructura P
 Su capacidad de descubrimiento continuo localiza todos los certificados desplegados
 —incluyendo los que el equipo IT desconoce— y automatiza su renovación antes de
 que caduquen, eliminando una de las causas más frecuentes de interrupciones de servicio.
-
-- **Discovery**: Escaneo continuo de red para localizar todos los certificados desplegados
-- **Automation**: Renovación automática vía ACME, SCEP, EST y API REST
-- **EJBCA**: CA empresarial con soporte para jerarquías PKI complejas
-- **Microsoft AD CS Integration**: Gestión y automatización de certificados emitidos por AD CS
-- **Post-Quantum Ready**: Preparación para migración a algoritmos PQC (NIST)
-- **IoT Device Enrollment**: Gestión de identidad de dispositivos IoT a escala
-
+- Discovery: Escaneo continuo de red para localizar todos los certificados desplegados
+- Automation: Renovación automática vía ACME, SCEP, EST y API REST
+- EJBCA: CA empresarial con soporte para jerarquías PKI complejas
+- Microsoft AD CS Integration: Gestión y automatización de certificados emitidos por AD CS
+- Post-Quantum Ready: Preparación para migración a algoritmos PQC (NIST)
+- IoT Device Enrollment: Gestión de identidad de dispositivos IoT a escala
 - Informes de inventario PKI con trazabilidad de cada certificado
 - Alertas de caducidad y renovaciones fallidas
 - Evidencia de gestión del ciclo de vida para requisitos de CA/Browser Forum

@@ -50,12 +50,10 @@ Wazuh nació como un fork de OSSEC en 2015 y ha evolucionado hasta convertirse e
 plataforma completa de seguridad. Combina funcionalidades de SIEM (gestión de logs y
 correlación), HIDS (detección de intrusiones en host), evaluación de cumplimiento y
 gestión de vulnerabilidades.
-
-- **Wazuh Agent**: Agente ligero desplegado en endpoints (Windows, Linux, macOS)
-- **Wazuh Server**: Motor de análisis, correlación y alertas
-- **Wazuh Indexer**: Basado en OpenSearch para almacenamiento y visualización
-- **Wazuh Dashboard**: Interfaz web con paneles de seguridad y cumplimiento
-
+- Wazuh Agent: Agente ligero desplegado en endpoints (Windows, Linux, macOS)
+- Wazuh Server: Motor de análisis, correlación y alertas
+- Wazuh Indexer: Basado en OpenSearch para almacenamiento y visualización
+- Wazuh Dashboard: Interfaz web con paneles de seguridad y cumplimiento
 - PCI DSS (todos los requisitos técnicos)
 - HIPAA (controles administrativos y técnicos)
 - ISO 27001 (Anexo A)

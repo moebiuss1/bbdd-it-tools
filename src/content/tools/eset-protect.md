@@ -38,14 +38,12 @@ ESET PROTECT es la plataforma de seguridad endpoint para empresas que priorizan
 el rendimiento y la gestión IT. Su arquitectura de protección por capas combina
 detección basada en firmas, análisis heurístico avanzado, machine learning en
 cliente y sandboxing en la nube.
-
-- **ESET LiveGrid**: Inteligencia colectiva basada en telemetría de millones de endpoints
-- **ESET Dynamic Threat Defense**: Sandbox cloud para análisis de muestras sospechosas
-- **ESET Full Disk Encryption**: Cifrado completo de disco gestionado desde la consola
-- **Control de dispositivos**: Bloqueo granular de USB, Bluetooth y periféricos
-- **Detección de bootkits/UEFI**: Escaneo pre-arranque del firmware
-- **Consola ESET PROTECT**: Gestión on-premise o cloud con políticas granulares
-
+- ESET LiveGrid: Inteligencia colectiva basada en telemetría de millones de endpoints
+- ESET Dynamic Threat Defense: Sandbox cloud para análisis de muestras sospechosas
+- ESET Full Disk Encryption: Cifrado completo de disco gestionado desde la consola
+- Control de dispositivos: Bloqueo granular de USB, Bluetooth y periféricos
+- Detección de bootkits/UEFI: Escaneo pre-arranque del firmware
+- Consola ESET PROTECT: Gestión on-premise o cloud con políticas granulares
 - Agente ultraligero (~50 MB RAM) que no interfiere con herramientas de auditoría
 - Registro centralizado de detecciones y eventos exportables vía API
 - Informes de cumplimiento programables con plantillas personalizables

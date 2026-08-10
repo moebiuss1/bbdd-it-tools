@@ -38,13 +38,11 @@ Puppet Enterprise extiende las capacidades del core open source de Puppet con
 funcionalidades empresariales de orquestación, control de acceso y reporting
 de cumplimiento. Su enfoque declarativo permite definir el estado deseado de
 cada recurso del sistema y garantiza su convergencia continua.
-
-- **Puppet DSL**: Lenguaje declarativo para describir el estado deseado de los recursos
-- **Puppet Forge**: Repositorio con más de 6,000 módulos reutilizables
-- **Puppet Bolt**: Automatización ad-hoc sin agente para tareas puntuales
-- **Continuous Delivery for Puppet**: Pipeline de despliegue de cambios de configuración
-- **Puppet Comply**: Evaluación continua de cumplimiento contra CIS Benchmarks
-
+- Puppet DSL: Lenguaje declarativo para describir el estado deseado de los recursos
+- Puppet Forge: Repositorio con más de 6,000 módulos reutilizables
+- Puppet Bolt: Automatización ad-hoc sin agente para tareas puntuales
+- Continuous Delivery for Puppet: Pipeline de despliegue de cambios de configuración
+- Puppet Comply: Evaluación continua de cumplimiento contra CIS Benchmarks
 - Cada 30 minutos, Puppet verifica el estado de cada nodo y corrige desviaciones automáticamente
 - Informes de cumplimiento que demuestran el estado de hardening a lo largo del tiempo
 - Trazabilidad completa de quién cambió qué configuración y cuándo

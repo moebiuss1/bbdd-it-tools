@@ -38,13 +38,11 @@ Flexera One es la plataforma que unifica la gestión de activos IT, la optimizac
 de licencias de software y la visibilidad de costes cloud y SaaS. Ayuda a las
 organizaciones a responder a la pregunta fundamental de cualquier auditoría IT:
 "¿qué tenemos, dónde está, cuánto cuesta y cumplimos con las licencias?"
-
-- **IT Asset Management**: Descubrimiento y ciclo de vida de activos hardware y software
-- **Software Asset Management**: Cálculo de posición efectiva de licencia (ELP)
-- **Cloud Cost Optimization**: Análisis y optimización de gasto en AWS, Azure, GCP
-- **SaaS Management**: Visibilidad y control de aplicaciones SaaS (shadow IT)
-- **Technopedia**: Base de datos de 4M+ productos con datos de licencias, EOL y vulnerabilidades
-
+- IT Asset Management: Descubrimiento y ciclo de vida de activos hardware y software
+- Software Asset Management: Cálculo de posición efectiva de licencia (ELP)
+- Cloud Cost Optimization: Análisis y optimización de gasto en AWS, Azure, GCP
+- SaaS Management: Visibilidad y control de aplicaciones SaaS (shadow IT)
+- Technopedia: Base de datos de 4M+ productos con datos de licencias, EOL y vulnerabilidades
 - Posición de licencia efectiva para auditorías de Microsoft, Oracle, SAP, IBM
 - Normalización automática de inventario software para informes de cumplimiento
 - Evidencia de propiedad de licencias lista para presentar en auditorías de proveedores

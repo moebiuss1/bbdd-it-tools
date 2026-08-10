@@ -45,18 +45,16 @@ Splunk Enterprise Security (ES) es la solución SIEM más consolidada del mercad
 construida sobre la plataforma de datos Splunk. Permite a los equipos de seguridad
 obtener visibilidad completa de su entorno IT y OT mediante la ingesta y
 correlación de logs, métricas y eventos.
-
-- **Correlación avanzada**: Motor de reglas con lenguaje SPL para detectar patrones
-- **Investigación guiada**: Framework de investigación con pasos predefinidos
-- **Dashboards de cumplimiento**: Plantillas para ISO 27001, PCI DSS, HIPAA, SOX
-- **Notable Events**: Sistema de alertas priorizadas con contexto enriquecido
-- **Risk-Based Alerting (RBA)**: Puntuación de riesgo para reducir falsos positivos
-- **MITRE ATT&CK Mapping**: Mapeo automático de detecciones al framework MITRE
+- Correlación avanzada: Motor de reglas con lenguaje SPL para detectar patrones
+- Investigación guiada: Framework de investigación con pasos predefinidos
+- Dashboards de cumplimiento: Plantillas para ISO 27001, PCI DSS, HIPAA, SOX
+- Notable Events: Sistema de alertas priorizadas con contexto enriquecido
+- Risk-Based Alerting (RBA): Puntuación de riesgo para reducir falsos positivos
+- MITRE ATT&CK Mapping: Mapeo automático de detecciones al framework MITRE
 
 Splunk también ofrece capacidades SOAR integradas para automatizar playbooks de
 respuesta a incidentes, permitiendo orquestar acciones entre decenas de herramientas
 de seguridad.
-
 - Proporciona evidencia forense inmutable con cadena de custodia digital
 - Permite auditorías de acceso y uso con granularidad a nivel de evento
 - Los dashboards de cumplimiento reducen significativamente el esfuerzo de auditoría

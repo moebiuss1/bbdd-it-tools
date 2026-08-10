@@ -9,6 +9,15 @@ const categories = await getCategories();
 const tagCounts = getTagCounts(tools);
 const allTags = [...tagCounts.entries()].sort((a,b) => b[1]-a[1]);
 
+// Puntuación rápida para cards
+function quickScore(t: any) {
+  const rs = t.market_rank ? Math.max(0, 40 - ((t.market_rank - 1) * 5)) : 10;
+  const cs = Math.min((t.certifications?.length ?? 0) * 6, 30);
+  const ss = Math.min((t.sources?.length ?? 0) * 5, 20);
+  const fs = t.last_verified ? (() => { const days = (Date.now() - new Date(t.last_verified).getTime()) / 86400000; return days < 30 ? 10 : days < 90 ? 7 : days < 180 ? 5 : 3; })() : 0;
+  return Math.min(100, rs + cs + ss + fs);
+}
+
 // Preparar datos para filtrado cliente-side
 const toolsJson = JSON.stringify(tools.map(t => ({
   slug: t.slug,
@@ -21,11 +30,16 @@ const toolsJson = JSON.stringify(tools.map(t => ({
   company_size: t.data.company_size,
   market_rank: t.data.market_rank,
   logo: t.data.logo,
+  score: quickScore(t.data),
+  last_verified: t.data.last_verified,
 })));
 
 const categoriesJson = JSON.stringify(categories);
 const allTagsJson = JSON.stringify(allTags);
 const allCertsJson = JSON.stringify(allCerts);
+
+// Certs rápidas
+const quickCerts = ['ISO 27001', 'ENS Alta', 'ENS Media', 'SOC 2 Tipo II', 'Common Criteria'];
 ---
 
 <BaseLayout title="Directorio">
@@ -41,22 +55,19 @@ const allCertsJson = JSON.stringify(allCerts);
       <h1 class="section-title" style="font-size:28px">Directorio</h1>
       <p class="section-desc"><span id="total-count">{tools.length}</span> herramientas en {categories.length} categorías</p>
 
-      <!-- Categorías -->
+      <!-- Filtros: categoría, tipo, ordenación, certificaciones rápidas -->
       <div class="flex flex-wrap gap-2 mt-8" id="category-filters"></div>
-
-      <!-- Tipo + Ordenación -->
       <div class="flex flex-wrap items-center gap-3 mt-5" style="font-size:13px" id="type-filters"></div>
+      <div class="flex flex-wrap items-center gap-2 mt-3" style="font-size:12px" id="cert-quick-filters"></div>
 
-      <!-- Botón modal -->
-      <div class="mt-3">
+      <!-- Más filtros + chips activos -->
+      <div class="flex flex-wrap items-center gap-3 mt-3">
         <button type="button" id="btn-more-filters" class="badge badge-md" style="background:#f5f5f7;border:1px solid #d2d2d7;color:#6e6e73;cursor:pointer">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><circle cx="4" cy="12" r="2"/><circle cx="12" cy="10" r="2"/><circle cx="20" cy="14" r="2"/></svg>
           Más filtros <span id="active-filter-count"></span>
         </button>
+        <span id="active-chips" class="flex flex-wrap items-center gap-2"></span>
       </div>
-
-      <!-- Chips de filtros activos -->
-      <div class="flex flex-wrap items-center gap-2 mt-3" style="font-size:12px" id="active-chips"></div>
 
       <!-- Resultados -->
       <div class="flex items-center gap-3 mt-4" style="font-size:13px;color:#6e6e73">
@@ -64,10 +75,8 @@ const allCertsJson = JSON.stringify(allCerts);
         <a href={`${base}herramientas`} id="clear-filters" style="color:#0071e3;display:none">Limpiar filtros</a>
       </div>
 
-      <!-- Grid de herramientas -->
-      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mt-8" id="tools-grid"></div>
-
-      <!-- Empty state -->
+      <!-- Grid agrupado por categorías -->
+      <div id="tools-grid" class="space-y-10 mt-6"></div>
       <div class="text-center py-16" id="empty-state" style="display:none">
         <p class="section-desc">Sin resultados. Prueba otros filtros.</p>
         <a href={`${base}herramientas`} class="btn btn-primary mt-4">Ver todas</a>
@@ -75,7 +84,7 @@ const allCertsJson = JSON.stringify(allCerts);
     </div>
   </section>
 
-  <!-- MODAL -->
+  <!-- MODAL filtros avanzados -->
   <div id="filter-modal" class="filter-modal-overlay" style="display:none">
     <div class="filter-modal" role="dialog" aria-modal="true">
       <div class="filter-modal-header">
@@ -88,6 +97,13 @@ const allCertsJson = JSON.stringify(allCerts);
 
   <footer class="footer"><div class="container footer-grid"><div><p class="footer-brand">BBDD IT Tools</p><p class="footer-desc">Directorio actualizado cada lunes</p></div><div class="footer-links"><a href={`${base}herramientas`} class="nav-link" style="font-size:12px">Directorio</a><a href={`${base}ranking`} class="nav-link" style="font-size:12px">Rankings</a><a href={`${base}about`} class="nav-link" style="font-size:12px">Acerca de</a></div></div></footer>
 </BaseLayout>
+
+<div id="app-data" style="display:none" aria-hidden="true"
+  data-tools={toolsJson.replace(/"/g, '&quot;')}
+  data-cats={categoriesJson.replace(/"/g, '&quot;')}
+  data-tags={allTagsJson.replace(/"/g, '&quot;')}
+  data-certs={allCertsJson.replace(/"/g, '&quot;')}>
+</div>
 
 <style>
 .filter-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:100;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
@@ -111,53 +127,50 @@ const allCertsJson = JSON.stringify(allCerts);
 .filter-check-input:focus-visible+.filter-check-box{box-shadow:0 0 0 3px rgba(0,113,227,.15)}
 .filter-check-label{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .filter-check-count{font-size:11px;color:#8e8e93;flex-shrink:0}
+.score-dot{display:inline-block;width:8px;height:8px;border-radius:50%;flex-shrink:0}
 </style>
 
-<div id="app-data" style="display:none" aria-hidden="true"
-  data-tools={toolsJson.replace(/"/g, '&quot;')}
-  data-cats={categoriesJson.replace(/"/g, '&quot;')}
-  data-tags={allTagsJson.replace(/"/g, '&quot;')}
-  data-certs={allCertsJson.replace(/"/g, '&quot;')}>
-</div>
 <script>
 // @ts-nocheck
-// ===== CLIENT-SIDE FILTER ENGINE =====
 const d = document.getElementById('app-data');
-const unescape = (s: string) => s.replace(/&quot;/g, '"');
+const unescapeHTML = (s) => s.replace(/&quot;/g, '"').replace(/&amp;/g, '&');
 const BASE = "{base}";
-const TOOLS = JSON.parse(unescape(d!.getAttribute('data-tools')!));
-const CATEGORIES = JSON.parse(unescape(d!.getAttribute('data-cats')!));
-const ALL_TAGS = JSON.parse(unescape(d!.getAttribute('data-tags')!));
-const ALL_CERTS = JSON.parse(unescape(d!.getAttribute('data-certs')!));
+const TOOLS = JSON.parse(unescapeHTML(d.getAttribute('data-tools')));
+const CATEGORIES = JSON.parse(unescapeHTML(d.getAttribute('data-cats')));
+const ALL_TAGS = JSON.parse(unescapeHTML(d.getAttribute('data-tags')));
+const ALL_CERTS = JSON.parse(unescapeHTML(d.getAttribute('data-certs')));
+const QUICK_CERTS = ["ISO 27001","ENS Alta","ENS Media","SOC 2 Tipo II","Common Criteria"];
 
-let state = { category: '', type: '', tags: [], certs: [], sort: 'rank', query: '' };
+let state = { category: '', type: '', cert: '', tags: [], certs: [], sort: 'rank', query: '' };
 
 function readURL() {
   const p = new URLSearchParams(window.location.search);
   state.category = p.get('category') ?? '';
   state.type = p.get('type') ?? '';
+  state.cert = p.get('cert') ?? '';
   state.tags = p.getAll('tag');
-  state.certs = p.getAll('cert');
+  state.certs = p.getAll('c');
   state.sort = p.get('sort') ?? 'rank';
   state.query = (p.get('q') ?? '').toLowerCase();
 }
 readURL();
 
-function buildURL(overrides) {
-  const s = { ...state, ...overrides, tags: overrides.tags ?? state.tags, certs: overrides.certs ?? state.certs };
+function buildURL() {
+  const s = state;
   const p = new URLSearchParams();
   if (s.category) p.set('category', s.category);
   if (s.type) p.set('type', s.type);
+  if (s.cert) p.set('cert', s.cert);
   for (const t of s.tags) p.append('tag', t);
-  for (const c of s.certs) p.append('cert', c);
-  if (s.sort && s.sort !== 'rank') p.set('sort', s.sort);
+  for (const c of s.certs) p.append('c', c);
+  if (s.sort !== 'rank') p.set('sort', s.sort);
   if (s.query) p.set('q', s.query);
   const qs = p.toString();
   return BASE + 'herramientas' + (qs ? '?' + qs : '');
 }
 
 function pushState() {
-  const url = buildURL({});
+  const url = buildURL();
   if (window.location.href !== window.location.origin + url) {
     window.history.pushState({}, '', url);
   }
@@ -171,20 +184,44 @@ function getFiltered() {
   }
   if (state.category) filtered = filtered.filter(t => t.category === state.category);
   if (state.type) filtered = filtered.filter(t => t.type === state.type);
+  if (state.cert) filtered = filtered.filter(t => t.certifications.some(c => c.toLowerCase().includes(state.cert.toLowerCase())));
   if (state.tags.length > 0) filtered = filtered.filter(t => state.tags.some(tf => t.tags.map(x=>x.toLowerCase()).includes(tf.toLowerCase())));
   if (state.certs.length > 0) filtered = filtered.filter(t => state.certs.some(cf => t.certifications.map(x=>x.toLowerCase()).includes(cf.toLowerCase())));
   filtered.sort((a,b) => {
     if (state.sort === 'name') return a.name.localeCompare(b.name, 'es');
-    if (state.sort === 'updated') return 0; // no date in client data
+    if (state.sort === 'score') return (b.score||0) - (a.score||0);
     return (a.market_rank??999) - (b.market_rank??999);
   });
   return filtered;
 }
 
-// ===== RENDER =====
+function scoreColor(s) { return s >= 70 ? '#059669' : s >= 40 ? '#d97706' : '#dc2626'; }
+function scoreBg(s) { return s >= 70 ? '#ecfdf5' : s >= 40 ? '#fffbeb' : '#fef2f2'; }
+function scoreLabel(s) { return s >= 70 ? 'Excelente' : s >= 50 ? 'Notable' : s >= 30 ? 'Aceptable' : 'Pendiente'; }
+
+function renderToolCard(t) {
+  const typeLabel = t.type === 'opensource' ? 'Open Source' : 'Comercial';
+  const typeClass = t.type === 'opensource' ? 'badge-green' : 'badge-blue';
+  const rankBadge = t.market_rank && t.market_rank <= 3 ? `<span class="badge badge-amber badge-sm">#${t.market_rank}</span>` : '';
+  const logoHTML = t.logo ? `<img src="${BASE}${t.logo.replace(/^\//,'')}" alt="" width="36" height="36" style="border-radius:10px;object-fit:contain" loading="lazy" />` : `<span style="font-size:15px;font-weight:700;color:#8e8e93">${t.name.charAt(0)}</span>`;
+  const s = t.score || 0;
+  return `<a href="${BASE}herramientas/${t.slug}" class="card tool-card group">
+    <div class="tool-avatar">${logoHTML}</div>
+    <div class="min-w-0 flex-1">
+      <div class="flex items-center gap-2"><h3 class="tool-name" style="color:#1d1d1f">${t.name}</h3>${rankBadge}</div>
+      <p class="tool-desc">${t.description}</p>
+      <div class="flex flex-wrap items-center gap-1.5 mt-2">
+        <span class="badge badge-sm ${typeClass}">${typeLabel}</span>
+        <span class="badge badge-sm" style="background:${scoreBg(s)};color:${scoreColor(s)}">${s}/100</span>
+      </div>
+    </div>
+  </a>`;
+}
+
 function renderAll() {
   renderCategoryFilters();
   renderTypeFilters();
+  renderCertQuickFilters();
   renderActiveChips();
   renderResults();
   renderModal();
@@ -193,221 +230,157 @@ function renderAll() {
 
 function renderCategoryFilters() {
   const el = document.getElementById('category-filters');
-  let html = `<a href="#" data-cat="" class="badge badge-md ${!state.category?'badge-blue':'badge-outline'}">Todas</a>`;
-  for (const c of CATEGORIES) {
-    html += `<a href="#" data-cat="${c.id}" class="badge badge-md ${state.category===c.id?'badge-blue':'badge-outline'}">${c.name}</a>`;
-  }
-  el.innerHTML = html;
+  el.innerHTML = `<a href="#" data-cat="" class="badge badge-md ${!state.category?'badge-blue':'badge-outline'}">Todas</a>` +
+    CATEGORIES.map(c => `<a href="#" data-cat="${c.id}" class="badge badge-md ${state.category===c.id?'badge-blue':'badge-outline'}">${c.name}</a>`).join('');
 }
 
 function renderTypeFilters() {
   const el = document.getElementById('type-filters');
-  const sortLabels = { rank: 'Por ranking', name: 'Alfabético', updated: 'Más reciente' };
-  let html = `<a href="#" data-type="" class="badge badge-md ${!state.type?'badge-blue':'badge-outline'}">Todos</a>`;
-  html += `<a href="#" data-type="comercial" class="badge badge-md ${state.type==='comercial'?'badge-blue':'badge-outline'}">Comercial</a>`;
-  html += `<a href="#" data-type="opensource" class="badge badge-md ${state.type==='opensource'?'badge-blue':'badge-outline'}">Open Source</a>`;
-  html += `<span style="color:#d2d2d7;margin:0 4px" class="hidden sm:inline">|</span>`;
-  for (const [k, label] of Object.entries(sortLabels)) {
-    html += `<a href="#" data-sort="${k}" style="color:${state.sort===k?'#1d1d1f':'#6e6e73'};font-weight:${state.sort===k?'500':'400'};font-size:13px;text-decoration:none">${label}</a> `;
+  const sorts = { rank: 'Por ranking', score: 'Por puntuación', name: 'Alfabético', updated: 'Más reciente' };
+  let h = `<a href="#" data-type="" class="badge badge-md ${!state.type?'badge-blue':'badge-outline'}">Todos</a>`;
+  h += `<a href="#" data-type="comercial" class="badge badge-md ${state.type==='comercial'?'badge-blue':'badge-outline'}">Comercial</a>`;
+  h += `<a href="#" data-type="opensource" class="badge badge-md ${state.type==='opensource'?'badge-blue':'badge-outline'}">Open Source</a>`;
+  h += `<span style="color:#d2d2d7;margin:0 4px" class="hidden sm:inline">|</span>`;
+  for (const [k, label] of Object.entries(sorts)) {
+    h += `<a href="#" data-sort="${k}" style="color:${state.sort===k?'#1d1d1f':'#6e6e73'};font-weight:${state.sort===k?'500':'400'};font-size:13px;text-decoration:none">${label}</a> `;
   }
-  el.innerHTML = html;
+  el.innerHTML = h;
+}
+
+function renderCertQuickFilters() {
+  const el = document.getElementById('cert-quick-filters');
+  let h = '<span style="font-size:12px;color:#8e8e93;margin-right:2px">Certificación:</span>';
+  h += `<a href="#" data-qcert="" class="badge badge-sm ${!state.cert?'badge-teal':'badge-outline'}">Todas</a>`;
+  for (const c of QUICK_CERTS) {
+    h += `<a href="#" data-qcert="${c}" class="badge badge-sm ${state.cert===c?'badge-teal':'badge-outline'}">${c}</a>`;
+  }
+  el.innerHTML = h;
 }
 
 function renderActiveChips() {
   const el = document.getElementById('active-chips');
-  let html = '';
-  if (state.tags.length > 0 || state.certs.length > 0) {
-    html += '<span style="color:#8e8e93">Filtros activos:</span>';
-    for (const t of state.tags) {
-      html += `<span class="badge badge-blue badge-sm">${t} <span data-remove-tag="${t}" style="margin-left:4px;color:#0066cc;cursor:pointer;font-weight:700">&times;</span></span>`;
-    }
-    for (const c of state.certs) {
-      html += `<span class="badge badge-teal badge-sm">${c} <span data-remove-cert="${c}" style="margin-left:4px;color:#0d9488;cursor:pointer;font-weight:700">&times;</span></span>`;
-    }
-  }
-  el.innerHTML = html;
-}
-
-function renderToolCard(t) {
-  const typeLabel = t.type === 'opensource' ? 'Open Source' : 'Comercial';
-  const typeClass = t.type === 'opensource' ? 'badge-green' : 'badge-blue';
-  const rankBadge = t.market_rank && t.market_rank <= 3 ? `<span class="badge badge-amber badge-sm">#${t.market_rank}</span>` : '';
-  const logo = t.logo ? `<img src="${BASE}${t.logo.replace(/^\//,'')}" alt="${t.name}" width="40" height="40" style="border-radius:10px;object-fit:contain" loading="lazy" />` : t.name.charAt(0);
-  const sizes = (t.company_size || []).slice(0,2).map(s => `<span class="badge badge-gray badge-sm">${s.charAt(0).toUpperCase()+s.slice(1)}</span>`).join('');
-  return `<a href="${BASE}herramientas/${t.slug}" class="card tool-card group">
-    <div class="tool-avatar">${logo}</div>
-    <div class="min-w-0 flex-1">
-      <div class="flex items-center gap-2"><h3 class="tool-name" style="color:#1d1d1f">${t.name}</h3>${rankBadge}</div>
-      <p class="tool-desc">${t.description}</p>
-      <div class="flex flex-wrap gap-1.5 mt-2">
-        <span class="badge badge-sm ${typeClass}">${typeLabel}</span>
-        ${sizes}
-      </div>
-    </div>
-  </a>`;
+  let h = '';
+  if (state.cert) h += `<span class="badge badge-teal badge-sm">${state.cert} <span data-remove-qcert style="margin-left:4px;color:#0d9488;cursor:pointer;font-weight:700">&times;</span></span>`;
+  if (state.tags.length > 0) for (const t of state.tags) h += `<span class="badge badge-blue badge-sm">${t} <span data-remove-tag="${t}" style="margin-left:4px;color:#0066cc;cursor:pointer;font-weight:700">&times;</span></span>`;
+  if (state.certs.length > 0) for (const c of state.certs) h += `<span class="badge badge-teal badge-sm">${c} <span data-remove-cert="${c}" style="margin-left:4px;color:#0d9488;cursor:pointer;font-weight:700">&times;</span></span>`;
+  el.innerHTML = h;
 }
 
 function renderResults() {
   const filtered = getFiltered();
   document.getElementById('total-count').textContent = filtered.length;
-  document.getElementById('results-text').textContent = `${filtered.length} resultado${filtered.length!==1?'s':''}${hasActiveFilters()?' con filtros':''}`;
-  document.getElementById('clear-filters').style.display = hasActiveFilters() ? '' : 'none';
+  const hasAct = !!(state.category || state.type || state.cert || state.tags.length || state.certs.length);
+  document.getElementById('results-text').textContent = `${filtered.length} resultado${filtered.length!==1?'s':''}${hasAct?' con filtros':''}`;
+  document.getElementById('clear-filters').style.display = hasAct ? '' : 'none';
+  document.getElementById('empty-state').style.display = filtered.length === 0 ? '' : 'none';
 
   const grid = document.getElementById('tools-grid');
-  const empty = document.getElementById('empty-state');
+  if (filtered.length === 0) { grid.innerHTML = ''; return; }
 
-  if (filtered.length === 0) {
-    grid.innerHTML = '';
-    empty.style.display = '';
-  } else {
-    empty.style.display = 'none';
-    grid.innerHTML = filtered.map(renderToolCard).join('');
+  // Agrupar por categoría
+  const grouped = {};
+  for (const t of filtered) {
+    if (!grouped[t.category]) grouped[t.category] = [];
+    grouped[t.category].push(t);
   }
+  const catMap = {};
+  for (const c of CATEGORIES) catMap[c.id] = c;
+
+  let html = '';
+  for (const [catId, catTools] of Object.entries(grouped)) {
+    const cat = catMap[catId];
+    if (!cat) continue;
+    html += `<section><h2 class="section-title mb-4">${cat.name} <span style="color:#8e8e93;font-weight:400">${catTools.length}</span></h2>`;
+    html += `<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">`;
+    html += catTools.map(renderToolCard).join('');
+    html += `</div></section>`;
+  }
+  grid.innerHTML = html;
 }
 
 function renderModal() {
   const el = document.getElementById('modal-body');
-  // Tags
-  let tagsHTML = `<details open class="filter-group"><summary class="filter-group-title">Etiquetas <span style="color:#8e8e93;font-weight:400">(${ALL_TAGS.length})</span></summary><div class="filter-check-grid mt-2">`;
+  let h = `<details open class="filter-group"><summary class="filter-group-title">Etiquetas <span style="color:#8e8e93;font-weight:400">(${ALL_TAGS.length})</span></summary><div class="filter-check-grid mt-2">`;
   for (const [tag, count] of ALL_TAGS) {
     const id = `tag-${tag.replace(/[^a-z0-9]/g,'-')}`;
-    const checked = state.tags.includes(tag) ? ' checked' : '';
-    tagsHTML += `<label class="filter-check" for="${id}"><input type="checkbox" id="${id}" class="filter-check-input" value="${tag}"${checked}><span class="filter-check-box"></span><span class="filter-check-label">${tag}</span><span class="filter-check-count">${count}</span></label>`;
+    const ch = state.tags.includes(tag) ? ' checked' : '';
+    h += `<label class="filter-check" for="${id}"><input type="checkbox" id="${id}" class="filter-check-input" value="${tag}"${ch}><span class="filter-check-box"></span><span class="filter-check-label">${tag}</span><span class="filter-check-count">${count}</span></label>`;
   }
-  tagsHTML += `</div></details>`;
-
-  // Certs
-  let certsHTML = '';
+  h += `</div></details>`;
   if (ALL_CERTS.length > 0) {
-    certsHTML = `<details class="filter-group"><summary class="filter-group-title">Certificaciones <span style="color:#8e8e93;font-weight:400">(${ALL_CERTS.length})</span></summary><div class="filter-check-grid mt-2">`;
+    h += `<details class="filter-group"><summary class="filter-group-title">Certificaciones <span style="color:#8e8e93;font-weight:400">(${ALL_CERTS.length})</span></summary><div class="filter-check-grid mt-2">`;
     for (const c of ALL_CERTS) {
-      const id = `cert-${c.replace(/[^a-z0-9]/g,'-')}`;
-      const checked = state.certs.includes(c) ? ' checked' : '';
-      certsHTML += `<label class="filter-check" for="${id}"><input type="checkbox" id="${id}" class="filter-check-input" value="${c}"${checked}><span class="filter-check-box"></span><span class="filter-check-label">${c}</span></label>`;
+      const id = `certm-${c.replace(/[^a-z0-9]/g,'-')}`;
+      const ch = state.certs.includes(c) ? ' checked' : '';
+      h += `<label class="filter-check" for="${id}"><input type="checkbox" id="${id}" class="filter-check-input" value="${c}"${ch}><span class="filter-check-box"></span><span class="filter-check-label">${c}</span></label>`;
     }
-    certsHTML += `</div></details>`;
+    h += `</div></details>`;
   }
-  el.innerHTML = tagsHTML + certsHTML;
-}
-
-function hasActiveFilters() {
-  return !!(state.category || state.type || state.tags.length > 0 || state.certs.length > 0);
+  el.innerHTML = h;
 }
 
 function updateBadge() {
-  const n = state.tags.length + state.certs.length;
+  const n = state.tags.length + state.certs.length + (state.cert ? 1 : 0);
   document.getElementById('active-filter-count').textContent = n > 0 ? `(${n})` : '';
 }
 
-// ===== EVENT HANDLERS =====
+// Eventos
 document.addEventListener('click', function(e) {
-  // Category filter
-  const catLink = e.target.closest('#category-filters a');
-  if (catLink) {
-    e.preventDefault();
-    state.category = catLink.dataset.cat;
-    pushState();
-    renderAll();
-    return;
-  }
-
-  // Type filter
-  const typeLink = e.target.closest('#type-filters a[data-type]');
-  if (typeLink) {
-    e.preventDefault();
-    state.type = typeLink.dataset.type;
-    pushState();
-    renderAll();
-    return;
-  }
-
+  const t = e.target;
+  // Category
+  const cat = t.closest('#category-filters a');
+  if (cat) { e.preventDefault(); state.category = cat.dataset.cat; pushState(); renderAll(); return; }
+  // Type
+  const tp = t.closest('#type-filters a[data-type]');
+  if (tp) { e.preventDefault(); state.type = tp.dataset.type; pushState(); renderAll(); return; }
   // Sort
-  const sortLink = e.target.closest('#type-filters a[data-sort]');
-  if (sortLink) {
-    e.preventDefault();
-    state.sort = sortLink.dataset.sort;
-    pushState();
-    renderAll();
-    return;
-  }
-
-  // Tag checkbox change in modal
-  if (e.target.classList.contains('filter-check-input')) {
-    const input = e.target;
-    if (input.closest('.filter-group')?.querySelector('.filter-group-title')?.textContent?.includes('Etiquetas')) {
-      const tag = input.value;
-      if (input.checked) { if (!state.tags.includes(tag)) state.tags.push(tag); }
-      else { state.tags = state.tags.filter(t => t !== tag); }
+  const st = t.closest('#type-filters a[data-sort]');
+  if (st) { e.preventDefault(); state.sort = st.dataset.sort; pushState(); renderAll(); return; }
+  // Quick cert
+  const qc = t.closest('[data-qcert]');
+  if (qc) { e.preventDefault(); state.cert = qc.dataset.qcert; pushState(); renderAll(); return; }
+  // Remove quick cert
+  if (t.closest('[data-remove-qcert]')) { e.preventDefault(); state.cert = ''; pushState(); renderAll(); return; }
+  // Remove tag
+  const rmT = t.closest('[data-remove-tag]');
+  if (rmT) { e.preventDefault(); state.tags = state.tags.filter(x => x !== rmT.dataset.removeTag); pushState(); renderAll(); return; }
+  // Remove cert
+  const rmC = t.closest('[data-remove-cert]');
+  if (rmC) { e.preventDefault(); state.certs = state.certs.filter(x => x !== rmC.dataset.removeCert); pushState(); renderAll(); return; }
+  // Modal checkbox
+  if (t.classList.contains('filter-check-input')) {
+    const inp = t;
+    const isTag = inp.id.startsWith('tag-');
+    const val = inp.value;
+    if (isTag) {
+      if (inp.checked) { if (!state.tags.includes(val)) state.tags.push(val); }
+      else state.tags = state.tags.filter(x => x !== val);
     } else {
-      const cert = input.value;
-      if (input.checked) { if (!state.certs.includes(cert)) state.certs.push(cert); }
-      else { state.certs = state.certs.filter(c => c !== cert); }
+      if (inp.checked) { if (!state.certs.includes(val)) state.certs.push(val); }
+      else state.certs = state.certs.filter(x => x !== val);
     }
-    pushState();
-    renderAll();
-    return;
+    pushState(); renderAll(); return;
   }
-
-  // Remove tag chip
-  const rmTag = e.target.closest('[data-remove-tag]');
-  if (rmTag) {
+  // Clear
+  if (t.closest('#clear-filters')) {
     e.preventDefault();
-    state.tags = state.tags.filter(t => t !== rmTag.dataset.removeTag);
-    pushState();
-    renderAll();
-    return;
-  }
-
-  // Remove cert chip
-  const rmCert = e.target.closest('[data-remove-cert]');
-  if (rmCert) {
-    e.preventDefault();
-    state.certs = state.certs.filter(c => c !== rmCert.dataset.removeCert);
-    pushState();
-    renderAll();
-    return;
-  }
-
-  // Clear all filters
-  const clearLink = e.target.closest('#clear-filters');
-  if (clearLink) {
-    e.preventDefault();
-    state = { category: '', type: '', tags: [], certs: [], sort: 'rank', query: '' };
+    state = { category: '', type: '', cert: '', tags: [], certs: [], sort: 'rank', query: '' };
     window.history.pushState({}, '', BASE + 'herramientas');
-    renderAll();
-    return;
+    renderAll(); return;
   }
 });
 
-// Modal open/close
-document.getElementById('btn-more-filters').addEventListener('click', () => {
-  document.getElementById('filter-modal').style.display = 'flex';
-});
-document.getElementById('btn-close-modal').addEventListener('click', () => {
-  document.getElementById('filter-modal').style.display = 'none';
-});
-document.getElementById('filter-modal').addEventListener('click', (e) => {
-  if (e.target === e.currentTarget) document.getElementById('filter-modal').style.display = 'none';
-});
+// Modal
+document.getElementById('btn-more-filters').addEventListener('click', () => document.getElementById('filter-modal').style.display = 'flex');
+document.getElementById('btn-close-modal').addEventListener('click', () => document.getElementById('filter-modal').style.display = 'none');
+document.getElementById('filter-modal').addEventListener('click', (e) => { if (e.target === e.currentTarget) document.getElementById('filter-modal').style.display = 'none'; });
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') document.getElementById('filter-modal').style.display = 'none';
-});
-
-// Handle browser back/forward
-window.addEventListener('popstate', () => {
-  readURL();
-  renderAll();
-});
-
-// Keyboard shortcut: "/" busca en el directorio
-document.addEventListener('keydown', (e) => {
   if (e.key === '/' && document.activeElement?.tagName !== 'INPUT' && document.activeElement?.tagName !== 'TEXTAREA') {
-    e.preventDefault();
-    const q = document.querySelector('input[name="q"]');
-    if (q) (q as HTMLInputElement).focus();
+    e.preventDefault(); const q = document.querySelector('input[name="q"]'); if (q) q.focus();
   }
 });
+window.addEventListener('popstate', () => { readURL(); renderAll(); });
 
-// Initial render
 renderAll();
 </script>

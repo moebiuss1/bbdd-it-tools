@@ -49,15 +49,13 @@ nube. A diferencia de los antivirus tradicionales basados en firmas, Falcon util
 un motor de inteligencia artificial entrenado sobre telemetría global para detectar
 tanto malware conocido como ataques sin archivo (fileless) y técnicas de
 living-off-the-land.
-
-- **Falcon Prevent**: Antivirus de nueva generación (NGAV)
-- **Falcon Insight**: EDR — detección y respuesta en endpoints
-- **Falcon OverWatch**: Servicio gestionado de threat hunting 24/7
-- **Falcon Discover**: Monitorización de activos IT y shadow IT
-- **Falcon Spotlight**: Gestión de vulnerabilidades
-- **Falcon X**: Inteligencia de amenazas automatizada
-- **Falcon Sandbox**: Análisis de malware en sandbox
-
+- Falcon Prevent: Antivirus de nueva generación (NGAV)
+- Falcon Insight: EDR — detección y respuesta en endpoints
+- Falcon OverWatch: Servicio gestionado de threat hunting 24/7
+- Falcon Discover: Monitorización de activos IT y shadow IT
+- Falcon Spotlight: Gestión de vulnerabilidades
+- Falcon X: Inteligencia de amenazas automatizada
+- Falcon Sandbox: Análisis de malware en sandbox
 - Cumple con los requisitos de monitorización continua de ISO 27001 (A.12.4)
 - La arquitectura cloud permite auditoría remota sin despliegue on-premise
 - Dashboards predefinidos para cumplimiento PCI DSS, HIPAA y ENS
