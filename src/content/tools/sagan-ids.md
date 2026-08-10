@@ -21,7 +21,7 @@ certifications: []
 company_size:
 - pequeña
 - mediana
-market_rank: 122
+market_rank: 126
 repo: https://github.com/sagan/sagan
 license: GPL-2.0
 sources:

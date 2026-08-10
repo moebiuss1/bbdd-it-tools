@@ -27,7 +27,7 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 101
+market_rank: 105
 sources:
 - https://aimultiple.com/top-soar-platforms
 - https://safeguard.sh/resources/blog/best-security-orchestration-automation-and-response-soar-tools

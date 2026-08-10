@@ -11,22 +11,26 @@ tags:
 - lateral-movement
 type: comercial
 cost_model: suscripción
-cost_details: 'Desde ~$7,500/año. Canarytokens gratuitos incluidos.'
+cost_details: Desde ~$7,500/año. Canarytokens gratuitos incluidos.
 website: https://canary.tools
-description: 'Plataforma de honeypots desplegable en menos de 3 minutos con práctica ausencia de falsos positivos. Incluye Canarytokens gratuitos para documentos, emails y servidores. Detecta movimiento lateral, accesos no autorizados y reconocimiento de red.'
-why_reference: 'Thinkst Canary es el referente en deception technology para equipos lean. Su despliegue en minutos, los Canarytokens gratuitos y la práctica ausencia de falsos positivos la han convertido en la opción preferida de equipos de seguridad que necesitan detección de intrusiones sin la complejidad de un SIEM.'
+description: Plataforma de honeypots desplegable en menos de 3 minutos con práctica ausencia de falsos positivos. Incluye
+  Canarytokens gratuitos para documentos, emails y servidores. Detecta movimiento lateral, accesos no autorizados y reconocimiento
+  de red.
+why_reference: Thinkst Canary es el referente en deception technology para equipos lean. Su despliegue en minutos, los Canarytokens
+  gratuitos y la práctica ausencia de falsos positivos la han convertido en la opción preferida de equipos de seguridad que
+  necesitan detección de intrusiones sin la complejidad de un SIEM.
 certifications:
 - SOC 2 Tipo II
 company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 1
+market_rank: 101
 sources:
 - https://guptadeepak.com/tools/top-5-honeypots-deception-tools-2026/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/thinkst-canary.png
 ---
 
 Thinkst Canary cambia el paradigma de la detección de intrusiones: en lugar de analizar millones de eventos en busca de anomalías, despliega señuelos que ningún usuario legítimo debería tocar. Cuando un atacante interactúa con un Canary —ya sea un archivo señuelo, un servicio falso o una credencial trampa— se genera una alerta de alta fidelidad.

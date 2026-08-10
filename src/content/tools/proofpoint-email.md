@@ -11,10 +11,13 @@ tags:
 - dlp
 type: comercial
 cost_model: suscripción
-cost_details: 'Desde ~$3-15/usuario/mes. Enterprise quote para TAP.'
+cost_details: Desde ~$3-15/usuario/mes. Enterprise quote para TAP.
 website: https://www.proofpoint.com
-description: 'Plataforma líder de seguridad de email con protección frente a phishing, malware, BEC y fugas de datos. Analiza más de 100 mil millones de datos diarios con NexusAI y ofrece remediación automática post-entrega con TRAP.'
-why_reference: 'Proofpoint protege a más de la mitad del Fortune 100 y analiza 100+ mil millones de eventos diarios. Su motor TAP (Targeted Attack Protection) con sandboxing y remediación automática TRAP la convierten en el estándar de facto en seguridad de email empresarial.'
+description: Plataforma líder de seguridad de email con protección frente a phishing, malware, BEC y fugas de datos. Analiza
+  más de 100 mil millones de datos diarios con NexusAI y ofrece remediación automática post-entrega con TRAP.
+why_reference: Proofpoint protege a más de la mitad del Fortune 100 y analiza 100+ mil millones de eventos diarios. Su motor
+  TAP (Targeted Attack Protection) con sandboxing y remediación automática TRAP la convierten en el estándar de facto en seguridad
+  de email empresarial.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II
@@ -22,12 +25,12 @@ certifications:
 - HIPAA
 company_size:
 - grande
-market_rank: 1
+market_rank: 25
 sources:
 - https://www.gartner.com/reviews/market/email-security
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/proofpoint-email.png
 ---
 
 Proofpoint Email Security es la plataforma de protección de correo electrónico más desplegada en el Fortune 1000. Su arquitectura Secure Email Gateway (SEG) con análisis de comportamiento basado en IA (NexusAI) y su capacidad de identificar a las personas más atacadas de la organización (VAP) la diferencian de soluciones puramente basadas en reglas.

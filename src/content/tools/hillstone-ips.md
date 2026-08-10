@@ -21,7 +21,7 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 106
+market_rank: 110
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

@@ -25,7 +25,7 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 120
+market_rank: 124
 repo: https://github.com/Security-Onion-Solutions/securityonion
 license: GPL-2.0
 sources:

@@ -24,7 +24,7 @@ certifications:
 - ISO 9001
 company_size:
 - grande
-market_rank: 28
+market_rank: 29
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

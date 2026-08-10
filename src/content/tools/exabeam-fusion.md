@@ -23,7 +23,7 @@ certifications:
 - ISO 27001
 company_size:
 - grande
-market_rank: 54
+market_rank: 56
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

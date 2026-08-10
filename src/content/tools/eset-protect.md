@@ -27,7 +27,7 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 70
+market_rank: 72
 sources:
 - https://av-comparatives.org/business-security-test-march-june-2026/
 - https://www.gartner.com/en/documents/endpoint-protection-platforms
