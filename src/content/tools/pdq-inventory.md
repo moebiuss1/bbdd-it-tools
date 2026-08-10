@@ -28,6 +28,7 @@ sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
+logo: /logos/pdq-inventory.png
 ---
 
 PDQ Inventory proporciona capacidades avanzadas en la categoría it-asset-managers para organizaciones que necesitan proteger sus entornos IT con soluciones respaldadas por analistas independientes.
