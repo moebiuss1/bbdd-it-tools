@@ -27,7 +27,7 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 69
+market_rank: 75
 sources:
 - https://www.jamf.com/resources/
 - https://www.gartner.com/reviews/market/unified-endpoint-management

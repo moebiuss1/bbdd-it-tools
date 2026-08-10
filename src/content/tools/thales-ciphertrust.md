@@ -25,7 +25,7 @@ certifications:
 - FIPS 140-2 Common Criteria EAL4+ ISO 27001
 company_size:
 - grande
-market_rank: 120
+market_rank: 129
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

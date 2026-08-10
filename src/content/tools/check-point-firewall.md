@@ -31,7 +31,7 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 28
+market_rank: 29
 sources:
 - https://cyberratings.org/cyberratings-org-and-nss-labs-announce-2025-enterprise-firewall-test-results/
 - https://www.gartner.com/en/documents/network-firewalls

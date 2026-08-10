@@ -25,7 +25,7 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 101
+market_rank: 110
 sources:
 - https://guptadeepak.com/tools/top-5-honeypots-deception-tools-2026/
 last_verified: '2026-08-10'

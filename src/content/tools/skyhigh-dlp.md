@@ -25,7 +25,7 @@ certifications:
 - FedRAMP
 company_size:
 - grande
-market_rank: 20
+market_rank: 21
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

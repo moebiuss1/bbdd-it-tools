@@ -28,7 +28,7 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 85
+market_rank: 93
 sources:
 - https://www.gartner.com/reviews/market/enterprise-backup-and-recovery
 last_verified: '2026-08-10'

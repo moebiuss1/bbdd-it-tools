@@ -26,7 +26,7 @@ certifications:
 - SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 116
+market_rank: 125
 sources:
 - https://cyberwebspider.com/cyber-security-news/10-best-data-loss-prevention-software-in-2025/
 - https://www.gartner.com/en/documents/enterprise-dlp

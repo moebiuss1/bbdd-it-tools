@@ -23,7 +23,7 @@ certifications:
 - II
 company_size:
 - grande
-market_rank: 46
+market_rank: 48
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

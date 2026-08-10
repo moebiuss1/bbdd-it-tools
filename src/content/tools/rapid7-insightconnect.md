@@ -25,7 +25,7 @@ certifications:
 - ISO 27001
 company_size:
 - mediana
-market_rank: 41
+market_rank: 42
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

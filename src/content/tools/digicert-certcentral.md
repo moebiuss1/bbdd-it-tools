@@ -31,7 +31,7 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 21
+market_rank: 22
 sources:
 - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 - https://www.digicert.com/

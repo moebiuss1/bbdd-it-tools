@@ -27,7 +27,7 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 48
+market_rank: 52
 repo: https://gitlab.com/gitlab-org/gitlab
 license: MIT
 sources:
