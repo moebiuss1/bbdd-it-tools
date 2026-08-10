@@ -23,8 +23,8 @@ const groupByCat = categories.map(cat => ({
 })).filter(c => c.tools.length > 0);
 
 // Mapa de familia para cada categoría
-import { families } from "@data/categories";
-const familyMap = new Map(families.map(f => [f.id, f]));
+const familiesMod = await import("@data/categories");
+const familyMap = new Map(familiesMod.families.map((f: any) => [f.id, f]));
 
 function scoreColor(s: number) { return s >= 70 ? '#059669' : s >= 40 ? '#d97706' : '#dc2626'; }
 function scoreBg(s: number) { return s >= 70 ? '#ecfdf5' : s >= 40 ? '#fffbeb' : '#fef2f2'; }
