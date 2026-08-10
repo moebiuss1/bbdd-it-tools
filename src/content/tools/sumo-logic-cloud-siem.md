@@ -10,10 +10,12 @@ tags:
 - log-management
 type: comercial
 cost_model: suscripción
-cost_details: 'Basado en volumen de datos. Desde ~$10,000/año.'
+cost_details: Basado en volumen de datos. Desde ~$10,000/año.
 website: https://www.sumologic.com
-description: 'Plataforma SIEM cloud-native con analítica avanzada, dashboards en tiempo real e integración con más de 300 fuentes de datos. Destaca por su capacidad de ingesta y análisis de logs a escala de petabytes.'
-why_reference: 'Sumo Logic ha sido destacada en informes de Gartner y Forrester para SIEM cloud-native. Su arquitectura serverless y su capacidad de análisis de logs a escala masiva la hacen ideal para organizaciones cloud-first.'
+description: Plataforma SIEM cloud-native con analítica avanzada, dashboards en tiempo real e integración con más de 300 fuentes
+  de datos. Destaca por su capacidad de ingesta y análisis de logs a escala de petabytes.
+why_reference: Sumo Logic ha sido destacada en informes de Gartner y Forrester para SIEM cloud-native. Su arquitectura serverless
+  y su capacidad de análisis de logs a escala masiva la hacen ideal para organizaciones cloud-first.
 certifications:
 - SOC 2 Tipo
 - II
@@ -22,12 +24,12 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 8
+market_rank: 5
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/sumo-logic-cloud-siem.png
 ---
 
 Sumo Logic Cloud SIEM proporciona capacidades avanzadas de seguridad en la categoría siem para organizaciones que necesitan proteger sus entornos IT con soluciones verificadas y respaldadas por analistas independientes.

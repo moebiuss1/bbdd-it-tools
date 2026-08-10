@@ -27,7 +27,7 @@ slug: suricata
 last_verified: '2026-08-10'
 needs_review: false
 sources: []
-market_rank: 5
+market_rank: 10
 logo: /logos/suricata.png
 ---
 

@@ -10,10 +10,12 @@ tags:
 - broadcom
 type: comercial
 cost_model: suscripción
-cost_details: 'Enterprise quote. Parte del portfolio Broadcom.'
+cost_details: Enterprise quote. Parte del portfolio Broadcom.
 website: https://www.broadcom.com
-description: 'Plataforma de seguridad endpoint empresarial con NGAV, EDR, control de aplicaciones y prevención de exploits. Heredera de la tecnología de Symantec, una de las marcas más veteranas en ciberseguridad.'
-why_reference: 'Broadcom (Symantec) aparece como Niche Player en el Magic Quadrant de Gartner para EPP 2026. Su integración con el ecosistema Broadcom (DLP, proxy, CASB) la hace relevante para grandes organizaciones con infraestructura Broadcom.'
+description: Plataforma de seguridad endpoint empresarial con NGAV, EDR, control de aplicaciones y prevención de exploits.
+  Heredera de la tecnología de Symantec, una de las marcas más veteranas en ciberseguridad.
+why_reference: Broadcom (Symantec) aparece como Niche Player en el Magic Quadrant de Gartner para EPP 2026. Su integración
+  con el ecosistema Broadcom (DLP, proxy, CASB) la hace relevante para grandes organizaciones con infraestructura Broadcom.
 certifications:
 - ISO 27001
 - SOC 2 Tipo
@@ -22,12 +24,12 @@ certifications:
 - FedRAMP
 company_size:
 - grande
-market_rank: 7
+market_rank: 1
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/broadcom-symantec-endpoint.png
 ---
 
 Symantec Endpoint Security proporciona capacidades avanzadas de seguridad en la categoría antivirus para organizaciones que necesitan proteger sus entornos IT con soluciones verificadas y respaldadas por analistas independientes.

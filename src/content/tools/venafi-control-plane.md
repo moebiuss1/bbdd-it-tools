@@ -24,7 +24,7 @@ slug: venafi-control-plane
 sources: []
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 4
+market_rank: 7
 logo: /logos/venafi-control-plane.png
 ---
 

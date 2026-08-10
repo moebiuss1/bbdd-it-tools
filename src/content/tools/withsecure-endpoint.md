@@ -10,10 +10,12 @@ tags:
 - vulnerability-management
 type: comercial
 cost_model: suscripción
-cost_details: 'Desde ~$20/endpoint/año. Plataforma cloud-native.'
+cost_details: Desde ~$20/endpoint/año. Plataforma cloud-native.
 website: https://www.withsecure.com
-description: 'Plataforma de protección endpoint cloud-native con NGAV, EDR y gestión de vulnerabilidades. Con 16 años consecutivos en el Magic Quadrant de Gartner, es uno de los pocos fabricantes europeos con presencia consistente en el cuadrante.'
-why_reference: 'WithSecure (anteriormente F-Secure Business) ha sido reconocida en el Magic Quadrant de Gartner para EPP durante 16 años consecutivos, siendo uno de los cuatro fabricantes europeos evaluados entre 13.'
+description: Plataforma de protección endpoint cloud-native con NGAV, EDR y gestión de vulnerabilidades. Con 16 años consecutivos
+  en el Magic Quadrant de Gartner, es uno de los pocos fabricantes europeos con presencia consistente en el cuadrante.
+why_reference: WithSecure (anteriormente F-Secure Business) ha sido reconocida en el Magic Quadrant de Gartner para EPP durante
+  16 años consecutivos, siendo uno de los cuatro fabricantes europeos evaluados entre 13.
 certifications:
 - ISO 27001
 - SOC 2 Tipo
@@ -26,7 +28,7 @@ sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/withsecure-endpoint.png
 ---
 
 WithSecure Elements proporciona capacidades avanzadas de seguridad en la categoría antivirus para organizaciones que necesitan proteger sus entornos IT con soluciones verificadas y respaldadas por analistas independientes.

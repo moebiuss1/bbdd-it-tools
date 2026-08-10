@@ -22,7 +22,7 @@ certifications:
 - FedRAMP ISO 42001 SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 5
+market_rank: 10
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

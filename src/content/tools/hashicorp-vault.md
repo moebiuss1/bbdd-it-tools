@@ -30,7 +30,7 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 3
+market_rank: 8
 repo: https://github.com/hashicorp/vault
 license: BSL
 sources:

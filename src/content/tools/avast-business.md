@@ -10,10 +10,13 @@ tags:
 - firewall
 type: comercial
 cost_model: suscripción
-cost_details: 'Desde ~$30/dispositivo/año. Consola cloud incluida.'
+cost_details: Desde ~$30/dispositivo/año. Consola cloud incluida.
 website: https://www.avast.com/business
-description: 'Solución antivirus empresarial con consola de gestión cloud, protección en tiempo real, firewall y sandbox para análisis de amenazas. Parte del grupo Gen Digital (NortonLifeLock) con más de 400 millones de usuarios globales.'
-why_reference: 'Avast participó en el AV-Comparatives Business Security Test de marzo-junio 2026 cumpliendo los criterios del Approved Business Product Award. Su escala global y su inversión en IA para detección de amenazas la hacen relevante en el segmento SMB.'
+description: Solución antivirus empresarial con consola de gestión cloud, protección en tiempo real, firewall y sandbox para
+  análisis de amenazas. Parte del grupo Gen Digital (NortonLifeLock) con más de 400 millones de usuarios globales.
+why_reference: Avast participó en el AV-Comparatives Business Security Test de marzo-junio 2026 cumpliendo los criterios del
+  Approved Business Product Award. Su escala global y su inversión en IA para detección de amenazas la hacen relevante en
+  el segmento SMB.
 certifications:
 - ISO 27001
 - SOC 2 Tipo
@@ -21,12 +24,12 @@ certifications:
 company_size:
 - pequeña
 - mediana
-market_rank: 9
+market_rank: 7
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/avast-business.png
 ---
 
 Avast Business Antivirus proporciona capacidades avanzadas de seguridad en la categoría antivirus para organizaciones que necesitan proteger sus entornos IT con soluciones verificadas y respaldadas por analistas independientes.

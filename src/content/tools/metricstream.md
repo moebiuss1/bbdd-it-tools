@@ -21,7 +21,7 @@ certifications:
 - ISO 27001 SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 4
+market_rank: 9
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

@@ -10,10 +10,12 @@ tags:
 - vpn
 type: comercial
 cost_model: suscripción
-cost_details: 'Desde ~$800/año. Modelos tabletop a rack.'
+cost_details: Desde ~$800/año. Modelos tabletop a rack.
 website: https://www.watchguard.com
-description: 'Firewall NGFW con inspección de amenazas, VPN, autenticación multifactor y seguridad WiFi integrada. Orientado a SMB y mid-market con gestión simplificada mediante consola cloud WatchGuard Cloud.'
-why_reference: 'WatchGuard ha sido consistentemente reconocida en los cuadrantes de Gartner y Forrester para firewalls empresariales. Su enfoque de seguridad unificada con gestión cloud simplificada la hace ideal para organizaciones con equipos IT reducidos.'
+description: Firewall NGFW con inspección de amenazas, VPN, autenticación multifactor y seguridad WiFi integrada. Orientado
+  a SMB y mid-market con gestión simplificada mediante consola cloud WatchGuard Cloud.
+why_reference: WatchGuard ha sido consistentemente reconocida en los cuadrantes de Gartner y Forrester para firewalls empresariales.
+  Su enfoque de seguridad unificada con gestión cloud simplificada la hace ideal para organizaciones con equipos IT reducidos.
 certifications:
 - Common Criteria
 - FIPS
@@ -21,12 +23,12 @@ certifications:
 company_size:
 - pequeña
 - mediana
-market_rank: 9
+market_rank: 5
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/watchguard-firebox.png
 ---
 
 WatchGuard Firebox proporciona capacidades avanzadas de seguridad en la categoría firewall para organizaciones que necesitan proteger sus entornos IT con soluciones verificadas y respaldadas por analistas independientes.

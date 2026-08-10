@@ -10,10 +10,12 @@ tags:
 - mist-ai
 type: comercial
 cost_model: suscripción
-cost_details: 'Desde ~$3,000/año. Firewalls de alto rendimiento.'
+cost_details: Desde ~$3,000/año. Firewalls de alto rendimiento.
 website: https://www.juniper.net
-description: 'Serie de firewalls NGFW de alto rendimiento con IPS integrado, visibilidad de aplicaciones y opciones virtualizadas (vSRX/cSRX) para entornos cloud y de operadores de red.'
-why_reference: 'Juniper SRX obtuvo la calificación Recommended en las pruebas NSS Labs/CyberRatings 2025 con un 99,16% de efectividad de seguridad. Su integración con Juniper Mist AI aporta operaciones de red autónomas.'
+description: Serie de firewalls NGFW de alto rendimiento con IPS integrado, visibilidad de aplicaciones y opciones virtualizadas
+  (vSRX/cSRX) para entornos cloud y de operadores de red.
+why_reference: Juniper SRX obtuvo la calificación Recommended en las pruebas NSS Labs/CyberRatings 2025 con un 99,16% de efectividad
+  de seguridad. Su integración con Juniper Mist AI aporta operaciones de red autónomas.
 certifications:
 - FIPS
 - 140-2
@@ -26,7 +28,7 @@ sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/juniper-srx.png
 ---
 
 Juniper SRX proporciona capacidades avanzadas de seguridad en la categoría firewall para organizaciones que necesitan proteger sus entornos IT con soluciones verificadas y respaldadas por analistas independientes.

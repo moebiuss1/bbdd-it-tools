@@ -27,7 +27,7 @@ slug: bitdefender-gravityzone
 sources: []
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 3
+market_rank: 4
 logo: /logos/bitdefender-gravityzone.png
 ---
 

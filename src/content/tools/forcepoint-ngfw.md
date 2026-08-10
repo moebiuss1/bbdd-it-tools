@@ -9,21 +9,23 @@ tags:
 - application-control
 type: comercial
 cost_model: suscripción
-cost_details: 'Enterprise quote. Desde ~$5,000/año.'
+cost_details: Enterprise quote. Desde ~$5,000/año.
 website: https://www.forcepoint.com
-description: 'Firewall de siguiente generación con prevención de amenazas, control de aplicaciones y gestión centralizada. Integración nativa con el ecosistema Forcepoint de seguridad centrada en datos y personas.'
-why_reference: 'Forcepoint ha sido reconocida en los principales cuadrantes de analistas para firewalls y seguridad de red. Su enfoque de seguridad centrada en el comportamiento de usuarios y datos la diferencia de los NGFW tradicionales.'
+description: Firewall de siguiente generación con prevención de amenazas, control de aplicaciones y gestión centralizada.
+  Integración nativa con el ecosistema Forcepoint de seguridad centrada en datos y personas.
+why_reference: Forcepoint ha sido reconocida en los principales cuadrantes de analistas para firewalls y seguridad de red.
+  Su enfoque de seguridad centrada en el comportamiento de usuarios y datos la diferencia de los NGFW tradicionales.
 certifications:
 - ISO 27001
 - Common Criteria
 company_size:
 - grande
-market_rank: 8
+market_rank: 7
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/forcepoint-ngfw.png
 ---
 
 Forcepoint NGFW proporciona capacidades avanzadas de seguridad en la categoría firewall para organizaciones que necesitan proteger sus entornos IT con soluciones verificadas y respaldadas por analistas independientes.

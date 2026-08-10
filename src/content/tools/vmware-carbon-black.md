@@ -11,10 +11,13 @@ tags:
 - virtualization
 type: comercial
 cost_model: suscripción
-cost_details: 'Desde ~$35/endpoint/año. Plataforma cloud-native.'
+cost_details: Desde ~$35/endpoint/año. Plataforma cloud-native.
 website: https://www.vmware.com
-description: 'Plataforma EDR cloud-native con telemetría de endpoint, análisis de comportamiento y prevención de amenazas. Integración nativa con VMware vSphere para protección de cargas de trabajo virtualizadas.'
-why_reference: 'VMware Carbon Black (ahora parte de Broadcom) ha sido reconocida en el Magic Quadrant de Gartner y destaca por su modelo de telemetría continua que permite hunting retroactivo sin necesidad de redeploy. Su integración con el hipervisor VMware la hace única.'
+description: Plataforma EDR cloud-native con telemetría de endpoint, análisis de comportamiento y prevención de amenazas.
+  Integración nativa con VMware vSphere para protección de cargas de trabajo virtualizadas.
+why_reference: VMware Carbon Black (ahora parte de Broadcom) ha sido reconocida en el Magic Quadrant de Gartner y destaca
+  por su modelo de telemetría continua que permite hunting retroactivo sin necesidad de redeploy. Su integración con el hipervisor
+  VMware la hace única.
 certifications:
 - ISO 27001
 - SOC 2 Tipo
@@ -23,12 +26,12 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 7
+market_rank: 4
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/vmware-carbon-black.png
 ---
 
 VMware Carbon Black Cloud proporciona capacidades avanzadas de seguridad en la categoría edr para organizaciones que necesitan proteger sus entornos IT con soluciones verificadas y respaldadas por analistas independientes.

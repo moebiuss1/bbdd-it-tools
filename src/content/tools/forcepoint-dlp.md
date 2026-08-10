@@ -27,7 +27,7 @@ slug: forcepoint-dlp
 last_verified: '2026-08-10'
 needs_review: false
 sources: []
-market_rank: 2
+market_rank: 3
 logo: /logos/forcepoint-dlp.png
 ---
 
