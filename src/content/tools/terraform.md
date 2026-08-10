@@ -26,6 +26,8 @@ company_size:
 - mediana
 - grande
 market_rank: 1
+repo: https://github.com/hashicorp/terraform
+license: BSL
 sources:
 - https://www.automq.com/blog/ansible-alternatives-2025-terraform-chef-salt-puppet-cfengine
 - https://www.hashicorp.com/
