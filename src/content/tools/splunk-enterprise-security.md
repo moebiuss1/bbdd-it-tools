@@ -34,7 +34,7 @@ certifications:
 - ENS Alta
 company_size:
 - grande
-market_rank: 7
+market_rank: 1
 cert_url: https://www.splunk.com/en_us/about-us/compliance.html
 sources:
 - https://www.gartner.com/en/documents/siem-magic-quadrant

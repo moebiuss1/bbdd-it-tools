@@ -20,15 +20,13 @@ why_reference: AWS CloudHSM es la solución de HSM en la nube más desplegada de
   necesitan cumplir con requisitos estrictos de control de claves (PCI DSS, eIDAS, GDPR). Su modelo de HSM dedicado proporciona
   aislamiento completo.
 certifications:
-- FIPS
-- 140-2
+- FIPS 140-2
 - PCI DSS
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - mediana
 - grande
-market_rank: 9
+market_rank: 6
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

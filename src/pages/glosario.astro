@@ -1,9 +1,17 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { getCategories, getFamilies } from "@lib/tools";
+import { getCategories, getFamilies, getToolCategories, toToolEntry } from "@lib/tools";
 const base = import.meta.env.BASE_URL;
 const categories = await getCategories();
 const families = await getFamilies();
+const tools = (await getCollection("tools")).map(toToolEntry);
+const countByCat = new Map<string, number>();
+for (const t of tools) {
+  for (const c of getToolCategories(t.data)) {
+    countByCat.set(c, (countByCat.get(c) ?? 0) + 1);
+  }
+}
 ---
 
 <BaseLayout title="Glosario">
@@ -38,12 +46,13 @@ const families = await getFamilies();
               <p class="section-desc mb-6">{fam.description}</p>
               <div class="grid gap-3 sm:grid-cols-2">
                 {famCats.map(cat => {
-                  const count = 0; // populated client-side or via data
+                  const count = countByCat.get(cat.id) ?? 0;
                   return (
                   <a href={`${base}categorias/${cat.id}`} class="card" style="padding:16px 18px;text-decoration:none;display:block;color:#1d1d1f">
                     <div class="flex items-center gap-2 mb-1">
                       <span style="font-size:16px;flex-shrink:0">{cat.icon}</span>
-                      <h3 style="font-size:14px;font-weight:600;color:#1d1d1f;margin:0">{cat.name}</h3>
+                      <h3 style="font-size:14px;font-weight:600;color:#1d1d1f;margin:0;flex:1">{cat.name}</h3>
+                      <span class="badge badge-gray badge-sm">{count}</span>
                     </div>
                     <p style="font-size:13px;color:#6e6e73;line-height:1.5;margin-top:4px">{cat.description}</p>
                   </a>

@@ -28,7 +28,7 @@ slug: trend-micro-tippingpoint
 last_verified: '2026-08-10'
 needs_review: false
 sources: []
-market_rank: 1
+market_rank: 2
 logo: /logos/trend-micro-tippingpoint.png
 category: ips
 ---

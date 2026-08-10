@@ -18,12 +18,11 @@ description: Plataforma cloud de gestión de activos IT con aplicación móvil p
 why_reference: Asset Panda ha sido destacada en G2 y Capterra por su facilidad de uso y su modelo de precios con usuarios
   ilimitados. Su aplicación móvil con lector de códigos de barras integrado facilita el inventario físico.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - pequeña
 - mediana
-market_rank: 90
+market_rank: 7
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

@@ -5,7 +5,7 @@ import type { SearchIndexEntry } from "@tipos/tool";
  * Configuración compartida de MiniSearch usada en build-time y runtime.
  */
 export const SEARCH_OPTIONS = {
-  fields: ["name", "description", "tags", "category", "certifications", "why_reference"],
+  fields: ["name", "description", "tags", "category", "certifications"],
   storeFields: ["id", "slug", "name", "category", "tags", "type", "market_rank"],
   searchOptions: {
     prefix: true,
@@ -17,7 +17,6 @@ export const SEARCH_OPTIONS = {
       category: 2,
       certifications: 1.5,
       description: 1,
-      why_reference: 0.5,
     },
   },
 };

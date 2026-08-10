@@ -7,20 +7,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **BBDD IT Tools** — Directorio vivo de herramientas IT para seguridad, cumplimiento y auditoría. Aplicación web estática con actualización semanal automatizada mediante GitHub Actions.
 
 - **Idioma**: Español (interfaz y contenido)
-- **Hosting**: GitHub Pages (`https://xavicalero.github.io/bbdd-it-tools`)
-- **Diseño**: Apple-like minimalista (Tailwind CSS + tokens CSS propios)
+- **Hosting**: GitHub Pages (`https://moebiuss1.github.io/bbdd-it-tools`)
+- **Diseño**: Apple-like minimalista (CSS propio, sin framework — ver `src/styles/global.css` y `DESIGN.md`)
 
 ## Stack
 
 | Capa | Tecnología |
 |------|-----------|
-| SSG | Astro 5 (App Router, `output: "static"`) |
-| UI | React 19 + Tailwind CSS 4 |
-| Búsqueda | MiniSearch (cliente-side) |
+| SSG | Astro 5, 100% páginas `.astro` server-rendered en build (`output: "static"`, sin islas React) |
+| UI | Astro + CSS propio (utilidades tipo Tailwind escritas a mano en `global.css`) |
+| Búsqueda | MiniSearch — índice generado en build (`/search-index.json`) y consumido client-side en `/herramientas` |
 | Datos | Markdown + YAML frontmatter en `src/content/tools/` |
 | Validación | Zod (Astro Content Collections) |
-| Scripts | Python 3.12 (próximamente) |
+| Scripts | Python 3.12 (`scripts/`) |
 | CI/CD | GitHub Actions (cron semanal + deploy) |
+
+> Nota: `react`, `@astrojs/react`, `tailwindcss` y `lucide-react` figuraron en versiones tempranas del proyecto pero nunca se llegaron a integrar (no hay ni un `.tsx` ni una llamada a `tailwindcss()` en `astro.config.mjs`). Se retiraron de `package.json` — toda la interactividad vive en `<script>` inline dentro de los `.astro`.
 
 ## Comandos
 
@@ -37,17 +39,17 @@ npx astro check      # TypeScript check sin build
 src/
 ├── content/tools/       # LA BASE DE DATOS — un .md por herramienta
 ├── content.config.ts    # Schema Zod (contrato de datos)
-├── pages/               # Rutas: /, /herramientas, /herramientas/[slug], /ranking, /categorias/[id]
-├── components/          # React islands (solo lo interactivo: búsqueda, filtros)
-│   ├── layout/          # Header, Footer, SearchBar
-│   ├── tools/           # ToolCard, ToolLogo, ToolDetail
-│   ├── filters/         # DirectoryPage (listado con filtros)
-│   ├── ranking/         # Componentes de ranking
-│   └── ui/              # Badge, EmptyState, Card
-├── data/                # categories.ts, tags.ts, rankings.ts (datos estáticos)
-├── lib/                 # tools.ts (utilidades), search.ts (MiniSearch), constants.ts
-└── types/tool.ts        # Tipos TypeScript
+├── pages/               # Rutas, cada una es la página completa (header+contenido+footer+<script>):
+│                         #   /, /herramientas (directorio+búsqueda+filtros), /herramientas/[slug],
+│                         #   /ranking, /categorias/[id], /glosario, /about, /search-index.json
+├── layouts/BaseLayout.astro  # <head> compartido
+├── data/                # categories.ts (+families), tags.ts, rankings.ts (generado por compute_rankings.py)
+├── lib/                 # tools.ts (getToolCategories, computeToolScore — fuente única de verdad),
+│                         #   search.ts (config MiniSearch compartida build/cliente), constants.ts
+└── types/tool.ts        # Tipos TypeScript (espejo de content.config.ts)
 ```
+
+No existe carpeta `components/`: no hay islas React, cada página Astro es autocontenida y la interactividad (filtros, orden, búsqueda) vive en un `<script>` al final de cada `.astro`.
 
 ## Modelo de datos de herramientas
 
@@ -57,6 +59,8 @@ El body del markdown es la descripción extendida (editable por humanos, los scr
 
 ## Patrones importantes
 
-- **Datos solo en servidor**: `getCollection("tools")` solo funciona en `.astro` (server-side). Las páginas `.astro` cargan datos y los pasan como props a componentes React.
+- **Datos solo en servidor**: `getCollection("tools")` solo funciona en el frontmatter `---` de un `.astro` (build-time). El filtrado/orden/búsqueda visible en `/herramientas` se resuelve en el cliente sobre el HTML ya renderizado (atributos `data-*` en cada card) más un fetch a `/search-index.json` para la búsqueda de texto — no hay servidor en producción (GitHub Pages es estático).
+- **Categorías de una herramienta**: usar siempre `getToolCategories(data)` de `lib/tools.ts`, nunca `data.categories || [data.category]` — `categories` por defecto es `[]`, que es *truthy* en JS, así que ese `||` nunca cae al campo legacy `category` y la herramienta desaparecería de los listados.
+- **Puntuación BBDD IT (0-100)**: calculada una única vez en `computeToolScore()` / `scoreBreakdown()` (`lib/tools.ts`) y usada por el directorio, la ficha de detalle y los rankings. No reimplementar la fórmula inline.
 - **Slugs**: derivados del `id` de Astro (nombre del archivo sin `.md`). La función `toToolEntry()` en `lib/tools.ts` normaliza los slugs.
-- **Diseño**: tokens CSS en `src/styles/global.css`. Usar las clases utilitarias `container-app`, `card`, `chip` para consistencia.
+- **Diseño**: tokens y clases utilitarias en `src/styles/global.css` (`.container`, `.card`, `.badge`, `.btn`, `.tool-card`, `.sidebar-box`...). Ver `DESIGN.md` para la guía completa.

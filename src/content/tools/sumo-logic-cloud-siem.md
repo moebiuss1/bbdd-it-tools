@@ -19,14 +19,13 @@ description: Plataforma SIEM cloud-native con analítica avanzada, dashboards en
 why_reference: Sumo Logic ha sido destacada en informes de Gartner y Forrester para SIEM cloud-native. Su arquitectura serverless
   y su capacidad de análisis de logs a escala masiva la hacen ideal para organizaciones cloud-first.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 - ISO 27001
 - FedRAMP
 company_size:
 - mediana
 - grande
-market_rank: 17
+market_rank: 6
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

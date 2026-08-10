@@ -20,11 +20,10 @@ why_reference: NetWitness (parte de RSA) ha sido reconocida en los principales c
   única de integrar análisis de paquetes de red con correlación de logs proporciona una profundidad de investigación superior.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 34
+market_rank: 1
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

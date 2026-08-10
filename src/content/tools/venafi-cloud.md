@@ -22,7 +22,7 @@ certifications: []
 company_size:
 - mediana
 - grande
-market_rank: 140
+market_rank: 9
 repo: https://github.com/hashicorp/vault
 license: MPL-2.0
 sources:

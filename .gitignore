@@ -11,9 +11,11 @@ __pycache__/
 .venv/
 venv/
 
-# Datos cache (scripts)
+# Datos cache (scripts) — el HTML descargado es puro scratch, se puede regenerar
 data/cache/
-data/candidates.json
+data/report.md
+# data/candidates.json SÍ se versiona: es el almacén acumulativo de menciones/candidatos
+# que usa compute_rankings.py — si se ignora, el pipeline pierde memoria cada semana.
 
 # Variables de entorno
 .env

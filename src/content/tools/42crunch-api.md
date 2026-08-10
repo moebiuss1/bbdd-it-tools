@@ -25,7 +25,7 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 117
+market_rank: 1
 sources:
 - https://safeguard.sh/resources/blog/best-api-security-tools-2026
 last_verified: '2026-08-10'

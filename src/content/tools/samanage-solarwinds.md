@@ -18,13 +18,12 @@ description: Plataforma ITAM integrada con service desk ITSM para gestión de ac
 why_reference: SolarWinds Service Desk ha sido reconocida en informes de Gartner y Forrester para ITSM e ITAM. Su integración
   de gestión de activos con service desk en una sola plataforma reduce la complejidad operativa.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 - ISO 27001
 company_size:
 - mediana
 - grande
-market_rank: 39
+market_rank: 3
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

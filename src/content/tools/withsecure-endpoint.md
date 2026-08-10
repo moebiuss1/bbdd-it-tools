@@ -20,12 +20,11 @@ why_reference: WithSecure (anteriormente F-Secure Business) ha sido reconocida e
   16 años consecutivos, siendo uno de los cuatro fabricantes europeos evaluados entre 13.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - mediana
 - grande
-market_rank: 55
+market_rank: 13
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

@@ -21,12 +21,11 @@ why_reference: Google SecOps SOAR (anteriormente Chronicle) se beneficia de la i
   la posicionan como líder emergente.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 - FedRAMP
 company_size:
 - grande
-market_rank: 16
+market_rank: 2
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

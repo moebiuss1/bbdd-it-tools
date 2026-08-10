@@ -18,13 +18,12 @@ why_reference: Code42 Incydr ha sido destacada en informes de Forrester y Gartne
   en la detección de movimientos de datos de empleados —sin bloquear la productividad— la diferencia de las soluciones DLP
   tradicionales.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 - ISO 27001
 company_size:
 - mediana
 - grande
-market_rank: 68
+market_rank: 6
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

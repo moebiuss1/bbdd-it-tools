@@ -19,11 +19,10 @@ why_reference: Skybox ha sido destacada en informes de Gartner y Forrester para 
   escaneo.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 35
+market_rank: 6
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

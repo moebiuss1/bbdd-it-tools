@@ -19,12 +19,11 @@ why_reference: PDQ ha sido destacada en múltiples informes de G2 y Capterra com
   de usar para entornos Windows. Su integración con PDQ Deploy proporciona un ciclo completo de inventario y despliegue de
   software.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - pequeña
 - mediana
-market_rank: 74
+market_rank: 10
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

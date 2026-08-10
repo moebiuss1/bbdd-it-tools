@@ -19,12 +19,11 @@ why_reference: Huntress ha revolucionado el mercado EDR para SMB con un modelo d
   en el canal MSP y su capacidad de detectar amenazas que otros EDR pasan por alto (como persistencia mediante tareas programadas)
   la han convertido en referencia.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - pequeña
 - mediana
-market_rank: 95
+market_rank: 18
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

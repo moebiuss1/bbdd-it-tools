@@ -20,12 +20,11 @@ why_reference: D3 Morpheus ha sido destacada como una de las plataformas SOAR m�
   IA generativa para creación automática de playbooks. Su programa de migración gratuita desde SOAR legacy la hace única en
   el mercado.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - mediana
 - grande
-market_rank: 84
+market_rank: 8
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

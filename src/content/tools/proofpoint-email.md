@@ -25,7 +25,7 @@ certifications:
 - HIPAA
 company_size:
 - grande
-market_rank: 26
+market_rank: 1
 sources:
 - https://www.gartner.com/reviews/market/email-security
 last_verified: '2026-08-10'

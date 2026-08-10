@@ -20,10 +20,12 @@ why_reference: Trellix DLP (heredera de McAfee DLP) es una de las soluciones DLP
   nativa con la plataforma XDR de Trellix permite una respuesta coordinada ante incidentes de datos que ninguna otra solución
   DLP ofrece de forma nativa.
 certifications:
-- ISO 27001 SOC 2 Tipo II RGPD / GDPR
+- ISO 27001
+- SOC 2 Tipo II
+- RGPD / GDPR
 company_size:
 - grande
-market_rank: 104
+market_rank: 5
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

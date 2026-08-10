@@ -26,7 +26,7 @@ certifications:
 - FIPS 140-2
 company_size:
 - grande
-market_rank: 67
+market_rank: 1
 sources:
 - https://www.gartner.com/reviews/market/network-access-control
 last_verified: '2026-08-10'

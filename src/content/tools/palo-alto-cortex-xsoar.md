@@ -27,7 +27,7 @@ slug: palo-alto-cortex-xsoar
 sources: []
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 1
+market_rank: 3
 logo: /logos/palo-alto-cortex-xsoar.png
 category: soar
 ---

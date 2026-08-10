@@ -31,7 +31,7 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 10
+market_rank: 2
 cert_url: https://www.tenable.com/trust
 sources:
 - https://www.gartner.com/reviews/market/vulnerability-assessment

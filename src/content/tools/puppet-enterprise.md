@@ -26,7 +26,7 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 103
+market_rank: 2
 sources:
 - https://itsm.tools/best-configuration-management-tools
 - https://www.automq.com/blog/ansible-alternatives-2025-terraform-chef-salt-puppet-cfengine

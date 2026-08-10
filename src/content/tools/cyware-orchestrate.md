@@ -19,13 +19,12 @@ description: Plataforma SOAR con más de 150 plantillas de playbooks, orquestaci
 why_reference: Cyware ha sido destacada en múltiples informes de analistas como una plataforma SOAR versátil con fuerte integración
   de threat intelligence. Su enfoque en orquestación colaborativa entre equipos de seguridad la diferencia.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 - ISO 27001
 company_size:
 - mediana
 - grande
-market_rank: 37
+market_rank: 7
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

@@ -19,12 +19,11 @@ why_reference: SOTI ha sido puntuada con 3.9/5 en el MDM Buyers Guide 2026 y es 
   rugged e industriales. Su especialización en entornos logísticos y de transporte la hace única.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - mediana
 - grande
-market_rank: 38
+market_rank: 3
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

@@ -23,7 +23,7 @@ certifications: []
 company_size:
 - pequeña
 - mediana
-market_rank: 144
+market_rank: 7
 repo: https://github.com/aide/aide
 license: GPL-2.0
 sources:

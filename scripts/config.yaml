@@ -85,8 +85,12 @@ seed_sources:
   - https://www.gartner.com/en/documents
 
 # --- Configuración de búsqueda ---
+# OJO: un User-Agent que se autoidentifica como bot (p.ej. "BBDD-IT-Tools/1.0 (research bot)")
+# hace que DuckDuckGo devuelva una página de "anomalía" (0 resultados) en vez de resultados
+# reales — verificado empíricamente. Se usa un UA de navegador estándar para que la búsqueda
+# funcione de verdad. GitHub y itsm.tools sí toleran el UA identificado.
 search:
-  user_agent: "BBDD-IT-Tools/1.0 (research bot; contact@example.com)"
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
   rate_limit_seconds: 1.5
   max_results_per_query: 10
   timeout_seconds: 15
@@ -134,6 +138,13 @@ known_certifications:
   - "C5"
   - "CCN-STIC"
   - "Cyber Essentials"
+  - "ISO 42001"
+  - "FIPS 140-2"
+  - "FIPS 140-2 Nivel 3"
+  - "FIPS 140-3"
+  - "Common Criteria"
+  - "Common Criteria EAL4+"
+  - "WebTrust"
 
 # --- Tamaño de empresa (basado en empleados) ---
 company_size_thresholds:

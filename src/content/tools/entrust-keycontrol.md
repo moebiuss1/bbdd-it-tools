@@ -21,13 +21,12 @@ description: Plataforma de gestión de claves criptográficas con soporte para H
 why_reference: Entrust es uno de los proveedores de confianza digital más veteranos del mercado, con décadas de experiencia
   en criptografía para gobiernos y defensa. Su plataforma KeyControl proporciona gestión unificada de claves en entornos híbridos.
 certifications:
-- FIPS
-- 140-2
+- FIPS 140-2
 - Common Criteria
 - ISO 27001
 company_size:
 - grande
-market_rank: 33
+market_rank: 4
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

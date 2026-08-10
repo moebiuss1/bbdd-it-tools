@@ -220,10 +220,15 @@ def enrich_tool(slug: str, candidate: dict, config: dict, mention_counts: dict) 
     )
 
     # Construir frontmatter
+    # OJO: usar SIEMPRE "categories" (lista) y no "category" (legacy, singular).
+    # El front-end resuelve categorías con getToolCategories(data), que solo cae al
+    # campo legacy "category" cuando "categories" está *ausente* — pero Zod aplica
+    # default([]) a "categories", así que una herramienta con solo "category" set
+    # terminaría con categories=[] y desaparecería de todos los listados agrupados.
     new_data = {
         "name": name,
         "slug": slug,
-        "category": category,
+        "categories": [category],
         "tags": candidate.get("tags", [category]),
         "type": ToolType.OPENSOURCE.value if is_open_source else ToolType.COMERCIAL.value,
         "website": website,
@@ -296,6 +301,12 @@ def enrich_all(config: dict, limit: int = None) -> dict:
 
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Enriquece/crea fichas de herramientas a partir de candidatos descubiertos")
+    parser.add_argument("--limit", type=int, default=None, help="Máximo de herramientas a procesar en esta ejecución")
+    args = parser.parse_args()
+
     config = load_config()
-    stats = enrich_all(config)
+    stats = enrich_all(config, limit=args.limit)
     print(f"\n📊 Resultados: {stats['added']} añadidas, {stats['updated']} actualizadas, {stats['skipped']} sin cambios")

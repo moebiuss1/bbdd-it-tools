@@ -1,13 +1,13 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { getCategories, toToolEntry } from "@lib/tools";
+import { getCategories, getToolCategories, toToolEntry } from "@lib/tools";
 export async function getStaticPaths() { return (await getCategories()).map(c => ({ params: { categoria: c.id } })); }
 const base = import.meta.env.BASE_URL;
 const categories = await getCategories();
 const cat = categories.find(c => c.id === Astro.params.categoria); if (!cat) return Astro.rewrite("/404");
 const tools = (await getCollection("tools")).map(toToolEntry);
-const catTools = tools.filter(t => (t.data.categories || [t.data.category]).includes(Astro.params.categoria)).sort((a,b) => (a.data.market_rank??999)-(b.data.market_rank??999));
+const catTools = tools.filter(t => getToolCategories(t.data).includes(Astro.params.categoria as string)).sort((a,b) => (a.data.market_rank??999)-(b.data.market_rank??999));
 ---
 
 <BaseLayout title={cat.name} description={cat.description}>
@@ -16,7 +16,7 @@ const catTools = tools.filter(t => (t.data.categories || [t.data.category]).incl
   <section class="py-10"><div class="container max-w-900">
     <nav class="mb-8 flex items-center gap-2" style="font-size:13px;color:#aeaeb2"><a href={`${base}herramientas`} style="color:#0071e3">Directorio</a><span>/</span><span style="color:#86868b">{cat.name}</span></nav>
     <h1 class="section-title" style="font-size:28px">{cat.name}</h1><p class="section-desc">{cat.description}</p>
-    {catTools.length===0 ? <div class="text-center py-16"><p class="section-desc">Próximamente — herramientas en esta categoría.</p></div> :
+    {catTools.length===0 ? <div class="text-center py-16"><p class="section-desc">Todavía no hay herramientas verificadas en esta categoría. El directorio se amplía cada semana.</p><a href={`${base}herramientas`} class="btn btn-outline mt-4">Ver el directorio completo</a></div> :
     <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mt-8">
       {catTools.map(t => <a href={`${base}herramientas/${t.slug}`} class="card tool-card group"><div class="tool-avatar">{t.data.logo ? <img src={`${base}${t.data.logo.replace(/^\//,'')}`} alt={t.data.name} width="35" height="35" style="border-radius:10px;object-fit:contain" loading="lazy" /> : t.data.name.charAt(0)}</div><div class="min-w-0 flex-1"><h3 class="tool-name" style="color:#1d1d1f">{t.data.name}</h3><p class="tool-desc">{t.data.description}</p></div></a>)}
     </div>}

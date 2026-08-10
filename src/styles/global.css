@@ -64,6 +64,11 @@ button:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(0,113,227,.15)}
 /* Header */
 .header{border-bottom:1px solid #e8e8ed;background:rgba(255,255,255,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 .header-inner{display:flex;align-items:center;height:48px;gap:24px}
+@media(max-width:640px){
+  .header-inner{gap:4px 8px;height:auto;min-height:48px;flex-wrap:wrap;padding:8px 0}
+  .header-inner .nav-link{padding:5px 8px;font-size:12px}
+  .header-inner form{max-width:none!important;width:100%;order:3;flex-basis:100%}
+}
 .brand{font-size:15px;font-weight:600;color:#1d1d1f;letter-spacing:-.01em}
 .brand:hover{opacity:.7;text-decoration:none}
 

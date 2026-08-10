@@ -21,10 +21,12 @@ why_reference: 'Swimlane Turbine ha sido reconocida como #1 en Gartner Peer Insi
   seguridad y es el primer AI SOC en lograr la autorización FedRAMP High. Su capacidad para manejar telemetría fuera del SIEM
   y su case management flexible la diferencian en el mercado.'
 certifications:
-- FedRAMP ISO 42001 SOC 2 Tipo II
+- FedRAMP
+- ISO 42001
+- SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 133
+market_rank: 4
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

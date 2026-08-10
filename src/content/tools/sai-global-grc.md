@@ -18,12 +18,11 @@ why_reference: SAI Global ha sido destacada en informes de analistas para GRC co
   y formación. Su biblioteca de contenidos de compliance y su plataforma de gestión de políticas la diferencian.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - mediana
 - grande
-market_rank: 63
+market_rank: 7
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

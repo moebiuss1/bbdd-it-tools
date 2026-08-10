@@ -21,11 +21,12 @@ why_reference: Sectigo ha sido reconocida como Líder en G2 Grid CLM Summer 2025
   mayor satisfacción del informe. Su combinación de CA comercial masiva con plataforma CLM CA-agnóstica la hace única en el
   mercado.
 certifications:
-- WebTrust ISO 27001
+- WebTrust
+- ISO 27001
 company_size:
 - mediana
 - grande
-market_rank: 120
+market_rank: 8
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

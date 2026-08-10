@@ -20,11 +20,10 @@ why_reference: McAfee (ahora Trellix) fue uno de los pioneros del antivirus empr
   y su integración con el ecosistema Trellix XDR proporcionan defensa en profundidad para grandes organizaciones.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 36
+market_rank: 15
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

@@ -19,12 +19,11 @@ why_reference: Graylog ha sido reconocida en el Magic Quadrant de Gartner para S
   que entró en el mercado enterprise de seguridad solo dos años antes. Su enfoque en simplicidad y velocidad de despliegue
   la diferencia.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - mediana
 - grande
-market_rank: 89
+market_rank: 7
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

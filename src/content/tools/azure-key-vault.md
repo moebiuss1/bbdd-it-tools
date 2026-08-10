@@ -22,16 +22,14 @@ why_reference: Azure Key Vault es el servicio de gestión de claves nativo de Mi
   de secretos sin fricción.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 - FedRAMP
-- FIPS
-- 140-2
+- FIPS 140-2
 company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 2
+market_rank: 3
 cert_url: https://learn.microsoft.com/en-us/azure/compliance/
 sources:
 - https://www.gartner.com/reviews/

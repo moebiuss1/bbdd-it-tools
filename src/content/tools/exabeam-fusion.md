@@ -18,12 +18,11 @@ description: Plataforma SIEM cloud-native con analítica de comportamiento de us
 why_reference: Exabeam ha sido reconocida como Líder en el Magic Quadrant de Gartner para SIEM durante seis años consecutivos.
   Su motor UEBA es considerado el mejor del mercado para detección de amenazas internas y cuentas comprometidas.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 - ISO 27001
 company_size:
 - grande
-market_rank: 60
+market_rank: 10
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

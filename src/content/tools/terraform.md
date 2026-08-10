@@ -27,7 +27,7 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 134
+market_rank: 1
 repo: https://github.com/hashicorp/terraform
 license: BSL
 sources:

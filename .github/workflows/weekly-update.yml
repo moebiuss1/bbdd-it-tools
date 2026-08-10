@@ -29,18 +29,26 @@ jobs:
       - name: Instalar dependencias Python
         run: pip install -r scripts/requirements.txt
 
-      - name: Actualizar datos semilla
+      - name: Buscar nuevas herramientas en Internet (Gartner, itsm.tools, GitHub, web)
+        run: python scripts/fetch_candidates.py
+        continue-on-error: true # fuentes externas (DuckDuckGo, itsm.tools) pueden fallar/limitar; no debe frenar el pipeline
+
+      - name: Crear/enriquecer fichas a partir de los candidatos descubiertos
+        run: python scripts/enrich_tools.py --limit 20
+        continue-on-error: true # datos incompletos se marcan needs_review, nunca deben romper el build
+
+      - name: Reforzar datos semilla curados (nunca sobrescribe ediciones manuales)
         run: python scripts/seed_tools.py
+
+      - name: Descargar logos
+        run: python scripts/fetch_logos.py
+        continue-on-error: true
 
       - name: Calcular rankings
         run: python scripts/compute_rankings.py
 
       - name: Validar datos
         run: python scripts/validate.py
-
-      - name: Descargar logos
-        run: python scripts/fetch_logos.py
-        continue-on-error: true
 
       - name: Commit cambios de datos
         run: |

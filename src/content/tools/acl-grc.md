@@ -19,13 +19,12 @@ why_reference: ACL (parte de Diligent) ha sido reconocida en el Verdantix Green 
   de datos para auditoría —incluyendo detección de fraude y anomalías— la diferencia de los GRC tradicionales centrados en
   flujos de trabajo.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 - ISO 27001
 company_size:
 - mediana
 - grande
-market_rank: 66
+market_rank: 5
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

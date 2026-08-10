@@ -26,11 +26,11 @@ why_reference: Keyfactor ha sido reconocido como Líder en el G2 Grid de Certifi
 certifications:
 - ISO 27001
 - ISO 9001
-- Common Criteria (EJBCA)
+- Common Criteria
 company_size:
 - mediana
 - grande
-market_rank: 65
+market_rank: 3
 sources:
 - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 - https://www.keyfactor.com/

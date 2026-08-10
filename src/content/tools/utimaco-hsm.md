@@ -18,14 +18,12 @@ description: Módulos de seguridad hardware (HSM) de propósito general con cert
 why_reference: Utimaco es uno de los fabricantes de HSM más respetados del mundo, con presencia en infraestructuras críticas
   de gobiernos y bancos centrales. Su certificación Common Criteria EAL4+ la hace apta para los entornos más regulados.
 certifications:
-- FIPS
-- 140-2
-- Common Criteria
-- EAL4+
+- FIPS 140-2
+- Common Criteria EAL4+
 - ISO 27001
 company_size:
 - grande
-market_rank: 12
+market_rank: 7
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

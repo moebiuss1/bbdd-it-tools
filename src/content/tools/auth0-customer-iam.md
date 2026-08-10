@@ -21,14 +21,13 @@ why_reference: Auth0 (ahora Okta Customer Identity Cloud) es la plataforma CIAM 
   estándar.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 - FedRAMP
 company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 23
+market_rank: 4
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

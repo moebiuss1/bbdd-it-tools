@@ -19,13 +19,12 @@ why_reference: Broadcom (Symantec) aparece como Niche Player en el Magic Quadran
   con el ecosistema Broadcom (DLP, proxy, CASB) la hace relevante para grandes organizaciones con infraestructura Broadcom.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 - PCI DSS
 - FedRAMP
 company_size:
 - grande
-market_rank: 11
+market_rank: 4
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

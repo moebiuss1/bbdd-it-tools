@@ -19,6 +19,7 @@ export const KNOWN_CERTIFICATIONS = [
   "ISO 22301",
   "ISO 9001",
   "SOC 1",
+  "SOC 2",
   "SOC 2 Tipo I",
   "SOC 2 Tipo II",
   "SOC 3",
@@ -37,6 +38,13 @@ export const KNOWN_CERTIFICATIONS = [
   "Cyber Essentials",
   "CCN-STIC",
   "OWASP",
+  "ISO 42001",
+  "FIPS 140-2",
+  "FIPS 140-2 Nivel 3",
+  "FIPS 140-3",
+  "Common Criteria",
+  "Common Criteria EAL4+",
+  "WebTrust",
 ] as const;
 
 export const toolsCollection = defineCollection({

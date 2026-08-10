@@ -22,10 +22,11 @@ why_reference: RSA Archer ha sido reconocida como Líder en el Verdantix Green Q
   para modelar virtualmente cualquier framework de control (ISO, NIST, COBIT, SOX) la mantienen como referencia para grandes
   organizaciones con programas de riesgo maduros.
 certifications:
-- SOC 2 Tipo II ISO 27001
+- SOC 2 Tipo II
+- ISO 27001
 company_size:
 - grande
-market_rank: 130
+market_rank: 2
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

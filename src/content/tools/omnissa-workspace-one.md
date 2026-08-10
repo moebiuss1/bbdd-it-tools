@@ -27,7 +27,7 @@ certifications:
 - FedRAMP
 company_size:
 - grande
-market_rank: 41
+market_rank: 2
 sources:
 - https://mdmbuyer.com/
 last_verified: '2026-08-10'

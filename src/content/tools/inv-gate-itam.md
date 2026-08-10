@@ -19,11 +19,10 @@ why_reference: InvGate ha sido destacada en múltiples informes de analistas y p
   interfaz moderna y su facilidad de uso. Su CMDB visual y sus flujos de trabajo configurables la diferencian.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - mediana
-market_rank: 46
+market_rank: 2
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

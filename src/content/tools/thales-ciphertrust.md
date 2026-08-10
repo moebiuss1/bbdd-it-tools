@@ -22,10 +22,12 @@ why_reference: Thales es el líder del mercado de Enterprise Key Management (Sky
   (~48% del mercado KMaaS). Su integración con módulos HSM hardware (Luna) y su soporte multi-cloud lo convierten en la opción
   preferida de sectores regulados y defensa.
 certifications:
-- FIPS 140-2 Common Criteria EAL4+ ISO 27001
+- FIPS 140-2
+- Common Criteria EAL4+
+- ISO 27001
 company_size:
 - grande
-market_rank: 131
+market_rank: 6
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

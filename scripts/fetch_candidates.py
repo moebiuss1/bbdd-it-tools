@@ -5,6 +5,7 @@ y acumula contadores de menciones en data/candidates.json.
 
 import json
 import os
+import re
 import sys
 import time
 import hashlib
@@ -97,10 +98,14 @@ def search_duckduckgo(query: str, config: dict) -> list[dict]:
         title_el = result.select_one(".result__title a")
         snippet_el = result.select_one(".result__snippet")
         if title_el:
+            # separator=" " evita que palabras adyacentes a tags <b> (resaltado de
+            # keywords en los resultados de DuckDuckGo) queden pegadas sin espacio.
+            snippet = snippet_el.get_text(separator=" ", strip=True) if snippet_el else ""
+            snippet = re.sub(r"\s+", " ", snippet).strip()
             results.append({
-                "title": title_el.get_text(strip=True),
+                "title": re.sub(r"\s+", " ", title_el.get_text(separator=" ", strip=True)).strip(),
                 "url": title_el.get("href", ""),
-                "snippet": snippet_el.get_text(strip=True) if snippet_el else "",
+                "snippet": snippet,
             })
 
     return results[: config.get("search", {}).get("max_results_per_query", 10)]

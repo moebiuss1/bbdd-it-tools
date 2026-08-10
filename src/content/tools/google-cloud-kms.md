@@ -21,15 +21,13 @@ why_reference: Google Cloud KMS destaca por su arquitectura de seguridad con cla
   Key Manager (EKM) que permite a las organizaciones mantener el control de las claves fuera de Google Cloud.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 - FedRAMP
-- FIPS
-- 140-2
+- FIPS 140-2
 company_size:
 - mediana
 - grande
-market_rank: 5
+market_rank: 4
 cert_url: https://cloud.google.com/security/compliance
 sources:
 - https://www.gartner.com/reviews/

@@ -29,7 +29,7 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 14
+market_rank: 1
 cert_url: https://trust.datadoghq.com
 sources:
 - https://www.gartner.com/reviews/market/application-performance-monitoring

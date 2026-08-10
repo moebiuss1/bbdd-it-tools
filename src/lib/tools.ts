@@ -1,4 +1,51 @@
-import type { ToolEntry, Category, Tag, RankingEntry } from "@tipos/tool";
+import type { ToolEntry, Category, Tag, RankingEntry, ToolFrontmatter } from "@tipos/tool";
+
+/**
+ * Devuelve las categorías de una herramienta, con fallback al campo legacy `category`.
+ * OJO: `data.categories` por defecto es `[]` (no undefined), así que un simple
+ * `data.categories || [data.category]` NUNCA cae al fallback (un array vacío es truthy
+ * en JS) y la herramienta desaparecería de cualquier listado agrupado por categoría.
+ */
+export function getToolCategories(data: Pick<ToolFrontmatter, "categories" | "category">): string[] {
+  if (data.categories && data.categories.length > 0) return data.categories;
+  return data.category ? [data.category] : [];
+}
+
+/**
+ * Puntuación compuesta BBDD IT (0-100) para una herramienta.
+ * Única fuente de verdad — usada en el directorio, la ficha de detalle y los rankings.
+ */
+export function computeToolScore(data: ToolFrontmatter): number {
+  const rankScore = data.market_rank ? Math.max(0, 40 - (data.market_rank - 1) * 5) : 10;
+  const certScore = Math.min((data.certifications?.length ?? 0) * 6, 30);
+  const sourcesScore = Math.min((data.sources?.length ?? 0) * 5, 20);
+  const freshnessScore = data.last_verified
+    ? (() => {
+        const days = (Date.now() - new Date(data.last_verified as unknown as string).getTime()) / 86400000;
+        return days < 30 ? 10 : days < 90 ? 7 : days < 180 ? 5 : 3;
+      })()
+    : 0;
+  return Math.min(100, rankScore + certScore + sourcesScore + freshnessScore);
+}
+
+/** Desglose detallado de computeToolScore(), para mostrar en la ficha de detalle. */
+export function scoreBreakdown(data: ToolFrontmatter) {
+  const rankScore = data.market_rank ? Math.max(0, 40 - (data.market_rank - 1) * 5) : 10;
+  const certScore = Math.min((data.certifications?.length ?? 0) * 6, 30);
+  const sourcesScore = Math.min((data.sources?.length ?? 0) * 5, 20);
+  const freshnessScore = data.last_verified
+    ? (() => {
+        const days = (Date.now() - new Date(data.last_verified as unknown as string).getTime()) / 86400000;
+        return days < 30 ? 10 : days < 90 ? 7 : days < 180 ? 5 : 3;
+      })()
+    : 0;
+  return [
+    { label: "Ranking de mercado", value: rankScore, max: 40, detail: data.market_rank ? `Posición #${data.market_rank} en su categoría` : "Sin ranking asignado" },
+    { label: "Certificaciones", value: certScore, max: 30, detail: `${data.certifications?.length ?? 0} certificaciones verificadas` },
+    { label: "Fuentes", value: sourcesScore, max: 20, detail: `${data.sources?.length ?? 0} fuentes referenciadas` },
+    { label: "Actualización", value: freshnessScore, max: 10, detail: data.last_verified ? `Verificado el ${new Date(data.last_verified).toLocaleDateString("es-ES")}` : "Sin fecha de verificación" },
+  ];
+}
 
 /**
  * Obtiene etiquetas únicas con su frecuencia entre todas las herramientas.

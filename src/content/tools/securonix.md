@@ -27,7 +27,7 @@ certifications:
 - HIPAA
 company_size:
 - grande
-market_rank: 59
+market_rank: 7
 sources:
 - https://www.gartner.com/en/documents/siem-magic-quadrant
 - https://www.securonix.com/

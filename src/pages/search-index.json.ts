@@ -1,7 +1,7 @@
 import { getCollection } from "astro:content";
 import type { APIRoute } from "astro";
 import type { SearchIndexEntry } from "@tipos/tool";
-import { toToolEntry } from "@lib/tools";
+import { toToolEntry, getToolCategories } from "@lib/tools";
 import { buildSearchIndex, serializeIndex } from "@lib/search";
 
 export const GET: APIRoute = async () => {
@@ -12,7 +12,7 @@ export const GET: APIRoute = async () => {
     id: t.id,
     slug: t.slug,
     name: t.data.name,
-    category: (t.data.categories?.[0] || t.data.category || ''),
+    category: getToolCategories(t.data).join(" "),
     tags: t.data.tags,
     type: t.data.type,
     market_rank: t.data.market_rank ?? undefined,

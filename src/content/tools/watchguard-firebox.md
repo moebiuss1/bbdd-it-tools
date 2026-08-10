@@ -20,12 +20,11 @@ why_reference: WatchGuard ha sido consistentemente reconocida en los cuadrantes 
   Su enfoque de seguridad unificada con gestión cloud simplificada la hace ideal para organizaciones con equipos IT reducidos.
 certifications:
 - Common Criteria
-- FIPS
-- 140-2
+- FIPS 140-2
 company_size:
 - pequeña
 - mediana
-market_rank: 57
+market_rank: 7
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

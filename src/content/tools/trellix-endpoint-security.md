@@ -21,10 +21,12 @@ why_reference: 'Trellix representa la convergencia de dos potencias históricas 
   de FireEye (reconocida por Mandiant) y el alcance enterprise de McAfee. Con presencia en más de 40,000 clientes, es una
   de las plataformas XDR más desplegadas a nivel global.'
 certifications:
-- ISO 27001 SOC 2 Tipo II RGPD / GDPR
+- ISO 27001
+- SOC 2 Tipo II
+- RGPD / GDPR
 company_size:
 - grande
-market_rank: 106
+market_rank: 8
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

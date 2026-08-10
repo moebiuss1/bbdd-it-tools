@@ -21,12 +21,11 @@ why_reference: OneLogin ha sido reconocida en múltiples rankings de IAM por su 
   Su enfoque en flujos de trabajo de control de acceso con trazabilidad de cambios la hace valiosa para cumplimiento normativo.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - mediana
 - grande
-market_rank: 47
+market_rank: 7
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

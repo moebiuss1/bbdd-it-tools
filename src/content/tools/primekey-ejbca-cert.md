@@ -18,13 +18,12 @@ description: Plataforma PKI empresarial basada en EJBCA con gestión de certific
 why_reference: PrimeKey (parte de Keyfactor) es el proveedor de referencia para PKI empresarial con certificación Common Criteria.
   Su implementación de EJBCA es utilizada por gobiernos y entidades de certificación de todo el mundo como CA raíz.
 certifications:
-- Common Criteria
-- EAL4+
+- Common Criteria EAL4+
 - ISO 27001
 - ISO 9001
 company_size:
 - grande
-market_rank: 30
+market_rank: 4
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

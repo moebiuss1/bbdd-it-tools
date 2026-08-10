@@ -23,13 +23,12 @@ why_reference: Trend Micro ha sido reconocido como Líder en el Magic Quadrant d
   Su red de threat intelligence (Trend Vision One) procesa datos de más de 250 millones de sensores globales.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 - PCI DSS
 company_size:
 - mediana
 - grande
-market_rank: 31
+market_rank: 11
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

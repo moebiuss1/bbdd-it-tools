@@ -20,12 +20,11 @@ why_reference: Avast participó en el AV-Comparatives Business Security Test de 
   el segmento SMB.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - pequeña
 - mediana
-market_rank: 40
+market_rank: 16
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

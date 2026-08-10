@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { getCategories, getFamilies, toToolEntry } from "@lib/tools";
+import { getCategories, getFamilies, getToolCategories, computeToolScore, scoreBreakdown as buildScoreBreakdown, toToolEntry } from "@lib/tools";
 export async function getStaticPaths() { return (await getCollection("tools")).map(t => ({ params: { slug: t.id.replace(/\.md$/,"") } })); }
 const base = import.meta.env.BASE_URL;
 const tools = (await getCollection("tools")).map(toToolEntry);
@@ -10,26 +10,15 @@ const tool = tools.find(t => t.slug === Astro.params.slug);
 if (!tool) return Astro.rewrite("/404");
 const { data } = tool;
 const families = await getFamilies();
-const cats = categories.filter(c => (data.categories || [((data.categories || [data.category])[0] || '')]).includes(c.id)); const cat = cats[0];
+const cats = categories.filter(c => getToolCategories(data).includes(c.id)); const cat = cats[0];
 const family = cat ? families.find((f: any) => f.id === cat.family) : null;
 const typeLabel = data.type === 'opensource' ? 'Open Source' : 'Comercial';
 const costLabel = (data.cost_model && ({gratis:'Gratuito',freemium:'Freemium',suscripción:'Suscripción','licencia-perpetua':'Licencia perpetua','pago-por-uso':'Pago por uso','presupuesto-personalizado':'Presupuesto personalizado'} as any)[data.cost_model]) ?? '';
 const sizeLabels: any = {pequeña:'Pequeña empresa',mediana:'Mediana empresa',grande:'Gran empresa'};
-const tierColors: any = {Líder:'tier-lider',Visionario:'tier-visionario',Retador:'tier-retador',Nicho:'tier-nicho'};
 
-// Sistema de puntuación BBDD IT (0-100)
-const rankScore = data.market_rank ? Math.max(0, 40 - ((data.market_rank - 1) * 5)) : 10; // #1=40pts, #3=30pts, #5=20pts, #8+=5pts
-const certScore = Math.min((data.certifications?.length ?? 0) * 6, 30); // Hasta 30pts por certificaciones (5 certs = 30)
-const sourcesScore = Math.min((data.sources?.length ?? 0) * 5, 20); // Hasta 20pts por fuentes
-const freshnessScore = data.last_verified ? (() => { const days = (Date.now() - new Date(data.last_verified).getTime()) / 86400000; return days < 30 ? 10 : days < 90 ? 7 : days < 180 ? 5 : 3; })() : 0;
-const totalScore = Math.min(100, rankScore + certScore + sourcesScore + freshnessScore);
-
-const scoreBreakdown = [
-  { label: 'Ranking de mercado', value: rankScore, max: 40, detail: data.market_rank ? `Posición #${data.market_rank} en su categoría` : 'Sin ranking asignado' },
-  { label: 'Certificaciones', value: certScore, max: 30, detail: `${data.certifications?.length ?? 0} certificaciones verificadas` },
-  { label: 'Fuentes', value: sourcesScore, max: 20, detail: `${data.sources?.length ?? 0} fuentes referenciadas` },
-  { label: 'Actualización', value: freshnessScore, max: 10, detail: data.last_verified ? `Verificado el ${new Date(data.last_verified).toLocaleDateString('es-ES')}` : 'Sin fecha de verificación' },
-];
+// Sistema de puntuación BBDD IT (0-100) — misma fórmula que en el directorio y los rankings (src/lib/tools.ts)
+const totalScore = computeToolScore(data);
+const scoreBreakdown = buildScoreBreakdown(data);
 ---
 
 <BaseLayout title={data.name} description={data.description}>
@@ -62,6 +51,10 @@ const scoreBreakdown = [
         </div>
         <h1 class="detail-name">{data.name}</h1>
         <p class="detail-desc">{data.description}</p>
+        {data.needs_review && <p style="margin-top:12px;font-size:13px;color:#d97706;display:flex;align-items:center;gap:6px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Ficha pendiente de revisión — algunos datos no han podido verificarse por completo todavía.
+        </p>}
       </header>
 
       <div class="detail-grid">

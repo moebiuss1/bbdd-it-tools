@@ -21,10 +21,12 @@ why_reference: F5 BIG-IP es el estándar en entrega de aplicaciones empresariale
   protección en línea con la latencia más baja del mercado. Utilizado por la mayoría de las entidades financieras globales
   para proteger aplicaciones críticas.
 certifications:
-- FIPS 140-2 Common Criteria PCI DSS
+- FIPS 140-2
+- Common Criteria
+- PCI DSS
 company_size:
 - grande
-market_rank: 124
+market_rank: 2
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

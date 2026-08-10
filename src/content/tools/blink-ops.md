@@ -19,12 +19,11 @@ description: Plataforma de automatización de seguridad no-code con más de 5,00
 why_reference: Blink Ops ha sido reconocida como una de las plataformas de automatización de seguridad más accesibles del
   mercado. Su biblioteca de 5,000+ flujos predefinidos elimina la barrera de entrada del SOAR tradicional.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - pequeña
 - mediana
-market_rank: 98
+market_rank: 11
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

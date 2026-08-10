@@ -20,12 +20,11 @@ why_reference: Spirion ha sido reconocida en informes de Gartner para clasificac
   con precisión de nivel de dato —que identifica exactamente qué tipo de dato sensible contiene cada archivo— la diferencia
   de soluciones basadas en patrones.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - mediana
 - grande
-market_rank: 75
+market_rank: 9
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

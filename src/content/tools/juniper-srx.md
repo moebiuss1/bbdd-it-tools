@@ -20,13 +20,12 @@ description: Serie de firewalls NGFW de alto rendimiento con IPS integrado, visi
 why_reference: Juniper SRX obtuvo la calificación Recommended en las pruebas NSS Labs/CyberRatings 2025 con un 99,16% de efectividad
   de seguridad. Su integración con Juniper Mist AI aporta operaciones de red autónomas.
 certifications:
-- FIPS
-- 140-2
+- FIPS 140-2
 - Common Criteria
 company_size:
 - mediana
 - grande
-market_rank: 58
+market_rank: 9
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

@@ -21,13 +21,12 @@ why_reference: GitLab es una de las plataformas DevOps más adoptadas del mundo,
   DevOps.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 52
+market_rank: 2
 repo: https://gitlab.com/gitlab-org/gitlab
 license: MIT
 sources:

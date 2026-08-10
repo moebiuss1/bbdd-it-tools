@@ -29,7 +29,7 @@ slug: bitdefender-gravityzone
 sources: []
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 2
+market_rank: 5
 logo: /logos/bitdefender-gravityzone.png
 category: antivirus
 ---

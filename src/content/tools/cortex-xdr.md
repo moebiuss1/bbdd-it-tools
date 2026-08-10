@@ -21,12 +21,11 @@ why_reference: Palo Alto Networks ha sido reconocido como Líder en el Magic Qua
   nativa con los firewalls PAN.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 - FedRAMP
 company_size:
 - grande
-market_rank: 18
+market_rank: 9
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

@@ -18,11 +18,10 @@ why_reference: McAfee Network Security (ahora Trellix) ha sido reconocida en mú
   para IPS. Su integración con el ecosistema Trellix XDR proporciona contexto enriquecido para la prevención.
 certifications:
 - Common Criteria
-- FIPS
-- 140-2
+- FIPS 140-2
 company_size:
 - grande
-market_rank: 43
+market_rank: 9
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

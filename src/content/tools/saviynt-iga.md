@@ -21,11 +21,10 @@ why_reference: Saviynt ha sido reconocida como Líder en múltiples cuadrantes d
   ERP complejos.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 44
+market_rank: 3
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

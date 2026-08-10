@@ -20,10 +20,13 @@ why_reference: SailPoint es el estándar de referencia indiscutido en IGA empres
   acceso a qué y cómo se revisó el último trimestre", SailPoint es la respuesta. Su presencia en el Fortune 500 y su ecosistema
   de partners de implementación no tiene parangón en el mercado IGA.
 certifications:
-- ISO 27001 SOC 2 Tipo II PCI DSS HIPAA
+- ISO 27001
+- SOC 2 Tipo II
+- PCI DSS
+- HIPAA
 company_size:
 - grande
-market_rank: 126
+market_rank: 2
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

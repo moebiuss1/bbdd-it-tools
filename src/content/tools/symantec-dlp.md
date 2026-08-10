@@ -21,10 +21,13 @@ why_reference: Symantec DLP (ahora parte de Broadcom) ha sido reconocido como L�
   DLP durante más de una década. Su cobertura unificada endpoint-red-cloud y su madurez en despliegues enterprise lo mantienen
   como referencia del sector.
 certifications:
-- ISO 27001 SOC 2 Tipo II PCI DSS HIPAA
+- ISO 27001
+- SOC 2 Tipo II
+- PCI DSS
+- HIPAA
 company_size:
 - grande
-market_rank: 128
+market_rank: 3
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

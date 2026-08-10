@@ -12,7 +12,7 @@ SEED_TOOLS = [
     # === Antivirus ===
     {
         "name": "Microsoft Defender for Endpoint",
-        "category": "antivirus", "type": "comercial", "cost_model": "suscripción",
+        "categories": ["antivirus"], "type": "comercial", "cost_model": "suscripción",
         "cost_details": "Incluido en Microsoft 365 E5. Plan autónomo desde ~$5/usuario/mes.",
         "website": "https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-endpoint",
         "description": "Plataforma de protección de endpoints empresarial integrada en el ecosistema Microsoft 365. Combina antivirus NG, EDR, y gestión de vulnerabilidades.",
@@ -23,7 +23,7 @@ SEED_TOOLS = [
     },
     {
         "name": "Bitdefender GravityZone",
-        "category": "antivirus", "type": "comercial", "cost_model": "suscripción",
+        "categories": ["antivirus"], "type": "comercial", "cost_model": "suscripción",
         "cost_details": "Desde ~$30/endpoint/año. Ediciones: Business, Enterprise, Elite.",
         "website": "https://www.bitdefender.com/business/",
         "description": "Plataforma de seguridad de endpoints con prevención de amenazas multicapa, EDR, y análisis de riesgo. Motor antimalware de alta eficacia en tests independientes.",
@@ -35,7 +35,7 @@ SEED_TOOLS = [
     # === EDR ===
     {
         "name": "SentinelOne Singularity",
-        "category": "edr", "type": "comercial", "cost_model": "suscripción",
+        "categories": ["edr"], "type": "comercial", "cost_model": "suscripción",
         "cost_details": "Desde ~$45/endpoint/año. Ediciones: Core, Control, Complete.",
         "website": "https://www.sentinelone.com",
         "description": "Plataforma de seguridad autónoma con IA para prevenir, detectar y responder a amenazas en endpoints, containers, cloud workloads y dispositivos IoT.",
@@ -47,7 +47,7 @@ SEED_TOOLS = [
     # === Firewall ===
     {
         "name": "Fortinet FortiGate",
-        "category": "firewall", "type": "comercial", "cost_model": "suscripción",
+        "categories": ["firewall"], "type": "comercial", "cost_model": "suscripción",
         "cost_details": "Modelos FortiGate 40F a 4400F. Licencia FortiGuard desde ~$1,000/año.",
         "website": "https://www.fortinet.com/products/next-generation-firewall",
         "description": "Firewall de nueva generación con procesador de seguridad propietario (SPU) que ofrece inspección SSL/TLS completa y prevención de amenazas a alto rendimiento.",
@@ -59,7 +59,7 @@ SEED_TOOLS = [
     # === SIEM ===
     {
         "name": "Microsoft Sentinel",
-        "category": "siem", "type": "comercial", "cost_model": "pago-por-uso",
+        "categories": ["siem"], "type": "comercial", "cost_model": "pago-por-uso",
         "cost_details": "Basado en volumen de datos analizados. Sin costes de infraestructura. Desde ~$2/GB ingerido.",
         "website": "https://azure.microsoft.com/en-us/products/microsoft-sentinel/",
         "description": "SIEM cloud-native en Azure que combina SIEM y SOAR con inteligencia artificial a escala cloud. Analiza datos de toda la empresa sin infraestructura propia.",
@@ -71,7 +71,7 @@ SEED_TOOLS = [
     # === SOAR ===
     {
         "name": "Palo Alto Cortex XSOAR",
-        "category": "soar", "type": "comercial", "cost_model": "presupuesto-personalizado",
+        "categories": ["soar"], "type": "comercial", "cost_model": "presupuesto-personalizado",
         "cost_details": "Licencia anual según número de playbooks y usuarios.",
         "website": "https://www.paloaltonetworks.com/cortex/xsoar",
         "description": "Plataforma SOAR líder que automatiza y orquesta la respuesta a incidentes de seguridad. Incluye un marketplace con más de 900 playbooks predefinidos.",
@@ -83,7 +83,7 @@ SEED_TOOLS = [
     # === IAM ===
     {
         "name": "Microsoft Entra ID (Azure AD)",
-        "category": "identity-managers", "type": "comercial", "cost_model": "freemium",
+        "categories": ["identity-managers"], "type": "comercial", "cost_model": "freemium",
         "cost_details": "Free para funciones básicas. Premium P1 (~$6/usuario/mes), P2 (~$9/usuario/mes).",
         "website": "https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id",
         "description": "Plataforma de identidad y acceso cloud-native. SSO, MFA, acceso condicional, identity governance, y privileged identity management para el ecosistema Microsoft y más de 3,000 apps.",
@@ -95,7 +95,7 @@ SEED_TOOLS = [
     # === DLP ===
     {
         "name": "Microsoft Purview DLP",
-        "category": "dlp", "type": "comercial", "cost_model": "suscripción",
+        "categories": ["dlp"], "type": "comercial", "cost_model": "suscripción",
         "cost_details": "Incluido en Microsoft 365 E5. Planes independientes desde ~$10/usuario/mes.",
         "website": "https://www.microsoft.com/en-us/security/business/information-protection/microsoft-purview-data-loss-prevention",
         "description": "Solución DLP integrada en el ecosistema Microsoft 365 que protege datos sensibles en endpoints, aplicaciones cloud, y servicios on-premise.",
@@ -107,7 +107,7 @@ SEED_TOOLS = [
     # === MDM ===
     {
         "name": "Microsoft Intune",
-        "category": "mdm", "type": "comercial", "cost_model": "suscripción",
+        "categories": ["mdm"], "type": "comercial", "cost_model": "suscripción",
         "cost_details": "Incluido en Microsoft 365 E3/E5. Plan autónomo desde ~$6/usuario/mes.",
         "website": "https://www.microsoft.com/en-us/security/business/endpoint-management/microsoft-intune",
         "description": "Plataforma unificada de gestión de endpoints (UEM) que combina MDM y MAM para Windows, macOS, iOS, Android y Linux.",
@@ -119,7 +119,7 @@ SEED_TOOLS = [
     # === IDS ===
     {
         "name": "Snort",
-        "category": "ids", "type": "opensource", "cost_model": "gratis",
+        "categories": ["ids"], "type": "opensource", "cost_model": "gratis",
         "cost_details": "Gratuito (GPLv2). Reglas de Cisco Talos por suscripción (~$30/año uso personal, ~$400/año empresa).",
         "website": "https://www.snort.org",
         "description": "Sistema de detección y prevención de intrusiones de red open source mantenido por Cisco Talos, el equipo de inteligencia de amenazas más grande del mundo.",
@@ -132,7 +132,7 @@ SEED_TOOLS = [
     # === IPS ===
     {
         "name": "Suricata",
-        "category": "ips", "type": "opensource", "cost_model": "gratis",
+        "categories": ["ips"], "type": "opensource", "cost_model": "gratis",
         "cost_details": "Gratuito (GPLv2). Suricata Enterprise con soporte comercial disponible.",
         "website": "https://suricata.io",
         "description": "Motor IDS/IPS de red de alto rendimiento con inspección profunda de paquetes y análisis de protocolos. Soporta multi-threading nativo para redes de alta velocidad.",
@@ -144,7 +144,7 @@ SEED_TOOLS = [
     },
     {
         "name": "Trend Micro TippingPoint",
-        "category": "ips", "type": "comercial", "cost_model": "suscripción",
+        "categories": ["ips"], "type": "comercial", "cost_model": "suscripción",
         "cost_details": "Modelos hardware TPS 5000-9000. Licencia Digital Vaccine (firmas de vulnerabilidad) incluida.",
         "website": "https://www.trendmicro.com/en_us/business/products/network/ips/tippingpoint.html",
         "description": "NGIPS con inspección profunda de paquetes y filtros de vulnerabilidad Digital Vaccine actualizados continuamente. Enfoque en vulnerabilidades, no solo exploits.",
@@ -156,7 +156,7 @@ SEED_TOOLS = [
     # === Config Managers ===
     {
         "name": "Ansible",
-        "category": "config-managers", "type": "opensource", "cost_model": "freemium",
+        "categories": ["config-managers"], "type": "opensource", "cost_model": "freemium",
         "cost_details": "Gratuito (GPL). Ansible Automation Platform desde ~$13,000/año por 100 nodos.",
         "website": "https://www.ansible.com",
         "description": "Herramienta de automatización open source para gestión de configuraciones, despliegues y orquestación. Define el estado deseado de la infraestructura como código (YAML).",
@@ -169,7 +169,7 @@ SEED_TOOLS = [
     # === IT Asset Managers ===
     {
         "name": "ServiceNow ITAM",
-        "category": "it-asset-managers", "type": "comercial", "cost_model": "presupuesto-personalizado",
+        "categories": ["it-asset-managers"], "type": "comercial", "cost_model": "presupuesto-personalizado",
         "cost_details": "Licencia anual según número de activos gestionados.",
         "website": "https://www.servicenow.com/products/it-asset-management.html",
         "description": "Gestión integral de activos IT en la plataforma ServiceNow. Cubre todo el ciclo de vida: adquisición, inventario, cumplimiento de licencias, y disposición.",
@@ -181,7 +181,7 @@ SEED_TOOLS = [
     # === Cert Managers ===
     {
         "name": "Venafi Control Plane",
-        "category": "cert-managers", "type": "comercial", "cost_model": "presupuesto-personalizado",
+        "categories": ["cert-managers"], "type": "comercial", "cost_model": "presupuesto-personalizado",
         "cost_details": "Licencia anual según número de certificados gestionados.",
         "website": "https://www.venafi.com",
         "description": "Plataforma de gestión del ciclo de vida de certificados digitales y claves criptográficas. Automatiza emisión, renovación y revocación de certificados a escala empresarial.",
@@ -193,7 +193,7 @@ SEED_TOOLS = [
     # === KPI / CA Managers ===
     {
         "name": "ServiceNow GRC",
-        "category": "kpi-ca-managers", "type": "comercial", "cost_model": "presupuesto-personalizado",
+        "categories": ["kpi-ca-managers"], "type": "comercial", "cost_model": "presupuesto-personalizado",
         "cost_details": "Licencia anual. Precio según módulos: Policy, Risk, Audit, Vendor Risk.",
         "website": "https://www.servicenow.com/products/governance-risk-and-compliance.html",
         "description": "Plataforma GRC integrada para gestión de riesgos, cumplimiento, auditoría y políticas. Automatiza la monitorización de controles y KPI de cumplimiento continuo.",
@@ -205,7 +205,7 @@ SEED_TOOLS = [
     # === DLP adicional ===
     {
         "name": "Forcepoint DLP",
-        "category": "dlp", "type": "comercial", "cost_model": "presupuesto-personalizado",
+        "categories": ["dlp"], "type": "comercial", "cost_model": "presupuesto-personalizado",
         "cost_details": "Licencia anual por usuario. Precio según módulos y número de endpoints.",
         "website": "https://www.forcepoint.com/product/dlp-data-loss-prevention",
         "description": "Solución DLP empresarial con análisis de comportamiento para prevenir fugas de datos en endpoints, red, email y aplicaciones cloud.",
@@ -217,7 +217,7 @@ SEED_TOOLS = [
     # === Gestores de claves adicional ===
     {
         "name": "AWS Key Management Service (KMS)",
-        "category": "key-managers", "type": "comercial", "cost_model": "pago-por-uso",
+        "categories": ["key-managers"], "type": "comercial", "cost_model": "pago-por-uso",
         "cost_details": "$1/clave/mes + $0.03/10,000 operaciones. HSM desde $1.45/hora.",
         "website": "https://aws.amazon.com/kms/",
         "description": "Servicio gestionado de claves criptográficas integrado con el ecosistema AWS. Permite crear, rotar y auditar claves con integración nativa en S3, RDS, Lambda y más de 100 servicios AWS.",

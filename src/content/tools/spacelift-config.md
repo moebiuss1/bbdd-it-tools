@@ -19,12 +19,11 @@ why_reference: Spacelift ha sido destacada en informes de analistas como la plat
   capacidad de detectar drift (desviaciones entre código y realidad) y aplicar políticas de cumplimiento la hace valiosa para
   entornos regulados.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - mediana
 - grande
-market_rank: 81
+market_rank: 3
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

@@ -18,11 +18,12 @@ why_reference: Cybereason ha sido reconocida en el Magic Quadrant de Gartner par
   operaciones maliciosas (MalOps). Su tecnología de correlación de comportamiento reduce drásticamente el ruido de alertas
   al presentar ataques completos como una única historia visual.
 certifications:
-- ISO 27001 SOC 2 Tipo II
+- ISO 27001
+- SOC 2 Tipo II
 company_size:
 - mediana
 - grande
-market_rank: 132
+market_rank: 17
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

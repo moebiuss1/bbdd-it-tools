@@ -21,13 +21,12 @@ why_reference: VMware Carbon Black (ahora parte de Broadcom) ha sido reconocida 
   VMware la hace única.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 - FedRAMP
 company_size:
 - mediana
 - grande
-market_rank: 24
+market_rank: 7
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

@@ -20,12 +20,11 @@ why_reference: Rapid7 InsightConnect ha sido reconocida como la opción SOAR má
   mid-market (100-5,000 empleados). Su integración nativa con el ecosistema Rapid7 proporciona un flujo detect-respond sin
   fricción.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 - ISO 27001
 company_size:
 - mediana
-market_rank: 42
+market_rank: 5
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

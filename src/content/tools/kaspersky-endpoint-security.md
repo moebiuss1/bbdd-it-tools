@@ -21,12 +21,13 @@ why_reference: Kaspersky ha demostrado consistentemente las tasas de detección 
   En el AV-Comparatives Business Security Test 2026 empató en el primer puesto de protección real (99.8%%) y obtuvo el menor
   impacto de rendimiento junto a ESET, confirmando su excelencia técnica.
 certifications:
-- ISO 27001 SOC 2 Tipo II
+- ISO 27001
+- SOC 2 Tipo II
 company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 101
+market_rank: 14
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

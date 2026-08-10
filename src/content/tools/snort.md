@@ -29,7 +29,7 @@ slug: snort
 sources: []
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 1
+market_rank: 5
 logo: /logos/snort.png
 category: ids
 ---

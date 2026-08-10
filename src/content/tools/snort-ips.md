@@ -18,14 +18,13 @@ description: Sistema de prevención de intrusiones con inteligencia de amenazas 
 why_reference: Cisco Secure IPS se beneficia de Cisco Talos, uno de los mayores equipos de threat intelligence del mundo.
   Su integración con Cisco XDR proporciona respuesta coordinada entre red, endpoint y cloud.
 certifications:
-- FIPS
-- 140-2
+- FIPS 140-2
 - Common Criteria
 - ISO 27001
 company_size:
 - mediana
 - grande
-market_rank: 32
+market_rank: 7
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

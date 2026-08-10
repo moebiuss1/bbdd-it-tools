@@ -30,7 +30,7 @@ certifications:
 - ENS Alta
 company_size:
 - grande
-market_rank: 6
+market_rank: 3
 cert_url: https://www.ibm.com/trust
 sources:
 - https://www.gartner.com/en/documents/siem-magic-quadrant

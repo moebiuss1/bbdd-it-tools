@@ -18,11 +18,10 @@ why_reference: Brinqa ha sido reconocida en múltiples informes de Gartner y For
   Su capacidad de crear modelos de riesgo personalizados con datos de múltiples fuentes la hace única en el mercado.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 61
+market_rank: 9
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

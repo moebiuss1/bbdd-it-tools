@@ -23,10 +23,14 @@ why_reference: Zscaler ha sido reconocido como Líder en el Magic Quadrant de Ga
   más de una década. Opera una red global de 150+ data centers procesando más de 300 mil millones de transacciones diarias
   para el Fortune 500.
 certifications:
-- ISO 27001 SOC 2 Tipo II FedRAMP PCI DSS HIPAA
+- ISO 27001
+- SOC 2 Tipo II
+- FedRAMP
+- PCI DSS
+- HIPAA
 company_size:
 - grande
-market_rank: 125
+market_rank: 1
 cert_url: https://trust.zscaler.com
 sources:
 - https://www.gartner.com/reviews/

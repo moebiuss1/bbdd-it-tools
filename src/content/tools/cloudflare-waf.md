@@ -30,7 +30,7 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 25
+market_rank: 4
 cert_url: https://www.cloudflare.com/trust-hub/
 sources:
 - https://www.gartner.com/reviews/

@@ -19,12 +19,11 @@ description: Plataforma MDM exclusiva para Apple con seguridad integrada, gesti�
 why_reference: Mosyle ha revolucionado el mercado MDM Apple con su modelo de precios agresivo y funcionalidades de seguridad
   integradas. Su free tier de 30 dispositivos la hace ideal para educación y startups.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - pequeña
 - mediana
-market_rank: 72
+market_rank: 8
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

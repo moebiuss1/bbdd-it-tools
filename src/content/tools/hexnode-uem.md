@@ -19,12 +19,13 @@ why_reference: Hexnode ha sido puntuada con 3.7/5 en el MDM Buyer Guide 2026 y d
   amplia al mejor precio. Sus capacidades de kiosco y su facilidad de uso la hacen especialmente atractiva para educación,
   retail y logística.
 certifications:
-- ISO 27001 SOC 2 Tipo II
+- ISO 27001
+- SOC 2 Tipo II
 company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 108
+market_rank: 3
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

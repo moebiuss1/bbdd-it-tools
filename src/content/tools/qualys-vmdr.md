@@ -31,7 +31,7 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 8
+market_rank: 1
 cert_url: https://www.qualys.com/trust/
 sources:
 - https://www.gartner.com/reviews/market/vulnerability-assessment

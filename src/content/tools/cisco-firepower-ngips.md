@@ -22,11 +22,12 @@ why_reference: Cisco Firepower NGIPS es parte del ecosistema Cisco Secure y cuen
   intelligence más grandes del mundo analizando más de 600 mil millones de eventos diarios. Su integración con Cisco XDR y
   Secure Network Analytics proporciona una defensa en profundidad.
 certifications:
-- FIPS 140-2 Common Criteria
+- FIPS 140-2
+- Common Criteria
 company_size:
 - mediana
 - grande
-market_rank: 113
+market_rank: 5
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

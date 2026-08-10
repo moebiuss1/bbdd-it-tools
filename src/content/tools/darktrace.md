@@ -27,7 +27,7 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 92
+market_rank: 3
 sources:
 - https://www.gartner.com/en/documents/network-detection-response
 - https://darktrace.com/

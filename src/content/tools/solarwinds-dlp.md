@@ -17,12 +17,11 @@ description: Herramienta de gestión de permisos de acceso y prevención de fuga
 why_reference: SolarWinds ARM ha sido destacada en informes de Gartner para gestión de accesos y DLP. Su enfoque en la prevención
   de fuga mediante control de permisos —la causa raíz de muchas fugas— complementa las soluciones DLP tradicionales.
 certifications:
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - mediana
 - grande
-market_rank: 83
+market_rank: 7
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

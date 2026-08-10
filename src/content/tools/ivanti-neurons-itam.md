@@ -20,11 +20,12 @@ description: Plataforma de gestión de activos IT con inteligencia artificial pr
 why_reference: Ivanti Neurons ha sido calificada como "Exemplary" en ISG Buyers Guide ITAM 2026 y reconocida como Market Leader.
   Su integración de ITAM con UEM y capacidades de IA predictiva la diferencian en un mercado tradicionalmente reactivo.
 certifications:
-- SOC 2 Tipo II ISO 27001
+- SOC 2 Tipo II
+- ISO 27001
 company_size:
 - mediana
 - grande
-market_rank: 109
+market_rank: 4
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

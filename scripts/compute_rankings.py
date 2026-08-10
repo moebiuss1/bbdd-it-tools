@@ -62,7 +62,11 @@ def compute_rankings(config: dict) -> dict[str, list[dict]]:
     slugs = list_all_slugs()
     weights = config.get("ranking_weights", {})
 
-    # Agrupar herramientas por categoría
+    # Agrupar herramientas por categoría.
+    # OJO: usar SIEMPRE "categories" (lista), con fallback al legacy "category" solo
+    # si "categories" está vacío/ausente. Una herramienta puede pertenecer a varias
+    # categorías (p.ej. "key-managers" + "secrets-management") y debe rankearse en
+    # cada una de ellas — no solo en la primera.
     by_category: dict[str, list[dict]] = {}
 
     for slug in slugs:
@@ -70,11 +74,11 @@ def compute_rankings(config: dict) -> dict[str, list[dict]]:
         if not tool:
             continue
 
-        category = tool.get("category", "unknown")
-        if category not in by_category:
-            by_category[category] = []
+        cats = tool.get("categories") or ([tool["category"]] if tool.get("category") else [])
+        if not cats:
+            cats = ["unknown"]
 
-        # Señales
+        # Señales (independientes de la categoría)
         mentions = sum(mention_counts.get(slug, {}).values())
         gartner_mentions = mention_counts.get(slug, {}).get("gartner", 0)
         github_stars = 0  # se podría obtener de GitHub API
@@ -83,7 +87,7 @@ def compute_rankings(config: dict) -> dict[str, list[dict]]:
         # Log de github stars (evitar log(0))
         gh_log = math.log10(github_stars + 1)
 
-        by_category[category].append({
+        entry = {
             "slug": slug,
             "name": tool.get("name", slug),
             "mentions": mentions,
@@ -91,7 +95,10 @@ def compute_rankings(config: dict) -> dict[str, list[dict]]:
             "github_log10": gh_log,
             "cert_count": cert_count,
             "market_rank": tool.get("market_rank"),
-        })
+        }
+
+        for category in cats:
+            by_category.setdefault(category, []).append(dict(entry))
 
     # Calcular scores por categoría
     rankings: dict[str, list[dict]] = {}

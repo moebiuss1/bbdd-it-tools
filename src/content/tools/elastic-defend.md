@@ -21,13 +21,12 @@ why_reference: Elastic Defend es la única solución EDR open source con cobertu
   permite búsqueda y hunting sobre petabytes de datos de endpoint en milisegundos.
 certifications:
 - ISO 27001
-- SOC 2 Tipo
-- II
+- SOC 2 Tipo II
 company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 64
+market_rank: 8
 repo: https://github.com/elastic/elasticsearch
 license: Elastic License 2.0
 sources:

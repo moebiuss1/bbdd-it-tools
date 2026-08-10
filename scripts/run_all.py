@@ -20,6 +20,7 @@ import yaml
 # Importar módulos del pipeline
 from fetch_candidates import fetch_all_candidates, load_config
 from enrich_tools import enrich_all
+from seed_tools import seed as seed_tools
 from fetch_logos import fetch_all_logos
 from compute_rankings import compute_rankings, write_rankings_ts
 from validate import validate_all
@@ -90,14 +91,14 @@ def main():
     parser.add_argument(
         "--skip",
         nargs="+",
-        choices=["fetch", "enrich", "logos", "rank", "validate"],
+        choices=["fetch", "enrich", "seed", "logos", "rank", "validate"],
         default=[],
         help="Fases a saltar",
     )
     parser.add_argument(
         "--only",
         nargs="+",
-        choices=["fetch", "enrich", "logos", "rank", "validate"],
+        choices=["fetch", "enrich", "seed", "logos", "rank", "validate"],
         default=None,
         help="Ejecutar solo estas fases",
     )
@@ -125,10 +126,10 @@ def main():
     print(f"   Inicio: {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 60)
 
-    # Fase 1: Fetch candidates
+    # Fase 1: Fetch candidates (busca en Internet: DuckDuckGo, GitHub, itsm.tools)
     if should_run("fetch"):
         print("\n" + "─" * 60)
-        print("📡 FASE 1/5: Búsqueda de candidatos")
+        print("📡 FASE 1/6: Búsqueda de candidatos")
         print("─" * 60)
         try:
             fetch_all_candidates(config)
@@ -137,10 +138,10 @@ def main():
             errors.append(f"fetch: {e}")
             print(f"❌ Error: {e}", file=sys.stderr)
 
-    # Fase 2: Enrich tools
+    # Fase 2: Enrich tools (crea/enriquece fichas a partir de los candidatos)
     if should_run("enrich"):
         print("\n" + "─" * 60)
-        print("📝 FASE 2/5: Enriquecimiento de herramientas")
+        print("📝 FASE 2/6: Enriquecimiento de herramientas")
         print("─" * 60)
         try:
             enrich_stats = enrich_all(config, limit=args.limit)
@@ -151,10 +152,22 @@ def main():
             errors.append(f"enrich: {e}")
             print(f"❌ Error: {e}", file=sys.stderr)
 
-    # Fase 3: Fetch logos
+    # Fase 3: Seed tools (refuerza el set curado; merge idempotente, nunca sobrescribe ediciones manuales)
+    if should_run("seed"):
+        print("\n" + "─" * 60)
+        print("🌱 FASE 3/6: Refuerzo de datos semilla curados")
+        print("─" * 60)
+        try:
+            seed_tools()
+            phases_run.append("seed")
+        except Exception as e:
+            errors.append(f"seed: {e}")
+            print(f"❌ Error: {e}", file=sys.stderr)
+
+    # Fase 4: Fetch logos
     if should_run("logos"):
         print("\n" + "─" * 60)
-        print("🖼️  FASE 3/5: Descarga de logos")
+        print("🖼️  FASE 4/6: Descarga de logos")
         print("─" * 60)
         try:
             logos_count = fetch_all_logos(config)
@@ -164,10 +177,10 @@ def main():
             errors.append(f"logos: {e}")
             print(f"❌ Error: {e}", file=sys.stderr)
 
-    # Fase 4: Compute rankings
+    # Fase 5: Compute rankings
     if should_run("rank"):
         print("\n" + "─" * 60)
-        print("🏆 FASE 4/5: Cálculo de rankings")
+        print("🏆 FASE 5/6: Cálculo de rankings")
         print("─" * 60)
         try:
             rankings = compute_rankings(config)
@@ -182,10 +195,10 @@ def main():
             errors.append(f"rank: {e}")
             print(f"❌ Error: {e}", file=sys.stderr)
 
-    # Fase 5: Validate
+    # Fase 6: Validate
     if should_run("validate"):
         print("\n" + "─" * 60)
-        print("🔍 FASE 5/5: Validación")
+        print("🔍 FASE 6/6: Validación")
         print("─" * 60)
         try:
             validation_errors = validate_all()
