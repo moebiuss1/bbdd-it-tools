@@ -13,19 +13,19 @@ type: opensource
 cost_model: gratis
 cost_details: Open source (BSL). Terraform Cloud gratuito hasta 500 recursos. Terraform Enterprise desde ~$20,000/año.
 website: https://www.terraform.io
-description: 'Herramienta de infraestructura como código (IaC) que permite definir, aprovisionar y versionar
-  infraestructura cloud y on-premise usando un lenguaje declarativo (HCL). Gestiona el ciclo de vida completo
-  de los recursos con planificación previa y estado como fuente de verdad.'
-why_reference: 'Terraform es el estándar de facto en infraestructura como código multi-cloud. Con más de 3,000
-  providers oficiales y un ecosistema de módulos reutilizables, es la herramienta más adoptada para automatizar
-  el aprovisionamiento de infraestructura en AWS, Azure, GCP y cientos de servicios. La creación del fork
-  OpenTofu tras el cambio de licencia de HashiCorp en 2023 demuestra su importancia crítica en el ecosistema IT.'
+description: Herramienta de infraestructura como código (IaC) que permite definir, aprovisionar y versionar infraestructura
+  cloud y on-premise usando un lenguaje declarativo (HCL). Gestiona el ciclo de vida completo de los recursos con planificación
+  previa y estado como fuente de verdad.
+why_reference: Terraform es el estándar de facto en infraestructura como código multi-cloud. Con más de 3,000 providers oficiales
+  y un ecosistema de módulos reutilizables, es la herramienta más adoptada para automatizar el aprovisionamiento de infraestructura
+  en AWS, Azure, GCP y cientos de servicios. La creación del fork OpenTofu tras el cambio de licencia de HashiCorp en 2023
+  demuestra su importancia crítica en el ecosistema IT.
 certifications: []
 company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 1
+market_rank: 4
 repo: https://github.com/hashicorp/terraform
 license: BSL
 sources:
@@ -33,7 +33,7 @@ sources:
 - https://www.hashicorp.com/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/terraform.png
 ---
 
 Terraform es la herramienta que definió la categoría de infraestructura como código

@@ -10,10 +10,14 @@ tags:
 - signature-based
 type: comercial
 cost_model: suscripción
-cost_details: 'Desde ~$5,000/año. Incluido en Cisco Secure portfolio.'
+cost_details: Desde ~$5,000/año. Incluido en Cisco Secure portfolio.
 website: https://www.cisco.com
-description: 'Sistema de detección de intrusiones integrado en el ecosistema Cisco Secure con inteligencia de amenazas Talos. Proporciona detección basada en firmas, anomalías de protocolo y análisis de comportamiento de red con más de 30,000 reglas actualizadas automáticamente.'
-why_reference: 'Cisco Secure IDS se beneficia de Cisco Talos, uno de los mayores equipos de investigación de seguridad del mundo, analizando más de 600 mil millones de eventos diarios. Su integración con el ecosistema Cisco Secure (XDR, firewall, endpoint) proporciona una defensa en profundidad inigualable.'
+description: Sistema de detección de intrusiones integrado en el ecosistema Cisco Secure con inteligencia de amenazas Talos.
+  Proporciona detección basada en firmas, anomalías de protocolo y análisis de comportamiento de red con más de 30,000 reglas
+  actualizadas automáticamente.
+why_reference: Cisco Secure IDS se beneficia de Cisco Talos, uno de los mayores equipos de investigación de seguridad del
+  mundo, analizando más de 600 mil millones de eventos diarios. Su integración con el ecosistema Cisco Secure (XDR, firewall,
+  endpoint) proporciona una defensa en profundidad inigualable.
 certifications:
 - FIPS 140-2
 - Common Criteria
@@ -21,12 +25,12 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 4
+market_rank: 1
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/cisco-secure-ids.png
 ---
 
 Cisco Secure IDS es una solución de referencia en la categoría ids utilizada por

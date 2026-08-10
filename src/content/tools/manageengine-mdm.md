@@ -10,10 +10,13 @@ tags:
 - uem
 type: comercial
 cost_model: suscripción
-cost_details: 'Desde ~$9.90-$23.90/dispositivo/año. Free tier con funciones enterprise.'
+cost_details: Desde ~$9.90-$23.90/dispositivo/año. Free tier con funciones enterprise.
 website: https://www.manageengine.com
-description: 'Plataforma MDM multiplataforma asequible con la mejor integración Active Directory del mercado y un generoso free tier que incluye funciones enterprise. Gestiona iOS, Android, Windows, macOS y ChromeOS desde una consola unificada.'
-why_reference: 'ManageEngine MDM Plus ha sido puntuada con 3.8/5 en el MDM Buyer Guide 2026 y destaca por ofrecer la mejor relación calidad-precio con integración AD nativa. Su free tier con funciones enterprise la hace única en el mercado MDM para organizaciones que quieren empezar sin compromiso económico.'
+description: Plataforma MDM multiplataforma asequible con la mejor integración Active Directory del mercado y un generoso
+  free tier que incluye funciones enterprise. Gestiona iOS, Android, Windows, macOS y ChromeOS desde una consola unificada.
+why_reference: ManageEngine MDM Plus ha sido puntuada con 3.8/5 en el MDM Buyer Guide 2026 y destaca por ofrecer la mejor
+  relación calidad-precio con integración AD nativa. Su free tier con funciones enterprise la hace única en el mercado MDM
+  para organizaciones que quieren empezar sin compromiso económico.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II
@@ -21,12 +24,12 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 5
+market_rank: 4
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/manageengine-mdm.png
 ---
 
 ManageEngine MDM Plus es una solución de referencia en la categoría mdm utilizada por

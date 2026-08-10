@@ -11,27 +11,27 @@ tags:
 - forensics
 type: comercial
 cost_model: suscripción
-cost_details: Licencia anual basada en número de endpoints. Desde ~$40,000/año para despliegue mínimo. Modelo SaaS y on-premise disponibles.
+cost_details: Licencia anual basada en número de endpoints. Desde ~$40,000/año para despliegue mínimo. Modelo SaaS y on-premise
+  disponibles.
 website: https://www.digitalguardian.com
-description: 'Plataforma DLP con telemetría profunda de endpoint que protege datos sensibles tanto dentro
-  como fuera de la red corporativa. Especializada en entornos de defensa, farmacéutico y manufactura donde
-  la protección de propiedad intelectual y datos clasificados es crítica.'
-why_reference: 'Digital Guardian (parte de Fortra desde 2022) es reconocida como una de las soluciones DLP más
-  completas para la protección de datos en endpoints, especialmente en escenarios off-network donde otras
-  soluciones pierden visibilidad. Su capacidad de capturar telemetría a nivel de kernel —incluyendo
-  movimientos de ratón y pulsaciones de teclas en contextos de investigación— la hace única en sectores
-  de defensa y alta regulación.'
+description: Plataforma DLP con telemetría profunda de endpoint que protege datos sensibles tanto dentro como fuera de la
+  red corporativa. Especializada en entornos de defensa, farmacéutico y manufactura donde la protección de propiedad intelectual
+  y datos clasificados es crítica.
+why_reference: Digital Guardian (parte de Fortra desde 2022) es reconocida como una de las soluciones DLP más completas para
+  la protección de datos en endpoints, especialmente en escenarios off-network donde otras soluciones pierden visibilidad.
+  Su capacidad de capturar telemetría a nivel de kernel —incluyendo movimientos de ratón y pulsaciones de teclas en contextos
+  de investigación— la hace única en sectores de defensa y alta regulación.
 certifications:
 - SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 3
+market_rank: 4
 sources:
 - https://cyberwebspider.com/cyber-security-news/10-best-data-loss-prevention-software-in-2025/
 - https://www.gartner.com/en/documents/enterprise-dlp
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/digital-guardian-dlp.png
 ---
 
 Digital Guardian es la plataforma DLP diseñada para la protección de datos en los

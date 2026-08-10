@@ -12,13 +12,12 @@ type: comercial
 cost_model: suscripción
 cost_details: 'Licencia anual por endpoint. Desde ~$28/endpoint/año. Ediciones: Advanced, Intercept X with XDR.'
 website: https://www.sophos.com/en-us/products/endpoint-antivirus
-description: 'Plataforma de protección endpoint con defensa anti-ransomware líder del mercado. Su tecnología
-  CryptoGuard detecta y revierte automáticamente el cifrado no autorizado en milisegundos, combinando NGAV,
-  deep learning y prevención de exploits en un solo agente.'
-why_reference: 'Sophos ha sido nombrado Líder en el Magic Quadrant de Gartner para Endpoint Protection Platforms
-  durante 16 años consecutivos. Es el único fabricante nombrado Customers'' Choice de Gartner Peer Insights en
-  las cuatro categorías: Endpoint Protection, MDR, XDR y Network Firewalls. Calificado #1 en G2 para firewall
-  y MDR en Summer 2026.'
+description: Plataforma de protección endpoint con defensa anti-ransomware líder del mercado. Su tecnología CryptoGuard detecta
+  y revierte automáticamente el cifrado no autorizado en milisegundos, combinando NGAV, deep learning y prevención de exploits
+  en un solo agente.
+why_reference: 'Sophos ha sido nombrado Líder en el Magic Quadrant de Gartner para Endpoint Protection Platforms durante 16
+  años consecutivos. Es el único fabricante nombrado Customers'' Choice de Gartner Peer Insights en las cuatro categorías:
+  Endpoint Protection, MDR, XDR y Network Firewalls. Calificado #1 en G2 para firewall y MDR en Summer 2026.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II
@@ -34,7 +33,7 @@ sources:
 - https://av-comparatives.org/business-security-test-march-june-2026/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/sophos-intercept-x.png
 ---
 
 Sophos Intercept X es la solución antivirus empresarial que combina protección

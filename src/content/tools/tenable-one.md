@@ -11,15 +11,16 @@ tags:
 - epss
 type: comercial
 cost_model: suscripción
-cost_details: 'Licencia anual por activo. Desde ~$26-38/activo/año. Ediciones: Nessus Professional, Tenable.io, Tenable.sc, Tenable One.'
+cost_details: 'Licencia anual por activo. Desde ~$26-38/activo/año. Ediciones: Nessus Professional, Tenable.io, Tenable.sc,
+  Tenable One.'
 website: https://www.tenable.com
-description: 'Plataforma de gestión de vulnerabilidades y exposición que unifica la visibilidad de riesgos en
-  entornos IT, cloud, OT y contenedores. Utiliza VPR (Vulnerability Priority Rating) y EPSS para priorizar la
-  remediación por riesgo real, no solo por severidad CVSS.'
-why_reference: 'Tenable es el estándar de referencia en escaneo de vulnerabilidades con más de 219,000 plugins
-  y 40,000 clientes empresariales. Su motor Nessus es el escáner más desplegado del mundo. Tenable One ha sido
-  reconocido como plataforma líder en Cyber Risk Management por analistas como Forrester y Gartner. Fundada
-  en 2002, definió la categoría de gestión de vulnerabilidades basada en riesgo.'
+description: Plataforma de gestión de vulnerabilidades y exposición que unifica la visibilidad de riesgos en entornos IT,
+  cloud, OT y contenedores. Utiliza VPR (Vulnerability Priority Rating) y EPSS para priorizar la remediación por riesgo real,
+  no solo por severidad CVSS.
+why_reference: Tenable es el estándar de referencia en escaneo de vulnerabilidades con más de 219,000 plugins y 40,000 clientes
+  empresariales. Su motor Nessus es el escáner más desplegado del mundo. Tenable One ha sido reconocido como plataforma líder
+  en Cyber Risk Management por analistas como Forrester y Gartner. Fundada en 2002, definió la categoría de gestión de vulnerabilidades
+  basada en riesgo.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II
@@ -29,13 +30,13 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 1
+market_rank: 2
 sources:
 - https://www.gartner.com/reviews/market/vulnerability-assessment
 - https://cipherssecurity.com/best-vulnerability-management-platform-2026/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/tenable-one.png
 ---
 
 Tenable One es la plataforma de gestión de exposición que unifica el escaneo de

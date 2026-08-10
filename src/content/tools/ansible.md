@@ -26,7 +26,7 @@ tags:
 - compliance
 slug: ansible
 sources: []
-last_verified: '2026-08-09'
+last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1
 logo: /logos/ansible.png

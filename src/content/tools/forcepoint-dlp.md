@@ -24,7 +24,7 @@ tags:
 - cloud
 - endpoint
 slug: forcepoint-dlp
-last_verified: '2026-08-09'
+last_verified: '2026-08-10'
 needs_review: false
 sources: []
 market_rank: 2

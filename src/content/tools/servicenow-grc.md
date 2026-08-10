@@ -23,10 +23,10 @@ tags:
 - monitorizacion
 - saas
 slug: servicenow-grc
-last_verified: '2026-08-09'
+last_verified: '2026-08-10'
 needs_review: false
 sources: []
-market_rank: 1
+market_rank: 3
 logo: /logos/servicenow-grc.png
 ---
 

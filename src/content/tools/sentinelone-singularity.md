@@ -29,7 +29,7 @@ tags:
 - incident-response
 slug: sentinelone-singularity
 sources: []
-last_verified: '2026-08-09'
+last_verified: '2026-08-10'
 needs_review: false
 market_rank: 2
 logo: /logos/sentinelone-singularity.png

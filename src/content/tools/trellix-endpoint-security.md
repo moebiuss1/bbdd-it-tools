@@ -10,10 +10,14 @@ tags:
 - cloud
 type: comercial
 cost_model: suscripción
-cost_details: 'Desde ~$35/endpoint/año. Nacida de la fusión FireEye + McAfee Enterprise.'
+cost_details: Desde ~$35/endpoint/año. Nacida de la fusión FireEye + McAfee Enterprise.
 website: https://www.trellix.com
-description: 'Plataforma XDR nacida de la fusión de FireEye y McAfee Enterprise que integra protección de endpoint, red, email y nube con inteligencia de amenazas unificada. Referencia en detección avanzada con más de 1,800 reseñas en plataformas de evaluación.'
-why_reference: 'Trellix representa la convergencia de dos potencias históricas en ciberseguridad: la inteligencia de amenazas de FireEye (reconocida por Mandiant) y el alcance enterprise de McAfee. Con presencia en más de 40,000 clientes, es una de las plataformas XDR más desplegadas a nivel global.'
+description: Plataforma XDR nacida de la fusión de FireEye y McAfee Enterprise que integra protección de endpoint, red, email
+  y nube con inteligencia de amenazas unificada. Referencia en detección avanzada con más de 1,800 reseñas en plataformas
+  de evaluación.
+why_reference: 'Trellix representa la convergencia de dos potencias históricas en ciberseguridad: la inteligencia de amenazas
+  de FireEye (reconocida por Mandiant) y el alcance enterprise de McAfee. Con presencia en más de 40,000 clientes, es una
+  de las plataformas XDR más desplegadas a nivel global.'
 certifications:
 - ISO 27001 SOC 2 Tipo II RGPD / GDPR
 company_size:
@@ -23,7 +27,7 @@ sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/trellix-endpoint-security.png
 ---
 
 Trellix Endpoint Security es una solución de referencia en la categoría edr utilizada por organizaciones

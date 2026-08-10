@@ -13,13 +13,13 @@ type: comercial
 cost_model: suscripción
 cost_details: Licencia anual basada en número de cuentas privilegiadas gestionadas. Desde ~$50,000/año para despliegues básicos.
 website: https://www.cyberark.com
-description: 'Plataforma líder de gestión de accesos privilegiados (PAM) que protege cuentas administrativas,
-  credenciales y secretos en entornos híbridos. Incluye vaulting de contraseñas, rotación automática,
-  grabación de sesiones y gestión de identidades de máquina con CyberArk Conjur.'
-why_reference: 'CyberArk es el líder indiscutido en el Magic Quadrant de Gartner para PAM, posición que mantiene
-  desde hace más de una década. Es el estándar de referencia en sectores regulados (banca, seguros, energía)
-  para el control de accesos privilegiados. Su adquisición de Venafi en 2025 refuerza su posición como plataforma
-  integral de seguridad de identidad que cubre tanto identidades humanas como de máquina.'
+description: Plataforma líder de gestión de accesos privilegiados (PAM) que protege cuentas administrativas, credenciales
+  y secretos en entornos híbridos. Incluye vaulting de contraseñas, rotación automática, grabación de sesiones y gestión de
+  identidades de máquina con CyberArk Conjur.
+why_reference: CyberArk es el líder indiscutido en el Magic Quadrant de Gartner para PAM, posición que mantiene desde hace
+  más de una década. Es el estándar de referencia en sectores regulados (banca, seguros, energía) para el control de accesos
+  privilegiados. Su adquisición de Venafi en 2025 refuerza su posición como plataforma integral de seguridad de identidad
+  que cubre tanto identidades humanas como de máquina.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II
@@ -28,13 +28,13 @@ certifications:
 - HIPAA
 company_size:
 - grande
-market_rank: 1
+market_rank: 2
 sources:
 - https://www.gartner.com/en/documents/privileged-access-management
 - https://www.decryptiondigest.com/blog/gartner-magic-quadrant-pam-2026-vendor-evaluation-guide
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/cyberark.png
 ---
 
 CyberArk es la plataforma de seguridad de identidad más completa del mercado para

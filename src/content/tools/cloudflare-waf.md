@@ -10,10 +10,14 @@ tags:
 - zero-trust
 type: comercial
 cost_model: suscripción
-cost_details: 'Desde ~$20/mes (plan Pro). Enterprise quote para WAF avanzado.'
+cost_details: Desde ~$20/mes (plan Pro). Enterprise quote para WAF avanzado.
 website: https://www.cloudflare.com
-description: 'Firewall de aplicaciones web (WAF) cloud-native con protección DDoS integrada, gestión de bots y reglas gestionadas que se actualizan automáticamente contra las últimas amenazas. Opera sobre la red global de Cloudflare con más de 300 data centers.'
-why_reference: 'Cloudflare protege aproximadamente el 20% del tráfico web mundial y su WAF se actualiza automáticamente con inteligencia de las amenazas observadas en su red global. Su modelo cloud-native sin appliances y su integración con Zero Trust la hacen la opción preferida de organizaciones cloud-first.'
+description: Firewall de aplicaciones web (WAF) cloud-native con protección DDoS integrada, gestión de bots y reglas gestionadas
+  que se actualizan automáticamente contra las últimas amenazas. Opera sobre la red global de Cloudflare con más de 300 data
+  centers.
+why_reference: Cloudflare protege aproximadamente el 20% del tráfico web mundial y su WAF se actualiza automáticamente con
+  inteligencia de las amenazas observadas en su red global. Su modelo cloud-native sin appliances y su integración con Zero
+  Trust la hacen la opción preferida de organizaciones cloud-first.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II
@@ -23,12 +27,12 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 4
+market_rank: 3
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/cloudflare-waf.png
 ---
 
 Cloudflare WAF es una solución de referencia en la categoría firewall utilizada por

@@ -10,15 +10,15 @@ tags:
 - automation
 type: comercial
 cost_model: suscripción
-cost_details: 'Desde ~$3.78-$10/dispositivo/mes. UEM multiplataforma más completo del mercado.'
+cost_details: Desde ~$3.78-$10/dispositivo/mes. UEM multiplataforma más completo del mercado.
 website: https://www.omnissa.com
-description: 'Plataforma UEM (Unified Endpoint Management) con la cobertura más amplia del mercado: iOS, Android,
-  Windows, macOS, Linux y ChromeOS. Ofrece automatización de cumplimiento en tiempo real, gestión de aplicaciones
-  y seguridad de endpoints con integración Zero Trust. Anteriormente VMware Workspace ONE.'
-why_reference: 'Omnissa Workspace ONE ha sido calificada con la puntuación más alta (4.6/5) en el MDM Buyer''s
-  Guide 2026. Su capacidad de gestionar cualquier sistema operativo con automatización enterprise-grade y su
-  motor de cumplimiento en tiempo real la convierten en la opción preferida de grandes empresas con flotas
-  heterogéneas. Es la plataforma UEM más completa del mercado.'
+description: 'Plataforma UEM (Unified Endpoint Management) con la cobertura más amplia del mercado: iOS, Android, Windows,
+  macOS, Linux y ChromeOS. Ofrece automatización de cumplimiento en tiempo real, gestión de aplicaciones y seguridad de endpoints
+  con integración Zero Trust. Anteriormente VMware Workspace ONE.'
+why_reference: Omnissa Workspace ONE ha sido calificada con la puntuación más alta (4.6/5) en el MDM Buyer's Guide 2026. Su
+  capacidad de gestionar cualquier sistema operativo con automatización enterprise-grade y su motor de cumplimiento en tiempo
+  real la convierten en la opción preferida de grandes empresas con flotas heterogéneas. Es la plataforma UEM más completa
+  del mercado.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II
@@ -30,7 +30,7 @@ sources:
 - https://mdmbuyer.com/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/omnissa-workspace-one.png
 ---
 
 Omnissa Workspace ONE (anteriormente VMware) es la plataforma UEM más completa del

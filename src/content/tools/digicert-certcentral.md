@@ -11,15 +11,16 @@ tags:
 - post-quantum
 type: comercial
 cost_model: suscripción
-cost_details: Basado en número y tipo de certificados. Certificados TLS/SSL desde ~$200/año. CertCentral Enterprise con automatización desde ~$10,000/año.
+cost_details: Basado en número y tipo de certificados. Certificados TLS/SSL desde ~$200/año. CertCentral Enterprise con automatización
+  desde ~$10,000/año.
 website: https://www.digicert.com
-description: 'Autoridad certificadora premium con plataforma de gestión del ciclo de vida de certificados
-  digitales. Ofrece emisión automatizada vía ACME, SCEP y API REST, con gestión centralizada de certificados
-  TLS/SSL, firma de código, certificados de dispositivo IoT y preparación post-cuántica.'
-why_reference: 'DigiCert es una de las CAs comerciales más grandes del mundo, con clientes en el 97% de las
-  empresas Fortune 500. Su plataforma CertCentral ha sido destacada en Gartner Peer Insights como solución
-  líder en Certificate Lifecycle Management (CLM). La adquisición de Symantec Website Security en 2017
-  consolidó su posición como referente global en PKI y confianza digital.'
+description: Autoridad certificadora premium con plataforma de gestión del ciclo de vida de certificados digitales. Ofrece
+  emisión automatizada vía ACME, SCEP y API REST, con gestión centralizada de certificados TLS/SSL, firma de código, certificados
+  de dispositivo IoT y preparación post-cuántica.
+why_reference: DigiCert es una de las CAs comerciales más grandes del mundo, con clientes en el 97% de las empresas Fortune
+  500. Su plataforma CertCentral ha sido destacada en Gartner Peer Insights como solución líder en Certificate Lifecycle Management
+  (CLM). La adquisición de Symantec Website Security en 2017 consolidó su posición como referente global en PKI y confianza
+  digital.
 certifications:
 - WebTrust
 - ISO 27001
@@ -34,7 +35,7 @@ sources:
 - https://www.digicert.com/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/digicert-certcentral.png
 ---
 
 DigiCert CertCentral es la plataforma empresarial de gestión de certificados

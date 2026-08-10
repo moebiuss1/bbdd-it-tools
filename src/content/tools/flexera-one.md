@@ -13,25 +13,25 @@ type: comercial
 cost_model: suscripción
 cost_details: Licencia anual basada en número de dispositivos gestionados. Desde ~$15,000/año.
 website: https://www.flexera.com
-description: 'Plataforma de gestión de activos IT, software (SAM) y costes cloud que unifica el inventario,
-  la optimización de licencias y la gestión de SaaS en una sola solución. Su base de datos Technopedia
-  contiene más de 4 millones de productos para normalización y reconocimiento automático.'
-why_reference: 'Flexera ha sido reconocida como Líder en el Forrester Wave de Software Asset Management (SAM)
-  en 2025, obteniendo la máxima puntuación en la mayoría de criterios. Su adquisición de Snow Software en
-  2024 consolidó su posición como la plataforma líder de ITAM/SAM a nivel global. Technopedia, su base de
-  conocimiento de productos software, es el estándar de referencia para la normalización de inventarios IT.'
+description: Plataforma de gestión de activos IT, software (SAM) y costes cloud que unifica el inventario, la optimización
+  de licencias y la gestión de SaaS en una sola solución. Su base de datos Technopedia contiene más de 4 millones de productos
+  para normalización y reconocimiento automático.
+why_reference: Flexera ha sido reconocida como Líder en el Forrester Wave de Software Asset Management (SAM) en 2025, obteniendo
+  la máxima puntuación en la mayoría de criterios. Su adquisición de Snow Software en 2024 consolidó su posición como la plataforma
+  líder de ITAM/SAM a nivel global. Technopedia, su base de conocimiento de productos software, es el estándar de referencia
+  para la normalización de inventarios IT.
 certifications:
 - ISO 27001
 company_size:
 - mediana
 - grande
-market_rank: 1
+market_rank: 3
 sources:
 - https://itassetmanagement.net/2025/03/07/the-forrester-wave-sam-solutions-report-q1-2025/
 - https://www.flexera.com/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/flexera-one.png
 ---
 
 Flexera One es la plataforma que unifica la gestión de activos IT, la optimización

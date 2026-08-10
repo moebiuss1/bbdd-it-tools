@@ -10,20 +10,24 @@ tags:
 - federal
 type: comercial
 cost_model: suscripción
-cost_details: 'Enterprise quote. Low-code AI hyperautomation platform.'
+cost_details: Enterprise quote. Low-code AI hyperautomation platform.
 website: https://swimlane.com
-description: 'Plataforma SOAR de hiperautomatización low-code con case management nativo y capacidades de IA generativa. Diseñada para entornos de alto volumen con necesidades flexibles de gestión de casos, destacando en sectores regulados como servicios financieros y gobierno federal.'
-why_reference: 'Swimlane Turbine ha sido reconocida como #1 en Gartner Peer Insights para plataformas de automatización de seguridad y es el primer AI SOC en lograr la autorización FedRAMP High. Su capacidad para manejar telemetría fuera del SIEM y su case management flexible la diferencian en el mercado.'
+description: Plataforma SOAR de hiperautomatización low-code con case management nativo y capacidades de IA generativa. Diseñada
+  para entornos de alto volumen con necesidades flexibles de gestión de casos, destacando en sectores regulados como servicios
+  financieros y gobierno federal.
+why_reference: 'Swimlane Turbine ha sido reconocida como #1 en Gartner Peer Insights para plataformas de automatización de
+  seguridad y es el primer AI SOC en lograr la autorización FedRAMP High. Su capacidad para manejar telemetría fuera del SIEM
+  y su case management flexible la diferencian en el mercado.'
 certifications:
 - FedRAMP ISO 42001 SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 4
+market_rank: 5
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/swimlane-turbine.png
 ---
 
 Swimlane Turbine es una solución de referencia en la categoría soar utilizada por organizaciones

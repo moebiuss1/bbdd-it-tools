@@ -22,9 +22,9 @@ tags:
 - zero-trust
 slug: venafi-control-plane
 sources: []
-last_verified: '2026-08-09'
+last_verified: '2026-08-10'
 needs_review: false
-market_rank: 1
+market_rank: 4
 logo: /logos/venafi-control-plane.png
 ---
 

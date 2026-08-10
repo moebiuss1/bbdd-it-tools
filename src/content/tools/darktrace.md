@@ -13,27 +13,26 @@ type: comercial
 cost_model: suscripción
 cost_details: Licencia anual basada en número de dispositivos monitorizados. Desde ~$30,000/año. Modelo SaaS.
 website: https://www.darktrace.com
-description: 'Sistema de detección de intrusiones basado en inteligencia artificial que aprende el patrón
-  normal de cada dispositivo y usuario para detectar anomalías sutiles en tiempo real. Su motor de
-  autoaprendizaje no requiere firmas ni reglas predefinidas, adaptándose continuamente a la organización.'
-why_reference: 'Darktrace revolucionó el mercado de detección de amenazas con su enfoque de "sistema inmune
-  digital" basado en IA no supervisada. Fundada en 2013 por matemáticos de Cambridge y ex-agentes de
-  inteligencia británicos, ha sido reconocida como líder en Network Detection and Response (NDR) por
-  Gartner. Su capacidad para detectar amenazas nunca antes vistas —incluyendo ataques zero-day, amenazas
-  internas y movimientos laterales sutiles— la diferencia de los IDS tradicionales basados en firmas.'
+description: Sistema de detección de intrusiones basado en inteligencia artificial que aprende el patrón normal de cada dispositivo
+  y usuario para detectar anomalías sutiles en tiempo real. Su motor de autoaprendizaje no requiere firmas ni reglas predefinidas,
+  adaptándose continuamente a la organización.
+why_reference: Darktrace revolucionó el mercado de detección de amenazas con su enfoque de "sistema inmune digital" basado
+  en IA no supervisada. Fundada en 2013 por matemáticos de Cambridge y ex-agentes de inteligencia británicos, ha sido reconocida
+  como líder en Network Detection and Response (NDR) por Gartner. Su capacidad para detectar amenazas nunca antes vistas —incluyendo
+  ataques zero-day, amenazas internas y movimientos laterales sutiles— la diferencia de los IDS tradicionales basados en firmas.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II
 company_size:
 - mediana
 - grande
-market_rank: 1
+market_rank: 2
 sources:
 - https://www.gartner.com/en/documents/network-detection-response
 - https://darktrace.com/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/darktrace.png
 ---
 
 Darktrace DETECT es el sistema de detección de amenazas que utiliza inteligencia

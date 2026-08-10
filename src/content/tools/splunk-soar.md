@@ -10,21 +10,25 @@ tags:
 - splunk-integration
 type: comercial
 cost_model: suscripción
-cost_details: 'Enterprise quote. Desde ~$30,000/año. Anteriormente Phantom.'
+cost_details: Enterprise quote. Desde ~$30,000/año. Anteriormente Phantom.
 website: https://www.splunk.com
-description: 'Plataforma SOAR (anteriormente Phantom) integrada nativamente con Splunk ES que automatiza la respuesta a incidentes con playbooks visuales y ejecución de código Python. Ofrece 350+ integraciones y 100+ playbooks predefinidos con case management integrado.'
-why_reference: 'Splunk SOAR es la elección natural para organizaciones que ya utilizan Splunk ES como SIEM, ofreciendo un flujo detect-to-respond sin fricción. Su comunidad de playbooks y su madurez en el mercado SOAR (adquirido por Splunk en 2018) la consolidan como una de las plataformas SOAR más desplegadas en el Fortune 500.'
+description: Plataforma SOAR (anteriormente Phantom) integrada nativamente con Splunk ES que automatiza la respuesta a incidentes
+  con playbooks visuales y ejecución de código Python. Ofrece 350+ integraciones y 100+ playbooks predefinidos con case management
+  integrado.
+why_reference: Splunk SOAR es la elección natural para organizaciones que ya utilizan Splunk ES como SIEM, ofreciendo un flujo
+  detect-to-respond sin fricción. Su comunidad de playbooks y su madurez en el mercado SOAR (adquirido por Splunk en 2018)
+  la consolidan como una de las plataformas SOAR más desplegadas en el Fortune 500.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 5
+market_rank: 2
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/splunk-soar.png
 ---
 
 Splunk SOAR es una solución de referencia en la categoría soar utilizada por

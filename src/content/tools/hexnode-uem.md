@@ -9,22 +9,25 @@ tags:
 - remote-management
 type: comercial
 cost_model: suscripción
-cost_details: 'Desde ~$1-$5.80/dispositivo/mes. Mejor relación calidad-precio del mercado.'
+cost_details: Desde ~$1-$5.80/dispositivo/mes. Mejor relación calidad-precio del mercado.
 website: https://www.hexnode.com
-description: 'Plataforma UEM con el soporte de sistemas operativos más amplio del mercado y un precio altamente competitivo. Destaca por sus capacidades de modo kiosco y gestión de dispositivos de propósito específico para retail, educación y logística.'
-why_reference: 'Hexnode ha sido puntuada con 3.7/5 en el MDM Buyer Guide 2026 y destaca por ofrecer la cobertura de SO más amplia al mejor precio. Sus capacidades de kiosco y su facilidad de uso la hacen especialmente atractiva para educación, retail y logística.'
+description: Plataforma UEM con el soporte de sistemas operativos más amplio del mercado y un precio altamente competitivo.
+  Destaca por sus capacidades de modo kiosco y gestión de dispositivos de propósito específico para retail, educación y logística.
+why_reference: Hexnode ha sido puntuada con 3.7/5 en el MDM Buyer Guide 2026 y destaca por ofrecer la cobertura de SO más
+  amplia al mejor precio. Sus capacidades de kiosco y su facilidad de uso la hacen especialmente atractiva para educación,
+  retail y logística.
 certifications:
 - ISO 27001 SOC 2 Tipo II
 company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 4
+market_rank: 5
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/hexnode-uem.png
 ---
 
 Hexnode UEM es una solución de referencia en la categoría mdm utilizada por organizaciones de todo el mundo para proteger, gestionar y auditar sus entornos IT.

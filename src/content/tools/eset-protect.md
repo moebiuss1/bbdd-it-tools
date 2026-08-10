@@ -12,13 +12,12 @@ type: comercial
 cost_model: suscripción
 cost_details: 'Licencia anual por endpoint. Desde ~$25/endpoint/año. Ediciones: Entry, Advanced, Complete.'
 website: https://www.eset.com/es/empresas/
-description: 'Solución antivirus empresarial con el agente más ligero del mercado y soporte multiplataforma real
-  (Windows, macOS, Linux, Android). Protección por capas que combina firma, heurística, machine learning y
-  análisis de comportamiento con mínimo impacto en el rendimiento.'
-why_reference: 'ESET es consistentemente reconocida en el Magic Quadrant de Gartner y obtiene regularmente las
-  puntuaciones más bajas de impacto en rendimiento en los tests independientes de AV-Comparatives. Su soporte
-  nativo para Linux y su consola de gestión con opción on-premise la convierten en la elección preferida de
-  equipos IT que gestionan flotas heterogéneas.'
+description: Solución antivirus empresarial con el agente más ligero del mercado y soporte multiplataforma real (Windows,
+  macOS, Linux, Android). Protección por capas que combina firma, heurística, machine learning y análisis de comportamiento
+  con mínimo impacto en el rendimiento.
+why_reference: ESET es consistentemente reconocida en el Magic Quadrant de Gartner y obtiene regularmente las puntuaciones
+  más bajas de impacto en rendimiento en los tests independientes de AV-Comparatives. Su soporte nativo para Linux y su consola
+  de gestión con opción on-premise la convierten en la elección preferida de equipos IT que gestionan flotas heterogéneas.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II
@@ -26,13 +25,13 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 3
+market_rank: 4
 sources:
 - https://av-comparatives.org/business-security-test-march-june-2026/
 - https://www.gartner.com/en/documents/endpoint-protection-platforms
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/eset-protect.png
 ---
 
 ESET PROTECT es la plataforma de seguridad endpoint para empresas que priorizan

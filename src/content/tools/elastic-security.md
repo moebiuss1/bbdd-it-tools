@@ -13,14 +13,13 @@ type: opensource
 cost_model: freemium
 cost_details: Open source (gratuito). Elastic Cloud desde $95/mes. Funcionalidades avanzadas de seguridad en licencia Platinum/Enterprise.
 website: https://www.elastic.co/security
-description: 'Plataforma SIEM + XDR construida sobre la pila ELK (Elasticsearch, Logstash, Kibana) que
-  unifica la ingesta de logs, detección de amenazas, hunting y respuesta en un solo stack. La versión
-  open source ofrece detección SIEM completa con reglas predefinidas de MITRE ATT&CK.'
-why_reference: 'Elastic Security es la evolución del stack ELK —el estándar de facto en análisis de logs y
-  observabilidad— hacia la seguridad. Su capacidad para ingestar cualquier tipo de dato, la velocidad de
-  búsqueda de Elasticsearch (respuestas en milisegundos sobre petabytes) y las más de 700 reglas de detección
-  predefinidas mapeadas a MITRE ATT&CK la convierten en una alternativa SIEM extremadamente popular,
-  especialmente en equipos con cultura DevOps.'
+description: Plataforma SIEM + XDR construida sobre la pila ELK (Elasticsearch, Logstash, Kibana) que unifica la ingesta de
+  logs, detección de amenazas, hunting y respuesta en un solo stack. La versión open source ofrece detección SIEM completa
+  con reglas predefinidas de MITRE ATT&CK.
+why_reference: Elastic Security es la evolución del stack ELK —el estándar de facto en análisis de logs y observabilidad—
+  hacia la seguridad. Su capacidad para ingestar cualquier tipo de dato, la velocidad de búsqueda de Elasticsearch (respuestas
+  en milisegundos sobre petabytes) y las más de 700 reglas de detección predefinidas mapeadas a MITRE ATT&CK la convierten
+  en una alternativa SIEM extremadamente popular, especialmente en equipos con cultura DevOps.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II
@@ -30,7 +29,7 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 5
+market_rank: 4
 repo: https://github.com/elastic/elasticsearch
 license: Elastic License 2.0
 sources:
@@ -38,7 +37,7 @@ sources:
 - https://www.elastic.co/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/elastic-security.png
 ---
 
 Elastic Security integra SIEM, detección de amenazas y respuesta en endpoints sobre

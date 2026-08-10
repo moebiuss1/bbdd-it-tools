@@ -10,10 +10,13 @@ tags:
 - compliance
 type: comercial
 cost_model: suscripción
-cost_details: 'Enterprise quote. Desde ~$75,000/año. AppStudio low-code para aplicaciones GRC.'
+cost_details: Enterprise quote. Desde ~$75,000/año. AppStudio low-code para aplicaciones GRC.
 website: https://www.metricstream.com
-description: 'Plataforma IRM/GRC empresarial con AppStudio low-code y modelo de datos unificado. Especialmente fuerte en riesgo operativo, gestión de terceros y ciber riesgo para banca, seguros y sector público.'
-why_reference: 'MetricStream ha obtenido la recomendación #1 en GRC empresarial según análisis de IA de parse.gl (31.6% de menciones). Su modelo de datos unificado y su capacidad de crear aplicaciones GRC low-code la posicionan como referencia innovadora.'
+description: Plataforma IRM/GRC empresarial con AppStudio low-code y modelo de datos unificado. Especialmente fuerte en riesgo
+  operativo, gestión de terceros y ciber riesgo para banca, seguros y sector público.
+why_reference: 'MetricStream ha obtenido la recomendación #1 en GRC empresarial según análisis de IA de parse.gl (31.6% de
+  menciones). Su modelo de datos unificado y su capacidad de crear aplicaciones GRC low-code la posicionan como referencia
+  innovadora.'
 certifications:
 - ISO 27001 SOC 2 Tipo II
 company_size:
@@ -23,7 +26,7 @@ sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/metricstream.png
 ---
 
 MetricStream es una solución de referencia en la categoría kpi-ca-managers utilizada por organizaciones de todo el mundo para proteger, gestionar y auditar sus entornos IT.

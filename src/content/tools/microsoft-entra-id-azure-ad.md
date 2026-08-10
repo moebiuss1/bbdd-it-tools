@@ -31,7 +31,7 @@ tags:
 - saas
 slug: microsoft-entra-id-azure-ad
 sources: []
-last_verified: '2026-08-09'
+last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1
 logo: /logos/microsoft-entra-id-azure-ad.png

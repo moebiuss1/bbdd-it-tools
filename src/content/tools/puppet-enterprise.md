@@ -13,13 +13,13 @@ type: comercial
 cost_model: suscripción
 cost_details: Licencia anual por nodo. Desde ~$120-200/nodo/año. Versión open source gratuita disponible.
 website: https://www.puppet.com
-description: 'Plataforma de gestión de configuración declarativa que permite definir, aplicar y auditar el
-  estado deseado de la infraestructura a escala. Puppet Enterprise añade orquestación, reporting de cumplimiento
-  y control de acceso basado en roles sobre el core open source.'
-why_reference: 'Puppet es uno de los "big four" de la gestión de configuración junto a Ansible, Chef y SaltStack.
-  Fundada en 2005, fue pionera en el enfoque declarativo de infraestructura como código. Su modelo de
-  "estado deseado" y su capacidad de generar informes de cumplimiento continuo la hacen especialmente valiosa
-  para entornos regulados que necesitan demostrar que las configuraciones de seguridad se mantienen en el tiempo.'
+description: Plataforma de gestión de configuración declarativa que permite definir, aplicar y auditar el estado deseado de
+  la infraestructura a escala. Puppet Enterprise añade orquestación, reporting de cumplimiento y control de acceso basado
+  en roles sobre el core open source.
+why_reference: Puppet es uno de los "big four" de la gestión de configuración junto a Ansible, Chef y SaltStack. Fundada en
+  2005, fue pionera en el enfoque declarativo de infraestructura como código. Su modelo de "estado deseado" y su capacidad
+  de generar informes de cumplimiento continuo la hacen especialmente valiosa para entornos regulados que necesitan demostrar
+  que las configuraciones de seguridad se mantienen en el tiempo.
 certifications:
 - SOC 2 Tipo II
 company_size:
@@ -31,7 +31,7 @@ sources:
 - https://www.automq.com/blog/ansible-alternatives-2025-terraform-chef-salt-puppet-cfengine
 last_verified: '2026-08-10'
 needs_review: false
-logo: null
+logo: /logos/puppet-enterprise.png
 ---
 
 Puppet Enterprise extiende las capacidades del core open source de Puppet con

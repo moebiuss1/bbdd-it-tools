@@ -28,7 +28,7 @@ tags:
 - compliance
 - automatizacion
 slug: aws-key-management-service-kms
-last_verified: '2026-08-09'
+last_verified: '2026-08-10'
 needs_review: false
 sources: []
 market_rank: 1
