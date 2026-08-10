@@ -32,6 +32,7 @@ last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1
 logo: /logos/microsoft-intune.png
+category: mdm
 ---
 
 Plataforma unificada de gestión de endpoints que combina MDM y MAM para dispositivos Windows, macOS, iOS, Android y Linux.

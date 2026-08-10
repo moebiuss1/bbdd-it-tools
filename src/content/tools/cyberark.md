@@ -29,7 +29,7 @@ certifications:
 - HIPAA
 company_size:
 - grande
-market_rank: 6
+market_rank: 13
 sources:
 - https://www.gartner.com/en/documents/privileged-access-management
 - https://www.decryptiondigest.com/blog/gartner-magic-quadrant-pam-2026-vendor-evaluation-guide

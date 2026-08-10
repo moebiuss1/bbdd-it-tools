@@ -25,8 +25,9 @@ slug: venafi-control-plane
 sources: []
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 7
+market_rank: 1
 logo: /logos/venafi-control-plane.png
+category: cert-managers
 ---
 
 Plataforma de gestión del ciclo de vida de certificados digitales y claves criptográficas para entornos empresariales. Automatiza emisión, renovación y revocación de certificados.

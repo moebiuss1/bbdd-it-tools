@@ -29,7 +29,7 @@ certifications:
 - ENS Alta
 company_size:
 - grande
-market_rank: 1
+market_rank: 6
 sources:
 - https://www.gartner.com/en/documents/siem-magic-quadrant
 - https://itsm.tools/best-siem-tools

@@ -24,7 +24,7 @@ certifications:
 - ISO 27001 SOC 2 Tipo II PCI DSS HIPAA
 company_size:
 - grande
-market_rank: 9
+market_rank: 113
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

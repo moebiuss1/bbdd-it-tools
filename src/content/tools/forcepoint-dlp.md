@@ -28,8 +28,9 @@ slug: forcepoint-dlp
 last_verified: '2026-08-10'
 needs_review: false
 sources: []
-market_rank: 3
+market_rank: 2
 logo: /logos/forcepoint-dlp.png
+category: dlp
 ---
 
 Solución DLP empresarial con análisis de comportamiento para prevenir fugas de datos en endpoints, red, email y aplicaciones cloud.

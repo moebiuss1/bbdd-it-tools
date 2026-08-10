@@ -26,8 +26,9 @@ slug: palo-alto-cortex-xsoar
 sources: []
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 4
+market_rank: 1
 logo: /logos/palo-alto-cortex-xsoar.png
+category: soar
 ---
 
 Plataforma SOAR líder que automatiza y orquesta la respuesta a incidentes de seguridad. Incluye un marketplace con más de 900 playbooks predefinidos.

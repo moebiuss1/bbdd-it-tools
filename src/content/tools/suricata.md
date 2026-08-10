@@ -28,8 +28,9 @@ slug: suricata
 last_verified: '2026-08-10'
 needs_review: false
 sources: []
-market_rank: 10
+market_rank: 2
 logo: /logos/suricata.png
+category: ips
 ---
 
 Motor IDS/IPS de red de alto rendimiento con inspección profunda de paquetes y análisis de protocolos. Soporta multi-threading nativo para redes de alta velocidad.

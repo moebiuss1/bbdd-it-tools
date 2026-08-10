@@ -32,8 +32,9 @@ slug: fortinet-fortigate
 sources: []
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 2
+market_rank: 1
 logo: /logos/fortinet-fortigate.png
+category: firewall
 ---
 
 Firewall de nueva generación con procesador de seguridad propietario (SPU) que ofrece inspección SSL/TLS completa y prevención de amenazas a alto rendimiento.

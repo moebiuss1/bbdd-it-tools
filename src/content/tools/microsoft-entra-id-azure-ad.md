@@ -36,6 +36,7 @@ last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1
 logo: /logos/microsoft-entra-id-azure-ad.png
+category: identity-managers
 ---
 
 Plataforma de identidad y acceso cloud-native. Proporciona SSO, MFA, acceso condicional, identity governance, y privileged identity management.

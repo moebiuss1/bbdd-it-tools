@@ -27,8 +27,9 @@ slug: servicenow-grc
 last_verified: '2026-08-10'
 needs_review: false
 sources: []
-market_rank: 5
+market_rank: 1
 logo: /logos/servicenow-grc.png
+category: kpi-ca-managers
 ---
 
 Plataforma GRC integrada para gestión de riesgos, cumplimiento, auditoría y políticas. Automatiza la monitorización de controles y KPI de cumplimiento continuo.

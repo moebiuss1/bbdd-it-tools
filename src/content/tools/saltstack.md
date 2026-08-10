@@ -23,7 +23,7 @@ certifications: []
 company_size:
 - mediana
 - grande
-market_rank: 8
+market_rank: 123
 repo: https://github.com/saltstack/salt
 license: Apache-2.0
 sources:

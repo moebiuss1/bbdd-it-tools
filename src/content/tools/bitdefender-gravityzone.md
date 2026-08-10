@@ -28,8 +28,9 @@ slug: bitdefender-gravityzone
 sources: []
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 4
+market_rank: 2
 logo: /logos/bitdefender-gravityzone.png
+category: antivirus
 ---
 
 Plataforma de seguridad de endpoints con prevención de amenazas multicapa, EDR, y análisis de riesgo. Reconocida por su motor antimalware de alta eficacia.

@@ -22,7 +22,7 @@ certifications: []
 company_size:
 - mediana
 - grande
-market_rank: 10
+market_rank: 132
 repo: https://www.la-samhna.de/samhain/
 license: GPL-2.0
 sources:

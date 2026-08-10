@@ -31,7 +31,7 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 2
+market_rank: 10
 sources:
 - https://www.gartner.com/reviews/market/vulnerability-assessment
 - https://cipherssecurity.com/best-vulnerability-management-platform-2026/

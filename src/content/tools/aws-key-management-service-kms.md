@@ -34,6 +34,7 @@ needs_review: false
 sources: []
 market_rank: 1
 logo: /logos/aws-key-management-service-kms.png
+category: key-managers
 ---
 
 Servicio gestionado de claves criptográficas integrado con el ecosistema AWS. Permite crear, rotar y auditar claves con integración nativa en S3, RDS, Lambda y más de 100 servicios AWS.

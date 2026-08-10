@@ -27,8 +27,9 @@ slug: servicenow-itam
 sources: []
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 3
+market_rank: 1
 logo: /logos/servicenow-itam.png
+category: it-asset-managers
 ---
 
 Gestión integral de activos IT en la plataforma ServiceNow. Cubre todo el ciclo de vida: adquisición, inventario, cumplimiento de licencias, y disposición.

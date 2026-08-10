@@ -25,7 +25,7 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 10
+market_rank: 89
 sources:
 - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'

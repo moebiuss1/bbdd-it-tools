@@ -28,8 +28,9 @@ slug: snort
 sources: []
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 3
+market_rank: 1
 logo: /logos/snort.png
+category: ids
 ---
 
 Sistema de detección y prevención de intrusiones de red (IDS/IPS) open source mantenido por Cisco Talos, el equipo de inteligencia de amenazas más grande del mundo.

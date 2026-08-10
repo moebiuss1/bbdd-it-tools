@@ -36,7 +36,7 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 1
+market_rank: 4
 sources:
 - https://www.gartner.com/en/documents/network-firewalls
 - https://itsm.tools/best-firewall-solutions

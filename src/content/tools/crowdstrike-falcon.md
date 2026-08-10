@@ -36,7 +36,7 @@ certifications:
 company_size:
 - grande
 - mediana
-market_rank: 1
+market_rank: 3
 sources:
 - https://www.gartner.com/en/documents/endpoint-protection-platforms
 - https://itsm.tools/best-edr-solutions

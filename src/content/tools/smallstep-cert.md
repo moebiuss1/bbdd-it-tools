@@ -21,7 +21,7 @@ certifications: []
 company_size:
 - pequeña
 - mediana
-market_rank: 10
+market_rank: 131
 repo: https://github.com/smallstep/certificates
 license: Apache-2.0
 sources:

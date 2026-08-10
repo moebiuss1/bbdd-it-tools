@@ -32,8 +32,9 @@ slug: microsoft-sentinel
 sources: []
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 2
+market_rank: 1
 logo: /logos/microsoft-sentinel.png
+category: siem
 ---
 
 SIEM cloud-native en Azure que combina SIEM y SOAR con inteligencia artificial a escala cloud. Analiza datos de toda la empresa sin necesidad de infraestructura propia.

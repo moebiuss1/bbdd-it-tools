@@ -32,8 +32,9 @@ slug: sentinelone-singularity
 sources: []
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 2
+market_rank: 1
 logo: /logos/sentinelone-singularity.png
+category: edr
 ---
 
 Plataforma de seguridad autónoma que utiliza IA para prevenir, detectar y responder a amenazas en endpoints, containers, y dispositivos IoT.

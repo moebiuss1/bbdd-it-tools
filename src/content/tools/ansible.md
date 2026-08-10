@@ -29,8 +29,9 @@ slug: ansible
 sources: []
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 3
+market_rank: 1
 logo: /logos/ansible.png
+category: config-managers
 ---
 
 Herramienta de automatización de código abierto para gestión de configuraciones, despliegues y orquestación. Define el estado deseado de la infraestructura como código (YAML).

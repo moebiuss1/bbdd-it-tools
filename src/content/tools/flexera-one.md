@@ -26,7 +26,7 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 7
+market_rank: 88
 sources:
 - https://itassetmanagement.net/2025/03/07/the-forrester-wave-sam-solutions-report-q1-2025/
 - https://www.flexera.com/
