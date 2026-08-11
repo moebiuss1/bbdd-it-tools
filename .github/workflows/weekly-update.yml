@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "7 6 * * 1"  # Cada lunes a las 06:07 UTC
   workflow_dispatch: {}    # Ejecución manual
+  push:                    # Publicar también los cambios de código, no solo los datos
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+      - "docs/**"
 
 # Permisos por job (mínimo privilegio): solo el job que hace commit necesita
 # escribir en el repositorio, y solo el de despliegue necesita tocar Pages.
@@ -14,7 +19,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # El pipeline de datos solo corre en la cita semanal (o a mano): un push de
+  # código no debe salir a rastrear fuentes externas ni generar commits.
   update-data:
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -62,11 +70,19 @@ jobs:
 
   build:
     needs: update-data
+    # `always()` permite construir cuando update-data se ha saltado (push de
+    # código); si el pipeline de datos falla, no se publica nada.
+    if: always() && needs.update-data.result != 'failure'
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
+      # Sin `ref`, el checkout tomaría el commit que disparó el workflow, que en
+      # la ejecución semanal es anterior al commit de datos del bot: se
+      # publicaban los datos de la semana pasada.
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-node@v4
         with:
@@ -86,6 +102,7 @@ jobs:
 
   deploy:
     needs: build
+    if: always() && needs.build.result == 'success'
     runs-on: ubuntu-latest
     permissions:
       pages: write
