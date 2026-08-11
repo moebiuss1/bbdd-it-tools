@@ -25,7 +25,7 @@ company_size:
 - grande
 market_rank: 1
 sources:
-- https://safeguard.sh/resources/blog/best-api-security-tools-2026
+  - https://safeguard.sh/resources/blog/best-api-security-tools-2026
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/salt-security-api.png

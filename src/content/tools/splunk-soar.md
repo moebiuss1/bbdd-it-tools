@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$30,000/año. Anteriormente Phantom.
 website: https://www.splunk.com
+cert_url: https://www.splunk.com/en_us/about-splunk/splunk-data-security-and-privacy/compliance-at-splunk.html
 description: Plataforma SOAR (anteriormente Phantom) integrada nativamente con Splunk ES que automatiza la respuesta a incidentes
   con playbooks visuales y ejecución de código Python. Ofrece 350+ integraciones y 100+ playbooks predefinidos con case management
   integrado.
@@ -27,7 +28,7 @@ company_size:
 - grande
 market_rank: 6
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/it-service-management-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/splunk-soar.png

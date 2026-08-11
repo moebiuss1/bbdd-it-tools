@@ -29,7 +29,8 @@ tags:
 slug: suricata
 last_verified: '2026-08-10'
 needs_review: false
-sources: []
+sources:
+  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 market_rank: 2
 logo: /logos/suricata.png
 category: ips

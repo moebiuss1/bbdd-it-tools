@@ -14,6 +14,7 @@ type: comercial
 cost_model: freemium
 cost_details: Free tier ($0/mes). Team desde ~$375/mes. Enterprise quote.
 website: https://42crunch.com
+cert_url: https://42crunch.com/why-trust-42crunch/
 description: Plataforma de seguridad API shift-left con 300+ chequeos automáticos sobre especificaciones OpenAPI. Audita contratos
   API en el IDE y CI/CD, asigna puntuación de seguridad y aplica un micro-firewall que bloquea peticiones fuera de contrato.
 why_reference: 42Crunch ha sido reconocida como Líder en el KuppingerCole Leadership Compass 2025. Es la única herramienta
@@ -27,7 +28,7 @@ company_size:
 - grande
 market_rank: 1
 sources:
-- https://safeguard.sh/resources/blog/best-api-security-tools-2026
+  - https://safeguard.sh/resources/blog/best-api-security-tools-2026
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/42crunch-api.png

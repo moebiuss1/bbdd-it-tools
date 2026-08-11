@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: 'Licencia anual por endpoint. Desde ~$28/endpoint/año. Ediciones: Advanced, Intercept X with XDR.'
 website: https://www.sophos.com/en-us/products/endpoint-antivirus
+cert_url: https://www.sophos.com/en-us/trust/business-certifications
 description: Plataforma de protección endpoint con defensa anti-ransomware líder del mercado. Su tecnología CryptoGuard detecta
   y revierte automáticamente el cifrado no autorizado en milisegundos, combinando NGAV, deep learning y prevención de exploits
   en un solo agente.
@@ -31,8 +32,8 @@ company_size:
 - grande
 market_rank: 6
 sources:
-- https://www.gartner.com/en/documents/endpoint-protection-platforms
-- https://av-comparatives.org/business-security-test-march-june-2026/
+  - https://www.gartner.com/en/documents/endpoint-protection-platforms
+  - https://av-comparatives.org/business-security-test-march-june-2026/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/sophos-intercept-x.png

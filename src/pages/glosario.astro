@@ -1,69 +1,199 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { getCategories, getFamilies, getToolCategories, toToolEntry } from "@lib/tools";
-const base = import.meta.env.BASE_URL;
-const categories = await getCategories();
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { getFamilies } from "@lib/tools";
+import { terms, familyDetails, type GlossaryTerm } from "@data/glossary";
+
 const families = await getFamilies();
-const tools = (await getCollection("tools")).map(toToolEntry);
-const countByCat = new Map<string, number>();
-for (const t of tools) {
-  for (const c of getToolCategories(t.data)) {
-    countByCat.set(c, (countByCat.get(c) ?? 0) + 1);
-  }
+
+const groupLabels: Record<string, string> = {
+  producto: "Categoría de producto",
+  normativa: "Norma o certificación",
+  concepto: "Concepto",
+};
+const groupBadge: Record<string, string> = {
+  producto: "badge-blue",
+  normativa: "badge-teal",
+  concepto: "badge-gray",
+};
+
+const collator = new Intl.Collator("es", { sensitivity: "base" });
+const sorted = [...terms].sort((a, b) => collator.compare(a.term, b.term));
+
+// Índice A–Z: primera letra del término; dígitos y símbolos caen en "#"
+function initial(t: GlossaryTerm) {
+  const c = t.term.normalize("NFD").replace(/[\u0300-\u036f]/g, "").charAt(0).toUpperCase();
+  return /[A-Z]/.test(c) ? c : "#";
 }
+const letters = [...new Set(sorted.map(initial))];
+const byName = new Map(terms.map(t => [t.id, t.term]));
+
+const counts = {
+  producto: terms.filter(t => t.group === "producto").length,
+  normativa: terms.filter(t => t.group === "normativa").length,
+  concepto: terms.filter(t => t.group === "concepto").length,
+};
 ---
 
-<BaseLayout title="Glosario">
-  <header class="sticky top-0 z-40 header">
-    <nav class="container header-inner">
-      <a href={base} class="brand">BBDD IT</a>
-      <div class="flex items-center gap-2">
-        <a href={`${base}herramientas`} class="nav-link">Directorio</a>
-        <a href={`${base}ranking`} class="nav-link">Rankings</a>
-        <a href={`${base}glosario`} class="nav-link">Glosario</a>
-        <a href={`${base}about`} class="nav-link">Acerca de</a>
-      </div>
-    </nav>
-  </header>
+<BaseLayout
+  title="Glosario"
+  description="Diccionario de términos, familias, normas y certificaciones de seguridad, cumplimiento y auditoría IT."
+>
+  <Header active="glosario" />
 
   <section class="py-10">
     <div class="container max-w-900">
       <h1 class="section-title" style="font-size:28px">Glosario</h1>
-      <p class="section-desc" style="max-width:600px">Diccionario de las {categories.length} categorías de producto organizadas en {families.length} familias.</p>
+      <p class="section-desc" style="max-width:640px">
+        Vocabulario del sector: {terms.length} términos definidos y {families.length} familias de producto.
+        Qué significa cada sigla, en qué se diferencia de la contigua y qué conviene mirar al evaluarla.
+        Para localizar herramientas concretas está el directorio.
+      </p>
 
-      <div class="space-y-12 mt-10">
-        {families.map(fam => {
-          const famCats = categories.filter(c => c.family === fam.id);
-          if (famCats.length === 0) return null;
-          return (
-            <section id={`fam-${fam.id}`}>
-              <h2 class="section-title mb-2" style="display:flex;align-items:center;gap:10px">
-                <span style="font-size:22px">{fam.icon}</span>
-                {fam.name}
-                <span style="color:#8e8e93;font-weight:400;font-size:16px">{famCats.length}</span>
-              </h2>
-              <p class="section-desc mb-6">{fam.description}</p>
-              <div class="grid gap-3 sm:grid-cols-2">
-                {famCats.map(cat => {
-                  const count = countByCat.get(cat.id) ?? 0;
-                  return (
-                  <a href={`${base}categorias/${cat.id}`} class="card" style="padding:16px 18px;text-decoration:none;display:block;color:#1d1d1f">
-                    <div class="flex items-center gap-2 mb-1">
-                      <span style="font-size:16px;flex-shrink:0">{cat.icon}</span>
-                      <h3 style="font-size:14px;font-weight:600;color:#1d1d1f;margin:0;flex:1">{cat.name}</h3>
-                      <span class="badge badge-gray badge-sm">{count}</span>
-                    </div>
-                    <p style="font-size:13px;color:#6e6e73;line-height:1.5;margin-top:4px">{cat.description}</p>
-                  </a>
-                )})}
-              </div>
-            </section>
-          );
-        })}
+      <!-- Buscador y filtro por tipo -->
+      <div class="glos-toolbar">
+        <div class="glos-search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="glos-q" placeholder="Buscar término, sigla o definición…" aria-label="Buscar en el glosario" />
+        </div>
+        <div class="glos-groups" role="group" aria-label="Filtrar por tipo de término">
+          <button class="glos-chip active" data-group="" aria-pressed="true">Todos <span>{terms.length}</span></button>
+          <button class="glos-chip" data-group="producto" aria-pressed="false">Producto <span>{counts.producto}</span></button>
+          <button class="glos-chip" data-group="normativa" aria-pressed="false">Normativa <span>{counts.normativa}</span></button>
+          <button class="glos-chip" data-group="concepto" aria-pressed="false">Conceptos <span>{counts.concepto}</span></button>
+        </div>
       </div>
+
+      <!-- Índice alfabético -->
+      <nav class="glos-az" aria-label="Índice alfabético">
+        {letters.map(l => <a href={`#letra-${l === "#" ? "num" : l}`} data-letter={l}>{l}</a>)}
+      </nav>
+
+      <p class="glos-count" id="glos-count" aria-live="polite">{terms.length} términos</p>
+
+      <!-- ── Familias ───────────────────────────────────────────── -->
+      <section class="mt-10" id="familias">
+        <h2 class="section-title mb-2">Familias</h2>
+        <p class="section-desc mb-6" style="max-width:640px">
+          Los {families.length} grandes bloques en que se agrupa el mercado. Cada uno responde a un tipo
+          de pregunta distinto en una auditoría.
+        </p>
+        <p class="glos-fam-note" id="glos-fam-note" aria-live="polite" hidden></p>
+        <div class="glos-fams">
+          {families.map((fam: any) => {
+            const d = familyDetails[fam.id];
+            return (
+              <article class="glos-fam" id={`fam-${fam.id}`}
+                       data-text={`${fam.name} ${d?.scope ?? fam.description} ${d?.audit ?? ""}`.toLowerCase()}>
+                <h3><span aria-hidden="true">{fam.icon}</span> {fam.name}</h3>
+                <p class="glos-fam-scope">{d?.scope ?? fam.description}</p>
+                {d?.audit && (
+                  <p class="glos-fam-audit"><strong>Qué se pregunta un auditor:</strong> {d.audit}</p>
+                )}
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <!-- ── Términos ───────────────────────────────────────────── -->
+      <section class="mt-12" id="terminos">
+        <h2 class="section-title mb-6">Términos</h2>
+
+        <div id="glos-list">
+          {letters.map(letter => (
+            <div class="glos-letter-block" data-letter-block={letter}>
+              <h3 class="glos-letter" id={`letra-${letter === "#" ? "num" : letter}`}>{letter}</h3>
+              {sorted.filter(t => initial(t) === letter).map(t => (
+                <article class="glos-term"
+                         id={`t-${t.id}`}
+                         data-group={t.group}
+                         data-text={`${t.term} ${t.expansion ?? ""} ${t.definition} ${t.evaluar ?? ""}`.toLowerCase()}>
+                  <div class="glos-term-head">
+                    <h4>{t.term}</h4>
+                    {t.expansion && <span class="glos-exp">{t.expansion}</span>}
+                    <span class={`badge badge-sm ${groupBadge[t.group]}`}>{groupLabels[t.group]}</span>
+                  </div>
+                  <p class="glos-def">{t.definition}</p>
+                  {t.evaluar && <p class="glos-eval"><strong>Qué evaluar:</strong> {t.evaluar}</p>}
+                  {t.related && t.related.length > 0 && (
+                    <p class="glos-rel">
+                      <span>Véase también:</span>
+                      {t.related.filter(r => byName.has(r)).map(r => (
+                        <a href={`#t-${r}`}>{byName.get(r)}</a>
+                      ))}
+                    </p>
+                  )}
+                </article>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        <p class="glos-empty" id="glos-empty" hidden>Ningún término coincide con la búsqueda.</p>
+      </section>
     </div>
   </section>
 
-  <footer class="footer"><div class="container footer-grid"><div><p class="footer-brand">BBDD IT Tools</p><p class="footer-desc">Directorio actualizado cada lunes</p></div><div class="footer-links"><a href={`${base}herramientas`} class="nav-link" style="font-size:12px">Directorio</a><a href={`${base}ranking`} class="nav-link" style="font-size:12px">Rankings</a><a href={`${base}glosario`} class="nav-link" style="font-size:12px">Glosario</a><a href={`${base}about`} class="nav-link" style="font-size:12px">Acerca de</a></div></div></footer>
+  <Footer />
 </BaseLayout>
+
+<style>
+  /* Barra de herramientas */
+  .glos-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:24px}
+  .glos-search{position:relative;flex:1;min-width:240px;max-width:420px;display:flex;align-items:center}
+  .glos-search svg{position:absolute;left:12px;pointer-events:none}
+  .glos-search input{width:100%;border-radius:9999px;border:1px solid #d2d2d7;background:#f5f5f7;padding:8px 14px 8px 32px;font-size:14px;color:#1d1d1f;outline:none;transition:border-color .15s,box-shadow .15s,background .15s}
+  .glos-search input::placeholder{color:#8e8e93}
+  .glos-search input:focus{border-color:#0071e3;background:#fff;box-shadow:0 0 0 3px rgba(0,113,227,.15)}
+  .glos-groups{display:flex;flex-wrap:wrap;gap:6px}
+  .glos-chip{padding:6px 12px;border-radius:9999px;font-size:12px;font-weight:500;border:1px solid #d2d2d7;color:#6e6e73;background:#fff;cursor:pointer;transition:all .15s}
+  .glos-chip span{color:#aeaeb2;margin-left:4px;font-variant-numeric:tabular-nums}
+  .glos-chip:hover{background:#f5f5f7}
+  .glos-chip.active{background:#1d1d1f;color:#fff;border-color:#1d1d1f}
+  .glos-chip.active span{color:rgba(255,255,255,.6)}
+
+  /* Índice A–Z */
+  .glos-az{display:flex;flex-wrap:wrap;gap:2px;margin-top:16px;padding-bottom:14px;border-bottom:1px solid #e8e8ed}
+  .glos-az a{display:flex;align-items:center;justify-content:center;min-width:26px;height:26px;border-radius:7px;font-size:12px;font-weight:600;color:#6e6e73;transition:all .15s}
+  .glos-az a:hover{background:#f5f5f7;color:#0071e3;text-decoration:none}
+  .glos-az a[hidden]{display:none}
+  .glos-count{margin-top:12px;font-size:13px;color:#8e8e93}
+
+  /* Familias */
+  .glos-fams{display:grid;gap:12px}
+  @media (min-width:768px){.glos-fams{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .glos-fam{border:1px solid #e8e8ed;border-radius:16px;padding:20px;background:#fff;transition:border-color .15s,box-shadow .15s,opacity .15s}
+  /* Durante una búsqueda las familias no se ocultan: las que coinciden suben y
+     se destacan, el resto se atenúa pero sigue consultable. */
+  .glos-fam.is-match{order:-1;border-color:#0071e3;box-shadow:0 0 0 3px rgba(0,113,227,.12)}
+  .glos-fam.is-dim{opacity:.5}
+  .glos-fam.is-dim:hover,.glos-fam.is-dim:focus-within{opacity:1}
+  .glos-fam-note{margin:-8px 0 14px;font-size:13px;color:#0071e3}
+  .glos-fam h3{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:#1d1d1f}
+  .glos-fam-scope{margin-top:8px;font-size:13px;color:#6e6e73;line-height:1.6}
+  .glos-fam-audit{margin-top:10px;padding-top:10px;border-top:1px solid #f0f0f3;font-size:12px;color:#8e8e93;line-height:1.6}
+  .glos-fam-audit strong{color:#6e6e73;font-weight:600}
+
+  /* Términos */
+  .glos-letter{position:sticky;top:48px;z-index:10;margin:32px 0 10px;padding:6px 0;font-size:13px;font-weight:700;letter-spacing:.06em;color:#0071e3;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e8e8ed}
+  .glos-term{padding:16px 0;border-bottom:1px solid #f0f0f3;scroll-margin-top:96px}
+  .glos-term:target{background:#f8fbff;border-radius:12px;padding-left:14px;padding-right:14px}
+  .glos-term-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
+  .glos-term-head h4{font-size:15px;font-weight:600;color:#1d1d1f}
+  .glos-exp{font-size:12px;color:#8e8e93}
+  .glos-def{margin-top:6px;font-size:14px;color:#3a3a3c;line-height:1.65;max-width:70ch}
+  .glos-eval{margin-top:8px;font-size:13px;color:#6e6e73;line-height:1.6;max-width:70ch;padding-left:10px;border-left:2px solid #e8e8ed}
+  .glos-eval strong{color:#1d1d1f;font-weight:600}
+  .glos-rel{margin-top:8px;display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px}
+  .glos-rel span{color:#8e8e93}
+  .glos-rel a{color:#0071e3;padding:2px 8px;border-radius:9999px;background:#f5f5f7}
+  .glos-rel a:hover{background:#e8f2fd;text-decoration:none}
+
+  .glos-empty{margin-top:40px;text-align:center;font-size:15px;color:#8e8e93}
+</style>
+
+<script>
+  import "../scripts/glosario";
+</script>

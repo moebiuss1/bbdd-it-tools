@@ -7,6 +7,7 @@ type: opensource
 cost_model: gratis
 cost_details: Gratuito (GPLv2). Reglas de Cisco Talos disponibles por suscripción (~$30/año uso personal).
 website: https://www.snort.org
+cert_url: https://www.cisco.com/c/en/us/solutions/industries/government/global-government-certifications.html
 description: Sistema de detección y prevención de intrusiones de red (IDS/IPS) open source mantenido por Cisco Talos, el equipo
   de inteligencia de amenazas más grande del mundo.
 why_reference: Snort es el IDS/IPS más longevo y ampliamente desplegado. Su motor de reglas es el estándar de facto en detección
@@ -26,7 +27,8 @@ tags:
 - on-premise
 - linux
 slug: snort
-sources: []
+sources:
+  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 5

@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$15,000/año.
 website: https://www.primekey.com
+cert_url: https://www.keyfactor.com/security-compliance/
 description: Plataforma PKI empresarial basada en EJBCA con gestión de certificados para identidades humanas, dispositivos,
   servidores y firma de código. Certificación Common Criteria EAL4+ para entornos gubernamentales y defensa.
 why_reference: PrimeKey (parte de Keyfactor) es el proveedor de referencia para PKI empresarial con certificación Common Criteria.
@@ -25,7 +26,7 @@ company_size:
 - grande
 market_rank: 4
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/primekey-ejbca-cert.png

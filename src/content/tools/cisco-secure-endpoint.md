@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$28/endpoint/año. Anteriormente AMP for Endpoints.
 website: https://www.cisco.com
+cert_url: https://www.cisco.com/c/en/us/solutions/industries/government/global-government-certifications.html
 description: Plataforma EDR integrada en el ecosistema Cisco Secure con análisis de comportamiento, detección de amenazas
   basada en Talos y respuesta automatizada. Ofrece visibilidad unificada de endpoints con integración nativa en Cisco XDR
   y Secure Network Analytics.
@@ -29,7 +30,7 @@ company_size:
 - grande
 market_rank: 10
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/cisco-secure-endpoint.png

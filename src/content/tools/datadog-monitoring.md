@@ -32,7 +32,7 @@ company_size:
 market_rank: 1
 cert_url: https://trust.datadoghq.com
 sources:
-- https://www.gartner.com/reviews/market/application-performance-monitoring
+  - https://www.gartner.com/reviews/market/application-performance-monitoring
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/datadog-monitoring.png

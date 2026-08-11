@@ -35,10 +35,10 @@ certifications:
 company_size:
 - grande
 market_rank: 1
-cert_url: https://www.splunk.com/en_us/about-us/compliance.html
+cert_url: https://www.splunk.com/en_us/about-splunk/splunk-data-security-and-privacy/compliance-at-splunk.html
 sources:
-- https://www.gartner.com/en/documents/siem-magic-quadrant
-- https://itsm.tools/best-siem-tools
+  - https://www.gartner.com/en/documents/siem-magic-quadrant
+  - https://itsm.tools/best-siem-tools
 last_verified: '2026-08-07'
 needs_review: false
 logo: /logos/splunk-enterprise-security.png

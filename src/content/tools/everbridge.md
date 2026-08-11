@@ -26,8 +26,8 @@ company_size:
 - mediana
 - grande
 sources:
-- https://www.everbridge.com/security-program-framework/
-- https://ir.everbridge.com/news-releases/news-release-details/everbridge-achieves-iso-27001-certification/
+  - https://www.everbridge.com/security-program-framework/
+  - https://ir.everbridge.com/news-releases/news-release-details/everbridge-achieves-iso-27001-certification/
 cert_url: https://www.everbridge.com/security-program-framework/
 last_verified: '2026-08-10'
 needs_review: false

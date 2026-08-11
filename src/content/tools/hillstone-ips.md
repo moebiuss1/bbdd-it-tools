@@ -23,10 +23,22 @@ company_size:
 - grande
 market_rank: 13
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/hillstone-ips.png
 ---
+Hillstone NIPS es un sistema de prevención de intrusiones que se instala en línea con el tráfico e inspecciona el
+contenido de los paquetes para bloquear exploits conocidos, escaneos y tráfico de mando y control.
 
-Hillstone NIPS proporciona capacidades avanzadas en la categoría ips para organizaciones que necesitan proteger sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+En el perímetro y entre segmentos internos, delante de los activos que se quieren proteger. A diferencia de un IDS,
+descarta el paquete en el momento, con la contrapartida de que un falso positivo corta servicio legítimo.
+
+## A tener en cuenta
+
+La eficacia depende de la actualización continua de firmas, que va ligada a la suscripción vigente: un IPS sin
+mantenimiento envejece muy rápido. Su despliegue en modo bloqueo debe ser gradual —primero detección, luego
+prevención— y requiere una ruta de emergencia para el caso de avería del propio equipo. Es un fabricante con
+presencia sobre todo en Asia; conviene verificar el soporte local antes de adoptarlo.

@@ -70,7 +70,7 @@ const rankings: Record<string, RankingEntry[]> = {
     { slug: "venafi-control-plane", rank: 6, score: 50, tier: "Retador" },
     { slug: "sectigo-certificate-manager", rank: 7, score: 50, tier: "Retador" },
     { slug: "nexus-certificate-manager", rank: 8, score: 50, tier: "Retador" },
-    { slug: "venafi-cloud", rank: 9, score: 45, tier: "Nicho" },
+    { slug: "hashicorp-vault-pki", rank: 9, score: 45, tier: "Nicho" },
     { slug: "smallstep-cert", rank: 10, score: 45, tier: "Nicho" },
   ],
   "certificate-lifecycle": [
@@ -292,8 +292,8 @@ const rankings: Record<string, RankingEntry[]> = {
   "kpi-ca-managers": [
     { slug: "qualys-vmdr", rank: 1, score: 55, tier: "Retador" },
     { slug: "tenable-one", rank: 2, score: 52, tier: "Retador" },
-    { slug: "splunk-enterprise-security-grc", rank: 3, score: 48, tier: "Nicho" },
-    { slug: "servicenow-grc", rank: 4, score: 48, tier: "Nicho" },
+    { slug: "servicenow-grc", rank: 3, score: 48, tier: "Nicho" },
+    { slug: "splunk-itsi", rank: 4, score: 48, tier: "Nicho" },
     { slug: "acl-grc", rank: 5, score: 45, tier: "Nicho" },
     { slug: "skybox-security", rank: 6, score: 45, tier: "Nicho" },
     { slug: "sai-global-grc", rank: 7, score: 45, tier: "Nicho" },

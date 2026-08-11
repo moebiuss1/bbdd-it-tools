@@ -15,6 +15,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$30,000/año. Plataforma de gestión de claves con HSM.
 website: https://cpl.thalesgroup.com
+cert_url: https://cpl.thalesgroup.com/compliance/product-certifications
 description: Plataforma empresarial de gestión de claves criptográficas y protección de datos que unifica la gestión de claves,
   secretos y cifrado en entornos multi-cloud, on-premise e híbridos. Integración nativa con AWS, Azure, GCP y HSM Luna de
   Thales.
@@ -29,7 +30,7 @@ company_size:
 - grande
 market_rank: 6
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/thales-ciphertrust.png

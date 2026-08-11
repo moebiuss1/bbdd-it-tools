@@ -16,6 +16,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$4/usuario/mes.
 website: https://www.druva.com
+cert_url: https://security.druva.com/
 description: Plataforma de backup 100% SaaS con protección de endpoints, Microsoft 365, Google Workspace, Salesforce y cargas
   cloud. Arquitectura serverless sin infraestructura que gestionar.
 why_reference: Druva es pionera en backup como servicio 100% cloud-native. Su arquitectura serverless elimina la necesidad
@@ -29,7 +30,7 @@ company_size:
 - grande
 market_rank: 1
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/backup-as-a-service
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/druva-backup.png

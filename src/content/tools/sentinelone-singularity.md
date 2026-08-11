@@ -7,6 +7,7 @@ type: comercial
 cost_model: suscripción
 cost_details: 'Desde ~$45/endpoint/año. Ediciones: Core, Control, Complete.'
 website: https://www.sentinelone.com
+cert_url: https://www.sentinelone.com/security-compliance/
 description: Plataforma de seguridad autónoma que utiliza IA para prevenir, detectar y responder a amenazas en endpoints,
   containers, y dispositivos IoT.
 why_reference: Líder en Gartner MQ. Primer EDR con motor de IA que opera de forma autónoma (sin necesidad de conexión cloud
@@ -30,7 +31,8 @@ tags:
 - container
 - incident-response
 slug: sentinelone-singularity
-sources: []
+sources:
+  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

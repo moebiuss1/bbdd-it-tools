@@ -27,8 +27,8 @@ company_size:
 - mediana
 - grande
 sources:
-- https://securityscorecard.com/solutions/compliance/iso-27001/
-- https://securityscorecard.com/compliance/
+  - https://securityscorecard.com/solutions/compliance/iso-27001/
+  - https://securityscorecard.com/compliance/
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

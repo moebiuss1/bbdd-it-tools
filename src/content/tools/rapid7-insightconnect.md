@@ -26,7 +26,7 @@ company_size:
 - mediana
 market_rank: 5
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/it-service-management-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/rapid7-insightconnect.png

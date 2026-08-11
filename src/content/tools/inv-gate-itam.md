@@ -24,10 +24,22 @@ company_size:
 - mediana
 market_rank: 2
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/software-asset-management-tools
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/inv-gate-itam.png
 ---
+InvGate Assets descubre lo que hay conectado a la red, con agente o sin él, y mantiene el inventario de hardware y
+software junto con el control de licencias y una CMDB de relaciones entre elementos.
 
-InvGate Assets proporciona capacidades avanzadas en la categoría it-asset-managers para organizaciones que necesitan proteger sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+En la operación IT, como base de casi todo lo demás: no se puede parchear, cifrar ni retirar un activo que no figura
+en ninguna lista. Se integra con la gestión de incidencias del mismo fabricante, de modo que el ticket llega con el
+contexto del equipo afectado.
+
+## A tener en cuenta
+
+El descubrimiento sin agente ve menos de lo que ve el agente, especialmente en portátiles que rara vez tocan la red
+corporativa; conviene combinar ambos. Para el cumplimiento de licencias, el dato útil no es cuántas copias hay
+instaladas sino cuántas se usan, así que hay que revisar que la medición de uso esté activada.

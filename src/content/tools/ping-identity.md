@@ -15,6 +15,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$6/usuario/mes. Plataforma IAM con federación avanzada.
 website: https://www.pingidentity.com
+cert_url: https://www.pingidentity.com/en/legal/trust-center.html
 description: Plataforma IAM para identidades workforce y customer (CIAM) con capacidades de federación profunda (PingFederate),
   autenticación adaptativa y seguridad API. Referencia en entornos híbridos y multi-cloud con orquestación de identidad enterprise-grade.
 why_reference: Ping Identity ha sido reconocida como Líder en el Magic Quadrant de Gartner para Access Management. Su motor
@@ -28,7 +29,7 @@ company_size:
 - grande
 market_rank: 5
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/access-management
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/ping-identity.png

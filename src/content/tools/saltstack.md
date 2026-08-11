@@ -27,7 +27,7 @@ market_rank: 6
 repo: https://github.com/saltstack/salt
 license: Apache-2.0
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/saltstack.png

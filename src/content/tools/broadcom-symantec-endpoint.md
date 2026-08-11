@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Parte del portfolio Broadcom.
 website: https://www.broadcom.com
+cert_url: https://www.broadcom.com/support/trust-center/compliance
 description: Plataforma de seguridad endpoint empresarial con NGAV, EDR, control de aplicaciones y prevención de exploits.
   Heredera de la tecnología de Symantec, una de las marcas más veteranas en ciberseguridad.
 why_reference: Broadcom (Symantec) aparece como Niche Player en el Magic Quadrant de Gartner para EPP 2026. Su integración
@@ -26,7 +27,7 @@ company_size:
 - grande
 market_rank: 4
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/broadcom-symantec-endpoint.png

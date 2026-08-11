@@ -25,12 +25,12 @@ company_size:
 - mediana
 - grande
 repo: https://github.com/BerriAI/litellm
-license: MIT
+license: MIT (el directorio enterprise/ tiene licencia propia)
 sources:
-- https://github.com/BerriAI/litellm
-- https://www.litellm.ai
+  - https://github.com/BerriAI/litellm
+  - https://www.litellm.ai
 last_verified: '2026-08-10'
-needs_review: true
+needs_review: false
 market_rank: 1
 ---
 

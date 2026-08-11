@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Parte de Palo Alto Networks Cortex.
 website: https://www.paloaltonetworks.com/cortex
+cert_url: https://www.paloaltonetworks.com/legal-notices/trust-center/certifications
 description: Plataforma XDR que correlaciona datos de endpoint, red, cloud e identidad para detección y respuesta. El motor
   de analítica de Cortex aplica machine learning sobre telemetría cruzada para identificar ataques multi-vector.
 why_reference: Palo Alto Networks ha sido reconocido como Líder en el Magic Quadrant de Gartner para EPP 2026. Cortex XDR
@@ -27,7 +28,7 @@ company_size:
 - grande
 market_rank: 9
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/cortex-xdr.png

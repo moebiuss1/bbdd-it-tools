@@ -9,6 +9,7 @@ type: comercial
 cost_model: presupuesto-personalizado
 cost_details: 'Licencia anual. Precio según módulos: Policy, Risk, Audit, Vendor Risk.'
 website: https://www.servicenow.com/products/governance-risk-and-compliance.html
+cert_url: https://trust.servicenow.com/certifications
 description: Plataforma GRC integrada para gestión de riesgos, cumplimiento, auditoría y políticas. Automatiza la monitorización
   de controles y KPI de cumplimiento continuo.
 why_reference: Líder en Gartner MQ para IT Risk Management. Conecta GRC con ITSM, ITAM y SecOps proporcionando una visión

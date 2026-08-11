@@ -26,7 +26,8 @@ tags:
 - microsoft
 - monitorizacion
 slug: microsoft-purview-dlp
-sources: []
+sources:
+  - https://www.gartner.com/reviews/market/data-loss-prevention
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

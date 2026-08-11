@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$5/endpoint/mes. EDR gestionado para SMB.
 website: https://www.huntress.com
+cert_url: https://trust.huntress.com
 description: Plataforma EDR gestionada diseñada específicamente para pequeñas y medianas empresas. Combina detección de amenazas
   con un equipo 24/7 de analistas que investigan y responden a incidentes sin necesidad de personal interno de seguridad.
 why_reference: Huntress ha revolucionado el mercado EDR para SMB con un modelo de servicio gestionado asequible. Su enfoque
@@ -25,7 +26,7 @@ company_size:
 - mediana
 market_rank: 18
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/endpoint-detection-and-response-solutions
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/huntress-edr.png

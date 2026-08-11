@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 import { getCategories, getRankings, getToolCategories, computeToolScore, toToolEntry } from "@lib/tools";
 const base = import.meta.env.BASE_URL;
 const tools = (await getCollection("tools")).map(toToolEntry);
@@ -25,7 +27,7 @@ const chartColors = ['#0071e3','#5856d6','#af52de','#ff2d55','#ff9500','#ffcc02'
 ---
 
 <BaseLayout title="Rankings">
-  <header class="sticky top-0 z-40 header"><nav class="container header-inner"><a href={base} class="brand">BBDD IT</a><div class="flex items-center gap-2"><a href={`${base}herramientas`} class="nav-link">Directorio</a><a href={`${base}ranking`} class="nav-link">Rankings</a><a href={`${base}glosario`} class="nav-link">Glosario</a><a href={`${base}about`} class="nav-link">Acerca de</a></div></nav></header>
+  <Header active="ranking" />
 
   <section class="py-10">
     <div class="container max-w-900">
@@ -93,7 +95,7 @@ const chartColors = ['#0071e3','#5856d6','#af52de','#ff2d55','#ff9500','#ffcc02'
           const catTools = tools.filter(t => getToolCategories(t.data).includes(cat.id));
           if (catTools.length === 0) return null;
           // Compute scores and sort by score
-          const scored = catTools.map(t => ({ tool: t, score: computeToolScore(t.data) }))
+          const scored = catTools.map(t => ({ tool: t, score: computeToolScore(t.data, t.body) }))
             .sort((a,b) => b.score - a.score)
             .map((item, i) => ({ ...item, rank: i + 1 }));
           return <section id={`cat-${cat.id}`}><h2 class="section-title mb-4">{cat.name} <span style="color:#8e8e93;font-weight:400">{scored.length}</span></h2>
@@ -111,7 +113,7 @@ const chartColors = ['#0071e3','#5856d6','#af52de','#ff2d55','#ff9500','#ffcc02'
     </div>
   </section>
 
-  <footer class="footer"><div class="container footer-grid"><div><p class="footer-brand">BBDD IT Tools</p><p class="footer-desc">Directorio actualizado cada lunes</p></div><div class="footer-links"><a href={`${base}herramientas`} class="nav-link" style="font-size:12px">Directorio</a><a href={`${base}ranking`} class="nav-link" style="font-size:12px">Rankings</a><a href={`${base}glosario`} class="nav-link" style="font-size:12px">Glosario</a><a href={`${base}about`} class="nav-link" style="font-size:12px">Acerca de</a></div></div></footer>
+  <Footer />
 </BaseLayout>
 
 <style>

@@ -24,10 +24,22 @@ company_size:
 - grande
 market_rank: 6
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/skybox-security.png
 ---
+Skybox construye un modelo de la red a partir de la configuración de firewalls, routers y reglas de acceso, y sobre
+ese mapa simula qué rutas de ataque existen realmente hacia cada activo.
 
-Skybox Security proporciona capacidades avanzadas en la categoría kpi-ca-managers para organizaciones que necesitan gestionar sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+Entre la red y el gobierno del riesgo. Su aportación diferencial es el contexto de exposición: una vulnerabilidad
+crítica en un servidor inalcanzable desde fuera importa menos que una media en un sistema expuesto, y eso solo se ve
+cruzando topología, reglas y vulnerabilidades.
+
+## A tener en cuenta
+
+El modelo vale lo que valga su alimentación: requiere acceso de lectura a la configuración de la electrónica de red y
+mantenimiento continuo cuando la topología cambia. Es una herramienta para organizaciones con redes grandes y
+complejas; en entornos pequeños, el esfuerzo de modelado supera al beneficio.

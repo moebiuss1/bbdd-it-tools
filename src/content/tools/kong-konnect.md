@@ -28,8 +28,8 @@ company_size:
 - mediana
 - grande
 sources:
-- https://konghq.com/compliance
-- https://konghq.com/products/kong-konnect
+  - https://konghq.com/compliance
+  - https://konghq.com/products/kong-konnect
 cert_url: https://konghq.com/compliance
 last_verified: '2026-08-10'
 needs_review: false

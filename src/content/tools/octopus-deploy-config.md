@@ -25,10 +25,21 @@ company_size:
 - grande
 market_rank: 4
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/octopus-deploy-config.png
 ---
+Octopus Deploy se ocupa de la parte que muchos pipelines resuelven a medias: el despliegue en sí. Toma el artefacto ya
+construido y lo lleva a cada entorno con sus variables, sus aprobaciones y su procedimiento de reversión.
 
-Octopus Deploy proporciona capacidades avanzadas en la categoría config-managers para organizaciones que necesitan gestionar sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+Entre la integración continua y la infraestructura. Es habitual verlo detrás de Jenkins, GitHub Actions o Azure
+DevOps, encargándose de los entornos y las promociones mientras el otro sistema construye y prueba.
+
+## A tener en cuenta
+
+Concentra las credenciales de despliegue de todos los entornos, incluida producción: su control de acceso y su
+registro de auditoría son parte del perímetro crítico. Para una auditoría, su valor es que deja constancia de quién
+aprobó cada promoción y con qué versión exacta, algo difícil de reconstruir cuando el despliegue se hace a mano.

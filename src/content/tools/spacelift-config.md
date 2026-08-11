@@ -25,10 +25,22 @@ company_size:
 - grande
 market_rank: 3
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/spacelift-config.png
 ---
+Spacelift orquesta infraestructura como código gestionada: ejecuta Terraform, OpenTofu, Pulumi, CloudFormation o
+manifiestos de Kubernetes con control de estado, aprobaciones y políticas escritas en Open Policy Agent.
 
-Spacelift proporciona capacidades avanzadas en la categoría config-managers para organizaciones que necesitan gestionar sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+Entre el repositorio y la infraestructura. Su aportación frente a lanzar Terraform desde un pipeline genérico está en
+el control: qué cambios requieren aprobación humana, qué recursos no pueden crearse nunca y quién puede ejecutar
+sobre qué entorno.
+
+## A tener en cuenta
+
+Como cualquier orquestador de IaC gestionado, necesita credenciales con permisos amplios sobre la cuenta cloud y
+custodia el estado de Terraform, que contiene datos sensibles. Antes de adoptarlo hay que revisar dónde se almacena
+ese estado, cómo se cifra y qué opciones de ejecución en la propia infraestructura del cliente existen.

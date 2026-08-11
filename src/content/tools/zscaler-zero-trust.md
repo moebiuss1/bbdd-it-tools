@@ -33,7 +33,7 @@ company_size:
 market_rank: 1
 cert_url: https://trust.zscaler.com
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/network-firewalls
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/zscaler-zero-trust.png

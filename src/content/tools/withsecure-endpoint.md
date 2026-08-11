@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$20/endpoint/año. Plataforma cloud-native.
 website: https://www.withsecure.com
+cert_url: https://www.withsecure.com/en/about-us/achievements-certification/
 description: Plataforma de protección endpoint cloud-native con NGAV, EDR y gestión de vulnerabilidades. Con 16 años consecutivos
   en el Magic Quadrant de Gartner, es uno de los pocos fabricantes europeos con presencia consistente en el cuadrante.
 why_reference: WithSecure (anteriormente F-Secure Business) ha sido reconocida en el Magic Quadrant de Gartner para EPP durante
@@ -26,7 +27,7 @@ company_size:
 - grande
 market_rank: 13
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/withsecure-endpoint.png

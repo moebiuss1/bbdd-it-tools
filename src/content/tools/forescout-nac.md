@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$20,000/año.
 website: https://www.forescout.com
+cert_url: https://trust.forescout.com/
 description: Plataforma NAC agentless con visibilidad continua de todos los dispositivos conectados (IT, OT, IoT, IoMT) y
   control de acceso basado en cumplimiento. Descubre y clasifica automáticamente cualquier dispositivo sin instalar agentes.
 why_reference: Forescout ha sido reconocida como Líder en el Magic Quadrant de Gartner para NAC. Su capacidad agentless de
@@ -25,7 +26,7 @@ company_size:
 - grande
 market_rank: 3
 sources:
-- https://www.gartner.com/reviews/market/network-access-control
+  - https://www.gartner.com/reviews/market/network-access-control
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/forescout-nac.png

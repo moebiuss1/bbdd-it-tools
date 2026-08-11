@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$40,000/año.
 website: https://www.exabeam.com
+cert_url: https://www.exabeam.com/company/certifications/
 description: Plataforma SIEM cloud-native con analítica de comportamiento de usuarios y entidades (UEBA) líder del mercado,
   investigación asistida por IA y gestión de casos automatizada. Destaca por su capacidad de detección de amenazas internas.
 why_reference: Exabeam ha sido reconocida como Líder en el Magic Quadrant de Gartner para SIEM durante seis años consecutivos.
@@ -24,7 +25,7 @@ company_size:
 - grande
 market_rank: 10
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/security-information-event-management
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/exabeam-fusion.png

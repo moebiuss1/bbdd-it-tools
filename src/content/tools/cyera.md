@@ -13,6 +13,7 @@ type: comercial
 cost_model: presupuesto-personalizado
 cost_details: Licencia según volumen de datos e identidades (humanas y de IA) monitorizadas. Precio a consulta.
 website: https://www.cyera.com
+cert_url: https://security.cyera.io/
 description: Plataforma de seguridad de datos nativa de IA (DSPM) que descubre, clasifica y protege datos sensibles en entornos
   cloud, SaaS y de IA. Incluye módulos de prevención de fuga de datos adaptativa, auditoría de acceso humano y de agentes,
   y bloqueo en tiempo real de filtraciones de datos sensibles hacia modelos de IA.
@@ -27,8 +28,8 @@ company_size:
 - mediana
 - grande
 sources:
-- https://www.cyera.com/platform/dspm
-- https://www.cyera.com/solution-briefs/cyera-dspm
+  - https://www.cyera.com/platform/dspm
+  - https://www.cyera.com/solution-briefs/cyera-dspm
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

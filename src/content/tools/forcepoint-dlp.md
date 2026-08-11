@@ -6,6 +6,7 @@ type: comercial
 cost_model: presupuesto-personalizado
 cost_details: Licencia anual por usuario. Precio según módulos y número de endpoints.
 website: https://www.forcepoint.com/product/dlp-data-loss-prevention
+cert_url: https://www.forcepoint.com/certifications/compliance-certifications
 description: Solución DLP empresarial con análisis de comportamiento para prevenir fugas de datos en endpoints, red, email
   y aplicaciones cloud.
 why_reference: Líder en Gartner MQ para DLP. Su enfoque en análisis de comportamiento de usuarios (UEBA) integrado diferencia
@@ -27,7 +28,8 @@ tags:
 slug: forcepoint-dlp
 last_verified: '2026-08-10'
 needs_review: false
-sources: []
+sources:
+  - https://www.gartner.com/reviews/market/data-loss-prevention
 market_rank: 2
 logo: /logos/forcepoint-dlp.png
 category: dlp

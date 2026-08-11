@@ -23,7 +23,8 @@ tags:
 - compliance
 - zero-trust
 slug: venafi-control-plane
-sources: []
+sources:
+  - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 7

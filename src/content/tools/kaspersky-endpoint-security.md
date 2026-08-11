@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$20/endpoint/año. Top protección en tests independientes 2026.
 website: https://www.kaspersky.com
+cert_url: https://www.kaspersky.com/transparency-center
 description: Solución de protección endpoint que obtuvo la máxima puntuación en protección (99.8%%) y el menor impacto en
   rendimiento en los tests AV-Comparatives Business de marzo-junio 2026. Combina NGAV, EDR, control de dispositivos y cifrado
   en un solo agente.
@@ -29,7 +30,7 @@ company_size:
 - grande
 market_rank: 14
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/kaspersky-endpoint-security.png

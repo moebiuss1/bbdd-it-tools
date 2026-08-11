@@ -25,10 +25,24 @@ market_rank: 9
 repo: https://github.com/cfengine/core
 license: GPL-3.0
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/cfengine-config.png
 ---
+CFEngine es la herramienta que inauguró la gestión de configuración moderna, en 1993, y sigue defendiendo un enfoque
+propio: cada nodo ejecuta un agente autónomo que converge periódicamente hacia el estado declarado, sin depender de
+que un servidor central le empuje los cambios.
 
-CFEngine proporciona capacidades avanzadas en la categoría config-managers para organizaciones que necesitan gestionar sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+Sobre servidores ya desplegados, en la capa de cargas de trabajo. Su modelo de convergencia continua significa que
+una desviación introducida a mano se corrige sola en la siguiente pasada, en lugar de persistir hasta el próximo
+despliegue.
+
+## A tener en cuenta
+
+Es extremadamente ligero —escrito en C, con una huella mínima— y por eso encaja en parques muy grandes o en equipos
+con recursos limitados, pero su lenguaje de políticas tiene una curva de aprendizaje más pronunciada que la de
+alternativas basadas en YAML. La comunidad es menor que la de Ansible o Puppet, algo a valorar al calcular el coste
+de mantenimiento a largo plazo.

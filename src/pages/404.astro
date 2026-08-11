@@ -1,7 +1,11 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 const base = import.meta.env.BASE_URL;
 ---
 <BaseLayout title="No encontrada">
+  <Header />
   <section class="notfound"><p class="notfound-eyebrow">Error 404</p><h1 class="notfound-title">Página no encontrada</h1><p class="section-desc mt-3">La página que buscas no existe o ha sido movida.</p><a href={base} class="btn btn-primary mt-6">Ir al inicio</a></section>
+  <Footer />
 </BaseLayout>

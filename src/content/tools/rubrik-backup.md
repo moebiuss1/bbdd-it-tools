@@ -32,7 +32,7 @@ company_size:
 market_rank: 1
 cert_url: https://www.rubrik.com/trust
 sources:
-- https://www.gartner.com/reviews/market/enterprise-backup-and-recovery
+  - https://www.gartner.com/reviews/market/enterprise-backup-and-recovery
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/rubrik-backup.png

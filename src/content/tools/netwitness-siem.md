@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$50,000/año.
 website: https://www.netwitness.com
+cert_url: https://security.netwitness.com/
 description: Plataforma SIEM que integra logs, paquetes de red, NetFlow, comportamiento de usuarios e inteligencia de amenazas
   en una sola plataforma. Diseñada para SOCs que necesitan visibilidad completa con contexto enriquecido.
 why_reference: NetWitness (parte de RSA) ha sido reconocida en los principales cuadrantes de analistas para SIEM. Su capacidad
@@ -25,7 +26,7 @@ company_size:
 - grande
 market_rank: 1
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/network-detection-and-response
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/netwitness-siem.png

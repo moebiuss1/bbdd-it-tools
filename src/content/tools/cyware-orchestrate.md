@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$25,000/año.
 website: https://cyware.com
+cert_url: https://www.cyware.com/compliance
 description: Plataforma SOAR con más de 150 plantillas de playbooks, orquestación low-code/no-code y gestión de casos. Enfoque
   en automatización de respuesta a incidentes con threat intelligence integrada.
 why_reference: Cyware ha sido destacada en múltiples informes de analistas como una plataforma SOAR versátil con fuerte integración
@@ -26,7 +27,7 @@ company_size:
 - grande
 market_rank: 7
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/it-service-management-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/cyware-orchestrate.png

@@ -1,0 +1,40 @@
+---
+// Cabecera compartida por todas las páginas.
+// Es la única fuente de verdad de la navegación: añadir aquí un enlace lo hace
+// aparecer en todo el sitio (antes cada .astro repetía el markup y derivaba).
+interface Props {
+  /** id de la sección activa: home | herramientas | ranking | glosario | about */
+  active?: string;
+  /** muestra el buscador rápido a la derecha (solo la portada lo usa) */
+  search?: boolean;
+}
+const { active = "", search = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+const links = [
+  { id: "herramientas", label: "Directorio", href: `${base}herramientas` },
+  { id: "ranking", label: "Rankings", href: `${base}ranking` },
+  { id: "glosario", label: "Glosario", href: `${base}glosario` },
+  { id: "about", label: "Acerca de", href: `${base}about` },
+];
+---
+
+<header class="sticky top-0 z-40 header">
+  <nav class="container header-inner">
+    <a href={base} class="brand">BBDD IT</a>
+    <div class="flex items-center gap-2">
+      {links.map(l => (
+        <a href={l.href} class:list={["nav-link", active === l.id && "nav-link-active"]}
+           aria-current={active === l.id ? "page" : undefined}>{l.label}</a>
+      ))}
+    </div>
+    {search && (
+      <>
+        <div class="flex-1"></div>
+        <form action={`${base}herramientas`} method="get" style="max-width:220px;width:100%">
+          <input type="search" name="q" placeholder="Buscar herramientas..." class="search-input" id="hero-search" aria-label="Buscar herramientas" />
+        </form>
+      </>
+    )}
+  </nav>
+</header>

@@ -15,6 +15,7 @@ cost_model: suscripción
 cost_details: Licencia anual basada en número de endpoints. Desde ~$40,000/año para despliegue mínimo. Modelo SaaS y on-premise
   disponibles.
 website: https://www.digitalguardian.com
+cert_url: https://trust.fortra.com/
 description: Plataforma DLP con telemetría profunda de endpoint que protege datos sensibles tanto dentro como fuera de la
   red corporativa. Especializada en entornos de defensa, farmacéutico y manufactura donde la protección de propiedad intelectual
   y datos clasificados es crítica.
@@ -28,8 +29,8 @@ company_size:
 - grande
 market_rank: 10
 sources:
-- https://cyberwebspider.com/cyber-security-news/10-best-data-loss-prevention-software-in-2025/
-- https://www.gartner.com/en/documents/enterprise-dlp
+  - https://cyberwebspider.com/cyber-security-news/10-best-data-loss-prevention-software-in-2025/
+  - https://www.gartner.com/en/documents/enterprise-dlp
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/digital-guardian-dlp.png

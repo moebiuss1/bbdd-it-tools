@@ -16,6 +16,7 @@ cost_model: suscripción
 cost_details: Licencia anual basada en número de certificados gestionados. Desde ~$20,000/año. Edición comunitaria EJBCA open
   source disponible.
 website: https://www.keyfactor.com
+cert_url: https://www.keyfactor.com/security-compliance/
 description: Plataforma de gestión del ciclo de vida de certificados (CLM) que automatiza el descubrimiento, emisión, renovación
   y revocación de certificados digitales sobre cualquier infraestructura PKI. Compatible con CAs públicas y privadas, Microsoft
   AD CS, y preparación post-cuántica.
@@ -32,8 +33,8 @@ company_size:
 - grande
 market_rank: 3
 sources:
-- https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
-- https://www.keyfactor.com/
+  - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
+  - https://www.keyfactor.com/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/keyfactor-command.png

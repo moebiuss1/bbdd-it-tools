@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$22/endpoint/año. Ahora integrado en Trellix.
 website: https://www.trellix.com
+cert_url: https://www.trellix.com/trust/information-security/certifications/
 description: Solución antivirus empresarial con NGAV, EDR, firewall personal y prevención de amenazas avanzadas. Ahora integrada
   en la plataforma Trellix tras la fusión de McAfee Enterprise y FireEye en 2022.
 why_reference: McAfee (ahora Trellix) fue uno de los pioneros del antivirus empresarial. Su motor de detección de amenazas
@@ -25,7 +26,7 @@ company_size:
 - grande
 market_rank: 15
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/mcafee-trellix-legacy.png

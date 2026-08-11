@@ -15,6 +15,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$3,000/año. Firewalls de alto rendimiento.
 website: https://www.juniper.net
+cert_url: https://apps.juniper.net/compliance/
 description: Serie de firewalls NGFW de alto rendimiento con IPS integrado, visibilidad de aplicaciones y opciones virtualizadas
   (vSRX/cSRX) para entornos cloud y de operadores de red.
 why_reference: Juniper SRX obtuvo la calificación Recommended en las pruebas NSS Labs/CyberRatings 2025 con un 99,16% de efectividad
@@ -27,7 +28,7 @@ company_size:
 - grande
 market_rank: 9
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/network-firewalls
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/juniper-srx.png

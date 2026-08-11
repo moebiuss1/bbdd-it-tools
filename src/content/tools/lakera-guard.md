@@ -29,8 +29,8 @@ company_size:
 - mediana
 - grande
 sources:
-- https://www.lakera.ai/prompt-defense
-- https://www.lakera.ai/risk/prompt-injection-attacks
+  - https://www.lakera.ai/prompt-defense
+  - https://www.lakera.ai/risk/prompt-injection-attacks
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

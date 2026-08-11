@@ -32,10 +32,10 @@ company_size:
 - mediana
 - grande
 market_rank: 1
-cert_url: https://www.qualys.com/trust/
+cert_url: https://success.qualys.com/support/s/standards
 sources:
-- https://www.gartner.com/reviews/market/vulnerability-assessment
-- https://cipherssecurity.com/best-vulnerability-management-platform-2026/
+  - https://www.gartner.com/reviews/market/vulnerability-assessment
+  - https://cipherssecurity.com/best-vulnerability-management-platform-2026/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/qualys-vmdr.png

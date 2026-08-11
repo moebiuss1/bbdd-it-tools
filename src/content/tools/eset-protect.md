@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: 'Licencia anual por endpoint. Desde ~$25/endpoint/año. Ediciones: Entry, Advanced, Complete.'
 website: https://www.eset.com/es/empresas/
+cert_url: https://trust.eset.com/
 description: Solución antivirus empresarial con el agente más ligero del mercado y soporte multiplataforma real (Windows,
   macOS, Linux, Android). Protección por capas que combina firma, heurística, machine learning y análisis de comportamiento
   con mínimo impacto en el rendimiento.
@@ -29,8 +30,8 @@ company_size:
 - grande
 market_rank: 16
 sources:
-- https://av-comparatives.org/business-security-test-march-june-2026/
-- https://www.gartner.com/en/documents/endpoint-protection-platforms
+  - https://av-comparatives.org/business-security-test-march-june-2026/
+  - https://www.gartner.com/en/documents/endpoint-protection-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/eset-protect.png

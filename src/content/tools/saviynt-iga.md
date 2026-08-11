@@ -26,7 +26,7 @@ company_size:
 - grande
 market_rank: 3
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/privileged-access-management
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/saviynt-iga.png

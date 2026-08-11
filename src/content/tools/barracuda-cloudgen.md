@@ -15,6 +15,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$2,000/año. Modelos hardware, virtual y cloud.
 website: https://www.barracuda.com
+cert_url: https://trust.barracuda.com/security/certifications
 description: Firewall NGFW con optimización SD-WAN, inspección TLS/SSL, prevención de amenazas avanzadas y conectividad cloud.
   Destaca en entornos distribuidos con sucursales y work-from-home.
 why_reference: Barracuda CloudGen ha sido destacada en múltiples informes de Gartner y Forrester para firewalls empresariales.
@@ -27,7 +28,7 @@ company_size:
 - grande
 market_rank: 2
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/network-firewalls
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/barracuda-cloudgen.png

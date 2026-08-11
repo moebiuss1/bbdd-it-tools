@@ -29,8 +29,8 @@ company_size:
 - grande
 market_rank: 9
 sources:
-- https://aimultiple.com/top-soar-platforms
-- https://safeguard.sh/resources/blog/best-security-orchestration-automation-and-response-soar-tools
+  - https://aimultiple.com/top-soar-platforms
+  - https://safeguard.sh/resources/blog/best-security-orchestration-automation-and-response-soar-tools
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/tines.png

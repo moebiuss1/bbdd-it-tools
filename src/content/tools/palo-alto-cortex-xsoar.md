@@ -7,6 +7,7 @@ type: comercial
 cost_model: presupuesto-personalizado
 cost_details: Licencia anual. Precio según número de playbooks y usuarios.
 website: https://www.paloaltonetworks.com/cortex/xsoar
+cert_url: https://www.paloaltonetworks.com/legal-notices/trust-center/certifications
 description: Plataforma SOAR líder que automatiza y orquesta la respuesta a incidentes de seguridad. Incluye un marketplace
   con más de 900 playbooks predefinidos.
 why_reference: Líder en Gartner MQ para SOAR. El marketplace de playbooks más extenso del mercado. Su capacidad de threat
@@ -24,7 +25,8 @@ tags:
 - ai
 - compliance
 slug: palo-alto-cortex-xsoar
-sources: []
+sources:
+  - https://www.gartner.com/reviews/market/it-service-management-platforms
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 3

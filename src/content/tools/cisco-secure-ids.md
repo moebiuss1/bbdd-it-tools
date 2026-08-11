@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$5,000/año. Incluido en Cisco Secure portfolio.
 website: https://www.cisco.com
+cert_url: https://www.cisco.com/c/en/us/solutions/industries/government/global-government-certifications.html
 description: Sistema de detección de intrusiones integrado en el ecosistema Cisco Secure con inteligencia de amenazas Talos.
   Proporciona detección basada en firmas, anomalías de protocolo y análisis de comportamiento de red con más de 30,000 reglas
   actualizadas automáticamente.
@@ -28,7 +29,7 @@ company_size:
 - grande
 market_rank: 2
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/cisco-secure-ids.png

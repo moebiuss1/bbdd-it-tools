@@ -29,10 +29,23 @@ market_rank: 8
 repo: https://github.com/Security-Onion-Solutions/securityonion
 license: GPL-2.0
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/security-onion.png
 ---
+Security Onion empaqueta en una distribución lista para desplegar buena parte del arsenal libre de monitorización de
+red y análisis de seguridad: Suricata y Zeek para el tráfico, Elasticsearch para el almacenamiento y la búsqueda, y
+un conjunto de interfaces para investigar alertas y hacer hunting.
 
-Security Onion proporciona capacidades avanzadas en la categoría ids para organizaciones que necesitan proteger sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+En la red interna y en el SOC a la vez: captura el tráfico en un puerto espejo, lo convierte en evidencia y lo deja
+consultable junto con los logs de los sistemas. Para una organización sin presupuesto de SIEM comercial, es la vía
+más directa a una capacidad de detección real.
+
+## A tener en cuenta
+
+Lo gratuito es la licencia, no el proyecto: exige dimensionar almacenamiento y CPU con criterio —la captura de
+paquetes crece muy rápido—, ajustar reglas para que las alertas sean manejables y alguien que investigue lo que
+aparece. Sin ese equipo, se convierte en un archivo de alertas que nadie mira.

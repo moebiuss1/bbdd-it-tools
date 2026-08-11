@@ -30,7 +30,7 @@ market_rank: 2
 repo: https://github.com/zeek/zeek
 license: BSD-3-Clause
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/zeek-ids.png

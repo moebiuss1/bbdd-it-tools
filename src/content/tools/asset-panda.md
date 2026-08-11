@@ -24,10 +24,22 @@ company_size:
 - mediana
 market_rank: 7
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/software-asset-management-tools
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/asset-panda.png
 ---
+Asset Panda es una plataforma cloud de inventario de activos que destaca por su flexibilidad de modelo de datos:
+cada organización define qué campos describen un activo, qué estados atraviesa y qué flujos de aprobación lo
+acompañan, en lugar de adaptarse a un esquema fijo.
 
-Asset Panda proporciona capacidades avanzadas en la categoría it-asset-managers para organizaciones que necesitan proteger sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+En la operación IT, como fuente del inventario. Su aplicación móvil con lectura de códigos de barras y QR está
+pensada para el recuento físico, que es donde suele fallar el inventario teórico frente a la realidad del almacén.
+
+## A tener en cuenta
+
+Es un gestor de activos, no un descubridor de red: registra lo que alguien da de alta o escanea, no lo que aparece
+conectado. Para el control de licencias de software conviene contrastarlo con una herramienta de descubrimiento
+automático. En auditoría, un inventario mantenido a mano exige demostrar la periodicidad de la conciliación.

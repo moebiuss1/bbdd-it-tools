@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$24/dispositivo/año. Plataforma ITAM con IA predictiva.
 website: https://www.ivanti.com
+cert_url: https://assurance.ivanti.com/
 description: Plataforma de gestión de activos IT con inteligencia artificial predictiva, parcheo automatizado, cumplimiento
   de licencias y UEM integrado. Proporciona visibilidad completa del ciclo de vida de activos hardware y software con automatización
   de remediación.
@@ -27,7 +28,7 @@ company_size:
 - grande
 market_rank: 4
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/software-asset-management-tools
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/ivanti-neurons-itam.png

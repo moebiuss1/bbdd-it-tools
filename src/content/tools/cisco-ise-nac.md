@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$15,000/año.
 website: https://www.cisco.com
+cert_url: https://www.cisco.com/c/en/us/solutions/industries/government/global-government-certifications.html
 description: Plataforma NAC líder con control de acceso basado en identidad, perfilado de dispositivos y segmentación de red.
   Integración profunda con el ecosistema Cisco (switches, wireless, firewalls) para BYOD, guest networking y cumplimiento
   de endpoint.
@@ -28,7 +29,7 @@ company_size:
 - grande
 market_rank: 1
 sources:
-- https://www.gartner.com/reviews/market/network-access-control
+  - https://www.gartner.com/reviews/market/network-access-control
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/cisco-ise-nac.png

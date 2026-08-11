@@ -26,10 +26,22 @@ market_rank: 10
 repo: https://sourceforge.net/projects/rkhunter/
 license: GPL-2.0
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/rkhunter-ids.png
 ---
+Rkhunter busca en un sistema UNIX o Linux las huellas típicas de un compromiso: rootkits conocidos, puertas traseras,
+binarios del sistema alterados, permisos sospechosos y configuraciones peligrosas.
 
-Rkhunter proporciona capacidades avanzadas en la categoría ids para organizaciones que necesitan proteger sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+En el servidor, como comprobación periódica de higiene. Se ejecuta desde una tarea programada y notifica los cambios
+detectados respecto a la última pasada.
+
+## A tener en cuenta
+
+Detecta amenazas conocidas y desviaciones evidentes; un atacante que sabe que Rkhunter está instalado tiene formas de
+evitarlo, así que no sustituye a un EDR ni a la monitorización de integridad con base de datos externa. Genera falsos
+positivos tras las actualizaciones del sistema, y su valor real depende de que alguien lea los informes: un correo
+diario que nadie abre no es un control.

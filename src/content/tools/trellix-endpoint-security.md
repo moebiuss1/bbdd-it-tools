@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$35/endpoint/año. Nacida de la fusión FireEye + McAfee Enterprise.
 website: https://www.trellix.com
+cert_url: https://www.trellix.com/trust/information-security/certifications/
 description: Plataforma XDR nacida de la fusión de FireEye y McAfee Enterprise que integra protección de endpoint, red, email
   y nube con inteligencia de amenazas unificada. Referencia en detección avanzada con más de 1,800 reseñas en plataformas
   de evaluación.
@@ -28,7 +29,7 @@ company_size:
 - grande
 market_rank: 8
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/trellix-endpoint-security.png

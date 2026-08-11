@@ -19,6 +19,7 @@ type: opensource
 cost_model: gratis
 cost_details: Gratuito (AGPLv3). Soporte empresarial y Wazuh Cloud desde $500/mes.
 website: https://wazuh.com
+cert_url: https://wazuh.com/blog/announcing-soc-2-type-2-compliance-at-wazuh/
 description: 'Plataforma SIEM + XDR de código abierto que unifica monitorización de seguridad, detección de intrusiones, análisis
   de logs, evaluación de cumplimiento y gestión de vulnerabilidades en un solo sistema.
 
@@ -42,8 +43,8 @@ market_rank: 4
 repo: https://github.com/wazuh/wazuh
 license: AGPL-3.0
 sources:
-- https://itsm.tools/best-open-source-siem
-- https://github.com/wazuh/wazuh
+  - https://itsm.tools/best-open-source-siem
+  - https://github.com/wazuh/wazuh
 last_verified: '2026-08-07'
 needs_review: false
 logo: /logos/wazuh.png

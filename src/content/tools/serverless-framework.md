@@ -8,9 +8,9 @@ tags:
 - automatizacion
 - open-source
 - ci-cd
-type: opensource
+type: comercial
 cost_model: freemium
-cost_details: Núcleo (CLI) gratuito bajo licencia MIT. Serverless Framework Pro/Dashboard (observabilidad, CI/CD gestionado)
+cost_details: CLI gratuita para organizaciones por debajo del umbral de ingresos que fija su contrato; desde la v4 ya no es MIT. Serverless Framework Pro/Dashboard (observabilidad, CI/CD gestionado)
   por suscripción.
 website: https://www.serverless.com
 description: Framework de código abierto para definir, desplegar y gestionar aplicaciones serverless sobre AWS Lambda, Azure
@@ -24,12 +24,12 @@ company_size:
 - mediana
 - grande
 repo: https://github.com/serverless/serverless
-license: MIT
+license: Serverless Customer Agreement (desde la v4; hasta la v3 fue MIT)
 sources:
-- https://github.com/serverless/serverless
-- https://www.serverless.com
+  - https://github.com/serverless/serverless
+  - https://www.serverless.com
 last_verified: '2026-08-10'
-needs_review: true
+needs_review: false
 market_rank: 1
 ---
 

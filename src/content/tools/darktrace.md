@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Licencia anual basada en número de dispositivos monitorizados. Desde ~$30,000/año. Modelo SaaS.
 website: https://www.darktrace.com
+cert_url: https://www.darktrace.com/trust
 description: Sistema de detección de intrusiones basado en inteligencia artificial que aprende el patrón normal de cada dispositivo
   y usuario para detectar anomalías sutiles en tiempo real. Su motor de autoaprendizaje no requiere firmas ni reglas predefinidas,
   adaptándose continuamente a la organización.
@@ -29,8 +30,8 @@ company_size:
 - grande
 market_rank: 3
 sources:
-- https://www.gartner.com/en/documents/network-detection-response
-- https://darktrace.com/
+  - https://www.gartner.com/en/documents/network-detection-response
+  - https://darktrace.com/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/darktrace.png

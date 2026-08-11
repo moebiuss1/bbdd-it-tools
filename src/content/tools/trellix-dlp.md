@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$30,000/año. DLP integrado con XDR.
 website: https://www.trellix.com
+cert_url: https://www.trellix.com/trust/information-security/certifications/
 description: Plataforma DLP integrada con el ecosistema XDR de Trellix que proporciona visibilidad y control de datos sensibles
   en endpoints, red y cloud. Combina clasificación, prevención de fuga y respuesta a incidentes de datos en una plataforma
   unificada.
@@ -27,7 +28,7 @@ company_size:
 - grande
 market_rank: 5
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/data-loss-prevention
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/trellix-dlp.png

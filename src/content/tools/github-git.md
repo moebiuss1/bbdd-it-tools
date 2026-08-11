@@ -31,7 +31,7 @@ company_size:
 market_rank: 1
 cert_url: https://github.com/security
 sources:
-- https://www.gartner.com/reviews/market/devops-platforms
+  - https://www.gartner.com/reviews/market/devops-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/github-git.png

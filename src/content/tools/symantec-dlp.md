@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$50,000/año. DLP líder con cobertura endpoint, red, cloud.
 website: https://www.broadcom.com
+cert_url: https://www.broadcom.com/support/trust-center/compliance
 description: 'Plataforma DLP empresarial con la cobertura más amplia del mercado: endpoint, red, cloud (CASB) y almacenamiento.
   Incluye clasificación automática con machine learning, detección de movimientos de datos y prevención de fuga en tiempo
   real. Parte del portfolio de Broadcom.'
@@ -29,7 +30,7 @@ company_size:
 - grande
 market_rank: 3
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/data-loss-prevention
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/symantec-dlp.png

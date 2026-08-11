@@ -32,10 +32,23 @@ company_size:
 market_rank: 3
 cert_url: https://learn.microsoft.com/en-us/azure/compliance/
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/azure-key-vault.png
 ---
+Azure Key Vault cubre tres necesidades que suelen ir juntas: claves criptográficas, secretos de aplicación
+(contraseñas, cadenas de conexión, tokens) y certificados. Su integración con las identidades gestionadas de Azure
+permite que una aplicación obtenga un secreto sin que nadie haya escrito jamás una credencial en el código.
 
-Azure Key Vault proporciona capacidades avanzadas en la categoría key-managers para organizaciones que necesitan proteger sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+Entre el desarrollo y la infraestructura. Es la pieza que rompe la costumbre de guardar contraseñas en ficheros de
+configuración o variables de entorno del servidor, y la que hace viable rotarlas sin desplegar.
+
+## A tener en cuenta
+
+El control real es el modelo de acceso: un almacén con permisos amplios centraliza el riesgo en lugar de reducirlo.
+Conviene separar almacenes por entorno y aplicación, activar el borrado reversible y la protección contra purga, y
+auditar los accesos. El nivel estándar usa claves protegidas por software; para HSM validado hay que optar por el
+nivel premium o por HSM gestionado, con coste distinto.

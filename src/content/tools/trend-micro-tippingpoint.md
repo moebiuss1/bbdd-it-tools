@@ -27,7 +27,8 @@ tags:
 slug: trend-micro-tippingpoint
 last_verified: '2026-08-10'
 needs_review: false
-sources: []
+sources:
+  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 market_rank: 2
 logo: /logos/trend-micro-tippingpoint.png
 category: ips

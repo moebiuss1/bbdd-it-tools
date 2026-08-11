@@ -26,9 +26,21 @@ market_rank: 9
 repo: https://www.la-samhna.de/samhain/
 license: GPL-2.0
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 ---
+Samhain es un HIDS que combina monitorización de integridad de ficheros con detección de rootkits, vigilancia de
+logs y de puertos abiertos. Su rasgo distintivo es la operación centralizada: los agentes reportan cifrados a un
+servidor que guarda las líneas base fuera del alcance del sistema vigilado.
 
-Samhain proporciona capacidades avanzadas en la categoría ids para organizaciones que necesitan proteger sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+En el servidor, como control de integridad. Esa arquitectura cliente-servidor es lo que lo hace apto para parques
+grandes, donde mantener una base de datos local por máquina resulta ingobernable.
+
+## A tener en cuenta
+
+Su configuración es notablemente más laboriosa que la de AIDE, y la documentación es densa. A cambio, protege el
+punto débil clásico del control de integridad: que el atacante reescriba la referencia. Sigue siendo una opción sin
+coste de licencia para cubrir el requisito de FIM que exigen PCI DSS y buena parte de los marcos de seguridad.

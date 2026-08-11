@@ -17,6 +17,7 @@ cost_model: suscripción
 cost_details: Basado en número y tipo de certificados. Certificados TLS/SSL desde ~$200/año. CertCentral Enterprise con automatización
   desde ~$10,000/año.
 website: https://www.digicert.com
+cert_url: https://www.digicert.com/webtrust-audits
 description: Autoridad certificadora premium con plataforma de gestión del ciclo de vida de certificados digitales. Ofrece
   emisión automatizada vía ACME, SCEP y API REST, con gestión centralizada de certificados TLS/SSL, firma de código, certificados
   de dispositivo IoT y preparación post-cuántica.
@@ -34,8 +35,8 @@ company_size:
 - grande
 market_rank: 1
 sources:
-- https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
-- https://www.digicert.com/
+  - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
+  - https://www.digicert.com/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/digicert-certcentral.png

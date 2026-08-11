@@ -16,6 +16,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$50,000/año. Plataforma IRM/GRC altamente configurable.
 website: https://www.archerirm.com
+cert_url: https://trust.archerirm.com
 description: Plataforma GRC/IRM histórica y altamente configurable para la gestión integrada de riesgos, cumplimiento, auditoría
   y continuidad de negocio. Con feeds de riesgo externo y cuadros de mando para dirección.
 why_reference: RSA Archer ha sido reconocida como Líder en el Verdantix Green Quadrant de GRC 2025. Su madurez y capacidad
@@ -28,7 +29,7 @@ company_size:
 - grande
 market_rank: 2
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/rsa-archer.png

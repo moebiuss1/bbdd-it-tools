@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$35/endpoint/año. Plataforma cloud-native.
 website: https://www.vmware.com
+cert_url: https://www.broadcom.com/support/trust-center/compliance
 description: Plataforma EDR cloud-native con telemetría de endpoint, análisis de comportamiento y prevención de amenazas.
   Integración nativa con VMware vSphere para protección de cargas de trabajo virtualizadas.
 why_reference: VMware Carbon Black (ahora parte de Broadcom) ha sido reconocida en el Magic Quadrant de Gartner y destaca
@@ -28,7 +29,7 @@ company_size:
 - grande
 market_rank: 7
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/endpoint-detection-and-response-solutions
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/vmware-carbon-black.png

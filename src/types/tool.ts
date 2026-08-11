@@ -70,4 +70,6 @@ export interface SearchIndexEntry {
   market_rank?: number;
   description: string;
   certifications: string[];
+  /** Texto editorial: mejora el recall de las búsquedas en español */
+  why_reference: string;
 }

@@ -16,6 +16,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$400/socket/año. Community Edition gratuita disponible.
 website: https://www.veeam.com
+cert_url: https://www.veeam.com/company/trust-center.html
 description: Plataforma líder de backup empresarial con backup, replicación y recuperación ante desastres para VMware, Hyper-V,
   físicos, AWS, Azure y Microsoft 365. Incluye inmutabilidad y recuperación de ransomware con más de 450,000 clientes.
 why_reference: Veeam es el líder indiscutido en backup empresarial con 450,000+ clientes. Su motor de backup para VMware,
@@ -30,7 +31,7 @@ company_size:
 - grande
 market_rank: 2
 sources:
-- https://www.gartner.com/reviews/market/enterprise-backup-and-recovery
+  - https://www.gartner.com/reviews/market/enterprise-backup-and-recovery
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/veeam-backup.png

@@ -15,6 +15,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$50,000/año.
 website: https://www.forgerock.com
+cert_url: https://www.pingidentity.com/en/legal/trust-center.html
 description: Plataforma IAM para gestión de identidades de clientes (CIAM), empleados y dispositivos IoT. Ofrece autenticación
   adaptativa, autorización contextual y journeys de identidad sin código. Ahora parte de Ping Identity.
 why_reference: ForgeRock (ahora fusionada con Ping Identity) ha sido reconocida como Líder en el Magic Quadrant de Gartner
@@ -28,7 +29,7 @@ company_size:
 - grande
 market_rank: 3
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/access-management
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/forgerock-identity.png

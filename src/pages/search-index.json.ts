@@ -18,6 +18,7 @@ export const GET: APIRoute = async () => {
     market_rank: t.data.market_rank ?? undefined,
     description: t.data.description,
     certifications: t.data.certifications,
+    why_reference: t.data.why_reference ?? "",
   }));
 
   const index = buildSearchIndex(entries);

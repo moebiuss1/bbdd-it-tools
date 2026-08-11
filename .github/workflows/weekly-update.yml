@@ -5,10 +5,9 @@ on:
     - cron: "7 6 * * 1"  # Cada lunes a las 06:07 UTC
   workflow_dispatch: {}    # Ejecución manual
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
+# Permisos por job (mínimo privilegio): solo el job que hace commit necesita
+# escribir en el repositorio, y solo el de despliegue necesita tocar Pages.
+permissions: {}
 
 concurrency:
   group: pages
@@ -17,6 +16,8 @@ concurrency:
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -62,6 +63,8 @@ jobs:
   build:
     needs: update-data
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
 
@@ -84,6 +87,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

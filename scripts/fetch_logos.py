@@ -44,6 +44,10 @@ def fetch_image(url: str, config: dict) -> bytes | None:
             resp = client.get(url)
             if resp.status_code == 200:
                 content_type = resp.headers.get("content-type", "")
+                # Tope de 5 MB: un servidor remoto no debe poder llenar el disco
+                # del runner con una "imagen" de tamaño arbitrario.
+                if len(resp.content) > 5 * 1024 * 1024:
+                    return None
                 if "image" in content_type or url.endswith((".png", ".ico", ".svg")):
                     return resp.content
     except Exception:

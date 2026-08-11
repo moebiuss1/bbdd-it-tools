@@ -30,8 +30,8 @@ company_size:
 - mediana
 - grande
 sources:
-- https://www.atlassian.com/trust/compliance/resources/iso27001
-- https://www.atlassian.com/trust/compliance/resources/soc2
+  - https://www.atlassian.com/trust/compliance/resources/iso27001
+  - https://www.atlassian.com/trust/compliance/resources/soc2
 cert_url: https://www.atlassian.com/trust/compliance
 last_verified: '2026-08-10'
 needs_review: false

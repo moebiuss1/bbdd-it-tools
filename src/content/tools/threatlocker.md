@@ -26,8 +26,8 @@ company_size:
 - mediana
 - grande
 sources:
-- https://www.threatlocker.com/software-security-audit
-- https://www.threatlocker.com/capabilities/allowlisting
+  - https://www.threatlocker.com/software-security-audit
+  - https://www.threatlocker.com/capabilities/allowlisting
 cert_url: https://www.threatlocker.com/software-security-audit
 last_verified: '2026-08-10'
 needs_review: false

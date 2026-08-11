@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Incluido en licencia NGFW. Suscripción Threat Prevention desde ~$2,000/año.
 website: https://www.paloaltonetworks.com
+cert_url: https://www.paloaltonetworks.com/legal-notices/trust-center/certifications
 description: Motor de prevención de amenazas integrado en los firewalls Palo Alto Networks que combina IPS, anti-malware,
   anti-spyware y protección frente a vulnerabilidades en un solo motor de inspección de capa 7 con actualizaciones automáticas
   de WildFire.
@@ -29,7 +30,7 @@ company_size:
 - grande
 market_rank: 4
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/palo-alto-threat-prevention.png

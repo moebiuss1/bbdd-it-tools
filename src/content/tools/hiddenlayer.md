@@ -25,8 +25,8 @@ company_size:
 - mediana
 - grande
 sources:
-- https://www.hiddenlayer.com/news/hiddenlayer-attains-soc-2-type-ii-compliance-elevating-data-security-for-ai
-- https://www.hiddenlayer.com/news/hiddenlayer-unveils-hiddenlayer-aisec-platform-2-0-to-deliver-unmatched-context-visibility-and-observability-for-enterprise-ai-security
+  - https://www.hiddenlayer.com/news/hiddenlayer-attains-soc-2-type-ii-compliance-elevating-data-security-for-ai
+  - https://www.hiddenlayer.com/news/hiddenlayer-unveils-hiddenlayer-aisec-platform-2-0-to-deliver-unmatched-context-visibility-and-observability-for-enterprise-ai-security
 cert_url: https://www.hiddenlayer.com/news/hiddenlayer-attains-soc-2-type-ii-compliance-elevating-data-security-for-ai
 last_verified: '2026-08-10'
 needs_review: false

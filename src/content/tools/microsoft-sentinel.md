@@ -31,7 +31,8 @@ tags:
 - compliance
 - monitorizacion
 slug: microsoft-sentinel
-sources: []
+sources:
+  - https://www.gartner.com/reviews/market/observability-platforms
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 2

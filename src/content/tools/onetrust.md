@@ -19,8 +19,8 @@ description: Plataforma de gestión de privacidad, riesgo y cumplimiento normati
   el ciclo de vida completo de políticas corporativas — creación, aprobación, distribución y attestation de lectura por parte
   de los empleados.
 why_reference: Uno de los proveedores de referencia en privacidad y GRC a nivel mundial, con certificaciones propias notables
-  — fue la primera compañía en lograr la certificación ISO 27701 (gestión de información de privacidad) y mantiene ISO 27001:2022
-  y SOC 2 sobre su plataforma de automatización de certificaciones.
+  — mantiene ISO 27701 (gestión de información de privacidad), ISO 27001 y SOC 2 sobre su plataforma de automatización de
+  certificaciones.
 certifications:
 - ISO 27001
 - ISO 27701
@@ -29,10 +29,10 @@ company_size:
 - mediana
 - grande
 sources:
-- https://www.onetrust.com/news/onetrust-helps-new-iso-270012022-certification/
-- https://www.onetrust.com/news/onetrust-achieves-worlds-first-iso-27701/
+  - https://www.onetrust.com/news/onetrust-helps-new-iso-270012022-certification/
+  - https://www.onetrust.com/news/onetrust-achieves-worlds-first-iso-27701/
 last_verified: '2026-08-10'
-needs_review: true
+needs_review: false
 market_rank: 1
 ---
 

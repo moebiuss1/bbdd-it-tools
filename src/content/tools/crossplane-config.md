@@ -25,10 +25,23 @@ market_rank: 7
 repo: https://github.com/crossplane/crossplane
 license: Apache-2.0
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/crossplane-config.png
 ---
+Crossplane convierte a Kubernetes en el plano de control de toda la infraestructura, no solo de los contenedores: una
+base de datos gestionada, un bucket o una red virtual se declaran como recursos de Kubernetes y el clúster se encarga
+de crearlos en AWS, Azure o GCP y de mantenerlos en ese estado.
 
-Crossplane proporciona capacidades avanzadas en la categoría config-managers para organizaciones que necesitan gestionar sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+Entre el desarrollo y la infraestructura cloud. Frente a un Terraform ejecutado desde un pipeline, aquí la
+reconciliación es continua: si alguien modifica el recurso a mano en la consola del proveedor, el controlador lo
+devuelve al estado declarado.
+
+## A tener en cuenta
+
+Ese poder implica que el clúster de Kubernetes pasa a custodiar credenciales con permisos amplios sobre la cuenta
+cloud; comprometerlo equivale a comprometer la infraestructura entera. Exige un modelo de permisos cuidadoso, y su
+adopción tiene sentido cuando ya existe madurez en Kubernetes, no como primer paso.

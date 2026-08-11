@@ -28,11 +28,12 @@ company_size:
 - mediana
 - grande
 sources:
-- https://www.paloaltonetworks.com/company/press/2025/palo-alto-networks-completes-acquisition-of-protect-ai
-- https://www.paloaltonetworks.com/legal-notices/trust-center/iso-27000-series
-cert_url: https://www.paloaltonetworks.com/legal-notices/trust-center/iso-27000-series
+  - https://www.paloaltonetworks.com/company/press/2025/palo-alto-networks-completes-acquisition-of-protect-ai
+  - https://www.paloaltonetworks.com/company/press/2025/palo-alto-networks-completes-acquisition-of-protect-ai
+  - https://www.paloaltonetworks.com/legal-notices/trust-center/iso-27000-series
+cert_url: https://www.paloaltonetworks.com/legal-notices/trust-center/certifications
 last_verified: '2026-08-10'
-needs_review: true
+needs_review: false
 market_rank: 1
 ---
 

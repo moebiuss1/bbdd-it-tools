@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$1,500/año. Modelos SMB y enterprise.
 website: https://www.sonicwall.com
+cert_url: https://www.sonicwall.com/products/product-certifications
 description: Familia de firewalls NGFW orientada a SMB y mid-market con prevención de amenazas, inspección TLS/SSL y VPN integrada.
   500.000+ clientes en 150+ países con una relación calidad-precio líder.
 why_reference: SonicWall ha sido reconocida en IDC MarketScape y Frost Radar 2025 como líder en firewalls para mid-market.
@@ -25,7 +26,7 @@ company_size:
 - mediana
 market_rank: 10
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/network-firewalls
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/sonicwall-nsa.png

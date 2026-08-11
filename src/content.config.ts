@@ -47,6 +47,23 @@ export const KNOWN_CERTIFICATIONS = [
   "WebTrust",
 ] as const;
 
+/**
+ * `z.string().url()` acepta cualquier esquema, incluido `javascript:`: una URL
+ * así, escrita por el pipeline automático en un .md, se convertiría en un enlace
+ * ejecutable en la ficha. Todas las URLs del catálogo deben ser http(s).
+ */
+const httpUrl = (msg = "URL inválida: debe empezar por http:// o https://") =>
+  z.string().url(msg).refine(
+    v => { try { return ["http:", "https:"].includes(new URL(v).protocol); } catch { return false; } },
+    msg,
+  );
+
+/** Los logos son rutas locales servidas por el propio sitio, nunca URLs externas. */
+const localPath = z.string().refine(
+  v => v.startsWith("/") && !v.startsWith("//") && !v.includes(":"),
+  "El logo debe ser una ruta local del sitio (empezando por /)",
+);
+
 export const toolsCollection = defineCollection({
   type: "content",
   schema: z.object({
@@ -58,17 +75,17 @@ export const toolsCollection = defineCollection({
     type: z.enum(TOOL_TYPES),
     cost_model: z.enum(COST_MODELS).optional(),
     cost_details: z.string().optional(),
-    website: z.string().url("URL del sitio web inválida"),
+    website: httpUrl("URL del sitio web inválida"),
     description: z.string().min(1, "La descripción es obligatoria"),
     why_reference: z.string().min(1, "Indica por qué es referente"),
     certifications: z.array(z.string()).default([]),
     company_size: z.array(z.enum(COMPANY_SIZES)).default([]),
     market_rank: z.number().int().positive().nullable().optional(),
-    logo: z.string().nullable().optional(),
-    repo: z.string().url().nullable().optional(),
+    logo: localPath.nullable().optional(),
+    repo: httpUrl().nullable().optional(),
     license: z.string().nullable().optional(),
-    cert_url: z.string().url().nullable().optional(),
-    sources: z.array(z.string().url()).default([]),
+    cert_url: httpUrl().nullable().optional(),
+    sources: z.array(httpUrl()).default([]),
     last_verified: z.coerce.date().optional(),
     needs_review: z.boolean().default(false),
   }),

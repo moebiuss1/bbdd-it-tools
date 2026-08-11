@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-const base = import.meta.env.BASE_URL;
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 ---
 <BaseLayout title="Acerca de">
-  <header class="sticky top-0 z-40 header"><nav class="container header-inner"><a href={base} class="brand">BBDD IT</a><div class="flex items-center gap-2"><a href={`${base}herramientas`} class="nav-link">Directorio</a><a href={`${base}ranking`} class="nav-link">Rankings</a><a href={`${base}glosario`} class="nav-link">Glosario</a><a href={`${base}about`} class="nav-link">Acerca de</a></div></nav></header>
+  <Header active="about" />
   <section class="py-10"><div class="container max-w-680">
     <h1 class="section-title" style="font-size:28px">Acerca de</h1>
     <div class="space-y-8 mt-8 prose" style="color:#86868b">
@@ -13,5 +14,5 @@ const base = import.meta.env.BASE_URL;
       <div><h2>Metodología</h2><p>Los scripts de actualización nunca sobrescriben ediciones manuales. El pipeline solo completa datos faltantes y actualiza la fecha de verificación. Si un dato no ha podido verificarse automáticamente, la herramienta se marca para revisión manual.</p></div>
     </div>
   </div></section>
-  <footer class="footer"><div class="container footer-grid"><div><p class="footer-brand">BBDD IT Tools</p><p class="footer-desc">Directorio actualizado cada lunes</p></div><div class="footer-links"><a href={`${base}herramientas`} class="nav-link" style="font-size:12px">Directorio</a><a href={`${base}ranking`} class="nav-link" style="font-size:12px">Rankings</a><a href={`${base}glosario`} class="nav-link" style="font-size:12px">Glosario</a><a href={`${base}about`} class="nav-link" style="font-size:12px">Acerca de</a></div></div></footer>
+  <Footer />
 </BaseLayout>

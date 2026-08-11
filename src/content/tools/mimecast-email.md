@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$6-10/usuario/mes. Todos los planes incluyen archiving.
 website: https://www.mimecast.com
+cert_url: https://www.mimecast.com/company/mimecast-trust-center/certification-and-attestation/
 description: Plataforma de seguridad de email con archiving integrado, continuidad de buzón ante caídas de M365, DMARC management
   y protección frente a phishing, malware y BEC. 42,000+ organizaciones protegidas.
 why_reference: Mimecast ha sido reconocida como Líder en el Magic Quadrant de Gartner para Digital Communications Governance.
@@ -27,7 +28,7 @@ company_size:
 - grande
 market_rank: 2
 sources:
-- https://www.gartner.com/reviews/market/email-security
+  - https://www.gartner.com/reviews/market/email-security
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/mimecast-email.png

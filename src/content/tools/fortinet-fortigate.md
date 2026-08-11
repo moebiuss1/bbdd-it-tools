@@ -32,7 +32,8 @@ tags:
 - on-premise
 - zero-trust
 slug: fortinet-fortigate
-sources: []
+sources:
+  - https://www.gartner.com/reviews/market/network-firewalls
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

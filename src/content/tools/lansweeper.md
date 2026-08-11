@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$1/dispositivo/año. Descubrimiento agentless con escaneo pasivo.
 website: https://www.lansweeper.com
+cert_url: https://www.lansweeper.com/about/trust/security-compliance/
 description: Herramienta de descubrimiento de activos IT con escaneo agentless (WMI, SNMP, SSH) que detecta dispositivos gestionados
   y no gestionados incluyendo OT e IoT. Proporciona visibilidad completa de la red sin instalar agentes en los dispositivos
   monitorizados.
@@ -27,7 +28,7 @@ company_size:
 - grande
 market_rank: 9
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/software-asset-management-tools
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/lansweeper.png

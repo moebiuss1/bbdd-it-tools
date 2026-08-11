@@ -7,6 +7,7 @@ type: comercial
 cost_model: suscripción
 cost_details: 'Desde ~$30/endpoint/año. Ediciones: Business, Enterprise, Elite.'
 website: https://www.bitdefender.com/business/
+cert_url: https://trust.bitdefender.com/
 description: Plataforma de seguridad de endpoints con prevención de amenazas multicapa, EDR, y análisis de riesgo. Reconocida
   por su motor antimalware de alta eficacia.
 why_reference: Consistentemente en el cuadrante de Líderes de Gartner. Motor antimalware con una de las tasas de detección
@@ -26,7 +27,8 @@ tags:
 - compliance
 - vulnerability-management
 slug: bitdefender-gravityzone
-sources: []
+sources:
+  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 5

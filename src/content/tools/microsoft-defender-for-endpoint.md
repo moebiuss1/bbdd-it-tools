@@ -29,7 +29,8 @@ tags:
 - microsoft
 - vulnerability-management
 slug: microsoft-defender-for-endpoint
-sources: []
+sources:
+  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 3

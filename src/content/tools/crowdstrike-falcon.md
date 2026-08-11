@@ -40,8 +40,8 @@ company_size:
 market_rank: 2
 cert_url: https://trust.crowdstrike.com
 sources:
-- https://www.gartner.com/en/documents/endpoint-protection-platforms
-- https://itsm.tools/best-edr-solutions
+  - https://www.gartner.com/en/documents/endpoint-protection-platforms
+  - https://itsm.tools/best-edr-solutions
 last_verified: '2026-08-07'
 needs_review: false
 logo: /logos/crowdstrike-falcon.png

@@ -15,6 +15,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$75,000/año. AppStudio low-code para aplicaciones GRC.
 website: https://www.metricstream.com
+cert_url: https://www.metricstream.com/about-us/trust-center.htm
 description: Plataforma IRM/GRC empresarial con AppStudio low-code y modelo de datos unificado. Especialmente fuerte en riesgo
   operativo, gestión de terceros y ciber riesgo para banca, seguros y sector público.
 why_reference: 'MetricStream ha obtenido la recomendación #1 en GRC empresarial según análisis de IA de parse.gl (31.6% de
@@ -27,7 +28,7 @@ company_size:
 - grande
 market_rank: 2
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/metricstream.png

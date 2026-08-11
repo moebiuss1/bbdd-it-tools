@@ -16,6 +16,7 @@ cost_model: suscripción
 cost_details: A partir de ~$3,000/año para modelos SMB. Modelos enterprise desde $15,000/año. Licencia NGTX incluye IPS, AV,
   Anti-Bot, SandBlast.
 website: https://www.checkpoint.com
+cert_url: https://www.checkpoint.com/about-us/product-certifications/
 description: Firewall de siguiente generación con prevención de amenazas unificada que combina IPS, antivirus, anti-bot, inspección
   SSL/TLS y sandboxing en un solo motor de inspección. 23 modelos de appliance cubren desde sucursales hasta centros de datos
   con más de 1 Tbps de throughput.
@@ -33,8 +34,8 @@ company_size:
 - grande
 market_rank: 5
 sources:
-- https://cyberratings.org/cyberratings-org-and-nss-labs-announce-2025-enterprise-firewall-test-results/
-- https://www.gartner.com/en/documents/network-firewalls
+  - https://cyberratings.org/cyberratings-org-and-nss-labs-announce-2025-enterprise-firewall-test-results/
+  - https://www.gartner.com/en/documents/network-firewalls
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/check-point-firewall.png

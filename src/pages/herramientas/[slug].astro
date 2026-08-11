@@ -1,14 +1,26 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 import { getCategories, getFamilies, getToolCategories, computeToolScore, scoreBreakdown as buildScoreBreakdown, toToolEntry } from "@lib/tools";
+import InfraDiagram from "@components/InfraDiagram.astro";
+import { getPlacement } from "@data/infrastructure";
 export async function getStaticPaths() { return (await getCollection("tools")).map(t => ({ params: { slug: t.id.replace(/\.md$/,"") } })); }
 const base = import.meta.env.BASE_URL;
-const tools = (await getCollection("tools")).map(toToolEntry);
+const rawTools = await getCollection("tools");
+const tools = rawTools.map(toToolEntry);
 const categories = await getCategories();
 const tool = tools.find(t => t.slug === Astro.params.slug);
 if (!tool) return Astro.rewrite("/404");
 const { data } = tool;
+
+// El cuerpo se renderiza con el pipeline de Astro (markdown → HTML saneado).
+// Antes se inyectaba el markdown crudo con `set:html`: los títulos y las listas
+// salían como texto plano con almohadillas y guiones, y cualquier etiqueta HTML
+// escrita en el .md se ejecutaba tal cual.
+const rawEntry = rawTools.find(t => t.id.replace(/\.md$/, "") === tool.slug)!;
+const { Content } = await render(rawEntry);
 const families = await getFamilies();
 const cats = categories.filter(c => getToolCategories(data).includes(c.id)); const cat = cats[0];
 const family = cat ? families.find((f: any) => f.id === cat.family) : null;
@@ -16,22 +28,88 @@ const typeLabel = data.type === 'opensource' ? 'Open Source' : 'Comercial';
 const costLabel = (data.cost_model && ({gratis:'Gratuito',freemium:'Freemium',suscripción:'Suscripción','licencia-perpetua':'Licencia perpetua','pago-por-uso':'Pago por uso','presupuesto-personalizado':'Presupuesto personalizado'} as any)[data.cost_model]) ?? '';
 const sizeLabels: any = {pequeña:'Pequeña empresa',mediana:'Mediana empresa',grande:'Gran empresa'};
 
+// Posición en la infraestructura: una entrada por categoría de la herramienta,
+// deduplicando las que comparten explicación (categorías hermanas con el mismo
+// emplazamiento, p. ej. varias variantes de backup).
+const seenPlacements = new Set<string>();
+const placementItems = cats
+  .map(c => ({ category: c.name, placement: getPlacement(c.id, c.family) }))
+  .filter((p): p is { category: string; placement: NonNullable<ReturnType<typeof getPlacement>> } => p.placement !== null)
+  .filter(p => {
+    const key = p.placement.rationale;
+    if (seenPlacements.has(key)) return false;
+    seenPlacements.add(key);
+    return true;
+  })
+  .map(p => ({ category: p.category, nodes: p.placement.nodes, rationale: p.placement.rationale }));
+
+// El diagrama marca todas las capas que toca la herramienta, pero solo se
+// explican las tres primeras aportaciones distintas: una suite de backup con
+// seis categorías hermanas encadenaría seis párrafos casi idénticos.
+const highlightNodes = [...new Set(placementItems.flatMap(p => p.nodes))];
+// Se conserva el orden original —la categoría principal primero— y solo pasan
+// las que aportan alguna capa todavía no explicada.
+const seenNodes = new Set<string>();
+const shownPlacements = placementItems
+  .filter(p => {
+    const novel = p.nodes.some(n => !seenNodes.has(n));
+    for (const n of p.nodes) seenNodes.add(n);
+    return novel;
+  })
+  .slice(0, 3);
+const omittedPlacements = placementItems.length - shownPlacements.length;
+
+// Fuentes: enlace directo a la página citada, con el emisor identificado. Antes
+// solo se mostraba el hostname, que no dice si detrás hay un cuadrante de
+// Gartner, un laboratorio de test o una nota del propio fabricante.
+const KNOWN_SOURCES: Record<string, { name: string; kind: string }> = {
+  "gartner.com": { name: "Gartner", kind: "Análisis de mercado" },
+  "forrester.com": { name: "Forrester", kind: "Análisis de mercado" },
+  "idc.com": { name: "IDC", kind: "Análisis de mercado" },
+  "av-comparatives.org": { name: "AV-Comparatives", kind: "Laboratorio independiente" },
+  "av-test.org": { name: "AV-TEST", kind: "Laboratorio independiente" },
+  "mitre.org": { name: "MITRE", kind: "Evaluación independiente" },
+  "attackevals.mitre-engenuity.org": { name: "MITRE Engenuity", kind: "Evaluación independiente" },
+  "github.com": { name: "GitHub", kind: "Repositorio de código" },
+  "itsm.tools": { name: "ITSM.tools", kind: "Prensa especializada" },
+  "owasp.org": { name: "OWASP", kind: "Comunidad de referencia" },
+  "nist.gov": { name: "NIST", kind: "Organismo público" },
+  "enisa.europa.eu": { name: "ENISA", kind: "Organismo público" },
+  "ccn-cert.cni.es": { name: "CCN-CERT", kind: "Organismo público" },
+  "peerspot.com": { name: "PeerSpot", kind: "Opiniones de usuarios" },
+  "g2.com": { name: "G2", kind: "Opiniones de usuarios" },
+};
+
+const vendorHost = (() => { try { return new URL(data.website).hostname.replace(/^www\./, ""); } catch { return ""; } })();
+
+const sourceLinks = (data.sources ?? []).flatMap((url: string) => {
+  let parsed: URL;
+  try { parsed = new URL(url); } catch { return []; }
+  const host = parsed.hostname.replace(/^www\./, "");
+  const known = KNOWN_SOURCES[host];
+  const name = known?.name ?? host.split(".")[0].replace(/^./, c => c.toUpperCase());
+  const kind = known?.kind ?? (host === vendorHost ? "Documentación del fabricante" : "Referencia del sector");
+  const path = decodeURIComponent(parsed.pathname + parsed.search).replace(/\/$/, "");
+  const full = host + path;
+  // Un enlace a la portada de un portal no permite comprobar nada: se marca
+  // como tal en lugar de presentarlo como si señalara la página concreta.
+  const direct = path.split("/").filter(Boolean).length >= 2;
+  return [{
+    url,
+    name: host === vendorHost && !known ? data.name : name,
+    kind,
+    direct,
+    pretty: full.length > 72 ? `${full.slice(0, 71)}…` : full,
+  }];
+});
+
 // Sistema de puntuación BBDD IT (0-100) — misma fórmula que en el directorio y los rankings (src/lib/tools.ts)
-const totalScore = computeToolScore(data);
-const scoreBreakdown = buildScoreBreakdown(data);
+const totalScore = computeToolScore(data, tool.body);
+const scoreBreakdown = buildScoreBreakdown(data, tool.body);
 ---
 
 <BaseLayout title={data.name} description={data.description}>
-  <header class="sticky top-0 z-40 header">
-    <nav class="container header-inner">
-      <a href={base} class="brand">BBDD IT</a>
-      <div class="flex items-center gap-2">
-        <a href={`${base}herramientas`} class="nav-link">Directorio</a>
-        <a href={`${base}ranking`} class="nav-link">Rankings</a>
-        <a href={`${base}about`} class="nav-link">Acerca de</a>
-      </div>
-    </nav>
-  </header>
+  <Header active="herramientas" />
 
   <article class="py-10">
     <div class="container max-w-900">
@@ -61,7 +139,7 @@ const scoreBreakdown = buildScoreBreakdown(data);
         <div class="space-y-10">
           <section>
             <h2 class="section-title mb-4">Descripción</h2>
-            <div class="prose" set:html={tool.body || ''} />
+            <div class="prose"><Content /></div>
           </section>
           <section class="why-box">
             <h2>Por qué es un referente</h2>
@@ -124,23 +202,63 @@ const scoreBreakdown = buildScoreBreakdown(data);
             <details style="margin-top:8px">
               <summary style="font-size:11px;color:#6e6e73;cursor:pointer;list-style:none">¿Cómo se calcula?</summary>
               <div style="font-size:11px;color:#6e6e73;line-height:1.5;margin-top:4px;padding-left:8px;border-left:2px solid #e8e8ed">
-                <p><strong>Ranking (máx 40 pts):</strong> 5 puntos por cada puesto en el top 8 de su categoría. #1 = 40 pts, #2 = 35 pts, etc.</p>
-                <p style="margin-top:4px"><strong>Certificaciones (máx 30 pts):</strong> 6 puntos por cada certificación verificada (ISO, SOC, PCI DSS, etc.).</p>
-                <p style="margin-top:4px"><strong>Fuentes (máx 20 pts):</strong> 5 puntos por cada fuente referenciada (Gartner, AV-Comparatives, etc.).</p>
-                <p style="margin-top:4px"><strong>Actualización (máx 10 pts):</strong> 10 pts si se verificó hace menos de 30 días, 7 pts si menos de 90, 5 pts si menos de 180, 3 pts si más.</p>
+                <p><strong>Posición de mercado (máx 30 pts):</strong> 30 puntos el puesto #1 de su categoría, restando 3,5 por cada puesto siguiente.</p>
+                {data.type === 'opensource'
+                  ? <p style="margin-top:4px"><strong>Transparencia (máx 25 pts):</strong> 10 por repositorio público, 7 por licencia identificada y hasta 8 por certificaciones. Un proyecto libre demuestra sus garantías con código auditable, no con certificados de producto.</p>
+                  : <p style="margin-top:4px"><strong>Garantías auditadas (máx 25 pts):</strong> 5 puntos por cada certificación (ISO, SOC 2, ENS…) hasta 20, más 5 si el fabricante publica una página de verificación.</p>}
+                <p style="margin-top:4px"><strong>Fuentes independientes (máx 20 pts):</strong> 5 puntos por cada fuente externa referenciada (Gartner, AV-Comparatives, etc.).</p>
+                <p style="margin-top:4px"><strong>Actualización (máx 10 pts):</strong> 10 pts si se verificó hace menos de 30 días, 8 si menos de 90, 5 si menos de 180, 2 si más.</p>
+                <p style="margin-top:4px"><strong>Ficha completa (máx 15 pts):</strong> descripción extendida, justificación, detalle de coste, logo y enlace de verificación. Una ficha marcada como pendiente de revisión puntúa 0 en este apartado.</p>
               </div>
             </details>
           </div>
 
-          {data.certifications.length > 0 && <div class="sidebar-box"><h3 class="sidebar-box-title">Certificaciones</h3><div class="sidebar-tags">{data.certifications.map((c:string) => <span class="badge badge-teal badge-sm">{c}</span>)}</div><p style="font-size:11px;color:#8e8e93;margin-top:8px;line-height:1.4">Verificables en <a href={data.cert_url || data.website} target="_blank" rel="noopener" style="color:#0071e3">{new URL(data.cert_url || data.website).hostname}</a></p></div>}
+          {data.certifications.length > 0 && <div class="sidebar-box">
+            <h3 class="sidebar-box-title">Certificaciones</h3>
+            <div class="sidebar-tags">{data.certifications.map((c:string) => <span class="badge badge-teal badge-sm">{c}</span>)}</div>
+            {data.cert_url
+              ? <a href={data.cert_url} target="_blank" rel="noopener" class="cert-link">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Ver certificaciones del fabricante
+                </a>
+              : <p style="font-size:11px;color:#8e8e93;margin-top:10px;line-height:1.4">El fabricante no publica una página de certificaciones verificable. Solicítalas por su canal de soporte.</p>}
+          </div>}
 
           <div class="sidebar-box"><h3 class="sidebar-box-title">Etiquetas</h3><div class="sidebar-tags">{data.tags.map((t:string) => <a href={`${base}herramientas?tag=${encodeURIComponent(t)}`} class="sidebar-tag">{t}</a>)}</div></div>
 
-          {data.sources.length > 0 && <div class="sidebar-box"><h3 class="sidebar-box-title">Fuentes</h3><div class="sidebar-sources">{data.sources.map((s:string) => <div class="sidebar-source"><a href={s} target="_blank" rel="noopener" class="sidebar-link" style="font-size:13px">{new URL(s).hostname}</a></div>)}</div></div>}
         </aside>
       </div>
+
+      {sourceLinks.length > 0 && (
+        <section class="sources-block">
+          <h2 class="section-title mb-2">Fuentes</h2>
+          <p class="sources-lead">
+            Referencias externas donde aparece {data.name}. Cada enlace abre directamente la página citada,
+            para que puedas comprobar el dato en su origen.
+          </p>
+          <ul class="sources-list">
+            {sourceLinks.map(s => (
+              <li>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" class="source-item">
+                  <span class="source-name">{s.name}</span>
+                  <span class="source-kind">{s.kind}{!s.direct && " · portal general, sin enlace directo"}</span>
+                  <span class="source-url">{s.pretty}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          {data.cert_url && (
+            <p class="sources-foot">
+              Certificaciones verificables en
+              <a href={data.cert_url} target="_blank" rel="noopener noreferrer">{new URL(data.cert_url).hostname.replace(/^www\./, "")}</a>.
+            </p>
+          )}
+        </section>
+      )}
+
+      {shownPlacements.length > 0 && <InfraDiagram items={shownPlacements} highlight={highlightNodes} omitted={omittedPlacements} />}
     </div>
   </article>
 
-  <footer class="footer"><div class="container footer-grid"><div><p class="footer-brand">BBDD IT Tools</p><p class="footer-desc">Directorio actualizado cada lunes</p></div><div class="footer-links"><a href={`${base}herramientas`} class="nav-link" style="font-size:12px">Directorio</a><a href={`${base}ranking`} class="nav-link" style="font-size:12px">Rankings</a><a href={`${base}glosario`} class="nav-link" style="font-size:12px">Glosario</a><a href={`${base}about`} class="nav-link" style="font-size:12px">Acerca de</a></div></div></footer>
+  <Footer />
 </BaseLayout>

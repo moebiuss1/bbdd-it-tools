@@ -29,7 +29,7 @@ market_rank: 8
 repo: https://github.com/keycloak/keycloak
 license: Apache-2.0
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/access-management
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/keycloak-identity.png

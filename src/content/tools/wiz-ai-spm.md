@@ -33,8 +33,8 @@ company_size:
 - mediana
 - grande
 sources:
-- https://trust.wiz.io/
-- https://www.wiz.io/blog/ai-security-posture-management
+  - https://trust.wiz.io/
+  - https://www.wiz.io/blog/ai-security-posture-management
 cert_url: https://trust.wiz.io/
 last_verified: '2026-08-10'
 needs_review: false

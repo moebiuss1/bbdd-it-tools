@@ -31,8 +31,8 @@ market_rank: 1
 repo: https://github.com/hashicorp/terraform
 license: BSL
 sources:
-- https://www.automq.com/blog/ansible-alternatives-2025-terraform-chef-salt-puppet-cfengine
-- https://www.hashicorp.com/
+  - https://www.automq.com/blog/ansible-alternatives-2025-terraform-chef-salt-puppet-cfengine
+  - https://www.hashicorp.com/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/terraform.png

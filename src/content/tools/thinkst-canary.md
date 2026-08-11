@@ -27,7 +27,7 @@ company_size:
 - grande
 market_rank: 1
 sources:
-- https://guptadeepak.com/tools/top-5-honeypots-deception-tools-2026/
+  - https://guptadeepak.com/tools/top-5-honeypots-deception-tools-2026/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/thinkst-canary.png

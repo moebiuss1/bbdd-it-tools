@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$24,000/año. Plataforma HyperSOC con agente IA Socrates.
 website: https://www.torq.io
+cert_url: https://www.torq.io/security-compliance/
 description: Plataforma de hiperautomatización SOAR cloud-native con ejecución paralela de flujos y agente de IA (Socrates)
   que resuelve de forma autónoma el 95% de alertas de Tier-1. Procesa hasta 5x más alertas que los SOAR tradicionales.
 why_reference: Torq ha sido reconocida como la plataforma SOAR más innovadora de 2025-2026, con una arquitectura event-driven
@@ -25,7 +26,7 @@ company_size:
 - grande
 market_rank: 10
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/it-service-management-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/torq.png

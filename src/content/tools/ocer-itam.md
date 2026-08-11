@@ -25,9 +25,21 @@ company_size:
 - mediana
 market_rank: 6
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/software-asset-management-tools
 last_verified: '2026-08-10'
 needs_review: false
 ---
+Ocer es una plataforma española de gestión de activos IT, con inventario de hardware y software, control de licencias
+y contratos, y cuadro de mando para el responsable del parque.
 
-Ocer ITAM proporciona capacidades avanzadas en la categoría it-asset-managers para organizaciones que necesitan proteger sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+En la operación IT. Su interés para organizaciones españolas está en el idioma, el soporte de proximidad y el encaje
+con los requisitos del Esquema Nacional de Seguridad, que exige inventario actualizado de activos como control
+básico.
+
+## A tener en cuenta
+
+Al ser un proveedor de tamaño reducido, la evaluación debe fijarse en la hoja de ruta del producto y en su capacidad
+de integrarse con el resto del entorno —directorio, gestión de incidencias, descubrimiento de red—, más que en la
+lista de funciones. Conviene solicitar referencias de organizaciones de tamaño comparable.

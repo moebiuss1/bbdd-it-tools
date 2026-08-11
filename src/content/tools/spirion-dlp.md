@@ -26,10 +26,23 @@ company_size:
 - grande
 market_rank: 9
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/data-loss-prevention
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/spirion-dlp.png
 ---
+Spirion se centra en la mitad del problema que suele resolverse mal: saber exactamente dónde están los datos
+sensibles. Recorre servidores de ficheros, bases de datos, puestos y repositorios en la nube buscando datos
+personales, tarjetas de pago, historia clínica o propiedad intelectual, y los clasifica con precisión de dato
+concreto en lugar de marcar el fichero entero.
 
-Spirion Data Platform proporciona capacidades avanzadas en la categoría dlp para organizaciones que necesitan proteger sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+En la capa de datos, como paso previo a cualquier control DLP: no se puede proteger —ni cifrar, ni restringir, ni
+borrar a petición del interesado— lo que no se sabe dónde está.
+
+## A tener en cuenta
+
+El descubrimiento inicial en un parque grande es un proyecto de semanas y consume recursos en los sistemas
+analizados; conviene planificarlo por fases. Su fuerte es la precisión de la clasificación, no el bloqueo en tiempo
+real: para impedir la salida del dato hace falta combinarlo con un DLP de canal.

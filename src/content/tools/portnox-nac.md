@@ -23,7 +23,7 @@ company_size:
 - mediana
 market_rank: 4
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/network-access-control
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/portnox-nac.png

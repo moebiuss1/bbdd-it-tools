@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Implementación desde ~$100,000/año. Licencia basada en número de identidades.
 website: https://www.sailpoint.com
+cert_url: https://www.sailpoint.com/why-us/trust/cybersecurity
 description: Plataforma de gobernanza de identidades (IGA) líder del mercado para la gestión del ciclo de vida de accesos,
   certificaciones de acceso, role mining y cumplimiento normativo. Conectores profundos para SAP, Oracle, AWS y mainframe.
 why_reference: SailPoint es el estándar de referencia indiscutido en IGA empresarial. Cuando un auditor pregunta "quién tiene
@@ -28,7 +29,7 @@ company_size:
 - grande
 market_rank: 2
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/privileged-access-management
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/sailpoint.png

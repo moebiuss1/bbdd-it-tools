@@ -30,7 +30,7 @@ market_rank: 8
 repo: https://github.com/elastic/elasticsearch
 license: Elastic License 2.0
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/elastic-defend.png

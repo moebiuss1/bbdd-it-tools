@@ -26,7 +26,7 @@ company_size:
 - mediana
 market_rank: 16
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/avast-business.png

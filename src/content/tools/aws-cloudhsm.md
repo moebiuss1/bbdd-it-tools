@@ -28,10 +28,24 @@ company_size:
 - grande
 market_rank: 6
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/aws-cloudhsm.png
 ---
+AWS CloudHSM entrega módulos de seguridad hardware dedicados dentro de la nube de AWS. A diferencia de KMS, donde
+las claves viven en un servicio multiinquilino gestionado por Amazon, aquí el cliente controla el clúster, gestiona
+sus usuarios criptográficos y AWS no tiene acceso al material de clave.
 
-AWS CloudHSM proporciona capacidades avanzadas en la categoría key-managers para organizaciones que necesitan proteger sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+En la raíz de confianza. Sostiene autoridades de certificación privadas, firma de documentos y transacciones, y
+cifrado de bases de datos cuando la normativa exige que las claves nunca salgan de un dispositivo certificado.
+
+## A tener en cuenta
+
+Ese control tiene contrapartida operativa: la gestión de usuarios, el respaldo y la alta disponibilidad del clúster
+son responsabilidad del cliente, y perder las credenciales criptográficas significa perder los datos cifrados. Se
+factura por hora de HSM activo, así que un clúster redundante es un coste fijo relevante. Para la mayoría de casos
+de uso, KMS resulta suficiente; CloudHSM se justifica cuando hay un requisito explícito de FIPS 140-2 Nivel 3 o de
+custodia exclusiva.

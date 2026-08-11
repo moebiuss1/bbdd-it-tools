@@ -29,7 +29,7 @@ company_size:
 - grande
 market_rank: 2
 sources:
-- https://mdmbuyer.com/
+  - https://mdmbuyer.com/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/omnissa-workspace-one.png

@@ -1,0 +1,22 @@
+---
+// Pie compartido — mismo criterio que Header.astro: una sola definición de enlaces.
+const base = import.meta.env.BASE_URL;
+const links = [
+  { label: "Directorio", href: `${base}herramientas` },
+  { label: "Rankings", href: `${base}ranking` },
+  { label: "Glosario", href: `${base}glosario` },
+  { label: "Acerca de", href: `${base}about` },
+];
+---
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-brand">BBDD IT Tools</p>
+      <p class="footer-desc">Directorio actualizado cada lunes</p>
+    </div>
+    <div class="footer-links">
+      {links.map(l => <a href={l.href} class="nav-link" style="font-size:12px">{l.label}</a>)}
+    </div>
+  </div>
+</footer>

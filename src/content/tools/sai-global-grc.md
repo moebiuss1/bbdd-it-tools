@@ -24,10 +24,22 @@ company_size:
 - grande
 market_rank: 7
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/sai-global-grc.png
 ---
+SAI Global GRC —integrada hoy en la cartera de Riskonnect— cubre el ciclo completo de gobierno, riesgo y cumplimiento:
+registro de riesgos, gestión de políticas, auditoría interna y formación de la plantilla en materia de compliance.
 
-SAI Global GRC proporciona capacidades avanzadas en la categoría kpi-ca-managers para organizaciones que necesitan gestionar sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+En el plano de gobierno, por encima de los controles técnicos. Su tradición está en sectores muy regulados —finanzas,
+sanidad, industria— donde la obligación no es solo aplicar el control, sino demostrar de forma continuada que se
+aplica.
+
+## A tener en cuenta
+
+Las plataformas GRC de esta gama son proyectos, no instalaciones: el esfuerzo está en mapear el marco normativo
+propio y en mantener vivo el catálogo de controles. Conviene confirmar la hoja de ruta del producto tras la
+integración corporativa y el encaje de los marcos europeos (RGPD, NIS2, DORA, ENS) en las plantillas incluidas.

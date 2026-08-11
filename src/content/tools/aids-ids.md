@@ -27,9 +27,22 @@ market_rank: 7
 repo: https://github.com/aide/aide
 license: GPL-2.0
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 ---
+AIDE (Advanced Intrusion Detection Environment) no vigila la red: vigila el propio sistema de ficheros. Calcula un
+resumen criptográfico de cada fichero relevante y avisa cuando alguno cambia sin motivo, que es la señal clásica de
+un binario sustituido o de una configuración manipulada.
 
-AIDE proporciona capacidades avanzadas en la categoría ids para organizaciones que necesitan proteger sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+Es un HIDS de integridad, en el servidor y en el puesto. Complementa al antivirus y al EDR, que buscan comportamiento
+malicioso, con una pregunta distinta y muy barata de responder: ¿este sistema sigue siendo el que instalamos?
+
+## A tener en cuenta
+
+La base de datos de referencia debe generarse sobre un sistema limpio y guardarse fuera de la máquina vigilada: si
+el atacante puede reescribirla, el control desaparece. Genera ruido tras cada actualización de paquetes, así que
+requiere una política clara de re-línea base ligada a la gestión de cambios. Muchos marcos —PCI DSS entre ellos—
+exigen monitorización de integridad de ficheros, y AIDE la cubre sin coste de licencia.

@@ -30,10 +30,23 @@ market_rank: 2
 repo: https://gitlab.com/gitlab-org/gitlab
 license: MIT
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/gitlab-ci-config.png
 ---
+GitLab CI/CD integra el repositorio, la revisión de código y el pipeline de despliegue en una sola plataforma. Los
+trabajos se declaran en un fichero versionado junto al código, de modo que el propio proceso de construcción y
+despliegue queda bajo control de cambios.
 
-GitLab CI/CD proporciona capacidades avanzadas en la categoría config-managers para organizaciones que necesitan gestionar sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+En la cadena que lleva del código a producción. Es también el punto donde se aplican los requisitos de segregación de
+funciones: revisión obligatoria por un tercero, aprobaciones por entorno y ramas protegidas.
+
+## A tener en cuenta
+
+Un pipeline con permisos de despliegue equivale a un administrador de producción. Sus variables protegidas y sus
+tokens de despliegue deben tratarse como credenciales privilegiadas —alcance mínimo, rotación, registro— y los
+ejecutores (runners) compartidos entre proyectos son un vector de contaminación entre equipos. Para auditoría, el
+historial de aprobaciones y ejecuciones es una evidencia de primer orden sobre cómo llegó cada cambio a producción.

@@ -25,7 +25,7 @@ company_size:
 - grande
 market_rank: 7
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/observability-platforms
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/graylog-security.png

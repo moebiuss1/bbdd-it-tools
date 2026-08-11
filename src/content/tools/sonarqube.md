@@ -30,8 +30,8 @@ company_size:
 repo: https://github.com/SonarSource/sonarqube
 license: LGPL-3.0
 sources:
-- https://www.sonarsource.com/trust-center/
-- https://www.sonarsource.com/company/press-releases/sonar-iso-certification/
+  - https://www.sonarsource.com/trust-center/
+  - https://www.sonarsource.com/company/press-releases/sonar-iso-certification/
 cert_url: https://www.sonarsource.com/trust-center/
 last_verified: '2026-08-10'
 needs_review: false

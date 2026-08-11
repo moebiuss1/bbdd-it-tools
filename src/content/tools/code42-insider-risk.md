@@ -25,10 +25,23 @@ company_size:
 - grande
 market_rank: 6
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/data-loss-prevention
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/code42-insider-risk.png
 ---
+Code42 Incydr aborda la fuga de datos desde un ángulo distinto al DLP clásico: en lugar de clasificar el contenido y
+bloquear lo que encaje en una regla, registra todo movimiento de ficheros —a USB, a la nube personal, a repositorios
+de código, al correo web— y señala el comportamiento anómalo de una persona concreta.
 
-Code42 Incydr proporciona capacidades avanzadas en la categoría dlp para organizaciones que necesitan proteger sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+En el puesto de trabajo y en el dato. Su caso de uso natural es el riesgo interno: la marcha de un empleado, un
+proyecto sensible, el acceso masivo a documentación poco antes de una dimisión.
+
+## A tener en cuenta
+
+Ese enfoque evita el trabajo interminable de clasificación previa, pero implica monitorizar la actividad de personas
+identificadas, con las consecuencias legales que eso tiene en la UE: exige base jurídica, información a la plantilla
+y, con frecuencia, consulta a la representación laboral. No sustituye a un DLP de contenido cuando la obligación es
+impedir la salida de un tipo de dato concreto.

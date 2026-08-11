@@ -25,10 +25,10 @@ company_size:
 - mediana
 - grande
 sources:
-- https://validmind.com/platform/ai-model-risk-management/
-- https://validmind.com/wp-content/uploads/2025/06/ValidMind-Product-Brief-Navigating-SS1-23-2.pdf
+  - https://validmind.com/platform/ai-model-risk-management/
+  - https://validmind.com/wp-content/uploads/2025/06/ValidMind-Product-Brief-Navigating-SS1-23-2.pdf
 last_verified: '2026-08-10'
-needs_review: true
+needs_review: false
 market_rank: 1
 ---
 

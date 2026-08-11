@@ -8,6 +8,7 @@ type: comercial
 cost_model: presupuesto-personalizado
 cost_details: Licencia anual según número de activos gestionados.
 website: https://www.servicenow.com/products/it-asset-management.html
+cert_url: https://trust.servicenow.com/certifications
 description: 'Gestión integral de activos IT en la plataforma ServiceNow. Cubre todo el ciclo de vida: adquisición, inventario,
   cumplimiento de licencias, y disposición.'
 why_reference: Líder en Gartner MQ para ITAM. Su integración con ITSM en una única plataforma (ServiceNow) elimina silos entre
@@ -26,7 +27,8 @@ tags:
 - automatizacion
 - monitorizacion
 slug: servicenow-itam
-sources: []
+sources:
+  - https://www.gartner.com/reviews/market/it-service-management-platforms
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

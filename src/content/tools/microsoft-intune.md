@@ -28,7 +28,8 @@ tags:
 - saas
 - zero-trust
 slug: microsoft-intune
-sources: []
+sources:
+  - https://www.gartner.com/reviews/market/unified-endpoint-management-tools
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

@@ -25,10 +25,22 @@ company_size:
 - mediana
 market_rank: 10
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/software-asset-management-tools
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/pdq-inventory.png
 ---
+PDQ Inventory escanea equipos Windows y recopila lo que tienen instalado, su hardware y su estado de actualización,
+con un enfoque deliberadamente sencillo: instalación en minutos y colecciones dinámicas que agrupan los equipos por
+lo que les falta.
 
-PDQ Inventory proporciona capacidades avanzadas en la categoría it-asset-managers para organizaciones que necesitan proteger sus entornos IT con soluciones respaldadas por analistas independientes.
+## Dónde encaja
+
+En la operación IT de parques Windows. Combinado con PDQ Deploy, el mismo criterio que detecta los equipos sin un
+parche sirve para desplegárselo.
+
+## A tener en cuenta
+
+Es una herramienta de administración de sistemas, no un ITAM completo: no gestiona contratos, ni amortizaciones, ni
+el ciclo de vida financiero del activo. Tampoco cubre macOS ni Linux en la misma medida. Para un inventario
+corporativo formal, suele convivir con una plataforma ITAM que consuma sus datos.

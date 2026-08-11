@@ -29,8 +29,8 @@ company_size:
 - grande
 market_rank: 7
 sources:
-- https://www.gartner.com/en/documents/siem-magic-quadrant
-- https://www.securonix.com/
+  - https://www.gartner.com/en/documents/siem-magic-quadrant
+  - https://www.securonix.com/
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/securonix.png

@@ -15,6 +15,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$10,000/año. IPS dedicado con inteligencia Talos.
 website: https://www.cisco.com
+cert_url: https://www.cisco.com/c/en/us/solutions/industries/government/global-government-certifications.html
 description: Sistema de prevención de intrusiones en línea con inteligencia de amenazas Cisco Talos —uno de los mayores equipos
   de investigación de seguridad del mundo—, inspección profunda de paquetes y recomendaciones de política basadas en el contexto
   de red.
@@ -29,7 +30,7 @@ company_size:
 - grande
 market_rank: 5
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/cisco-firepower-ngips.png

@@ -1,10 +1,13 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { getCategories, getToolCategories, computeToolScore, toToolEntry } from "@lib/tools";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { getCategories, getFamilies, getToolCategories, computeToolScore, toToolEntry } from "@lib/tools";
 const base = import.meta.env.BASE_URL;
 const tools = (await getCollection("tools")).map(toToolEntry);
 const categories = await getCategories();
+const families = await getFamilies();
 
 // Ordenar por ranking
 const sortedTools = [...tools].sort((a,b) => (a.data.market_rank??999) - (b.data.market_rank??999));
@@ -16,74 +19,145 @@ const groupByCat = categories.map(cat => ({
 function scoreColor(s: number) { return s >= 70 ? '#059669' : s >= 40 ? '#d97706' : '#dc2626'; }
 function scoreBg(s: number) { return s >= 70 ? '#ecfdf5' : s >= 40 ? '#fffbeb' : '#fef2f2'; }
 
-// Certificaciones rápidas
-const quickCerts = ['ISO 27001', 'ENS Alta', 'ENS Media', 'SOC 2 Tipo II', 'Common Criteria'];
+// Todos los desplegables se ordenan alfabéticamente (colación española: ignora
+// tildes y mayúsculas) — con decenas de opciones, buscar una por orden de
+// frecuencia obliga a leerlas todas.
+const collator = new Intl.Collator("es", { sensitivity: "base" });
+
+// Facetas derivadas de los datos reales, no de una lista escrita a mano:
+// así el desplegable nunca ofrece un filtro que no devuelve resultados.
+const certCount = new Map<string, number>();
+for (const t of tools) for (const c of (t.data.certifications ?? [])) certCount.set(c, (certCount.get(c) ?? 0) + 1);
+const certOptions = [...certCount.entries()]
+  .filter(([, n]) => n >= 2)
+  .sort((a, b) => collator.compare(a[0], b[0]));
+
+const costLabels: Record<string, string> = {
+  gratis: "Gratuito", freemium: "Freemium", "suscripción": "Suscripción",
+  "licencia-perpetua": "Licencia perpetua", "pago-por-uso": "Pago por uso",
+  "presupuesto-personalizado": "Presupuesto personalizado",
+};
+const costCount = new Map<string, number>();
+for (const t of tools) if (t.data.cost_model) costCount.set(t.data.cost_model, (costCount.get(t.data.cost_model) ?? 0) + 1);
+const costOptions = [...costCount.entries()]
+  .sort((a, b) => collator.compare(costLabels[a[0]] ?? a[0], costLabels[b[0]] ?? b[0]));
+
+// El tamaño de empresa mantiene su orden natural (de menor a mayor): es una
+// escala, y alfabetizarla dejaría "Gran empresa" antes que "Pequeña empresa".
+const sizeLabels: Record<string, string> = { "pequeña": "Pequeña empresa", mediana: "Mediana empresa", grande: "Gran empresa" };
+
+// Solo categorías y familias con herramientas, para no ofrecer opciones vacías
+const catOptions = groupByCat
+  .map(c => ({ id: c.id, name: c.name, family: c.family, n: c.tools.length }))
+  .sort((a, b) => collator.compare(a.name, b.name));
+const famCount = new Map<string, number>();
+for (const c of catOptions) famCount.set(c.family, (famCount.get(c.family) ?? 0) + c.n);
 ---
 
 <BaseLayout title="Directorio">
-  <header class="sticky top-0 z-40 header">
-    <nav class="container header-inner">
-      <a href={base} class="brand">BBDD IT</a>
-      <div class="flex items-center gap-2"><a href={`${base}herramientas`} class="nav-link">Directorio</a><a href={`${base}ranking`} class="nav-link">Rankings</a><a href={`${base}glosario`} class="nav-link">Glosario</a><a href={`${base}about`} class="nav-link">Acerca de</a></div>
-    </nav>
-  </header>
+  <Header active="herramientas" />
 
   <section class="py-10">
     <div class="container max-w-900" style="overflow-x:hidden">
       <h1 class="section-title" style="font-size:28px">Directorio</h1>
       <p class="section-desc">{tools.length} herramientas en {categories.length} categorías</p>
 
-      <!-- Búsqueda -->
-      <div class="mt-6" style="max-width:420px;position:relative">
-        <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);pointer-events:none" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="search" id="tool-search" class="search-input" style="padding-left:32px;font-size:14px" placeholder="Buscar por nombre, descripción, etiqueta o certificación..." aria-label="Buscar herramientas" />
-      </div>
+      <!-- ── Barra de filtros ────────────────────────────────────── -->
+      <div class="filters" role="search">
+        <div class="filters-row">
+          <div class="filters-search">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="search" id="tool-search" placeholder="Buscar por nombre, descripción, etiqueta o certificación…" aria-label="Buscar herramientas" />
+          </div>
+          <div class="filters-sort">
+            <label for="sort-select">Ordenar</label>
+            <select id="sort-select">
+              <option value="rank">Por ranking</option>
+              <option value="score">Por puntuación</option>
+              <option value="name">Alfabético</option>
+              <option value="updated">Más recientes</option>
+            </select>
+          </div>
+        </div>
 
-      <!-- Filtros -->
-      <div class="flex flex-wrap items-end gap-3 mt-6">
-        <div>
-          <label for="cat-select" style="font-size:11px;color:#8e8e93;display:block;margin-bottom:4px">Categoría</label>
-          <select id="cat-select" style="padding:8px 32px 8px 12px;border:1px solid #d2d2d7;border-radius:10px;font-size:14px;font-weight:500;color:#1d1d1f;background:#fff;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none;max-width:260px">
-            <option value="">Todas las categorías</option>
-            {categories.map(c => <option value={c.id}>{c.name} ({tools.filter(t=>getToolCategories(t.data).includes(c.id)).length})</option>)}
-          </select>
+        <div class="filters-facets">
+          <div class="facet">
+            <label for="fam-select">Familia</label>
+            <select id="fam-select">
+              <option value="">Todas</option>
+              {families
+                .filter((f: any) => famCount.get(f.id))
+                .sort((a: any, b: any) => collator.compare(a.name, b.name))
+                .map((f: any) => (
+                <option value={f.id}>{f.name} ({famCount.get(f.id)})</option>
+              ))}
+            </select>
+          </div>
+          <div class="facet">
+            <label for="cat-select">Categoría</label>
+            <select id="cat-select">
+              <option value="">Todas</option>
+              {catOptions.map(c => <option value={c.id} data-family={c.family}>{c.name} ({c.n})</option>)}
+            </select>
+          </div>
+          <div class="facet">
+            <label for="type-select">Tipo</label>
+            <select id="type-select">
+              <option value="">Todos</option>
+              <option value="comercial">Comercial</option>
+              <option value="opensource">Open Source</option>
+            </select>
+          </div>
+          <div class="facet">
+            <label for="cert-select">Certificación</label>
+            <select id="cert-select">
+              <option value="">Cualquiera</option>
+              {certOptions.map(([c, n]) => <option value={c}>{c} ({n})</option>)}
+            </select>
+          </div>
+          <div class="facet">
+            <label for="size-select">Tamaño de empresa</label>
+            <select id="size-select">
+              <option value="">Cualquiera</option>
+              {Object.entries(sizeLabels).map(([v, l]) => <option value={v}>{l}</option>)}
+            </select>
+          </div>
+          <div class="facet">
+            <label for="cost-select">Modelo de coste</label>
+            <select id="cost-select">
+              <option value="">Cualquiera</option>
+              {costOptions.map(([v, n]) => <option value={v}>{costLabels[v] ?? v} ({n})</option>)}
+            </select>
+          </div>
         </div>
-        <div>
-          <span style="font-size:11px;color:#8e8e93">Tipo:</span>
-          <button class="filter-chip-sm active" data-type="" aria-pressed="true">Todos</button>
-          <button class="filter-chip-sm" data-type="comercial" aria-pressed="false">Comercial</button>
-          <button class="filter-chip-sm" data-type="opensource" aria-pressed="false">Open Source</button>
+
+        <div class="filters-foot">
+          <p class="filters-count" id="results-count" aria-live="polite">{tools.length} herramientas</p>
+          <div class="filters-active" id="active-filters"></div>
+          <button type="button" class="filters-clear" id="clear-filters" hidden>Limpiar todo</button>
         </div>
-        <span style="color:#d2d2d7;margin:0 2px">|</span>
-        <button class="sort-link active" data-sort="rank" aria-pressed="true">Por ranking</button>
-        <button class="sort-link" data-sort="score" aria-pressed="false">Por puntuación</button>
-        <button class="sort-link" data-sort="name" aria-pressed="false">Alfabético</button>
-        <button class="sort-link" data-sort="updated" aria-pressed="false">Más recientes</button>
-        <span style="color:#d2d2d7;margin:0 2px">|</span>
-        <span style="font-size:11px;color:#8e8e93">Cert:</span>
-        <button class="filter-chip-sm active" data-qcert="" aria-pressed="true">Todas</button>
-        {quickCerts.map(c => <button class="filter-chip-sm" data-qcert={c} aria-pressed="false">{c}</button>)}
-        <a href={`${base}herramientas`} id="clear-filters" style="color:#0071e3;font-size:12px;display:none;margin-left:4px">Limpiar filtros</a>
       </div>
-      <div style="font-size:15px;font-weight:600;color:#0071e3;margin-top:12px" id="results-count" aria-live="polite">{tools.length} herramientas</div>
 
       <!-- Grid agrupado por categorías -->
-      <div id="tools-grid" class="space-y-10 mt-6">
+      <div id="tools-grid" class="space-y-10 mt-8">
         {groupByCat.map(cat => (
-          <section data-cat={cat.id}>
-            <h2 class="section-title mb-4">{cat.name} <span style="color:#8e8e93;font-weight:400">{cat.tools.length}</span></h2>
+          <section data-cat={cat.id} data-family={cat.family}>
+            <h2 class="section-title mb-4">{cat.name} <span class="cat-n" style="color:#8e8e93;font-weight:400">{cat.tools.length}</span></h2>
             <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {cat.tools.map(tool => {
-                const s = computeToolScore(tool.data);
+                const s = computeToolScore(tool.data, tool.body);
                 return (
                   <a href={`${base}herramientas/${tool.slug}/`} class="card tool-card group"
                      data-slug={tool.slug}
                      data-name={tool.data.name}
+                     data-type={tool.data.type}
                      data-rank={tool.data.market_rank ?? 999}
                      data-score={s}
                      data-updated={tool.data.last_verified ? new Date(tool.data.last_verified).getTime() : 0}
-                     data-certs={(tool.data.certifications || []).join(',')}
-                     data-tags={(tool.data.tags || []).join(',')}>
+                     data-certs={(tool.data.certifications || []).join('|')}
+                     data-size={(tool.data.company_size || []).join('|')}
+                     data-cost={tool.data.cost_model ?? ''}
+                     data-tags={(tool.data.tags || []).join('|')}>
                     <div class="tool-avatar">
                       {tool.data.logo ? <img src={`${base}${tool.data.logo.replace(/^\//,'')}`} alt="" width="35" height="35" style="border-radius:10px;object-fit:contain" loading="lazy" /> : <span style="font-size:15px;font-weight:700;color:#8e8e93">{tool.data.name.charAt(0)}</span>}
                     </div>
@@ -103,55 +177,155 @@ const quickCerts = ['ISO 27001', 'ENS Alta', 'ENS Media', 'SOC 2 Tipo II', 'Comm
         ))}
       </div>
 
-      <!-- Empty state (hidden initially) -->
-      <div class="text-center py-16" id="empty-state" style="display:none">
+      <!-- Sin resultados (oculto de inicio) -->
+      <div class="text-center py-16" id="empty-state" hidden>
         <p class="section-desc" id="empty-state-msg">Sin resultados. Prueba otros filtros.</p>
-        <a href={`${base}herramientas`} class="btn btn-primary mt-4">Ver todas</a>
+        <button type="button" class="btn btn-primary mt-4" id="empty-clear">Quitar filtros</button>
       </div>
     </div>
   </section>
 
-  <footer class="footer"><div class="container footer-grid"><div><p class="footer-brand">BBDD IT Tools</p><p class="footer-desc">Directorio actualizado cada lunes</p></div><div class="footer-links"><a href={`${base}herramientas`} class="nav-link" style="font-size:12px">Directorio</a><a href={`${base}ranking`} class="nav-link" style="font-size:12px">Rankings</a><a href={`${base}glosario`} class="nav-link" style="font-size:12px">Glosario</a><a href={`${base}about`} class="nav-link" style="font-size:12px">Acerca de</a></div></div></footer>
+  <Footer />
 </BaseLayout>
 
 <style>
-.filter-chip{padding:6px 14px;border-radius:9999px;font-size:13px;font-weight:500;border:1px solid #d2d2d7;color:#6e6e73;background:#fff;cursor:pointer;transition:all .15s}
-.filter-chip:hover{background:#f5f5f7}
-.filter-chip.active{background:#e8f2fd;color:#0066cc;border-color:#e8f2fd}
-.filter-chip-sm{padding:4px 10px;border-radius:9999px;font-size:11px;font-weight:500;border:1px solid #d2d2d7;color:#6e6e73;background:#fff;cursor:pointer;transition:all .15s}
-.filter-chip-sm:hover{background:#f5f5f7}
-.filter-chip-sm.active{background:#f0fdfa;color:#0d9488;border-color:#f0fdfa}
-.sort-link{padding:4px 8px;border-radius:6px;font-size:13px;font-weight:500;color:#6e6e73;background:none;border:none;cursor:pointer;transition:all .15s}
-.sort-link:hover{color:#1d1d1f}
-.sort-link.active{color:#1d1d1f;font-weight:600}
+.filters{margin-top:24px;border:1px solid #e8e8ed;border-radius:16px;background:#fff;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.filters-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.filters-search{position:relative;flex:1;min-width:240px;display:flex;align-items:center}
+.filters-search svg{position:absolute;left:13px;pointer-events:none}
+.filters-search input{width:100%;border-radius:10px;border:1px solid #d2d2d7;background:#f5f5f7;padding:9px 14px 9px 34px;font-size:14px;color:#1d1d1f;outline:none;transition:border-color .15s,box-shadow .15s,background .15s}
+.filters-search input::placeholder{color:#8e8e93}
+.filters-search input:focus{border-color:#0071e3;background:#fff;box-shadow:0 0 0 3px rgba(0,113,227,.15)}
+.filters-sort{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.filters-sort label{font-size:12px;color:#8e8e93}
+
+/* Rejilla de facetas: una columna en móvil, hasta tres en escritorio */
+.filters-facets{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid #f0f0f3}
+@media (min-width:640px){.filters-facets{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:960px){.filters-facets{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.facet{display:flex;flex-direction:column;gap:4px;min-width:0}
+.facet label{font-size:11px;font-weight:500;color:#8e8e93;letter-spacing:.01em}
+
+.filters select{
+  width:100%;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none;
+  border:1px solid #d2d2d7;border-radius:10px;background-color:#fff;color:#1d1d1f;
+  font-size:13px;font-weight:500;padding:8px 30px 8px 11px;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238e8e93' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 10px center;
+  text-overflow:ellipsis;transition:border-color .15s,box-shadow .15s;
+}
+.filters-sort select{width:auto;min-width:150px}
+.filters select:hover{border-color:#aeaeb2}
+.filters select:focus-visible{border-color:#0071e3;box-shadow:0 0 0 3px rgba(0,113,227,.15)}
+.filters select.is-set{border-color:#0071e3;background-color:#f4f9ff;color:#0066cc}
+
+.filters-foot{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid #f0f0f3}
+.filters-count{font-size:14px;font-weight:600;color:#1d1d1f;flex-shrink:0}
+.filters-active{display:flex;flex-wrap:wrap;gap:6px;flex:1;min-width:0}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 6px 4px 11px;border-radius:9999px;background:#e8f2fd;color:#0066cc;font-size:12px;font-weight:500;border:none;cursor:pointer;transition:background .15s}
+.pill:hover{background:#d7e9fc}
+.pill b{font-weight:600}
+.pill span{display:flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:9999px;background:rgba(0,102,204,.15);font-size:13px;line-height:1}
+.filters-clear{background:none;border:none;cursor:pointer;color:#6e6e73;font-size:12px;padding:4px 8px;border-radius:8px;flex-shrink:0}
+.filters-clear:hover{background:#f5f5f7;color:#1d1d1f}
 </style>
 
 <script>
-  import { loadIndex } from "@lib/search";
+  import { loadIndex, searchSlugs } from "@lib/search";
 
   const BASE = document.querySelector('a.brand')?.getAttribute('href') || '/';
   const params = new URLSearchParams(location.search);
 
-  let activeCat = params.get('cat') || '';
-  let activeType = params.get('type') || '';
-  let activeCert = params.get('cert') || '';
+  function sel(id: string) { return document.getElementById(id) as HTMLSelectElement | null; }
+
+  const hasPipe = (attr: string | undefined, v: string) =>
+    ('|' + (attr || '') + '|').includes('|' + v + '|');
+
+  /**
+   * Cada faceta es un <select> con su parámetro en la URL. Declararlas en una
+   * tabla evita el bloque de ramas repetidas de la versión anterior: añadir un
+   * filtro es añadir una fila aquí y su <select> en el HTML.
+   */
+  interface Facet {
+    param: string;
+    el: HTMLSelectElement | null;
+    label: string;
+    value: string;
+    /** ¿pasa la tarjeta este filtro? */
+    test: (card: HTMLElement, section: HTMLElement, value: string) => boolean;
+  }
+
+  const facets: Facet[] = [
+    { param: 'fam',  el: sel('fam-select'),  label: 'Familia',       value: '',
+      test: (_c, s, v) => s.dataset.family === v },
+    { param: 'cat',  el: sel('cat-select'),  label: 'Categoría',     value: '',
+      test: (_c, s, v) => s.dataset.cat === v },
+    { param: 'type', el: sel('type-select'), label: 'Tipo',          value: '',
+      test: (c, _s, v) => c.dataset.type === v },
+    { param: 'cert', el: sel('cert-select'), label: 'Certificación', value: '',
+      test: (c, _s, v) => hasPipe(c.dataset.certs, v) },
+    { param: 'size', el: sel('size-select'), label: 'Tamaño',        value: '',
+      test: (c, _s, v) => hasPipe(c.dataset.size, v) },
+    { param: 'cost', el: sel('cost-select'), label: 'Coste',         value: '',
+      test: (c, _s, v) => c.dataset.cost === v },
+  ];
+
+  const searchInput = document.getElementById('tool-search') as HTMLInputElement | null;
+  const sortSelect = sel('sort-select');
+  const resultsCount = document.getElementById('results-count');
+  const activeBox = document.getElementById('active-filters');
+  const clearBtn = document.getElementById('clear-filters') as HTMLElement | null;
+  const emptyState = document.getElementById('empty-state') as HTMLElement | null;
+  const emptyStateMsg = document.getElementById('empty-state-msg');
+  const emptyClear = document.getElementById('empty-clear');
+
+  // La etiqueta llega desde la ficha de detalle (?tag=…); no tiene <select> propio
   let activeTag = params.get('tag') || '';
   let activeSort = params.get('sort') || 'rank';
   let query = params.get('q') || '';
   let matchedSlugs: Set<string> | null = null;
+  let searchFailed = false;
 
-  const catSelect = document.getElementById('cat-select') as HTMLSelectElement | null;
-  const searchInput = document.getElementById('tool-search') as HTMLInputElement | null;
-  const resultsCount = document.getElementById('results-count');
-  const emptyState = document.getElementById('empty-state');
-  const emptyStateMsg = document.getElementById('empty-state-msg');
-  const clearFilters = document.getElementById('clear-filters');
+  const sections = Array.from(document.querySelectorAll<HTMLElement>('#tools-grid > section'));
+  const catSelect = sel('cat-select');
+  // Copia en memoria del catálogo completo de categorías: reconstruir el
+  // <select> es más fiable que marcar <option hidden>, que no todos los
+  // navegadores respetan.
+  const allCatOptions = catSelect
+    ? Array.from(catSelect.options).slice(1).map(o => ({ value: o.value, text: o.textContent || '', family: o.dataset.family || '' }))
+    : [];
 
-  if (catSelect) catSelect.value = activeCat;
+  // Estado inicial desde la URL
+  for (const f of facets) {
+    f.value = params.get(f.param) || '';
+    if (f.el) f.el.value = f.value;
+  }
   if (searchInput) searchInput.value = query;
+  if (sortSelect) sortSelect.value = activeSort;
+
+  /** La categoría depende de la familia: ofrecer solo las que le pertenecen. */
+  function syncCategoryOptions() {
+    if (!catSelect) return;
+    const fam = facets[0].value;
+    const cat = facets[1];
+    const allowed = allCatOptions.filter(o => !fam || o.family === fam);
+
+    // Si la categoría elegida ya no pertenece a la familia, se descarta
+    if (cat.value && !allowed.some(o => o.value === cat.value)) cat.value = '';
+
+    const placeholder = catSelect.options[0];
+    const rebuilt = allowed.map(o => {
+      const el = document.createElement('option');
+      el.value = o.value;
+      el.textContent = o.text;
+      return el;
+    });
+    catSelect.replaceChildren(placeholder, ...rebuilt);
+    catSelect.value = cat.value;
+  }
 
   let miniSearchPromise: Promise<any> | null = null;
-  async function getMiniSearch() {
+  function getMiniSearch() {
     if (!miniSearchPromise) {
       miniSearchPromise = fetch(`${BASE}search-index.json`)
         .then(r => r.text())
@@ -165,16 +339,23 @@ const quickCerts = ['ISO 27001', 'ENS Alta', 'ENS Media', 'SOC 2 Tipo II', 'Comm
     const trimmed = q.trim();
     if (!trimmed) { matchedSlugs = null; render(); return; }
     const mini = await getMiniSearch();
-    if (!mini) { matchedSlugs = null; render(); return; }
-    const results = mini.search(trimmed);
-    matchedSlugs = new Set(results.map((r: any) => r.slug));
+    // Sin índice (fetch fallido) no se puede buscar: mejor decirlo que fingir
+    // que el catálogo entero es el resultado.
+    if (!mini) { matchedSlugs = new Set<string>(); searchFailed = true; render(); return; }
+    searchFailed = false;
+    matchedSlugs = searchSlugs(mini, trimmed);
     render();
   }
 
+  // Reordenar mueve 300+ nodos: solo se hace cuando el criterio ha cambiado,
+  // no en cada pulsación del buscador.
+  let sortedBy: string | null = null;
   function applySort() {
-    document.querySelectorAll<HTMLElement>('#tools-grid > section').forEach(section => {
+    if (sortedBy === activeSort) return;
+    sortedBy = activeSort;
+    for (const section of sections) {
       const grid = section.querySelector('.grid');
-      if (!grid) return;
+      if (!grid) continue;
       const cards = Array.from(grid.children) as HTMLElement[];
       cards.sort((a, b) => {
         if (activeSort === 'name') return (a.dataset.name || '').localeCompare(b.dataset.name || '', 'es');
@@ -182,64 +363,89 @@ const quickCerts = ['ISO 27001', 'ENS Alta', 'ENS Media', 'SOC 2 Tipo II', 'Comm
         if (activeSort === 'updated') return Number(b.dataset.updated) - Number(a.dataset.updated);
         return Number(a.dataset.rank || 999) - Number(b.dataset.rank || 999);
       });
-      cards.forEach(c => grid.appendChild(c));
+      for (const c of cards) grid.appendChild(c);
+    }
+  }
+
+  function renderPills() {
+    if (!activeBox) return;
+    activeBox.textContent = '';
+    const add = (label: string, text: string, onRemove: () => void) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pill';
+      const strong = document.createElement('b');
+      strong.textContent = `${label}: ${text}`;
+      const x = document.createElement('span');
+      x.setAttribute('aria-hidden', 'true');
+      x.textContent = '×';
+      b.append(strong, x);
+      b.setAttribute('aria-label', `Quitar filtro ${label}: ${text}`);
+      b.addEventListener('click', () => { onRemove(); syncCategoryOptions(); update(); });
+      activeBox.appendChild(b);
+    };
+
+    for (const f of facets) {
+      if (!f.value || !f.el) continue;
+      const opt = Array.from(f.el.options).find(o => o.value === f.value);
+      // El recuento entre paréntesis sobra dentro de la píldora
+      const text = (opt?.textContent || f.value).replace(/\s*\(\d+\)\s*$/, '');
+      add(f.label, text, () => { f.value = ''; f.el!.value = ''; });
+    }
+    if (activeTag) add('Etiqueta', activeTag, () => { activeTag = ''; });
+    if (query) add('Búsqueda', query, () => {
+      query = ''; matchedSlugs = null;
+      if (searchInput) searchInput.value = '';
     });
   }
 
   function render() {
-    let total = 0;
-    document.querySelectorAll<HTMLElement>('#tools-grid > section').forEach(section => {
+    // Una herramienta multicategoría se dibuja una vez por sección: se cuentan
+    // slugs distintos para no inflar el total.
+    const visibleSlugs = new Set<string>();
+
+    for (const section of sections) {
       let n = 0;
-      section.querySelectorAll<HTMLElement>('.tool-card').forEach(card => {
-        const certs = (card.dataset.certs || '').toLowerCase();
-        const tags = (card.dataset.tags || '').split(',');
-        const show = (!activeCat || section.dataset.cat === activeCat)
-          && (!activeType || card.dataset.type === activeType)
-          && (!activeCert || certs.includes(activeCert.toLowerCase()))
-          && (!activeTag || tags.includes(activeTag))
-          && (matchedSlugs === null || matchedSlugs.has(card.dataset.slug || ''));
-        card.style.display = show ? '' : 'none';
-        if (show) n++;
-      });
-      section.style.display = n > 0 ? '' : 'none';
-      total += n;
-    });
+      for (const card of Array.from(section.querySelectorAll<HTMLElement>('.tool-card'))) {
+        const show =
+          facets.every(f => !f.value || f.test(card, section, f.value)) &&
+          (!activeTag || hasPipe(card.dataset.tags, activeTag)) &&
+          (matchedSlugs === null || matchedSlugs.has(card.dataset.slug || ''));
+        card.hidden = !show;
+        if (show) { n++; visibleSlugs.add(card.dataset.slug || ''); }
+      }
+      section.hidden = n === 0;
+      const badge = section.querySelector('.cat-n');
+      if (badge) badge.textContent = String(n);
+    }
+
     applySort();
-    if (resultsCount) resultsCount.textContent = total + ' herramienta' + (total !== 1 ? 's' : '');
-    if (clearFilters) clearFilters.style.display = (activeCat || activeType || activeCert || activeTag || query) ? '' : 'none';
-    if (emptyState) emptyState.style.display = total === 0 ? '' : 'none';
+
+    const total = visibleSlugs.size;
+    if (resultsCount) resultsCount.textContent = `${total} herramienta${total === 1 ? '' : 's'}`;
+
+    const anyFilter = facets.some(f => f.value) || activeTag || query;
+    if (clearBtn) clearBtn.hidden = !anyFilter;
+    if (emptyState) emptyState.hidden = total > 0;
     if (emptyStateMsg) {
-      emptyStateMsg.textContent = activeTag
-        ? `Sin resultados para la etiqueta "${activeTag}".`
+      emptyStateMsg.textContent = searchFailed
+        ? "No se ha podido cargar el índice de búsqueda. Recarga la página o usa los filtros."
         : query
         ? `Sin resultados para "${query}".`
-        : 'Sin resultados. Prueba otros filtros.';
+        : activeTag
+        ? `Sin resultados para la etiqueta "${activeTag}".`
+        : 'Sin resultados con esta combinación de filtros.';
     }
-  }
 
-  function updateUI() {
-    document.querySelectorAll<HTMLElement>('.filter-chip-sm[data-type]').forEach(b => {
-      const active = b.dataset.type === activeType;
-      b.classList.toggle('active', active);
-      b.setAttribute('aria-pressed', String(active));
-    });
-    document.querySelectorAll<HTMLElement>('.filter-chip-sm[data-qcert]').forEach(b => {
-      const active = b.dataset.qcert === activeCert;
-      b.classList.toggle('active', active);
-      b.setAttribute('aria-pressed', String(active));
-    });
-    document.querySelectorAll<HTMLElement>('.sort-link').forEach(b => {
-      const active = b.dataset.sort === activeSort;
-      b.classList.toggle('active', active);
-      b.setAttribute('aria-pressed', String(active));
-    });
+    // Resaltar los desplegables que están filtrando
+    for (const f of facets) f.el?.classList.toggle('is-set', !!f.value);
+
+    renderPills();
   }
 
   function syncURL() {
     const p = new URLSearchParams();
-    if (activeCat) p.set('cat', activeCat);
-    if (activeType) p.set('type', activeType);
-    if (activeCert) p.set('cert', activeCert);
+    for (const f of facets) if (f.value) p.set(f.param, f.value);
     if (activeTag) p.set('tag', activeTag);
     if (activeSort !== 'rank') p.set('sort', activeSort);
     if (query) p.set('q', query);
@@ -247,48 +453,30 @@ const quickCerts = ['ISO 27001', 'ENS Alta', 'ENS Media', 'SOC 2 Tipo II', 'Comm
     history.replaceState(null, '', location.pathname + (qs ? `?${qs}` : ''));
   }
 
-  // Data attribute inicial: tipo (derivado del badge) y categoría
-  document.querySelectorAll<HTMLElement>('.tool-card').forEach(card => {
-    const section = card.closest('section');
-    if (section) card.dataset.cat = (section as HTMLElement).dataset.cat;
-    card.dataset.type = card.querySelector('.badge-green') ? 'opensource' : card.querySelector('.badge-blue') ? 'comercial' : '';
+  function update() { render(); syncURL(); }
+
+  for (const f of facets) {
+    f.el?.addEventListener('change', () => {
+      f.value = f.el!.value;
+      if (f.param === 'fam') syncCategoryOptions();
+      update();
+    });
+  }
+
+  sortSelect?.addEventListener('change', () => {
+    activeSort = sortSelect.value;
+    update();
   });
 
-  document.addEventListener('click', (e) => {
-    const target = e.target as HTMLElement;
-
-    const tchip = target.closest('.filter-chip-sm[data-type]') as HTMLElement | null;
-    if (tchip) {
-      e.preventDefault();
-      activeType = activeType === tchip.dataset.type ? '' : (tchip.dataset.type || '');
-      updateUI(); render(); syncURL(); return;
-    }
-    const qchip = target.closest('.filter-chip-sm[data-qcert]') as HTMLElement | null;
-    if (qchip) {
-      e.preventDefault();
-      activeCert = activeCert === qchip.dataset.qcert ? '' : (qchip.dataset.qcert || '');
-      updateUI(); render(); syncURL(); return;
-    }
-    const slink = target.closest('.sort-link') as HTMLElement | null;
-    if (slink) {
-      e.preventDefault();
-      activeSort = slink.dataset.sort || 'rank';
-      updateUI(); render(); syncURL(); return;
-    }
-    if (target.closest('#clear-filters')) {
-      e.preventDefault();
-      activeCat = ''; activeType = ''; activeCert = ''; activeTag = ''; activeSort = 'rank'; query = '';
-      if (catSelect) catSelect.value = '';
-      if (searchInput) searchInput.value = '';
-      matchedSlugs = null;
-      updateUI(); render(); syncURL(); return;
-    }
-  });
-
-  catSelect?.addEventListener('change', () => {
-    activeCat = catSelect.value;
-    render(); syncURL();
-  });
+  function clearAll() {
+    for (const f of facets) { f.value = ''; if (f.el) f.el.value = ''; }
+    activeTag = ''; query = ''; matchedSlugs = null;
+    if (searchInput) searchInput.value = '';
+    syncCategoryOptions();
+    update();
+  }
+  clearBtn?.addEventListener('click', clearAll);
+  emptyClear?.addEventListener('click', clearAll);
 
   let searchDebounce: ReturnType<typeof setTimeout>;
   searchInput?.addEventListener('input', () => {
@@ -297,6 +485,6 @@ const quickCerts = ['ISO 27001', 'ENS Alta', 'ENS Media', 'SOC 2 Tipo II', 'Comm
     searchDebounce = setTimeout(() => { runSearch(query); syncURL(); }, 150);
   });
 
-  updateUI();
-  if (query) { runSearch(query); } else { render(); }
+  syncCategoryOptions();
+  if (query) runSearch(query); else render();
 </script>

@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$5,000/año.
 website: https://www.forcepoint.com
+cert_url: https://www.forcepoint.com/certifications/ngfw-certifications
 description: Firewall de siguiente generación con prevención de amenazas, control de aplicaciones y gestión centralizada.
   Integración nativa con el ecosistema Forcepoint de seguridad centrada en datos y personas.
 why_reference: Forcepoint ha sido reconocida en los principales cuadrantes de analistas para firewalls y seguridad de red.
@@ -24,7 +25,7 @@ company_size:
 - grande
 market_rank: 8
 sources:
-- https://www.gartner.com/reviews/
+  - https://www.gartner.com/reviews/market/network-firewalls
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/forcepoint-ngfw.png
