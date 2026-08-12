@@ -33,9 +33,8 @@ company_size:
 market_rank: 3
 cert_url: https://www.ibm.com/trust
 sources:
-  - https://www.gartner.com/en/documents/siem-magic-quadrant
-  - https://itsm.tools/best-siem-tools
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/market/security-information-event-management
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/ibm-qradar.png
 ---

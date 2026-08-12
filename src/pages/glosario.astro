@@ -3,9 +3,25 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import { getFamilies } from "@lib/tools";
+import categories from "@data/categories";
 import { terms, familyDetails, type GlossaryTerm } from "@data/glossary";
 
 const families = await getFamilies();
+
+// Subcategorías de cada familia. Todos los `id` de categoría tienen término
+// definido en el glosario, así que cada chip enlaza a su definición (#t-<id>)
+// en lugar de salir del glosario hacia el directorio.
+const definedTerms = new Set(terms.map(t => t.id));
+const subcatsByFamily = new Map<string, typeof categories>();
+for (const cat of categories) {
+  const list = subcatsByFamily.get(cat.family) ?? [];
+  list.push(cat);
+  subcatsByFamily.set(cat.family, list);
+}
+const subcatCollator = new Intl.Collator("es", { sensitivity: "base" });
+for (const list of subcatsByFamily.values()) {
+  list.sort((a, b) => subcatCollator.compare(a.name, b.name));
+}
 
 const groupLabels: Record<string, string> = {
   producto: "Categoría de producto",
@@ -76,18 +92,34 @@ const counts = {
       <section class="mt-10" id="familias">
         <h2 class="section-title mb-2">Familias</h2>
         <p class="section-desc mb-6" style="max-width:640px">
-          Los {families.length} grandes bloques en que se agrupa el mercado. Cada uno responde a un tipo
-          de pregunta distinto en una auditoría.
+          Los {families.length} grandes bloques en que se agrupa el mercado, con las {categories.length} subcategorías
+          que contienen. Cada familia responde a un tipo de pregunta distinto en una auditoría; cada
+          subcategoría enlaza a su definición más abajo.
         </p>
-        <p class="glos-fam-note" id="glos-fam-note" aria-live="polite" hidden></p>
         <div class="glos-fams">
           {families.map((fam: any) => {
             const d = familyDetails[fam.id];
+            const subs = subcatsByFamily.get(fam.id) ?? [];
             return (
-              <article class="glos-fam" id={`fam-${fam.id}`}
-                       data-text={`${fam.name} ${d?.scope ?? fam.description} ${d?.audit ?? ""}`.toLowerCase()}>
+              <article class="glos-fam" id={`fam-${fam.id}`}>
                 <h3><span aria-hidden="true">{fam.icon}</span> {fam.name}</h3>
                 <p class="glos-fam-scope">{d?.scope ?? fam.description}</p>
+                {subs.length > 0 && (
+                  <div class="glos-fam-subs">
+                    <p class="glos-fam-subs-label">
+                      Subcategorías <span>{subs.length}</span>
+                    </p>
+                    <ul>
+                      {subs.map(sub => (
+                        <li>
+                          {definedTerms.has(sub.id)
+                            ? <a href={`#t-${sub.id}`} title={sub.description}>{sub.name}</a>
+                            : <span title={sub.description}>{sub.name}</span>}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 {d?.audit && (
                   <p class="glos-fam-audit"><strong>Qué se pregunta un auditor:</strong> {d.audit}</p>
                 )}
@@ -162,17 +194,24 @@ const counts = {
   .glos-count{margin-top:12px;font-size:13px;color:#8e8e93}
 
   /* Familias */
-  .glos-fams{display:grid;gap:12px}
+  /* El bloque entero se oculta mientras hay búsqueda activa (las familias son el
+     mapa del sector, no un resultado) y reaparece al vaciar el buscador. */
+  #familias[hidden]{display:none}
+  .glos-fams{display:grid;gap:12px;align-items:start}
   @media (min-width:768px){.glos-fams{grid-template-columns:repeat(2,minmax(0,1fr))}}
-  .glos-fam{border:1px solid #e8e8ed;border-radius:16px;padding:20px;background:#fff;transition:border-color .15s,box-shadow .15s,opacity .15s}
-  /* Durante una búsqueda las familias no se ocultan: las que coinciden suben y
-     se destacan, el resto se atenúa pero sigue consultable. */
-  .glos-fam.is-match{order:-1;border-color:#0071e3;box-shadow:0 0 0 3px rgba(0,113,227,.12)}
-  .glos-fam.is-dim{opacity:.5}
-  .glos-fam.is-dim:hover,.glos-fam.is-dim:focus-within{opacity:1}
-  .glos-fam-note{margin:-8px 0 14px;font-size:13px;color:#0071e3}
+  .glos-fam{border:1px solid #e8e8ed;border-radius:16px;padding:20px;background:#fff;transition:border-color .15s,box-shadow .15s}
   .glos-fam h3{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:#1d1d1f}
   .glos-fam-scope{margin-top:8px;font-size:13px;color:#6e6e73;line-height:1.6}
+
+  /* Subcategorías de la familia */
+  .glos-fam-subs{margin-top:12px;padding-top:12px;border-top:1px solid #f0f0f3}
+  .glos-fam-subs-label{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#8e8e93}
+  .glos-fam-subs-label span{margin-left:4px;color:#aeaeb2;font-variant-numeric:tabular-nums}
+  .glos-fam-subs ul{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;list-style:none;padding:0}
+  .glos-fam-subs li{display:flex}
+  .glos-fam-subs a,.glos-fam-subs span[title]{display:inline-block;padding:3px 9px;border-radius:9999px;background:#f5f5f7;font-size:12px;color:#3a3a3c;line-height:1.5}
+  .glos-fam-subs a:hover{background:#e8f2fd;color:#0071e3;text-decoration:none}
+  .glos-fam-subs span[title]{color:#8e8e93}
   .glos-fam-audit{margin-top:10px;padding-top:10px;border-top:1px solid #f0f0f3;font-size:12px;color:#8e8e93;line-height:1.6}
   .glos-fam-audit strong{color:#6e6e73;font-weight:600}
 

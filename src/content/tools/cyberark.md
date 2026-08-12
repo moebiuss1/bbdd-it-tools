@@ -33,9 +33,8 @@ company_size:
 - grande
 market_rank: 1
 sources:
-  - https://www.gartner.com/en/documents/privileged-access-management
-  - https://www.decryptiondigest.com/blog/gartner-magic-quadrant-pam-2026-vendor-evaluation-guide
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/market/privileged-access-management
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/cyberark.png
 ---

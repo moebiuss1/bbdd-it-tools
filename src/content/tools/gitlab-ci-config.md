@@ -30,11 +30,13 @@ market_rank: 2
 repo: https://gitlab.com/gitlab-org/gitlab
 license: MIT
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/market/devops-platforms
+- https://docs.gitlab.com/ci/pipelines/
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/gitlab-ci-config.png
 ---
+
 GitLab CI/CD integra el repositorio, la revisión de código y el pipeline de despliegue en una sola plataforma. Los
 trabajos se declaran en un fichero versionado junto al código, de modo que el propio proceso de construcción y
 despliegue queda bajo control de cambios.

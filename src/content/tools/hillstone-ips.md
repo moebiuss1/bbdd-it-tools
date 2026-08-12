@@ -21,13 +21,14 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 13
+market_rank: 12
 sources:
-  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+- https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/hillstone-ips.png
 ---
+
 Hillstone NIPS es un sistema de prevención de intrusiones que se instala en línea con el tráfico e inspecciona el
 contenido de los paquetes para bloquear exploits conocidos, escaneos y tráfico de mando y control.
 

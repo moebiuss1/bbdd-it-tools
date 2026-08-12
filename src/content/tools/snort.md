@@ -28,10 +28,10 @@ tags:
 - linux
 slug: snort
 sources:
-  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+- https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 5
+market_rank: 6
 logo: /logos/snort.png
 category: ids
 ---

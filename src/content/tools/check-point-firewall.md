@@ -34,9 +34,9 @@ company_size:
 - grande
 market_rank: 5
 sources:
-  - https://cyberratings.org/cyberratings-org-and-nss-labs-announce-2025-enterprise-firewall-test-results/
-  - https://www.gartner.com/en/documents/network-firewalls
-last_verified: '2026-08-10'
+- https://cyberratings.org/cyberratings-org-and-nss-labs-announce-2025-enterprise-firewall-test-results/
+- https://www.gartner.com/reviews/market/network-firewalls
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/check-point-firewall.png
 ---

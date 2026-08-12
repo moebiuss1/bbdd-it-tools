@@ -38,9 +38,9 @@ repo: https://github.com/hashicorp/vault
 license: BSL
 cert_url: https://www.hashicorp.com/security
 sources:
-  - https://itsm.tools/best-secrets-management
-  - https://github.com/hashicorp/vault
-last_verified: '2026-08-07'
+- https://developer.hashicorp.com/vault/docs
+- https://github.com/hashicorp/vault
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/hashicorp-vault.png
 ---

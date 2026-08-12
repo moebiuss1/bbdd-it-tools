@@ -22,15 +22,16 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 10
+market_rank: 11
 repo: https://sourceforge.net/projects/rkhunter/
 license: GPL-2.0
 sources:
-  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+- https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/rkhunter-ids.png
 ---
+
 Rkhunter busca en un sistema UNIX o Linux las huellas típicas de un compromiso: rootkits conocidos, puertas traseras,
 binarios del sistema alterados, permisos sospechosos y configuraciones peligrosas.
 

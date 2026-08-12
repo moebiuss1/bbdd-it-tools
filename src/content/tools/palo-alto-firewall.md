@@ -41,9 +41,8 @@ company_size:
 market_rank: 1
 cert_url: https://www.paloaltonetworks.com/legal-notices/trust-center/certifications
 sources:
-  - https://www.gartner.com/en/documents/network-firewalls
-  - https://itsm.tools/best-firewall-solutions
-last_verified: '2026-08-07'
+- https://www.gartner.com/reviews/market/network-firewalls
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/palo-alto-firewall.png
 ---

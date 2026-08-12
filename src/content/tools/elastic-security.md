@@ -36,9 +36,9 @@ market_rank: 5
 repo: https://github.com/elastic/elasticsearch
 license: Elastic License 2.0
 sources:
-  - https://www.gartner.com/en/documents/siem-magic-quadrant
-  - https://www.elastic.co/
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/market/security-information-event-management
+- https://www.elastic.co/
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/elastic-security.png
 ---

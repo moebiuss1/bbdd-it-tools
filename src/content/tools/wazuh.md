@@ -43,9 +43,9 @@ market_rank: 4
 repo: https://github.com/wazuh/wazuh
 license: AGPL-3.0
 sources:
-  - https://itsm.tools/best-open-source-siem
-  - https://github.com/wazuh/wazuh
-last_verified: '2026-08-07'
+- https://documentation.wazuh.com/current/index.html
+- https://github.com/wazuh/wazuh
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/wazuh.png
 ---

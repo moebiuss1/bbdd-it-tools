@@ -32,11 +32,13 @@ company_size:
 market_rank: 3
 cert_url: https://learn.microsoft.com/en-us/azure/compliance/
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/market/multicloud-key-management-as-a-service-kmaas
+- https://learn.microsoft.com/azure/key-vault/general/overview
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/azure-key-vault.png
 ---
+
 Azure Key Vault cubre tres necesidades que suelen ir juntas: claves criptográficas, secretos de aplicación
 (contraseñas, cadenas de conexión, tokens) y certificados. Su integración con las identidades gestionadas de Azure
 permite que una aplicación obtenga un secreto sin que nadie haya escrito jamás una credencial en el código.

@@ -23,13 +23,14 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 11
+market_rank: 5
 sources:
-  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+- https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/tripwire-ids.png
 ---
+
 La línea de Tripwire tiene su origen en la monitorización de integridad de ficheros: detectar que un fichero de
 sistema, una configuración o una clave de registro han cambiado sin una orden de cambio detrás. SecureCheq comprueba
 además la configuración del sistema frente a referencias de bastionado reconocidas.

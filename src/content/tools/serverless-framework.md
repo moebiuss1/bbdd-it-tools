@@ -10,8 +10,8 @@ tags:
 - ci-cd
 type: comercial
 cost_model: freemium
-cost_details: CLI gratuita para organizaciones por debajo del umbral de ingresos que fija su contrato; desde la v4 ya no es MIT. Serverless Framework Pro/Dashboard (observabilidad, CI/CD gestionado)
-  por suscripción.
+cost_details: CLI gratuita para organizaciones por debajo del umbral de ingresos que fija su contrato; desde la v4 ya no es
+  MIT. Serverless Framework Pro/Dashboard (observabilidad, CI/CD gestionado) por suscripción.
 website: https://www.serverless.com
 description: Framework de código abierto para definir, desplegar y gestionar aplicaciones serverless sobre AWS Lambda, Azure
   Functions y Google Cloud Functions mediante un único archivo de configuración declarativo.
@@ -26,8 +26,8 @@ company_size:
 repo: https://github.com/serverless/serverless
 license: Serverless Customer Agreement (desde la v4; hasta la v3 fue MIT)
 sources:
-  - https://github.com/serverless/serverless
-  - https://www.serverless.com
+- https://github.com/serverless/serverless
+- https://www.serverless.com
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

@@ -27,11 +27,12 @@ company_size:
 - grande
 market_rank: 5
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/market/audit-management-solutions
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/acl-grc.png
 ---
+
 ACL GRC —hoy parte de la familia Diligent— combina la gestión de riesgo y cumplimiento con algo que la mayoría de
 plataformas GRC delegan en otra herramienta: analítica de datos sobre las transacciones del negocio. Esa herencia
 viene de ACL Analytics, utilizado durante décadas por auditoría interna para muestreo y pruebas sobre poblaciones

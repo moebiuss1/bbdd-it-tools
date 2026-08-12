@@ -37,9 +37,8 @@ company_size:
 market_rank: 1
 cert_url: https://www.splunk.com/en_us/about-splunk/splunk-data-security-and-privacy/compliance-at-splunk.html
 sources:
-  - https://www.gartner.com/en/documents/siem-magic-quadrant
-  - https://itsm.tools/best-siem-tools
-last_verified: '2026-08-07'
+- https://www.gartner.com/reviews/market/security-information-event-management
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/splunk-enterprise-security.png
 ---

@@ -25,11 +25,11 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 12
+market_rank: 13
 repo: https://github.com/ossec/ossec-hids
 license: GPL-2.0
 sources:
-  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+- https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/ossec.png

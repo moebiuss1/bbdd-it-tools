@@ -23,13 +23,14 @@ certifications:
 company_size:
 - pequeña
 - mediana
-market_rank: 10
+market_rank: 9
 sources:
-  - https://www.gartner.com/reviews/market/software-asset-management-tools
+- https://www.gartner.com/reviews/market/software-asset-management-tools
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/pdq-inventory.png
 ---
+
 PDQ Inventory escanea equipos Windows y recopila lo que tienen instalado, su hardware y su estado de actualización,
 con un enfoque deliberadamente sencillo: instalación en minutos y colecciones dinámicas que agrupan los equipos por
 lo que les falta.

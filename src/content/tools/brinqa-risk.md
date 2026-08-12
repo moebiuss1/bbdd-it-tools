@@ -23,11 +23,12 @@ company_size:
 - grande
 market_rank: 9
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/market/exposure-assessment-platforms/vendor/brinqa
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/brinqa-risk.png
 ---
+
 Brinqa se sitúa por encima de las herramientas de seguridad ya desplegadas para responder a una pregunta que ninguna
 contesta por sí sola: de todos los hallazgos abiertos, cuáles importan de verdad. Unifica los resultados de escáneres
 de vulnerabilidades, análisis de código, inventario cloud e identidad, y los correlaciona con el valor del activo

@@ -25,11 +25,13 @@ market_rank: 7
 repo: https://github.com/crossplane/crossplane
 license: Apache-2.0
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://docs.crossplane.io/latest/get-started/
+- https://github.com/crossplane/crossplane
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/crossplane-config.png
 ---
+
 Crossplane convierte a Kubernetes en el plano de control de toda la infraestructura, no solo de los contenedores: una
 base de datos gestionada, un bucket o una red virtual se declaran como recursos de Kubernetes y el clúster se encarga
 de crearlos en AWS, Azure o GCP y de mantenerlos en ese estado.

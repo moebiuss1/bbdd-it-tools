@@ -24,11 +24,12 @@ company_size:
 - grande
 market_rank: 6
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/market/security-threat-intelligence-services/vendor/skybox-security
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/skybox-security.png
 ---
+
 Skybox construye un modelo de la red a partir de la configuración de firewalls, routers y reglas de acceso, y sobre
 ese mapa simula qué rutas de ataque existen realmente hacia cada activo.
 

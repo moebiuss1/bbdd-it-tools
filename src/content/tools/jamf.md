@@ -29,9 +29,9 @@ company_size:
 - grande
 market_rank: 5
 sources:
-  - https://www.jamf.com/resources/
-  - https://www.gartner.com/reviews/market/unified-endpoint-management
-last_verified: '2026-08-10'
+- https://www.jamf.com/resources/
+- https://www.gartner.com/reviews/market/unified-endpoint-management-tools
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/jamf.png
 ---

@@ -21,15 +21,16 @@ certifications: []
 company_size:
 - pequeña
 - mediana
-market_rank: 8
-repo: https://github.com/sagan/sagan
+market_rank: 9
+repo: https://github.com/quadrantsec/sagan
 license: GPL-2.0
 sources:
-  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/market/intrusion-prevention-systems
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/sagan-ids.png
 ---
+
 Sagan analiza logs en tiempo real aplicando reglas con la misma sintaxis que Snort y Suricata. Eso permite reutilizar
 en la capa de registro el conocimiento y las reglas ya escritas para la capa de red.
 

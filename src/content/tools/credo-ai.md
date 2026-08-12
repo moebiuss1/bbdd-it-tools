@@ -24,10 +24,10 @@ company_size:
 - mediana
 - grande
 sources:
-  - https://www.credo.ai/soc-2-type-ii
-  - https://www.credo.ai/product
+- https://trust.credo.ai/
+- https://www.credo.ai/product
 cert_url: https://trust.credo.ai/
-last_verified: '2026-08-10'
+last_verified: '2026-08-12'
 needs_review: false
 market_rank: 1
 ---

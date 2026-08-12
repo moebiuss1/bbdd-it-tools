@@ -9,8 +9,7 @@ const chips = Array.from(document.querySelectorAll<HTMLElement>(".glos-chip"));
 const items = Array.from(document.querySelectorAll<HTMLElement>(".glos-term"));
 const blocks = Array.from(document.querySelectorAll<HTMLElement>(".glos-letter-block"));
 const azLinks = Array.from(document.querySelectorAll<HTMLElement>(".glos-az a"));
-const fams = Array.from(document.querySelectorAll<HTMLElement>(".glos-fam"));
-const famNote = document.getElementById("glos-fam-note") as HTMLElement | null;
+const famSection = document.getElementById("familias") as HTMLElement | null;
 
 let group = "";
 let query = "";
@@ -39,24 +38,9 @@ function render() {
   }
   for (const a of azLinks) a.hidden = !live.has(a.dataset.letter || "");
 
-  // Las familias son el mapa del sector, no resultados de búsqueda: siempre
-  // quedan a la vista. Con una consulta activa, las que casan se destacan y
-  // se colocan primero; el resto se atenúa.
-  let famHits = 0;
-  for (const fam of fams) {
-    const hit = !!q && fold(fam.dataset.text || "").includes(q);
-    fam.classList.toggle("is-match", hit);
-    fam.classList.toggle("is-dim", !!q && !hit);
-    if (hit) famHits++;
-  }
-  if (famNote) {
-    famNote.hidden = !q;
-    famNote.textContent = !q
-      ? ""
-      : famHits > 0
-      ? `${famHits} de ${fams.length} familias coinciden con la búsqueda.`
-      : `Ninguna familia coincide con la búsqueda; se muestran todas.`;
-  }
+  // El mapa de familias y subcategorías solo estorba mientras se busca: se
+  // oculta al escribir y vuelve en cuanto el buscador queda vacío.
+  if (famSection) famSection.hidden = !!q;
 
   if (countEl) countEl.textContent = `${visible} término${visible === 1 ? "" : "s"}`;
   if (emptyEl) emptyEl.hidden = visible > 0;

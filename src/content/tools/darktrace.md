@@ -30,9 +30,9 @@ company_size:
 - grande
 market_rank: 3
 sources:
-  - https://www.gartner.com/en/documents/network-detection-response
-  - https://darktrace.com/
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/market/network-detection-and-response
+- https://darktrace.com/
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/darktrace.png
 ---

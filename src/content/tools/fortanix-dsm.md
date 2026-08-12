@@ -28,8 +28,8 @@ company_size:
 - grande
 market_rank: 8
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/market/multicloud-key-management-as-a-service-kmaas
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/fortanix-dsm.png
 ---

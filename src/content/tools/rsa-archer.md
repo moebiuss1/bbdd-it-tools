@@ -29,8 +29,8 @@ company_size:
 - grande
 market_rank: 2
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/market/audit-management-solutions/vendor/archer/product/archer-audit-management
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/rsa-archer.png
 ---

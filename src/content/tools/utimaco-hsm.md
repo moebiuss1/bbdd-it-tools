@@ -26,11 +26,12 @@ company_size:
 - grande
 market_rank: 7
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/product/utimaco-hardware-security-modules-hsm
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/utimaco-hsm.png
 ---
+
 Utimaco fabrica módulos de seguridad hardware de propósito general: dispositivos certificados que generan y custodian
 claves criptográficas sin que el material salga nunca del aparato, con certificación Common Criteria y FIPS 140-2
 Nivel 3 según el modelo.

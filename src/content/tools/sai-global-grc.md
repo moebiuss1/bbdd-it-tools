@@ -24,11 +24,12 @@ company_size:
 - grande
 market_rank: 7
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/market/integrated-risk-management/vendor/sai360
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/sai-global-grc.png
 ---
+
 SAI Global GRC —integrada hoy en la cartera de Riskonnect— cubre el ciclo completo de gobierno, riesgo y cumplimiento:
 registro de riesgos, gestión de políticas, auditoría interna y formación de la plantilla en materia de compliance.
 

@@ -22,14 +22,15 @@ certifications: []
 company_size:
 - mediana
 - grande
-market_rank: 9
+market_rank: 10
 repo: https://www.la-samhna.de/samhain/
 license: GPL-2.0
 sources:
-  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+- https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 ---
+
 Samhain es un HIDS que combina monitorización de integridad de ficheros con detección de rootkits, vigilancia de
 logs y de puertos abiertos. Su rasgo distintivo es la operación centralizada: los agentes reportan cifrados a un
 servidor que guarda las líneas base fuera del alcance del sistema vigilado.

@@ -25,8 +25,9 @@ company_size:
 - grande
 market_rank: 1
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/market/continuous-configuration-automation-tools
+- https://docs.chef.io/platform_overview/
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/chef-infra.png
 ---

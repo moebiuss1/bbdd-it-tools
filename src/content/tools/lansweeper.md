@@ -26,9 +26,9 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 9
+market_rank: 8
 sources:
-  - https://www.gartner.com/reviews/market/software-asset-management-tools
+- https://www.gartner.com/reviews/market/software-asset-management-tools
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/lansweeper.png

@@ -30,9 +30,9 @@ company_size:
 - grande
 market_rank: 16
 sources:
-  - https://av-comparatives.org/business-security-test-march-june-2026/
-  - https://www.gartner.com/en/documents/endpoint-protection-platforms
-last_verified: '2026-08-10'
+- https://av-comparatives.org/business-security-test-march-june-2026/
+- https://www.gartner.com/reviews/market/endpoint-protection-platforms
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/eset-protect.png
 ---

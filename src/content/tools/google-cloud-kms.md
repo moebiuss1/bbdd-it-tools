@@ -30,11 +30,12 @@ company_size:
 market_rank: 4
 cert_url: https://cloud.google.com/security/compliance
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://cloud.google.com/kms/docs/key-management-service
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/google-cloud-kms.png
 ---
+
 Google Cloud KMS gestiona claves criptográficas como un servicio: la aplicación pide cifrar o firmar y la clave nunca
 sale del servicio. Ofrece claves protegidas por software, por HSM y externas, además de la opción de importar
 material generado fuera de Google.

@@ -23,14 +23,15 @@ certifications: []
 company_size:
 - pequeña
 - mediana
-market_rank: 7
+market_rank: 8
 repo: https://github.com/aide/aide
 license: GPL-2.0
 sources:
-  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+- https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 ---
+
 AIDE (Advanced Intrusion Detection Environment) no vigila la red: vigila el propio sistema de ficheros. Calcula un
 resumen criptográfico de cada fichero relevante y avisa cuando alguno cambia sin motivo, que es la señal clásica de
 un binario sustituido o de una configuración manipulada.

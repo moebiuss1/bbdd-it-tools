@@ -22,13 +22,14 @@ certifications:
 company_size:
 - pequeña
 - mediana
-market_rank: 7
+market_rank: 6
 sources:
-  - https://www.gartner.com/reviews/market/software-asset-management-tools
+- https://www.gartner.com/reviews/market/software-asset-management-tools
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/asset-panda.png
 ---
+
 Asset Panda es una plataforma cloud de inventario de activos que destaca por su flexibilidad de modelo de datos:
 cada organización define qué campos describen un activo, qué estados atraviesa y qué flujos de aprobación lo
 acompañan, en lugar de adaptarse a un esquema fijo.

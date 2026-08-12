@@ -21,13 +21,14 @@ certifications:
 - Common Criteria
 company_size:
 - grande
-market_rank: 12
+market_rank: 11
 sources:
-  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+- https://www.gartner.com/reviews/market/intrusion-prevention-systems
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/nsfocus-ips.png
 ---
+
 NSFOCUS NGIPS es un sistema de prevención de intrusiones con motor de detección basado en firmas y en análisis de
 comportamiento, orientado a redes de alto caudal.
 

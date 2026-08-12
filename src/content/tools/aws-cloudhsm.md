@@ -28,11 +28,12 @@ company_size:
 - grande
 market_rank: 6
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://docs.aws.amazon.com/cloudhsm/latest/userguide/introduction.html
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/aws-cloudhsm.png
 ---
+
 AWS CloudHSM entrega módulos de seguridad hardware dedicados dentro de la nube de AWS. A diferencia de KMS, donde
 las claves viven en un servicio multiinquilino gestionado por Amazon, aquí el cliente controla el clúster, gestiona
 sus usuarios criptográficos y AWS no tiene acceso al material de clave.

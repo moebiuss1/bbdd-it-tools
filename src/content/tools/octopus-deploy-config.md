@@ -25,11 +25,13 @@ company_size:
 - grande
 market_rank: 4
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://www.gartner.com/reviews/market/devops-platforms/vendor/octopus-deploy-125263461/product/octopus-deploy
+- https://octopus.com/docs/deployments
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/octopus-deploy-config.png
 ---
+
 Octopus Deploy se ocupa de la parte que muchos pipelines resuelven a medias: el despliegue en sí. Toma el artefacto ya
 construido y lo lleva a cada entorno con sus variables, sus aprobaciones y su procedimiento de reversión.
 

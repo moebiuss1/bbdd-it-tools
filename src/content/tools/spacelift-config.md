@@ -25,11 +25,12 @@ company_size:
 - grande
 market_rank: 3
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://docs.spacelift.io/concepts/stack
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/spacelift-config.png
 ---
+
 Spacelift orquesta infraestructura como código gestionada: ejecuta Terraform, OpenTofu, Pulumi, CloudFormation o
 manifiestos de Kubernetes con control de estado, aprobaciones y políticas escritas en Open Policy Agent.
 

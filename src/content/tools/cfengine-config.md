@@ -25,11 +25,13 @@ market_rank: 9
 repo: https://github.com/cfengine/core
 license: GPL-3.0
 sources:
-  - https://www.gartner.com/reviews/
-last_verified: '2026-08-10'
+- https://docs.cfengine.com/docs/master/
+- https://github.com/cfengine/core
+last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/cfengine-config.png
 ---
+
 CFEngine es la herramienta que inauguró la gestión de configuración moderna, en 1993, y sigue defendiendo un enfoque
 propio: cada nodo ejecuta un agente autónomo que converge periódicamente hacia el estado declarado, sin depender de
 que un servidor central le empuje los cambios.
