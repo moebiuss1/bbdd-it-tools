@@ -11,16 +11,18 @@ colors:
   border: "#e8e8ed"
   border-light: "#d2d2d7"
   blue-accent: "#0071e3"
-  blue-hover: "#0066cc"
+  blue-text: "#0066cc"
+  blue-hover: "#0058b0"
   blue-bg: "#e8f2fd"
   green-bg: "#ecfdf5"
-  green-text: "#059669"
+  green-text: "#047857"
   amber-bg: "#fffbeb"
-  amber-text: "#d97706"
+  amber-text: "#b45309"
   teal-bg: "#f0fdfa"
-  teal-text: "#0d9488"
+  teal-text: "#0f766e"
   gray-bg: "#f3f4f6"
-  gray-text: "#6b7280"
+  gray-text: "#4b5563"
+  focus-ring: "0 0 0 2px #ffffff, 0 0 0 4px rgba(0,113,227,0.65)"
   rank-gold-bg: "rgba(251,243,219,0.4)"
   tier-lider-bg: "#fffbeb"
   tier-lider-text: "#92400e"
@@ -32,8 +34,13 @@ colors:
   tier-retador-text: "#065f46"
   tier-retador-border: "#a7f3d0"
   tier-nicho-bg: "#f9fafb"
-  tier-nicho-text: "#6b7280"
+  tier-nicho-text: "#4b5563"
   tier-nicho-border: "#e5e7eb"
+motion:
+  ease: "cubic-bezier(0.25, 1, 0.5, 1)"
+  fast: "0.15s"
+  base: "0.22s"
+  slow: "0.4s"
 typography:
   display:
     fontFamily: "-apple-system, BlinkMacSystemFont, SF Pro Display, Helvetica Neue, Helvetica, Arial, sans-serif"
@@ -88,7 +95,7 @@ spacing:
   "7xl": "80px"
 components:
   button-primary:
-    backgroundColor: "{colors.blue-accent}"
+    backgroundColor: "{colors.blue-text}"
     textColor: "{colors.paper}"
     rounded: "{rounded.full}"
     padding: "10px 20px"
@@ -101,9 +108,24 @@ components:
     padding: "10px 20px"
   badge-filled:
     backgroundColor: "{colors.blue-bg}"
-    textColor: "{colors.blue-accent}"
+    textColor: "{colors.blue-text}"
     rounded: "{rounded.full}"
     padding: "3px 10px"
+  kbd-hint:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink-muted}"
+    rounded: "{rounded.sm}"
+    padding: "0 6px"
+  copy-button:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.full}"
+    padding: "8px 12px"
+  filter-pill:
+    backgroundColor: "{colors.blue-bg}"
+    textColor: "{colors.blue-text}"
+    rounded: "{rounded.full}"
+    padding: "4px 6px 4px 11px"
   card:
     backgroundColor: "{colors.paper}"
     rounded: "{rounded.lg}"
@@ -139,14 +161,17 @@ Este sistema rechaza explícitamente: gradientes, glassmorphism, bordes laterale
 - Tipografía de sistema: cero fuentes web, carga instantánea
 - Espacios generosos, densidad controlada
 - Sin sombras decorativas: la profundidad responde al estado, no decora
-- Sin JavaScript innecesario: todo el filtrado es server-side vía URL params
+- Sin JavaScript innecesario: el catálogo llega renderizado del build y el filtrado se resuelve en cliente sobre ese HTML, con el estado reflejado en la URL
 
 ## 2. Colors
 
 Una paleta restringida construida sobre la temperatura neutra del sistema operativo. Un solo acento cromático —azul Apple (#0071e3)— que aparece en ≤10% de cualquier pantalla.
 
 ### Primary
-- **Blue Accent** (#0071e3): Enlaces, botones principales, anillo de foco, texto de marca. El único color que afirma presencia. En hover se oscurece a #0066cc.
+El azul de marca tiene dos papeles, y confundirlos cuesta legibilidad:
+
+- **Blue Accent** (#0071e3): el azul **gráfico**. Trazos, rellenos, anillo de foco, resaltado del diagrama de infraestructura, series de los gráficos, `::selection`. Nunca lleva texto encima ni se usa como color de texto.
+- **Blue Text** (#0066cc): el azul de **texto**. Enlaces, botones principales, badges azules, píldoras de filtro. Sobre blanco da 5,13:1; #0071e3 se queda en 4,31:1 y no llega al mínimo en los cuerpos de 12-14px que domina el sitio. Es el mismo color un paso más oscuro: la identidad no cambia, la lectura sí. En hover del botón primario baja a #0058b0.
 
 ### Neutral
 - **Ink** (#1d1d1f): Texto principal. Casi negro, ligeramente cálido. Contraste ≥12:1 sobre blanco.
@@ -159,10 +184,15 @@ Una paleta restringida construida sobre la temperatura neutra del sistema operat
 - **Border Light** (#d2d2d7): Bordes de badges outline, separadores en filtros.
 
 ### Semantic
-- **Green** (#ecfdf5 bg / #059669 text): Badges de herramientas Open Source. Verde frío, profesional.
-- **Amber** (#fffbeb bg / #d97706 text): Badges de ranking (#1, #2, #3). Ámbar cálido, institucional.
-- **Teal** (#f0fdfa bg / #0d9488 text): Badges de certificaciones. Verde-azulado, técnico.
-- **Gray** (#f3f4f6 bg / #6b7280 text): Badges de tamaño de empresa y etiquetas neutras.
+Los badges llevan texto de 11-12px sobre fondos casi blancos. Con los tonos -600 de cada familia se quedaban entre 3,0:1 y 4,4:1; el escalón -700 cruza los 4,5:1 sin cambiar el color percibido.
+
+- **Green** (#ecfdf5 bg / #047857 text): Badges de herramientas Open Source. Verde frío, profesional.
+- **Amber** (#fffbeb bg / #b45309 text): Badges de ranking (#1, #2, #3). Ámbar cálido, institucional.
+- **Teal** (#f0fdfa bg / #0f766e text): Badges de certificaciones. Verde-azulado, técnico.
+- **Gray** (#f3f4f6 bg / #4b5563 text): Badges de tamaño de empresa y etiquetas neutras.
+- **Red** (#fef2f2 bg / #b91c1c text): Puntuación por debajo de 40.
+
+Los mismos tres tonos (verde / ámbar / rojo) codifican la puntuación BBDD IT en el directorio, los rankings y el anillo de la ficha. Si se toca uno hay que tocar los tres sitios: la función vive duplicada como `scoreColor()` en `herramientas/index.astro` y en línea en `ranking.astro` y `herramientas/[slug].astro`.
 
 ### Tier Colors (Ranking)
 - **Líder** (#fffbeb bg, #92400e text, #fde68a border): Oro institucional.
@@ -196,12 +226,13 @@ Una paleta restringida construida sobre la temperatura neutra del sistema operat
 ### Shadow Vocabulary
 - **Card rest** (`0 1px 3px rgba(0,0,0,0.04)`): Una sombra casi imperceptible. Solo existe para separar la card del fondo en el eje Z sin que el usuario la note.
 - **Card hover** (`0 4px 16px rgba(0,0,0,0.08)`): Elevación suave que responde al cursor. La card "se levanta" ligeramente, indicando que es interactiva.
-- **Focus ring** (`0 0 0 3px rgba(0,113,227,0.15)`): Anillo de foco sutil alrededor de inputs y elementos interactivos. Sin offset, sin blur grande.
+- **Focus ring** (`0 0 0 2px #fff, 0 0 0 4px rgba(0,113,227,0.65)`): Dos capas —halo blanco y aro azul sólido— alrededor del elemento enfocado. El halo lo despega del fondo, así que se ve igual sobre blanco que sobre gris.
+- **Focus ring de campo** (`0 0 0 3px rgba(0,113,227,0.15)` + borde azul): los inputs sí conservan el anillo tenue, porque el borde del propio campo cambia a azul y ya marca el foco.
 
 ### Named Rules
 **The Flat-By-Default Rule.** Las superficies son planas en reposo. Las sombras aparecen solo en respuesta a estado (hover, focus). Prohibido usar sombras como decoración estática en cards, secciones o headers.
 
-**The Ghost Focus Rule.** El anillo de foco es azul (#0071e3) al 15% de opacidad, sin offset. Visible pero no estridente. Nunca usar el outline por defecto del navegador sin estilizar.
+**The Visible Focus Rule.** El anillo de foco se ve. Antes era azul al 15% de opacidad: sobre blanco resultaba casi indistinguible y quien navega con teclado no sabía dónde estaba. Ahora son dos capas (halo blanco de 2px + aro azul sólido de 2px). Nunca usar el outline por defecto del navegador sin estilizar, y nunca quitarlo sin poner otro.
 
 ## 5. Components
 
@@ -233,9 +264,50 @@ Una paleta restringida construida sobre la temperatura neutra del sistema operat
 - **Brand:** Texto Ink, 15px, weight 600. Sin subrayado, sin decoración.
 
 ### Tool Avatar
-- **Style:** 40×40px, 12px radius, fondo Paper Warm. Muestra el logo de la herramienta si existe; si no, la inicial en Ink Faint weight 700.
+- **Style:** 40×40px, 12px radius, fondo Paper Warm. Muestra el logo de la herramienta si existe; si no, la inicial en Ink Muted weight 700. Crece un 6% cuando el cursor entra en su tarjeta.
 
-## 6. Do's and Don'ts
+### Keyboard Hint (`.kbd-hint`)
+- **Qué es:** la tecla `/` dibujada dentro del buscador. Anuncia el atajo que enfoca el campo desde cualquier punto de la página.
+- **Style:** 20px de alto, borde inferior de 2px (aspecto de tecla), Ink Muted sobre Paper. Se atenúa a opacidad 0 al enfocar el campo.
+- **Regla:** solo en dispositivos con puntero fino (`hover:hover and pointer:fine`). En una pantalla táctil no hay tecla que pulsar y el hueco sobra.
+
+### Copy Button (`.copy-link`)
+- **Style:** cápsula de ancho completo, borde Border Light. Al copiar pasa a fondo Green Bg + texto Green Text durante 1,8s, con el icono cambiado a un visto, y vuelve solo.
+- **Regla:** la confirmación ocurre **en el propio botón**. Nada de avisos flotantes que tapen la ficha o haya que cerrar.
+
+### Filter Pill (`.pill`)
+- **Style:** cápsula Blue Bg + Blue Text con una `×` en círculo. Entra con un fundido y escala de 0,92 a 1 en 220ms.
+- **Aviso de implementación:** la crea el script del directorio con `createElement`, así que **sus estilos tienen que vivir en `global.css`**. Definirla en el `<style>` de la página la deja sin estilo: Astro sella esos selectores con un atributo que los nodos creados en cliente no llevan.
+
+### Scroll Shadows
+- **Dónde:** cualquier caja con contenido más ancho que la pantalla (hoy, el diagrama de infraestructura).
+- **Cómo:** cuatro degradados de fondo, dos anclados al contenido (`local`) y dos al marco (`scroll`). La sombra solo asoma por el lado donde queda contenido por ver. Sin JavaScript.
+- **Regla:** una caja que se desplaza lleva `tabindex="0"` y `role="group"` con etiqueta. Si no recibe foco, quien no usa ratón no puede llegar a lo que hay dentro.
+
+## 6. Motion
+
+Una sola curva para todo el sitio: `cubic-bezier(0.25, 1, 0.5, 1)` (ease-out-quart). Arranca rápido y frena, que es como se mueve algo que responde a un gesto. Sin rebotes, sin elásticos, sin animaciones de scroll.
+
+**Duraciones:** 150ms para respuestas inmediatas (hover, color), 220ms para cambios de estado (elevación, píldoras), 400-800ms para el dibujado de datos (anillo de puntuación, barras). Nada supera los 800ms.
+
+**El movimiento informa, no decora.** El catálogo entero es:
+
+| Gesto | Qué comunica |
+|---|---|
+| La tarjeta se eleva 2px | esto lleva a algún sitio |
+| El botón cede a 0,97 | he registrado la pulsación |
+| El recuento late | el filtro ha cambiado el resultado |
+| El anillo se dibuja | esta puntuación se compone de estas partes |
+| Las barras crecen escalonadas | esto es una medida, no un adorno |
+| La flecha del botón avanza 3px | hacia allá vas |
+
+### Named Rules
+
+**The Already-There Rule.** Ninguna animación puede ser la única forma de ver algo. El anillo de puntuación, las barras y las píldoras tienen su estado final en el HTML; la animación solo lo recorre. Si el JavaScript no llega, la pestaña está oculta o el render no anima, la página se ve completa igual. Prohibido revelar contenido con una clase que dispara una transición.
+
+**The Reduced-Motion Rule.** `prefers-reduced-motion: reduce` deja todas las duraciones en 0,01ms y anula los desplazamientos. No es una versión degradada: es la misma interfaz sin movimiento.
+
+## 7. Do's and Don'ts
 
 ### Do:
 - **Do** usar el espacio negativo como elemento estructural. Secciones separadas por 80px (space-y-20), cards por 12-16px.
@@ -243,12 +315,18 @@ Una paleta restringida construida sobre la temperatura neutra del sistema operat
 - **Do** mostrar siempre fuentes verificables. Si un dato no está confirmado, marcarlo como `needs_review`.
 - **Do** usar `text-wrap: balance` en headings, `text-wrap: pretty` en body copy.
 - **Do** respetar la jerarquía tipográfica: Display → Headline → Title → Body → Body Small → Label. No saltarse pasos.
+- **Do** comprobar el contraste antes de dar por bueno un gris o un badge: 4,5:1 para texto normal, 3:1 a partir de 24px (o 18,66px en negrita). Las ocho páginas del sitio pasan hoy ese umbral, medido sobre el build con Chrome headless.
+- **Do** dar 44px de zona sensible a lo que se toca con el dedo. Si el elemento debe seguir siendo pequeño, extender el área con un `::after` invisible (así lo hacen los enlaces de navegación) en vez de agrandarlo.
+- **Do** poner los estilos de cualquier elemento creado con `createElement` en `global.css`, nunca en el `<style>` de la página.
 
 ### Don't:
 - **Don't** usar gradientes, glassmorphism, sombras decorativas, o cualquier efecto que un auditor consideraría "ruido visual".
 - **Don't** usar dark mode. La herramienta se usa en oficinas con luz natural; el fondo blanco es funcional.
 - **Don't** añadir animaciones de scroll, contadores animados, o ilustraciones vectoriales genéricas. Esto no es una landing de SaaS.
 - **Don't** usar texto coloreado como decoración. Si no es un enlace, un badge semántico o un estado de error, va en Ink.
+- **Don't** usar #0071e3 como color de texto ni como fondo de texto blanco: para eso está #0066cc (ver *Primary*).
+- **Don't** escribir `padding` en atajo sobre un elemento que ya lleva `.container`: anula el margen lateral y pega el contenido al borde en móvil.
+- **Don't** usar Ink Faint (#8e8e93) para texto que aporte información. Queda para trazos de iconos y separadores.
 - **Don't** usar border-left o border-right mayor de 1px como acento decorativo en cards o callouts.
 - **Don't** escribir buzzwords (streamline, empower, next-generation, cutting-edge). Cada herramienta se describe con datos, no con adjetivos.
 - **Don't** superar los 65-75 caracteres por línea en texto de lectura. Si la columna es ancha, partir en grid.

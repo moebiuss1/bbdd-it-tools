@@ -2,6 +2,8 @@
  * Buscador y filtros del glosario. En módulo externo (no inline) para que la
  * política CSP pueda prohibir `script-src 'unsafe-inline'`.
  */
+import { focusOnSlash } from "./search-shortcut";
+
 const input = document.getElementById("glos-q") as HTMLInputElement | null;
 const countEl = document.getElementById("glos-count");
 const emptyEl = document.getElementById("glos-empty") as HTMLElement | null;
@@ -51,6 +53,16 @@ input?.addEventListener("input", () => {
   query = input.value;
   clearTimeout(debounce);
   debounce = setTimeout(render, 120);
+});
+
+// Mismo par de atajos que en el directorio: "/" enfoca, Escape vacía.
+focusOnSlash(input);
+input?.addEventListener("keydown", e => {
+  if (e.key !== "Escape" || !input.value) return;
+  e.preventDefault();
+  input.value = "";
+  query = "";
+  render();
 });
 
 for (const chip of chips) {

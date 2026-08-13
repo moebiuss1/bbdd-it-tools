@@ -58,7 +58,7 @@ const counts = {
 >
   <Header active="glosario" />
 
-  <section class="py-10">
+  <section class="py-10" id="contenido" tabindex="-1">
     <div class="container max-w-900">
       <h1 class="section-title" style="font-size:28px">Glosario</h1>
       <p class="section-desc" style="max-width:640px">
@@ -69,9 +69,10 @@ const counts = {
 
       <!-- Buscador y filtro por tipo -->
       <div class="glos-toolbar">
-        <div class="glos-search">
+        <div class="glos-search has-kbd">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="search" id="glos-q" placeholder="Buscar término, sigla o definición…" aria-label="Buscar en el glosario" />
+          <input type="search" id="glos-q" placeholder="Buscar término, sigla o definición…" aria-label="Buscar en el glosario (pulsa la barra inclinada para enfocar)" />
+          <kbd class="kbd-hint" aria-hidden="true">/</kbd>
         </div>
         <div class="glos-groups" role="group" aria-label="Filtrar por tipo de término">
           <button class="glos-chip active" data-group="" aria-pressed="true">Todos <span>{terms.length}</span></button>
@@ -176,22 +177,29 @@ const counts = {
   .glos-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:24px}
   .glos-search{position:relative;flex:1;min-width:240px;max-width:420px;display:flex;align-items:center}
   .glos-search svg{position:absolute;left:12px;pointer-events:none}
-  .glos-search input{width:100%;border-radius:9999px;border:1px solid #d2d2d7;background:#f5f5f7;padding:8px 14px 8px 32px;font-size:14px;color:#1d1d1f;outline:none;transition:border-color .15s,box-shadow .15s,background .15s}
-  .glos-search input::placeholder{color:#8e8e93}
+  .glos-search input{width:100%;border-radius:9999px;border:1px solid #d2d2d7;background:#f5f5f7;padding:8px 36px 8px 32px;font-size:14px;color:#1d1d1f;outline:none;transition:border-color .15s,box-shadow .15s,background .15s}
+  .glos-search input::placeholder{color:#6e6e73}
+  .glos-search input::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
   .glos-search input:focus{border-color:#0071e3;background:#fff;box-shadow:0 0 0 3px rgba(0,113,227,.15)}
   .glos-groups{display:flex;flex-wrap:wrap;gap:6px}
-  .glos-chip{padding:6px 12px;border-radius:9999px;font-size:12px;font-weight:500;border:1px solid #d2d2d7;color:#6e6e73;background:#fff;cursor:pointer;transition:all .15s}
-  .glos-chip span{color:#aeaeb2;margin-left:4px;font-variant-numeric:tabular-nums}
-  .glos-chip:hover{background:#f5f5f7}
+  .glos-chip{display:inline-flex;align-items:center;padding:7px 13px;border-radius:9999px;font-size:12px;font-weight:500;border:1px solid #d2d2d7;color:#6e6e73;background:#fff;cursor:pointer;transition:background var(--t-fast) var(--ease),color var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease),transform var(--t-fast) var(--ease)}
+  /* Al tacto, el chip crece hasta el mínimo cómodo de 44px. */
+  @media (pointer:coarse){.glos-chip{min-height:44px;padding:7px 16px;font-size:13px}}
+  .glos-chip span{color:#6e6e73;margin-left:4px;font-variant-numeric:tabular-nums}
+  .glos-chip:hover{background:#f5f5f7;border-color:#aeaeb2}
+  .glos-chip:active{transform:scale(.96)}
   .glos-chip.active{background:#1d1d1f;color:#fff;border-color:#1d1d1f}
   .glos-chip.active span{color:rgba(255,255,255,.6)}
 
   /* Índice A–Z */
   .glos-az{display:flex;flex-wrap:wrap;gap:2px;margin-top:16px;padding-bottom:14px;border-bottom:1px solid #e8e8ed}
-  .glos-az a{display:flex;align-items:center;justify-content:center;min-width:26px;height:26px;border-radius:7px;font-size:12px;font-weight:600;color:#6e6e73;transition:all .15s}
-  .glos-az a:hover{background:#f5f5f7;color:#0071e3;text-decoration:none}
+  /* Índice A–Z: en pantalla táctil cada letra crece hasta el mínimo cómodo de
+     44px sin alterar la retícula visual. */
+  .glos-az a{display:flex;align-items:center;justify-content:center;min-width:28px;height:28px;border-radius:7px;font-size:12px;font-weight:600;color:#6e6e73;transition:background var(--t-fast) var(--ease),color var(--t-fast) var(--ease)}
+  .glos-az a:hover{background:#f5f5f7;color:#0066cc;text-decoration:none}
   .glos-az a[hidden]{display:none}
-  .glos-count{margin-top:12px;font-size:13px;color:#8e8e93}
+  @media (pointer:coarse){.glos-az{gap:4px}.glos-az a{min-width:40px;height:40px;font-size:13px}}
+  .glos-count{margin-top:12px;font-size:13px;color:#6e6e73;font-variant-numeric:tabular-nums}
 
   /* Familias */
   /* El bloque entero se oculta mientras hay búsqueda activa (las familias son el
@@ -206,31 +214,31 @@ const counts = {
   /* Subcategorías de la familia */
   .glos-fam-subs{margin-top:12px;padding-top:12px;border-top:1px solid #f0f0f3}
   .glos-fam-subs-label{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#8e8e93}
-  .glos-fam-subs-label span{margin-left:4px;color:#aeaeb2;font-variant-numeric:tabular-nums}
+  .glos-fam-subs-label span{margin-left:4px;color:#6e6e73;font-variant-numeric:tabular-nums}
   .glos-fam-subs ul{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;list-style:none;padding:0}
   .glos-fam-subs li{display:flex}
   .glos-fam-subs a,.glos-fam-subs span[title]{display:inline-block;padding:3px 9px;border-radius:9999px;background:#f5f5f7;font-size:12px;color:#3a3a3c;line-height:1.5}
-  .glos-fam-subs a:hover{background:#e8f2fd;color:#0071e3;text-decoration:none}
-  .glos-fam-subs span[title]{color:#8e8e93}
-  .glos-fam-audit{margin-top:10px;padding-top:10px;border-top:1px solid #f0f0f3;font-size:12px;color:#8e8e93;line-height:1.6}
+  .glos-fam-subs a:hover{background:#e8f2fd;color:#0066cc;text-decoration:none}
+  .glos-fam-subs span[title]{color:#6e6e73}
+  .glos-fam-audit{margin-top:10px;padding-top:10px;border-top:1px solid #f0f0f3;font-size:12px;color:#6e6e73;line-height:1.6}
   .glos-fam-audit strong{color:#6e6e73;font-weight:600}
 
   /* Términos */
-  .glos-letter{position:sticky;top:48px;z-index:10;margin:32px 0 10px;padding:6px 0;font-size:13px;font-weight:700;letter-spacing:.06em;color:#0071e3;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e8e8ed}
+  .glos-letter{position:sticky;top:48px;z-index:10;margin:32px 0 10px;padding:6px 0;font-size:13px;font-weight:700;letter-spacing:.06em;color:#0066cc;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e8e8ed}
   .glos-term{padding:16px 0;border-bottom:1px solid #f0f0f3;scroll-margin-top:96px}
   .glos-term:target{background:#f8fbff;border-radius:12px;padding-left:14px;padding-right:14px}
   .glos-term-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
   .glos-term-head h4{font-size:15px;font-weight:600;color:#1d1d1f}
-  .glos-exp{font-size:12px;color:#8e8e93}
+  .glos-exp{font-size:12px;color:#6e6e73}
   .glos-def{margin-top:6px;font-size:14px;color:#3a3a3c;line-height:1.65;max-width:70ch}
   .glos-eval{margin-top:8px;font-size:13px;color:#6e6e73;line-height:1.6;max-width:70ch;padding-left:10px;border-left:2px solid #e8e8ed}
   .glos-eval strong{color:#1d1d1f;font-weight:600}
   .glos-rel{margin-top:8px;display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px}
-  .glos-rel span{color:#8e8e93}
-  .glos-rel a{color:#0071e3;padding:2px 8px;border-radius:9999px;background:#f5f5f7}
+  .glos-rel span{color:#6e6e73}
+  .glos-rel a{color:#0066cc;padding:2px 8px;border-radius:9999px;background:#f5f5f7}
   .glos-rel a:hover{background:#e8f2fd;text-decoration:none}
 
-  .glos-empty{margin-top:40px;text-align:center;font-size:15px;color:#8e8e93}
+  .glos-empty{margin-top:40px;text-align:center;font-size:15px;color:#6e6e73}
 </style>
 
 <script>

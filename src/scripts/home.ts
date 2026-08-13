@@ -3,10 +3,6 @@
  * embebido— para que Astro lo emita como fichero externo: así la política CSP
  * puede prohibir el script inline, que es por donde entra un XSS.
  */
-// Atajo: "/" enfoca el buscador
-  document.addEventListener('keydown', (e) => {
-    if (e.key === '/' && document.activeElement?.tagName !== 'INPUT' && document.activeElement?.tagName !== 'TEXTAREA') {
-      e.preventDefault();
-      document.getElementById('hero-search')?.focus();
-    }
-  });
+import { focusOnSlash } from "./search-shortcut";
+
+focusOnSlash(document.getElementById("hero-search") as HTMLInputElement | null);

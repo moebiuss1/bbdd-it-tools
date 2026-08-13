@@ -15,8 +15,8 @@ const catTools = tools.filter(t => getToolCategories(t.data).includes(Astro.para
 <BaseLayout title={cat.name} description={cat.description}>
   <Header active="herramientas" />
 
-  <section class="py-10"><div class="container max-w-900">
-    <nav class="mb-8 flex items-center gap-2" style="font-size:13px;color:#aeaeb2"><a href={`${base}herramientas`} style="color:#0071e3">Directorio</a><span>/</span><span style="color:#86868b">{cat.name}</span></nav>
+  <section class="py-10" id="contenido" tabindex="-1"><div class="container max-w-900">
+    <nav class="mb-8 flex items-center gap-2" style="font-size:13px;color:#8e8e93"><a href={`${base}herramientas`} style="color:#0066cc">Directorio</a><span aria-hidden="true">/</span><span style="color:#6e6e73">{cat.name}</span></nav>
     <h1 class="section-title" style="font-size:28px">{cat.name}</h1><p class="section-desc">{cat.description}</p>
     {catTools.length===0 ? <div class="text-center py-16"><p class="section-desc">Todavía no hay herramientas verificadas en esta categoría. El directorio se amplía cada semana.</p><a href={`${base}herramientas`} class="btn btn-outline mt-4">Ver el directorio completo</a></div> :
     <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mt-8">

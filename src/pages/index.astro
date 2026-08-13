@@ -25,12 +25,12 @@ const recientes = tools.filter(t => t.data.last_verified && new Date(t.data.last
 
   <Header active="home" search />
 
-  <section class="hero">
+  <section class="hero" id="contenido" tabindex="-1">
     <div class="container text-center max-w-800 mx-auto">
       <h1 class="hero-title mt-6">Herramientas IT. Sin humo.</h1>
       <p class="hero-subtitle mx-auto">{tools.length} herramientas en {categories.length} categorías, rankeadas por consenso del mercado. Actualizado cada lunes.</p>
       <div class="flex flex-wrap justify-center gap-3 mt-8">
-        <a href={`${base}herramientas`} class="btn btn-primary">Explorar directorio <span style="font-size:18px;line-height:1">→</span></a>
+        <a href={`${base}herramientas`} class="btn btn-primary">Explorar directorio <span class="btn-arrow" style="font-size:18px;line-height:1">→</span></a>
         <a href={`${base}ranking`} class="btn btn-outline">Ver rankings</a>
       </div>
     </div>
@@ -41,7 +41,7 @@ const recientes = tools.filter(t => t.data.last_verified && new Date(t.data.last
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Destacadas</h2>
-        <a href={`${base}herramientas?sort=rank`} class="hidden sm:inline" style="font-size:14px;font-weight:500;color:#0071e3">Ver todas →</a>
+        <a href={`${base}herramientas?sort=rank`} class="hidden sm:inline" style="font-size:14px;font-weight:500;color:#0066cc">Ver todas →</a>
       </div>
       <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {destacadas.map(tool => (
@@ -71,7 +71,7 @@ const recientes = tools.filter(t => t.data.last_verified && new Date(t.data.last
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Actualizadas esta semana</h2>
-        <a href={`${base}herramientas?sort=updated`} class="hidden sm:inline" style="font-size:14px;font-weight:500;color:#0071e3">Ver todas →</a>
+        <a href={`${base}herramientas?sort=updated`} class="hidden sm:inline" style="font-size:14px;font-weight:500;color:#0066cc">Ver todas →</a>
       </div>
       <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {recientes.map(tool => (

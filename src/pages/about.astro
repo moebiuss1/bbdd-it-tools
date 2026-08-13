@@ -5,9 +5,9 @@ import Footer from "@components/Footer.astro";
 ---
 <BaseLayout title="Acerca de">
   <Header active="about" />
-  <section class="py-10"><div class="container max-w-680">
+  <section class="py-10" id="contenido" tabindex="-1"><div class="container max-w-680">
     <h1 class="section-title" style="font-size:28px">Acerca de</h1>
-    <div class="space-y-8 mt-8 prose" style="color:#86868b">
+    <div class="space-y-8 mt-8 prose" style="color:#3a3a3c">
       <p>BBDD IT Tools es un directorio vivo de herramientas para profesionales de seguridad de la información, cumplimiento normativo y auditoría IT. Se actualiza <strong style="color:#1d1d1f">automáticamente cada lunes</strong> mediante un pipeline que busca y verifica información en fuentes referentes del mercado.</p>
       <div><h2>Fuentes</h2><ul><li><strong style="color:#1d1d1f">Gartner Magic Quadrant</strong> — análisis de posicionamiento de mercado</li><li><strong style="color:#1d1d1f">ITSM.tools</strong> — comparativas y guías del sector IT</li><li><strong style="color:#1d1d1f">GitHub</strong> — repositorios open source destacados</li><li><strong style="color:#1d1d1f">Webs especializadas</strong> — medios y blogs de seguridad IT</li></ul></div>
       <div><h2>Rankings</h2><p>Los rankings se calculan con una puntuación compuesta que pondera: frecuencia de menciones en fuentes referentes, posición en Magic Quadrant, actividad en GitHub, número de certificaciones y relevancia en la comunidad. Cada herramienta recibe un tier: <strong style="color:#1d1d1f">Líder</strong> (≥80), <strong style="color:#1d1d1f">Visionario</strong> (65-79), <strong style="color:#1d1d1f">Retador</strong> (50-64) o <strong style="color:#1d1d1f">Nicho</strong> (&lt;50).</p></div>

@@ -1,16 +1,33 @@
 /* === BBDD IT Tools — Design System === */
 
+/* Tokens de movimiento.
+   Una sola curva para todo el sitio (ease-out-quart): arranca rápido y frena,
+   que es como se mueven las cosas cuando responden a un gesto. Sin rebotes ni
+   elásticos: esto es una herramienta de consulta, no una animación de producto. */
+:root{
+  --ease: cubic-bezier(.25,1,.5,1);
+  --t-fast: .15s;
+  --t-base: .22s;
+  --t-slow: .4s;
+}
+
 /* Reset */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 @media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
 body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;color:#1d1d1f;background:#fff;line-height:1.47059;font-size:16px;overflow-x:hidden}
-::selection{background:#0071e3;color:#fff}
+::selection{background:#0066cc;color:#fff}
 img,svg{display:block;max-width:100%}
 /* El atributo `hidden` debe ganar a cualquier `display` de las utilidades:
    los filtros ocultan tarjetas que declaran `display:flex`. */
 [hidden]{display:none!important}
-a{color:#0071e3;text-decoration:none}
+/* El azul de marca tiene dos papeles.
+   #0071e3 es el azul gráfico: trazos, rellenos, anillos de foco, series de los
+   gráficos. #0066cc es el azul de texto: sobre blanco da 5,1:1, mientras que
+   #0071e3 se queda en 4,31:1 y no llega al mínimo legible en cuerpos de 12-14px
+   (que es casi todo el texto enlazado del sitio). Son el mismo color un paso
+   más oscuro, así que la identidad no cambia; lo que cambia es que se lee. */
+a{color:#0066cc;text-decoration:none}
 a:hover{text-decoration:underline}
 h1,h2,h3{font-weight:600;letter-spacing:-0.015em;line-height:1.15}
 
@@ -38,38 +55,68 @@ h1,h2,h3{font-weight:600;letter-spacing:-0.015em;line-height:1.15}
 .space-y-4>*+*{margin-top:16px}.space-y-5>*+*{margin-top:20px}.space-y-8>*+*{margin-top:32px}.space-y-10>*+*{margin-top:40px}.space-y-12>*+*{margin-top:48px}.space-y-16>*+*{margin-top:64px}.space-y-20>*+*{margin-top:80px}
 
 /* Cards */
-.card{background:#fff;border:1px solid #e8e8ed;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:box-shadow .2s}
+.card{background:#fff;border:1px solid #e8e8ed;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:box-shadow var(--t-base) var(--ease),transform var(--t-base) var(--ease),border-color var(--t-base) var(--ease)}
 .card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08);text-decoration:none}
+/* El levantamiento solo lo hacen las tarjetas que llevan a algún sitio: las que
+   solo contienen un gráfico o una tabla no deben moverse bajo el cursor. */
+a.card:hover{transform:translateY(-2px);border-color:#dcdce3}
+a.card:active{transform:translateY(0);transition-duration:.06s}
 
 /* Badges */
 .badge{display:inline-flex;align-items:center;border-radius:9999px;font-weight:500;white-space:nowrap}
 .badge-sm{padding:4px 10px;font-size:11px}
 .badge-md{padding:5px 12px;font-size:12px}
+/* Los badges llevan texto de 11-12px sobre fondos casi blancos: con los tonos
+   -600 de cada color se quedaban entre 3,0:1 y 4,4:1. Un paso más oscuro (-700)
+   los cruza los 4,5:1 sin alterar la familia cromática. */
 .badge-blue{background:#e8f2fd;color:#0066cc}
-.badge-green{background:#ecfdf5;color:#059669}
-.badge-amber{background:#fffbeb;color:#d97706}
-.badge-teal{background:#f0fdfa;color:#0d9488}
-.badge-gray{background:#f3f4f6;color:#6b7280}
+.badge-green{background:#ecfdf5;color:#047857}
+.badge-amber{background:#fffbeb;color:#b45309}
+.badge-teal{background:#f0fdfa;color:#0f766e}
+.badge-gray{background:#f3f4f6;color:#4b5563}
 .badge-outline{border:1px solid #d2d2d7;color:#6e6e73}
 
 /* Buttons */
-.btn{display:inline-flex;align-items:center;gap:6px;border-radius:9999px;font-size:14px;font-weight:500;padding:10px 20px;transition:all .15s;border:none;cursor:pointer}
-.btn-primary{background:#0071e3;color:#fff}.btn-primary:hover{background:#0066cc;text-decoration:none}
-.btn-outline{background:#fff;color:#1d1d1f;border:1px solid #d2d2d7}.btn-outline:hover{background:#f5f5f7;text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:6px;border-radius:9999px;font-size:14px;font-weight:500;padding:10px 20px;transition:background var(--t-fast) var(--ease),color var(--t-fast) var(--ease),transform var(--t-fast) var(--ease),box-shadow var(--t-fast) var(--ease);border:none;cursor:pointer}
+/* Respuesta táctil: el botón cede bajo el dedo y vuelve. Es el único gesto
+   "físico" de la interfaz y dura menos de lo que tarda en soltarse el clic. */
+.btn:active{transform:scale(.97);transition-duration:.06s}
+.btn-primary{background:#0066cc;color:#fff}.btn-primary:hover{background:#0058b0;text-decoration:none}
+.btn-outline{background:#fff;color:#1d1d1f;border:1px solid #d2d2d7}.btn-outline:hover{background:#f5f5f7;border-color:#aeaeb2;text-decoration:none}
+/* La flecha del botón acompaña al cursor: señala hacia dónde lleva. */
+.btn .btn-arrow{display:inline-block;transition:transform var(--t-base) var(--ease)}
+.btn:hover .btn-arrow{transform:translateX(3px)}
 
 /* Nav */
-.nav-link{border-radius:9999px;padding:6px 12px;font-size:13px;color:#6e6e73;transition:all .15s}
+.nav-link{border-radius:9999px;padding:6px 12px;font-size:13px;color:#6e6e73;transition:background var(--t-fast) var(--ease),color var(--t-fast) var(--ease)}
 .nav-link:hover{background:#f5f5f7;color:#1d1d1f;text-decoration:none}
-.nav-link:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(0,113,227,.15)}
 .nav-link-active{color:#1d1d1f;font-weight:600;background:#f5f5f7}
-a:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(0,113,227,.15);border-radius:4px}
-button:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(0,113,227,.15)}
+
+/* Foco visible.
+   El anillo anterior (azul al 15%) apenas se distinguía del blanco: quien navega
+   con teclado no sabía dónde estaba. Este va en dos capas —halo blanco y aro
+   azul sólido— para verse igual sobre fondo blanco que sobre gris. */
+:where(a,button,summary,[tabindex]):focus-visible{outline:none;box-shadow:0 0 0 2px #fff,0 0 0 4px rgba(0,113,227,.65);border-radius:6px}
+.nav-link:focus-visible,.btn:focus-visible{border-radius:9999px}
+
+/* Objetivo táctil mínimo (44px) en dispositivos sin puntero fino. La zona
+   sensible crece sin mover un solo píxel del diseño. */
+@media (pointer:coarse){
+  .nav-link,.footer-links a{position:relative}
+  .nav-link::after,.footer-links a::after{content:"";position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)}
+}
+
+/* Saltar al contenido: invisible hasta que alguien tabula. */
+.skip-link{position:absolute;left:12px;top:-100px;z-index:60;padding:10px 18px;border-radius:9999px;background:#1d1d1f;color:#fff;font-size:13px;font-weight:500;transition:top var(--t-base) var(--ease)}
+.skip-link:focus{top:10px;text-decoration:none}
 
 /* Header */
 .header{border-bottom:1px solid #e8e8ed;background:rgba(255,255,255,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
 .header-inner{display:flex;align-items:center;height:48px;gap:24px}
 @media(max-width:640px){
-  .header-inner{gap:4px 8px;height:auto;min-height:48px;flex-wrap:wrap;padding:8px 0}
+  /* Solo el eje vertical: `padding:8px 0` en atajo anulaba el padding lateral
+     que aporta `.container` y dejaba la marca pegada al borde de la pantalla. */
+  .header-inner{gap:4px 8px;height:auto;min-height:48px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
   .header-inner .nav-link{padding:5px 8px;font-size:12px}
   .header-inner form{max-width:none!important;width:100%;order:3;flex-basis:100%}
 }
@@ -93,12 +140,15 @@ button:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(0,113,227,.15)}
 
 /* Tool card */
 .tool-card{display:flex;align-items:flex-start;gap:12px;padding:16px;height:100%}
-.tool-avatar{display:flex;align-items:center;justify-content:center;width:35px;height:35px;border-radius:10px;background:#f5f5f7;font-size:14px;font-weight:700;color:#8e8e93;flex-shrink:0;overflow:hidden}
+.tool-avatar{display:flex;align-items:center;justify-content:center;width:35px;height:35px;border-radius:10px;background:#f5f5f7;font-size:14px;font-weight:700;color:#6e6e73;flex-shrink:0;overflow:hidden;transition:transform var(--t-base) var(--ease)}
 .tool-avatar img{width:100%;height:100%;object-fit:contain;border-radius:8px}
-.tool-name{font-size:15px;font-weight:600;color:#1d1d1f;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.tool-name:hover{color:#0071e3}
+.tool-name{font-size:15px;font-weight:600;color:#1d1d1f;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:color var(--t-fast) var(--ease)}
+/* El nombre y el logotipo responden a la tarjeta entera, no solo a sí mismos:
+   el objetivo del clic es la tarjeta. */
+a.card:hover .tool-name{color:#0066cc}
+a.card:hover .tool-avatar{transform:scale(1.06)}
 .tool-desc{margin-top:2px;font-size:13px;color:#6e6e73;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.tool-cat{margin-top:8px;display:inline-block;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:#8e8e93}
+.tool-cat{margin-top:8px;display:inline-block;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:#6e6e73}
 
 /* Cat card */
 .cat-card{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-radius:12px}
@@ -120,27 +170,27 @@ button:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(0,113,227,.15)}
 
 /* Sidebar */
 .sidebar-box{border:1px solid #e8e8ed;border-radius:16px;padding:20px}
-.sidebar-box-title{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#8e8e93;margin-bottom:10px}
-.sidebar-link{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#0071e3}
+.sidebar-box-title{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#6e6e73;margin-bottom:10px}
+.sidebar-link{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#0066cc}
 .sidebar-link:hover{text-decoration:underline}
 .sidebar-text{display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#6e6e73}
 .sidebar-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.sidebar-tag{display:inline-flex;border-radius:9999px;padding:4px 10px;font-size:11px;font-weight:500;background:#f3f4f6;color:#6b7280;transition:background .15s}
+.sidebar-tag{display:inline-flex;border-radius:9999px;padding:4px 10px;font-size:11px;font-weight:500;background:#f3f4f6;color:#4b5563;transition:background .15s}
 .sidebar-tag:hover{background:#e5e7eb;text-decoration:none}
 .sidebar-sources{margin-top:10px}.sidebar-source{margin-top:4px}
 
 /* Fuentes de la ficha: enlace directo a la página citada, con emisor y tipo */
 .sources-block{margin-top:40px}
-.sources-lead{font-size:14px;color:#86868b;line-height:1.6;max-width:62ch}
+.sources-lead{font-size:14px;color:#6e6e73;line-height:1.6;max-width:62ch}
 .sources-list{list-style:none;padding:0;margin-top:14px;display:grid;gap:8px}
 .source-item{display:grid;grid-template-columns:auto auto;gap:2px 10px;align-items:baseline;border:1px solid #e8e8ed;border-radius:14px;padding:12px 16px;background:#fff;transition:border-color .15s,box-shadow .15s}
 .source-item:hover{border-color:#0071e3;box-shadow:0 1px 6px rgba(0,0,0,.05);text-decoration:none}
 .source-name{font-size:14px;font-weight:600;color:#1d1d1f}
-.source-kind{font-size:11px;color:#8e8e93;justify-self:start}
-.source-url{grid-column:1/-1;font-size:12px;color:#0071e3;word-break:break-all}
-.sources-foot{margin-top:12px;font-size:13px;color:#8e8e93}
-.sources-foot a{color:#0d9488;margin-left:4px}
-.cert-link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:12px;font-weight:500;color:#0d9488}
+.source-kind{font-size:11px;color:#6e6e73;justify-self:start}
+.source-url{grid-column:1/-1;font-size:12px;color:#0066cc;word-break:break-all}
+.sources-foot{margin-top:12px;font-size:13px;color:#6e6e73}
+.sources-foot a{color:#0f766e;margin-left:4px}
+.cert-link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:12px;font-weight:500;color:#0f766e}
 .cert-link:hover{text-decoration:underline}
 
 /* Why box */
@@ -152,7 +202,8 @@ button:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(0,113,227,.15)}
 .rank-row:last-child{border-bottom:0}
 .rank-row:hover{background:#f5f5f7;text-decoration:none}
 .rank-row-first{background:rgba(251,243,219,.4)}
-.rank-num{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:9999px;background:#f5f5f7;font-size:14px;font-weight:700;color:#1d1d1f;flex-shrink:0}
+.rank-num{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:9999px;background:#f5f5f7;font-size:14px;font-weight:700;color:#1d1d1f;flex-shrink:0;font-variant-numeric:tabular-nums;transition:background var(--t-fast) var(--ease),color var(--t-fast) var(--ease)}
+.rank-row:hover .rank-num{background:#0066cc;color:#fff}
 .rank-body{min-width:0;flex:1}
 .rank-name{font-size:15px;font-weight:600;color:#1d1d1f}
 .rank-desc{margin-top:2px;font-size:13px;color:#6e6e73;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -160,8 +211,8 @@ button:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(0,113,227,.15)}
 .tier-lider{background:#fffbeb;color:#92400e;border-color:#fde68a}
 .tier-visionario{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
 .tier-retador{background:#ecfdf5;color:#065f46;border-color:#a7f3d0}
-.tier-nicho{background:#f9fafb;color:#6b7280;border-color:#e5e7eb}
-.tier-score{margin-top:4px;font-size:11px;color:#8e8e93}
+.tier-nicho{background:#f9fafb;color:#4b5563;border-color:#e5e7eb}
+.tier-score{margin-top:4px;font-size:11px;color:#6e6e73}
 
 /* Prose */
 .prose{font-size:15px;line-height:1.7}
@@ -176,12 +227,12 @@ button:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(0,113,227,.15)}
 .footer{border-top:1px solid #e8e8ed;background:#fafafa;padding:48px 0;margin-top:auto}
 .footer-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
 .footer-brand{font-size:13px;font-weight:500;color:#1d1d1f}
-.footer-desc{margin-top:4px;font-size:12px;color:#8e8e93}
+.footer-desc{margin-top:4px;font-size:12px;color:#6e6e73}
 .footer-links{display:flex;gap:24px;font-size:12px}
 
 /* 404 */
 .notfound{padding:96px 0;text-align:center}
-.notfound-eyebrow{font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:#8e8e93}
+.notfound-eyebrow{font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:#6e6e73}
 .notfound-title{font-size:2rem;font-weight:700;letter-spacing:-.02em;margin-top:12px}
 
 /* Grid utilities */
@@ -192,6 +243,51 @@ button:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(0,113,227,.15)}
 /* Score badge */
 .score-badge{position:relative;width:52px;height:52px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
+/* Tecla rápida del buscador.
+   Quien consulta el directorio a diario no quiere apuntar con el ratón: pulsar
+   "/" desde cualquier punto de la página lleva el cursor al buscador. La tecla
+   se dibuja dentro del campo y desaparece al enfocarlo. */
+.kbd-hint{position:absolute;right:10px;top:50%;transform:translateY(-50%);display:none;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border:1px solid #d2d2d7;border-bottom-width:2px;border-radius:6px;background:#fff;font-size:11px;font-weight:600;color:#6e6e73;pointer-events:none;transition:opacity var(--t-fast) var(--ease)}
+@media (hover:hover) and (pointer:fine){.kbd-hint{display:flex}}
+.has-kbd:focus-within .kbd-hint{opacity:0}
+
+/* Copiar enlace de la ficha: el gesto de quien está redactando un informe. */
+.copy-link{display:inline-flex;align-items:center;gap:6px;width:100%;padding:8px 12px;border:1px solid #d2d2d7;border-radius:9999px;background:#fff;font-size:13px;font-weight:500;color:#1d1d1f;cursor:pointer;transition:background var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease),color var(--t-fast) var(--ease)}
+.copy-link:hover{background:#f5f5f7;border-color:#aeaeb2}
+.copy-link:active{transform:scale(.98);transition-duration:.06s}
+.copy-link.is-done{background:#ecfdf5;border-color:#a7f3d0;color:#059669}
+.copy-link svg{flex-shrink:0;transition:transform var(--t-base) var(--ease)}
+.copy-link.is-done svg{transform:scale(1.1)}
+
+/* El anillo de puntuación se dibuja al cargar: el número entra con su medida,
+   no aparece ya hecho. Si la animación no llega a ejecutarse (movimiento
+   reducido, render sin JS, pestaña oculta) el aro ya está en su valor final. */
+@keyframes score-draw{from{stroke-dasharray:0 100}}
+.score-ring{animation:score-draw .8s var(--ease)}
+
+/* Barras que se dibujan de izquierda a derecha, como se rellena una tabla. Se
+   anima `transform`, no `width`: no provoca reflujo. El ancho final vive en el
+   atributo `style`, así que sin animación la barra se ve igualmente completa. */
+@keyframes bar-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.bar-grow{transform-origin:left center;animation:bar-grow .55s var(--ease) both}
+
+/* Píldora de filtro activo (directorio).
+   La construye el script del directorio en tiempo de ejecución: por eso vive
+   aquí y no en el <style> de la página, cuyo ámbito no alcanza a los nodos
+   creados con createElement. */
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 6px 4px 11px;border-radius:9999px;background:#e8f2fd;color:#0066cc;font-size:12px;font-weight:500;border:none;cursor:pointer;transition:background var(--t-fast) var(--ease),transform var(--t-fast) var(--ease);animation:pill-in .22s var(--ease)}
+@keyframes pill-in{from{opacity:0;transform:scale(.92)}}
+.pill:hover{background:#d7e9fc}
+.pill:active{transform:scale(.96);transition-duration:.06s}
+.pill b{font-weight:600}
+.pill span{display:flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:9999px;background:rgba(0,102,204,.15);font-size:13px;line-height:1;transition:background var(--t-fast) var(--ease)}
+.pill:hover span{background:rgba(0,102,204,.3)}
+
+/* El recuento de resultados late al cambiar: confirma que el filtro ha surtido
+   efecto sin necesidad de recorrer la lista con la vista. */
+@keyframes count-pop{0%{transform:scale(1)}35%{transform:scale(1.08)}100%{transform:scale(1)}}
+.is-counting{animation:count-pop .3s var(--ease)}
+
 /* Misc */
 .mx-auto{margin-left:auto;margin-right:auto}
 @media(max-width:640px){.sm\:hidden{display:none}}
@@ -199,3 +295,14 @@ button:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(0,113,227,.15)}
 .bg-white{background:#fff}
 .list-disc{list-style-type:disc}
 .pl-5{padding-left:20px}
+.tabular{font-variant-numeric:tabular-nums}
+
+/* Movimiento reducido: quien lo pide en su sistema recibe la misma interfaz sin
+   desplazamientos ni dibujados. Nada depende de una animación para verse. */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important;
+  }
+  a.card:hover,.btn:active,a.card:hover .tool-avatar{transform:none}
+}

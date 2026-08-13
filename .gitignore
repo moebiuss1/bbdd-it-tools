@@ -28,3 +28,6 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+# Configuración y skills locales de Claude Code: son del entorno de trabajo de
+# cada uno, no del proyecto.
+.claude/

@@ -31,8 +31,12 @@ const links = [
     {search && (
       <>
         <div class="flex-1"></div>
-        <form action={`${base}herramientas`} method="get" style="max-width:220px;width:100%">
-          <input type="search" name="q" placeholder="Buscar herramientas..." class="search-input" id="hero-search" aria-label="Buscar herramientas" />
+        <form action={`${base}herramientas`} method="get" style="max-width:240px;width:100%">
+          <div class="has-kbd" style="position:relative;display:flex;align-items:center">
+            <input type="search" name="q" placeholder="Buscar herramientas…" class="search-input" id="hero-search"
+                   aria-label="Buscar herramientas (pulsa la barra inclinada para enfocar)" />
+            <kbd class="kbd-hint" aria-hidden="true">/</kbd>
+          </div>
         </form>
       </>
     )}

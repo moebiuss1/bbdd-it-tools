@@ -111,18 +111,18 @@ const scoreBreakdown = buildScoreBreakdown(data, tool.body);
 <BaseLayout title={data.name} description={data.description}>
   <Header active="herramientas" />
 
-  <article class="py-10">
+  <article class="py-10" id="contenido" tabindex="-1">
     <div class="container max-w-900">
-      <nav class="mb-8 flex items-center gap-2" style="font-size:13px;color:#aeaeb2">
-        <a href={`${base}herramientas`} style="color:#0071e3">Directorio</a><span>/</span>
-        {cat && <><a href={`${base}categorias/${cat.id}`} style="color:#0071e3">{cat.name}</a><span>/</span></>}
-        <span class="truncate" style="color:#86868b">{data.name}</span>
+      <nav class="mb-8 flex items-center gap-2" style="font-size:13px;color:#8e8e93" aria-label="Ruta de navegación">
+        <a href={`${base}herramientas`} style="color:#0066cc">Directorio</a><span aria-hidden="true">/</span>
+        {cat && <><a href={`${base}categorias/${cat.id}`} style="color:#0066cc">{cat.name}</a><span aria-hidden="true">/</span></>}
+        <span class="truncate" style="color:#6e6e73" aria-current="page">{data.name}</span>
       </nav>
 
       <header class="detail-header">
         {data.logo && <div class="mb-4" style="width:56px;height:56px;border-radius:14px;background:#f5f5f7;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src={`${base}${data.logo.replace(/^\//,'')}`} alt={data.name} width="35" height="35" style="object-fit:contain" /></div>}
         <div class="detail-badges">
-          {family && <span class="badge badge-md" style="background:#f0fdfa;color:#0d9488">{family.icon} {family.name}</span>}
+          {family && <span class="badge badge-md" style="background:#f0fdfa;color:#0f766e">{family.icon} {family.name}</span>}
           <span class={`badge badge-md ${data.type==='opensource'?'badge-green':'badge-blue'}`}>{typeLabel}</span>
           {data.market_rank && cat && <span class="badge badge-amber badge-md">#{data.market_rank} en {cat.name}</span>}
           {costLabel && <span class="badge badge-gray badge-md">{costLabel}</span>}
@@ -143,7 +143,7 @@ const scoreBreakdown = buildScoreBreakdown(data, tool.body);
           </section>
           <section class="why-box">
             <h2>Por qué es un referente</h2>
-            <p style="font-size:15px;color:#86868b;line-height:1.6">{data.why_reference}</p>
+            <p style="font-size:15px;color:#3a3a3c;line-height:1.6">{data.why_reference}</p>
           </section>
         </div>
 
@@ -161,6 +161,14 @@ const scoreBreakdown = buildScoreBreakdown(data, tool.body);
             </div>}
             {data.license && <div class="sidebar-text"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:2px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>{data.license}</span></div>}
             {data.last_verified && <div class="sidebar-text"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:2px;flex-shrink:0"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Verificado: {new Date(data.last_verified).toLocaleDateString("es-ES")}</span></div>}
+
+            <!-- Estas fichas acaban citadas en informes y correos: copiar su
+                 dirección es el gesto más repetido y no debería exigir ir a la
+                 barra del navegador. -->
+            <button type="button" class="copy-link" id="copy-link">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-copy-icon><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span data-copy-label aria-live="polite">Copiar enlace</span>
+            </button>
           </div>
 
           {data.cost_details && <div class="sidebar-box"><h3 class="sidebar-box-title">Coste</h3><p style="font-size:14px;color:#6e6e73;line-height:1.5">{data.cost_details}</p></div>}
@@ -171,15 +179,18 @@ const scoreBreakdown = buildScoreBreakdown(data, tool.body);
             <div class="flex items-center gap-3 mb-3">
               <div class="score-badge" style="
                 --score-bg: {totalScore>=70?'#ecfdf5':totalScore>=40?'#fffbeb':'#fef2f2'};
-                --score-color: {totalScore>=70?'#059669':totalScore>=40?'#d97706':'#dc2626'};
+                --score-color: {totalScore>=70?'#047857':totalScore>=40?'#b45309':'#b91c1c'};
                 --score-pct: {totalScore}%;
               ">
-                <svg width="52" height="52" viewBox="0 0 36 36" style="transform:rotate(-90deg)">
+                <!-- `pathLength="100"` hace que el trazo mida 100 unidades: sin
+                     él el dasharray se medía contra la circunferencia real
+                     (94,2 con r=15) y el aro marcaba un 6% de más. -->
+                <svg width="52" height="52" viewBox="0 0 36 36" style="transform:rotate(-90deg)" role="img" aria-label={`Puntuación ${totalScore} sobre 100`}>
                   <circle cx="18" cy="18" r="15" fill="none" stroke="#f5f5f7" stroke-width="4"/>
-                  <circle cx="18" cy="18" r="15" fill="none" stroke={totalScore>=70?'#059669':totalScore>=40?'#d97706':'#dc2626'} stroke-width="4"
+                  <circle class="score-ring" cx="18" cy="18" r="15" fill="none" pathLength="100" stroke={totalScore>=70?'#047857':totalScore>=40?'#b45309':'#b91c1c'} stroke-width="4"
                     stroke-dasharray={`${totalScore} ${100-totalScore}`} stroke-linecap="round"/>
                 </svg>
-                <span style="position:absolute;font-size:15px;font-weight:700;color:#1d1d1f">{totalScore}</span>
+                <span class="tabular" style="position:absolute;font-size:15px;font-weight:700;color:#1d1d1f">{totalScore}</span>
               </div>
               <div>
                 <div style="font-size:14px;font-weight:600;color:#1d1d1f">{totalScore>=70?'Excelente':totalScore>=50?'Notable':totalScore>=30?'Aceptable':'Pendiente'}</div>
@@ -187,14 +198,14 @@ const scoreBreakdown = buildScoreBreakdown(data, tool.body);
               </div>
             </div>
             <div class="space-y-1.5">
-              {scoreBreakdown.map(s => (
+              {scoreBreakdown.map((s, i) => (
                 <div class="flex items-center justify-between" style="font-size:11px">
                   <span style="color:#6e6e73;cursor:help" title={s.detail}>{s.label}</span>
                   <div style="display:flex;align-items:center;gap:6px">
                     <div style="width:40px;height:4px;background:#f5f5f7;border-radius:2px;overflow:hidden">
-                      <div style={`height:100%;width:${(s.value/s.max)*100}%;background:#0071e3;border-radius:2px`}></div>
+                      <div class="bar-grow" style={`height:100%;width:${(s.value/s.max)*100}%;background:#0071e3;border-radius:2px;animation-delay:${120 + i * 60}ms`}></div>
                     </div>
-                    <span style="color:#1d1d1f;font-weight:500;min-width:20px;text-align:right;font-size:11px">{s.value}</span>
+                    <span class="tabular" style="color:#1d1d1f;font-weight:500;min-width:20px;text-align:right;font-size:11px">{s.value}</span>
                   </div>
                 </div>
               ))}
@@ -262,3 +273,57 @@ const scoreBreakdown = buildScoreBreakdown(data, tool.body);
 
   <Footer />
 </BaseLayout>
+
+<script>
+  /* Copiar el enlace de la ficha.
+     El botón confirma en sí mismo —icono de visto y "Enlace copiado"— durante
+     un segundo y medio, y vuelve solo a su estado inicial. Sin avisos flotantes
+     que tapen la ficha ni que haya que cerrar. */
+  const btn = document.getElementById('copy-link') as HTMLButtonElement | null;
+
+  if (btn) {
+    const label = btn.querySelector('[data-copy-label]') as HTMLElement | null;
+    const icon = btn.querySelector('[data-copy-icon]') as SVGElement | null;
+    const copyIcon = icon?.innerHTML ?? '';
+    const doneIcon = '<polyline points="20 6 9 17 4 12"/>';
+    let timer: ReturnType<typeof setTimeout>;
+
+    const feedback = (text: string, done: boolean) => {
+      if (label) label.textContent = text;
+      if (icon) icon.innerHTML = done ? doneIcon : copyIcon;
+      btn.classList.toggle('is-done', done);
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        if (label) label.textContent = 'Copiar enlace';
+        if (icon) icon.innerHTML = copyIcon;
+        btn.classList.remove('is-done');
+      }, 1800);
+    };
+
+    btn.addEventListener('click', async () => {
+      const url = location.href;
+      try {
+        // `navigator.clipboard` solo existe en contextos seguros (https o
+        // localhost); en el resto se recurre al método antiguo.
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(url);
+        } else {
+          const tmp = document.createElement('textarea');
+          tmp.value = url;
+          tmp.setAttribute('readonly', '');
+          tmp.style.position = 'fixed';
+          tmp.style.opacity = '0';
+          document.body.appendChild(tmp);
+          tmp.select();
+          document.execCommand('copy');
+          tmp.remove();
+        }
+        feedback('Enlace copiado', true);
+      } catch {
+        // Si el navegador deniega el portapapeles, decirlo: fingir que se ha
+        // copiado deja al usuario pegando lo que tuviera antes.
+        feedback('No se pudo copiar', false);
+      }
+    });
+  }
+</script>

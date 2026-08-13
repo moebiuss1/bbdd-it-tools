@@ -6,6 +6,17 @@ const base = import.meta.env.BASE_URL;
 ---
 <BaseLayout title="No encontrada">
   <Header />
-  <section class="notfound"><p class="notfound-eyebrow">Error 404</p><h1 class="notfound-title">Página no encontrada</h1><p class="section-desc mt-3">La página que buscas no existe o ha sido movida.</p><a href={base} class="btn btn-primary mt-6">Ir al inicio</a></section>
+  <section class="notfound" id="contenido" tabindex="-1">
+    <p class="notfound-eyebrow">Error 404</p>
+    <h1 class="notfound-title">Esta página no está en la base de datos</h1>
+    <p class="section-desc mt-3 mx-auto" style="max-width:44ch">
+      El enlace apunta a algo que no existe o que se movió. Si venías de un marcador antiguo,
+      lo más probable es que la ficha siga ahí con otra dirección: búscala en el directorio.
+    </p>
+    <div class="flex flex-wrap justify-center gap-3 mt-6">
+      <a href={`${base}herramientas`} class="btn btn-primary">Buscar en el directorio <span class="btn-arrow" style="font-size:18px;line-height:1">→</span></a>
+      <a href={base} class="btn btn-outline">Ir al inicio</a>
+    </div>
+  </section>
   <Footer />
 </BaseLayout>

@@ -13,6 +13,11 @@ const rankings = await getRankings();
 const totalTools = tools.length;
 const openSource = tools.filter(t => t.data.type === 'opensource').length;
 const comercial = tools.filter(t => t.data.type === 'comercial').length;
+// Porcentajes del donut, redondeados a dos decimales para no arrastrar 15
+// dígitos al atributo del SVG.
+const pct = (n: number) => Math.round((n / (totalTools || 1)) * 10000) / 100;
+const pctComercial = pct(comercial);
+const pctOpenSource = pct(openSource);
 
 // Conteo de certificaciones
 const certCounts = new Map<string,number>();
@@ -29,15 +34,14 @@ const chartColors = ['#0071e3','#5856d6','#af52de','#ff2d55','#ff9500','#ffcc02'
 <BaseLayout title="Rankings">
   <Header active="ranking" />
 
-  <section class="py-10">
+  <section class="py-10" id="contenido" tabindex="-1">
     <div class="container max-w-900">
       <h1 class="section-title" style="font-size:28px">Rankings</h1>
       <p class="section-desc" style="max-width:600px">Las mejores herramientas por categoría según consenso de fuentes referentes.</p>
 
       <!-- Selector de categoría -->
       <div class="mt-6" style="position:relative;max-width:320px">
-        <select id="category-select" style="width:100%;padding:10px 36px 10px 14px;border:1px solid #d2d2d7;border-radius:12px;font-size:14px;font-weight:500;color:#1d1d1f;background:#fff;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none;transition:border-color .15s"
-          onchange="if(this.value) document.getElementById(this.value)?.scrollIntoView({behavior:'smooth',block:'start'})">
+        <select id="category-select" aria-label="Ir a una categoría" style="width:100%;padding:10px 36px 10px 14px;border:1px solid #d2d2d7;border-radius:12px;font-size:14px;font-weight:500;color:#1d1d1f;background:#fff;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none;transition:border-color .15s">
           <option value="">Ir a una categoría...</option>
           {Object.keys(rankings).map(catId => { const c = categories.find(x => x.id===catId); return c ? <option value={`cat-${catId}`}>{c.name} ({rankings[catId].length})</option> : null; })}
         </select>
@@ -50,18 +54,22 @@ const chartColors = ['#0071e3','#5856d6','#af52de','#ff2d55','#ff9500','#ffcc02'
         <div class="card" style="padding:24px;text-align:center">
           <h3 style="font-size:15px;font-weight:600;margin-bottom:8px;color:#1d1d1f">Tipo de herramienta</h3>
           <div style="position:relative;width:160px;height:160px;margin:0 auto">
-            <svg viewBox="0 0 36 36" style="width:100%;height:100%">
+            <!-- `pathLength="100"` reescala el trazo a 100 unidades: sin él, un
+                 stroke-dasharray en porcentaje se mide contra la circunferencia
+                 real (87,9 con r=14) y los dos arcos se solapaban un 14%. -->
+            <svg viewBox="0 0 36 36" style="width:100%;height:100%" role="img"
+                 aria-label={`${comercial} herramientas comerciales y ${openSource} open source, ${totalTools} en total`}>
               <circle cx="18" cy="18" r="14" fill="none" stroke="#f5f5f7" stroke-width="6"/>
-              <circle cx="18" cy="18" r="14" fill="none" stroke={chartBlue} stroke-width="6"
-                stroke-dasharray={`${(comercial/totalTools)*100} ${100-(comercial/totalTools)*100}`}
-                stroke-dashoffset="25" stroke-linecap="round" transform="rotate(-90 18 18)"/>
-              <circle cx="18" cy="18" r="14" fill="none" stroke={chartGreen} stroke-width="6"
-                stroke-dasharray={`${(openSource/totalTools)*100} ${100-(openSource/totalTools)*100}`}
-                stroke-dashoffset={25 - (comercial/totalTools)*100} stroke-linecap="round" transform="rotate(-90 18 18)"/>
+              <circle cx="18" cy="18" r="14" fill="none" stroke={chartBlue} stroke-width="6" pathLength="100"
+                stroke-dasharray={`${pctComercial} ${100 - pctComercial}`}
+                stroke-linecap="round" transform="rotate(-90 18 18)"/>
+              <circle cx="18" cy="18" r="14" fill="none" stroke={chartGreen} stroke-width="6" pathLength="100"
+                stroke-dasharray={`${pctOpenSource} ${100 - pctOpenSource}`}
+                stroke-dashoffset={-pctComercial} stroke-linecap="round" transform="rotate(-90 18 18)"/>
             </svg>
             <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
-              <span style="font-size:24px;font-weight:700;color:#1d1d1f">{totalTools}</span>
-              <span style="font-size:11px;color:#aeaeb2">total</span>
+              <span style="font-size:24px;font-weight:700;color:#1d1d1f" class="tabular">{totalTools}</span>
+              <span style="font-size:11px;color:#6e6e73">total</span>
             </div>
           </div>
           <div class="flex justify-center gap-6 mt-3" style="font-size:13px">
@@ -73,7 +81,7 @@ const chartColors = ['#0071e3','#5856d6','#af52de','#ff2d55','#ff9500','#ffcc02'
         <!-- Barras: Top certificaciones -->
         <div class="card" style="padding:24px">
           <h3 style="font-size:15px;font-weight:600;margin-bottom:16px;color:#1d1d1f;text-align:center">Certificaciones más comunes</h3>
-          {topCerts.length === 0 ? <p style="font-size:13px;color:#aeaeb2;text-align:center">Sin datos de certificaciones</p> :
+          {topCerts.length === 0 ? <p style="font-size:13px;color:#6e6e73;text-align:center">Sin datos de certificaciones</p> :
           <div class="space-y-3">
             {topCerts.map(([cert, count], i) => (
               <div>
@@ -82,7 +90,7 @@ const chartColors = ['#0071e3','#5856d6','#af52de','#ff2d55','#ff9500','#ffcc02'
                   <span style="color:#1d1d1f;font-weight:600">{count}</span>
                 </div>
                 <div style="height:6px;background:#f5f5f7;border-radius:3px;overflow:hidden">
-                  <div style={`height:100%;width:${(count/maxCert)*100}%;background:${chartColors[i]??chartBlue};border-radius:3px;transition:width .4s`}></div>
+                  <div class="bar-grow" style={`height:100%;width:${(count/maxCert)*100}%;background:${chartColors[i]??chartBlue};border-radius:3px;animation-delay:${i * 40}ms`}></div>
                 </div>
               </div>
             ))}
@@ -98,12 +106,12 @@ const chartColors = ['#0071e3','#5856d6','#af52de','#ff2d55','#ff9500','#ffcc02'
           const scored = catTools.map(t => ({ tool: t, score: computeToolScore(t.data, t.body) }))
             .sort((a,b) => b.score - a.score)
             .map((item, i) => ({ ...item, rank: i + 1 }));
-          return <section id={`cat-${cat.id}`}><h2 class="section-title mb-4">{cat.name} <span style="color:#8e8e93;font-weight:400">{scored.length}</span></h2>
+          return <section id={`cat-${cat.id}`}><h2 class="section-title mb-4">{cat.name} <span class="tabular" style="color:#6e6e73;font-weight:400">{scored.length}</span></h2>
             <div class="card" style="overflow:hidden">
               {scored.map(({tool: t, score, rank}, i) => (
                 <a href={`${base}herramientas/${t.slug}/`} class={`rank-row ${i===0?'rank-row-first':''}`}>
                   <div class="rank-num">{rank}</div><div class="rank-body"><h3 class="rank-name">{t.data.name}</h3><p class="rank-desc">{t.data.description}</p></div>
-                  <div class="text-right" style="flex-shrink:0"><span class="badge badge-sm" style={`background:${score>=70?'#ecfdf5':score>=40?'#fffbeb':'#fef2f2'};color:${score>=70?'#059669':score>=40?'#d97706':'#dc2626'}`}>{score}/100</span></div>
+                  <div class="text-right" style="flex-shrink:0"><span class="badge badge-sm" style={`background:${score>=70?'#ecfdf5':score>=40?'#fffbeb':'#fef2f2'};color:${score>=70?'#047857':score>=40?'#b45309':'#b91c1c'}`}>{score}/100</span></div>
                 </a>
               ))}
             </div>
@@ -123,4 +131,24 @@ const chartColors = ['#0071e3','#5856d6','#af52de','#ff2d55','#ff9500','#ffcc02'
 @media (min-width: 640px) {
   .charts-grid { grid-template-columns: 1fr 1fr; }
 }
+/* `.bar-grow` (el dibujado escalonado de las barras) vive en global.css: la
+   ficha de herramienta usa el mismo gesto en su desglose de puntuación. */
+#category-select:focus-visible{border-color:#0071e3;box-shadow:0 0 0 3px rgba(0,113,227,.25)}
 </style>
+
+<script>
+  /* El salto a una categoría vivía en un `onchange` inline, que la CSP de
+     producción (`script-src 'self'`) bloquea: el selector no hacía nada en el
+     sitio publicado. Aquí viaja como módulo externo, que sí pasa la política. */
+  const select = document.getElementById('category-select') as HTMLSelectElement | null;
+  select?.addEventListener('change', () => {
+    if (!select.value) return;
+    const target = document.getElementById(select.value);
+    if (!target) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    // Devolver el selector a su estado neutro permite volver a elegir la misma
+    // categoría más tarde (si no, `change` no vuelve a dispararse).
+    select.value = '';
+  });
+</script>
