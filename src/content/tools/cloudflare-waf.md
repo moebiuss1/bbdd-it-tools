@@ -2,9 +2,9 @@
 name: Cloudflare WAF
 slug: cloudflare-waf
 categories:
-- dns-security
-- firewall
-- waf
+  - swg
+  - firewall
+  - waf
 tags:
 - waf
 - ddos
@@ -34,6 +34,7 @@ market_rank: 4
 cert_url: https://www.cloudflare.com/trust-hub/
 sources:
   - https://www.gartner.com/reviews/market/network-firewalls
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/cloudflare-waf.png

@@ -4,11 +4,11 @@ slug: acl-grc
 categories:
 - kpi-ca-managers
 tags:
-- grc
-- audit
-- analytics
-- fraud-detection
-- compliance
+  - grc
+  - auditoria
+  - analytics
+  - fraud-detection
+  - compliance
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$25,000/año.
@@ -28,6 +28,7 @@ company_size:
 market_rank: 5
 sources:
 - https://www.gartner.com/reviews/market/audit-management-solutions
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/acl-grc.png

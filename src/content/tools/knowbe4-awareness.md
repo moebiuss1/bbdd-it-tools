@@ -29,6 +29,7 @@ market_rank: 1
 cert_url: https://trust.knowbe4.com/
 sources:
 - https://www.gartner.com/reviews/market/security-awareness-computer-based-training
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/knowbe4-awareness.png

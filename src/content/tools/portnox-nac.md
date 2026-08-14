@@ -24,6 +24,7 @@ company_size:
 market_rank: 4
 sources:
   - https://www.gartner.com/reviews/market/network-access-control
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/portnox-nac.png

@@ -6,12 +6,11 @@ categories:
 - pam
 - secrets-management
 tags:
-- pam
-- privileged-access
-- vault
-- session-management
-- machine-identity
-- compliance
+  - pam
+  - vault
+  - session-management
+  - machine-identity
+  - compliance
 type: comercial
 cost_model: suscripción
 cost_details: Licencia anual basada en número de cuentas privilegiadas gestionadas. Desde ~$50,000/año para despliegues básicos.
@@ -34,6 +33,7 @@ company_size:
 market_rank: 1
 sources:
 - https://www.gartner.com/reviews/market/privileged-access-management
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/cyberark.png

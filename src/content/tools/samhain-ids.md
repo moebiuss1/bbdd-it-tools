@@ -4,12 +4,12 @@ slug: samhain-ids
 categories:
 - ids
 tags:
-- ids
-- hids
-- unix
-- linux
-- rootkit
-- file-integrity
+  - ids
+  - hids
+  - unix
+  - linux
+  - rootkit
+  - fim
 type: opensource
 cost_model: suscripción
 cost_details: Gratuito. HIDS con base de datos centralizada.
@@ -27,6 +27,7 @@ repo: https://www.la-samhna.de/samhain/
 license: GPL-2.0
 sources:
 - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 ---

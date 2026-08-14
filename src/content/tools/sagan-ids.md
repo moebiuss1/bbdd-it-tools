@@ -26,6 +26,7 @@ repo: https://github.com/quadrantsec/sagan
 license: GPL-2.0
 sources:
 - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/sagan-ids.png

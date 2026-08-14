@@ -31,6 +31,7 @@ market_rank: 5
 sources:
 - https://www.jamf.com/resources/
 - https://www.gartner.com/reviews/market/unified-endpoint-management-tools
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/jamf.png

@@ -5,11 +5,11 @@ categories:
 - incident-management
 - soar
 tags:
-- automation
-- case-management
-- ai
-- low-code
-- federal
+  - automatizacion
+  - case-management
+  - ai
+  - low-code
+  - federal
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Low-code AI hyperautomation platform.
@@ -29,6 +29,7 @@ company_size:
 market_rank: 4
 sources:
   - https://www.gartner.com/reviews/market/it-service-management-platforms
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/swimlane-turbine.png

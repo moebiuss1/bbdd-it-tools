@@ -34,6 +34,7 @@ market_rank: 3
 cert_url: https://www.ibm.com/trust
 sources:
 - https://www.gartner.com/reviews/market/security-information-event-management
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/ibm-qradar.png

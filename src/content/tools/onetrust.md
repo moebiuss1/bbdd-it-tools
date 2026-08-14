@@ -31,6 +31,7 @@ company_size:
 sources:
   - https://www.onetrust.com/news/onetrust-helps-new-iso-270012022-certification/
   - https://www.onetrust.com/news/onetrust-achieves-worlds-first-iso-27701/
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

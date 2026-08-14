@@ -21,14 +21,15 @@ company_size:
 repo: https://github.com/snort3/snort3
 license: GPL-2.0
 tags:
-- red
-- open-source
-- incident-response
-- on-premise
-- linux
+  - network
+  - open-source
+  - incident-response
+  - on-premise
+  - linux
 slug: snort
 sources:
 - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+first_added: 2026-08-07
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 6

@@ -5,10 +5,10 @@ categories:
 - firewall
 - ngfw
 tags:
-- ngfw
-- data-centric
-- user-behavior
-- application-control
+  - ngfw
+  - data-centric
+  - behavior-analytics
+  - application-control
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$5,000/año.
@@ -26,6 +26,7 @@ company_size:
 market_rank: 8
 sources:
   - https://www.gartner.com/reviews/market/network-firewalls
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/forcepoint-ngfw.png

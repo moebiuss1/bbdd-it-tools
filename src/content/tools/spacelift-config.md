@@ -26,6 +26,7 @@ company_size:
 market_rank: 3
 sources:
 - https://docs.spacelift.io/concepts/stack
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/spacelift-config.png

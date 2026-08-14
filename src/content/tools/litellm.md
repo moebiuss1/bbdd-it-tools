@@ -2,7 +2,7 @@
 name: LiteLLM
 slug: litellm
 categories:
-- llm-gateway
+  - llm-security
 tags:
 - ai
 - open-source
@@ -29,6 +29,7 @@ license: MIT (el directorio enterprise/ tiene licencia propia)
 sources:
   - https://github.com/BerriAI/litellm
   - https://www.litellm.ai
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

@@ -4,11 +4,11 @@ slug: chef-infra
 categories:
 - config-managers
 tags:
-- iac
-- ruby
-- automation
-- compliance-as-code
-- inspec
+  - iac
+  - ruby
+  - automatizacion
+  - compliance-as-code
+  - inspec
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$137/nodo/año. Progress Chef. Core open source disponible.
@@ -27,6 +27,7 @@ market_rank: 1
 sources:
 - https://www.gartner.com/reviews/market/continuous-configuration-automation-tools
 - https://docs.chef.io/platform_overview/
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/chef-infra.png

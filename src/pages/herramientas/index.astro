@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import { getCategories, getFamilies, getToolCategories, computeToolScore, toToolEntry } from "@lib/tools";
+import { getCategories, getFamilies, getTags, getToolCategories, computeToolScore, toToolEntry, categorySizes, hasMeaningfulRank, isNewTool } from "@lib/tools";
 const base = import.meta.env.BASE_URL;
 const tools = (await getCollection("tools")).map(toToolEntry);
 const categories = await getCategories();
@@ -11,6 +11,7 @@ const families = await getFamilies();
 
 // Ordenar por ranking
 const sortedTools = [...tools].sort((a,b) => (a.data.market_rank??999) - (b.data.market_rank??999));
+const sizes = categorySizes(tools);
 const groupByCat = categories.map(cat => ({
   ...cat,
   tools: sortedTools.filter(t => getToolCategories(t.data).includes(cat.id))
@@ -52,15 +53,47 @@ const catOptions = groupByCat
   .sort((a, b) => collator.compare(a.name, b.name));
 const famCount = new Map<string, number>();
 for (const c of catOptions) famCount.set(c.family, (famCount.get(c.family) ?? 0) + c.n);
+
+// Etiquetas: se ofrecen solo las del vocabulario curado (src/data/tags.ts) que
+// realmente aparecen en el catálogo. El resto de `tags` sigue alimentando la
+// búsqueda de texto, pero como faceta devolvería una única herramienta.
+const tagCount = new Map<string, number>();
+for (const t of tools) for (const tag of t.data.tags ?? []) tagCount.set(tag, (tagCount.get(tag) ?? 0) + 1);
+const tagOptions = (await getTags())
+  .filter(t => (tagCount.get(t.id) ?? 0) > 0)
+  .map(t => ({ id: t.id, name: t.name, n: tagCount.get(t.id)! }))
+  .sort((a, b) => collator.compare(a.name, b.name));
+
+const site = Astro.site?.toString() ?? "https://moebiuss1.github.io/";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Directorio de herramientas IT",
+  inLanguage: "es-ES",
+  description: `Catálogo completo de ${tools.length} herramientas de seguridad, cumplimiento y auditoría IT.`,
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: tools.length,
+    // Solo los primeros puestos: un ItemList de 182 entradas engorda cada
+    // página sin decirle nada nuevo al buscador, que ya llega a las fichas por
+    // el sitemap.
+    itemListElement: sortedTools.slice(0, 20).map((t, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: t.data.name,
+      url: new URL(`${base}herramientas/${t.slug}/`, site).toString(),
+    })),
+  },
+};
 ---
 
-<BaseLayout title="Directorio">
+<BaseLayout title="Directorio" description={`Las ${tools.length} herramientas del catálogo, filtrables por familia, categoría, tipo, certificación, tamaño de empresa y modelo de coste.`} jsonLd={jsonLd}>
   <Header active="herramientas" />
 
   <section class="py-10" id="contenido" tabindex="-1">
     <div class="container max-w-900" style="overflow-x:hidden">
       <h1 class="section-title" style="font-size:28px">Directorio</h1>
-      <p class="section-desc">{tools.length} herramientas en {categories.length} categorías</p>
+      <p class="section-desc">{tools.length} herramientas en {categories.length} <a href={`${base}categorias`}>categorías</a></p>
 
       <!-- ── Barra de filtros ────────────────────────────────────── -->
       <div class="filters" role="search">
@@ -76,7 +109,8 @@ for (const c of catOptions) famCount.set(c.family, (famCount.get(c.family) ?? 0)
               <option value="rank">Por ranking</option>
               <option value="score">Por puntuación</option>
               <option value="name">Alfabético</option>
-              <option value="updated">Más recientes</option>
+              <option value="added">Últimas incorporaciones</option>
+              <option value="updated">Verificadas más recientemente</option>
             </select>
           </div>
         </div>
@@ -124,6 +158,13 @@ for (const c of catOptions) famCount.set(c.family, (famCount.get(c.family) ?? 0)
             </select>
           </div>
           <div class="facet">
+            <label for="tag-select">Etiqueta</label>
+            <select id="tag-select">
+              <option value="">Cualquiera</option>
+              {tagOptions.map(t => <option value={t.id}>{t.name} ({t.n})</option>)}
+            </select>
+          </div>
+          <div class="facet">
             <label for="cost-select">Modelo de coste</label>
             <select id="cost-select">
               <option value="">Cualquiera</option>
@@ -155,6 +196,7 @@ for (const c of catOptions) famCount.set(c.family, (famCount.get(c.family) ?? 0)
                      data-rank={tool.data.market_rank ?? 999}
                      data-score={s}
                      data-updated={tool.data.last_verified ? new Date(tool.data.last_verified).getTime() : 0}
+                     data-added={tool.data.first_added ? new Date(tool.data.first_added).getTime() : 0}
                      data-certs={(tool.data.certifications || []).join('|')}
                      data-size={(tool.data.company_size || []).join('|')}
                      data-cost={tool.data.cost_model ?? ''}
@@ -163,7 +205,7 @@ for (const c of catOptions) famCount.set(c.family, (famCount.get(c.family) ?? 0)
                       {tool.data.logo ? <img src={`${base}${tool.data.logo.replace(/^\//,'')}`} alt="" width="35" height="35" style="border-radius:10px;object-fit:contain" loading="lazy" /> : <span style="font-size:15px;font-weight:700;color:#6e6e73">{tool.data.name.charAt(0)}</span>}
                     </div>
                     <div class="min-w-0 flex-1">
-                      <div class="flex items-center gap-2"><h3 class="tool-name" style="color:#1d1d1f">{tool.data.name}</h3>{tool.data.market_rank&&tool.data.market_rank<=3&&<span class="badge badge-amber badge-sm">#{tool.data.market_rank}</span>}</div>
+                      <div class="flex items-center gap-2"><h3 class="tool-name" style="color:#1d1d1f">{tool.data.name}</h3>{tool.data.market_rank&&tool.data.market_rank<=3&&hasMeaningfulRank(tool.data, sizes)&&<span class="badge badge-amber badge-sm">#{tool.data.market_rank}</span>}{isNewTool(tool.data)&&<span class="badge badge-green badge-sm">Nuevo</span>}</div>
                       <p class="tool-desc">{tool.data.description}</p>
                       <div class="flex flex-wrap items-center gap-1.5 mt-2">
                         <span class={`badge badge-sm ${tool.data.type==='opensource'?'badge-green':'badge-blue'}`}>{tool.data.type==='opensource'?'Open Source':'Comercial'}</span>
@@ -291,7 +333,11 @@ for (const c of catOptions) famCount.set(c.family, (famCount.get(c.family) ?? 0)
   const emptyClear = document.getElementById('empty-clear');
   const emptySuggest = document.getElementById('empty-suggest') as HTMLButtonElement | null;
 
-  // La etiqueta llega desde la ficha de detalle (?tag=…); no tiene <select> propio
+  /* La etiqueta tiene desplegable propio, pero también puede llegar desde la
+     ficha de detalle (?tag=…) con un término de cola larga que no está en el
+     vocabulario curado. En ese caso el filtro se aplica igual y el desplegable
+     se queda vacío: lo que manda es `activeTag`, no el <select>. */
+  const tagSelect = sel('tag-select');
   let activeTag = params.get('tag') || '';
   let activeSort = params.get('sort') || 'rank';
   let query = params.get('q') || '';
@@ -314,6 +360,9 @@ for (const c of catOptions) famCount.set(c.family, (famCount.get(c.family) ?? 0)
   }
   if (searchInput) searchInput.value = query;
   if (sortSelect) sortSelect.value = activeSort;
+  if (tagSelect && activeTag && Array.from(tagSelect.options).some(o => o.value === activeTag)) {
+    tagSelect.value = activeTag;
+  }
 
   /** La categoría depende de la familia: ofrecer solo las que le pertenecen. */
   function syncCategoryOptions() {
@@ -373,6 +422,7 @@ for (const c of catOptions) famCount.set(c.family, (famCount.get(c.family) ?? 0)
         if (activeSort === 'name') return (a.dataset.name || '').localeCompare(b.dataset.name || '', 'es');
         if (activeSort === 'score') return Number(b.dataset.score) - Number(a.dataset.score);
         if (activeSort === 'updated') return Number(b.dataset.updated) - Number(a.dataset.updated);
+        if (activeSort === 'added') return Number(b.dataset.added) - Number(a.dataset.added);
         return Number(a.dataset.rank || 999) - Number(b.dataset.rank || 999);
       });
       for (const c of cards) grid.appendChild(c);
@@ -408,10 +458,12 @@ for (const c of catOptions) famCount.set(c.family, (famCount.get(c.family) ?? 0)
     }
     if (activeTag) {
       const tag = activeTag;
+      const opt = tagSelect ? Array.from(tagSelect.options).find(o => o.value === tag) : null;
       list.push({
-        label: 'Etiqueta', text: tag,
+        label: 'Etiqueta',
+        text: (opt?.textContent || tag).replace(/\s*\(\d+\)\s*$/, ''),
         test: c => hasPipe(c.dataset.tags, tag),
-        clear: () => { activeTag = ''; },
+        clear: () => { activeTag = ''; if (tagSelect) tagSelect.value = ''; },
       });
     }
     if (query) {
@@ -566,9 +618,15 @@ for (const c of catOptions) famCount.set(c.family, (famCount.get(c.family) ?? 0)
     update();
   });
 
+  tagSelect?.addEventListener('change', () => {
+    activeTag = tagSelect.value;
+    update();
+  });
+
   function clearAll() {
     for (const f of facets) { f.value = ''; if (f.el) f.el.value = ''; }
     activeTag = ''; query = ''; matchedSlugs = null;
+    if (tagSelect) tagSelect.value = '';
     if (searchInput) searchInput.value = '';
     syncCategoryOptions();
     update();

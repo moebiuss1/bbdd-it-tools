@@ -29,6 +29,7 @@ sources:
   - https://www.drivelock.com/en/certifications
   - https://www.drivelock.com/en/device-control
 cert_url: https://www.drivelock.com/en/certifications
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

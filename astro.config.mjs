@@ -70,10 +70,52 @@ function externalizeInlineScripts() {
   };
 }
 
+/**
+ * Categorías fusionadas: sus URLs siguen existiendo.
+ *
+ * `/categorias/honeypots` estuvo publicada e indexada; al absorberse en
+ * `deception` no puede devolver un 404. Astro genera para cada una una página de
+ * redirección con `<meta http-equiv="refresh">` y su enlace canónico, que es lo
+ * único que permite GitHub Pages (no hay cabeceras HTTP que emitir un 301).
+ * El mapa es el mismo `categoryAliases` de src/data/categories.ts.
+ */
+const categoryRedirects = Object.fromEntries(
+  Object.entries({
+    "ai-data-security": "llm-security",
+    "ai-firewall": "llm-security",
+    "ai-security-tool": "llm-security",
+    "ai-spm": "llm-security",
+    "change-management": "incident-management",
+    "cloud-backup": "enterprise-backup",
+    "cloud-monitoring": "infra-monitoring",
+    "container-monitoring": "infra-monitoring",
+    "dns-security": "swg",
+    "endpoint-backup": "enterprise-backup",
+    "git": "scm",
+    "google-workspace-backup": "saas-backup",
+    "honeypots": "deception",
+    "immutable-backup": "enterprise-backup",
+    "kubernetes-monitoring": "infra-monitoring",
+    "llm-gateway": "llm-security",
+    "m365-backup": "saas-backup",
+    "model-risk": "ai-governance",
+    "nta": "ndr",
+    "problem-management": "incident-management",
+    "ransomware-recovery": "business-continuity",
+    "request-management": "incident-management",
+    "server-monitoring": "infra-monitoring",
+    "timestamping": "eidas-trust",
+    "web-security": "swg",
+    // Astro antepone el `base` a la ruta de origen, pero no a la de destino:
+    // sin escribirlo aquí, la redirección apunta fuera del sitio publicado.
+  }).map(([from, to]) => [`/categorias/${from}`, `${BASE}categorias/${to}`]),
+);
+
 export default defineConfig({
   site: SITE,
   base: BASE,
   output: "static",
+  redirects: categoryRedirects,
   integrations: [sitemap(), externalizeInlineScripts()],
   markdown: {
     rehypePlugins: [[rehypeSanitize, markdownSchema]],

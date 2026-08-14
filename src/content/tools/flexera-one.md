@@ -31,6 +31,7 @@ market_rank: 1
 sources:
   - https://itassetmanagement.net/2025/03/07/the-forrester-wave-sam-solutions-report-q1-2025/
   - https://www.flexera.com/
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/flexera-one.png

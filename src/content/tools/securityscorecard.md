@@ -29,6 +29,7 @@ company_size:
 sources:
   - https://securityscorecard.com/solutions/compliance/iso-27001/
   - https://securityscorecard.com/compliance/
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

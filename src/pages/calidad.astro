@@ -1,0 +1,299 @@
+---
+/**
+ * Salud del catálogo.
+ *
+ * El directorio dice de sí mismo que no vende humo; esta página es la que lo
+ * hace comprobable. Publica los huecos del propio dato —fichas sin fuente
+ * ajena al fabricante, certificaciones sin página donde verificarlas, textos
+ * cortos— en lugar de dejarlos donde no se ven. Todo se calcula en build a
+ * partir de las fichas: no hay ningún número escrito a mano aquí.
+ */
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import {
+  toToolEntry, dataGaps, independentSourceCount, computeToolScore,
+  categorySizes, getCategories,
+} from "@lib/tools";
+
+const base = import.meta.env.BASE_URL;
+const tools = (await getCollection("tools")).map(toToolEntry);
+const categories = await getCategories();
+const total = tools.length;
+
+const pct = (n: number) => Math.round((n / (total || 1)) * 100);
+
+// ── Fuentes independientes ───────────────────────────────────────────────
+const sourceBuckets = [0, 0, 0, 0]; // 0, 1, 2, 3+
+for (const t of tools) {
+  const n = independentSourceCount(t.data);
+  sourceBuckets[Math.min(n, 3)]++;
+}
+
+// ── Verificabilidad de certificaciones (solo aplica al software comercial) ─
+const comerciales = tools.filter(t => t.data.type === "comercial");
+const conCerts = comerciales.filter(t => t.data.certifications.length > 0);
+const certVerificables = conCerts.filter(t => t.data.cert_url).length;
+
+// ── Proyectos abiertos ────────────────────────────────────────────────────
+const openSource = tools.filter(t => t.data.type === "opensource");
+const conRepo = openSource.filter(t => t.data.repo).length;
+const conLicencia = openSource.filter(t => t.data.license).length;
+
+// ── Puntuación ────────────────────────────────────────────────────────────
+const scores = tools.map(t => computeToolScore(t.data, t.body)).sort((a, b) => a - b);
+const media = Math.round(scores.reduce((n, s) => n + s, 0) / (total || 1));
+const mediana = scores[Math.floor(scores.length / 2)] ?? 0;
+const scoreBuckets = [
+  { label: "80-100", n: scores.filter(s => s >= 80).length },
+  { label: "60-79", n: scores.filter(s => s >= 60 && s < 80).length },
+  { label: "40-59", n: scores.filter(s => s >= 40 && s < 60).length },
+  { label: "0-39", n: scores.filter(s => s < 40).length },
+];
+const maxBucket = Math.max(...scoreBuckets.map(b => b.n), 1);
+
+// ── Fichas con huecos, las más incompletas primero ───────────────────────
+const conHuecos = tools
+  .map(t => ({ tool: t, gaps: dataGaps(t.data, t.body) }))
+  .filter(x => x.gaps.length > 0)
+  .sort((a, b) => b.gaps.length - a.gaps.length || a.tool.data.name.localeCompare(b.tool.data.name, "es"));
+
+// Recuento por tipo de hueco: dice dónde está el trabajo, no solo cuánto queda
+const gapCounts = new Map<string, number>();
+for (const { gaps } of conHuecos) {
+  for (const g of gaps) gapCounts.set(g.label, (gapCounts.get(g.label) ?? 0) + 1);
+}
+const gapRanking = [...gapCounts.entries()].sort((a, b) => b[1] - a[1]);
+
+// ── Categorías sin masa crítica ──────────────────────────────────────────
+// Una categoría con una sola herramienta no permite comparar nada, y su "#1"
+// no significa nada: se declara aquí en vez de disimularlo.
+const sizes = categorySizes(tools);
+const flacas = categories
+  .filter(c => (sizes.get(c.id) ?? 0) > 0 && (sizes.get(c.id) ?? 0) < 3)
+  .map(c => ({ ...c, n: sizes.get(c.id) ?? 0 }))
+  .sort((a, b) => a.n - b.n || a.name.localeCompare(b.name, "es"));
+
+const fichasCompletas = total - conHuecos.length;
+---
+
+<BaseLayout
+  title="Salud del catálogo"
+  description="Qué parte de los datos de BBDD IT Tools está verificada, qué falta por comprobar y cómo se reparte la puntuación."
+>
+  <Header active="calidad" />
+
+  <section class="py-10" id="contenido" tabindex="-1">
+    <div class="container max-w-900">
+      <h1 class="section-title" style="font-size:28px">Salud del catálogo</h1>
+      <p class="section-desc" style="max-width:640px">
+        Un directorio que promete datos verificables tiene que enseñar los que aún no lo están.
+        Todo lo de esta página se calcula en cada publicación a partir de las {total} fichas: si un
+        número sube o baja, es porque el catálogo ha cambiado.
+      </p>
+
+      <!-- Resumen -->
+      <div class="quality-grid mt-8">
+        <div class="card quality-stat">
+          <span class="quality-num tabular">{total}</span>
+          <span class="quality-label">herramientas publicadas</span>
+        </div>
+        <div class="card quality-stat">
+          <span class="quality-num tabular">{pct(fichasCompletas)}%</span>
+          <span class="quality-label">fichas sin ningún hueco pendiente ({fichasCompletas} de {total})</span>
+        </div>
+        <div class="card quality-stat">
+          <span class="quality-num tabular">{pct(total - sourceBuckets[0])}%</span>
+          <span class="quality-label">citan al menos una fuente ajena al fabricante</span>
+        </div>
+        <div class="card quality-stat">
+          <span class="quality-num tabular">{media}</span>
+          <span class="quality-label">puntuación media sobre 100 (mediana {mediana})</span>
+        </div>
+      </div>
+
+      <!-- Fuentes independientes -->
+      <section class="quality-section">
+        <h2 class="section-title mb-2">Fuentes independientes</h2>
+        <p class="quality-lead">
+          Solo cuentan las referencias alojadas fuera del dominio del fabricante: una nota de prensa
+          del propio vendedor no permite contrastar nada. Es el apartado con más recorrido de mejora
+          del directorio y el que más pesa en la puntuación después de la posición de mercado.
+        </p>
+        <ul class="quality-bars">
+          {[
+            { label: "Ninguna fuente independiente", n: sourceBuckets[0], tone: "bad" },
+            { label: "Una fuente independiente", n: sourceBuckets[1], tone: "mid" },
+            { label: "Dos fuentes independientes", n: sourceBuckets[2], tone: "good" },
+            { label: "Tres o más", n: sourceBuckets[3], tone: "good" },
+          ].map(b => (
+            <li>
+              <span class="quality-bar-label">{b.label}</span>
+              <span class="quality-bar-track">
+                <span class={`quality-bar-fill tone-${b.tone}`} style={`width:${pct(b.n)}%`}></span>
+              </span>
+              <span class="quality-bar-n tabular">{b.n}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Verificabilidad -->
+      <section class="quality-section">
+        <h2 class="section-title mb-2">Evidencia por tipo de herramienta</h2>
+        <p class="quality-lead">
+          Cada modelo demuestra sus garantías de una forma distinta, así que se miden por separado:
+          certificaciones auditadas y una página pública donde comprobarlas en el software comercial;
+          código y licencia identificables en el software libre.
+        </p>
+        <div class="quality-split">
+          <div class="card quality-panel">
+            <h3 class="quality-panel-title">Comercial · {comerciales.length} fichas</h3>
+            <p class="quality-line"><strong class="tabular">{conCerts.length}</strong> declaran certificaciones</p>
+            <p class="quality-line"><strong class="tabular">{certVerificables}</strong> de esas {conCerts.length} enlazan una página del fabricante donde comprobarlas</p>
+            <p class="quality-note">
+              Las {conCerts.length - certVerificables} restantes muestran en su ficha un aviso en lugar de
+              un enlace: preferimos decir que no hay página verificable antes que enlazar la portada
+              del fabricante como si lo fuera.
+            </p>
+          </div>
+          <div class="card quality-panel">
+            <h3 class="quality-panel-title">Open source · {openSource.length} fichas</h3>
+            <p class="quality-line"><strong class="tabular">{conRepo}</strong> con repositorio público declarado</p>
+            <p class="quality-line"><strong class="tabular">{conLicencia}</strong> con licencia identificada</p>
+            <p class="quality-note">
+              Un proyecto libre no necesita certificados de producto para ser solvente, así que su
+              puntuación mide lo que sí puede enseñar: el código y sus condiciones de uso.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Distribución de puntuación -->
+      <section class="quality-section">
+        <h2 class="section-title mb-2">Reparto de la puntuación</h2>
+        <p class="quality-lead">
+          La puntuación BBDD IT (0-100) combina posición de mercado, garantías verificables, fuentes
+          independientes, actualización y completitud de la ficha. La fórmula está explicada en
+          <a href={`${base}about`}>Acerca de</a> y desglosada en cada ficha.
+        </p>
+        <ul class="quality-bars">
+          {scoreBuckets.map(b => (
+            <li>
+              <span class="quality-bar-label">{b.label} puntos</span>
+              <span class="quality-bar-track">
+                <span class="quality-bar-fill tone-neutral" style={`width:${Math.round((b.n / maxBucket) * 100)}%`}></span>
+              </span>
+              <span class="quality-bar-n tabular">{b.n}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Categorías sin masa crítica -->
+      {flacas.length > 0 && (
+        <section class="quality-section">
+          <h2 class="section-title mb-2">Categorías sin comparación posible</h2>
+          <p class="quality-lead">
+            {flacas.length} de las {categories.length} categorías tienen menos de tres herramientas. En ellas no
+            publicamos el puesto de mercado: un «#1» sin competidores describe el estado del
+            directorio, no el del mercado. Se irán completando o se fusionarán con su categoría madre.
+          </p>
+          <ul class="quality-chips">
+            {flacas.map(c => (
+              <li><a href={`${base}categorias/${c.id}`} class="quality-chip">{c.name} <span class="tabular">{c.n}</span></a></li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <!-- Qué falta -->
+      <section class="quality-section">
+        <h2 class="section-title mb-2">Qué falta por comprobar</h2>
+        {gapRanking.length === 0 ? (
+          <p class="quality-lead">Ninguna ficha tiene huecos pendientes.</p>
+        ) : (
+          <>
+            <p class="quality-lead">
+              {conHuecos.length} fichas tienen algún dato pendiente. Este es el recuento por tipo de hueco,
+              que es lo que marca el orden de trabajo de las próximas actualizaciones.
+            </p>
+            <ul class="quality-bars">
+              {gapRanking.map(([label, n]) => (
+                <li>
+                  <span class="quality-bar-label">{label}</span>
+                  <span class="quality-bar-track">
+                    <span class="quality-bar-fill tone-mid" style={`width:${pct(n)}%`}></span>
+                  </span>
+                  <span class="quality-bar-n tabular">{n}</span>
+                </li>
+              ))}
+            </ul>
+
+            <details class="quality-details">
+              <summary>Ver las {conHuecos.length} fichas con datos pendientes</summary>
+              <ul class="quality-list">
+                {conHuecos.map(({ tool, gaps }) => (
+                  <li>
+                    <a href={`${base}herramientas/${tool.slug}/`}>{tool.data.name}</a>
+                    <span class="quality-list-gaps">{gaps.map(g => g.label).join(" · ")}</span>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          </>
+        )}
+      </section>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+.quality-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.quality-stat{display:flex;flex-direction:column;gap:4px;padding:20px}
+.quality-num{font-size:30px;font-weight:700;letter-spacing:-.02em;color:#1d1d1f;line-height:1.1}
+.quality-label{font-size:13px;color:#6e6e73;line-height:1.45}
+
+.quality-section{margin-top:48px}
+.quality-lead{font-size:15px;color:#3a3a3c;line-height:1.6;max-width:680px;margin-bottom:20px}
+
+.quality-bars{list-style:none;display:flex;flex-direction:column;gap:10px;max-width:680px}
+.quality-bars li{display:grid;grid-template-columns:minmax(0,1fr) 120px 42px;align-items:center;gap:12px}
+.quality-bar-label{font-size:13px;color:#3a3a3c;line-height:1.35}
+.quality-bar-track{height:8px;border-radius:4px;background:#f0f0f3;overflow:hidden}
+.quality-bar-fill{display:block;height:100%;border-radius:4px}
+.tone-good{background:#047857}
+.tone-mid{background:#b45309}
+.tone-bad{background:#b91c1c}
+.tone-neutral{background:#0071e3}
+.quality-bar-n{font-size:13px;font-weight:600;color:#1d1d1f;text-align:right}
+@media (max-width:520px){
+  .quality-bars li{grid-template-columns:minmax(0,1fr) 42px;grid-template-areas:"label n" "track track"}
+  .quality-bar-label{grid-area:label}
+  .quality-bar-n{grid-area:n}
+  .quality-bar-track{grid-area:track}
+}
+
+.quality-split{display:grid;gap:12px;grid-template-columns:1fr}
+@media (min-width:720px){.quality-split{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.quality-panel{padding:20px}
+.quality-panel-title{font-size:14px;font-weight:600;color:#1d1d1f;margin-bottom:10px}
+.quality-line{font-size:14px;color:#3a3a3c;line-height:1.6}
+.quality-line strong{color:#1d1d1f;font-size:16px;margin-right:4px}
+.quality-note{margin-top:10px;font-size:12px;color:#6e6e73;line-height:1.5}
+
+.quality-chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.quality-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid #e8e8ed;border-radius:9999px;font-size:13px;color:#3a3a3c;background:#fff;transition:border-color var(--t-fast) var(--ease),background var(--t-fast) var(--ease)}
+.quality-chip:hover{border-color:#d2d2d7;background:#f5f5f7}
+.quality-chip span{font-size:12px;color:#6e6e73}
+
+.quality-details{margin-top:20px;max-width:680px}
+.quality-details summary{font-size:13px;color:#0066cc;cursor:pointer;padding:6px 0}
+.quality-list{list-style:none;margin-top:10px;border-top:1px solid #f0f0f3}
+.quality-list li{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;padding:9px 0;border-bottom:1px solid #f0f0f3}
+.quality-list a{font-size:14px;font-weight:500;flex-shrink:0}
+.quality-list-gaps{font-size:12px;color:#6e6e73;line-height:1.45}
+</style>

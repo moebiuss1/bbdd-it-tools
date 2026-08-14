@@ -20,11 +20,12 @@ company_size:
 - mediana
 - grande
 tags:
-- red
-- ai
-- threat-hunting
-- on-premise
+  - network
+  - ai
+  - threat-hunting
+  - on-premise
 slug: trend-micro-tippingpoint
+first_added: 2026-08-07
 last_verified: '2026-08-12'
 needs_review: false
 sources:

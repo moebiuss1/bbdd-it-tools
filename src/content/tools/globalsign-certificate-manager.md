@@ -5,11 +5,11 @@ categories:
 - cert-managers
 - certificate-lifecycle
 tags:
-- pki
-- iot
-- acme
-- code-signing
-- certificate-automation
+  - pki
+  - iot
+  - acme
+  - code-signing
+  - certificate-lifecycle
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$3,500/año. Gestión de certificados con soporte IoT y firma de código.
@@ -29,6 +29,7 @@ company_size:
 market_rank: 2
 sources:
   - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/globalsign-certificate-manager.png

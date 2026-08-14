@@ -5,12 +5,12 @@ categories:
 - log-management
 - siem
 tags:
-- monitorizacion
-- compliance
-- incident-response
-- forense
-- ai
-- automatizacion
+  - monitorizacion
+  - compliance
+  - incident-response
+  - forensics
+  - ai
+  - automatizacion
 type: comercial
 cost_model: suscripción
 cost_details: Basado en volumen de datos ingeridos (GB/día). Licencia perpetua disponible. Desde ~$2,000/GB/año.
@@ -38,6 +38,7 @@ market_rank: 1
 cert_url: https://www.splunk.com/en_us/about-splunk/splunk-data-security-and-privacy/compliance-at-splunk.html
 sources:
 - https://www.gartner.com/reviews/market/security-information-event-management
+first_added: 2026-08-07
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/splunk-enterprise-security.png

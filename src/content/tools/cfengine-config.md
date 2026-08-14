@@ -27,6 +27,7 @@ license: GPL-3.0
 sources:
 - https://docs.cfengine.com/docs/master/
 - https://github.com/cfengine/core
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/cfengine-config.png

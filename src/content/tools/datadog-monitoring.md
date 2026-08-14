@@ -2,16 +2,13 @@
 name: Datadog
 slug: datadog-monitoring
 categories:
-- server-monitoring
-- container-monitoring
-- kubernetes-monitoring
-- cloud-monitoring
+  - infra-monitoring
 tags:
-- monitoring
-- saas
-- cloud
-- kubernetes
-- apm
+  - monitorizacion
+  - saas
+  - cloud
+  - kubernetes
+  - apm
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$15/host/mes. Infraestructura, APM y logs.
@@ -33,6 +30,7 @@ market_rank: 1
 cert_url: https://trust.datadoghq.com
 sources:
 - https://www.gartner.com/reviews/market/observability-platforms
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/datadog-monitoring.png

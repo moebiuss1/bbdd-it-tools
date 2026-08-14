@@ -75,13 +75,18 @@ def validate_all() -> list[str]:
             if not tool.get("license"):
                 errors.append(f"⚠️  {prefix} Open Source sin licencia especificada")
 
-        # last_verified formato fecha
-        last_verified = tool.get("last_verified")
-        if last_verified:
-            try:
-                date.fromisoformat(str(last_verified))
-            except (ValueError, TypeError):
-                errors.append(f"⚠️  {prefix} last_verified no es fecha ISO: {last_verified}")
+        # Fechas en formato ISO. `first_added` es la fecha de alta y no la
+        # reescribe el pipeline: si falta, la ficha no puede aparecer como
+        # novedad en la portada.
+        for campo in ("first_added", "last_verified"):
+            valor = tool.get(campo)
+            if valor:
+                try:
+                    date.fromisoformat(str(valor))
+                except (ValueError, TypeError):
+                    errors.append(f"⚠️  {prefix} {campo} no es fecha ISO: {valor}")
+            elif campo == "first_added":
+                errors.append(f"⚠️  {prefix} sin first_added (fecha de alta en el directorio)")
 
     return errors
 

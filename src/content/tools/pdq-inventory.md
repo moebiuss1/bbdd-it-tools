@@ -4,11 +4,10 @@ slug: pdq-inventory
 categories:
 - it-asset-managers
 tags:
-- itam
-- inventory
-- windows
-- scanning
-- deployment
+  - itam
+  - windows
+  - scanning
+  - deployment
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$1,500/admin/año.
@@ -26,6 +25,7 @@ company_size:
 market_rank: 9
 sources:
 - https://www.gartner.com/reviews/market/software-asset-management-tools
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/pdq-inventory.png

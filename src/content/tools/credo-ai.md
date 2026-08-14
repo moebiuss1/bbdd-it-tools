@@ -27,6 +27,7 @@ sources:
 - https://trust.credo.ai/
 - https://www.credo.ai/product
 cert_url: https://trust.credo.ai/
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 market_rank: 1

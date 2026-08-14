@@ -35,6 +35,7 @@ tags:
 slug: microsoft-entra-id-azure-ad
 sources:
   - https://www.gartner.com/reviews/market/access-management
+first_added: 2026-08-07
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 2

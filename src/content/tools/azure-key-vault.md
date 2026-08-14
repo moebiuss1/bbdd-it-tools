@@ -34,6 +34,7 @@ cert_url: https://learn.microsoft.com/en-us/azure/compliance/
 sources:
 - https://www.gartner.com/reviews/market/multicloud-key-management-as-a-service-kmaas
 - https://learn.microsoft.com/azure/key-vault/general/overview
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/azure-key-vault.png

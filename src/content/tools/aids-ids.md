@@ -4,12 +4,11 @@ slug: aids-ids
 categories:
 - ids
 tags:
-- ids
-- hids
-- fim
-- integrity
-- linux
-- open-source
+  - ids
+  - hids
+  - fim
+  - linux
+  - open-source
 type: opensource
 cost_model: suscripción
 cost_details: Gratuito. Advanced Intrusion Detection Environment.
@@ -28,6 +27,7 @@ repo: https://github.com/aide/aide
 license: GPL-2.0
 sources:
 - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 ---

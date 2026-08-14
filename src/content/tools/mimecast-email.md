@@ -29,6 +29,7 @@ company_size:
 market_rank: 2
 sources:
   - https://www.gartner.com/reviews/market/email-security
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/mimecast-email.png

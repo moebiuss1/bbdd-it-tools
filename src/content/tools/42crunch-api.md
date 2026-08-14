@@ -29,6 +29,7 @@ company_size:
 market_rank: 1
 sources:
   - https://safeguard.sh/resources/blog/best-api-security-tools-2026
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/42crunch-api.png

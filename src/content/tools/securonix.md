@@ -31,6 +31,7 @@ market_rank: 7
 sources:
 - https://www.gartner.com/reviews/market/security-information-event-management
 - https://www.securonix.com/
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/securonix.png

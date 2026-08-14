@@ -33,6 +33,7 @@ sources:
   - https://www.sonarsource.com/trust-center/
   - https://www.sonarsource.com/company/press-releases/sonar-iso-certification/
 cert_url: https://www.sonarsource.com/trust-center/
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

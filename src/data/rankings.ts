@@ -6,20 +6,9 @@ export interface RankingEntry {
 }
 
 const rankings: Record<string, RankingEntry[]> = {
-  "ai-data-security": [
-    { slug: "cyera", rank: 1, score: 50, tier: "Retador" },
-  ],
-  "ai-firewall": [
-    { slug: "lakera-guard", rank: 1, score: 50, tier: "Retador" },
-  ],
   "ai-governance": [
     { slug: "credo-ai", rank: 1, score: 50, tier: "Retador" },
-  ],
-  "ai-security-tool": [
-    { slug: "palo-alto-prisma-airs", rank: 1, score: 50, tier: "Retador" },
-  ],
-  "ai-spm": [
-    { slug: "wiz-ai-spm", rank: 1, score: 50, tier: "Retador" },
+    { slug: "validmind", rank: 2, score: 50, tier: "Retador" },
   ],
   "antivirus": [
     { slug: "sentinelone-singularity", rank: 1, score: 55, tier: "Retador" },
@@ -59,7 +48,9 @@ const rankings: Record<string, RankingEntry[]> = {
     { slug: "rsa-archer", rank: 2, score: 45, tier: "Nicho" },
   ],
   "business-continuity": [
-    { slug: "everbridge", rank: 1, score: 50, tier: "Retador" },
+    { slug: "rubrik-backup", rank: 1, score: 55, tier: "Retador" },
+    { slug: "everbridge", rank: 2, score: 50, tier: "Retador" },
+    { slug: "veeam-backup", rank: 3, score: 45, tier: "Nicho" },
   ],
   "cert-managers": [
     { slug: "digicert-certcentral", rank: 1, score: 55, tier: "Retador" },
@@ -83,27 +74,17 @@ const rankings: Record<string, RankingEntry[]> = {
     { slug: "venafi-control-plane", rank: 7, score: 45, tier: "Nicho" },
     { slug: "sectigo-certificate-manager", rank: 8, score: 45, tier: "Nicho" },
   ],
-  "change-management": [
-    { slug: "servicenow-itam", rank: 1, score: 50, tier: "Retador" },
-  ],
   "ci-cd": [
     { slug: "github-git", rank: 1, score: 55, tier: "Retador" },
     { slug: "gitlab-ci-config", rank: 2, score: 50, tier: "Retador" },
     { slug: "ansible", rank: 3, score: 45, tier: "Nicho" },
     { slug: "octopus-deploy-config", rank: 4, score: 45, tier: "Nicho" },
   ],
-  "cloud-backup": [
-    { slug: "rubrik-backup", rank: 1, score: 55, tier: "Retador" },
-    { slug: "veeam-backup", rank: 2, score: 45, tier: "Nicho" },
-  ],
   "cloud-cost": [
     { slug: "flexera-one", rank: 1, score: 50, tier: "Retador" },
   ],
   "cloud-migration": [
     { slug: "terraform", rank: 1, score: 50, tier: "Retador" },
-  ],
-  "cloud-monitoring": [
-    { slug: "datadog-monitoring", rank: 1, score: 50, tier: "Retador" },
   ],
   "code-quality": [
     { slug: "sonarqube", rank: 1, score: 50, tier: "Retador" },
@@ -125,9 +106,6 @@ const rankings: Record<string, RankingEntry[]> = {
     { slug: "terraform", rank: 8, score: 45, tier: "Nicho" },
     { slug: "cfengine-config", rank: 9, score: 45, tier: "Nicho" },
   ],
-  "container-monitoring": [
-    { slug: "datadog-monitoring", rank: 1, score: 50, tier: "Retador" },
-  ],
   "deception": [
     { slug: "thinkst-canary", rank: 1, score: 50, tier: "Retador" },
   ],
@@ -142,9 +120,6 @@ const rankings: Record<string, RankingEntry[]> = {
     { slug: "safetica-dlp", rank: 8, score: 45, tier: "Nicho" },
     { slug: "spirion-dlp", rank: 9, score: 45, tier: "Nicho" },
     { slug: "digital-guardian-dlp", rank: 10, score: 45, tier: "Nicho" },
-  ],
-  "dns-security": [
-    { slug: "cloudflare-waf", rank: 1, score: 50, tier: "Retador" },
   ],
   "edr": [
     { slug: "sentinelone-singularity", rank: 1, score: 55, tier: "Retador" },
@@ -169,18 +144,17 @@ const rankings: Record<string, RankingEntry[]> = {
   ],
   "eidas-trust": [
     { slug: "docusign", rank: 1, score: 50, tier: "Retador" },
+    { slug: "digicert-certcentral", rank: 2, score: 50, tier: "Retador" },
   ],
   "email-security": [
     { slug: "proofpoint-email", rank: 1, score: 55, tier: "Retador" },
     { slug: "mimecast-email", rank: 2, score: 50, tier: "Retador" },
     { slug: "knowbe4-awareness", rank: 3, score: 45, tier: "Nicho" },
   ],
-  "endpoint-backup": [
-    { slug: "druva-backup", rank: 1, score: 50, tier: "Retador" },
-  ],
   "enterprise-backup": [
     { slug: "rubrik-backup", rank: 1, score: 55, tier: "Retador" },
-    { slug: "veeam-backup", rank: 2, score: 45, tier: "Nicho" },
+    { slug: "druva-backup", rank: 2, score: 50, tier: "Retador" },
+    { slug: "veeam-backup", rank: 3, score: 45, tier: "Nicho" },
   ],
   "firewall": [
     { slug: "palo-alto-firewall", rank: 1, score: 55, tier: "Retador" },
@@ -193,15 +167,6 @@ const rankings: Record<string, RankingEntry[]> = {
     { slug: "forcepoint-ngfw", rank: 8, score: 47, tier: "Nicho" },
     { slug: "juniper-srx", rank: 9, score: 47, tier: "Nicho" },
     { slug: "sonicwall-nsa", rank: 10, score: 45, tier: "Nicho" },
-  ],
-  "git": [
-    { slug: "github-git", rank: 1, score: 50, tier: "Retador" },
-  ],
-  "google-workspace-backup": [
-    { slug: "druva-backup", rank: 1, score: 50, tier: "Retador" },
-  ],
-  "honeypots": [
-    { slug: "thinkst-canary", rank: 1, score: 50, tier: "Retador" },
   ],
   "identity-managers": [
     { slug: "okta", rank: 1, score: 55, tier: "Retador" },
@@ -233,21 +198,22 @@ const rankings: Record<string, RankingEntry[]> = {
     { slug: "ossec", rank: 13, score: 45, tier: "Nicho" },
     { slug: "zeek-ids", rank: 14, score: 45, tier: "Nicho" },
   ],
-  "immutable-backup": [
-    { slug: "rubrik-backup", rank: 1, score: 50, tier: "Retador" },
-  ],
   "incident-management": [
-    { slug: "chronicle-soar", rank: 1, score: 55, tier: "Retador" },
-    { slug: "palo-alto-cortex-xsoar", rank: 2, score: 55, tier: "Retador" },
-    { slug: "swimlane-turbine", rank: 3, score: 55, tier: "Retador" },
-    { slug: "servicenow-itam", rank: 4, score: 55, tier: "Retador" },
+    { slug: "servicenow-itam", rank: 1, score: 55, tier: "Retador" },
+    { slug: "chronicle-soar", rank: 2, score: 55, tier: "Retador" },
+    { slug: "palo-alto-cortex-xsoar", rank: 3, score: 55, tier: "Retador" },
+    { slug: "swimlane-turbine", rank: 4, score: 55, tier: "Retador" },
     { slug: "rapid7-insightconnect", rank: 5, score: 50, tier: "Retador" },
     { slug: "splunk-soar", rank: 6, score: 50, tier: "Retador" },
     { slug: "cyware-orchestrate", rank: 7, score: 50, tier: "Retador" },
-    { slug: "d3-morpheus", rank: 8, score: 45, tier: "Nicho" },
-    { slug: "tines", rank: 9, score: 45, tier: "Nicho" },
-    { slug: "torq", rank: 10, score: 45, tier: "Nicho" },
-    { slug: "blink-ops", rank: 11, score: 45, tier: "Nicho" },
+    { slug: "jira-service-management", rank: 8, score: 50, tier: "Retador" },
+    { slug: "d3-morpheus", rank: 9, score: 45, tier: "Nicho" },
+    { slug: "tines", rank: 10, score: 45, tier: "Nicho" },
+    { slug: "torq", rank: 11, score: 45, tier: "Nicho" },
+    { slug: "blink-ops", rank: 12, score: 45, tier: "Nicho" },
+  ],
+  "infra-monitoring": [
+    { slug: "datadog-monitoring", rank: 1, score: 50, tier: "Retador" },
   ],
   "ips": [
     { slug: "palo-alto-firewall", rank: 1, score: 55, tier: "Retador" },
@@ -300,15 +266,13 @@ const rankings: Record<string, RankingEntry[]> = {
     { slug: "brinqa-risk", rank: 9, score: 45, tier: "Nicho" },
     { slug: "rsa-archer", rank: 10, score: 45, tier: "Nicho" },
   ],
-  "kubernetes-monitoring": [
-    { slug: "datadog-monitoring", rank: 1, score: 50, tier: "Retador" },
-  ],
-  "llm-gateway": [
-    { slug: "litellm", rank: 1, score: 50, tier: "Retador" },
-  ],
   "llm-security": [
     { slug: "lakera-guard", rank: 1, score: 55, tier: "Retador" },
-    { slug: "hiddenlayer", rank: 2, score: 45, tier: "Nicho" },
+    { slug: "cyera", rank: 2, score: 50, tier: "Retador" },
+    { slug: "palo-alto-prisma-airs", rank: 3, score: 50, tier: "Retador" },
+    { slug: "wiz-ai-spm", rank: 4, score: 50, tier: "Retador" },
+    { slug: "litellm", rank: 5, score: 50, tier: "Retador" },
+    { slug: "hiddenlayer", rank: 6, score: 45, tier: "Nicho" },
   ],
   "load-balancers": [
     { slug: "f5-bigip-ips", rank: 1, score: 50, tier: "Retador" },
@@ -322,10 +286,6 @@ const rankings: Record<string, RankingEntry[]> = {
     { slug: "sumo-logic-cloud-siem", rank: 6, score: 50, tier: "Retador" },
     { slug: "graylog-security", rank: 7, score: 47, tier: "Nicho" },
     { slug: "security-onion", rank: 8, score: 45, tier: "Nicho" },
-  ],
-  "m365-backup": [
-    { slug: "druva-backup", rank: 1, score: 55, tier: "Retador" },
-    { slug: "veeam-backup", rank: 2, score: 45, tier: "Nicho" },
   ],
   "mam": [
     { slug: "microsoft-intune", rank: 1, score: 55, tier: "Retador" },
@@ -352,9 +312,6 @@ const rankings: Record<string, RankingEntry[]> = {
     { slug: "jumpcloud", rank: 5, score: 45, tier: "Nicho" },
     { slug: "onelogin-identity", rank: 6, score: 45, tier: "Nicho" },
   ],
-  "model-risk": [
-    { slug: "validmind", rank: 1, score: 50, tier: "Retador" },
-  ],
   "nac": [
     { slug: "cisco-ise-nac", rank: 1, score: 55, tier: "Retador" },
     { slug: "aruba-clearpass", rank: 2, score: 50, tier: "Retador" },
@@ -378,10 +335,6 @@ const rankings: Record<string, RankingEntry[]> = {
     { slug: "juniper-srx", rank: 9, score: 47, tier: "Nicho" },
     { slug: "sonicwall-nsa", rank: 10, score: 45, tier: "Nicho" },
   ],
-  "nta": [
-    { slug: "netwitness-siem", rank: 1, score: 55, tier: "Retador" },
-    { slug: "zeek-ids", rank: 2, score: 45, tier: "Nicho" },
-  ],
   "pam": [
     { slug: "cyberark", rank: 1, score: 55, tier: "Retador" },
     { slug: "sailpoint", rank: 2, score: 52, tier: "Retador" },
@@ -390,24 +343,15 @@ const rankings: Record<string, RankingEntry[]> = {
   "policy-management": [
     { slug: "onetrust", rank: 1, score: 50, tier: "Retador" },
   ],
-  "problem-management": [
-    { slug: "jira-service-management", rank: 1, score: 50, tier: "Retador" },
-  ],
-  "ransomware-recovery": [
-    { slug: "rubrik-backup", rank: 1, score: 55, tier: "Retador" },
-    { slug: "veeam-backup", rank: 2, score: 45, tier: "Nicho" },
-  ],
-  "request-management": [
-    { slug: "jira-service-management", rank: 1, score: 50, tier: "Retador" },
-  ],
   "risk-management": [
     { slug: "servicenow-grc", rank: 1, score: 55, tier: "Retador" },
     { slug: "metricstream", rank: 2, score: 45, tier: "Nicho" },
     { slug: "rsa-archer", rank: 3, score: 45, tier: "Nicho" },
   ],
   "saas-backup": [
-    { slug: "druva-backup", rank: 1, score: 50, tier: "Retador" },
+    { slug: "druva-backup", rank: 1, score: 55, tier: "Retador" },
     { slug: "rubrik-backup", rank: 2, score: 50, tier: "Retador" },
+    { slug: "veeam-backup", rank: 3, score: 45, tier: "Nicho" },
   ],
   "scm": [
     { slug: "github-git", rank: 1, score: 55, tier: "Retador" },
@@ -429,9 +373,6 @@ const rankings: Record<string, RankingEntry[]> = {
   ],
   "security-awareness": [
     { slug: "knowbe4-awareness", rank: 1, score: 50, tier: "Retador" },
-  ],
-  "server-monitoring": [
-    { slug: "datadog-monitoring", rank: 1, score: 50, tier: "Retador" },
   ],
   "serverless-management": [
     { slug: "serverless-framework", rank: 1, score: 50, tier: "Retador" },
@@ -474,13 +415,11 @@ const rankings: Record<string, RankingEntry[]> = {
     { slug: "keycloak-identity", rank: 8, score: 45, tier: "Nicho" },
   ],
   "swg": [
-    { slug: "zscaler-zero-trust", rank: 1, score: 50, tier: "Retador" },
+    { slug: "cloudflare-waf", rank: 1, score: 50, tier: "Retador" },
+    { slug: "zscaler-zero-trust", rank: 2, score: 50, tier: "Retador" },
   ],
   "third-party-security": [
     { slug: "securityscorecard", rank: 1, score: 50, tier: "Retador" },
-  ],
-  "timestamping": [
-    { slug: "digicert-certcentral", rank: 1, score: 50, tier: "Retador" },
   ],
   "usb-device-control": [
     { slug: "drivelock", rank: 1, score: 50, tier: "Retador" },
@@ -488,9 +427,6 @@ const rankings: Record<string, RankingEntry[]> = {
   "waf": [
     { slug: "cloudflare-waf", rank: 1, score: 55, tier: "Retador" },
     { slug: "f5-bigip-ips", rank: 2, score: 45, tier: "Nicho" },
-  ],
-  "web-security": [
-    { slug: "zscaler-zero-trust", rank: 1, score: 50, tier: "Retador" },
   ],
 };
 

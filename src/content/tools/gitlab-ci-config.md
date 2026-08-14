@@ -5,11 +5,11 @@ categories:
 - ci-cd
 - scm
 tags:
-- iac
-- cicd
-- devops
-- yaml
-- gitops
+  - iac
+  - ci-cd
+  - devops
+  - yaml
+  - gitops
 type: opensource
 cost_model: suscripción
 cost_details: Gratuito (MIT). GitLab Ultimate desde ~$99/usuario/mes.
@@ -32,6 +32,7 @@ license: MIT
 sources:
 - https://www.gartner.com/reviews/market/devops-platforms
 - https://docs.gitlab.com/ci/pipelines/
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/gitlab-ci-config.png

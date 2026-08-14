@@ -4,11 +4,11 @@ slug: saltstack
 categories:
 - config-managers
 tags:
-- iac
-- automation
-- python
-- zeromq
-- event-driven
+  - iac
+  - automatizacion
+  - python
+  - zeromq
+  - event-driven
 type: opensource
 cost_model: suscripción
 cost_details: Gratuito (Apache 2.0). SaltStack Enterprise (VMware/Broadcom) desde ~$150/nodo/año.
@@ -29,6 +29,7 @@ license: Apache-2.0
 sources:
 - https://docs.saltproject.io/salt/user-guide/en/latest/topics/overview.html
 - https://github.com/saltstack/salt
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/saltstack.png

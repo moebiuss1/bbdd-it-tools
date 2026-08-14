@@ -74,6 +74,7 @@ class ToolFrontmatter(BaseModel):
     repo: Optional[str] = None
     license: Optional[str] = None
     sources: list[str] = Field(default_factory=list)
+    first_added: Optional[date] = None
     last_verified: Optional[date] = None
     needs_review: bool = False
 

@@ -2,7 +2,7 @@
 name: Wiz AI-SPM
 slug: wiz-ai-spm
 categories:
-- ai-spm
+  - llm-security
 tags:
 - ai
 - cloud
@@ -36,6 +36,7 @@ sources:
   - https://trust.wiz.io/
   - https://www.wiz.io/blog/ai-security-posture-management
 cert_url: https://trust.wiz.io/
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

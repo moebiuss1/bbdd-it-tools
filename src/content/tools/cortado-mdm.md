@@ -4,10 +4,10 @@ slug: cortado-mdm
 categories:
 - mdm
 tags:
-- mdm
-- byod
-- containerization
-- hybrid-work
+  - mdm
+  - byod
+  - container
+  - hybrid-work
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$3/dispositivo/mes.
@@ -24,6 +24,7 @@ company_size:
 market_rank: 7
 sources:
   - https://www.gartner.com/reviews/market/unified-endpoint-management-tools
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/cortado-mdm.png

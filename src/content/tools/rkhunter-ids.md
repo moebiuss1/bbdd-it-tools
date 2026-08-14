@@ -4,11 +4,11 @@ slug: rkhunter-ids
 categories:
 - ids
 tags:
-- ids
-- rootkit
-- linux
-- open-source
-- malware
+  - ids
+  - rootkit
+  - linux
+  - open-source
+  - anti-malware
 type: opensource
 cost_model: suscripción
 cost_details: Gratuito. Detector de rootkits para UNIX/Linux.
@@ -27,6 +27,7 @@ repo: https://sourceforge.net/projects/rkhunter/
 license: GPL-2.0
 sources:
 - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/rkhunter-ids.png

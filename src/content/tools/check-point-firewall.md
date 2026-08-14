@@ -36,6 +36,7 @@ market_rank: 5
 sources:
 - https://cyberratings.org/cyberratings-org-and-nss-labs-announce-2025-enterprise-firewall-test-results/
 - https://www.gartner.com/reviews/market/network-firewalls
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/check-point-firewall.png

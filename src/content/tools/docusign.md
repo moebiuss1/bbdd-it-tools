@@ -31,6 +31,7 @@ sources:
   - https://www.docusign.com/trust/compliance/certifications
   - https://www.docusign.com/en-gb/products/electronic-signature/qualified-electronic-signature
 cert_url: https://www.docusign.com/trust/compliance/certifications
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

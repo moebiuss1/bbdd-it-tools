@@ -40,6 +40,7 @@ cert_url: https://www.hashicorp.com/security
 sources:
 - https://developer.hashicorp.com/vault/docs
 - https://github.com/hashicorp/vault
+first_added: 2026-08-07
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/hashicorp-vault.png

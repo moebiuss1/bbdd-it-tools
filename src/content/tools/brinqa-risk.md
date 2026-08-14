@@ -4,10 +4,10 @@ slug: brinqa-risk
 categories:
 - kpi-ca-managers
 tags:
-- risk-management
-- analytics
-- vulnerability
-- data-orchestration
+  - risk-management
+  - analytics
+  - vulnerability-management
+  - data-orchestration
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$50,000/año.
@@ -24,6 +24,7 @@ company_size:
 market_rank: 9
 sources:
 - https://www.gartner.com/reviews/market/exposure-assessment-platforms/vendor/brinqa
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/brinqa-risk.png

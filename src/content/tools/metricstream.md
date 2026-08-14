@@ -29,6 +29,7 @@ company_size:
 market_rank: 2
 sources:
 - https://www.gartner.com/reviews/market/audit-management-solutions/vendor/metricstream
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/metricstream.png

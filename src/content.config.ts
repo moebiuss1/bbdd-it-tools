@@ -86,6 +86,14 @@ export const toolsCollection = defineCollection({
     license: z.string().nullable().optional(),
     cert_url: httpUrl().nullable().optional(),
     sources: z.array(httpUrl()).default([]),
+    /**
+     * Fecha de alta en el directorio. Es un dato distinto de `last_verified`:
+     * el pipeline semanal reescribe la verificación de todas las fichas a la
+     * vez, así que sin este campo no había forma de saber cuál era realmente
+     * nueva — y la portada acababa marcando las 182 como "Nuevo".
+     * No lo toca el pipeline: se escribe una sola vez, al crear la ficha.
+     */
+    first_added: z.coerce.date().optional(),
     last_verified: z.coerce.date().optional(),
     needs_review: z.boolean().default(false),
   }),

@@ -26,6 +26,7 @@ company_size:
 market_rank: 10
 sources:
   - https://www.gartner.com/reviews/market/unified-endpoint-management-tools
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/scalefusion-uem.png

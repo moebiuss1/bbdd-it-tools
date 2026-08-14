@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BBDD IT Tools">
+  <!-- Tres registros apilados: lo que es el sitio, una base de datos. A 16 px
+       las formas se leen como bandas horizontales, no como un logo ilegible. -->
+  <rect width="64" height="64" rx="14" fill="#0071e3"/>
+  <rect x="14" y="17" width="36" height="8" rx="4" fill="#fff"/>
+  <rect x="14" y="30" width="36" height="8" rx="4" fill="#fff" opacity=".8"/>
+  <rect x="14" y="43" width="22" height="8" rx="4" fill="#fff" opacity=".55"/>
+</svg>

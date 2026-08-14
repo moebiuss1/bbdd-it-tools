@@ -1,0 +1,9 @@
+# BBDD IT Tools — directorio estático, todo el contenido es público.
+User-agent: *
+Allow: /
+
+# El índice de búsqueda es un artefacto para el navegador, no una página:
+# indexarlo no aporta nada y compite con las fichas reales.
+Disallow: /bbdd-it-tools/search-index.json
+
+Sitemap: https://moebiuss1.github.io/bbdd-it-tools/sitemap-index.xml

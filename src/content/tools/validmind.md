@@ -2,7 +2,7 @@
 name: ValidMind
 slug: validmind
 categories:
-- model-risk
+  - ai-governance
 tags:
 - ai
 - compliance
@@ -27,6 +27,7 @@ company_size:
 sources:
   - https://validmind.com/platform/ai-model-risk-management/
   - https://validmind.com/wp-content/uploads/2025/06/ValidMind-Product-Brief-Navigating-SS1-23-2.pdf
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

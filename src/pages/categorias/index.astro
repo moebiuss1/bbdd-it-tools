@@ -1,0 +1,122 @@
+---
+/**
+ * Índice de categorías.
+ *
+ * Existían las páginas `/categorias/<id>` pero no su índice: quien llegaba a una
+ * desde un buscador no tenía forma de subir un nivel, y las 80 categorías solo
+ * se veían enteras dentro de un acordeón de la portada o de un desplegable del
+ * directorio. Aquí están todas, agrupadas por familia y con su tamaño real.
+ */
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { getCategories, getFamilies, toToolEntry, categorySizes, MIN_RANKED_PEERS } from "@lib/tools";
+
+const base = import.meta.env.BASE_URL;
+const tools = (await getCollection("tools")).map(toToolEntry);
+const categories = await getCategories();
+const families = await getFamilies();
+const sizes = categorySizes(tools);
+
+const collator = new Intl.Collator("es", { sensitivity: "base" });
+
+const conFamilia = families
+  .map((f: any) => ({
+    ...f,
+    cats: categories
+      .filter(c => c.family === f.id && (sizes.get(c.id) ?? 0) > 0)
+      .map(c => ({ ...c, n: sizes.get(c.id) ?? 0 }))
+      .sort((a, b) => collator.compare(a.name, b.name)),
+  }))
+  .filter((f: any) => f.cats.length > 0)
+  .sort((a: any, b: any) => collator.compare(a.name, b.name));
+
+const totalCats = conFamilia.reduce((n: number, f: any) => n + f.cats.length, 0);
+
+const site = Astro.site?.toString() ?? "https://moebiuss1.github.io/";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Categorías de herramientas IT",
+  inLanguage: "es-ES",
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: totalCats,
+    itemListElement: conFamilia.flatMap((f: any) => f.cats).map((c: any, i: number) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: c.name,
+      url: new URL(`${base}categorias/${c.id}/`, site).toString(),
+    })),
+  },
+};
+---
+
+<BaseLayout
+  title="Categorías"
+  description={`Las ${totalCats} categorías del directorio, agrupadas en ${conFamilia.length} familias: desde EDR y SIEM hasta gestión de certificados, backup y gobernanza de IA.`}
+  jsonLd={jsonLd}
+>
+  <Header active="herramientas" />
+
+  <section class="py-10" id="contenido" tabindex="-1">
+    <div class="container max-w-900">
+      <nav class="mb-8 flex items-center gap-2" style="font-size:13px;color:#8e8e93" aria-label="Ruta de navegación">
+        <a href={`${base}herramientas`} style="color:#0066cc">Directorio</a><span aria-hidden="true">/</span>
+        <span style="color:#6e6e73" aria-current="page">Categorías</span>
+      </nav>
+
+      <h1 class="section-title" style="font-size:28px">Categorías</h1>
+      <p class="section-desc" style="max-width:640px">
+        {totalCats} categorías repartidas en {conFamilia.length} familias. El número indica cuántas herramientas
+        hay publicadas en cada una; las que todavía no llegan a {MIN_RANKED_PEERS} no publican posición de mercado,
+        porque un puesto sin competidores no dice nada.
+      </p>
+
+      {conFamilia.map((f: any) => (
+        <section class="cat-family">
+          <header class="cat-family-head">
+            <h2 class="cat-family-name"><span aria-hidden="true">{f.icon}</span> {f.name}</h2>
+            <p class="cat-family-desc">{f.description}</p>
+          </header>
+          <ul class="cat-list">
+            {f.cats.map((c: any) => (
+              <li>
+                <a href={`${base}categorias/${c.id}`} class="cat-item">
+                  <span class="cat-item-name">{c.name}</span>
+                  <span class="cat-item-desc">{c.description}</span>
+                  <span class={`cat-item-n tabular ${c.n < 3 ? "is-thin" : ""}`}>
+                    {c.n}
+                    <span class="sr-only">{c.n === 1 ? " herramienta" : " herramientas"}</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+.cat-family{margin-top:44px}
+.cat-family-head{padding-bottom:12px;border-bottom:1px solid #e8e8ed}
+.cat-family-name{font-size:19px;font-weight:600;letter-spacing:-.01em;color:#1d1d1f}
+.cat-family-desc{margin-top:4px;font-size:14px;color:#6e6e73;line-height:1.5;max-width:640px}
+
+.cat-list{list-style:none;margin-top:8px}
+.cat-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 16px;padding:14px 12px;border-radius:12px;
+  transition:background var(--t-fast) var(--ease)}
+.cat-item:hover{background:#f5f5f7}
+.cat-item-name{font-size:15px;font-weight:500;color:#1d1d1f}
+.cat-item-desc{grid-column:1;font-size:13px;color:#6e6e73;line-height:1.5}
+.cat-item-n{grid-column:2;grid-row:1 / span 2;align-self:center;font-size:13px;font-weight:600;color:#3a3a3c;
+  min-width:34px;text-align:center;padding:4px 8px;border-radius:8px;background:#f0f0f3}
+/* Una categoría con una o dos herramientas se marca: es información honesta
+   sobre el estado del catálogo, no un defecto que ocultar. */
+.cat-item-n.is-thin{background:#fffbeb;color:#92400e}
+</style>

@@ -31,6 +31,7 @@ market_rank: 10
 sources:
 - https://cyberwebspider.com/cyber-security-news/10-best-data-loss-prevention-software-in-2025/
 - https://www.gartner.com/reviews/market/data-loss-prevention
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/digital-guardian-dlp.png

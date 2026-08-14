@@ -38,14 +38,10 @@ const categories: CategoryData[] = [
   { id: "dlp", name: "Soluciones DLP", description: "Data Loss Prevention — prevención de fuga de datos sensibles en reposo, en uso y en tránsito.", family: "cybersecurity", icon: "👁️‍🗨️" },
   { id: "ids", name: "IDS", description: "Intrusion Detection Systems — sistemas de detección de intrusiones en redes y hosts.", family: "cybersecurity", icon: "⚠️" },
   { id: "ips", name: "IPS", description: "Intrusion Prevention Systems — sistemas de prevención de intrusiones con bloqueo activo de amenazas.", family: "cybersecurity", icon: "🛡️" },
-  { id: "deception", name: "Deception Technology", description: "Tecnología de señuelos y entornos simulados para detectar y analizar atacantes en la red.", family: "cybersecurity", icon: "👁️" },
-  { id: "honeypots", name: "Honeypots", description: "Sistemas trampa diseñados para atraer, detectar y analizar intentos de intrusión.", family: "cybersecurity", icon: "📍" },
-  { id: "ndr", name: "NDR", description: "Network Detection and Response — detección y respuesta a amenazas basada en análisis de tráfico de red.", family: "cybersecurity", icon: "📡" },
-  { id: "nta", name: "Network Traffic Analysis", description: "Análisis de tráfico de red para identificar anomalías, amenazas y patrones de comportamiento sospechosos.", family: "cybersecurity", icon: "📈" },
-  { id: "swg", name: "Secure Web Gateway", description: "Pasarela de seguridad web que filtra tráfico HTTP/HTTPS, malware y contenido no deseado.", family: "cybersecurity", icon: "🌐" },
+  { id: "deception", name: "Deception y honeypots", description: "Señuelos, credenciales falsas y sistemas trampa que solo un atacante tiene motivo para tocar: alta señal, muy poco ruido.", family: "cybersecurity", icon: "👁️" },
+  { id: "ndr", name: "NDR y análisis de tráfico", description: "Detección y respuesta basadas en el tráfico de red, desde el análisis de flujos hasta la investigación de sesiones completas.", family: "cybersecurity", icon: "📡" },
+  { id: "swg", name: "Secure Web Gateway", description: "Control de la salida a internet: filtrado HTTP/HTTPS, inspección de descargas, seguridad de navegación y resolución DNS protegida.", family: "cybersecurity", icon: "🌐" },
   { id: "waf", name: "WAF", description: "Web Application Firewall — protección de aplicaciones web frente a ataques como SQL injection y XSS.", family: "cybersecurity", icon: "🖥️" },
-  { id: "web-security", name: "Web Security", description: "Seguridad de navegación web, protección anti-phishing y filtrado de contenido.", family: "cybersecurity", icon: "🧭" },
-  { id: "dns-security", name: "DNS Security", description: "Protección del sistema de nombres de dominio frente a envenenamiento, tunneling y ataques DGA.", family: "cybersecurity", icon: "🔗" },
   { id: "email-security", name: "Email Security", description: "Protección del correo electrónico frente a phishing, spam, malware y fugas de datos.", family: "cybersecurity", icon: "📧" },
   { id: "api-security", name: "API Security", description: "Protección de APIs frente a ataques, abuso y exposición de datos.", family: "cybersecurity", icon: "💻" },
 
@@ -68,22 +64,13 @@ const categories: CategoryData[] = [
   { id: "usb-device-control", name: "USB / Device Control", description: "Control de dispositivos extraíbles y periféricos conectados a endpoints.", family: "endpoint-device", icon: "🔌" },
 
   // === MONITORING & OBSERVABILITY ===
-  { id: "server-monitoring", name: "Server Monitoring", description: "Monitorización de servidores físicos y virtuales con alertas y dashboards de rendimiento.", family: "monitoring", icon: "🖥️" },
-  { id: "container-monitoring", name: "Container Monitoring", description: "Supervisión de contenedores Docker, Podman y entornos de ejecución de contenedores.", family: "monitoring", icon: "📦" },
-  { id: "kubernetes-monitoring", name: "Kubernetes Monitoring", description: "Monitorización de clústeres Kubernetes, pods, servicios y recursos de orquestación.", family: "monitoring", icon: "🔲" },
+  { id: "infra-monitoring", name: "Monitorización de infraestructura", description: "Supervisión de servidores, contenedores, clústeres de Kubernetes y recursos cloud con métricas, alertas y cuadros de mando.", family: "monitoring", icon: "📈" },
   { id: "log-management", name: "Log Management", description: "Centralización, análisis y retención de logs de sistemas, aplicaciones y seguridad.", family: "monitoring", icon: "📄" },
-  { id: "cloud-monitoring", name: "Cloud Monitoring", description: "Supervisión de recursos y servicios en entornos cloud (AWS, Azure, GCP).", family: "monitoring", icon: "☁️" },
   { id: "kpi-ca-managers", name: "Gestores de KPI y CA", description: "Herramientas para definir, monitorizar y auditar indicadores clave de rendimiento y controles.", family: "monitoring", icon: "📊" },
 
   // === BACKUP & DISASTER RECOVERY ===
-  { id: "enterprise-backup", name: "Enterprise Backup", description: "Soluciones de copia de seguridad empresarial para grandes volúmenes de datos.", family: "backup-dr", icon: "💾" },
-  { id: "endpoint-backup", name: "Endpoint Backup", description: "Copia de seguridad de dispositivos finales como portátiles y estaciones de trabajo.", family: "backup-dr", icon: "💻" },
-  { id: "cloud-backup", name: "Cloud Backup", description: "Copia de seguridad en la nube con replicación geográfica y recuperación automatizada.", family: "backup-dr", icon: "🌧️" },
-  { id: "saas-backup", name: "SaaS Backup", description: "Protección de datos en aplicaciones SaaS como Microsoft 365, Google Workspace y Salesforce.", family: "backup-dr", icon: "🔄" },
-  { id: "m365-backup", name: "Microsoft 365 Backup", description: "Copia de seguridad especializada para Exchange Online, SharePoint, OneDrive y Teams.", family: "backup-dr", icon: "🗄️" },
-  { id: "google-workspace-backup", name: "Google Workspace Backup", description: "Copia de seguridad para Gmail, Drive, Calendar y Sites de Google Workspace.", family: "backup-dr", icon: "🗄️" },
-  { id: "immutable-backup", name: "Immutable Backup", description: "Copias de seguridad inmutables que no pueden ser modificadas ni eliminadas, incluso por administradores.", family: "backup-dr", icon: "🔒" },
-  { id: "ransomware-recovery", name: "Ransomware Recovery", description: "Soluciones especializadas en recuperación tras ataques de ransomware con restauración limpia.", family: "backup-dr", icon: "↩️" },
+  { id: "enterprise-backup", name: "Backup corporativo", description: "Copia y restauración de servidores, endpoints y cargas cloud, incluido el almacenamiento inmutable frente a borrado o cifrado malicioso.", family: "backup-dr", icon: "💾" },
+  { id: "saas-backup", name: "Backup de SaaS", description: "Copia de seguridad de los datos que viven en aplicaciones SaaS —Microsoft 365, Google Workspace, Salesforce— fuera del propio proveedor.", family: "backup-dr", icon: "🔄" },
 
   // === CLOUD & INFRASTRUCTURE ===
   { id: "cloud-migration", name: "Cloud Migration", description: "Herramientas y servicios para migrar cargas de trabajo a entornos cloud.", family: "cloud-infra", icon: "🚛" },
@@ -91,8 +78,7 @@ const categories: CategoryData[] = [
   { id: "cloud-cost", name: "Cloud Cost Management", description: "Optimización y control de costes en entornos multi-cloud.", family: "cloud-infra", icon: "💲" },
 
   // === DEVOPS & SOFTWARE SECURITY ===
-  { id: "git", name: "Git", description: "Sistema de control de versiones distribuido para seguimiento de cambios en código fuente.", family: "devops-software", icon: "🌿" },
-  { id: "scm", name: "Source Code Management", description: "Plataformas de gestión de código fuente con colaboración, revisión y CI/CD integrado.", family: "devops-software", icon: "👨‍💻" },
+  { id: "scm", name: "Gestión de código fuente", description: "Control de versiones y plataformas de colaboración sobre el código, con revisión, permisos e integración con la cadena de despliegue.", family: "devops-software", icon: "👨‍💻" },
   { id: "ci-cd", name: "CI/CD", description: "Integración y entrega continua — automatización de build, test y despliegue de software.", family: "devops-software", icon: "▶️" },
   { id: "config-managers", name: "Gestores de Configuraciones", description: "Herramientas para automatizar, auditar y mantener la configuración de infraestructura IT.", family: "devops-software", icon: "⚙️" },
   { id: "secrets-management", name: "Secrets Management", description: "Gestión segura de secretos, claves API, tokens y credenciales en entornos DevOps.", family: "devops-software", icon: "🔐" },
@@ -102,10 +88,7 @@ const categories: CategoryData[] = [
   { id: "key-managers", name: "Gestores de Claves", description: "Gestión del ciclo de vida de claves criptográficas, secretos y certificados.", family: "devops-software", icon: "🔐" },
 
   // === ITSM & IT OPERATIONS ===
-  { id: "incident-management", name: "Incident Management", description: "Gestión del ciclo de vida de incidentes IT desde la detección hasta la resolución.", family: "itsm-itops", icon: "⚠️" },
-  { id: "problem-management", name: "Problem Management", description: "Identificación y resolución de causas raíz de incidentes recurrentes.", family: "itsm-itops", icon: "❓" },
-  { id: "change-management", name: "Change Management", description: "Control de cambios en infraestructura IT con flujos de aprobación y análisis de riesgos.", family: "itsm-itops", icon: "🔀" },
-  { id: "request-management", name: "Request Management", description: "Gestión de solicitudes de servicio, catálogo de servicios y automatización de fulfillment.", family: "itsm-itops", icon: "📥" },
+  { id: "incident-management", name: "Gestión de incidencias y cambios", description: "Ciclo de vida de incidencias, problemas, peticiones y cambios de servicio: los módulos que una suite ITSM vende y se implantan juntos.", family: "itsm-itops", icon: "⚠️" },
   { id: "it-asset-managers", name: "IT Asset Management (ITAM)", description: "Soluciones ITAM para inventario, ciclo de vida y gestión de activos tecnológicos.", family: "itsm-itops", icon: "📦" },
 
   // === GRC, RISK & COMPLIANCE ===
@@ -114,24 +97,57 @@ const categories: CategoryData[] = [
   { id: "audit-management", name: "Audit Management", description: "Planificación, ejecución y seguimiento de auditorías internas y externas.", family: "grc-risk", icon: "🔍" },
   { id: "policy-management", name: "Policy Management", description: "Creación, distribución y attestation de políticas corporativas y de seguridad.", family: "grc-risk", icon: "📖" },
   { id: "security-awareness", name: "Security Awareness", description: "Plataformas de formación y concienciación en seguridad informática.", family: "grc-risk", icon: "👥" },
-  { id: "business-continuity", name: "Business Continuity Management", description: "Planificación de continuidad de negocio y recuperación ante desastres.", family: "grc-risk", icon: "🛡️" },
+  { id: "business-continuity", name: "Continuidad y recuperación", description: "Planes de continuidad de negocio, recuperación ante desastres y vuelta a producción tras un incidente de ransomware.", family: "grc-risk", icon: "🛡️" },
   { id: "third-party-security", name: "Third-Party Security Assessment", description: "Evaluación y monitorización de riesgos de seguridad en proveedores y terceros.", family: "grc-risk", icon: "🔗" },
 
   // === PKI & CRYPTOGRAPHY ===
   { id: "cert-managers", name: "Gestores de Certificados Digitales", description: "Soluciones PKI y gestión del ciclo de vida de certificados digitales X.509.", family: "pki-crypto", icon: "🏅" },
   { id: "certificate-lifecycle", name: "Certificate Lifecycle Management", description: "Automatización del ciclo de vida de certificados: emisión, renovación y revocación.", family: "pki-crypto", icon: "🔃" },
-  { id: "timestamping", name: "Timestamping", description: "Servicios de sellado de tiempo para integridad y no repudio de documentos electrónicos.", family: "pki-crypto", icon: "🕐" },
-  { id: "eidas-trust", name: "eIDAS / Trust Services", description: "Servicios de confianza digital conforme al reglamento eIDAS: firma electrónica, sellos y validación.", family: "pki-crypto", icon: "📄" },
+  { id: "eidas-trust", name: "Servicios de confianza (eIDAS)", description: "Firma y sello electrónicos, sellado de tiempo y validación conforme al reglamento eIDAS.", family: "pki-crypto", icon: "📄" },
 
   // === AI & AI SECURITY ===
-  { id: "ai-governance", name: "AI Governance", description: "Gobernanza y gestión del ciclo de vida de modelos de IA con trazabilidad y auditoría.", family: "ai-security", icon: "🤖" },
-  { id: "ai-security-tool", name: "AI Security", description: "Herramientas de seguridad para proteger sistemas de IA contra ataques adversariales y envenenamiento.", family: "ai-security", icon: "🛡️" },
-  { id: "ai-spm", name: "AI Security Posture Management (AI-SPM)", description: "Gestión de la postura de seguridad de modelos, pipelines y entornos de IA.", family: "ai-security", icon: "📈" },
-  { id: "ai-firewall", name: "AI Firewall", description: "Firewalls especializados en proteger APIs y endpoints de servicios de IA.", family: "ai-security", icon: "🛡️" },
-  { id: "llm-security", name: "LLM Security", description: "Seguridad para Large Language Models: prompt injection, jailbreak y fuga de datos.", family: "ai-security", icon: "💬" },
-  { id: "llm-gateway", name: "LLM Gateway", description: "Pasarela de gestión y seguridad para APIs de LLMs con control de acceso y auditoría.", family: "ai-security", icon: "🖥️" },
-  { id: "model-risk", name: "Model Risk Management", description: "Gestión del riesgo asociado a modelos de ML/IA con validación y monitorización continua.", family: "ai-security", icon: "⚠️" },
-  { id: "ai-data-security", name: "AI Data Security", description: "Protección de datos utilizados para entrenamiento e inferencia de modelos de IA.", family: "ai-security", icon: "🗄️" },
+  { id: "ai-governance", name: "Gobernanza y riesgo de modelos", description: "Ciclo de vida, trazabilidad, validación y riesgo de los modelos de IA: quién aprobó qué, con qué datos y cuándo toca revisarlo.", family: "ai-security", icon: "🤖" },
+  { id: "llm-security", name: "Seguridad de IA y LLM", description: "Protección de modelos y de su uso: prompt injection, jailbreak, fuga de datos, pasarelas de acceso y postura de seguridad de los entornos de IA.", family: "ai-security", icon: "💬" },
 ];
 
 export default categories;
+
+/**
+ * Categorías absorbidas por otra, con su destino.
+ *
+ * El directorio llegó a tener 80 categorías, 37 de ellas con una sola
+ * herramienta: un "ranking" de un elemento y una faceta que no filtra nada. Se
+ * fusionaron las que compiten en la misma decisión de compra, y este mapa
+ * conserva los identificadores antiguos para dos cosas: las redirecciones de
+ * `/categorias/<id>` (astro.config.mjs) y el contraste con `glossary.ts`, que
+ * sí mantiene los términos por separado porque definir «honeypot» y «deception»
+ * son dos entradas distintas de diccionario aunque se compren en el mismo
+ * producto.
+ */
+export const categoryAliases: Record<string, string> = {
+  "ai-data-security": "llm-security",
+  "ai-firewall": "llm-security",
+  "ai-security-tool": "llm-security",
+  "ai-spm": "llm-security",
+  "change-management": "incident-management",
+  "cloud-backup": "enterprise-backup",
+  "cloud-monitoring": "infra-monitoring",
+  "container-monitoring": "infra-monitoring",
+  "dns-security": "swg",
+  "endpoint-backup": "enterprise-backup",
+  "git": "scm",
+  "google-workspace-backup": "saas-backup",
+  "honeypots": "deception",
+  "immutable-backup": "enterprise-backup",
+  "kubernetes-monitoring": "infra-monitoring",
+  "llm-gateway": "llm-security",
+  "m365-backup": "saas-backup",
+  "model-risk": "ai-governance",
+  "nta": "ndr",
+  "problem-management": "incident-management",
+  "ransomware-recovery": "business-continuity",
+  "request-management": "incident-management",
+  "server-monitoring": "infra-monitoring",
+  "timestamping": "eidas-trust",
+  "web-security": "swg",
+};

@@ -4,12 +4,12 @@ slug: ossec
 categories:
 - ids
 tags:
-- open-source
-- hids
-- fim
-- log-analysis
-- pci-dss
-- compliance
+  - open-source
+  - hids
+  - fim
+  - log-management
+  - pci-dss
+  - compliance
 type: opensource
 cost_model: suscripción
 cost_details: Gratuito (GPLv2). HIDS open source con FIM y respuesta activa.
@@ -30,6 +30,7 @@ repo: https://github.com/ossec/ossec-hids
 license: GPL-2.0
 sources:
 - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/ossec.png

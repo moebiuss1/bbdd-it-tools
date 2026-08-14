@@ -2,8 +2,7 @@
 name: Thinkst Canary
 slug: thinkst-canary
 categories:
-- deception
-- honeypots
+  - deception
 tags:
 - deception
 - honeypots
@@ -28,6 +27,7 @@ company_size:
 market_rank: 1
 sources:
   - https://guptadeepak.com/tools/top-5-honeypots-deception-tools-2026/
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/thinkst-canary.png

@@ -31,6 +31,7 @@ company_size:
 market_rank: 3
 sources:
   - https://www.gartner.com/reviews/market/data-loss-prevention
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/symantec-dlp.png

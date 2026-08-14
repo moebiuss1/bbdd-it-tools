@@ -24,6 +24,7 @@ company_size:
 market_rank: 12
 sources:
 - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/hillstone-ips.png

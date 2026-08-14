@@ -27,6 +27,7 @@ license: Apache-2.0
 sources:
 - https://docs.crossplane.io/latest/get-started/
 - https://github.com/crossplane/crossplane
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/crossplane-config.png

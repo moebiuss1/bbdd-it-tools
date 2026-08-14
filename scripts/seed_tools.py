@@ -242,7 +242,8 @@ def seed() -> int:
         new_data = {
             **tool_data,
             "slug": slug,
-            "last_verified": date.today().isoformat(),
+            "first_added": date.today().isoformat(),
+        "last_verified": date.today().isoformat(),
             "needs_review": False,
             "sources": [],
         }

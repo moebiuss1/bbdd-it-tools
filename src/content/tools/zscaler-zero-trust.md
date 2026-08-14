@@ -2,9 +2,8 @@
 name: Zscaler Zero Trust Exchange
 slug: zscaler-zero-trust
 categories:
-- firewall
-- swg
-- web-security
+  - firewall
+  - swg
 tags:
 - sase
 - zero-trust
@@ -34,6 +33,7 @@ market_rank: 1
 cert_url: https://trust.zscaler.com
 sources:
   - https://www.gartner.com/reviews/market/network-firewalls
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/zscaler-zero-trust.png

@@ -11,6 +11,106 @@ export function getToolCategories(data: Pick<ToolFrontmatter, "categories" | "ca
   return data.category ? [data.category] : [];
 }
 
+/** Días durante los que una ficha recién dada de alta se considera novedad. */
+export const NEW_TOOL_DAYS = 30;
+
+/**
+ * ¿Es una incorporación reciente al directorio?
+ *
+ * Se mide contra `first_added`, nunca contra `last_verified`: el pipeline
+ * semanal reescribe la verificación de las 182 fichas a la vez, así que usar esa
+ * fecha marcaba el catálogo entero como "Nuevo" —justo el tipo de dato inflado
+ * que este directorio no se permite.
+ */
+export function isNewTool(data: Pick<ToolFrontmatter, "first_added">, now = Date.now()): boolean {
+  if (!data.first_added) return false;
+  return now - new Date(data.first_added).getTime() < NEW_TOOL_DAYS * 86400000;
+}
+
+/** Nº de herramientas por categoría, para decidir si un puesto significa algo. */
+export function categorySizes(tools: ToolEntry[]): Map<string, number> {
+  const sizes = new Map<string, number>();
+  for (const t of tools) {
+    for (const c of getToolCategories(t.data)) sizes.set(c, (sizes.get(c) ?? 0) + 1);
+  }
+  return sizes;
+}
+
+/** Mínimo de competidores para que un puesto en una categoría sea publicable. */
+export const MIN_RANKED_PEERS = 3;
+
+/**
+ * ¿Merece esta herramienta lucir su puesto (#1, #2…) en un listado?
+ *
+ * 44 fichas tienen `market_rank: 1` y 15 de ellas lo son en una categoría con
+ * una única herramienta: un "#1" sin competidores no es una posición de mercado,
+ * es un artefacto de la taxonomía. El badge solo aparece cuando hay al menos
+ * MIN_RANKED_PEERS herramientas con las que compararse.
+ */
+export function hasMeaningfulRank(
+  data: Pick<ToolFrontmatter, "market_rank" | "categories" | "category">,
+  sizes: Map<string, number>,
+): boolean {
+  if (!data.market_rank) return false;
+  return getToolCategories(data).some(c => (sizes.get(c) ?? 0) >= MIN_RANKED_PEERS);
+}
+
+export interface DataGap {
+  /** Texto corto para listar el hueco en la ficha */
+  label: string;
+  /** Campo del frontmatter que lo resolvería */
+  field: string;
+}
+
+/**
+ * Huecos verificables de una ficha.
+ *
+ * `needs_review` es una marca editorial que hay que poner a mano y que llevaba
+ * 0/182 activaciones pese a que 89 fichas no tienen página de certificaciones y
+ * 19 no citan ninguna fuente ajena al fabricante. Esto lo deriva del dato, así
+ * que la transparencia deja de depender de que alguien se acuerde.
+ */
+export function dataGaps(data: ToolFrontmatter, body = ""): DataGap[] {
+  const gaps: DataGap[] = [];
+  const isOpenSource = data.type === "opensource";
+
+  if (independentSourceCount(data) === 0) {
+    gaps.push({ label: "Sin ninguna fuente ajena al fabricante", field: "sources" });
+  }
+  if (!isOpenSource && data.certifications.length > 0 && !data.cert_url) {
+    gaps.push({ label: "Certificaciones declaradas sin página pública donde comprobarlas", field: "cert_url" });
+  }
+  if (!isOpenSource && data.certifications.length === 0) {
+    gaps.push({ label: "Sin certificaciones declaradas", field: "certifications" });
+  }
+  if (isOpenSource && !data.repo) {
+    gaps.push({ label: "Proyecto abierto sin repositorio declarado", field: "repo" });
+  }
+  if (isOpenSource && !data.license) {
+    gaps.push({ label: "Proyecto abierto sin licencia identificada", field: "license" });
+  }
+  if (body.trim().length < 300) {
+    gaps.push({ label: "Descripción extendida demasiado breve", field: "body" });
+  }
+  if (!data.first_added) {
+    gaps.push({ label: "Sin fecha de alta en el directorio", field: "first_added" });
+  }
+  return gaps;
+}
+
+/**
+ * Fuentes citadas que no están alojadas en el dominio del propio fabricante.
+ * Una nota de prensa del vendedor no es evidencia independiente.
+ */
+export function independentSourceCount(data: Pick<ToolFrontmatter, "sources" | "website">): number {
+  const vendorHost = (() => {
+    try { return new URL(data.website).hostname.replace(/^www\./, ""); } catch { return ""; }
+  })();
+  return (data.sources ?? []).filter(url => {
+    try { return new URL(url).hostname.replace(/^www\./, "") !== vendorHost; } catch { return false; }
+  }).length;
+}
+
 export interface ScoreAxis {
   label: string;
   value: number;
@@ -32,6 +132,13 @@ export interface ScoreAxis {
  * certificaciones auditadas en el comercial, código y licencia públicos en el
  * open source. El resto de ejes (posición, fuentes, frescura, completitud de la
  * ficha) se aplican por igual a ambos.
+ *
+ * Reparto de pesos, revisado sobre el catálogo real: la frescura bajó de 10 a 5
+ * puntos y esos 5 se movieron a las fuentes independientes. El motivo es que el
+ * pipeline reverifica las 182 fichas el mismo día, así que el eje de frescura
+ * daba la nota máxima a todas y ocupaba una décima parte de la escala sin
+ * distinguir nada; las fuentes, en cambio, van de 0 a 4 y sí separan una ficha
+ * documentada de una que solo repite al fabricante.
  */
 export function scoreAxes(data: ToolFrontmatter, body = ""): ScoreAxis[] {
   const isOpenSource = data.type === "opensource";
@@ -39,12 +146,7 @@ export function scoreAxes(data: ToolFrontmatter, body = ""): ScoreAxis[] {
 
   // Una nota del propio fabricante no es evidencia independiente: solo cuentan
   // las fuentes alojadas fuera de su dominio (analistas, laboratorios, prensa).
-  const vendorHost = (() => {
-    try { return new URL(data.website).hostname.replace(/^www\./, ""); } catch { return ""; }
-  })();
-  const sources = (data.sources ?? []).filter(url => {
-    try { return new URL(url).hostname.replace(/^www\./, "") !== vendorHost; } catch { return false; }
-  }).length;
+  const sources = independentSourceCount(data);
 
   // 1. Posición de mercado (30) — decrece 3,5 puntos por puesto, suelo de 5
   const rankValue = data.market_rank
@@ -73,14 +175,17 @@ export function scoreAxes(data: ToolFrontmatter, body = ""): ScoreAxis[] {
       : "sin certificaciones declaradas";
   }
 
-  // 3. Fuentes independientes (20)
-  const sourcesValue = Math.min(sources * 5, 20);
+  // 3. Fuentes independientes (25) — rendimientos decrecientes: el salto que
+  // más importa es el de ninguna a una, porque separa la ficha comprobable de
+  // la que solo repite lo que dice el fabricante.
+  const SOURCE_STEPS = [0, 10, 17, 21, 25];
+  const sourcesValue = SOURCE_STEPS[Math.min(sources, SOURCE_STEPS.length - 1)];
 
-  // 4. Actualización del dato (10)
+  // 4. Actualización del dato (5)
   const days = data.last_verified
     ? (Date.now() - new Date(data.last_verified as unknown as string).getTime()) / 86400000
     : null;
-  const freshnessValue = days === null ? 0 : days < 30 ? 10 : days < 90 ? 8 : days < 180 ? 5 : 2;
+  const freshnessValue = days === null ? 0 : days < 30 ? 5 : days < 90 ? 4 : days < 180 ? 2 : 1;
 
   // 5. Completitud de la ficha (15) — lo que este directorio sí controla
   const completeness = [
@@ -110,15 +215,15 @@ export function scoreAxes(data: ToolFrontmatter, body = ""): ScoreAxis[] {
     {
       label: "Fuentes independientes",
       value: sourcesValue,
-      max: 20,
+      max: 25,
       detail: sources > 0
-        ? `${sources} fuentes externas al fabricante`
+        ? `${sources} ${sources === 1 ? "fuente externa" : "fuentes externas"} al fabricante`
         : "sin fuentes independientes del fabricante",
     },
     {
       label: "Actualización",
       value: freshnessValue,
-      max: 10,
+      max: 5,
       detail: data.last_verified
         ? `Verificado el ${new Date(data.last_verified).toLocaleDateString("es-ES")}`
         : "Sin fecha de verificación",

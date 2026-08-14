@@ -28,6 +28,7 @@ license: Serverless Customer Agreement (desde la v4; hasta la v3 fue MIT)
 sources:
 - https://github.com/serverless/serverless
 - https://www.serverless.com
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

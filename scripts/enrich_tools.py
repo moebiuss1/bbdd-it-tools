@@ -235,6 +235,7 @@ def enrich_tool(slug: str, candidate: dict, config: dict, mention_counts: dict) 
         "description": description or f"{name} es una herramienta de {category}.",
         "why_reference": why_reference or f"Referente en el ámbito de {category}.",
         "sources": [s for s in [candidate.get("source_url"), wiki_info.get("url") if wiki_info else None] if s],
+        "first_added": date.today().isoformat(),
         "last_verified": date.today().isoformat(),
         "needs_review": not description or not why_reference,
     }

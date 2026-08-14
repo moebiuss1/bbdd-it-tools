@@ -10,14 +10,44 @@ const categories = await getCategories();
 const cat = categories.find(c => c.id === Astro.params.categoria); if (!cat) return Astro.rewrite("/404");
 const tools = (await getCollection("tools")).map(toToolEntry);
 const catTools = tools.filter(t => getToolCategories(t.data).includes(Astro.params.categoria as string)).sort((a,b) => (a.data.market_rank??999)-(b.data.market_rank??999));
+
+const site = Astro.site?.toString() ?? "https://moebiuss1.github.io/";
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: cat.name,
+    description: cat.description,
+    numberOfItems: catTools.length,
+    itemListElement: catTools.map((t, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: t.data.name,
+      url: new URL(`${base}herramientas/${t.slug}/`, site).toString(),
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Categorías", item: new URL(`${base}categorias/`, site).toString() },
+      { "@type": "ListItem", position: 2, name: cat.name, item: new URL(`${base}categorias/${cat.id}/`, site).toString() },
+    ],
+  },
+];
 ---
 
-<BaseLayout title={cat.name} description={cat.description}>
+<BaseLayout title={cat.name} description={cat.description} jsonLd={jsonLd}>
   <Header active="herramientas" />
 
   <section class="py-10" id="contenido" tabindex="-1"><div class="container max-w-900">
-    <nav class="mb-8 flex items-center gap-2" style="font-size:13px;color:#8e8e93"><a href={`${base}herramientas`} style="color:#0066cc">Directorio</a><span aria-hidden="true">/</span><span style="color:#6e6e73">{cat.name}</span></nav>
+    <nav class="mb-8 flex items-center gap-2" style="font-size:13px;color:#8e8e93" aria-label="Ruta de navegación"><a href={`${base}herramientas`} style="color:#0066cc">Directorio</a><span aria-hidden="true">/</span><a href={`${base}categorias`} style="color:#0066cc">Categorías</a><span aria-hidden="true">/</span><span style="color:#6e6e73" aria-current="page">{cat.name}</span></nav>
     <h1 class="section-title" style="font-size:28px">{cat.name}</h1><p class="section-desc">{cat.description}</p>
+    {catTools.length >= 2 && (
+      <a href={`${base}comparar?a=${catTools[0].slug}&b=${catTools[1].slug}${catTools[2] ? `&c=${catTools[2].slug}` : ""}`} class="btn btn-outline mt-4" style="font-size:13px">
+        Comparar las {Math.min(catTools.length, 3)} primeras de esta categoría →
+      </a>
+    )}
     {catTools.length===0 ? <div class="text-center py-16"><p class="section-desc">Todavía no hay herramientas verificadas en esta categoría. El directorio se amplía cada semana.</p><a href={`${base}herramientas`} class="btn btn-outline mt-4">Ver el directorio completo</a></div> :
     <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mt-8">
       {catTools.map(t => <a href={`${base}herramientas/${t.slug}`} class="card tool-card group"><div class="tool-avatar">{t.data.logo ? <img src={`${base}${t.data.logo.replace(/^\//,'')}`} alt={t.data.name} width="35" height="35" style="border-radius:10px;object-fit:contain" loading="lazy" /> : t.data.name.charAt(0)}</div><div class="min-w-0 flex-1"><h3 class="tool-name" style="color:#1d1d1f">{t.data.name}</h3><p class="tool-desc">{t.data.description}</p></div></a>)}

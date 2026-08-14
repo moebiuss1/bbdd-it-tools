@@ -2,15 +2,14 @@
 name: Zeek
 slug: zeek-ids
 categories:
-- ids
-- ndr
-- nta
+  - ids
+  - ndr
 tags:
-- open-source
-- network-analysis
-- forensics
-- threat-hunting
-- ids
+  - open-source
+  - network-security
+  - forensics
+  - threat-hunting
+  - ids
 type: opensource
 cost_model: suscripción
 cost_details: Gratuito (BSD). Marco de análisis de red con logs estructurados ricos.
@@ -31,6 +30,7 @@ repo: https://github.com/zeek/zeek
 license: BSD-3-Clause
 sources:
   - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/zeek-ids.png

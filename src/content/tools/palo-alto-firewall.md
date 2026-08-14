@@ -6,13 +6,13 @@ categories:
 - ips
 - ngfw
 tags:
-- red
-- cloud
-- ai
-- zero-trust
-- ids
-- ips
-- threat-hunting
+  - network
+  - cloud
+  - ai
+  - zero-trust
+  - ids
+  - ips
+  - threat-hunting
 type: comercial
 cost_model: suscripción
 cost_details: Modelos PA-400 a PA-7000. Licencia base + suscripciones (Threat Prevention, URL Filtering, WildFire). Desde
@@ -42,6 +42,7 @@ market_rank: 1
 cert_url: https://www.paloaltonetworks.com/legal-notices/trust-center/certifications
 sources:
 - https://www.gartner.com/reviews/market/network-firewalls
+first_added: 2026-08-07
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/palo-alto-firewall.png

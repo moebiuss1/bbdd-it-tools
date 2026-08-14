@@ -2,7 +2,7 @@
 name: Palo Alto Networks Prisma AIRS
 slug: palo-alto-prisma-airs
 categories:
-- ai-security-tool
+  - llm-security
 tags:
 - ai
 - endpoint
@@ -31,6 +31,7 @@ sources:
 - https://www.paloaltonetworks.com/company/press/2025/palo-alto-networks-completes-acquisition-of-protect-ai
 - https://www.paloaltonetworks.com/legal-notices/trust-center/iso-27000-series
 cert_url: https://www.paloaltonetworks.com/legal-notices/trust-center/certifications
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 market_rank: 1

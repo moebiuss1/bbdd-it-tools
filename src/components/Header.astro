@@ -3,7 +3,7 @@
 // Es la única fuente de verdad de la navegación: añadir aquí un enlace lo hace
 // aparecer en todo el sitio (antes cada .astro repetía el markup y derivaba).
 interface Props {
-  /** id de la sección activa: home | herramientas | ranking | glosario | about */
+  /** id de la sección activa: home | herramientas | ranking | glosario | about | calidad | comparar | novedades */
   active?: string;
   /** muestra el buscador rápido a la derecha (solo la portada lo usa) */
   search?: boolean;
@@ -14,6 +14,7 @@ const base = import.meta.env.BASE_URL;
 const links = [
   { id: "herramientas", label: "Directorio", href: `${base}herramientas` },
   { id: "ranking", label: "Rankings", href: `${base}ranking` },
+  { id: "comparar", label: "Comparar", href: `${base}comparar` },
   { id: "glosario", label: "Glosario", href: `${base}glosario` },
   { id: "about", label: "Acerca de", href: `${base}about` },
 ];
@@ -22,7 +23,7 @@ const links = [
 <header class="sticky top-0 z-40 header">
   <nav class="container header-inner">
     <a href={base} class="brand">BBDD IT</a>
-    <div class="flex items-center gap-2">
+    <div class="nav-links">
       {links.map(l => (
         <a href={l.href} class:list={["nav-link", active === l.id && "nav-link-active"]}
            aria-current={active === l.id ? "page" : undefined}>{l.label}</a>
@@ -30,7 +31,7 @@ const links = [
     </div>
     {search && (
       <>
-        <div class="flex-1"></div>
+        <div class="nav-spacer"></div>
         <form action={`${base}herramientas`} method="get" style="max-width:240px;width:100%">
           <div class="has-kbd" style="position:relative;display:flex;align-items:center">
             <input type="search" name="q" placeholder="Buscar herramientas…" class="search-input" id="hero-search"

@@ -1,0 +1,140 @@
+---
+/**
+ * Novedades del directorio.
+ *
+ * "Actualizado cada lunes" era una promesa sin forma de comprobarla: no había
+ * ni historial ni feed. Esta página agrupa las altas por semana a partir de
+ * `first_added`, el único campo que el pipeline no reescribe, así que lo que se
+ * ve aquí es el ritmo real de crecimiento del catálogo, no el del último pase
+ * de verificación.
+ */
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { getCategories, getToolCategories, toToolEntry, isNewTool } from "@lib/tools";
+
+const base = import.meta.env.BASE_URL;
+const tools = (await getCollection("tools")).map(toToolEntry);
+const categories = await getCategories();
+const catName = (id: string) => categories.find(c => c.id === id)?.name ?? id;
+
+/** Lunes de la semana a la que pertenece una fecha (semana ISO). */
+function weekStart(d: Date): Date {
+  const day = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  const dow = (day.getUTCDay() + 6) % 7; // 0 = lunes
+  day.setUTCDate(day.getUTCDate() - dow);
+  return day;
+}
+
+const conFecha = tools.filter(t => t.data.first_added);
+const semanas = new Map<string, { start: Date; tools: typeof conFecha }>();
+for (const t of conFecha) {
+  const start = weekStart(new Date(t.data.first_added!));
+  const key = start.toISOString().slice(0, 10);
+  if (!semanas.has(key)) semanas.set(key, { start, tools: [] });
+  semanas.get(key)!.tools.push(t);
+}
+
+const listado = [...semanas.values()]
+  .sort((a, b) => b.start.getTime() - a.start.getTime())
+  .map(w => ({
+    ...w,
+    tools: w.tools.sort(
+      (a, b) =>
+        new Date(b.data.first_added!).getTime() - new Date(a.data.first_added!).getTime() ||
+        a.data.name.localeCompare(b.data.name, "es"),
+    ),
+  }));
+
+const fmt = (d: Date) => d.toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
+const sinFecha = tools.length - conFecha.length;
+---
+
+<BaseLayout
+  title="Novedades"
+  description="Historial de altas del directorio, semana a semana, con feed RSS para seguir las nuevas herramientas."
+>
+  <Header active="novedades" />
+
+  <section class="py-10" id="contenido" tabindex="-1">
+    <div class="container max-w-900">
+      <h1 class="section-title" style="font-size:28px">Novedades</h1>
+      <p class="section-desc" style="max-width:640px">
+        Qué ha entrado en el directorio y cuándo. Las fechas son de alta, no de la revisión semanal:
+        una herramienta reverificada el lunes no vuelve a aparecer aquí como si fuera nueva.
+      </p>
+
+      <p class="news-feed">
+        <a href={`${base}rss.xml`}>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+          Seguir por RSS
+        </a>
+      </p>
+
+      {listado.map(week => (
+        <section class="news-week">
+          <h2 class="news-week-title">
+            Semana del {fmt(week.start)}
+            <span class="news-week-n tabular">{week.tools.length}</span>
+          </h2>
+          <ul class="news-list">
+            {week.tools.map(t => (
+              <li>
+                <a href={`${base}herramientas/${t.slug}/`} class="news-item">
+                  <span class="news-avatar">
+                    {t.data.logo
+                      ? <img src={`${base}${t.data.logo.replace(/^\//,'')}`} alt="" width="26" height="26" style="border-radius:7px;object-fit:contain" loading="lazy" />
+                      : <span style="font-size:12px;font-weight:700;color:#6e6e73">{t.data.name.charAt(0)}</span>}
+                  </span>
+                  <span class="min-w-0 flex-1">
+                    <span class="news-name">
+                      {t.data.name}
+                      {isNewTool(t.data) && <span class="badge badge-green badge-sm" style="margin-left:6px">Nuevo</span>}
+                    </span>
+                    <span class="news-cats">{getToolCategories(t.data).map(catName).join(" · ")}</span>
+                  </span>
+                  <span class="news-date tabular">{new Date(t.data.first_added!).toLocaleDateString("es-ES", { day: "numeric", month: "short" })}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+
+      {sinFecha > 0 && (
+        <p class="news-foot">
+          {sinFecha} fichas no tienen fecha de alta registrada y no aparecen en este historial; se listan
+          como dato pendiente en <a href={`${base}calidad`}>Salud del catálogo</a>.
+        </p>
+      )}
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+.news-feed{margin-top:20px}
+.news-feed a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;
+  border:1px solid #e8e8ed;border-radius:9999px;padding:8px 14px;min-height:44px;
+  transition:border-color var(--t-fast) var(--ease),background var(--t-fast) var(--ease)}
+.news-feed a:hover{border-color:#d2d2d7;background:#f5f5f7}
+
+.news-week{margin-top:40px}
+.news-week-title{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:600;color:#1d1d1f;
+  padding-bottom:10px;border-bottom:1px solid #e8e8ed}
+.news-week-n{font-size:12px;font-weight:600;color:#3a3a3c;background:#f0f0f3;border-radius:8px;padding:2px 8px}
+
+.news-list{list-style:none;margin-top:6px}
+.news-item{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:12px;
+  transition:background var(--t-fast) var(--ease)}
+.news-item:hover{background:#f5f5f7}
+.news-avatar{width:32px;height:32px;border-radius:9px;background:#f5f5f7;display:flex;align-items:center;
+  justify-content:center;flex-shrink:0}
+.news-item:hover .news-avatar{background:#fff}
+.news-name{display:block;font-size:15px;font-weight:500;color:#1d1d1f}
+.news-cats{display:block;font-size:12px;color:#6e6e73;line-height:1.45;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.news-date{flex-shrink:0;font-size:12px;color:#6e6e73}
+.news-foot{margin-top:36px;font-size:13px;color:#6e6e73;line-height:1.6}
+</style>

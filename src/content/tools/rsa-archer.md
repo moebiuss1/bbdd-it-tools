@@ -7,11 +7,11 @@ categories:
 - kpi-ca-managers
 - risk-management
 tags:
-- grc
-- irm
-- risk-management
-- compliance
-- audit
+  - grc
+  - irm
+  - risk-management
+  - compliance
+  - auditoria
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$50,000/año. Plataforma IRM/GRC altamente configurable.
@@ -30,6 +30,7 @@ company_size:
 market_rank: 2
 sources:
 - https://www.gartner.com/reviews/market/audit-management-solutions/vendor/archer/product/archer-audit-management
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/rsa-archer.png

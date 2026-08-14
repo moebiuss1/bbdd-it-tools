@@ -25,6 +25,7 @@ company_size:
 market_rank: 6
 sources:
 - https://www.gartner.com/reviews/market/security-threat-intelligence-services/vendor/skybox-security
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/skybox-security.png

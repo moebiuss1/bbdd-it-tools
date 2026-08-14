@@ -6,11 +6,11 @@ categories:
 - mfa
 - sso
 tags:
-- federation
-- sso
-- mfa
-- api-security
-- ciam
+  - iam
+  - sso
+  - mfa
+  - api-security
+  - ciam
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$6/usuario/mes. Plataforma IAM con federación avanzada.
@@ -30,6 +30,7 @@ company_size:
 market_rank: 5
 sources:
   - https://www.gartner.com/reviews/market/access-management
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/ping-identity.png

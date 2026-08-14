@@ -4,11 +4,11 @@ slug: appviewx-cert
 categories:
 - cert-managers
 tags:
-- clm
-- pki
-- automation
-- network
-- application-scale
+  - certificate-lifecycle
+  - pki
+  - automatizacion
+  - network
+  - application-scale
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$25,000/año.
@@ -26,6 +26,7 @@ company_size:
 market_rank: 5
 sources:
   - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/appviewx-cert.png

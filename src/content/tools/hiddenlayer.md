@@ -28,6 +28,7 @@ sources:
 - https://www.hiddenlayer.com/news/hiddenlayer-attains-soc-2-type-ii-compliance-elevating-data-security-for-ai
 - https://www.hiddenlayer.com/aisec-platform/
 cert_url: https://www.hiddenlayer.com/news/hiddenlayer-attains-soc-2-type-ii-compliance-elevating-data-security-for-ai
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 market_rank: 2

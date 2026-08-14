@@ -2,11 +2,9 @@
 name: Rubrik Security Cloud
 slug: rubrik-backup
 categories:
-- enterprise-backup
-- ransomware-recovery
-- cloud-backup
-- saas-backup
-- immutable-backup
+  - enterprise-backup
+  - business-continuity
+  - saas-backup
 tags:
 - backup
 - ransomware
@@ -33,6 +31,7 @@ market_rank: 1
 cert_url: https://www.rubrik.com/trust
 sources:
   - https://www.gartner.com/reviews/market/enterprise-backup-and-recovery
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/rubrik-backup.png

@@ -27,6 +27,7 @@ company_size:
 market_rank: 7
 sources:
 - https://www.gartner.com/reviews/product/utimaco-hardware-security-modules-hsm
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/utimaco-hsm.png

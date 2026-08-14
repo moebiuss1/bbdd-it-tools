@@ -29,6 +29,7 @@ company_size:
 market_rank: 6
 sources:
 - https://docs.aws.amazon.com/cloudhsm/latest/userguide/introduction.html
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/aws-cloudhsm.png

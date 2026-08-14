@@ -40,6 +40,7 @@ market_rank: 1
 cert_url: https://trust.okta.com
 sources:
 - https://www.gartner.com/reviews/market/access-management
+first_added: 2026-08-07
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/okta.png

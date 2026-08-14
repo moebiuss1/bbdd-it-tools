@@ -5,11 +5,11 @@ categories:
 - ci-cd
 - config-managers
 tags:
-- iac
-- deployment
-- configuration
-- microsoft
-- multi-environment
+  - iac
+  - deployment
+  - configuration-management
+  - microsoft
+  - multi-environment
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$10/mes para 10 targets. Enterprise desde ~$3,000/año.
@@ -27,6 +27,7 @@ market_rank: 4
 sources:
 - https://www.gartner.com/reviews/market/devops-platforms/vendor/octopus-deploy-125263461/product/octopus-deploy
 - https://octopus.com/docs/deployments
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/octopus-deploy-config.png

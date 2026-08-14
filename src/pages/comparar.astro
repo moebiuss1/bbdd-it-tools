@@ -1,0 +1,135 @@
+---
+/**
+ * Comparador de herramientas.
+ *
+ * Evaluar es comparar: quien llega aquí ya sabe que quiere tres EDR o dos SIEM
+ * y necesita verlos en paralelo, no abrir tres pestañas. Los datos se cargan de
+ * /compare-data.json y la tabla se arma en el navegador; los selectores se
+ * renderizan en el servidor, así que la página elige herramientas incluso antes
+ * de que el script esté listo y funciona entera con el teclado.
+ */
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { getCategories, getToolCategories, toToolEntry } from "@lib/tools";
+
+const base = import.meta.env.BASE_URL;
+const tools = (await getCollection("tools")).map(toToolEntry);
+const categories = await getCategories();
+
+// Las opciones se agrupan por categoría: con 182 herramientas, una lista plana
+// obliga a saber el nombre exacto de antemano.
+const collator = new Intl.Collator("es", { sensitivity: "base" });
+const grouped = categories
+  .map(c => ({
+    name: c.name,
+    tools: tools
+      .filter(t => getToolCategories(t.data).includes(c.id))
+      .sort((a, b) => collator.compare(a.data.name, b.data.name)),
+  }))
+  .filter(g => g.tools.length > 0)
+  .sort((a, b) => collator.compare(a.name, b.name));
+
+const SLOTS = [
+  { param: "a", label: "Primera herramienta" },
+  { param: "b", label: "Segunda herramienta" },
+  { param: "c", label: "Tercera herramienta (opcional)" },
+];
+---
+
+<BaseLayout
+  title="Comparar herramientas"
+  description="Compara hasta tres herramientas IT en paralelo: puntuación, certificaciones, modelo de coste, tamaño de empresa y evidencia disponible."
+>
+  <Header active="comparar" />
+
+  <section class="py-10" id="contenido" tabindex="-1">
+    <div class="container max-w-900">
+      <h1 class="section-title" style="font-size:28px">Comparar herramientas</h1>
+      <p class="section-desc" style="max-width:640px">
+        Hasta tres a la vez, con los mismos datos que muestra cada ficha. La dirección de la página
+        guarda la selección: se puede pegar en un correo o en un informe y quien la abra verá
+        exactamente esta comparativa.
+      </p>
+
+      <form class="compare-picker" id="compare-picker">
+        {SLOTS.map(slot => (
+          <div class="facet">
+            <label for={`slot-${slot.param}`}>{slot.label}</label>
+            <select id={`slot-${slot.param}`} data-slot={slot.param}>
+              <option value="">Sin seleccionar</option>
+              {grouped.map(g => (
+                <optgroup label={g.name}>
+                  {g.tools.map(t => <option value={t.slug}>{t.data.name}</option>)}
+                </optgroup>
+              ))}
+            </select>
+          </div>
+        ))}
+        <div class="compare-actions">
+          <button type="button" class="btn btn-outline" id="compare-clear">Vaciar</button>
+        </div>
+      </form>
+
+      <!-- Estado inicial: sin JavaScript o sin selección, se explica qué hace la
+           página en lugar de dejar un hueco en blanco. -->
+      <div class="compare-empty" id="compare-empty">
+        <p>Elige al menos dos herramientas para ver la comparativa.</p>
+        <p class="compare-empty-hint">
+          ¿No sabes por dónde empezar? Entra en una <a href={`${base}herramientas`}>categoría del directorio</a>
+          y compara sus primeras posiciones.
+        </p>
+      </div>
+
+      <div class="compare-status" id="compare-status" role="status" aria-live="polite" hidden></div>
+
+      <div class="compare-wrap" id="compare-wrap" hidden>
+        <table class="compare-table" id="compare-table">
+          <caption class="sr-only">Comparativa de herramientas seleccionadas</caption>
+          <thead><tr id="compare-head"></tr></thead>
+          <tbody id="compare-body"></tbody>
+        </table>
+      </div>
+
+      <p class="compare-foot">
+        La puntuación y su desglose son los mismos que se explican en <a href={`${base}about`}>Acerca de</a>.
+        Lo que no está verificado se dice: la fila «datos pendientes» cuenta los huecos declarados de cada ficha,
+        detallados en <a href={`${base}calidad`}>Salud del catálogo</a>.
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+.compare-picker{display:grid;gap:12px;grid-template-columns:1fr;margin-top:24px;border:1px solid #e8e8ed;border-radius:16px;background:#fff;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+@media (min-width:760px){.compare-picker{grid-template-columns:repeat(3,minmax(0,1fr)) auto;align-items:end}}
+.facet{display:flex;flex-direction:column;gap:4px;min-width:0}
+.facet label{font-size:11px;font-weight:500;color:#6e6e73}
+.compare-picker select{
+  width:100%;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none;
+  border:1px solid #d2d2d7;border-radius:10px;background-color:#fff;color:#1d1d1f;
+  font-size:13px;font-weight:500;padding:9px 30px 9px 11px;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238e8e93' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 10px center;text-overflow:ellipsis;
+  transition:border-color var(--t-fast) var(--ease),box-shadow var(--t-fast) var(--ease);
+}
+.compare-picker select:hover{border-color:#aeaeb2}
+.compare-picker select:focus-visible{border-color:#0071e3;box-shadow:0 0 0 3px rgba(0,113,227,.15)}
+.compare-picker select.is-set{border-color:#0071e3;background-color:#f4f9ff;color:#0066cc}
+.compare-actions{display:flex;align-items:end}
+.compare-actions .btn{width:100%;font-size:13px}
+
+.compare-empty{margin-top:32px;padding:40px 24px;text-align:center;border:1px dashed #d2d2d7;border-radius:16px;background:#fafafa}
+.compare-empty p{font-size:15px;color:#3a3a3c}
+.compare-empty-hint{margin-top:8px;font-size:13px;color:#6e6e73}
+.compare-status{margin-top:24px;font-size:14px;color:#6e6e73}
+
+.compare-foot{margin-top:20px;font-size:13px;color:#6e6e73;line-height:1.6;max-width:680px}
+</style>
+
+<script>
+  import "../scripts/comparar";
+</script>

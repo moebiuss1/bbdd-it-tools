@@ -28,6 +28,8 @@ export interface ToolFrontmatter {
   license?: string;
   cert_url?: string;
   sources: string[];
+  /** Alta en el directorio — no se reescribe nunca (ver content.config.ts) */
+  first_added?: Date;
   last_verified?: Date;
   needs_review: boolean;
 }
@@ -50,7 +52,6 @@ export interface Category {
 export interface Tag {
   id: string;
   name: string;
-  color: string;
 }
 
 export interface RankingEntry {

@@ -27,6 +27,7 @@ tags:
 slug: palo-alto-cortex-xsoar
 sources:
   - https://www.gartner.com/reviews/market/it-service-management-platforms
+first_added: 2026-08-07
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 3

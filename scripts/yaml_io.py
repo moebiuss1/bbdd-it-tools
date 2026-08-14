@@ -96,13 +96,14 @@ def merge_frontmatter(
     - Campos escalares: solo se copian si existing está vacío/None
     - Listas: se concatenan (sin duplicados) si preserve_lists=True
     - last_verified: siempre se actualiza
+    - first_added: nunca se sobrescribe (fecha de alta, se fija al crear la ficha)
     - name y slug: solo se protegen si ya existen (no se sobrescriben)
     """
     if existing is None:
         existing = {}
 
     # Campos que no se sobrescriben si ya tienen valor
-    protected_if_exists = {"name", "slug"}
+    protected_if_exists = {"name", "slug", "first_added"}
     always_skip = {"_body", "_raw"}
 
     merged = dict(existing)

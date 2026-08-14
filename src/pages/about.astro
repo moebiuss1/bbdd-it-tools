@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
+const base = import.meta.env.BASE_URL;
 ---
 <BaseLayout title="Acerca de">
   <Header active="about" />
@@ -9,9 +10,27 @@ import Footer from "@components/Footer.astro";
     <h1 class="section-title" style="font-size:28px">Acerca de</h1>
     <div class="space-y-8 mt-8 prose" style="color:#3a3a3c">
       <p>BBDD IT Tools es un directorio vivo de herramientas para profesionales de seguridad de la información, cumplimiento normativo y auditoría IT. Se actualiza <strong style="color:#1d1d1f">automáticamente cada lunes</strong> mediante un pipeline que busca y verifica información en fuentes referentes del mercado.</p>
-      <div><h2>Fuentes</h2><ul><li><strong style="color:#1d1d1f">Gartner Magic Quadrant</strong> — análisis de posicionamiento de mercado</li><li><strong style="color:#1d1d1f">ITSM.tools</strong> — comparativas y guías del sector IT</li><li><strong style="color:#1d1d1f">GitHub</strong> — repositorios open source destacados</li><li><strong style="color:#1d1d1f">Webs especializadas</strong> — medios y blogs de seguridad IT</li></ul></div>
-      <div><h2>Rankings</h2><p>Los rankings se calculan con una puntuación compuesta que pondera: frecuencia de menciones en fuentes referentes, posición en Magic Quadrant, actividad en GitHub, número de certificaciones y relevancia en la comunidad. Cada herramienta recibe un tier: <strong style="color:#1d1d1f">Líder</strong> (≥80), <strong style="color:#1d1d1f">Visionario</strong> (65-79), <strong style="color:#1d1d1f">Retador</strong> (50-64) o <strong style="color:#1d1d1f">Nicho</strong> (&lt;50).</p></div>
-      <div><h2>Metodología</h2><p>Los scripts de actualización nunca sobrescriben ediciones manuales. El pipeline solo completa datos faltantes y actualiza la fecha de verificación. Si un dato no ha podido verificarse automáticamente, la herramienta se marca para revisión manual.</p></div>
+
+      <div><h2>Fuentes</h2><ul><li><strong style="color:#1d1d1f">Gartner Magic Quadrant</strong> — análisis de posicionamiento de mercado</li><li><strong style="color:#1d1d1f">ITSM.tools</strong> — comparativas y guías del sector IT</li><li><strong style="color:#1d1d1f">GitHub</strong> — repositorios open source destacados</li><li><strong style="color:#1d1d1f">Webs especializadas</strong> — medios y blogs de seguridad IT</li></ul>
+        <p>En la puntuación solo cuentan como fuente independiente las referencias alojadas fuera del dominio del fabricante: una nota de prensa del propio vendedor no permite contrastar nada.</p></div>
+
+      <div><h2>Puntuación BBDD IT</h2>
+        <p>Cada ficha recibe una puntuación de 0 a 100 que se calcula siempre igual, con cinco ejes. El desglose está visible en cada ficha, con el detalle de qué ha sumado y qué no.</p>
+        <ul>
+          <li><strong style="color:#1d1d1f">Posición de mercado (30)</strong> — 30 puntos el primer puesto de su categoría, restando 3,5 por cada puesto siguiente. El puesto solo se publica si la categoría tiene al menos tres herramientas: un «#1» sin competidores no describe el mercado.</li>
+          <li><strong style="color:#1d1d1f">Garantías verificables (25)</strong> — certificaciones auditadas y página pública donde comprobarlas en el software comercial; repositorio y licencia en el software libre. Un proyecto abierto no necesita certificados de producto para ser solvente.</li>
+          <li><strong style="color:#1d1d1f">Fuentes independientes (25)</strong> — 10 puntos por la primera fuente ajena al fabricante, 17 por dos, 21 por tres y 25 a partir de cuatro.</li>
+          <li><strong style="color:#1d1d1f">Actualización (5)</strong> — pesa poco a propósito: la verificación es semanal y automática para todo el catálogo, así que apenas distingue unas fichas de otras.</li>
+          <li><strong style="color:#1d1d1f">Ficha completa (15)</strong> — descripción extendida, justificación editorial, detalle de coste, logo y enlace de verificación.</li>
+        </ul>
+      </div>
+
+      <div><h2>Rankings por categoría</h2><p>Los rankings ordenan cada categoría con una puntuación de consenso que pondera menciones en fuentes referentes, posición en Magic Quadrant, actividad en GitHub, certificaciones y relevancia en la comunidad. Cada herramienta recibe un tier: <strong style="color:#1d1d1f">Líder</strong> (≥80), <strong style="color:#1d1d1f">Visionario</strong> (65-79), <strong style="color:#1d1d1f">Retador</strong> (50-64) o <strong style="color:#1d1d1f">Nicho</strong> (&lt;50).</p></div>
+
+      <div><h2>Metodología</h2>
+        <p>Los scripts de actualización nunca sobrescriben ediciones manuales. El pipeline solo completa datos faltantes y actualiza la fecha de verificación; la fecha de alta de una ficha se escribe una sola vez y no se toca, para que una revisión masiva no haga pasar por nueva a una herramienta que lleva meses publicada.</p>
+        <p>Cuando un dato no se ha podido comprobar, la ficha lo dice en su cabecera en lugar de omitirlo. El recuento completo de lo que falta —y de lo que sí está verificado— se publica en <a href={`${base}calidad`}>Salud del catálogo</a>.</p>
+      </div>
     </div>
   </div></section>
   <Footer />

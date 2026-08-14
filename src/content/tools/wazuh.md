@@ -45,6 +45,7 @@ license: AGPL-3.0
 sources:
 - https://documentation.wazuh.com/current/index.html
 - https://github.com/wazuh/wazuh
+first_added: 2026-08-07
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/wazuh.png

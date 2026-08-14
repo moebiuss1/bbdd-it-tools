@@ -3,25 +3,62 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import { getCategories, getToolCategories, toToolEntry } from "@lib/tools";
+import { getCategories, getToolCategories, toToolEntry, categorySizes, hasMeaningfulRank, isNewTool } from "@lib/tools";
 const base = import.meta.env.BASE_URL;
 const tools = (await getCollection("tools")).map(toToolEntry);
 const categories = await getCategories();
+const sizes = categorySizes(tools);
 
 const catTools = categories.map(cat => ({
   ...cat,
   tools: tools.filter(t => getToolCategories(t.data).includes(cat.id)).sort((a,b) => (a.data.market_rank??999)-(b.data.market_rank??999))
 })).filter(c => c.tools.length > 0);
 
-// Destacados: top 3 herramientas globales por market_rank
-const destacadas = tools.filter(t => t.data.market_rank && t.data.market_rank <= 2).sort((a,b) => (a.data.market_rank??999)-(b.data.market_rank??999)).slice(0, 6);
+// Destacadas: primeros puestos, pero solo de categorías con competencia real.
+// Sin ese filtro entraban aquí herramientas que son "#1" de una categoría que
+// solo las contiene a ellas.
+const destacadas = tools
+  .filter(t => t.data.market_rank && t.data.market_rank <= 2 && hasMeaningfulRank(t.data, sizes))
+  .sort((a,b) => (a.data.market_rank??999)-(b.data.market_rank??999))
+  .slice(0, 6);
 
-// Herramientas actualizadas esta semana
-const haceUnaSemana = Date.now() - 7 * 86400000;
-const recientes = tools.filter(t => t.data.last_verified && new Date(t.data.last_verified).getTime() > haceUnaSemana).sort((a,b) => new Date(b.data.last_verified!).getTime() - new Date(a.data.last_verified!).getTime()).slice(0, 6);
+// Últimas incorporaciones — por fecha de alta (`first_added`), no por
+// `last_verified`: el pipeline reverifica todo el catálogo cada lunes, así que
+// ordenar por verificación presentaba las 182 fichas como recién llegadas.
+const site = Astro.site?.toString() ?? "https://moebiuss1.github.io/";
+const home = new URL(base, site).toString();
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "BBDD IT Tools",
+    url: home,
+    inLanguage: "es-ES",
+    description: `Directorio de ${tools.length} herramientas IT de seguridad, cumplimiento y auditoría, con fuentes verificables en cada ficha.`,
+    // Deja que el buscador ofrezca la búsqueda del directorio desde su propio
+    // resultado, en vez de obligar a entrar y volver a escribir.
+    potentialAction: {
+      "@type": "SearchAction",
+      target: { "@type": "EntryPoint", urlTemplate: `${new URL(`${base}herramientas`, site).toString()}?q={search_term_string}` },
+      "query-input": "required name=search_term_string",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "BBDD IT Tools",
+    url: home,
+    logo: new URL(`${base}icon-512.png`, site).toString(),
+  },
+];
+
+const nuevas = tools
+  .filter(t => t.data.first_added)
+  .sort((a,b) => new Date(b.data.first_added!).getTime() - new Date(a.data.first_added!).getTime())
+  .slice(0, 6);
 ---
 
-<BaseLayout title="Directorio de Herramientas IT">
+<BaseLayout title="Directorio de Herramientas IT" jsonLd={jsonLd}>
 
   <Header active="home" search />
 
@@ -52,7 +89,7 @@ const recientes = tools.filter(t => t.data.last_verified && new Date(t.data.last
             <div class="min-w-0 flex-1">
               <div class="flex items-center gap-2">
                 <h3 class="tool-name" style="color:#1d1d1f">{tool.data.name}</h3>
-                {tool.data.market_rank && tool.data.market_rank <= 3 && <span class="badge badge-amber badge-sm">#{tool.data.market_rank}</span>}
+                {tool.data.market_rank && tool.data.market_rank <= 3 && hasMeaningfulRank(tool.data, sizes) && <span class="badge badge-amber badge-sm">#{tool.data.market_rank}</span>}
               </div>
               <p class="tool-desc">{tool.data.description}</p>
               <div class="flex flex-wrap gap-1.5 mt-2">
@@ -66,15 +103,15 @@ const recientes = tools.filter(t => t.data.last_verified && new Date(t.data.last
     </div>
   </section>
 
-  <!-- Actualizadas esta semana -->
-  {recientes.length > 0 && <section class="section-alt">
+  <!-- Últimas incorporaciones -->
+  {nuevas.length > 0 && <section class="section-alt">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Actualizadas esta semana</h2>
-        <a href={`${base}herramientas?sort=updated`} class="hidden sm:inline" style="font-size:14px;font-weight:500;color:#0066cc">Ver todas →</a>
+        <h2 class="section-title">Últimas incorporaciones</h2>
+        <a href={`${base}novedades`} class="hidden sm:inline" style="font-size:14px;font-weight:500;color:#0066cc">Ver el historial →</a>
       </div>
       <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {recientes.map(tool => (
+        {nuevas.map(tool => (
           <a href={`${base}herramientas/${tool.slug}`} class="card tool-card group">
             <div class="tool-avatar">
               {tool.data.logo ? <img src={`${base}${tool.data.logo.replace(/^\//,'')}`} alt={tool.data.name} width="35" height="35" style="border-radius:10px;object-fit:contain" loading="lazy" /> : tool.data.name.charAt(0)}
@@ -82,9 +119,11 @@ const recientes = tools.filter(t => t.data.last_verified && new Date(t.data.last
             <div class="min-w-0 flex-1">
               <div class="flex items-center gap-2">
                 <h3 class="tool-name" style="color:#1d1d1f">{tool.data.name}</h3>
-                {tool.data.last_verified && <span class="badge badge-green badge-sm" title={`Verificado: ${new Date(tool.data.last_verified).toLocaleDateString('es-ES')}`}>Nuevo</span>}
+                {/* "Nuevo" solo durante los primeros 30 días desde el alta (NEW_TOOL_DAYS) */}
+                {isNewTool(tool.data) && <span class="badge badge-green badge-sm" title={`Añadida el ${new Date(tool.data.first_added!).toLocaleDateString('es-ES')}`}>Nuevo</span>}
               </div>
               <p class="tool-desc">{tool.data.description}</p>
+              {tool.data.first_added && <p class="tool-date">En el directorio desde el {new Date(tool.data.first_added).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</p>}
             </div>
           </a>
         ))}
@@ -115,7 +154,7 @@ const recientes = tools.filter(t => t.data.last_verified && new Date(t.data.last
                     <div class="min-w-0 flex-1">
                       <div class="flex items-center gap-2">
                         <h3 class="tool-name" style="color:#1d1d1f">{tool.data.name}</h3>
-                        {tool.data.market_rank && tool.data.market_rank <= 3 && <span class="badge badge-amber badge-sm">#{tool.data.market_rank}</span>}
+                        {tool.data.market_rank && tool.data.market_rank <= 3 && hasMeaningfulRank(tool.data, sizes) && <span class="badge badge-amber badge-sm">#{tool.data.market_rank}</span>}
                       </div>
                       <p class="tool-desc">{tool.data.description}</p>
                     </div>
@@ -144,6 +183,7 @@ const recientes = tools.filter(t => t.data.last_verified && new Date(t.data.last
 .accordion-chevron{flex-shrink:0;transition:transform .2s}
 .accordion-cat[open] .accordion-chevron{transform:rotate(180deg)}
 .accordion-body{padding:0 18px 20px}
+.tool-date{margin-top:6px;font-size:11px;color:#6e6e73}
 </style>
 
 <script>

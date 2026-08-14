@@ -4,10 +4,10 @@ slug: solarwinds-dlp
 categories:
 - dlp
 tags:
-- dlp
-- access-management
-- permissions
-- compliance
+  - dlp
+  - iam
+  - permissions
+  - compliance
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$3,500/año.
@@ -24,6 +24,7 @@ company_size:
 market_rank: 7
 sources:
   - https://www.gartner.com/reviews/market/data-loss-prevention
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/solarwinds-dlp.png

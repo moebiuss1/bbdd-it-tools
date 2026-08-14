@@ -5,12 +5,11 @@ categories:
 - key-managers
 - secrets-management
 tags:
-- kms
-- cloud
-- google
-- hsm
-- ekm
-- fips
+  - kms
+  - cloud
+  - google
+  - hsm
+  - fips
 type: comercial
 cost_model: suscripción
 cost_details: $0.06/clave/mes + $0.03/10,000 operaciones.
@@ -31,6 +30,7 @@ market_rank: 4
 cert_url: https://cloud.google.com/security/compliance
 sources:
 - https://cloud.google.com/kms/docs/key-management-service
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/google-cloud-kms.png

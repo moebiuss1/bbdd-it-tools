@@ -28,6 +28,7 @@ company_size:
 market_rank: 4
 sources:
   - https://www.splunk.com/en_us/products/it-service-intelligence.html
+first_added: 2026-08-12
 last_verified: '2026-08-11'
 needs_review: false
 logo: /logos/splunk-itsi.png

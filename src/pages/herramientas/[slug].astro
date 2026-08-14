@@ -3,7 +3,7 @@ import { getCollection, render } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import { getCategories, getFamilies, getToolCategories, computeToolScore, scoreBreakdown as buildScoreBreakdown, toToolEntry } from "@lib/tools";
+import { getCategories, getFamilies, getToolCategories, computeToolScore, scoreBreakdown as buildScoreBreakdown, toToolEntry, categorySizes, hasMeaningfulRank, dataGaps, isNewTool } from "@lib/tools";
 import InfraDiagram from "@components/InfraDiagram.astro";
 import { getPlacement } from "@data/infrastructure";
 export async function getStaticPaths() { return (await getCollection("tools")).map(t => ({ params: { slug: t.id.replace(/\.md$/,"") } })); }
@@ -106,9 +106,75 @@ const sourceLinks = (data.sources ?? []).flatMap((url: string) => {
 // Sistema de puntuación BBDD IT (0-100) — misma fórmula que en el directorio y los rankings (src/lib/tools.ts)
 const totalScore = computeToolScore(data, tool.body);
 const scoreBreakdown = buildScoreBreakdown(data, tool.body);
+
+// Un puesto solo se publica si la categoría tiene con quién competir.
+const sizes = categorySizes(tools);
+const showRank = hasMeaningfulRank(data, sizes);
+
+// Huecos derivados del propio dato: no dependen de que alguien marque a mano
+// `needs_review`, que llevaba 0 activaciones en todo el catálogo.
+const gaps = dataGaps(data, tool.body);
+
+/**
+ * Alternativas de la misma categoría.
+ *
+ * Casi todo el tráfico de una ficha llega desde un buscador, y hasta ahora la
+ * página no ofrecía ninguna salida: ni las herramientas con las que compite ni
+ * la forma de contrastarlas. Se ordenan por puntuación —no por puesto— porque
+ * es el dato que el propio directorio calcula y explica.
+ */
+const misCategorias = new Set(getToolCategories(data));
+const alternativas = tools
+  .filter(t => t.slug !== tool.slug && getToolCategories(t.data).some(c => misCategorias.has(c)))
+  .map(t => ({ tool: t, score: computeToolScore(t.data, t.body) }))
+  .sort((a, b) => b.score - a.score)
+  .slice(0, 6);
+
+/**
+ * Datos estructurados de la ficha.
+ *
+ * Se declara solo lo que el catálogo sabe de verdad: nada de valoraciones
+ * agregadas ni precios inventados. `offers` únicamente aparece cuando la
+ * herramienta es gratuita, porque es el único caso en el que el precio es un
+ * dato y no una negociación.
+ */
+const site = Astro.site?.toString() ?? "https://moebiuss1.github.io/";
+const pageUrl = new URL(`${base}herramientas/${tool.slug}/`, site).toString();
+const jsonLd: Record<string, unknown>[] = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: data.name,
+    description: data.description,
+    url: pageUrl,
+    sameAs: data.website,
+    applicationCategory: cat?.name ?? "Software de seguridad IT",
+    inLanguage: "es-ES",
+    ...(data.logo ? { image: new URL(`${base}${data.logo.replace(/^\//, "")}`, site).toString() } : {}),
+    ...(data.license ? { license: data.license } : {}),
+    ...(data.repo ? { codeRepository: data.repo } : {}),
+    ...(data.type === "opensource" ? { isAccessibleForFree: true } : {}),
+    ...(data.cost_model === "gratis"
+      ? { offers: { "@type": "Offer", price: 0, priceCurrency: "EUR" } }
+      : {}),
+    ...(data.certifications.length > 0
+      ? { award: data.certifications }
+      : {}),
+    ...(sourceLinks.length > 0 ? { citation: sourceLinks.map(s => s.url) } : {}),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Directorio", item: new URL(`${base}herramientas/`, site).toString() },
+      ...(cat ? [{ "@type": "ListItem", position: 2, name: cat.name, item: new URL(`${base}categorias/${cat.id}/`, site).toString() }] : []),
+      { "@type": "ListItem", position: cat ? 3 : 2, name: data.name, item: pageUrl },
+    ],
+  },
+];
 ---
 
-<BaseLayout title={data.name} description={data.description}>
+<BaseLayout title={data.name} description={data.description} jsonLd={jsonLd}>
   <Header active="herramientas" />
 
   <article class="py-10" id="contenido" tabindex="-1">
@@ -124,15 +190,19 @@ const scoreBreakdown = buildScoreBreakdown(data, tool.body);
         <div class="detail-badges">
           {family && <span class="badge badge-md" style="background:#f0fdfa;color:#0f766e">{family.icon} {family.name}</span>}
           <span class={`badge badge-md ${data.type==='opensource'?'badge-green':'badge-blue'}`}>{typeLabel}</span>
-          {data.market_rank && cat && <span class="badge badge-amber badge-md">#{data.market_rank} en {cat.name}</span>}
+          {showRank && cat && <span class="badge badge-amber badge-md">#{data.market_rank} en {cat.name}</span>}
           {costLabel && <span class="badge badge-gray badge-md">{costLabel}</span>}
         </div>
         <h1 class="detail-name">{data.name}</h1>
         <p class="detail-desc">{data.description}</p>
-        {data.needs_review && <p style="margin-top:12px;font-size:13px;color:#d97706;display:flex;align-items:center;gap:6px">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Ficha pendiente de revisión — algunos datos no han podido verificarse por completo todavía.
-        </p>}
+        {(data.needs_review || gaps.length > 0) && <div class="gaps-note">
+          <p class="gaps-head">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            {data.needs_review ? "Ficha pendiente de revisión" : "Qué falta por comprobar en esta ficha"}
+          </p>
+          <ul class="gaps-list">{gaps.map(g => <li>{g.label}</li>)}</ul>
+          <p class="gaps-foot">Se declara aquí en vez de omitirlo: <a href={`${base}calidad`}>así se mide la calidad del catálogo</a>.</p>
+        </div>}
       </header>
 
       <div class="detail-grid">
@@ -161,10 +231,16 @@ const scoreBreakdown = buildScoreBreakdown(data, tool.body);
             </div>}
             {data.license && <div class="sidebar-text"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:2px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>{data.license}</span></div>}
             {data.last_verified && <div class="sidebar-text"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:2px;flex-shrink:0"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Verificado: {new Date(data.last_verified).toLocaleDateString("es-ES")}</span></div>}
+            {data.first_added && <div class="sidebar-text"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:2px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>En el directorio desde el {new Date(data.first_added).toLocaleDateString("es-ES")}{isNewTool(data) && <span class="badge badge-green badge-sm" style="margin-left:6px">Nuevo</span>}</span></div>}
 
             <!-- Estas fichas acaban citadas en informes y correos: copiar su
                  dirección es el gesto más repetido y no debería exigir ir a la
                  barra del navegador. -->
+            <a href={`${base}comparar?a=${tool.slug}`} class="sidebar-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="9" y1="4" x2="9" y2="20"/><line x1="15" y1="4" x2="15" y2="20"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+              Comparar con otra herramienta
+            </a>
+
             <button type="button" class="copy-link" id="copy-link">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" data-copy-icon><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               <span data-copy-label aria-live="polite">Copiar enlace</span>
@@ -217,8 +293,8 @@ const scoreBreakdown = buildScoreBreakdown(data, tool.body);
                 {data.type === 'opensource'
                   ? <p style="margin-top:4px"><strong>Transparencia (máx 25 pts):</strong> 10 por repositorio público, 7 por licencia identificada y hasta 8 por certificaciones. Un proyecto libre demuestra sus garantías con código auditable, no con certificados de producto.</p>
                   : <p style="margin-top:4px"><strong>Garantías auditadas (máx 25 pts):</strong> 5 puntos por cada certificación (ISO, SOC 2, ENS…) hasta 20, más 5 si el fabricante publica una página de verificación.</p>}
-                <p style="margin-top:4px"><strong>Fuentes independientes (máx 20 pts):</strong> 5 puntos por cada fuente externa referenciada (Gartner, AV-Comparatives, etc.).</p>
-                <p style="margin-top:4px"><strong>Actualización (máx 10 pts):</strong> 10 pts si se verificó hace menos de 30 días, 8 si menos de 90, 5 si menos de 180, 2 si más.</p>
+                <p style="margin-top:4px"><strong>Fuentes independientes (máx 25 pts):</strong> 10 puntos por la primera fuente ajena al fabricante (Gartner, AV-Comparatives…), 17 por dos, 21 por tres y 25 a partir de cuatro. La primera es la que más pesa: separa el dato comprobable del que solo repite al vendedor.</p>
+                <p style="margin-top:4px"><strong>Actualización (máx 5 pts):</strong> 5 pts si se verificó hace menos de 30 días, 4 si menos de 90, 2 si menos de 180, 1 si más. Pesa poco a propósito: la revisión es semanal y automática para todo el catálogo, así que apenas distingue unas fichas de otras.</p>
                 <p style="margin-top:4px"><strong>Ficha completa (máx 15 pts):</strong> descripción extendida, justificación, detalle de coste, logo y enlace de verificación. Una ficha marcada como pendiente de revisión puntúa 0 en este apartado.</p>
               </div>
             </details>
@@ -268,6 +344,35 @@ const scoreBreakdown = buildScoreBreakdown(data, tool.body);
       )}
 
       {shownPlacements.length > 0 && <InfraDiagram items={shownPlacements} highlight={highlightNodes} omitted={omittedPlacements} />}
+
+      {alternativas.length > 0 && (
+        <section class="alt-block">
+          <h2 class="section-title mb-2">Alternativas en {cat ? cat.name : "su categoría"}</h2>
+          <p class="alt-lead">
+            Otras herramientas del directorio que resuelven lo mismo, ordenadas por puntuación BBDD IT.
+            Cada una se puede poner al lado de {data.name} sin salir del sitio.
+          </p>
+          <ul class="alt-list">
+            {alternativas.map(({ tool: alt, score }) => (
+              <li class="alt-item">
+                <a href={`${base}herramientas/${alt.slug}/`} class="alt-main">
+                  <span class="alt-avatar">
+                    {alt.data.logo
+                      ? <img src={`${base}${alt.data.logo.replace(/^\//,'')}`} alt="" width="28" height="28" style="border-radius:8px;object-fit:contain" loading="lazy" />
+                      : <span style="font-size:13px;font-weight:700;color:#6e6e73">{alt.data.name.charAt(0)}</span>}
+                  </span>
+                  <span class="min-w-0">
+                    <span class="alt-name">{alt.data.name}</span>
+                    <span class="alt-desc">{alt.data.description}</span>
+                  </span>
+                  <span class="alt-score tabular">{score}</span>
+                </a>
+                <a href={`${base}comparar?a=${tool.slug}&b=${alt.slug}`} class="alt-compare">Comparar</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </div>
   </article>
 

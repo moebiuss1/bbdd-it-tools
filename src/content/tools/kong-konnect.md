@@ -31,6 +31,7 @@ sources:
   - https://konghq.com/compliance
   - https://konghq.com/products/kong-konnect
 cert_url: https://konghq.com/compliance
+first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 market_rank: 1

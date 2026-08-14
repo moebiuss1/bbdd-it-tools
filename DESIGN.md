@@ -279,6 +279,27 @@ Los mismos tres tonos (verde / ámbar / rojo) codifican la puntuación BBDD IT e
 - **Style:** cápsula Blue Bg + Blue Text con una `×` en círculo. Entra con un fundido y escala de 0,92 a 1 en 220ms.
 - **Aviso de implementación:** la crea el script del directorio con `createElement`, así que **sus estilos tienen que vivir en `global.css`**. Definirla en el `<style>` de la página la deja sin estilo: Astro sella esos selectores con un atributo que los nodos creados en cliente no llevan.
 
+### Comparison Table (`.compare-table`)
+- **Dónde:** `/comparar`. Filas por atributo, columnas por herramienta, hasta tres.
+- **Style:** columna de conceptos fija a la izquierda (`position:sticky`) sobre Paper Warm; cabecera fija arriba. La caja se desplaza en horizontal por dentro (`overflow-x:auto`), la página nunca.
+- **Regla:** en una comparativa casi todas las filas difieren, así que resaltarlas todas no destaca nada. Solo se marca el mejor valor de las filas numéricas, en Green Text weight 700, con un `.sr-only` que lo dice en palabras.
+- **Aviso de implementación:** la tabla la construye el script, así que sus estilos viven en `global.css` (misma razón que la píldora de filtro).
+
+### Data Gaps Note (`.gaps-note`)
+- **Qué es:** el bloque ámbar de la ficha que enumera lo que aún no se ha podido comprobar de esa herramienta.
+- **Style:** fondo Amber Bg, borde Amber, texto Amber Text. Nunca rojo: la ficha es válida, solo incompleta.
+- **Regla:** se deriva del propio dato (`dataGaps()`), no de que alguien recuerde marcar `needs_review`. Un hueco declarado vale más que un hueco disimulado.
+
+### Quality Bars (`.quality-bars`)
+- **Dónde:** `/calidad`. Rejilla de tres columnas —etiqueta, barra, número— que baja a dos filas por debajo de 520px.
+- **Style:** pista de 8px en Paper Warm; relleno en verde/ámbar/rojo según lo que mida (evidencia disponible) o en Blue Accent cuando es un reparto neutro.
+- **Regla:** el número siempre visible junto a la barra. Una barra sin cifra obliga a estimar a ojo.
+
+### Category Count Chip (`.cat-item-n`)
+- **Dónde:** índice de categorías y `/calidad`.
+- **Style:** cifra tabular sobre Paper Warm. En ámbar cuando la categoría tiene menos de tres herramientas.
+- **Regla:** el ámbar aquí no es una alerta, es una declaración: esa categoría todavía no permite comparar y por eso no publica posiciones.
+
 ### Scroll Shadows
 - **Dónde:** cualquier caja con contenido más ancho que la pantalla (hoy, el diagrama de infraestructura).
 - **Cómo:** cuatro degradados de fondo, dos anclados al contenido (`local`) y dos al marco (`scroll`). La sombra solo asoma por el lado donde queda contenido por ver. Sin JavaScript.
@@ -312,7 +333,7 @@ Una sola curva para todo el sitio: `cubic-bezier(0.25, 1, 0.5, 1)` (ease-out-qua
 ### Do:
 - **Do** usar el espacio negativo como elemento estructural. Secciones separadas por 80px (space-y-20), cards por 12-16px.
 - **Do** mantener una sola instancia de Blue Accent fuerte por viewport. Si compite, degradar.
-- **Do** mostrar siempre fuentes verificables. Si un dato no está confirmado, marcarlo como `needs_review`.
+- **Do** mostrar siempre fuentes verificables. Lo que no se ha podido comprobar se enumera en la propia ficha (`dataGaps()`) y se agrega en `/calidad`; `needs_review` queda para la marca editorial manual.
 - **Do** usar `text-wrap: balance` en headings, `text-wrap: pretty` en body copy.
 - **Do** respetar la jerarquía tipográfica: Display → Headline → Title → Body → Body Small → Label. No saltarse pasos.
 - **Do** comprobar el contraste antes de dar por bueno un gris o un badge: 4,5:1 para texto normal, 3:1 a partir de 24px (o 18,66px en negrita). Las ocho páginas del sitio pasan hoy ese umbral, medido sobre el build con Chrome headless.
@@ -328,6 +349,9 @@ Una sola curva para todo el sitio: `cubic-bezier(0.25, 1, 0.5, 1)` (ease-out-qua
 - **Don't** escribir `padding` en atajo sobre un elemento que ya lleva `.container`: anula el margen lateral y pega el contenido al borde en móvil.
 - **Don't** usar Ink Faint (#8e8e93) para texto que aporte información. Queda para trazos de iconos y separadores.
 - **Don't** usar border-left o border-right mayor de 1px como acento decorativo en cards o callouts.
+- **Don't** publicar una posición de mercado (#1, #2) de una categoría con menos de tres herramientas: es un artefacto de la taxonomía, no un dato del mercado. Filtrar siempre con `hasMeaningfulRank()`.
+- **Don't** anunciar como novedad lo que solo se ha vuelto a verificar. «Nuevo» se mide contra `first_added`; `last_verified` lo reescribe el pipeline en bloque cada lunes.
+- **Don't** meter en una fila de navegación un bloque flex sin `flex-wrap`: no puede encoger por debajo de su ancho mínimo y arrastra el ancho de todo el documento en móvil (le pasó a la cabecera con cinco enlaces y al pie con siete).
 - **Don't** escribir buzzwords (streamline, empower, next-generation, cutting-edge). Cada herramienta se describe con datos, no con adjetivos.
 - **Don't** superar los 65-75 caracteres por línea en texto de lectura. Si la columna es ancha, partir en grid.
 - **Don't** usar más de una familia tipográfica. San Francisco cubre todos los pesos y tamaños necesarios.

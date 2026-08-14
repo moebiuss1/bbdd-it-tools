@@ -5,11 +5,10 @@ categories:
 - antivirus
 - edr
 tags:
-- ransomware
-- ai
-- deep-learning
-- exploit-prevention
-- edr
+  - ransomware
+  - ai
+  - exploit-prevention
+  - edr
 type: comercial
 cost_model: suscripción
 cost_details: 'Licencia anual por endpoint. Desde ~$28/endpoint/año. Ediciones: Advanced, Intercept X with XDR.'
@@ -34,6 +33,7 @@ market_rank: 6
 sources:
 - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 - https://av-comparatives.org/business-security-test-march-june-2026/
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/sophos-intercept-x.png

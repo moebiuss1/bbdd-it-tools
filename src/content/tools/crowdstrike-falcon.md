@@ -41,6 +41,7 @@ market_rank: 2
 cert_url: https://trust.crowdstrike.com
 sources:
 - https://www.gartner.com/reviews/market/endpoint-protection-platforms
+first_added: 2026-08-07
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/crowdstrike-falcon.png

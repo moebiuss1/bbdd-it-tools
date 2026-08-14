@@ -4,12 +4,11 @@ slug: darktrace-detect
 categories:
 - ids
 tags:
-- ai
-- machine-learning
-- network
-- anomaly-detection
-- autonomous-response
-- cloud
+  - ai
+  - network
+  - anomaly-detection
+  - autonomous-response
+  - cloud
 type: comercial
 cost_model: suscripción
 cost_details: Licencia anual basada en número de dispositivos monitorizados. Desde ~$30,000/año. Modelo SaaS.
@@ -32,6 +31,7 @@ market_rank: 3
 sources:
 - https://www.gartner.com/reviews/market/network-detection-and-response
 - https://darktrace.com/
+first_added: 2026-08-10
 last_verified: '2026-08-12'
 needs_review: false
 logo: /logos/darktrace.png
