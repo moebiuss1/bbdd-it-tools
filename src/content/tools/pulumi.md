@@ -13,14 +13,14 @@ tags:
 - automation
 type: opensource
 cost_model: freemium
-cost_details: Motor de código abierto gratuito (Apache 2.0). Pulumi Cloud gratuito para uso individual y por usuario
-  al mes en equipos.
+cost_details: Motor de código abierto gratuito (Apache 2.0). Pulumi Cloud gratuito para uso individual y por usuario al mes
+  en equipos.
 website: https://www.pulumi.com
-description: Infraestructura como código escrita en lenguajes de programación reales —TypeScript, Python, Go, C#—
-  con gestión de estado, previsualización de cambios y gobierno por políticas.
-why_reference: 'Pulumi es la principal alternativa a Terraform y la referencia cuando la infraestructura necesita
-  lógica de verdad: bucles, condiciones, abstracciones y pruebas unitarias escritas en el mismo lenguaje que la
-  aplicación, con las herramientas y el entorno de desarrollo que el equipo ya usa.'
+description: Infraestructura como código escrita en lenguajes de programación reales —TypeScript, Python, Go, C#— con gestión
+  de estado, previsualización de cambios y gobierno por políticas.
+why_reference: 'Pulumi es la principal alternativa a Terraform y la referencia cuando la infraestructura necesita lógica de
+  verdad: bucles, condiciones, abstracciones y pruebas unitarias escritas en el mismo lenguaje que la aplicación, con las
+  herramientas y el entorno de desarrollo que el equipo ya usa.'
 certifications:
 - SOC 2 Tipo II
 company_size:

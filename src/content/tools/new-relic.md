@@ -12,16 +12,14 @@ tags:
 - opentelemetry
 type: comercial
 cost_model: freemium
-cost_details: Cien gigabytes de ingesta y un usuario completo gratuitos al mes; después, por gigabyte ingerido y
-  por usuario.
+cost_details: Cien gigabytes de ingesta y un usuario completo gratuitos al mes; después, por gigabyte ingerido y por usuario.
 website: https://newrelic.com
 cert_url: https://newrelic.com/security
-description: Plataforma de observabilidad todo en uno con monitorización de aplicaciones, infraestructura, registros,
-  trazas, navegador y móvil sobre una única base de datos de telemetría.
-why_reference: New Relic fue la empresa que popularizó la monitorización de rendimiento de aplicaciones como servicio
-  y sigue siendo uno de los referentes del mercado de observabilidad que sigue Gartner. Su modelo de precio por
-  dato ingerido y usuario, con un nivel gratuito amplio, la hace accesible a equipos pequeños que necesitan trazado
-  completo.
+description: Plataforma de observabilidad todo en uno con monitorización de aplicaciones, infraestructura, registros, trazas,
+  navegador y móvil sobre una única base de datos de telemetría.
+why_reference: New Relic fue la empresa que popularizó la monitorización de rendimiento de aplicaciones como servicio y sigue
+  siendo uno de los referentes del mercado de observabilidad que sigue Gartner. Su modelo de precio por dato ingerido y usuario,
+  con un nivel gratuito amplio, la hace accesible a equipos pequeños que necesitan trazado completo.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

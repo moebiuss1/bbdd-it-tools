@@ -14,11 +14,11 @@ cost_model: suscripción
 cost_details: Licencia por dispositivo o usuario, habitualmente dentro de la suite Ivanti de gestión del puesto.
 website: https://www.ivanti.com/products/application-control
 cert_url: https://www.ivanti.com/resources/security-compliance
-description: 'Control de ejecución de aplicaciones combinado con gestión de privilegios en el endpoint: lista de
-  permitidos por propiedad del fichero y elevación puntual por aplicación.'
-why_reference: 'Ivanti Application Control resuelve a la vez los dos controles que suelen exigirse juntos en el
-  puesto Windows: impedir que se ejecute software no autorizado y quitar los derechos de administrador local sin
-  romper el trabajo diario, elevando solo las aplicaciones concretas que lo necesitan.'
+description: 'Control de ejecución de aplicaciones combinado con gestión de privilegios en el endpoint: lista de permitidos
+  por propiedad del fichero y elevación puntual por aplicación.'
+why_reference: 'Ivanti Application Control resuelve a la vez los dos controles que suelen exigirse juntos en el puesto Windows:
+  impedir que se ejecute software no autorizado y quitar los derechos de administrador local sin romper el trabajo diario,
+  elevando solo las aplicaciones concretas que lo necesitan.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

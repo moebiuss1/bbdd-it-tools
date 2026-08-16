@@ -15,9 +15,9 @@ cost_details: HAProxy Community gratuito (GPLv2). HAProxy Enterprise con soporte
 website: https://www.haproxy.org
 description: Balanceador de carga y proxy TCP/HTTP de altísimo rendimiento, referencia en entornos donde la disponibilidad
   y la latencia son críticas.
-why_reference: HAProxy es el balanceador de software con mayor rendimiento por núcleo del mercado y la elección
-  habitual delante de bases de datos, APIs y plataformas de alto tráfico. Gartner lo sigue en el mercado de application
-  delivery controllers, y su versión libre sostiene infraestructuras de escala pública sin coste de licencia.
+why_reference: HAProxy es el balanceador de software con mayor rendimiento por núcleo del mercado y la elección habitual delante
+  de bases de datos, APIs y plataformas de alto tráfico. Gartner lo sigue en el mercado de application delivery controllers,
+  y su versión libre sostiene infraestructuras de escala pública sin coste de licencia.
 company_size:
 - pequeña
 - mediana

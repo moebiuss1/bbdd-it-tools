@@ -4,12 +4,12 @@ slug: puppet-enterprise
 categories:
 - config-managers
 tags:
-  - iac
-  - compliance
-  - automatizacion
-  - configuration-management
-  - reporting
-  - idempotent
+- iac
+- compliance
+- automatizacion
+- configuration-management
+- reporting
+- idempotent
 type: comercial
 cost_model: suscripción
 cost_details: Licencia anual por nodo. Desde ~$120-200/nodo/año. Versión open source gratuita disponible.

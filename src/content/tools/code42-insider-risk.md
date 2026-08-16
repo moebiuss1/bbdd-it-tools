@@ -26,12 +26,13 @@ company_size:
 market_rank:
   dlp: 6
 sources:
-  - https://www.gartner.com/reviews/market/data-loss-prevention
+- https://www.gartner.com/reviews/market/data-loss-prevention
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/code42-insider-risk.png
 ---
+
 Mimecast Incydr aborda la fuga de datos desde un ángulo distinto al DLP clásico: en lugar de clasificar el contenido y
 bloquear lo que encaje en una regla, registra todo movimiento de ficheros —a USB, a la nube personal, a repositorios
 de código, al correo web— y señala el comportamiento anómalo de una persona concreta.

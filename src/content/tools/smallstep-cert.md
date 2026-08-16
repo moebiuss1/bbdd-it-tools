@@ -26,12 +26,13 @@ market_rank:
 repo: https://github.com/smallstep/certificates
 license: Apache-2.0
 sources:
-  - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
+- https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/smallstep-cert.png
 ---
+
 Smallstep lleva la PKI al terreno de la automatización: una autoridad de certificación propia, ligera, que emite
 certificados de vida muy corta mediante ACME y los renueva sin intervención humana, tanto para TLS como para acceso
 SSH.

@@ -13,14 +13,14 @@ tags:
 - bot-management
 type: comercial
 cost_model: suscripción
-cost_details: Suscripción por volumen de tráfico y número de propiedades protegidas, sobre la plataforma de distribución
-  de Akamai.
+cost_details: Suscripción por volumen de tráfico y número de propiedades protegidas, sobre la plataforma de distribución de
+  Akamai.
 website: https://www.akamai.com/products/app-and-api-protector
-description: 'Protección de aplicaciones y APIs en el borde de la red de distribución de Akamai: WAF adaptativo,
-  mitigación de DDoS, control de bots y descubrimiento de APIs.'
-why_reference: Akamai opera una de las mayores redes de distribución del mundo y ve una fracción enorme del tráfico
-  web global, lo que le da una ventaja real para distinguir tráfico legítimo de abuso automatizado. Gartner lo sitúa
-  entre los líderes de cloud web application and API protection.
+description: 'Protección de aplicaciones y APIs en el borde de la red de distribución de Akamai: WAF adaptativo, mitigación
+  de DDoS, control de bots y descubrimiento de APIs.'
+why_reference: Akamai opera una de las mayores redes de distribución del mundo y ve una fracción enorme del tráfico web global,
+  lo que le da una ventaja real para distinguir tráfico legítimo de abuso automatizado. Gartner lo sitúa entre los líderes
+  de cloud web application and API protection.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

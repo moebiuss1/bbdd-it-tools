@@ -15,12 +15,11 @@ cost_model: suscripción
 cost_details: Suscripción por usuario o por ancho de banda, con las suscripciones de seguridad del NGFW incluidas.
 website: https://www.paloaltonetworks.com/sase/access
 cert_url: https://www.paloaltonetworks.com/legal-notices/trust-center
-description: 'Security service edge que lleva a la nube la pila del firewall de nueva generación de Palo Alto: filtrado
-  web, prevención de amenazas, CASB, DLP y ZTNA para usuarios y sedes.'
-why_reference: Prisma Access es la forma en que el fabricante mejor situado del mercado de firewalls entrega su
-  pila de inspección como servicio, con las mismas firmas y la misma consola que su NGFW. Gartner lo sitúa entre
-  los líderes de security service edge, y es la opción natural para quien ya opera Palo Alto en el centro de datos
-  y quiere una política única.
+description: 'Security service edge que lleva a la nube la pila del firewall de nueva generación de Palo Alto: filtrado web,
+  prevención de amenazas, CASB, DLP y ZTNA para usuarios y sedes.'
+why_reference: Prisma Access es la forma en que el fabricante mejor situado del mercado de firewalls entrega su pila de inspección
+  como servicio, con las mismas firmas y la misma consola que su NGFW. Gartner lo sitúa entre los líderes de security service
+  edge, y es la opción natural para quien ya opera Palo Alto en el centro de datos y quiere una política única.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

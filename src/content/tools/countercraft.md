@@ -13,12 +13,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por campaña y número de señuelos desplegados; también en modalidad gestionada.
 website: https://www.countercraftsec.com
-description: Plataforma de contrainteligencia que despliega entornos señuelo realistas para detectar atacantes y
-  recoger inteligencia de primera mano sobre sus técnicas.
-why_reference: 'CounterCraft, de origen español, es la referencia europea en deception aplicada a la generación
-  de inteligencia: sus campañas no solo detectan, sino que mantienen al atacante interactuando en un entorno controlado
-  para observar sus herramientas y procedimientos. Es una de las plataformas de engaño más citadas en las comparativas
-  del sector.'
+description: Plataforma de contrainteligencia que despliega entornos señuelo realistas para detectar atacantes y recoger inteligencia
+  de primera mano sobre sus técnicas.
+why_reference: 'CounterCraft, de origen español, es la referencia europea en deception aplicada a la generación de inteligencia:
+  sus campañas no solo detectan, sino que mantienen al atacante interactuando en un entorno controlado para observar sus herramientas
+  y procedimientos. Es una de las plataformas de engaño más citadas en las comparativas del sector.'
 certifications:
 - ISO 27001
 company_size:

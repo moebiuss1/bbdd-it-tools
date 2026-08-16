@@ -12,14 +12,13 @@ tags:
 - agents
 type: opensource
 cost_model: gratis
-cost_details: Software libre bajo AGPLv3 sin límite de funcionalidad ni de dispositivos. Soporte y formación de
-  pago.
+cost_details: Software libre bajo AGPLv3 sin límite de funcionalidad ni de dispositivos. Soporte y formación de pago.
 website: https://www.zabbix.com
-description: Solución de monitorización empresarial de código abierto para servidores, redes, servicios y aplicaciones,
-  con agentes, SNMP, IPMI y descubrimiento automático.
-why_reference: 'Zabbix es la plataforma de monitorización libre más completa para infraestructura clásica: cubre
-  servidores, electrónica de red, sistemas de alimentación y entornos industriales sin límites de licencia, y es
-  la opción habitual en organizaciones que monitorizan miles de dispositivos con presupuesto de software cero.'
+description: Solución de monitorización empresarial de código abierto para servidores, redes, servicios y aplicaciones, con
+  agentes, SNMP, IPMI y descubrimiento automático.
+why_reference: 'Zabbix es la plataforma de monitorización libre más completa para infraestructura clásica: cubre servidores,
+  electrónica de red, sistemas de alimentación y entornos industriales sin límites de licencia, y es la opción habitual en
+  organizaciones que monitorizan miles de dispositivos con presupuesto de software cero.'
 company_size:
 - pequeña
 - mediana

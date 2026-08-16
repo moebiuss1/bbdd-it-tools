@@ -4,11 +4,11 @@ slug: salt-security-api
 categories:
 - api-security
 tags:
-  - api
-  - runtime
-  - behavior-analytics
-  - discovery
-  - shadow-apis
+- api
+- runtime
+- behavior-analytics
+- discovery
+- shadow-apis
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. No publicado.
@@ -26,7 +26,7 @@ company_size:
 market_rank:
   api-security: 2
 sources:
-  - https://safeguard.sh/resources/blog/best-api-security-tools-2026
+- https://safeguard.sh/resources/blog/best-api-security-tools-2026
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

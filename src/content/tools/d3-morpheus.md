@@ -5,11 +5,11 @@ categories:
 - incident-management
 - soar
 tags:
-  - soar
-  - ai
-  - playbooks
-  - automatizacion
-  - case-management
+- soar
+- ai
+- playbooks
+- automatizacion
+- case-management
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$30,000/año.
@@ -28,7 +28,7 @@ market_rank:
   incident-management: 9
   soar: 8
 sources:
-  - https://www.gartner.com/reviews/market/it-service-management-platforms
+- https://www.gartner.com/reviews/market/it-service-management-platforms
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

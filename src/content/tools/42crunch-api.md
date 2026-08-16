@@ -30,7 +30,7 @@ market_rank:
   api-security: 1
   api-testing: 5
 sources:
-  - https://safeguard.sh/resources/blog/best-api-security-tools-2026
+- https://safeguard.sh/resources/blog/best-api-security-tools-2026
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

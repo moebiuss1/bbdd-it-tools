@@ -33,7 +33,7 @@ market_rank:
   key-managers: 8
   secrets-management: 8
 sources:
-  - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
+- https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

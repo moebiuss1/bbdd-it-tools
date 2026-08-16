@@ -14,11 +14,11 @@ type: opensource
 cost_model: gratis
 cost_details: Proyecto libre bajo licencia Apache 2.0. Disponible gestionado dentro de plataformas de datos comerciales.
 website: https://mlflow.org
-description: 'Plataforma abierta para el ciclo de vida del aprendizaje automático: registro de experimentos, empaquetado
-  reproducible, registro de modelos con etapas y despliegue.'
-why_reference: 'MLflow es el estándar de facto para registrar y versionar modelos: su registro es la pieza que permite
-  saber qué versión está en producción, con qué datos y qué código se entrenó y quién la aprobó. Sin ese rastro
-  no hay gobierno de modelos posible, y es la implementación libre que casi todo el sector ha adoptado.'
+description: 'Plataforma abierta para el ciclo de vida del aprendizaje automático: registro de experimentos, empaquetado reproducible,
+  registro de modelos con etapas y despliegue.'
+why_reference: 'MLflow es el estándar de facto para registrar y versionar modelos: su registro es la pieza que permite saber
+  qué versión está en producción, con qué datos y qué código se entrenó y quién la aprobó. Sin ese rastro no hay gobierno
+  de modelos posible, y es la implementación libre que casi todo el sector ha adoptado.'
 company_size:
 - pequeña
 - mediana

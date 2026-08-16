@@ -14,11 +14,11 @@ cost_model: freemium
 cost_details: Plan gratuito para equipos pequeños; planes Basic, Professional y Enterprise por usuario y mes.
 website: https://www.postman.com
 cert_url: https://www.postman.com/trust/
-description: Plataforma de desarrollo y prueba de APIs con colecciones, entornos, aserciones automatizadas, simulación
-  de servidores y ejecución en integración continua.
+description: Plataforma de desarrollo y prueba de APIs con colecciones, entornos, aserciones automatizadas, simulación de
+  servidores y ejecución en integración continua.
 why_reference: 'Postman es la herramienta con la que se prueba una API por defecto: decenas de millones de desarrolladores
-  la usan y sus colecciones se han convertido en un formato de intercambio de facto para documentar y compartir
-  pruebas de API entre equipos.'
+  la usan y sus colecciones se han convertido en un formato de intercambio de facto para documentar y compartir pruebas de
+  API entre equipos.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

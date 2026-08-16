@@ -8,11 +8,11 @@ categories:
 - policy-management
 - risk-management
 tags:
-  - grc
-  - irm
-  - risk-management
-  - compliance
-  - auditoria
+- grc
+- irm
+- risk-management
+- compliance
+- auditoria
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$50,000/año. Plataforma IRM/GRC altamente configurable.

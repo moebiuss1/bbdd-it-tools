@@ -5,12 +5,12 @@ categories:
 - cloud-migration
 - config-managers
 tags:
-  - iac
-  - multi-cloud
-  - declarative
-  - hcl
-  - state-management
-  - modules
+- iac
+- multi-cloud
+- declarative
+- hcl
+- state-management
+- modules
 type: opensource
 cost_model: gratis
 cost_details: Open source (BSL). Terraform Cloud gratuito hasta 500 recursos. Terraform Enterprise desde ~$20,000/año.
@@ -33,8 +33,8 @@ market_rank:
 repo: https://github.com/hashicorp/terraform
 license: BSL
 sources:
-  - https://www.automq.com/blog/ansible-alternatives-2025-terraform-chef-salt-puppet-cfengine
-  - https://www.hashicorp.com/
+- https://www.automq.com/blog/ansible-alternatives-2025-terraform-chef-salt-puppet-cfengine
+- https://www.hashicorp.com/
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

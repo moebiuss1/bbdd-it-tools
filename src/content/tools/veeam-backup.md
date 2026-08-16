@@ -2,9 +2,9 @@
 name: Veeam Backup & Replication
 slug: veeam-backup
 categories:
-  - enterprise-backup
-  - business-continuity
-  - saas-backup
+- enterprise-backup
+- business-continuity
+- saas-backup
 tags:
 - backup
 - vmware
@@ -33,7 +33,7 @@ market_rank:
   enterprise-backup: 2
   saas-backup: 3
 sources:
-  - https://www.gartner.com/reviews/market/enterprise-backup-and-recovery
+- https://www.gartner.com/reviews/market/enterprise-backup-and-recovery
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

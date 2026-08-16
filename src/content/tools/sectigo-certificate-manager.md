@@ -6,10 +6,10 @@ categories:
 - certificate-lifecycle
 - eidas-trust
 tags:
-  - certificate-lifecycle
-  - pki
-  - acme
-  - scep
+- certificate-lifecycle
+- pki
+- acme
+- scep
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$3,000/año. CLM con automatización ACME y 98%% satisfacción.
@@ -31,7 +31,7 @@ market_rank:
   certificate-lifecycle: 8
   eidas-trust: 5
 sources:
-  - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
+- https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

@@ -15,11 +15,11 @@ cost_model: suscripción
 cost_details: Suscripción por usuario y año en niveles Advanced, Premium y Premium Plus.
 website: https://www.barracuda.com/products/email-protection
 cert_url: https://www.barracuda.com/company/legal/trust-center
-description: Suite de protección del correo con pasarela de filtrado, defensa por API contra suplantación, formación
-  de usuarios, respuesta a incidentes y copia de seguridad del buzón.
-why_reference: 'Barracuda es la referencia en protección de correo para la mediana empresa: combina pasarela clásica,
-  detección por comportamiento, concienciación y recuperación en un único paquete asequible y operable sin un equipo
-  de seguridad dedicado. Gartner lo sigue en el mercado de seguridad del correo electrónico.'
+description: Suite de protección del correo con pasarela de filtrado, defensa por API contra suplantación, formación de usuarios,
+  respuesta a incidentes y copia de seguridad del buzón.
+why_reference: 'Barracuda es la referencia en protección de correo para la mediana empresa: combina pasarela clásica, detección
+  por comportamiento, concienciación y recuperación en un único paquete asequible y operable sin un equipo de seguridad dedicado.
+  Gartner lo sigue en el mercado de seguridad del correo electrónico.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

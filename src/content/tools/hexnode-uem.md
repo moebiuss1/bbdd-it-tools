@@ -29,7 +29,7 @@ market_rank:
   mam: 3
   mdm: 3
 sources:
-  - https://www.gartner.com/reviews/market/unified-endpoint-management-tools
+- https://www.gartner.com/reviews/market/unified-endpoint-management-tools
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

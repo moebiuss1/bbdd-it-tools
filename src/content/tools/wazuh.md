@@ -15,6 +15,7 @@ tags:
 - incident-response
 - cloud
 - on-premise
+- log-management
 type: opensource
 cost_model: gratis
 cost_details: Gratuito (AGPLv3). Soporte empresarial y Wazuh Cloud desde $500/mes.
@@ -49,7 +50,7 @@ sources:
 - https://documentation.wazuh.com/current/index.html
 - https://github.com/wazuh/wazuh
 first_added: 2026-08-07
-last_verified: '2026-08-12'
+last_verified: '2026-08-16'
 needs_review: false
 logo: /logos/wazuh.png
 ---

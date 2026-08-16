@@ -5,11 +5,11 @@ categories:
 - incident-management
 - soar
 tags:
-  - automatizacion
-  - playbooks
-  - python
-  - case-management
-  - splunk-integration
+- automatizacion
+- playbooks
+- python
+- case-management
+- splunk-integration
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$30,000/año. Anteriormente Phantom.
@@ -30,7 +30,7 @@ market_rank:
   incident-management: 7
   soar: 6
 sources:
-  - https://www.gartner.com/reviews/market/it-service-management-platforms
+- https://www.gartner.com/reviews/market/it-service-management-platforms
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

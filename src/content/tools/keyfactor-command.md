@@ -5,12 +5,12 @@ categories:
 - cert-managers
 - certificate-lifecycle
 tags:
-  - pki
-  - certificate-lifecycle
-  - automatizacion
-  - post-quantum
-  - acme
-  - ad-cs
+- pki
+- certificate-lifecycle
+- automatizacion
+- post-quantum
+- acme
+- ad-cs
 type: comercial
 cost_model: suscripción
 cost_details: Licencia anual basada en número de certificados gestionados. Desde ~$20,000/año. Edición comunitaria EJBCA open
@@ -35,8 +35,8 @@ market_rank:
   cert-managers: 3
   certificate-lifecycle: 3
 sources:
-  - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
-  - https://www.keyfactor.com/
+- https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
+- https://www.keyfactor.com/
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

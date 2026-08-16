@@ -14,11 +14,11 @@ cost_model: suscripción
 cost_details: Suscripción por usuario y año, con paquetes por volumen de contenidos y simulaciones.
 website: https://www.proofpoint.com/us/products/security-awareness-training
 cert_url: https://www.proofpoint.com/us/legal/trust
-description: Programa de concienciación con simulaciones de phishing, formación adaptativa y priorización de usuarios
-  según el riesgo real observado en el correo.
-why_reference: 'Proofpoint es líder del mercado de formación en concienciación de seguridad de Gartner y el único
-  que conecta el programa formativo con la telemetría de su plataforma de correo: sabe qué empleados están siendo
-  realmente atacados y dirige la formación hacia ellos, en vez de tratar a toda la plantilla por igual.'
+description: Programa de concienciación con simulaciones de phishing, formación adaptativa y priorización de usuarios según
+  el riesgo real observado en el correo.
+why_reference: 'Proofpoint es líder del mercado de formación en concienciación de seguridad de Gartner y el único que conecta
+  el programa formativo con la telemetría de su plataforma de correo: sabe qué empleados están siendo realmente atacados y
+  dirige la formación hacia ellos, en vez de tratar a toda la plantilla por igual.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

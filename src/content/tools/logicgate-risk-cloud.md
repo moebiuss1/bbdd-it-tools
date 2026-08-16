@@ -17,11 +17,11 @@ cost_model: suscripción
 cost_details: Suscripción por aplicaciones desplegadas y usuarios; construcción de procesos sin programación.
 website: https://www.logicgate.com
 cert_url: https://www.logicgate.com/trust
-description: Plataforma GRC configurable sin programación con aplicaciones para riesgo empresarial y tecnológico,
-  cumplimiento, políticas, terceros e incidencias.
-why_reference: 'LogicGate representa la alternativa moderna al GRC monolítico: los procesos se construyen arrastrando
-  pasos, campos y reglas, de modo que el equipo de riesgos adapta la herramienta a su método en vez de al revés.
-  Gartner la sigue en el mercado de gestión de riesgo tecnológico.'
+description: Plataforma GRC configurable sin programación con aplicaciones para riesgo empresarial y tecnológico, cumplimiento,
+  políticas, terceros e incidencias.
+why_reference: 'LogicGate representa la alternativa moderna al GRC monolítico: los procesos se construyen arrastrando pasos,
+  campos y reglas, de modo que el equipo de riesgos adapta la herramienta a su método en vez de al revés. Gartner la sigue
+  en el mercado de gestión de riesgo tecnológico.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

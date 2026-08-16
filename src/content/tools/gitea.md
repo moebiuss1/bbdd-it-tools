@@ -14,12 +14,11 @@ type: opensource
 cost_model: freemium
 cost_details: Software libre bajo licencia MIT. Gitea Cloud y el soporte empresarial se contratan aparte.
 website: https://about.gitea.com
-description: Servicio Git autoalojado, ligero y escrito en Go, con incidencias, revisión de código, registro de
-  paquetes y acciones de integración continua compatibles con GitHub.
-why_reference: 'Gitea es la alternativa autoalojada de referencia cuando el código no puede salir de la organización
-  y GitLab resulta demasiado pesado: arranca en un binario, consume unos pocos cientos de megabytes y cubre repositorios,
-  revisión e integración continua. Es la opción habitual en administraciones y laboratorios con infraestructura
-  propia.'
+description: Servicio Git autoalojado, ligero y escrito en Go, con incidencias, revisión de código, registro de paquetes y
+  acciones de integración continua compatibles con GitHub.
+why_reference: 'Gitea es la alternativa autoalojada de referencia cuando el código no puede salir de la organización y GitLab
+  resulta demasiado pesado: arranca en un binario, consume unos pocos cientos de megabytes y cubre repositorios, revisión
+  e integración continua. Es la opción habitual en administraciones y laboratorios con infraestructura propia.'
 company_size:
 - pequeña
 - mediana

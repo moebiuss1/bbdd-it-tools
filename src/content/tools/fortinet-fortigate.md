@@ -25,18 +25,19 @@ company_size:
 - mediana
 - grande
 tags:
-  - network
-  - ips
-  - ids
-  - ai
-  - cloud
-  - on-premise
-  - zero-trust
+- network
+- ips
+- ids
+- ai
+- cloud
+- on-premise
+- zero-trust
+- red
 slug: fortinet-fortigate
 sources:
-  - https://www.gartner.com/reviews/market/network-firewalls
+- https://www.gartner.com/reviews/market/network-firewalls
 first_added: 2026-08-07
-last_verified: '2026-08-10'
+last_verified: '2026-08-16'
 needs_review: false
 market_rank:
   firewall: 1

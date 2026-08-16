@@ -12,16 +12,15 @@ tags:
 - owasp
 type: comercial
 cost_model: pago-por-uso
-cost_details: Pago por ACL web, por regla y por millón de peticiones inspeccionadas. Grupos de reglas gestionadas
-  con coste adicional.
+cost_details: Pago por ACL web, por regla y por millón de peticiones inspeccionadas. Grupos de reglas gestionadas con coste
+  adicional.
 website: https://aws.amazon.com/waf/
 cert_url: https://aws.amazon.com/compliance/programs/
-description: Firewall de aplicaciones web gestionado que se aplica sobre CloudFront, Application Load Balancer,
-  API Gateway y AppSync con reglas propias o gestionadas.
-why_reference: 'Es el WAF por defecto de la nube más usada del mundo: se activa sobre los servicios que ya publican
-  la aplicación, sin desviar el tráfico ni desplegar nada, y sus grupos de reglas gestionadas cubren el OWASP Top
-  10 y las vulnerabilidades conocidas de las plataformas más comunes. Gartner sigue a AWS en el mercado de cloud
-  web application and API protection.'
+description: Firewall de aplicaciones web gestionado que se aplica sobre CloudFront, Application Load Balancer, API Gateway
+  y AppSync con reglas propias o gestionadas.
+why_reference: 'Es el WAF por defecto de la nube más usada del mundo: se activa sobre los servicios que ya publican la aplicación,
+  sin desviar el tráfico ni desplegar nada, y sus grupos de reglas gestionadas cubren el OWASP Top 10 y las vulnerabilidades
+  conocidas de las plataformas más comunes. Gartner sigue a AWS en el mercado de cloud web application and API protection.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

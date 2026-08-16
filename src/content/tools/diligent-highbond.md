@@ -16,11 +16,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción modular por usuario y año (auditoría, riesgo, cumplimiento, análisis de datos).
 website: https://www.diligent.com/products/highbond
-description: Plataforma GRC que reúne auditoría interna, gestión de riesgos, cumplimiento y análisis de datos sobre
-  un mismo repositorio de riesgos y controles, heredera de ACL y Galvanize.
-why_reference: 'HighBond es el resultado de fundir ACL, Rsam y Galvanize dentro de Diligent, y arrastra lo que hizo
-  famosa a ACL: el análisis de datos aplicado a la auditoría, capaz de probar el cien por cien de las transacciones
-  en vez de una muestra. Es una de las plataformas que Gartner sigue en gestión de auditoría.'
+description: Plataforma GRC que reúne auditoría interna, gestión de riesgos, cumplimiento y análisis de datos sobre un mismo
+  repositorio de riesgos y controles, heredera de ACL y Galvanize.
+why_reference: 'HighBond es el resultado de fundir ACL, Rsam y Galvanize dentro de Diligent, y arrastra lo que hizo famosa
+  a ACL: el análisis de datos aplicado a la auditoría, capaz de probar el cien por cien de las transacciones en vez de una
+  muestra. Es una de las plataformas que Gartner sigue en gestión de auditoría.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II
@@ -38,6 +38,7 @@ sources:
 first_added: 2026-08-16
 last_verified: 2026-08-16
 needs_review: false
+logo: /logos/diligent-highbond.png
 ---
 
 HighBond organiza el trabajo de las tres funciones que suelen convivir mal —auditoría interna, riesgos y cumplimiento— sobre un mismo inventario de riesgos, controles y normativas. Un control probado por auditoría vale como evidencia para cumplimiento, y una deficiencia detectada aparece en el perfil de riesgo sin volver a registrarla.

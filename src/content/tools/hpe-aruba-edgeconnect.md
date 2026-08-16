@@ -13,11 +13,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por sede y ancho de banda (Base, Advanced, Boost). Appliances físicos o virtuales.
 website: https://www.hpe.com/us/en/aruba-edgeconnect-sd-wan.html
-description: SD-WAN de HPE Aruba, heredero de Silver Peak, con optimización de WAN, segmentación por aplicación
-  y orquestación centralizada de miles de sedes.
-why_reference: EdgeConnect es uno de los dos o tres SD-WAN que Gartner sitúa año tras año en la zona de líderes
-  de WAN edge, y el más reconocido en calidad de experiencia sobre enlaces malos gracias a la corrección de errores
-  y la optimización heredadas de Silver Peak.
+description: SD-WAN de HPE Aruba, heredero de Silver Peak, con optimización de WAN, segmentación por aplicación y orquestación
+  centralizada de miles de sedes.
+why_reference: EdgeConnect es uno de los dos o tres SD-WAN que Gartner sitúa año tras año en la zona de líderes de WAN edge,
+  y el más reconocido en calidad de experiencia sobre enlaces malos gracias a la corrección de errores y la optimización heredadas
+  de Silver Peak.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

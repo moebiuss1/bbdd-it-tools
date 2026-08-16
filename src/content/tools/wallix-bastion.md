@@ -14,11 +14,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Licencia por número de sesiones o dispositivos gestionados, en appliance virtual o como servicio.
 website: https://www.wallix.com
-description: Solución europea de gestión de accesos privilegiados con bóveda de credenciales, proxy de sesiones
-  con grabación y control de accesos de proveedores externos.
-why_reference: WALLIX es el referente europeo de PAM y una de las pocas soluciones del mercado con certificación
-  de seguridad de primer nivel emitida por una autoridad nacional europea, lo que la convierte en la opción habitual
-  en administraciones públicas e infraestructuras críticas del continente por requisitos de soberanía.
+description: Solución europea de gestión de accesos privilegiados con bóveda de credenciales, proxy de sesiones con grabación
+  y control de accesos de proveedores externos.
+why_reference: WALLIX es el referente europeo de PAM y una de las pocas soluciones del mercado con certificación de seguridad
+  de primer nivel emitida por una autoridad nacional europea, lo que la convierte en la opción habitual en administraciones
+  públicas e infraestructuras críticas del continente por requisitos de soberanía.
 certifications:
 - ISO 27001
 - Common Criteria

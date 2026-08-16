@@ -15,11 +15,11 @@ cost_model: suscripción
 cost_details: 'Pago por consumo: por hora de host monitorizado, gigabyte de registro ingerido y unidades de análisis.'
 website: https://www.dynatrace.com
 cert_url: https://www.dynatrace.com/company/trust-center
-description: Plataforma de observabilidad con instrumentación automática, mapa de dependencias en tiempo real y
-  análisis de causa raíz asistido por su motor Davis.
-why_reference: 'Dynatrace es líder reconocido del mercado de plataformas de observabilidad de Gartner y el referente
-  en instrumentación sin configuración: un único agente descubre procesos, servicios y dependencias, y el análisis
-  de causa raíz señala el componente responsable en lugar de dejar mil alertas correlacionadas al equipo de guardia.'
+description: Plataforma de observabilidad con instrumentación automática, mapa de dependencias en tiempo real y análisis de
+  causa raíz asistido por su motor Davis.
+why_reference: 'Dynatrace es líder reconocido del mercado de plataformas de observabilidad de Gartner y el referente en instrumentación
+  sin configuración: un único agente descubre procesos, servicios y dependencias, y el análisis de causa raíz señala el componente
+  responsable en lugar de dejar mil alertas correlacionadas al equipo de guardia.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

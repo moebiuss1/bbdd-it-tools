@@ -5,11 +5,11 @@ categories:
 - ci-cd
 - config-managers
 tags:
-  - iac
-  - deployment
-  - configuration-management
-  - microsoft
-  - multi-environment
+- iac
+- deployment
+- configuration-management
+- microsoft
+- multi-environment
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$10/mes para 10 targets. Enterprise desde ~$3,000/año.

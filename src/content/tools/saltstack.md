@@ -4,11 +4,11 @@ slug: saltstack
 categories:
 - config-managers
 tags:
-  - iac
-  - automatizacion
-  - python
-  - zeromq
-  - event-driven
+- iac
+- automatizacion
+- python
+- zeromq
+- event-driven
 type: opensource
 cost_model: suscripción
 cost_details: Gratuito (Apache 2.0). Salt Project Enterprise (VMware/Broadcom) desde ~$150/nodo/año.

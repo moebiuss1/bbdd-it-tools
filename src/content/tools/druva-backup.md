@@ -2,8 +2,8 @@
 name: Druva Data Resiliency Cloud
 slug: druva-backup
 categories:
-  - saas-backup
-  - enterprise-backup
+- saas-backup
+- enterprise-backup
 tags:
 - backup
 - saas
@@ -30,7 +30,7 @@ market_rank:
   enterprise-backup: 7
   saas-backup: 1
 sources:
-  - https://www.gartner.com/reviews/market/backup-as-a-service
+- https://www.gartner.com/reviews/market/backup-as-a-service
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

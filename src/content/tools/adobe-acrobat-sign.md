@@ -15,12 +15,11 @@ cost_model: suscripción
 cost_details: Suscripción por usuario y mes o por transacciones; ediciones para pequeños equipos y para empresa.
 website: https://www.adobe.com/acrobat/business/sign.html
 cert_url: https://www.adobe.com/trust/compliance/compliance-list.html
-description: Servicio de firma electrónica de Adobe con soporte de firma simple, avanzada y cualificada conforme
-  a eIDAS mediante prestadores cualificados integrados.
-why_reference: Adobe creó el formato PDF y las especificaciones de firma que lo sostienen, y preside los consorcios
-  que definen la interoperabilidad de la firma digital. Acrobat Sign es, junto a DocuSign, la plataforma de firma
-  con mayor implantación empresarial, y admite el nivel cualificado exigido por eIDAS para los trámites con la administración
-  europea.
+description: Servicio de firma electrónica de Adobe con soporte de firma simple, avanzada y cualificada conforme a eIDAS mediante
+  prestadores cualificados integrados.
+why_reference: Adobe creó el formato PDF y las especificaciones de firma que lo sostienen, y preside los consorcios que definen
+  la interoperabilidad de la firma digital. Acrobat Sign es, junto a DocuSign, la plataforma de firma con mayor implantación
+  empresarial, y admite el nivel cualificado exigido por eIDAS para los trámites con la administración europea.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

@@ -27,12 +27,13 @@ company_size:
 market_rank:
   dlp: 9
 sources:
-  - https://www.gartner.com/reviews/market/data-loss-prevention
+- https://www.gartner.com/reviews/market/data-loss-prevention
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/spirion-dlp.png
 ---
+
 Spirion se centra en la mitad del problema que suele resolverse mal: saber exactamente dónde están los datos
 sensibles. Recorre servidores de ficheros, bases de datos, puestos y repositorios en la nube buscando datos
 personales, tarjetas de pago, historia clínica o propiedad intelectual, y los clasifica con precisión de dato

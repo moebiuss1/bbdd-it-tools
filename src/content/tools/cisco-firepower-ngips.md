@@ -33,7 +33,7 @@ market_rank:
   ips: 8
   ngfw: 6
 sources:
-  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+- https://www.gartner.com/reviews/market/intrusion-prevention-systems
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

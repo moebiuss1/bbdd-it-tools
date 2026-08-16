@@ -14,11 +14,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por número de identidades y dispositivos monitorizados.
 website: https://www.vectra.ai
-description: Plataforma de detección y respuesta basada en el comportamiento del atacante sobre red, identidad y
-  nube, con priorización automática de los incidentes relevantes.
-why_reference: 'Vectra es uno de los líderes del mercado de detección y respuesta de red de Gartner y el fabricante
-  que más ha desarrollado la detección por comportamiento del atacante en lugar de por firma: modela las técnicas
-  —reconocimiento, movimiento lateral, exfiltración— y las puntúa por urgencia sobre el activo afectado.'
+description: Plataforma de detección y respuesta basada en el comportamiento del atacante sobre red, identidad y nube, con
+  priorización automática de los incidentes relevantes.
+why_reference: 'Vectra es uno de los líderes del mercado de detección y respuesta de red de Gartner y el fabricante que más
+  ha desarrollado la detección por comportamiento del atacante en lugar de por firma: modela las técnicas —reconocimiento,
+  movimiento lateral, exfiltración— y las puntúa por urgencia sobre el activo afectado.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

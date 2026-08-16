@@ -14,11 +14,11 @@ cost_model: suscripción
 cost_details: Suscripción por volumen de llamadas y entorno. Existe una edición de evaluación gratuita.
 website: https://cloud.google.com/apigee
 cert_url: https://cloud.google.com/security/compliance
-description: 'Plataforma de gestión del ciclo de vida completo de APIs: pasarela, portal del desarrollador, políticas
-  de seguridad y cuota, analítica de uso y monetización.'
-why_reference: 'Apigee es, junto a MuleSoft e IBM, uno de los tres nombres que Gartner lleva años situando en la
-  zona alta del mercado de gestión de APIs de ciclo completo. Es la referencia cuando la API es un producto: control
-  de contratos, cuotas por consumidor, portal y facturación por uso.'
+description: 'Plataforma de gestión del ciclo de vida completo de APIs: pasarela, portal del desarrollador, políticas de seguridad
+  y cuota, analítica de uso y monetización.'
+why_reference: 'Apigee es, junto a MuleSoft e IBM, uno de los tres nombres que Gartner lleva años situando en la zona alta
+  del mercado de gestión de APIs de ciclo completo. Es la referencia cuando la API es un producto: control de contratos, cuotas
+  por consumidor, portal y facturación por uso.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

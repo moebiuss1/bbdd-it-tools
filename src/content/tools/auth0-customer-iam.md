@@ -5,11 +5,11 @@ categories:
 - identity-managers
 - sso
 tags:
-  - ciam
-  - iam
-  - api-security
-  - developers
-  - okta
+- ciam
+- iam
+- api-security
+- developers
+- okta
 type: comercial
 cost_model: suscripción
 cost_details: Hasta 7,500 usuarios gratuitos. Planes desde ~$23/mes.
@@ -31,7 +31,7 @@ market_rank:
   identity-managers: 5
   sso: 3
 sources:
-  - https://www.gartner.com/reviews/market/access-management
+- https://www.gartner.com/reviews/market/access-management
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

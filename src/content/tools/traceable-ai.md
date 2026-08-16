@@ -13,12 +13,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por volumen de tráfico de API y número de aplicaciones protegidas.
 website: https://www.traceable.ai
-description: Plataforma de seguridad de APIs con descubrimiento continuo, análisis del flujo de datos sensibles,
-  detección de abuso en tiempo de ejecución y pruebas de seguridad.
-why_reference: 'Traceable es uno de los especialistas puros de seguridad de API que Gartner sigue en el mercado
-  de API protection, y el más orientado al rastreo distribuido: reconstruye la petición completa a través de los
-  microservicios, lo que permite detectar abusos de lógica de negocio que un WAF, que solo ve la petición aislada,
-  no puede ver.'
+description: Plataforma de seguridad de APIs con descubrimiento continuo, análisis del flujo de datos sensibles, detección
+  de abuso en tiempo de ejecución y pruebas de seguridad.
+why_reference: 'Traceable es uno de los especialistas puros de seguridad de API que Gartner sigue en el mercado de API protection,
+  y el más orientado al rastreo distribuido: reconstruye la petición completa a través de los microservicios, lo que permite
+  detectar abusos de lógica de negocio que un WAF, que solo ve la petición aislada, no puede ver.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

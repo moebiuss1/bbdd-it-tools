@@ -5,11 +5,11 @@ categories:
 - antivirus
 - edr
 tags:
-  - xdr
-  - cross-domain
-  - palo-alto
-  - ai
-  - network
+- xdr
+- cross-domain
+- palo-alto
+- ai
+- network
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Parte de Palo Alto Networks Cortex.
@@ -30,7 +30,7 @@ market_rank:
   antivirus: 9
   edr: 10
 sources:
-  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
+- https://www.gartner.com/reviews/market/endpoint-protection-platforms
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

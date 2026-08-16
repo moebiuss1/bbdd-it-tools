@@ -2,7 +2,7 @@
 name: Lakera Guard
 slug: lakera-guard
 categories:
-  - llm-security
+- llm-security
 tags:
 - ai
 - zero-trust
@@ -29,8 +29,8 @@ company_size:
 - mediana
 - grande
 sources:
-  - https://www.lakera.ai/prompt-defense
-  - https://www.lakera.ai/risk/prompt-injection-attacks
+- https://www.lakera.ai/prompt-defense
+- https://www.lakera.ai/risk/prompt-injection-attacks
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 logo: /logos/lakera-guard.png

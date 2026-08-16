@@ -4,10 +4,10 @@ slug: cortado-mdm
 categories:
 - mdm
 tags:
-  - mdm
-  - byod
-  - container
-  - hybrid-work
+- mdm
+- byod
+- container
+- hybrid-work
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$3/dispositivo/mes.
@@ -24,12 +24,13 @@ company_size:
 market_rank:
   mdm: 8
 sources:
-  - https://www.gartner.com/reviews/market/unified-endpoint-management-tools
+- https://www.gartner.com/reviews/market/unified-endpoint-management-tools
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/cortado-mdm.png
 ---
+
 Cortado gestiona dispositivos móviles y escritorios con un énfasis particular en la separación entre lo corporativo y
 lo personal, el escenario habitual cuando el terminal es propiedad del empleado.
 

@@ -15,11 +15,11 @@ cost_model: suscripción
 cost_details: Suscripción por usuario y mes, con almacenamiento incluido o traído por el cliente.
 website: https://www.avepoint.com/products/cloud/backup
 cert_url: https://www.avepoint.com/company/trust-center
-description: Copia de seguridad de Microsoft 365, Dynamics 365, Salesforce y Google Workspace con restauración granular
-  de elementos, permisos y estructura.
-why_reference: 'AvePoint es el especialista de referencia en el ecosistema Microsoft 365: su recorrido en migración
-  y gobierno de SharePoint le da un conocimiento del modelo de datos que se nota en la restauración granular de
-  permisos, metadatos y estructura, no solo de ficheros. Gartner lo sigue en el mercado de backup como servicio.'
+description: Copia de seguridad de Microsoft 365, Dynamics 365, Salesforce y Google Workspace con restauración granular de
+  elementos, permisos y estructura.
+why_reference: 'AvePoint es el especialista de referencia en el ecosistema Microsoft 365: su recorrido en migración y gobierno
+  de SharePoint le da un conocimiento del modelo de datos que se nota en la restauración granular de permisos, metadatos y
+  estructura, no solo de ficheros. Gartner lo sigue en el mercado de backup como servicio.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

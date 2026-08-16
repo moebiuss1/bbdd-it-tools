@@ -14,11 +14,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por número de empleados y año, con módulos generales y específicos por rol.
 website: https://www.sans.org/security-awareness-training/
-description: Programa de concienciación del SANS Institute, con contenidos elaborados por profesionales en activo
-  y el marco de madurez de referencia del sector.
-why_reference: El SANS Institute es la principal institución de formación en seguridad del mundo, y su programa
-  de concienciación es el que definió el marco de madurez con el que se evalúan estos programas. Sus contenidos,
-  escritos por profesionales en ejercicio, son la referencia de calidad en un mercado con mucho material genérico.
+description: Programa de concienciación del SANS Institute, con contenidos elaborados por profesionales en activo y el marco
+  de madurez de referencia del sector.
+why_reference: El SANS Institute es la principal institución de formación en seguridad del mundo, y su programa de concienciación
+  es el que definió el marco de madurez con el que se evalúan estos programas. Sus contenidos, escritos por profesionales
+  en ejercicio, son la referencia de calidad en un mercado con mucho material genérico.
 certifications:
 - ISO 27001
 company_size:

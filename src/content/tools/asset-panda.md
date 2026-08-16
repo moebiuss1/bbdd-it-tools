@@ -4,10 +4,10 @@ slug: asset-panda
 categories:
 - it-asset-managers
 tags:
-  - itam
-  - mobile
-  - barcode
-  - cloud
+- itam
+- mobile
+- barcode
+- cloud
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$1,400/año. Planes ilimitados en usuarios.

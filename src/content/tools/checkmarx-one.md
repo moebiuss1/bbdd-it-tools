@@ -14,11 +14,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por número de desarrolladores o de aplicaciones analizadas.
 website: https://checkmarx.com
-description: Plataforma unificada de seguridad de aplicaciones con análisis estático, dinámico, de composición,
-  de infraestructura como código y de la cadena de suministro.
-why_reference: Checkmarx es uno de los líderes históricos del mercado de application security testing de Gartner
-  y su motor de análisis estático es el que más lenguajes cubre con análisis de flujo de datos completo, lo que
-  lo hace la referencia en sectores regulados que exigen revisión de código sin ejecutarlo.
+description: Plataforma unificada de seguridad de aplicaciones con análisis estático, dinámico, de composición, de infraestructura
+  como código y de la cadena de suministro.
+why_reference: Checkmarx es uno de los líderes históricos del mercado de application security testing de Gartner y su motor
+  de análisis estático es el que más lenguajes cubre con análisis de flujo de datos completo, lo que lo hace la referencia
+  en sectores regulados que exigen revisión de código sin ejecutarlo.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

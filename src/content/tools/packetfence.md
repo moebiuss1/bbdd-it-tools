@@ -16,9 +16,9 @@ cost_details: Software libre bajo GPLv2. Inverse ofrece soporte comercial y susc
 website: https://www.packetfence.com
 description: Solución de control de acceso a la red de código abierto con portal cautivo, 802.1X, registro de dispositivos,
   aislamiento por VLAN y detección de anomalías.
-why_reference: PacketFence es el único NAC libre con recorrido y despliegues reales de tamaño en universidades,
-  hospitales y administraciones, y la alternativa habitual cuando el coste por puerto de un NAC comercial hace inviable
-  el proyecto. Soporta la electrónica de red de prácticamente todos los fabricantes.
+why_reference: PacketFence es el único NAC libre con recorrido y despliegues reales de tamaño en universidades, hospitales
+  y administraciones, y la alternativa habitual cuando el coste por puerto de un NAC comercial hace inviable el proyecto.
+  Soporta la electrónica de red de prácticamente todos los fabricantes.
 company_size:
 - pequeña
 - mediana

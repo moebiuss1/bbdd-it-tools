@@ -32,9 +32,9 @@ tags:
 - incident-response
 slug: sentinelone-singularity
 sources:
-  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
+- https://www.gartner.com/reviews/market/endpoint-protection-platforms
 first_added: 2026-08-07
-last_verified: '2026-08-10'
+last_verified: '2026-08-16'
 needs_review: false
 market_rank:
   antivirus: 1

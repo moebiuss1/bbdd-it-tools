@@ -14,11 +14,11 @@ cost_model: pago-por-uso
 cost_details: Niveles Consumo (pago por llamada), Básico, Estándar y Premium por unidad y hora.
 website: https://azure.microsoft.com/products/api-management
 cert_url: https://learn.microsoft.com/azure/compliance/
-description: Servicio gestionado de Azure para publicar, proteger, transformar y monitorizar APIs, con portal de
-  desarrollador y pasarela autoalojada para entornos híbridos.
-why_reference: Es la pasarela de APIs por defecto del ecosistema Microsoft y uno de los productos que Gartner sigue
-  en gestión de APIs de ciclo completo. Su integración nativa con Entra ID, Application Insights y las funciones
-  de Azure la convierte en la elección obvia para organizaciones ya asentadas en esa nube.
+description: Servicio gestionado de Azure para publicar, proteger, transformar y monitorizar APIs, con portal de desarrollador
+  y pasarela autoalojada para entornos híbridos.
+why_reference: Es la pasarela de APIs por defecto del ecosistema Microsoft y uno de los productos que Gartner sigue en gestión
+  de APIs de ciclo completo. Su integración nativa con Entra ID, Application Insights y las funciones de Azure la convierte
+  en la elección obvia para organizaciones ya asentadas en esa nube.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

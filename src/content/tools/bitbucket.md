@@ -13,15 +13,15 @@ tags:
 - devops
 type: comercial
 cost_model: freemium
-cost_details: Gratuito hasta cinco usuarios; planes Standard y Premium por usuario y mes. Bitbucket Data Center
-  con licencia anual.
+cost_details: Gratuito hasta cinco usuarios; planes Standard y Premium por usuario y mes. Bitbucket Data Center con licencia
+  anual.
 website: https://bitbucket.org/product
 cert_url: https://www.atlassian.com/trust/compliance
-description: Plataforma de repositorios Git de Atlassian con revisión de código, ramas por incidencia y tuberías
-  de integración continua integradas, muy ligada a Jira.
+description: Plataforma de repositorios Git de Atlassian con revisión de código, ramas por incidencia y tuberías de integración
+  continua integradas, muy ligada a Jira.
 why_reference: 'Bitbucket es uno de los tres grandes alojamientos Git empresariales y la elección natural en organizaciones
-  que ya trabajan con Jira: la trazabilidad entre incidencia, rama, revisión y despliegue funciona sin integraciones
-  de terceros. Su edición Data Center es además una de las pocas opciones autoalojadas con soporte comercial.'
+  que ya trabajan con Jira: la trazabilidad entre incidencia, rama, revisión y despliegue funciona sin integraciones de terceros.
+  Su edición Data Center es además una de las pocas opciones autoalojadas con soporte comercial.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

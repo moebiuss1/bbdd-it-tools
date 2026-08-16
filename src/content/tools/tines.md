@@ -5,11 +5,11 @@ categories:
 - incident-management
 - soar
 tags:
-  - no-code
-  - automatizacion
-  - api
-  - workflows
-  - incident-response
+- no-code
+- automatizacion
+- api
+- workflows
+- incident-response
 type: comercial
 cost_model: freemium
 cost_details: Community gratuito (500 acciones/día). Planes de pago desde ~$30,000/año.
@@ -32,8 +32,8 @@ market_rank:
   incident-management: 10
   soar: 9
 sources:
-  - https://aimultiple.com/top-soar-platforms
-  - https://safeguard.sh/resources/blog/best-security-orchestration-automation-and-response-soar-tools
+- https://aimultiple.com/top-soar-platforms
+- https://safeguard.sh/resources/blog/best-security-orchestration-automation-and-response-soar-tools
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

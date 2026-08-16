@@ -14,11 +14,11 @@ type: opensource
 cost_model: freemium
 cost_details: NGINX Open Source gratuito. F5 NGINX One (soporte, WAF y gestión centralizada) por suscripción.
 website: https://nginx.org
-description: Servidor web y proxy inverso que actúa como balanceador de carga HTTP, TCP y UDP. Sirve o intermedia
-  una parte enorme de los sitios más visitados del mundo.
-why_reference: 'NGINX es el proxy inverso más desplegado de internet y la puerta de entrada por defecto de la mayoría
-  de arquitecturas web y de contenedores: el Ingress Controller de Kubernetes más usado se apoya en él. Gartner
-  lo sigue en el mercado de application delivery controllers junto a F5 y NetScaler.'
+description: Servidor web y proxy inverso que actúa como balanceador de carga HTTP, TCP y UDP. Sirve o intermedia una parte
+  enorme de los sitios más visitados del mundo.
+why_reference: 'NGINX es el proxy inverso más desplegado de internet y la puerta de entrada por defecto de la mayoría de arquitecturas
+  web y de contenedores: el Ingress Controller de Kubernetes más usado se apoya en él. Gartner lo sigue en el mercado de application
+  delivery controllers junto a F5 y NetScaler.'
 company_size:
 - pequeña
 - mediana

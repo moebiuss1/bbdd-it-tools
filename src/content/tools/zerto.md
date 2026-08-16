@@ -15,12 +15,12 @@ type: comercial
 cost_model: suscripción
 cost_details: Licencia por máquina virtual protegida, por suscripción o perpetua. Forma parte de HPE.
 website: https://www.zerto.com
-description: Plataforma de recuperación ante desastres y movilidad de cargas basada en protección continua de datos,
-  con puntos de recuperación de segundos y migración entre plataformas.
-why_reference: 'Zerto es la referencia en recuperación ante desastres basada en replicación continua a nivel de
-  hipervisor: sus objetivos de punto de recuperación se miden en segundos, no en horas, y su registro de cambios
-  permite volver al instante anterior a un cifrado por ransomware. Esa misma tecnología es la que usa para migrar
-  cargas entre plataformas sin apenas parada.'
+description: Plataforma de recuperación ante desastres y movilidad de cargas basada en protección continua de datos, con puntos
+  de recuperación de segundos y migración entre plataformas.
+why_reference: 'Zerto es la referencia en recuperación ante desastres basada en replicación continua a nivel de hipervisor:
+  sus objetivos de punto de recuperación se miden en segundos, no en horas, y su registro de cambios permite volver al instante
+  anterior a un cifrado por ransomware. Esa misma tecnología es la que usa para migrar cargas entre plataformas sin apenas
+  parada.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

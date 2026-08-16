@@ -13,12 +13,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Licencia por endpoint y año, con servidor de gestión propio o alojado.
 website: https://www.airlockdigital.com
-description: Plataforma especializada en listas de permitidos de ejecución, diseñada para que el mantenimiento del
-  catálogo de software aprobado sea operable en el día a día.
-why_reference: Airlock Digital es el especialista puro de allowlisting más reconocido y la implementación de referencia
-  del control de aplicaciones exigido por el Essential Eight australiano, el esquema de endurecimiento que más en
-  serio se toma esta medida. Su modelo de peticiones de aprobación es lo que hace sostenible la lista en entornos
-  reales.
+description: Plataforma especializada en listas de permitidos de ejecución, diseñada para que el mantenimiento del catálogo
+  de software aprobado sea operable en el día a día.
+why_reference: Airlock Digital es el especialista puro de allowlisting más reconocido y la implementación de referencia del
+  control de aplicaciones exigido por el Essential Eight australiano, el esquema de endurecimiento que más en serio se toma
+  esta medida. Su modelo de peticiones de aprobación es lo que hace sostenible la lista en entornos reales.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

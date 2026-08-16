@@ -11,16 +11,14 @@ tags:
 - modernization
 type: comercial
 cost_model: pago-por-uso
-cost_details: Las herramientas de descubrimiento y evaluación no tienen coste; se pagan la replicación y los recursos
-  de destino.
+cost_details: Las herramientas de descubrimiento y evaluación no tienen coste; se pagan la replicación y los recursos de destino.
 website: https://azure.microsoft.com/products/azure-migrate
 cert_url: https://learn.microsoft.com/azure/compliance/
-description: Servicio central de Microsoft para descubrir, evaluar y migrar servidores, bases de datos, aplicaciones
-  web y escritorios virtuales hacia Azure.
-why_reference: Azure Migrate es la vía oficial y gratuita de evaluar una migración a Azure, y su fase de descubrimiento
-  —inventario, dependencias entre servidores y coste estimado antes de mover nada— es lo que la convierte en la
-  herramienta de referencia en la fase de análisis de cualquier proyecto de salida de centro de datos hacia esa
-  nube.
+description: Servicio central de Microsoft para descubrir, evaluar y migrar servidores, bases de datos, aplicaciones web y
+  escritorios virtuales hacia Azure.
+why_reference: Azure Migrate es la vía oficial y gratuita de evaluar una migración a Azure, y su fase de descubrimiento —inventario,
+  dependencias entre servidores y coste estimado antes de mover nada— es lo que la convierte en la herramienta de referencia
+  en la fase de análisis de cualquier proyecto de salida de centro de datos hacia esa nube.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

@@ -15,11 +15,11 @@ cost_model: suscripción
 cost_details: Suscripción por sede y por usuario remoto, con la red privada global incluida en el servicio.
 website: https://www.catonetworks.com
 cert_url: https://www.catonetworks.com/compliance-certifications/
-description: 'SASE de un solo proveedor construido sobre una red privada global propia: SD-WAN, seguridad web, CASB,
-  DLP y acceso remoto de confianza cero entregados como servicio.'
+description: 'SASE de un solo proveedor construido sobre una red privada global propia: SD-WAN, seguridad web, CASB, DLP y
+  acceso remoto de confianza cero entregados como servicio.'
 why_reference: Cato es el fabricante que definió la categoría de SASE de un solo proveedor y aparece de forma consistente
-  entre los mejor valorados de security service edge y WAN edge en Gartner Peer Insights. Su red privada propia,
-  con decenas de puntos de presencia, es lo que le permite sustituir a la vez al MPLS y a la pila de seguridad perimetral.
+  entre los mejor valorados de security service edge y WAN edge en Gartner Peer Insights. Su red privada propia, con decenas
+  de puntos de presencia, es lo que le permite sustituir a la vez al MPLS y a la pila de seguridad perimetral.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

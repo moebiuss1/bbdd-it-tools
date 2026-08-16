@@ -14,15 +14,14 @@ tags:
 - boards
 type: comercial
 cost_model: freemium
-cost_details: Cinco usuarios gratuitos y minutos de ejecución incluidos; después, por usuario y mes más agentes
-  adicionales.
+cost_details: Cinco usuarios gratuitos y minutos de ejecución incluidos; después, por usuario y mes más agentes adicionales.
 website: https://azure.microsoft.com/products/devops
 cert_url: https://learn.microsoft.com/azure/compliance/
-description: Suite de Microsoft con repositorios Git, tuberías de construcción y despliegue, tableros de trabajo,
-  gestión de artefactos y planes de prueba.
-why_reference: Azure DevOps —antes Team Foundation Server— es la plataforma de entrega estándar en organizaciones
-  con desarrollo .NET y es uno de los productos que Gartner sigue en el mercado de plataformas DevOps. Sus tuberías
-  siguen siendo de las pocas con soporte de primera clase para construcciones en Windows, macOS y Linux por igual.
+description: Suite de Microsoft con repositorios Git, tuberías de construcción y despliegue, tableros de trabajo, gestión
+  de artefactos y planes de prueba.
+why_reference: Azure DevOps —antes Team Foundation Server— es la plataforma de entrega estándar en organizaciones con desarrollo
+  .NET y es uno de los productos que Gartner sigue en el mercado de plataformas DevOps. Sus tuberías siguen siendo de las
+  pocas con soporte de primera clase para construcciones en Windows, macOS y Linux por igual.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

@@ -5,11 +5,11 @@ categories:
 - ids
 - ndr
 tags:
-  - ai
-  - network
-  - anomaly-detection
-  - autonomous-response
-  - cloud
+- ai
+- network
+- anomaly-detection
+- autonomous-response
+- cloud
 type: comercial
 cost_model: suscripción
 cost_details: Licencia anual basada en número de dispositivos monitorizados. Desde ~$30,000/año. Modelo SaaS.

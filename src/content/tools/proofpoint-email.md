@@ -28,7 +28,7 @@ company_size:
 market_rank:
   email-security: 1
 sources:
-  - https://www.gartner.com/reviews/market/email-security
+- https://www.gartner.com/reviews/market/email-security
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

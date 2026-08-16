@@ -4,12 +4,12 @@ slug: ossec
 categories:
 - ids
 tags:
-  - open-source
-  - hids
-  - fim
-  - log-management
-  - pci-dss
-  - compliance
+- open-source
+- hids
+- fim
+- log-management
+- pci-dss
+- compliance
 type: opensource
 cost_model: suscripción
 cost_details: Gratuito (GPLv2). HIDS open source con FIM y respuesta activa.

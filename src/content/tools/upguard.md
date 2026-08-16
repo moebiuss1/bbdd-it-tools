@@ -16,10 +16,9 @@ website: https://www.upguard.com
 cert_url: https://www.upguard.com/security
 description: Plataforma de riesgo de terceros y superficie de ataque con calificación continua de proveedores, cuestionarios
   automatizados y detección de fugas de datos expuestas.
-why_reference: UpGuard combina la calificación externa con la detección de exposiciones concretas —repositorios
-  y almacenamiento en la nube mal configurados, credenciales filtradas—, un trabajo por el que su equipo de investigación
-  ha descubierto algunas de las filtraciones masivas más conocidas. Gartner lo sigue en gestión de riesgo de proveedores
-  tecnológicos.
+why_reference: UpGuard combina la calificación externa con la detección de exposiciones concretas —repositorios y almacenamiento
+  en la nube mal configurados, credenciales filtradas—, un trabajo por el que su equipo de investigación ha descubierto algunas
+  de las filtraciones masivas más conocidas. Gartner lo sigue en gestión de riesgo de proveedores tecnológicos.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

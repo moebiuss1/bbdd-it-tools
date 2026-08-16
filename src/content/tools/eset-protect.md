@@ -5,11 +5,11 @@ categories:
 - antivirus
 - edr
 tags:
-  - lightweight
-  - multilayered
-  - linux
-  - macos
-  - ai
+- lightweight
+- multilayered
+- linux
+- macos
+- ai
 type: comercial
 cost_model: suscripción
 cost_details: 'Licencia anual por endpoint. Desde ~$25/endpoint/año. Ediciones: Entry, Advanced, Complete.'

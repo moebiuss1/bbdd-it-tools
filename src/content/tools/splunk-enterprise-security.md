@@ -5,12 +5,12 @@ categories:
 - log-management
 - siem
 tags:
-  - monitorizacion
-  - compliance
-  - incident-response
-  - forensics
-  - ai
-  - automatizacion
+- monitorizacion
+- compliance
+- incident-response
+- forensics
+- ai
+- automatizacion
 type: comercial
 cost_model: suscripción
 cost_details: Basado en volumen de datos ingeridos (GB/día). Licencia perpetua disponible. Desde ~$2,000/GB/año.

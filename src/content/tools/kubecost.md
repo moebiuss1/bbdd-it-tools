@@ -12,14 +12,14 @@ tags:
 - chargeback
 type: opensource
 cost_model: freemium
-cost_details: Versión gratuita con quince días de retención. Enterprise por número de nodos monitorizados. El motor
-  OpenCost es libre bajo Apache 2.0.
+cost_details: Versión gratuita con quince días de retención. Enterprise por número de nodos monitorizados. El motor OpenCost
+  es libre bajo Apache 2.0.
 website: https://www.apptio.com/products/kubecost/
 description: Medición y reparto del coste de Kubernetes por espacio de nombres, despliegue, etiqueta o equipo, construida
   sobre el proyecto OpenCost de la CNCF.
-why_reference: 'Kubecost resuelve el punto ciego más caro del FinOps: la factura de la nube ve una máquina, no los
-  veinte servicios que comparten su clúster. Su motor OpenCost es el proyecto de la CNCF que se ha convertido en
-  la forma estándar de asignar coste dentro de Kubernetes.'
+why_reference: 'Kubecost resuelve el punto ciego más caro del FinOps: la factura de la nube ve una máquina, no los veinte
+  servicios que comparten su clúster. Su motor OpenCost es el proyecto de la CNCF que se ha convertido en la forma estándar
+  de asignar coste dentro de Kubernetes.'
 company_size:
 - pequeña
 - mediana

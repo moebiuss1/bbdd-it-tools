@@ -14,12 +14,12 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por buzón protegido y año; despliegue por API sobre Microsoft 365 o Google Workspace.
 website: https://abnormal.ai
-description: 'Seguridad del correo basada en el comportamiento: aprende las relaciones y los hábitos de comunicación
-  de cada organización para detectar fraude y suplantación sin firmas ni listas.'
-why_reference: 'Abnormal es el fabricante que ha redefinido la detección del fraude por correo electrónico: en lugar
-  de buscar indicadores en el mensaje, modela quién se comunica con quién, cómo y sobre qué, y detecta el correo
-  de compromiso empresarial, que no lleva malware ni enlace y por eso atraviesa las pasarelas tradicionales. Gartner
-  lo sigue en el mercado de seguridad del correo.'
+description: 'Seguridad del correo basada en el comportamiento: aprende las relaciones y los hábitos de comunicación de cada
+  organización para detectar fraude y suplantación sin firmas ni listas.'
+why_reference: 'Abnormal es el fabricante que ha redefinido la detección del fraude por correo electrónico: en lugar de buscar
+  indicadores en el mensaje, modela quién se comunica con quién, cómo y sobre qué, y detecta el correo de compromiso empresarial,
+  que no lleva malware ni enlace y por eso atraviesa las pasarelas tradicionales. Gartner lo sigue en el mercado de seguridad
+  del correo.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

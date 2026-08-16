@@ -6,11 +6,11 @@ categories:
 - pam
 - secrets-management
 tags:
-  - pam
-  - vault
-  - session-management
-  - machine-identity
-  - compliance
+- pam
+- vault
+- session-management
+- machine-identity
+- compliance
 type: comercial
 cost_model: suscripción
 cost_details: Licencia anual basada en número de cuentas privilegiadas gestionadas. Desde ~$50,000/año para despliegues básicos.

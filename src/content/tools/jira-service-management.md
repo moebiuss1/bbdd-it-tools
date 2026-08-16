@@ -2,7 +2,7 @@
 name: Jira Service Management
 slug: jira-service-management
 categories:
-  - incident-management
+- incident-management
 tags:
 - saas
 - cloud
@@ -29,8 +29,8 @@ company_size:
 - mediana
 - grande
 sources:
-  - https://www.atlassian.com/trust/compliance/resources/iso27001
-  - https://www.atlassian.com/trust/compliance/resources/soc2
+- https://www.atlassian.com/trust/compliance/resources/iso27001
+- https://www.atlassian.com/trust/compliance/resources/soc2
 cert_url: https://www.atlassian.com/trust/compliance
 first_added: 2026-08-10
 last_verified: '2026-08-10'

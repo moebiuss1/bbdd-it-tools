@@ -5,11 +5,11 @@ categories:
 - antivirus
 - edr
 tags:
-  - ngav
-  - edr
-  - ai
-  - ransomware
-  - device-control
+- ngav
+- edr
+- ai
+- ransomware
+- device-control
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$20/endpoint/año. Top protección en tests independientes 2026.
@@ -32,7 +32,7 @@ market_rank:
   antivirus: 13
   edr: 14
 sources:
-  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
+- https://www.gartner.com/reviews/market/endpoint-protection-platforms
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

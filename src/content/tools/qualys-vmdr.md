@@ -35,8 +35,8 @@ market_rank:
   kpi-ca-managers: 1
 cert_url: https://success.qualys.com/support/s/standards
 sources:
-  - https://www.gartner.com/reviews/market/vulnerability-assessment
-  - https://cipherssecurity.com/best-vulnerability-management-platform-2026/
+- https://www.gartner.com/reviews/market/vulnerability-assessment
+- https://cipherssecurity.com/best-vulnerability-management-platform-2026/
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

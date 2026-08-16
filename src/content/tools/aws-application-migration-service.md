@@ -14,11 +14,11 @@ cost_model: pago-por-uso
 cost_details: Sin coste por servidor migrado durante noventa días; se pagan solo los recursos de replicación y destino.
 website: https://aws.amazon.com/application-migration-service/
 cert_url: https://aws.amazon.com/compliance/programs/
-description: Servicio de migración de servidores a AWS por replicación continua en bloque, con pruebas sin interrupción
-  y conmutación final de minutos.
-why_reference: 'Heredero de CloudEndure, es el mecanismo estándar de migración masiva a AWS y el que usan la mayoría
-  de proyectos de salida de centro de datos: replica el servidor completo sin reinstalar nada, permite ensayar la
-  conmutación las veces que haga falta y reduce la ventana de parada real a minutos.'
+description: Servicio de migración de servidores a AWS por replicación continua en bloque, con pruebas sin interrupción y
+  conmutación final de minutos.
+why_reference: 'Heredero de CloudEndure, es el mecanismo estándar de migración masiva a AWS y el que usan la mayoría de proyectos
+  de salida de centro de datos: replica el servidor completo sin reinstalar nada, permite ensayar la conmutación las veces
+  que haga falta y reduce la ventana de parada real a minutos.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

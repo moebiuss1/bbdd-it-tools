@@ -16,11 +16,11 @@ cost_model: suscripción
 cost_details: Suscripción por carga de trabajo protegida; modelo muy orientado a proveedores de servicios gestionados.
 website: https://www.acronis.com/en-us/products/cyber-protect/
 cert_url: https://www.acronis.com/en-us/trust-center/
-description: Plataforma que integra copia de seguridad, antimalware, gestión de parches y recuperación ante desastres
-  en un único agente para endpoints, servidores y aplicaciones SaaS.
-why_reference: 'Acronis fue el primer fabricante en fusionar copia de seguridad y seguridad del endpoint en un solo
-  agente, y es la plataforma de protección de referencia del canal de proveedores de servicios gestionados: cubre
-  con una consola multiinquilino la copia, la restauración y la protección de miles de clientes pequeños.'
+description: Plataforma que integra copia de seguridad, antimalware, gestión de parches y recuperación ante desastres en un
+  único agente para endpoints, servidores y aplicaciones SaaS.
+why_reference: 'Acronis fue el primer fabricante en fusionar copia de seguridad y seguridad del endpoint en un solo agente,
+  y es la plataforma de protección de referencia del canal de proveedores de servicios gestionados: cubre con una consola
+  multiinquilino la copia, la restauración y la protección de miles de clientes pequeños.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

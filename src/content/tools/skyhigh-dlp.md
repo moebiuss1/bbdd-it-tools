@@ -28,12 +28,13 @@ company_size:
 market_rank:
   dlp: 4
 sources:
-  - https://www.gartner.com/reviews/market/data-loss-prevention
+- https://www.gartner.com/reviews/market/data-loss-prevention
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/skyhigh-dlp.png
 ---
+
 Skyhigh Security DLP —la antigua línea cloud de McAfee— protege el dato donde hoy vive de verdad: aplicaciones SaaS,
 almacenamiento en la nube y tráfico web, con funciones de CASB para ver y controlar el uso de servicios no aprobados.
 

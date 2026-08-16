@@ -14,11 +14,11 @@ type: opensource
 cost_model: gratis
 cost_details: Software libre bajo licencia MIT. Coste limitado a la infraestructura donde se ejecuta.
 website: https://www.jenkins.io
-description: Servidor de automatización de código abierto para construir, probar y desplegar software, con más de
-  mil ochocientos complementos y tuberías definidas como código.
-why_reference: 'Jenkins es el servidor de integración continua más desplegado de la historia y sigue sosteniendo
-  las cadenas de construcción de una enorme parte de la industria. Su catálogo de complementos no tiene equivalente:
-  integra prácticamente cualquier herramienta, incluidas las heredadas que ninguna plataforma moderna soporta.'
+description: Servidor de automatización de código abierto para construir, probar y desplegar software, con más de mil ochocientos
+  complementos y tuberías definidas como código.
+why_reference: 'Jenkins es el servidor de integración continua más desplegado de la historia y sigue sosteniendo las cadenas
+  de construcción de una enorme parte de la industria. Su catálogo de complementos no tiene equivalente: integra prácticamente
+  cualquier herramienta, incluidas las heredadas que ninguna plataforma moderna soporta.'
 company_size:
 - pequeña
 - mediana
@@ -29,9 +29,10 @@ market_rank:
   ci-cd: 2
 sources:
 - https://en.wikipedia.org/wiki/Jenkins_(software)
+- https://github.com/jenkinsci/jenkins
 certifications: []
-first_added: &id001 2026-08-14
-last_verified: *id001
+first_added: 2026-08-14
+last_verified: '2026-08-16'
 logo: /logos/jenkins.png
 needs_review: false
 ---

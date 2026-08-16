@@ -18,9 +18,9 @@ website: https://www.ivanti.com/products/ivanti-neurons-for-mdm
 cert_url: https://www.ivanti.com/resources/security-compliance
 description: Gestión unificada de dispositivos móviles y aplicaciones heredera de MobileIron, con contenedor corporativo,
   distribución de aplicaciones y acceso condicional.
-why_reference: MobileIron, hoy Ivanti Neurons for MDM, fue uno de los tres fabricantes que crearon el mercado de
-  gestión de movilidad empresarial y sigue siendo referencia en separación entre datos corporativos y personales,
-  el punto crítico de cualquier programa de dispositivos propios. Gartner lo sigue en gestión unificada de endpoints.
+why_reference: MobileIron, hoy Ivanti Neurons for MDM, fue uno de los tres fabricantes que crearon el mercado de gestión de
+  movilidad empresarial y sigue siendo referencia en separación entre datos corporativos y personales, el punto crítico de
+  cualquier programa de dispositivos propios. Gartner lo sigue en gestión unificada de endpoints.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

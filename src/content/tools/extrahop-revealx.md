@@ -14,11 +14,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por capacidad de análisis de tráfico (Gbps) y sensores desplegados.
 website: https://www.extrahop.com
-description: Plataforma de detección y respuesta de red que reconstruye el tráfico en capa 7, descifra selectivamente
-  y correlaciona el comportamiento de cada dispositivo.
-why_reference: 'ExtraHop es uno de los líderes del mercado de detección y respuesta de red de Gartner y el referente
-  en análisis de protocolos de aplicación a gran escala: reconstruye transacciones completas de decenas de protocolos,
-  lo que le permite detectar abusos que un análisis basado solo en flujos no ve.'
+description: Plataforma de detección y respuesta de red que reconstruye el tráfico en capa 7, descifra selectivamente y correlaciona
+  el comportamiento de cada dispositivo.
+why_reference: 'ExtraHop es uno de los líderes del mercado de detección y respuesta de red de Gartner y el referente en análisis
+  de protocolos de aplicación a gran escala: reconstruye transacciones completas de decenas de protocolos, lo que le permite
+  detectar abusos que un análisis basado solo en flujos no ve.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

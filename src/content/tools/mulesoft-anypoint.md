@@ -14,11 +14,11 @@ cost_model: suscripción
 cost_details: Suscripción por capacidad de cómputo (vCores) y número de APIs gestionadas.
 website: https://www.mulesoft.com/platform/enterprise-integration
 cert_url: https://compliance.salesforce.com
-description: 'Plataforma de integración y gestión de APIs de Salesforce: diseño, publicación, seguridad y monitorización
-  de APIs junto a conectores hacia sistemas empresariales.'
-why_reference: Anypoint es el referente del mercado cuando la gestión de APIs no se puede separar de la integración
-  con sistemas heredados —ERP, mainframe, bases de datos corporativas—, y uno de los líderes históricos del cuadrante
-  de gestión de APIs de ciclo completo de Gartner.
+description: 'Plataforma de integración y gestión de APIs de Salesforce: diseño, publicación, seguridad y monitorización de
+  APIs junto a conectores hacia sistemas empresariales.'
+why_reference: Anypoint es el referente del mercado cuando la gestión de APIs no se puede separar de la integración con sistemas
+  heredados —ERP, mainframe, bases de datos corporativas—, y uno de los líderes históricos del cuadrante de gestión de APIs
+  de ciclo completo de Gartner.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

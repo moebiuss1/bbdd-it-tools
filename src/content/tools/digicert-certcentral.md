@@ -2,16 +2,16 @@
 name: DigiCert CertCentral
 slug: digicert-certcentral
 categories:
-  - cert-managers
-  - certificate-lifecycle
-  - eidas-trust
+- cert-managers
+- certificate-lifecycle
+- eidas-trust
 tags:
-  - pki
-  - tls-ssl
-  - certificate-lifecycle
-  - acme
-  - automatizacion
-  - post-quantum
+- pki
+- tls-ssl
+- certificate-lifecycle
+- acme
+- automatizacion
+- post-quantum
 type: comercial
 cost_model: suscripción
 cost_details: Basado en número y tipo de certificados. Certificados TLS/SSL desde ~$200/año. CertCentral Enterprise con automatización
@@ -38,8 +38,8 @@ market_rank:
   certificate-lifecycle: 1
   eidas-trust: 1
 sources:
-  - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
-  - https://www.digicert.com/
+- https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
+- https://www.digicert.com/
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

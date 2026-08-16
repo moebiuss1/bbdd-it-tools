@@ -5,11 +5,11 @@ categories:
 - incident-management
 - soar
 tags:
-  - automatizacion
-  - case-management
-  - ai
-  - low-code
-  - federal
+- automatizacion
+- case-management
+- ai
+- low-code
+- federal
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Low-code AI hyperautomation platform.
@@ -30,7 +30,7 @@ market_rank:
   incident-management: 5
   soar: 4
 sources:
-  - https://www.gartner.com/reviews/market/it-service-management-platforms
+- https://www.gartner.com/reviews/market/it-service-management-platforms
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

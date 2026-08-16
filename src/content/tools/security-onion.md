@@ -6,12 +6,12 @@ categories:
 - log-management
 - siem
 tags:
-  - ids
-  - monitorizacion
-  - open-source
-  - siem
-  - forensics
-  - suricata
+- ids
+- monitorizacion
+- open-source
+- siem
+- forensics
+- suricata
 type: opensource
 cost_model: suscripción
 cost_details: Gratuito. Plataforma de seguridad de red open source.
@@ -32,12 +32,13 @@ market_rank:
 repo: https://github.com/Security-Onion-Solutions/securityonion
 license: GPL-2.0
 sources:
-  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+- https://www.gartner.com/reviews/market/intrusion-prevention-systems
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/security-onion.png
 ---
+
 Security Onion empaqueta en una distribución lista para desplegar buena parte del arsenal libre de monitorización de
 red y análisis de seguridad: Suricata y Zeek para el tráfico, Elasticsearch para el almacenamiento y la búsqueda, y
 un conjunto de interfaces para investigar alertas y hacer hunting.

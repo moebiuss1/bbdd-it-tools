@@ -14,11 +14,11 @@ type: opensource
 cost_model: gratis
 cost_details: Proyecto graduado de la CNCF bajo licencia Apache 2.0, sin coste de licencia.
 website: https://argoproj.github.io/cd/
-description: Herramienta de entrega continua declarativa para Kubernetes que sincroniza el estado del clúster con
-  lo definido en un repositorio Git.
-why_reference: Argo CD es el estándar de facto de GitOps y un proyecto graduado de la CNCF, el nivel de madurez
-  que la fundación reserva a las piezas con adopción probada en producción. En despliegues sobre Kubernetes ha sustituido
-  a la lógica de despliegue dentro del servidor de integración continua.
+description: Herramienta de entrega continua declarativa para Kubernetes que sincroniza el estado del clúster con lo definido
+  en un repositorio Git.
+why_reference: Argo CD es el estándar de facto de GitOps y un proyecto graduado de la CNCF, el nivel de madurez que la fundación
+  reserva a las piezas con adopción probada en producción. En despliegues sobre Kubernetes ha sustituido a la lógica de despliegue
+  dentro del servidor de integración continua.
 company_size:
 - pequeña
 - mediana

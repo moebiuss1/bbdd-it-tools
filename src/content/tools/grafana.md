@@ -11,16 +11,16 @@ tags:
 - metrics
 - logs
 - alerting
+- infra-monitoring
 type: opensource
 cost_model: freemium
-cost_details: Grafana OSS gratuito (AGPLv3). Grafana Cloud con plan gratuito y niveles de pago; Grafana Enterprise
-  por suscripción.
+cost_details: Grafana OSS gratuito (AGPLv3). Grafana Cloud con plan gratuito y niveles de pago; Grafana Enterprise por suscripción.
 website: https://grafana.com
-description: Plataforma de visualización y alertado que consulta decenas de orígenes —Prometheus, Elasticsearch,
-  bases SQL, servicios cloud— y los combina en cuadros de mando unificados.
-why_reference: 'Grafana es la capa de visualización estándar de la observabilidad moderna: prácticamente cualquier
-  sistema de métricas se acaba mirando a través de ella, y su capacidad de mezclar orígenes distintos en un mismo
-  panel evita tener una consola por herramienta.'
+description: Plataforma de visualización y alertado que consulta decenas de orígenes —Prometheus, Elasticsearch, bases SQL,
+  servicios cloud— y los combina en cuadros de mando unificados.
+why_reference: 'Grafana es la capa de visualización estándar de la observabilidad moderna: prácticamente cualquier sistema
+  de métricas se acaba mirando a través de ella, y su capacidad de mezclar orígenes distintos en un mismo panel evita tener
+  una consola por herramienta.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II
@@ -35,8 +35,9 @@ market_rank:
 sources:
 - https://www.gartner.com/reviews/market/observability-platforms
 - https://en.wikipedia.org/wiki/Grafana
-first_added: &id001 2026-08-14
-last_verified: *id001
+- https://github.com/grafana/grafana
+first_added: 2026-08-14
+last_verified: '2026-08-16'
 logo: /logos/grafana.png
 needs_review: false
 ---

@@ -15,11 +15,11 @@ cost_model: suscripción
 cost_details: Suscripción anual según número de empleados y marcos normativos activados.
 website: https://www.vanta.com
 cert_url: https://trust.vanta.com
-description: Plataforma de cumplimiento automatizado que conecta con la infraestructura y los sistemas de la empresa
-  para recoger evidencias de control de forma continua.
-why_reference: 'Vanta creó la categoría del cumplimiento automatizado y es la referencia para conseguir y mantener
-  certificaciones como SOC 2 e ISO 27001 sin un equipo dedicado: en lugar de recopilar evidencias una vez al año,
-  monitoriza los controles de forma continua contra los sistemas reales.'
+description: Plataforma de cumplimiento automatizado que conecta con la infraestructura y los sistemas de la empresa para
+  recoger evidencias de control de forma continua.
+why_reference: 'Vanta creó la categoría del cumplimiento automatizado y es la referencia para conseguir y mantener certificaciones
+  como SOC 2 e ISO 27001 sin un equipo dedicado: en lugar de recopilar evidencias una vez al año, monitoriza los controles
+  de forma continua contra los sistemas reales.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

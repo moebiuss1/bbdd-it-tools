@@ -5,11 +5,11 @@ categories:
 - mam
 - mdm
 tags:
-  - uem
-  - multiplatform
-  - zero-trust
-  - compliance
-  - automatizacion
+- uem
+- multiplatform
+- zero-trust
+- compliance
+- automatizacion
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$3.78-$10/dispositivo/mes. UEM multiplataforma más completo del mercado.
@@ -31,7 +31,7 @@ market_rank:
   mam: 2
   mdm: 2
 sources:
-  - https://mdmbuyer.com/
+- https://mdmbuyer.com/
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

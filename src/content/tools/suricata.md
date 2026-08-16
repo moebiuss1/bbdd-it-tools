@@ -21,17 +21,20 @@ company_size:
 repo: https://github.com/OISF/suricata
 license: GPL-2.0
 tags:
-  - network
-  - open-source
-  - linux
-  - incident-response
-  - threat-hunting
+- network
+- open-source
+- linux
+- incident-response
+- threat-hunting
+- ips
+- red
 slug: suricata
 first_added: 2026-08-07
-last_verified: '2026-08-10'
+last_verified: '2026-08-16'
 needs_review: false
 sources:
-  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+- https://www.gartner.com/reviews/market/intrusion-prevention-systems
+- https://github.com/OISF/suricata
 market_rank:
   ids: 2
   ips: 4

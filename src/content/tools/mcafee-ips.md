@@ -25,12 +25,13 @@ company_size:
 market_rank:
   ips: 12
 sources:
-  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+- https://www.gartner.com/reviews/market/intrusion-prevention-systems
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/mcafee-ips.png
 ---
+
 McAfee Network Security Platform fue durante años uno de los IPS de referencia en grandes redes corporativas. Tras la
 escisión del negocio empresarial de McAfee, la línea pasó a Trellix y hoy se comercializa dentro de su cartera de
 seguridad de red.

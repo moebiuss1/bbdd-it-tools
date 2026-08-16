@@ -28,12 +28,13 @@ market_rank:
   mam: 8
   mdm: 11
 sources:
-  - https://www.gartner.com/reviews/market/unified-endpoint-management-tools
+- https://www.gartner.com/reviews/market/unified-endpoint-management-tools
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/scalefusion-uem.png
 ---
+
 Scalefusion gestiona desde una consola dispositivos Android, iOS, Windows, macOS y Linux, con especial soltura en los
 escenarios de dispositivo dedicado: modo quiosco, señalización digital y terminales de campo con una sola aplicación
 permitida.

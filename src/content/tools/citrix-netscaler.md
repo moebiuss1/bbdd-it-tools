@@ -15,9 +15,9 @@ cost_details: Licencia por appliance físico, virtual (VPX) o suscripción cloud
 website: https://www.netscaler.com
 description: Controlador de entrega de aplicaciones (ADC) con balanceo de carga global y local, descarga SSL, conmutación
   por contenido, WAF integrado y analítica de experiencia de usuario.
-why_reference: NetScaler es uno de los tres ADC de referencia del mercado empresarial junto a F5 y A10, y el estándar
-  de facto delante de las plataformas de escritorio virtual y las aplicaciones críticas de banca y administración
-  pública. Gartner lo sigue en el mercado de application delivery controllers.
+why_reference: NetScaler es uno de los tres ADC de referencia del mercado empresarial junto a F5 y A10, y el estándar de facto
+  delante de las plataformas de escritorio virtual y las aplicaciones críticas de banca y administración pública. Gartner
+  lo sigue en el mercado de application delivery controllers.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

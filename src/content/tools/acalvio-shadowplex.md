@@ -12,14 +12,13 @@ tags:
 - ai
 type: comercial
 cost_model: suscripción
-cost_details: Suscripción por número de endpoints y subredes cubiertas; disponible también sobre infraestructura
-  de terceros.
+cost_details: Suscripción por número de endpoints y subredes cubiertas; disponible también sobre infraestructura de terceros.
 website: https://www.acalvio.com
-description: Plataforma de engaño autónomo que genera y distribuye señuelos adaptados a la topología real de la
-  red, con foco en la protección de identidades y de Active Directory.
-why_reference: 'Acalvio es el fabricante que más ha automatizado la parte cara del engaño: en lugar de diseñar los
-  señuelos a mano, analiza la red y despliega los que resultan verosímiles en cada segmento. Es una de las cinco
-  plataformas de deception que las comparativas independientes del sector citan de forma recurrente.'
+description: Plataforma de engaño autónomo que genera y distribuye señuelos adaptados a la topología real de la red, con foco
+  en la protección de identidades y de Active Directory.
+why_reference: 'Acalvio es el fabricante que más ha automatizado la parte cara del engaño: en lugar de diseñar los señuelos
+  a mano, analiza la red y despliega los que resultan verosímiles en cada segmento. Es una de las cinco plataformas de deception
+  que las comparativas independientes del sector citan de forma recurrente.'
 certifications:
 - SOC 2 Tipo II
 company_size:

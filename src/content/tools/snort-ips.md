@@ -28,12 +28,13 @@ company_size:
 market_rank:
   ips: 10
 sources:
-  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+- https://www.gartner.com/reviews/market/intrusion-prevention-systems
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/snort-ips.png
 ---
+
 Cisco Secure IPS —heredero de la línea Firepower— aplica en línea la inteligencia de amenazas de Talos, uno de los
 mayores equipos de investigación del sector, y comparte motor de inspección con Snort, el IDS libre que Cisco
 mantiene.

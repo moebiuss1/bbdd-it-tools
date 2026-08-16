@@ -14,11 +14,11 @@ type: opensource
 cost_model: gratis
 cost_details: Software libre bajo licencia Apache 2.0, sin coste ni límite de ejecuciones.
 website: https://jmeter.apache.org
-description: Herramienta de la Apache Software Foundation para pruebas de carga y funcionales sobre HTTP, APIs REST,
-  SOAP, bases de datos, colas y otros protocolos.
-why_reference: 'JMeter es el estándar libre de las pruebas de carga desde hace más de veinte años: es la herramienta
-  que aparece en los pliegos cuando se exige demostrar el comportamiento de un servicio bajo concurrencia, y su
-  formato de plan de pruebas lo entienden casi todas las plataformas comerciales de rendimiento.'
+description: Herramienta de la Apache Software Foundation para pruebas de carga y funcionales sobre HTTP, APIs REST, SOAP,
+  bases de datos, colas y otros protocolos.
+why_reference: 'JMeter es el estándar libre de las pruebas de carga desde hace más de veinte años: es la herramienta que aparece
+  en los pliegos cuando se exige demostrar el comportamiento de un servicio bajo concurrencia, y su formato de plan de pruebas
+  lo entienden casi todas las plataformas comerciales de rendimiento.'
 company_size:
 - pequeña
 - mediana

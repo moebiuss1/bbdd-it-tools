@@ -5,11 +5,11 @@ categories:
 - key-managers
 - secrets-management
 tags:
-  - kms
-  - cloud
-  - google
-  - hsm
-  - fips
+- kms
+- cloud
+- google
+- hsm
+- fips
 type: comercial
 cost_model: suscripción
 cost_details: $0.06/clave/mes + $0.03/10,000 operaciones.

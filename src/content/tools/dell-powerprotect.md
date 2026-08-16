@@ -12,15 +12,15 @@ tags:
 - dell
 type: comercial
 cost_model: suscripción
-cost_details: Licencia por capacidad protegida; se integra con los sistemas de almacenamiento de copia PowerProtect
-  DD (Data Domain).
+cost_details: Licencia por capacidad protegida; se integra con los sistemas de almacenamiento de copia PowerProtect DD (Data
+  Domain).
 website: https://www.dell.com/en-us/dt/data-protection/powerprotect-data-manager.htm
 cert_url: https://www.dell.com/security
-description: Software de protección de datos de Dell para máquinas virtuales, bases de datos, Kubernetes y cargas
-  cloud, integrado con los sistemas de almacenamiento Data Domain.
-why_reference: Dell es el mayor proveedor de infraestructura de protección de datos del mundo por cuota de mercado
-  y figura entre los líderes de backup y recuperación empresarial de Gartner. Sus sistemas Data Domain son el destino
-  de copia deduplicado más extendido del centro de datos, y PowerProtect es la capa de software que los orquesta.
+description: Software de protección de datos de Dell para máquinas virtuales, bases de datos, Kubernetes y cargas cloud, integrado
+  con los sistemas de almacenamiento Data Domain.
+why_reference: Dell es el mayor proveedor de infraestructura de protección de datos del mundo por cuota de mercado y figura
+  entre los líderes de backup y recuperación empresarial de Gartner. Sus sistemas Data Domain son el destino de copia deduplicado
+  más extendido del centro de datos, y PowerProtect es la capa de software que los orquesta.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

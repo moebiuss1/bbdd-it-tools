@@ -14,11 +14,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Licencia por usuario y año, con módulos de pruebas funcionales, de carga y de seguridad.
 website: https://smartbear.com/product/ready-api/
-description: 'Suite comercial de pruebas de API heredera de SoapUI: pruebas funcionales, de carga, de seguridad
-  y virtualización de servicios para REST, SOAP, GraphQL y colas de mensajes.'
-why_reference: SoapUI, su versión libre, es la herramienta con la que se probaron los servicios web SOAP de media
-  banca y administración pública, y ReadyAPI sigue siendo la referencia cuando hay que validar contratos complejos,
-  protocolos antiguos y pruebas de carga sobre la misma base de casos.
+description: 'Suite comercial de pruebas de API heredera de SoapUI: pruebas funcionales, de carga, de seguridad y virtualización
+  de servicios para REST, SOAP, GraphQL y colas de mensajes.'
+why_reference: SoapUI, su versión libre, es la herramienta con la que se probaron los servicios web SOAP de media banca y
+  administración pública, y ReadyAPI sigue siendo la referencia cuando hay que validar contratos complejos, protocolos antiguos
+  y pruebas de carga sobre la misma base de casos.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

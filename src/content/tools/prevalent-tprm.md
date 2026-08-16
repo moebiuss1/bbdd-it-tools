@@ -11,15 +11,13 @@ tags:
 - due-diligence
 type: comercial
 cost_model: suscripción
-cost_details: Suscripción por número de proveedores gestionados; también en modalidad de servicio gestionado con
-  analistas.
+cost_details: Suscripción por número de proveedores gestionados; también en modalidad de servicio gestionado con analistas.
 website: https://mitratech.com/products/prevalent/
-description: Plataforma de gestión del riesgo de terceros centrada en el ciclo de vida completo del proveedor, desde
-  la diligencia previa a la contratación hasta la salida.
-why_reference: Prevalent es uno de los especialistas puros de riesgo de terceros que Gartner sigue en su mercado,
-  y el que mejor cubre el ciclo completo del proveedor —no solo la evaluación de seguridad, sino la contratación,
-  el seguimiento del rendimiento y la terminación ordenada del contrato, que es donde suelen quedarse los accesos
-  abiertos.
+description: Plataforma de gestión del riesgo de terceros centrada en el ciclo de vida completo del proveedor, desde la diligencia
+  previa a la contratación hasta la salida.
+why_reference: Prevalent es uno de los especialistas puros de riesgo de terceros que Gartner sigue en su mercado, y el que
+  mejor cubre el ciclo completo del proveedor —no solo la evaluación de seguridad, sino la contratación, el seguimiento del
+  rendimiento y la terminación ordenada del contrato, que es donde suelen quedarse los accesos abiertos.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

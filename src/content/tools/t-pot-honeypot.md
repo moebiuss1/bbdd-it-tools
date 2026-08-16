@@ -14,11 +14,11 @@ type: opensource
 cost_model: gratis
 cost_details: Proyecto libre de Deutsche Telekom Security bajo licencia GPLv3, sin coste.
 website: https://github.com/telekom-security/tpotce
-description: Plataforma de honeypots todo en uno que despliega en contenedores más de veinte trampas distintas con
-  visualización y análisis integrados.
-why_reference: 'T-Pot, mantenido por Deutsche Telekom Security, es la plataforma de honeypots libre más usada del
-  mundo y la puerta de entrada habitual a la disciplina: reúne en un solo despliegue las trampas de referencia de
-  cada protocolo y las conecta a un panel de análisis, lo que en instalación manual costaría semanas.'
+description: Plataforma de honeypots todo en uno que despliega en contenedores más de veinte trampas distintas con visualización
+  y análisis integrados.
+why_reference: 'T-Pot, mantenido por Deutsche Telekom Security, es la plataforma de honeypots libre más usada del mundo y
+  la puerta de entrada habitual a la disciplina: reúne en un solo despliegue las trampas de referencia de cada protocolo y
+  las conecta a un panel de análisis, lo que en instalación manual costaría semanas.'
 company_size:
 - pequeña
 - mediana

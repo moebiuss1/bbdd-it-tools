@@ -15,11 +15,11 @@ cost_model: suscripción
 cost_details: Licencia por dispositivo gestionado, con appliance físico o virtual y niveles Base, Plus y Pro.
 website: https://www.fortinet.com/products/network-access-control
 cert_url: https://www.fortinet.com/corporate/about-us/product-certifications
-description: Control de acceso a la red con descubrimiento e inventario de dispositivos, perfilado de IoT, cuarentena
-  automática y respuesta integrada con el resto del ecosistema Fortinet.
-why_reference: FortiNAC es el NAC de referencia para quien ya opera red y firewall de Fortinet, y uno de los productos
-  que Gartner sigue en el mercado de network access control. Su fuerte es el inventario y el perfilado de dispositivos
-  no gestionados —cámaras, PLCs, equipamiento médico— que ni admiten agente ni hablan 802.1X.
+description: Control de acceso a la red con descubrimiento e inventario de dispositivos, perfilado de IoT, cuarentena automática
+  y respuesta integrada con el resto del ecosistema Fortinet.
+why_reference: FortiNAC es el NAC de referencia para quien ya opera red y firewall de Fortinet, y uno de los productos que
+  Gartner sigue en el mercado de network access control. Su fuerte es el inventario y el perfilado de dispositivos no gestionados
+  —cámaras, PLCs, equipamiento médico— que ni admiten agente ni hablan 802.1X.
 certifications:
 - ISO 27001
 - Common Criteria

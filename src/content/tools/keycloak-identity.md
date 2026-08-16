@@ -31,7 +31,7 @@ market_rank:
 repo: https://github.com/keycloak/keycloak
 license: Apache-2.0
 sources:
-  - https://www.gartner.com/reviews/market/access-management
+- https://www.gartner.com/reviews/market/access-management
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

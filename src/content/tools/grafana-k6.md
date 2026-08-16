@@ -14,11 +14,11 @@ type: opensource
 cost_model: freemium
 cost_details: k6 de código abierto gratuito (AGPLv3). Grafana Cloud k6 por suscripción según usuarios virtuales.
 website: https://k6.io
-description: Herramienta moderna de pruebas de carga y fiabilidad con guiones en JavaScript, pensada para ejecutarse
-  dentro de la tubería de despliegue.
-why_reference: 'k6 es la referencia actual de las pruebas de rendimiento como código: los escenarios se escriben
-  en JavaScript, se versionan junto al servicio y se ejecutan en cada despliegue con umbrales que fallan la construcción.
-  Es el enfoque que ha sustituido a las pruebas de carga puntuales en los equipos que practican entrega continua.'
+description: Herramienta moderna de pruebas de carga y fiabilidad con guiones en JavaScript, pensada para ejecutarse dentro
+  de la tubería de despliegue.
+why_reference: 'k6 es la referencia actual de las pruebas de rendimiento como código: los escenarios se escriben en JavaScript,
+  se versionan junto al servicio y se ejecutan en cada despliegue con umbrales que fallan la construcción. Es el enfoque que
+  ha sustituido a las pruebas de carga puntuales en los equipos que practican entrega continua.'
 company_size:
 - pequeña
 - mediana

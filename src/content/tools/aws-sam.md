@@ -12,14 +12,13 @@ tags:
 - deployment
 type: opensource
 cost_model: gratis
-cost_details: Marco de trabajo y CLI gratuitos bajo licencia Apache 2.0; se paga solo el consumo de los recursos
-  desplegados.
+cost_details: Marco de trabajo y CLI gratuitos bajo licencia Apache 2.0; se paga solo el consumo de los recursos desplegados.
 website: https://aws.amazon.com/serverless/sam/
-description: Marco de trabajo oficial de AWS para definir, probar y desplegar aplicaciones serverless con una sintaxis
-  abreviada que se traduce a CloudFormation.
-why_reference: 'SAM es la vía oficial y más directa para llevar una aplicación de funciones a producción en AWS:
-  reduce a unas pocas líneas la plantilla que en CloudFormation ocuparía cientos, y su CLI permite ejecutar y depurar
-  las funciones en local antes de desplegarlas.'
+description: Marco de trabajo oficial de AWS para definir, probar y desplegar aplicaciones serverless con una sintaxis abreviada
+  que se traduce a CloudFormation.
+why_reference: 'SAM es la vía oficial y más directa para llevar una aplicación de funciones a producción en AWS: reduce a
+  unas pocas líneas la plantilla que en CloudFormation ocuparía cientos, y su CLI permite ejecutar y depurar las funciones
+  en local antes de desplegarlas.'
 company_size:
 - pequeña
 - mediana

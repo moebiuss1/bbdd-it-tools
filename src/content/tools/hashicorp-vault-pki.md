@@ -4,11 +4,11 @@ slug: hashicorp-vault-pki
 categories:
 - cert-managers
 tags:
-  - pki
-  - certificate-lifecycle
-  - vault
-  - cloud-native
-  - ephemeral
+- pki
+- certificate-lifecycle
+- vault
+- cloud-native
+- ephemeral
 type: opensource
 cost_model: suscripción
 cost_details: Gratuito (MPL). Enterprise desde ~$15,000/año.
@@ -27,7 +27,7 @@ market_rank:
 repo: https://github.com/hashicorp/vault
 license: MPL-2.0
 sources:
-  - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
+- https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 first_added: 2026-08-12
 last_verified: '2026-08-10'
 needs_review: false

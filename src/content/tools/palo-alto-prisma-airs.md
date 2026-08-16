@@ -2,7 +2,7 @@
 name: Palo Alto Networks Prisma AIRS
 slug: palo-alto-prisma-airs
 categories:
-  - llm-security
+- llm-security
 tags:
 - ai
 - endpoint

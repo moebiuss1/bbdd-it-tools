@@ -15,12 +15,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por usuario o por secreto gestionado, en la nube del fabricante o instalado.
 website: https://delinea.com/products/secret-server
-description: Bóveda de credenciales privilegiadas con descubrimiento de cuentas, rotación automática, control de
-  sesiones y gestión de secretos para aplicaciones y automatismos.
-why_reference: 'Delinea —resultado de la unión de Thycotic y Centrify— es uno de los líderes del mercado de gestión
-  de accesos privilegiados de Gartner, y Secret Server es la bóveda que más se elige cuando el criterio es la rapidez
-  de implantación: cubre el caso de uso central en semanas y no en el proyecto de un año que caracteriza al PAM
-  tradicional.'
+description: Bóveda de credenciales privilegiadas con descubrimiento de cuentas, rotación automática, control de sesiones
+  y gestión de secretos para aplicaciones y automatismos.
+why_reference: 'Delinea —resultado de la unión de Thycotic y Centrify— es uno de los líderes del mercado de gestión de accesos
+  privilegiados de Gartner, y Secret Server es la bóveda que más se elige cuando el criterio es la rapidez de implantación:
+  cubre el caso de uso central en semanas y no en el proyecto de un año que caracteriza al PAM tradicional.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

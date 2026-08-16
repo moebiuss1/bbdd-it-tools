@@ -13,11 +13,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Licencia por usuario y año; gratuito hasta cinco usuarios y veinte espacios de trabajo.
 website: https://www.perforce.com/products/helix-core
-description: Sistema de control de versiones centralizado diseñado para repositorios enormes y ficheros binarios,
-  con bloqueo exclusivo y replicación global.
+description: Sistema de control de versiones centralizado diseñado para repositorios enormes y ficheros binarios, con bloqueo
+  exclusivo y replicación global.
 why_reference: 'Helix Core es el control de versiones estándar en el desarrollo de videojuegos, automoción y semiconductores:
-  es el único que gestiona con soltura repositorios de terabytes con activos binarios que Git no puede fusionar.
-  Donde el fichero pesa y no se puede ramificar, sigue sin alternativa real.'
+  es el único que gestiona con soltura repositorios de terabytes con activos binarios que Git no puede fusionar. Donde el
+  fichero pesa y no se puede ramificar, sigue sin alternativa real.'
 certifications:
 - SOC 2 Tipo II
 company_size:

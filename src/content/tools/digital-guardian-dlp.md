@@ -20,9 +20,9 @@ cert_url: https://trust.fortra.com/
 description: Plataforma DLP con telemetría profunda de endpoint que protege datos sensibles tanto dentro como fuera de la
   red corporativa. Especializada en entornos de defensa, farmacéutico y manufactura donde la protección de propiedad intelectual
   y datos clasificados es crítica.
-why_reference: Fortra DLP (parte de Fortra desde 2022) es reconocida como una de las soluciones DLP más completas para
-  la protección de datos en endpoints, especialmente en escenarios off-network donde otras soluciones pierden visibilidad.
-  Su capacidad de capturar telemetría a nivel de kernel —incluyendo movimientos de ratón y pulsaciones de teclas en contextos
+why_reference: Fortra DLP (parte de Fortra desde 2022) es reconocida como una de las soluciones DLP más completas para la
+  protección de datos en endpoints, especialmente en escenarios off-network donde otras soluciones pierden visibilidad. Su
+  capacidad de capturar telemetría a nivel de kernel —incluyendo movimientos de ratón y pulsaciones de teclas en contextos
   de investigación— la hace única en sectores de defensa y alta regulación.
 certifications:
 - SOC 2 Tipo II

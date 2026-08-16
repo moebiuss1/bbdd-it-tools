@@ -26,7 +26,7 @@ company_size:
 market_rank:
   siem: 12
 sources:
-  - https://www.gartner.com/reviews/market/security-information-event-management
+- https://www.gartner.com/reviews/market/security-information-event-management
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

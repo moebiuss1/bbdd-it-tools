@@ -12,15 +12,14 @@ tags:
 - ot
 type: comercial
 cost_model: suscripción
-cost_details: Licencia por endpoint protegido; disponible para servidores, puestos fijos y sistemas de propósito
-  único.
+cost_details: Licencia por endpoint protegido; disponible para servidores, puestos fijos y sistemas de propósito único.
 website: https://www.broadcom.com/products/carbon-black
 cert_url: https://www.broadcom.com/support/trust-center/compliance
-description: Control de aplicaciones por lista de permitidos con bloqueo de todo lo no autorizado, supervisión de
-  la integridad de ficheros y protección de sistemas de propósito fijo.
-why_reference: 'Carbon Black App Control —antes Bit9— es el producto que definió el control de aplicaciones por
-  lista de permitidos en el endpoint y sigue siendo la referencia en sistemas de función fija: cajeros, terminales
-  de punto de venta, equipamiento industrial y servidores críticos donde nada debería cambiar nunca.'
+description: Control de aplicaciones por lista de permitidos con bloqueo de todo lo no autorizado, supervisión de la integridad
+  de ficheros y protección de sistemas de propósito fijo.
+why_reference: 'Carbon Black App Control —antes Bit9— es el producto que definió el control de aplicaciones por lista de permitidos
+  en el endpoint y sigue siendo la referencia en sistemas de función fija: cajeros, terminales de punto de venta, equipamiento
+  industrial y servidores críticos donde nada debería cambiar nunca.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

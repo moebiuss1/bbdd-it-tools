@@ -5,11 +5,11 @@ categories:
 - incident-management
 - soar
 tags:
-  - soar
-  - no-code
-  - automatizacion
-  - workflows
-  - security
+- soar
+- no-code
+- automatizacion
+- workflows
+- security
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$20,000/año. Automatización no-code.
@@ -27,7 +27,7 @@ market_rank:
   incident-management: 12
   soar: 11
 sources:
-  - https://www.gartner.com/reviews/market/it-service-management-platforms
+- https://www.gartner.com/reviews/market/it-service-management-platforms
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

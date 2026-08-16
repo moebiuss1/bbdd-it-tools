@@ -6,11 +6,11 @@ categories:
 - mfa
 - sso
 tags:
-  - iam
-  - sso
-  - mfa
-  - api-security
-  - ciam
+- iam
+- sso
+- mfa
+- api-security
+- ciam
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$6/usuario/mes. Plataforma IAM con federación avanzada.
@@ -32,7 +32,7 @@ market_rank:
   mfa: 3
   sso: 4
 sources:
-  - https://www.gartner.com/reviews/market/access-management
+- https://www.gartner.com/reviews/market/access-management
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

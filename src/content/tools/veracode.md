@@ -12,15 +12,14 @@ tags:
 - compliance
 type: comercial
 cost_model: suscripción
-cost_details: Suscripción por aplicación o por conjunto de aplicaciones, con paquetes que combinan los distintos
-  análisis.
+cost_details: Suscripción por aplicación o por conjunto de aplicaciones, con paquetes que combinan los distintos análisis.
 website: https://www.veracode.com
 cert_url: https://www.veracode.com/trust/
-description: Plataforma de seguridad de aplicaciones entregada como servicio con análisis estático sobre binarios,
-  dinámico, de composición y pruebas de penetración manuales.
-why_reference: 'Veracode es uno de los nombres fundacionales del análisis de seguridad de aplicaciones y el referente
-  cuando hay que certificar software de terceros: analiza el binario, sin necesidad de código fuente, lo que permite
-  exigir una verificación independiente a un proveedor que no va a entregar sus fuentes.'
+description: Plataforma de seguridad de aplicaciones entregada como servicio con análisis estático sobre binarios, dinámico,
+  de composición y pruebas de penetración manuales.
+why_reference: 'Veracode es uno de los nombres fundacionales del análisis de seguridad de aplicaciones y el referente cuando
+  hay que certificar software de terceros: analiza el binario, sin necesidad de código fuente, lo que permite exigir una verificación
+  independiente a un proveedor que no va a entregar sus fuentes.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

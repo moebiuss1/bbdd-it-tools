@@ -14,12 +14,11 @@ cost_model: suscripción
 cost_details: Suscripción por usuario y año; despliegue mediante complemento de correo y portal propio.
 website: https://hoxhunt.com
 cert_url: https://hoxhunt.com/security
-description: Plataforma de cambio de comportamiento en seguridad basada en simulaciones adaptativas individualizadas,
-  refuerzo positivo y notificación de correos sospechosos con un clic.
+description: Plataforma de cambio de comportamiento en seguridad basada en simulaciones adaptativas individualizadas, refuerzo
+  positivo y notificación de correos sospechosos con un clic.
 why_reference: 'Hoxhunt es el referente del enfoque conductual frente al formativo clásico: en vez de cursos y reprimendas,
-  entrena con simulaciones que se adaptan al nivel de cada persona y premia la notificación, lo que produce tasas
-  de reporte de correos sospechosos muy por encima de la media del sector. Gartner lo sigue en concienciación de
-  seguridad.'
+  entrena con simulaciones que se adaptan al nivel de cada persona y premia la notificación, lo que produce tasas de reporte
+  de correos sospechosos muy por encima de la media del sector. Gartner lo sigue en concienciación de seguridad.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

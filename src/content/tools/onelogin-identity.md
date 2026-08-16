@@ -6,9 +6,9 @@ categories:
 - mfa
 - sso
 tags:
-  - iam
-  - sso
-  - mfa
+- iam
+- sso
+- mfa
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$4/usuario/mes. Planes Standard y Advanced.
@@ -28,7 +28,7 @@ market_rank:
   mfa: 5
   sso: 6
 sources:
-  - https://www.gartner.com/reviews/market/access-management
+- https://www.gartner.com/reviews/market/access-management
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

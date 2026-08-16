@@ -91,8 +91,39 @@
    "DevOps Platforms"
   ]
  },
- "bitsight": {
+ "beyondtrust": {
+  "mq": [
+   "Privileged Access Management"
+  ],
+  "name": "BeyondTrust",
+  "peer_markets": [
+   "privileged-access-management"
+  ],
+  "slug": "beyondtrust",
+  "wave": [
+   "Leader for PIM",
+   "Privileged Identity Management",
+   "Privileged Identity Management Solutions",
+   "evaluation for PIM",
+   "is an evaluation of vendors in the software"
+  ]
+ },
+ "bitdefender-gravityzone": {
   "mq": [],
+  "name": "Bitdefender GravityZone",
+  "peer_markets": [
+   "endpoint-protection-platforms"
+  ],
+  "slug": "bitdefender-gravityzone",
+  "wave": [
+   "Extended Detection And Response Platforms"
+  ]
+ },
+ "bitsight": {
+  "mq": [
+   "Cyber Threat Intelligence Technologies",
+   "Cyberthreat Intelligence Technologies"
+  ],
   "name": "Bitsight",
   "peer_markets": [
    "cyber-threat-intelligence-products-and-services"
@@ -128,22 +159,6 @@
    "Zero Trust eXtended Ecosystem Platform Providers"
   ]
  },
- "checkmarx-one": {
-  "mq": [
-   "Application Security Testing",
-   "Software Supply Chain Security"
-  ],
-  "name": "Checkmarx One",
-  "peer_markets": [
-   "application-security-testing"
-  ],
-  "slug": "checkmarx-one",
-  "wave": [
-   "Static Application Security Testing",
-   "Static Application Security Testing Solutions",
-   "for SAST"
-  ]
- },
  "cisco-umbrella": {
   "mq": [],
   "name": "Cisco Umbrella",
@@ -176,17 +191,6 @@
   "slug": "cohesity-dataprotect",
   "wave": []
  },
- "commvault-cloud": {
-  "mq": [
-   "Backup and Data Protection Platforms"
-  ],
-  "name": "Commvault Cloud",
-  "peer_markets": [],
-  "slug": "commvault-cloud",
-  "wave": [
-   "Data Resilience Solutions"
-  ]
- },
  "credo-ai": {
   "mq": [],
   "name": "Credo AI",
@@ -206,6 +210,15 @@
   "name": "CrowdStrike Falcon",
   "peer_markets": [],
   "slug": "crowdstrike-falcon",
+  "wave": []
+ },
+ "cybereason-edr": {
+  "mq": [],
+  "name": "Cybereason",
+  "peer_markets": [
+   "endpoint-detection-and-response-solutions"
+  ],
+  "slug": "cybereason-edr",
   "wave": []
  },
  "cyware-orchestrate": {
@@ -291,15 +304,6 @@
    "endpoint-protection-platforms"
   ],
   "slug": "eset-protect",
-  "wave": []
- },
- "exabeam-fusion": {
-  "mq": [
-   "Security Information and Event Management"
-  ],
-  "name": "Exabeam Fusion SIEM",
-  "peer_markets": [],
-  "slug": "exabeam-fusion",
   "wave": []
  },
  "extrahop-revealx": {
@@ -442,17 +446,14 @@
   "slug": "jumpcloud",
   "wave": []
  },
- "logicgate-risk-cloud": {
-  "mq": [
-   "GRC Tools",
-   "Governance"
-  ],
-  "name": "LogicGate Risk Cloud",
+ "kaspersky-endpoint-security": {
+  "mq": [],
+  "name": "Kaspersky Endpoint Security",
   "peer_markets": [],
-  "slug": "logicgate-risk-cloud",
+  "slug": "kaspersky-endpoint-security",
   "wave": [
-   "Governance",
-   "Third-Party Risk Management Platforms"
+   "Endpoint Security Suites",
+   "External Threat Intelligence Services"
   ]
  },
  "microsoft-sentinel": {
@@ -563,15 +564,6 @@
   "slug": "rapid7-insightconnect",
   "wave": []
  },
- "samanage-solarwinds": {
-  "mq": [
-   "Observability Platforms"
-  ],
-  "name": "SolarWinds Service Desk",
-  "peer_markets": [],
-  "slug": "samanage-solarwinds",
-  "wave": []
- },
  "sentinelone-singularity": {
   "mq": [
    "Endpoint Protection"
@@ -581,14 +573,16 @@
   "slug": "sentinelone-singularity",
   "wave": []
  },
- "solarwinds-dlp": {
+ "skyhigh-dlp": {
   "mq": [
-   "Observability Platforms"
+   "Security Service Edge"
   ],
-  "name": "SolarWinds Access Rights Manager",
+  "name": "Skyhigh Security DLP",
   "peer_markets": [],
-  "slug": "solarwinds-dlp",
-  "wave": []
+  "slug": "skyhigh-dlp",
+  "wave": [
+   "Cloud Workload Security"
+  ]
  },
  "splunk-enterprise-security": {
   "mq": [
@@ -646,24 +640,6 @@
   ],
   "slug": "tenable-one",
   "wave": []
- },
- "trend-micro-apex-one": {
-  "mq": [],
-  "name": "Trend Micro Apex One",
-  "peer_markets": [],
-  "slug": "trend-micro-apex-one",
-  "wave": [
-   "Endpoint Security"
-  ]
- },
- "trend-micro-tippingpoint": {
-  "mq": [],
-  "name": "Trend Micro TippingPoint",
-  "peer_markets": [],
-  "slug": "trend-micro-tippingpoint",
-  "wave": [
-   "Endpoint Security"
-  ]
  },
  "vectra-ai": {
   "mq": [

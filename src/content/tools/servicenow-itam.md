@@ -1,8 +1,8 @@
 ---
 name: ServiceNow ITAM
 categories:
-  - incident-management
-  - it-asset-managers
+- incident-management
+- it-asset-managers
 type: comercial
 cost_model: presupuesto-personalizado
 cost_details: Licencia anual según número de activos gestionados.
@@ -27,9 +27,9 @@ tags:
 - monitorizacion
 slug: servicenow-itam
 sources:
-  - https://www.gartner.com/reviews/market/it-service-management-platforms
+- https://www.gartner.com/reviews/market/it-service-management-platforms
 first_added: 2026-08-07
-last_verified: '2026-08-10'
+last_verified: '2026-08-16'
 needs_review: false
 market_rank:
   incident-management: 2

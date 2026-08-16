@@ -12,14 +12,13 @@ tags:
 - vmware
 type: comercial
 cost_model: suscripción
-cost_details: Suscripción según el volumen de gasto cloud gestionado; muy usada también por proveedores de servicios
-  gestionados.
+cost_details: Suscripción según el volumen de gasto cloud gestionado; muy usada también por proveedores de servicios gestionados.
 website: https://www.broadcom.com/products/software/finops/cloudhealth
-description: Plataforma de gestión financiera y de gobierno multinube con informes de coste, políticas automatizadas,
-  recomendaciones de ahorro y facturación para clientes finales.
-why_reference: CloudHealth es una de las plataformas FinOps con mayor base instalada, especialmente entre proveedores
-  de servicios gestionados, que la usan para repercutir y facturar el consumo cloud a sus clientes. Gartner la sigue
-  en el mercado de herramientas de gestión financiera cloud.
+description: Plataforma de gestión financiera y de gobierno multinube con informes de coste, políticas automatizadas, recomendaciones
+  de ahorro y facturación para clientes finales.
+why_reference: CloudHealth es una de las plataformas FinOps con mayor base instalada, especialmente entre proveedores de servicios
+  gestionados, que la usan para repercutir y facturar el consumo cloud a sus clientes. Gartner la sigue en el mercado de herramientas
+  de gestión financiera cloud.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

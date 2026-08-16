@@ -2,7 +2,7 @@
 name: Cyera
 slug: cyera
 categories:
-  - llm-security
+- llm-security
 tags:
 - ai
 - cloud
@@ -28,8 +28,8 @@ company_size:
 - mediana
 - grande
 sources:
-  - https://www.cyera.com/platform/dspm
-  - https://www.cyera.com/solution-briefs/cyera-dspm
+- https://www.cyera.com/platform/dspm
+- https://www.cyera.com/solution-briefs/cyera-dspm
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 logo: /logos/cyera.png

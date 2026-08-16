@@ -4,10 +4,10 @@ slug: brinqa-risk
 categories:
 - kpi-ca-managers
 tags:
-  - risk-management
-  - analytics
-  - vulnerability-management
-  - data-orchestration
+- risk-management
+- analytics
+- vulnerability-management
+- data-orchestration
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$50,000/año.

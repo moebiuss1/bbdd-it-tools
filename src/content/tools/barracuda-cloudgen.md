@@ -31,7 +31,7 @@ market_rank:
   ngfw: 3
   sd-wan: 2
 sources:
-  - https://www.gartner.com/reviews/market/network-firewalls
+- https://www.gartner.com/reviews/market/network-firewalls
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

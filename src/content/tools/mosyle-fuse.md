@@ -27,12 +27,13 @@ company_size:
 market_rank:
   mdm: 9
 sources:
-  - https://www.gartner.com/reviews/market/unified-endpoint-management-tools
+- https://www.gartner.com/reviews/market/unified-endpoint-management-tools
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/mosyle-fuse.png
 ---
+
 Mosyle Fuse reúne en un solo producto la gestión de dispositivos Apple y la seguridad que suele contratarse aparte:
 MDM, protección frente a malware, filtrado web, gestión de identidad y cifrado, todo para macOS, iOS e iPadOS.
 

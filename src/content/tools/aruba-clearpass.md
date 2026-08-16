@@ -27,7 +27,7 @@ market_rank:
   identity-managers: 8
   nac: 2
 sources:
-  - https://www.gartner.com/reviews/market/network-access-control
+- https://www.gartner.com/reviews/market/network-access-control
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

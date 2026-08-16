@@ -33,9 +33,9 @@ tags:
 - monitorizacion
 slug: microsoft-sentinel
 sources:
-  - https://www.gartner.com/reviews/market/observability-platforms
+- https://www.gartner.com/reviews/market/observability-platforms
 first_added: 2026-08-07
-last_verified: '2026-08-10'
+last_verified: '2026-08-16'
 needs_review: false
 market_rank:
   log-management: 2

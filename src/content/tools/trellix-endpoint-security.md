@@ -31,7 +31,7 @@ market_rank:
   antivirus: 8
   edr: 9
 sources:
-  - https://www.gartner.com/reviews/market/endpoint-protection-platforms
+- https://www.gartner.com/reviews/market/endpoint-protection-platforms
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

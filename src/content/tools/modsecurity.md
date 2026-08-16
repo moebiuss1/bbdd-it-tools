@@ -14,11 +14,11 @@ type: opensource
 cost_model: gratis
 cost_details: Motor y conjunto de reglas básicas (OWASP CRS) gratuitos bajo licencia Apache 2.0.
 website: https://modsecurity.org
-description: Motor de firewall de aplicaciones web libre, integrable en Apache, NGINX e IIS, y base del conjunto
-  de reglas OWASP Core Rule Set.
-why_reference: ModSecurity es el WAF de código abierto de referencia desde hace dos décadas y el motor sobre el
-  que se escribió el OWASP Core Rule Set, el conjunto de reglas que casi todos los WAF comerciales usan como línea
-  base de comparación. Hoy el proyecto lo mantiene la propia OWASP.
+description: Motor de firewall de aplicaciones web libre, integrable en Apache, NGINX e IIS, y base del conjunto de reglas
+  OWASP Core Rule Set.
+why_reference: ModSecurity es el WAF de código abierto de referencia desde hace dos décadas y el motor sobre el que se escribió
+  el OWASP Core Rule Set, el conjunto de reglas que casi todos los WAF comerciales usan como línea base de comparación. Hoy
+  el proyecto lo mantiene la propia OWASP.
 certifications:
 - OWASP
 company_size:
@@ -32,8 +32,9 @@ market_rank:
 sources:
 - https://owasp.org/www-project-modsecurity/
 - https://en.wikipedia.org/wiki/ModSecurity
-first_added: &id001 2026-08-14
-last_verified: *id001
+- https://github.com/owasp-modsecurity/ModSecurity
+first_added: 2026-08-14
+last_verified: '2026-08-16'
 logo: /logos/modsecurity.png
 needs_review: false
 ---

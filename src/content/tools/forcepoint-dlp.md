@@ -28,10 +28,10 @@ tags:
 - endpoint
 slug: forcepoint-dlp
 first_added: 2026-08-07
-last_verified: '2026-08-10'
+last_verified: '2026-08-16'
 needs_review: false
 sources:
-  - https://www.gartner.com/reviews/market/data-loss-prevention
+- https://www.gartner.com/reviews/market/data-loss-prevention
 market_rank:
   dlp: 2
   usb-device-control: 2

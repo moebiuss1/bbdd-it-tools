@@ -14,12 +14,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por usuario y año, con paquetes que combinan SWG, CASB, ZTNA y DLP.
 website: https://www.netskope.com
-description: Plataforma de security service edge con pasarela web segura, CASB en línea y por API, DLP y acceso
-  de confianza cero sobre una red de puntos de presencia propia.
-why_reference: 'Netskope es uno de los tres líderes históricos del mercado de security service edge que sigue Gartner,
-  junto a Zscaler y Palo Alto, y el más reconocido en visibilidad y control granular sobre aplicaciones SaaS: distingue
-  instancia corporativa de instancia personal del mismo servicio, que es la diferencia entre bloquear y permitir
-  con criterio.'
+description: Plataforma de security service edge con pasarela web segura, CASB en línea y por API, DLP y acceso de confianza
+  cero sobre una red de puntos de presencia propia.
+why_reference: 'Netskope es uno de los tres líderes históricos del mercado de security service edge que sigue Gartner, junto
+  a Zscaler y Palo Alto, y el más reconocido en visibilidad y control granular sobre aplicaciones SaaS: distingue instancia
+  corporativa de instancia personal del mismo servicio, que es la diferencia entre bloquear y permitir con criterio.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

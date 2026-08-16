@@ -15,11 +15,11 @@ cost_model: suscripción
 cost_details: Suscripción sobre el gasto cloud gestionado, dentro de la plataforma modular de Harness.
 website: https://www.harness.io/products/cloud-cost-management
 cert_url: https://www.harness.io/security
-description: Módulo FinOps de la plataforma Harness con visibilidad multinube, reparto de coste de Kubernetes y
-  apagado automático de recursos ociosos.
-why_reference: 'Harness es una de las plataformas de entrega de software que Gartner sigue, y su módulo de coste
-  destaca por ir más allá del informe: sus reglas de autoparada apagan y reactivan bajo demanda entornos que no
-  se usan, que es donde se concentra el desperdicio en desarrollo y preproducción.'
+description: Módulo FinOps de la plataforma Harness con visibilidad multinube, reparto de coste de Kubernetes y apagado automático
+  de recursos ociosos.
+why_reference: 'Harness es una de las plataformas de entrega de software que Gartner sigue, y su módulo de coste destaca por
+  ir más allá del informe: sus reglas de autoparada apagan y reactivan bajo demanda entornos que no se usan, que es donde
+  se concentra el desperdicio en desarrollo y preproducción.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

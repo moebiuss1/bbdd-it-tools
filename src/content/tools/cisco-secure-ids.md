@@ -4,11 +4,11 @@ slug: cisco-secure-ids
 categories:
 - ids
 tags:
-  - ids
-  - talos
-  - network-security
-  - anomaly-detection
-  - signature-based
+- ids
+- talos
+- network-security
+- anomaly-detection
+- signature-based
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$5,000/año. Incluido en Cisco Secure portfolio.
@@ -30,7 +30,7 @@ company_size:
 market_rank:
   ids: 1
 sources:
-  - https://www.gartner.com/reviews/market/intrusion-prevention-systems
+- https://www.gartner.com/reviews/market/intrusion-prevention-systems
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

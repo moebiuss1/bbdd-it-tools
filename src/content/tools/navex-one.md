@@ -16,10 +16,9 @@ cost_details: Suscripción por empleado y módulo (políticas, canal ético, for
 website: https://www.navex.com
 description: Plataforma de cumplimiento ético y normativo con gestión del ciclo de vida de políticas, canal de denuncias,
   formación obligatoria y gestión de conflictos de interés.
-why_reference: 'NAVEX es el referente mundial en gestión de políticas y canal ético: su solución PolicyTech es la
-  más implantada para redactar, aprobar, distribuir y evidenciar la lectura de las políticas corporativas, y su
-  canal de denuncias es el estándar con el que se comparan las obligaciones de la directiva europea de protección
-  del denunciante.'
+why_reference: 'NAVEX es el referente mundial en gestión de políticas y canal ético: su solución PolicyTech es la más implantada
+  para redactar, aprobar, distribuir y evidenciar la lectura de las políticas corporativas, y su canal de denuncias es el
+  estándar con el que se comparan las obligaciones de la directiva europea de protección del denunciante.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

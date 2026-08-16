@@ -5,11 +5,11 @@ categories:
 - ci-cd
 - scm
 tags:
-  - iac
-  - ci-cd
-  - devops
-  - yaml
-  - gitops
+- iac
+- ci-cd
+- devops
+- yaml
+- gitops
 type: opensource
 cost_model: suscripción
 cost_details: Gratuito (MIT). GitLab Ultimate desde ~$99/usuario/mes.

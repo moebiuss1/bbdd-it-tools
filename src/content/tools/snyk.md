@@ -17,9 +17,9 @@ website: https://snyk.io
 cert_url: https://snyk.io/security
 description: Plataforma de seguridad para desarrolladores que analiza código propio, dependencias de terceros, contenedores
   e infraestructura como código desde el entorno de desarrollo.
-why_reference: Snyk definió el enfoque de seguridad centrada en el desarrollador y es uno de los referentes del
-  mercado de application security testing de Gartner. Su base de datos de vulnerabilidades de dependencias es de
-  las más completas del sector y suele adelantarse a los avisos oficiales.
+why_reference: Snyk definió el enfoque de seguridad centrada en el desarrollador y es uno de los referentes del mercado de
+  application security testing de Gartner. Su base de datos de vulnerabilidades de dependencias es de las más completas del
+  sector y suele adelantarse a los avisos oficiales.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

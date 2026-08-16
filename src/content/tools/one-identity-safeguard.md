@@ -13,11 +13,11 @@ type: comercial
 cost_model: licencia-perpetua
 cost_details: Licencia por usuario o por activo gestionado, sobre appliance físico endurecido o virtual.
 website: https://www.oneidentity.com/products/one-identity-safeguard/
-description: Plataforma de accesos privilegiados con bóveda en appliance endurecido, gestión y grabación de sesiones
-  y análisis del comportamiento del administrador.
-why_reference: 'Safeguard es uno de los productos que Gartner sigue en gestión de accesos privilegiados y destaca
-  por dos cosas: la bóveda se entrega en un appliance endurecido con superficie de ataque mínima, y su análisis
-  de comportamiento detecta al usuario privilegiado suplantado por patrones tan finos como su cadencia de tecleo.'
+description: Plataforma de accesos privilegiados con bóveda en appliance endurecido, gestión y grabación de sesiones y análisis
+  del comportamiento del administrador.
+why_reference: 'Safeguard es uno de los productos que Gartner sigue en gestión de accesos privilegiados y destaca por dos
+  cosas: la bóveda se entrega en un appliance endurecido con superficie de ataque mínima, y su análisis de comportamiento
+  detecta al usuario privilegiado suplantado por patrones tan finos como su cadencia de tecleo.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

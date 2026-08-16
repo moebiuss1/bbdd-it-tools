@@ -6,13 +6,13 @@ categories:
 - ips
 - ngfw
 tags:
-  - network
-  - cloud
-  - ai
-  - zero-trust
-  - ids
-  - ips
-  - threat-hunting
+- network
+- cloud
+- ai
+- zero-trust
+- ids
+- ips
+- threat-hunting
 type: comercial
 cost_model: suscripción
 cost_details: Modelos PA-400 a PA-7000. Licencia base + suscripciones (Threat Prevention, URL Filtering, WildFire). Desde

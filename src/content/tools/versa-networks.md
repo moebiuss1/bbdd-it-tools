@@ -14,11 +14,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por sede o por usuario según se despliegue como SD-WAN, SSE o SASE de un solo proveedor.
 website: https://versa-networks.com
-description: Plataforma SASE de un solo proveedor que integra SD-WAN, firewall de nueva generación, pasarela web
-  segura y acceso de confianza cero sobre un mismo sistema operativo de red.
-why_reference: Versa es uno de los pocos fabricantes que Gartner reconoce a la vez en WAN edge y en security service
-  edge, es decir, que puede cubrir la convergencia de red y seguridad sin encadenar dos productos de casas distintas.
-  Es la referencia técnica en despliegues multiinquilino de operadores.
+description: Plataforma SASE de un solo proveedor que integra SD-WAN, firewall de nueva generación, pasarela web segura y
+  acceso de confianza cero sobre un mismo sistema operativo de red.
+why_reference: Versa es uno de los pocos fabricantes que Gartner reconoce a la vez en WAN edge y en security service edge,
+  es decir, que puede cubrir la convergencia de red y seguridad sin encadenar dos productos de casas distintas. Es la referencia
+  técnica en despliegues multiinquilino de operadores.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

@@ -3,6 +3,7 @@ name: Prometheus
 slug: prometheus
 categories:
 - infra-monitoring
+- unknown
 tags:
 - monitoring
 - metrics
@@ -11,15 +12,16 @@ tags:
 - cncf
 - alerting
 - timeseries
+- unknown
 type: opensource
 cost_model: gratis
 cost_details: Proyecto graduado de la CNCF bajo licencia Apache 2.0, sin coste de licencia.
 website: https://prometheus.io
-description: Sistema de monitorización y alertado basado en series temporales, con recogida por sondeo, lenguaje
-  de consulta propio y descubrimiento automático de objetivos.
-why_reference: 'Prometheus es el estándar de facto de la monitorización de infraestructura moderna y el segundo
-  proyecto graduado de la CNCF tras Kubernetes. Su formato de exposición de métricas es hoy un estándar del sector:
-  casi cualquier componente de infraestructura publica sus métricas en él.'
+description: Sistema de monitorización y alertado basado en series temporales, con recogida por sondeo, lenguaje de consulta
+  propio y descubrimiento automático de objetivos.
+why_reference: 'Prometheus es el estándar de facto de la monitorización de infraestructura moderna y el segundo proyecto graduado
+  de la CNCF tras Kubernetes. Su formato de exposición de métricas es hoy un estándar del sector: casi cualquier componente
+  de infraestructura publica sus métricas en él.'
 company_size:
 - pequeña
 - mediana
@@ -31,9 +33,10 @@ market_rank:
 sources:
 - https://www.cncf.io/projects/prometheus/
 - https://en.wikipedia.org/wiki/Prometheus_(software)
+- https://prometheus.io/
 certifications: []
-first_added: &id001 2026-08-14
-last_verified: *id001
+first_added: 2026-08-14
+last_verified: '2026-08-16'
 logo: /logos/prometheus.png
 needs_review: false
 ---

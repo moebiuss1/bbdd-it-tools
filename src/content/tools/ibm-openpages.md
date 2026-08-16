@@ -15,11 +15,11 @@ cost_model: suscripción
 cost_details: Suscripción por usuario y módulo, sobre IBM Cloud Pak for Data o en la propia infraestructura.
 website: https://www.ibm.com/products/openpages
 cert_url: https://www.ibm.com/support/pages/ibm-iso-management-system-certifications
-description: Plataforma de gestión integrada de riesgos con módulos de riesgo operativo, cumplimiento normativo,
-  auditoría interna, control financiero, políticas y riesgo de terceros.
-why_reference: OpenPages es una de las plataformas GRC de referencia en banca y seguros, donde el riesgo operativo
-  se modela con el detalle que exige el regulador. Gartner la sigue en el mercado de gestión de riesgo tecnológico,
-  y su integración con las capacidades analíticas de IBM le permite automatizar el mapeo de normativa a controles.
+description: Plataforma de gestión integrada de riesgos con módulos de riesgo operativo, cumplimiento normativo, auditoría
+  interna, control financiero, políticas y riesgo de terceros.
+why_reference: OpenPages es una de las plataformas GRC de referencia en banca y seguros, donde el riesgo operativo se modela
+  con el detalle que exige el regulador. Gartner la sigue en el mercado de gestión de riesgo tecnológico, y su integración
+  con las capacidades analíticas de IBM le permite automatizar el mapeo de normativa a controles.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

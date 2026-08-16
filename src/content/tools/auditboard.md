@@ -14,15 +14,14 @@ tags:
 - workflow
 type: comercial
 cost_model: suscripción
-cost_details: Suscripción modular por número de usuarios y módulos contratados (auditoría, riesgo, cumplimiento,
-  SOX).
+cost_details: Suscripción modular por número de usuarios y módulos contratados (auditoría, riesgo, cumplimiento, SOX).
 website: https://optro.ai
 cert_url: https://trust.auditboard.com
-description: Plataforma de auditoría interna, riesgo y cumplimiento con gestión del plan de auditoría, papeles de
-  trabajo, hallazgos, controles SOX y seguimiento de la remediación.
-why_reference: 'AuditBoard es la plataforma de auditoría interna de mayor crecimiento del mercado y una de las que
-  Gartner sigue en soluciones de gestión de auditoría. Su adopción entre auditores internos se explica por algo
-  poco frecuente en el GRC clásico: la usan los propios auditores sin necesidad de un administrador técnico detrás.'
+description: Plataforma de auditoría interna, riesgo y cumplimiento con gestión del plan de auditoría, papeles de trabajo,
+  hallazgos, controles SOX y seguimiento de la remediación.
+why_reference: 'AuditBoard es la plataforma de auditoría interna de mayor crecimiento del mercado y una de las que Gartner
+  sigue en soluciones de gestión de auditoría. Su adopción entre auditores internos se explica por algo poco frecuente en
+  el GRC clásico: la usan los propios auditores sin necesidad de un administrador técnico detrás.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

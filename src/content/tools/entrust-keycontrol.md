@@ -32,12 +32,13 @@ market_rank:
   key-managers: 4
   secrets-management: 6
 sources:
-  - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
+- https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/entrust-keycontrol.png
 ---
+
 Entrust KeyControl gestiona el ciclo de vida de claves criptográficas y secretos en entornos híbridos, con un caso de
 uso muy asentado: el cifrado de máquinas virtuales y almacenamiento en VMware y en nubes públicas, donde actúa como
 servidor de claves conforme al estándar KMIP.

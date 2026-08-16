@@ -21,13 +21,14 @@ company_size:
 - mediana
 - grande
 tags:
-  - network
-  - ai
-  - threat-hunting
-  - on-premise
+- network
+- ai
+- threat-hunting
+- on-premise
+- red
 slug: trend-micro-tippingpoint
 first_added: 2026-08-07
-last_verified: '2026-08-12'
+last_verified: '2026-08-16'
 needs_review: false
 sources:
 - https://www.gartner.com/reviews/market/intrusion-prevention-systems

@@ -5,10 +5,10 @@ categories:
 - antivirus
 - edr
 tags:
-  - ransomware
-  - ai
-  - exploit-prevention
-  - edr
+- ransomware
+- ai
+- exploit-prevention
+- edr
 type: comercial
 cost_model: suscripción
 cost_details: 'Licencia anual por endpoint. Desde ~$28/endpoint/año. Ediciones: Advanced, Intercept X with XDR.'

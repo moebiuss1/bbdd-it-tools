@@ -2,14 +2,14 @@
 name: Datadog
 slug: datadog-monitoring
 categories:
-  - infra-monitoring
-  - serverless-management
+- infra-monitoring
+- serverless-management
 tags:
-  - monitorizacion
-  - saas
-  - cloud
-  - kubernetes
-  - apm
+- monitorizacion
+- saas
+- cloud
+- kubernetes
+- apm
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$15/host/mes. Infraestructura, APM y logs.

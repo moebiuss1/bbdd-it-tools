@@ -14,11 +14,11 @@ cost_model: pago-por-uso
 cost_details: Pago por hora de balanceador y por unidad de capacidad consumida (LCU). Sin coste de licencia ni compromiso.
 website: https://aws.amazon.com/elasticloadbalancing/
 cert_url: https://aws.amazon.com/compliance/programs/
-description: Servicio gestionado de balanceo de carga de AWS en sus variantes de aplicación (ALB), red (NLB), gateway
-  (GWLB) y clásico, con escalado automático y alta disponibilidad entre zonas.
-why_reference: 'Es el balanceador más desplegado en la nube pública y la pieza de entrada obligada de casi cualquier
-  arquitectura en AWS: integra certificados gestionados, autenticación, WAF y registro de acceso sin administrar
-  servidores. Gartner sigue a AWS en el mercado de application delivery controllers.'
+description: Servicio gestionado de balanceo de carga de AWS en sus variantes de aplicación (ALB), red (NLB), gateway (GWLB)
+  y clásico, con escalado automático y alta disponibilidad entre zonas.
+why_reference: 'Es el balanceador más desplegado en la nube pública y la pieza de entrada obligada de casi cualquier arquitectura
+  en AWS: integra certificados gestionados, autenticación, WAF y registro de acceso sin administrar servidores. Gartner sigue
+  a AWS en el mercado de application delivery controllers.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

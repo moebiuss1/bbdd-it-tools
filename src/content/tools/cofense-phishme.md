@@ -13,11 +13,11 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por usuario y año; se integra con Cofense Reporter y con la plataforma de análisis Triage.
 website: https://cofense.com/product-services/phishme/
-description: Plataforma de simulación de phishing y notificación de correos sospechosos que convierte a los empleados
-  en sensores de detección conectados al equipo de respuesta.
-why_reference: 'Cofense es el especialista puro de phishing con más recorrido del mercado y el que mejor cierra
-  el círculo entre concienciación y operación: el correo que un empleado notifica llega automáticamente a un análisis
-  que confirma la amenaza y permite retirarla de todos los buzones. Gartner lo sigue en concienciación de seguridad.'
+description: Plataforma de simulación de phishing y notificación de correos sospechosos que convierte a los empleados en sensores
+  de detección conectados al equipo de respuesta.
+why_reference: 'Cofense es el especialista puro de phishing con más recorrido del mercado y el que mejor cierra el círculo
+  entre concienciación y operación: el correo que un empleado notifica llega automáticamente a un análisis que confirma la
+  amenaza y permite retirarla de todos los buzones. Gartner lo sigue en concienciación de seguridad.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

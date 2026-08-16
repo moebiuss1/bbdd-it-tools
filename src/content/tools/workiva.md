@@ -16,11 +16,11 @@ cost_model: suscripción
 cost_details: Suscripción por solución y número de usuarios, con plataforma común de datos y documentos conectados.
 website: https://www.workiva.com
 cert_url: https://www.workiva.com/security
-description: Plataforma de informes conectados para reporte financiero, cumplimiento, auditoría interna, riesgo
-  y sostenibilidad, con trazabilidad completa del dato hasta su origen.
-why_reference: 'Workiva es el estándar en la elaboración de informes regulados: buena parte de las cuentas anuales
-  y los informes de sostenibilidad de las grandes cotizadas se preparan con ella. Gartner la sigue en gestión de
-  auditoría, y su valor está en que cada cifra publicada mantiene el enlace a su fuente y su historial de cambios.'
+description: Plataforma de informes conectados para reporte financiero, cumplimiento, auditoría interna, riesgo y sostenibilidad,
+  con trazabilidad completa del dato hasta su origen.
+why_reference: 'Workiva es el estándar en la elaboración de informes regulados: buena parte de las cuentas anuales y los informes
+  de sostenibilidad de las grandes cotizadas se preparan con ella. Gartner la sigue en gestión de auditoría, y su valor está
+  en que cada cifra publicada mantiene el enlace a su fuente y su historial de cambios.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

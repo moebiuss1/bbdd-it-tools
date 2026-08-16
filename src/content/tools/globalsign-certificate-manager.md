@@ -6,11 +6,11 @@ categories:
 - certificate-lifecycle
 - eidas-trust
 tags:
-  - pki
-  - iot
-  - acme
-  - code-signing
-  - certificate-lifecycle
+- pki
+- iot
+- acme
+- code-signing
+- certificate-lifecycle
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$3,500/año. Gestión de certificados con soporte IoT y firma de código.
@@ -32,7 +32,7 @@ market_rank:
   certificate-lifecycle: 2
   eidas-trust: 3
 sources:
-  - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
+- https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

@@ -29,12 +29,13 @@ market_rank:
   mam: 4
   mdm: 4
 sources:
-  - https://www.gartner.com/reviews/market/unified-endpoint-management-tools
+- https://www.gartner.com/reviews/market/unified-endpoint-management-tools
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/soti-mobicontrol.png
 ---
+
 SOTI MobiControl gestiona parques de dispositivos donde el terminal no es un móvil de oficina sino una herramienta de
 trabajo: lectores de código de barras, impresoras portátiles, tabletas de vehículo y equipos rugerizados de
 logística, retail o sanidad.

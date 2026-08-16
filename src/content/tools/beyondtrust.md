@@ -14,11 +14,11 @@ type: comercial
 cost_model: suscripción
 cost_details: 'Suscripción por activo o por usuario según módulo: Password Safe, Privilege Management y Remote Support.'
 website: https://www.beyondtrust.com
-description: Suite de gestión de accesos privilegiados con bóveda de credenciales, gestión de privilegios en endpoints
-  y servidores, y acceso remoto seguro para técnicos y terceros.
-why_reference: 'BeyondTrust es uno de los dos o tres líderes permanentes del mercado de gestión de accesos privilegiados
-  de Gartner y el más completo en la parte de endpoint: retirar los derechos de administrador local sin bloquear
-  el trabajo diario es un problema distinto al de custodiar contraseñas de servidores, y es el que mejor resuelve.'
+description: Suite de gestión de accesos privilegiados con bóveda de credenciales, gestión de privilegios en endpoints y servidores,
+  y acceso remoto seguro para técnicos y terceros.
+why_reference: 'BeyondTrust es uno de los dos o tres líderes permanentes del mercado de gestión de accesos privilegiados de
+  Gartner y el más completo en la parte de endpoint: retirar los derechos de administrador local sin bloquear el trabajo diario
+  es un problema distinto al de custodiar contraseñas de servidores, y es el que mejor resuelve.'
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

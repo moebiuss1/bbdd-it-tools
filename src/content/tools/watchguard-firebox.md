@@ -28,7 +28,7 @@ market_rank:
   firewall: 7
   ngfw: 7
 sources:
-  - https://www.gartner.com/reviews/market/network-firewalls
+- https://www.gartner.com/reviews/market/network-firewalls
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

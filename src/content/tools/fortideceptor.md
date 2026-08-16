@@ -12,15 +12,14 @@ tags:
 - lateral-movement
 type: comercial
 cost_model: suscripción
-cost_details: Licencia por appliance virtual y número de señuelos desplegados, con suscripción de actualización
-  de contenidos.
+cost_details: Licencia por appliance virtual y número de señuelos desplegados, con suscripción de actualización de contenidos.
 website: https://www.fortinet.com/products/fortideceptor
 cert_url: https://www.fortinet.com/corporate/about-us/product-certifications
-description: Plataforma de engaño que despliega señuelos de sistemas, servicios y credenciales en la red corporativa
-  y en entornos industriales para detectar movimiento lateral.
-why_reference: 'FortiDeceptor es la plataforma de deception más desplegada dentro de un ecosistema de seguridad
-  completo: la alerta de un señuelo se traduce automáticamente en bloqueo en el firewall y aislamiento del endpoint,
-  que es lo que convierte la detección en contención. Destaca además por sus señuelos de protocolos industriales.'
+description: Plataforma de engaño que despliega señuelos de sistemas, servicios y credenciales en la red corporativa y en
+  entornos industriales para detectar movimiento lateral.
+why_reference: 'FortiDeceptor es la plataforma de deception más desplegada dentro de un ecosistema de seguridad completo:
+  la alerta de un señuelo se traduce automáticamente en bloqueo en el firewall y aislamiento del endpoint, que es lo que convierte
+  la detección en contención. Destaca además por sus señuelos de protocolos industriales.'
 certifications:
 - ISO 27001
 - Common Criteria

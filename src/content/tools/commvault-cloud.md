@@ -14,15 +14,14 @@ tags:
 - disaster-recovery
 type: comercial
 cost_model: suscripción
-cost_details: Suscripción por capacidad protegida o por carga de trabajo. Incluye la antigua oferta Metallic como
-  servicio.
+cost_details: Suscripción por capacidad protegida o por carga de trabajo. Incluye la antigua oferta Metallic como servicio.
 website: https://www.commvault.com
 cert_url: https://www.commvault.com/trust-center
-description: Plataforma de protección de datos que cubre centro de datos, nube y aplicaciones SaaS, con almacenamiento
-  inmutable, sala limpia de recuperación y detección temprana de ransomware.
-why_reference: Commvault es uno de los líderes permanentes del mercado de backup y recuperación empresarial de Gartner,
-  y de los pocos fabricantes que cubre con un mismo producto máquinas físicas, hipervisores, bases de datos, nubes
-  públicas y aplicaciones SaaS. Su amplitud de cargas soportadas es la mayor del sector.
+description: Plataforma de protección de datos que cubre centro de datos, nube y aplicaciones SaaS, con almacenamiento inmutable,
+  sala limpia de recuperación y detección temprana de ransomware.
+why_reference: Commvault es uno de los líderes permanentes del mercado de backup y recuperación empresarial de Gartner, y
+  de los pocos fabricantes que cubre con un mismo producto máquinas físicas, hipervisores, bases de datos, nubes públicas
+  y aplicaciones SaaS. Su amplitud de cargas soportadas es la mayor del sector.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

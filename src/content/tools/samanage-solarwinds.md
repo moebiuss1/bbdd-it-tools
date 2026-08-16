@@ -4,10 +4,10 @@ slug: samanage-solarwinds
 categories:
 - it-asset-managers
 tags:
-  - itam
-  - itsm
-  - service-desk
-  - discovery
+- itam
+- itsm
+- service-desk
+- discovery
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$19/agente/mes.
@@ -26,7 +26,7 @@ company_size:
 market_rank:
   it-asset-managers: 4
 sources:
-  - https://www.gartner.com/reviews/market/software-asset-management-tools
+- https://www.gartner.com/reviews/market/software-asset-management-tools
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

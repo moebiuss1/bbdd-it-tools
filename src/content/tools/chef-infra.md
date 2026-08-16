@@ -4,11 +4,11 @@ slug: chef-infra
 categories:
 - config-managers
 tags:
-  - iac
-  - ruby
-  - automatizacion
-  - compliance-as-code
-  - inspec
+- iac
+- ruby
+- automatizacion
+- compliance-as-code
+- inspec
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$137/nodo/año. Progress Chef. Core open source disponible.

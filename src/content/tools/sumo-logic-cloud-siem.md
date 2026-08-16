@@ -29,7 +29,7 @@ market_rank:
   log-management: 6
   siem: 7
 sources:
-  - https://www.gartner.com/reviews/market/observability-platforms
+- https://www.gartner.com/reviews/market/observability-platforms
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

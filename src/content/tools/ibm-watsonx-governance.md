@@ -15,11 +15,11 @@ cost_model: suscripción
 cost_details: Suscripción por unidades de capacidad; disponible como servicio y en la propia infraestructura.
 website: https://www.ibm.com/products/watsonx-governance
 cert_url: https://www.ibm.com/support/pages/ibm-iso-management-system-certifications
-description: Plataforma de gobierno del ciclo de vida de modelos de IA con inventario, fichas de modelo automáticas,
-  evaluación de sesgo y deriva, y mapeo a marcos regulatorios.
-why_reference: watsonx.governance es la plataforma de gobierno de IA de referencia en sectores regulados, donde
-  el gobierno de modelos ya existía como disciplina obligatoria antes de la IA generativa. Su capacidad para documentar
-  automáticamente cada modelo y contrastarlo con marcos como el Reglamento Europeo de IA es lo que la distingue.
+description: Plataforma de gobierno del ciclo de vida de modelos de IA con inventario, fichas de modelo automáticas, evaluación
+  de sesgo y deriva, y mapeo a marcos regulatorios.
+why_reference: watsonx.governance es la plataforma de gobierno de IA de referencia en sectores regulados, donde el gobierno
+  de modelos ya existía como disciplina obligatoria antes de la IA generativa. Su capacidad para documentar automáticamente
+  cada modelo y contrastarlo con marcos como el Reglamento Europeo de IA es lo que la distingue.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

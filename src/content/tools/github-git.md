@@ -2,9 +2,9 @@
 name: GitHub
 slug: github-git
 categories:
-  - ci-cd
-  - code-quality
-  - scm
+- ci-cd
+- code-quality
+- scm
 tags:
 - git
 - scm
@@ -34,7 +34,7 @@ market_rank:
   scm: 1
 cert_url: https://github.com/security
 sources:
-  - https://www.gartner.com/reviews/market/devops-platforms
+- https://www.gartner.com/reviews/market/devops-platforms
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false

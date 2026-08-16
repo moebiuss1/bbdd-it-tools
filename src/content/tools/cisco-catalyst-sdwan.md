@@ -14,11 +14,11 @@ cost_model: suscripción
 cost_details: Suscripción por dispositivo y nivel (Essentials, Advantage, Premier), más el hardware Catalyst o ISR.
 website: https://www.cisco.com
 cert_url: https://trustportal.cisco.com/c/r/ctp/home.html
-description: 'Plataforma SD-WAN heredera de Viptela: enrutado por políticas de aplicación, orquestación centralizada
-  de sedes y túneles cifrados sobre cualquier transporte.'
-why_reference: Cisco es el proveedor con mayor base instalada de SD-WAN del mundo y figura entre los líderes del
-  mercado de WAN edge que sigue Gartner. Su plataforma es la referencia en organizaciones con centenares de sedes
-  que ya operan equipamiento Cisco y necesitan una migración desde MPLS sin cambiar de fabricante.
+description: 'Plataforma SD-WAN heredera de Viptela: enrutado por políticas de aplicación, orquestación centralizada de sedes
+  y túneles cifrados sobre cualquier transporte.'
+why_reference: Cisco es el proveedor con mayor base instalada de SD-WAN del mundo y figura entre los líderes del mercado de
+  WAN edge que sigue Gartner. Su plataforma es la referencia en organizaciones con centenares de sedes que ya operan equipamiento
+  Cisco y necesitan una migración desde MPLS sin cambiar de fabricante.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

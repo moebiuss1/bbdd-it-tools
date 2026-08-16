@@ -4,11 +4,11 @@ slug: appviewx-cert
 categories:
 - cert-managers
 tags:
-  - certificate-lifecycle
-  - pki
-  - automatizacion
-  - network
-  - application-scale
+- certificate-lifecycle
+- pki
+- automatizacion
+- network
+- application-scale
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$25,000/año.
@@ -26,12 +26,13 @@ company_size:
 market_rank:
   cert-managers: 5
 sources:
-  - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
+- https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 first_added: 2026-08-10
 last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/appviewx-cert.png
 ---
+
 AppViewX CERT+ automatiza el ciclo de vida de los certificados X.509 de una organización: descubrimiento de los que
 ya existen —normalmente muchos más de los que figuran en ninguna hoja de cálculo—, emisión contra distintas
 autoridades de certificación, renovación desatendida e instalación en el sistema que los usa.
