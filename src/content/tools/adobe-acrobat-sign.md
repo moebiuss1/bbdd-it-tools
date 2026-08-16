@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por usuario y mes o por transacciones; ediciones para pequeños equipos y para empresa.
 website: https://www.adobe.com/acrobat/business/sign.html
+cert_url: https://www.adobe.com/trust/compliance/compliance-list.html
 description: Servicio de firma electrónica de Adobe con soporte de firma simple, avanzada y cualificada conforme
   a eIDAS mediante prestadores cualificados integrados.
 why_reference: Adobe creó el formato PDF y las especificaciones de firma que lo sostienen, y preside los consorcios

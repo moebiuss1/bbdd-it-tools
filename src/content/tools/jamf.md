@@ -15,6 +15,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Licencia anual por dispositivo. Desde ~$9/dispositivo/mes para MDM básico. Jamf Pro ~$12-15/dispositivo/mes.
 website: https://www.jamf.com
+cert_url: https://www.jamf.com/trust-center
 description: Plataforma líder de gestión de dispositivos Apple en entornos empresariales. Ofrece despliegue zero-touch, gestión
   declarativa de dispositivos, hardening de seguridad con benchmarks CIS/NIST y más de 200 integraciones con herramientas
   IT y de seguridad.

@@ -70,8 +70,22 @@ const sizeLabels: Record<string, string> = { "pequeña": "Pequeña empresa", med
 const catOptions = groupByCat
   .map(c => ({ id: c.id, name: c.name, family: c.family, n: c.tools.length }))
   .sort((a, b) => collator.compare(a.name, b.name));
-const famCount = new Map<string, number>();
-for (const c of catOptions) famCount.set(c.family, (famCount.get(c.family) ?? 0) + c.n);
+
+// El recuento de una familia cuenta herramientas, no fichas dibujadas. Sumar el
+// tamaño de sus categorías inflaba el número —Cybersecurity anunciaba 143 y el
+// filtro devolvía 106— porque una herramienta que está en EDR y en antivirus se
+// contaba dos veces dentro de la misma familia.
+const familyOf = new Map(categories.map(c => [c.id, c.family]));
+const famTools = new Map<string, Set<string>>();
+for (const t of tools) {
+  for (const c of getToolCategories(t.data)) {
+    const fam = familyOf.get(c);
+    if (!fam) continue;
+    if (!famTools.has(fam)) famTools.set(fam, new Set());
+    famTools.get(fam)!.add(t.slug);
+  }
+}
+const famCount = new Map([...famTools].map(([fam, set]) => [fam, set.size]));
 
 // Etiquetas: se ofrecen solo las del vocabulario curado (src/data/tags.ts) que
 // realmente aparecen en el catálogo. El resto de `tags` sigue alimentando la
@@ -616,7 +630,9 @@ const jsonLd = {
     const p = new URLSearchParams();
     for (const f of facets) if (f.value) p.set(f.param, f.value);
     if (activeTag) p.set('tag', activeTag);
-    if (activeSort !== 'rank') p.set('sort', activeSort);
+    // El orden por defecto es el alfabético: no se escribe en la URL, y
+    // cualquier otro sí, para que el enlace compartido la conserve.
+    if (activeSort !== 'name') p.set('sort', activeSort);
     if (query) p.set('q', query);
     const qs = p.toString();
     history.replaceState(null, '', location.pathname + (qs ? `?${qs}` : ''));

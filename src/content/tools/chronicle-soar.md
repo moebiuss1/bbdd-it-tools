@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Bundled con Google SecOps. Quote-based.
 website: https://cloud.google.com/security
+cert_url: https://cloud.google.com/trust-center
 description: Plataforma SOAR integrada en Google SecOps con 300+ conectores, 700+ parsers y creación de playbooks mediante
   chat con IA. Aprovecha la infraestructura de Google para búsqueda y análisis a escala planetaria.
 why_reference: Google SecOps SOAR (anteriormente Chronicle) se beneficia de la infraestructura de Google Cloud y su Unified

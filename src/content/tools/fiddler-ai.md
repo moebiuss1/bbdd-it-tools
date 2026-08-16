@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por número de modelos monitorizados y volumen de inferencias.
 website: https://www.fiddler.ai
+cert_url: https://www.fiddler.ai/security
 description: Plataforma de observabilidad de modelos de IA con monitorización de deriva, explicabilidad de predicciones,
   detección de sesgo y control de aplicaciones basadas en LLM.
 why_reference: 'Fiddler es uno de los especialistas de referencia en observabilidad y explicabilidad de modelos:

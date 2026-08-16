@@ -12,6 +12,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$3,500/año.
 website: https://www.solarwinds.com
+cert_url: https://www.solarwinds.com/trust-center
 description: Herramienta de gestión de permisos de acceso y prevención de fuga de datos mediante el control de quién tiene
   acceso a qué datos. Monitoriza cambios en permisos, genera informes de cumplimiento y alerta sobre accesos indebidos.
 why_reference: SolarWinds ARM ha sido destacada en informes de Gartner para gestión de accesos y DLP. Su enfoque en la prevención

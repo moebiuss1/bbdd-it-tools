@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Licencia por dispositivo o usuario, habitualmente dentro de la suite Ivanti de gestión del puesto.
 website: https://www.ivanti.com/products/application-control
+cert_url: https://www.ivanti.com/resources/security-compliance
 description: 'Control de ejecución de aplicaciones combinado con gestión de privilegios en el endpoint: lista de
   permitidos por propiedad del fichero y elevación puntual por aplicación.'
 why_reference: 'Ivanti Application Control resuelve a la vez los dos controles que suelen exigirse juntos en el

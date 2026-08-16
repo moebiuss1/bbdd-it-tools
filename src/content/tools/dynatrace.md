@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: 'Pago por consumo: por hora de host monitorizado, gigabyte de registro ingerido y unidades de análisis.'
 website: https://www.dynatrace.com
+cert_url: https://www.dynatrace.com/company/trust-center
 description: Plataforma de observabilidad con instrumentación automática, mapa de dependencias en tiempo real y
   análisis de causa raíz asistido por su motor Davis.
 why_reference: 'Dynatrace es líder reconocido del mercado de plataformas de observabilidad de Gartner y el referente

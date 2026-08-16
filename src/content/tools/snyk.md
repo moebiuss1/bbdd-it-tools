@@ -14,6 +14,7 @@ type: comercial
 cost_model: freemium
 cost_details: Plan gratuito con pruebas limitadas al mes; planes Team y Enterprise por desarrollador y mes.
 website: https://snyk.io
+cert_url: https://snyk.io/security
 description: Plataforma de seguridad para desarrolladores que analiza código propio, dependencias de terceros, contenedores
   e infraestructura como código desde el entorno de desarrollo.
 why_reference: Snyk definió el enfoque de seguridad centrada en el desarrollador y es uno de los referentes del

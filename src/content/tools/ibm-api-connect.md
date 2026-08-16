@@ -14,6 +14,7 @@ cost_model: suscripción
 cost_details: Suscripción por capacidad o por llamadas, con despliegue en IBM Cloud, otras nubes o el propio centro
   de datos.
 website: https://www.ibm.com/products/api-connect
+cert_url: https://www.ibm.com/support/pages/ibm-iso-management-system-certifications
 description: Solución de gestión del ciclo de vida de APIs con pasarela DataPower, portal de desarrollador, gobierno
   de contratos y despliegue híbrido.
 why_reference: API Connect es una de las tres referencias del mercado de gestión de APIs de ciclo completo de Gartner

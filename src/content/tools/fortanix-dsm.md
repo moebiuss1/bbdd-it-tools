@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$20,000/año. Cifrado en runtime con Intel SGX.
 website: https://www.fortanix.com
+cert_url: https://www.fortanix.com/trust-center
 description: Plataforma de gestión de claves y secretos con cifrado en runtime basado en enclaves seguros Intel SGX. Ofrece
   KMS unificado para entornos multi-cloud con capacidades de confidential computing y confidential AI, protegiendo datos incluso
   durante el procesamiento.

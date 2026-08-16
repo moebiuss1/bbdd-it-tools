@@ -15,6 +15,7 @@ cost_model: suscripción
 cost_details: Licencia por capacidad protegida; se integra con los sistemas de almacenamiento de copia PowerProtect
   DD (Data Domain).
 website: https://www.dell.com/en-us/dt/data-protection/powerprotect-data-manager.htm
+cert_url: https://www.dell.com/security
 description: Software de protección de datos de Dell para máquinas virtuales, bases de datos, Kubernetes y cargas
   cloud, integrado con los sistemas de almacenamiento Data Domain.
 why_reference: Dell es el mayor proveedor de infraestructura de protección de datos del mundo por cuota de mercado

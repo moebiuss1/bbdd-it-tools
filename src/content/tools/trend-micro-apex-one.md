@@ -16,6 +16,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$25/endpoint/año. SaaS u on-premise.
 website: https://www.trendmicro.com
+cert_url: https://www.trendmicro.com/compliance
 description: Plataforma de protección endpoint que combina antivirus, EDR, XDR y protección frente a ransomware con uno de
   los mayores networks de threat intelligence del mundo. Ofrece flexibilidad de despliegue SaaS u on-premise para organizaciones
   reguladas.

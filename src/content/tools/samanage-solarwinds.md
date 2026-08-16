@@ -12,6 +12,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$19/agente/mes.
 website: https://www.solarwinds.com
+cert_url: https://www.solarwinds.com/trust-center
 description: Plataforma ITAM integrada con service desk ITSM para gestión de activos, configuración, incidentes y cambios.
   Ofrece descubrimiento automático de activos y gestión de contratos y licencias.
 why_reference: SolarWinds Service Desk ha sido reconocida en informes de Gartner y Forrester para ITSM e ITAM. Su integración

@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$200/mes. Plataforma de IaC gestionada.
 website: https://spacelift.io
+cert_url: https://spacelift.io/security
 description: Plataforma de infraestructura como código gestionada con soporte para Terraform, Pulumi, CloudFormation y Kubernetes.
   Ofrece políticas de cumplimiento automatizadas, drift detection y flujos de aprobación.
 why_reference: Spacelift ha sido destacada en informes de analistas como la plataforma de gestión de IaC más innovadora. Su

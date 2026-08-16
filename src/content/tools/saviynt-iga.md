@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$60,000/año.
 website: https://saviynt.com
+cert_url: https://saviynt.com/security
 description: Plataforma de gobernanza de identidades (IGA) cloud-native con analítica de acceso, certificaciones automatizadas
   y gestión de riesgos de identidad. Especialmente fuerte en entornos SAP y SOX.
 why_reference: Saviynt ha sido reconocida como Líder en múltiples cuadrantes de analistas para IGA. Su integración profunda

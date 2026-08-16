@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$2.50/dispositivo/mes.
 website: https://www.42gears.com
+cert_url: https://www.42gears.com/trust-center/compliance
 description: Plataforma UEM con soporte para Android, iOS, Windows, macOS, Linux y wearables. Destaca por sus capacidades
   de gestión de dispositivos IoT, realidad aumentada y entornos de trabajo remoto.
 why_reference: 42Gears ha sido reconocida en los informes de MDM Buyers Guide por su amplio soporte de dispositivos, incluyendo

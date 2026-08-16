@@ -15,6 +15,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por solución y número de usuarios, con plataforma común de datos y documentos conectados.
 website: https://www.workiva.com
+cert_url: https://www.workiva.com/security
 description: Plataforma de informes conectados para reporte financiero, cumplimiento, auditoría interna, riesgo
   y sostenibilidad, con trazabilidad completa del dato hasta su origen.
 why_reference: 'Workiva es el estándar en la elaboración de informes regulados: buena parte de las cuentas anuales

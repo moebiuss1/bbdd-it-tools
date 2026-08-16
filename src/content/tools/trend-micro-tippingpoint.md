@@ -6,6 +6,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Modelos hardware TPS 5000-9000. Licencia Digital Vaccine (firmas de vulnerabilidad) incluida.
 website: https://www.trendmicro.com/en_us/business/products/network/tipping-point.html
+cert_url: https://www.trendmicro.com/compliance
 description: NGIPS con inspección profunda de paquetes y filtros de vulnerabilidad Digital Vaccine actualizados continuamente.
   Enfoque en vulnerabilidades, no solo exploits.
 why_reference: Líder en Gartner MQ para IPS. Enfoque de filtros de vulnerabilidad reduce falsos positivos drásticamente. Digital

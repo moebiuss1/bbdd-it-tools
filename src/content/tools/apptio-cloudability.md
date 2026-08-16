@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción calculada como porcentaje del gasto cloud gestionado.
 website: https://www.apptio.com/products/cloudability/
+cert_url: https://www.apptio.com/trust
 description: Plataforma FinOps de IBM para visibilidad, reparto y optimización del gasto en nube pública, con asignación
   por equipo, producto y unidad de negocio.
 why_reference: Cloudability es una de las plataformas FinOps con más recorrido del mercado y una de las que Gartner

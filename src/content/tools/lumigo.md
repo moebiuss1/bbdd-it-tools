@@ -14,6 +14,7 @@ type: comercial
 cost_model: freemium
 cost_details: Plan gratuito con volumen limitado de trazas; planes de pago por número de invocaciones al mes.
 website: https://lumigo.io
+cert_url: https://lumigo.io/security
 description: 'Plataforma de observabilidad especializada en arquitecturas serverless y de contenedores: traza cada
   invocación de extremo a extremo con los datos de la petición y la respuesta.'
 why_reference: 'Lumigo es la herramienta de referencia para depurar aplicaciones serverless, donde las técnicas

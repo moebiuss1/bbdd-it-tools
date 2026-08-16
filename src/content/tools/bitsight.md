@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por número de organizaciones monitorizadas y módulos contratados.
 website: https://www.bitsight.com
+cert_url: https://www.bitsight.com/security
 description: Plataforma de calificación de seguridad que evalúa desde fuera la postura de cualquier organización
   a partir de evidencia observable en internet.
 why_reference: 'Bitsight es, junto a SecurityScorecard, el referente de las calificaciones de seguridad: sus puntuaciones

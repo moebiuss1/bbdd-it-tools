@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por número de proveedores monitorizados, con módulos BreachSight y Vendor Risk.
 website: https://www.upguard.com
+cert_url: https://www.upguard.com/security
 description: Plataforma de riesgo de terceros y superficie de ataque con calificación continua de proveedores, cuestionarios
   automatizados y detección de fugas de datos expuestas.
 why_reference: UpGuard combina la calificación externa con la detección de exposiciones concretas —repositorios

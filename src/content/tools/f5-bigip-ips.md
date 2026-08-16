@@ -15,6 +15,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$25,000/año. Plataforma de aplicación con WAF e IPS integrados.
 website: https://www.f5.com
+cert_url: https://www.f5.com/compliance
 description: Plataforma de entrega de aplicaciones con módulos integrados de IPS, WAF avanzado, anti-DDoS y protección de
   API. Referencia en infraestructura de aplicaciones con seguridad en línea de alto rendimiento para centros de datos y cloud.
 why_reference: F5 BIG-IP es el estándar en entrega de aplicaciones empresariales y su módulo Advanced WAF/IPS proporciona

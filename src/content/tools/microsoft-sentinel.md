@@ -8,6 +8,7 @@ type: comercial
 cost_model: pago-por-uso
 cost_details: Basado en volumen de datos analizados. Sin costes de infraestructura. Desde ~$2/GB ingerido.
 website: https://azure.microsoft.com/en-us/products/microsoft-sentinel/
+cert_url: https://learn.microsoft.com/compliance/regulatory/offering-home
 description: SIEM cloud-native en Azure que combina SIEM y SOAR con inteligencia artificial a escala cloud. Analiza datos
   de toda la empresa sin necesidad de infraestructura propia.
 why_reference: Líder en Gartner MQ para SIEM. Su arquitectura serverless elimina la gestión de infraestructura. Integración

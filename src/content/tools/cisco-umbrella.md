@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por usuario y año. Paquetes DNS Essentials, DNS Advantage y SIG Essentials/Advantage.
 website: https://umbrella.cisco.com
+cert_url: https://trustportal.cisco.com/c/r/ctp/home.html
 description: Seguridad entregada desde la nube con filtrado DNS como primera capa, proxy web, firewall de capa 7
   y sandbox, heredera de OpenDNS.
 why_reference: 'Umbrella es la referencia en seguridad DNS: resuelve una parte enorme del tráfico DNS mundial y

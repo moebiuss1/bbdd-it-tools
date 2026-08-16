@@ -6,6 +6,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Incluido en Microsoft 365 E5. Planes independientes desde ~$10/usuario/mes.
 website: https://www.microsoft.com/en-us/security/business/information-protection/microsoft-purview-data-loss-prevention
+cert_url: https://learn.microsoft.com/compliance/regulatory/offering-home
 description: Solución DLP integrada en el ecosistema Microsoft 365 que protege datos sensibles en endpoints, aplicaciones
   cloud, y servicios on-premise.
 why_reference: Líder en Gartner MQ para DLP. Su capacidad de clasificación automática con machine learning y su integración

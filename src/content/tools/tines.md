@@ -14,6 +14,7 @@ type: comercial
 cost_model: freemium
 cost_details: Community gratuito (500 acciones/día). Planes de pago desde ~$30,000/año.
 website: https://www.tines.com
+cert_url: https://www.tines.com/security
 description: Plataforma SOAR no-code basada en historias (Stories) de flujo de trabajo con más de 1,000 plantillas predefinidas
   y capacidad de conectar con cualquier API REST. Destaca por su velocidad de despliegue y facilidad de uso para equipos pequeños
   y ágiles.

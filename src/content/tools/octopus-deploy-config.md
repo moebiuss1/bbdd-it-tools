@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$10/mes para 10 targets. Enterprise desde ~$3,000/año.
 website: https://octopus.com
+cert_url: https://octopus.com/trust
 description: Plataforma de automatización de despliegues y gestión de configuración para entornos Windows, Linux y cloud.
   Ofrece gestión de variables, configuraciones por entorno y dashboards de cumplimiento.
 why_reference: Octopus Deploy ha sido destacada en múltiples informes de Gartner y Forrester para automatización de despliegues.

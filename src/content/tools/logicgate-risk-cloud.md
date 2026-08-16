@@ -16,6 +16,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por aplicaciones desplegadas y usuarios; construcción de procesos sin programación.
 website: https://www.logicgate.com
+cert_url: https://www.logicgate.com/trust
 description: Plataforma GRC configurable sin programación con aplicaciones para riesgo empresarial y tecnológico,
   cumplimiento, políticas, terceros e incidencias.
 why_reference: 'LogicGate representa la alternativa moderna al GRC monolítico: los procesos se construyen arrastrando

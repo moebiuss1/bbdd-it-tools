@@ -13,6 +13,7 @@ type: comercial
 cost_model: presupuesto-personalizado
 cost_details: Precio según volumen de peticiones evaluadas vía API. Planes SaaS, VPC y on-premise a consulta.
 website: https://www.lakera.ai
+cert_url: https://trust.lakera.ai
 description: Cortafuegos de seguridad para aplicaciones de IA que analiza en tiempo real las entradas y salidas de un modelo
   a través de una única llamada API, detectando prompt injection, intentos de jailbreak, fuga de datos personales y contenido
   malicioso antes de que lleguen al modelo o al usuario.

@@ -15,6 +15,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por dispositivo o por usuario y mes, con niveles Professional, Enterprise y Premium.
 website: https://www.ivanti.com/products/ivanti-neurons-for-mdm
+cert_url: https://www.ivanti.com/resources/security-compliance
 description: Gestión unificada de dispositivos móviles y aplicaciones heredera de MobileIron, con contenedor corporativo,
   distribución de aplicaciones y acceso condicional.
 why_reference: MobileIron, hoy Ivanti Neurons for MDM, fue uno de los tres fabricantes que crearon el mercado de

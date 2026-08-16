@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por buzón y año, como servicio en la nube, appliance físico o virtual.
 website: https://www.cisco.com
+cert_url: https://trustportal.cisco.com/c/r/ctp/home.html
 description: Pasarela de seguridad del correo heredera de IronPort, con filtrado de reputación, análisis de amenazas,
   prevención de fuga de datos y cifrado de mensajes.
 why_reference: La pasarela de Cisco, heredera de IronPort, es una de las que más correo empresarial ha filtrado

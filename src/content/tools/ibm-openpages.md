@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por usuario y módulo, sobre IBM Cloud Pak for Data o en la propia infraestructura.
 website: https://www.ibm.com/products/openpages
+cert_url: https://www.ibm.com/support/pages/ibm-iso-management-system-certifications
 description: Plataforma de gestión integrada de riesgos con módulos de riesgo operativo, cumplimiento normativo,
   auditoría interna, control financiero, políticas y riesgo de terceros.
 why_reference: OpenPages es una de las plataformas GRC de referencia en banca y seguros, donde el riesgo operativo

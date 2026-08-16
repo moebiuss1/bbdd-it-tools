@@ -16,6 +16,7 @@ cost_model: presupuesto-personalizado
 cost_details: Licencia anual modular (Privacy, GRC, Policy Management, Certification Automation...). Precio a consulta según
   módulos y volumen.
 website: https://www.onetrust.com
+cert_url: https://www.onetrust.com/trust
 description: Plataforma de gestión de privacidad, riesgo y cumplimiento normativo. Su módulo de Policy Management gestiona
   el ciclo de vida completo de políticas corporativas — creación, aprobación, distribución y attestation de lectura por parte
   de los empleados.

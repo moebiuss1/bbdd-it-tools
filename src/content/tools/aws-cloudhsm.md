@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$1.45/hora por HSM dedicado.
 website: https://aws.amazon.com
+cert_url: https://aws.amazon.com/compliance
 description: Servicio de módulos de seguridad hardware (HSM) dedicados en la nube de AWS con certificación FIPS 140-2 Nivel
   3. Proporciona control total sobre las claves criptográficas con acceso exclusivo al HSM.
 why_reference: AWS CloudHSM es la solución de HSM en la nube más desplegada del mercado, utilizada por organizaciones que

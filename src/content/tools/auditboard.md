@@ -17,6 +17,7 @@ cost_model: suscripción
 cost_details: Suscripción modular por número de usuarios y módulos contratados (auditoría, riesgo, cumplimiento,
   SOX).
 website: https://www.auditboard.com
+cert_url: https://trust.auditboard.com
 description: Plataforma de auditoría interna, riesgo y cumplimiento con gestión del plan de auditoría, papeles de
   trabajo, hallazgos, controles SOX y seguimiento de la remediación.
 why_reference: 'AuditBoard es la plataforma de auditoría interna de mayor crecimiento del mercado y una de las que

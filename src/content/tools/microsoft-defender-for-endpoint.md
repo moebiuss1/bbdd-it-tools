@@ -7,6 +7,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Incluido en Microsoft 365 E5. Plan autónomo desde ~$5/usuario/mes.
 website: https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-endpoint
+cert_url: https://learn.microsoft.com/compliance/regulatory/offering-home
 description: Plataforma de protección de endpoints empresarial integrada en el ecosistema Microsoft 365. Combina antivirus
   de nueva generación, EDR, y gestión de vulnerabilidades.
 why_reference: Líder en Gartner Magic Quadrant para Endpoint Protection. Su integración nativa con el ecosistema Microsoft

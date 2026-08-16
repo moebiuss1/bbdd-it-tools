@@ -9,6 +9,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Modelos FortiGate 40F a 4400F. Licencia FortiGuard desde ~$1,000/año.
 website: https://www.fortinet.com/products/next-generation-firewall
+cert_url: https://www.fortinet.com/corporate/about-us/product-certifications
 description: Firewall de nueva generación con procesador de seguridad propietario (SPU) que ofrece inspección SSL/TLS completa
   y prevención de amenazas a alto rendimiento.
 why_reference: Líder en Gartner MQ para Network Firewalls. Su enfoque de ASIC propietario (FortiASIC) ofrece mejor relación

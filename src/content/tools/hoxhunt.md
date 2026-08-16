@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por usuario y año; despliegue mediante complemento de correo y portal propio.
 website: https://hoxhunt.com
+cert_url: https://hoxhunt.com/security
 description: Plataforma de cambio de comportamiento en seguridad basada en simulaciones adaptativas individualizadas,
   refuerzo positivo y notificación de correos sospechosos con un clic.
 why_reference: 'Hoxhunt es el referente del enfoque conductual frente al formativo clásico: en vez de cursos y reprimendas,

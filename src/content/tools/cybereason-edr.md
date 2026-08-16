@@ -12,6 +12,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$30/endpoint/año. Plataforma basada en análisis de comportamiento.
 website: https://www.cybereason.com
+cert_url: https://www.cybereason.com/security
 description: Plataforma EDR basada en análisis de comportamiento con motor MalOp que correlaciona operaciones maliciosas completas
   en lugar de alertas aisladas. Destaca por su visualización de cadenas de ataque completas y su capacidad de respuesta automatizada.
 why_reference: Cybereason ha sido reconocida en el Magic Quadrant de Gartner para EPP y destaca por su enfoque innovador de

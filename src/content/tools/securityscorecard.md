@@ -14,6 +14,7 @@ cost_model: freemium
 cost_details: Consulta de rating propio gratuita. Plataforma de monitorización de terceros por suscripción según número de
   proveedores evaluados.
 website: https://securityscorecard.com
+cert_url: https://securityscorecard.com/trust
 description: Plataforma de calificación de seguridad (security ratings) y gestión de riesgo de terceros. Genera una puntuación
   A-F de la postura de seguridad externa de cualquier organización a partir de señales observables en Internet, sin necesidad
   de acceso a sus sistemas.

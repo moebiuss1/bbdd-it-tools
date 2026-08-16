@@ -15,6 +15,7 @@ cost_model: licencia-perpetua
 cost_details: Licencia por capacidad o por número de servidores, perpetua o por suscripción. Appliances integrados
   disponibles.
 website: https://www.veritas.com/protection/netbackup
+cert_url: https://www.veritas.com/trust
 description: Plataforma de backup empresarial de mayor recorrido del mercado, con soporte de prácticamente cualquier
   sistema operativo, hipervisor, base de datos y cabina del centro de datos.
 why_reference: NetBackup es el estándar histórico de la copia de seguridad corporativa a gran escala y sigue protegiendo

@@ -14,6 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$15,000/año. El SOAR más asequible.
 website: https://www.rapid7.com
+cert_url: https://www.rapid7.com/trust/compliance
 description: Plataforma SOAR cloud-native con 300+ plugins, automatización no-code e integración nativa con InsightIDR (SIEM)
   e InsightVM (gestión de vulnerabilidades) de Rapid7.
 why_reference: Rapid7 InsightConnect ha sido reconocida como la opción SOAR más asequible del mercado, ideal para equipos

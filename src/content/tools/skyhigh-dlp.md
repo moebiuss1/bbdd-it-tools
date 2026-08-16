@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$30,000/año.
 website: https://www.skyhighsecurity.com
+cert_url: https://www.skyhighsecurity.com/about/certification.html
 description: Plataforma DLP cloud-native (anteriormente McAfee MVISION Cloud) con protección de datos en cloud, CASB y seguridad
   de aplicaciones SaaS. Monitoriza y protege datos sensibles en Office 365, Salesforce, Box y más de 50 servicios cloud.
 why_reference: Skyhigh Security (anteriormente McAfee Cloud) ha sido reconocido como Líder en el Magic Quadrant de Gartner

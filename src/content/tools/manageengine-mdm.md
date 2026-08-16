@@ -13,6 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Desde ~$9.90-$23.90/dispositivo/año. Free tier con funciones enterprise.
 website: https://www.manageengine.com
+cert_url: https://www.manageengine.com/compliance
 description: Plataforma MDM multiplataforma asequible con la mejor integración Active Directory del mercado y un generoso
   free tier que incluye funciones enterprise. Gestiona iOS, Android, Windows, macOS y ChromeOS desde una consola unificada.
 why_reference: ManageEngine MDM Plus ha sido puntuada con 3.8/5 en el MDM Buyer Guide 2026 y destaca por ofrecer la mejor

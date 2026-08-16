@@ -7,6 +7,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Incluido en Microsoft 365 E3/E5. Plan autónomo desde ~$6/usuario/mes.
 website: https://www.microsoft.com/en-us/security/business/endpoint-management/microsoft-intune
+cert_url: https://learn.microsoft.com/compliance/regulatory/offering-home
 description: Plataforma unificada de gestión de endpoints que combina MDM y MAM para dispositivos Windows, macOS, iOS, Android
   y Linux.
 why_reference: Líder en Gartner MQ para UEM. Con más de 200 millones de dispositivos gestionados, Intune es la plataforma
