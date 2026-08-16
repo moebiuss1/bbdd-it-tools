@@ -178,6 +178,15 @@ def enrich_tool(slug: str, candidate: dict, config: dict, mention_counts: dict) 
     name = candidate.get("name", slug.replace("-", " ").title())
     website = candidate.get("website", "")
     category = candidate.get("category", "unknown")
+    if category not in categorias_validas():
+        # El descubrimiento no siempre sabe encasillar lo que encuentra: el
+        # landscape de la CNCF, por ejemplo, no habla en las categorías de este
+        # directorio. Sin este filtro, "unknown" acababa escrito en el
+        # frontmatter de una ficha real —le pasó a Prometheus— y creaba una
+        # categoría fantasma con una sola herramienta. Clasificar es trabajo
+        # editorial: se enriquece el resto de campos y la categoría se deja como
+        # está.
+        category = None
 
     if not website:
         # Intentar encontrar la web oficial
@@ -228,12 +237,12 @@ def enrich_tool(slug: str, candidate: dict, config: dict, mention_counts: dict) 
     new_data = {
         "name": name,
         "slug": slug,
-        "categories": [category],
-        "tags": candidate.get("tags", [category]),
+        "categories": [category] if category else [],
+        "tags": candidate.get("tags", [category] if category else []),
         "type": ToolType.OPENSOURCE.value if is_open_source else ToolType.COMERCIAL.value,
         "website": website,
-        "description": description or f"{name} es una herramienta de {category}.",
-        "why_reference": why_reference or f"Referente en el ámbito de {category}.",
+        "description": description or f"{name} es una herramienta de {category or 'IT'}.",
+        "why_reference": why_reference or f"Referente en el ámbito de {category or 'IT'}.",
         "sources": [s for s in [candidate.get("source_url"), wiki_info.get("url") if wiki_info else None] if s],
         "first_added": date.today().isoformat(),
         "last_verified": date.today().isoformat(),
@@ -256,6 +265,24 @@ def enrich_tool(slug: str, candidate: dict, config: dict, mention_counts: dict) 
     write_tool(slug, merged, body)
 
     return is_new
+
+
+_CATEGORIAS = None
+
+
+def categorias_validas() -> set:
+    """Los identificadores de categoría reales, leídos de src/data/categories.ts."""
+    global _CATEGORIAS
+    if _CATEGORIAS is None:
+        ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            "..", "src", "data", "categories.ts")
+        try:
+            texto = open(ruta, encoding="utf-8").read()
+            cuerpo = texto.split("const categories", 1)[-1]
+            _CATEGORIAS = set(re.findall(r'id:\s*"([a-z0-9\-]+)"', cuerpo))
+        except OSError:
+            _CATEGORIAS = set()
+    return _CATEGORIAS
 
 
 def enrich_all(config: dict, limit: int = None, allow_new: bool = False) -> dict:

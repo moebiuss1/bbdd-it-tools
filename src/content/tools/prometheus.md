@@ -3,7 +3,6 @@ name: Prometheus
 slug: prometheus
 categories:
 - infra-monitoring
-- unknown
 tags:
 - monitoring
 - metrics
@@ -12,7 +11,6 @@ tags:
 - cncf
 - alerting
 - timeseries
-- unknown
 type: opensource
 cost_model: gratis
 cost_details: Proyecto graduado de la CNCF bajo licencia Apache 2.0, sin coste de licencia.
