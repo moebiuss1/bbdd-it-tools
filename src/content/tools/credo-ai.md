@@ -29,8 +29,10 @@ sources:
 cert_url: https://trust.credo.ai/
 first_added: 2026-08-10
 last_verified: '2026-08-12'
+logo: /logos/credo-ai.png
 needs_review: false
-market_rank: 1
+market_rank:
+  ai-governance: 1
 ---
 
 Credo AI centraliza el inventario de modelos y sistemas de IA de una

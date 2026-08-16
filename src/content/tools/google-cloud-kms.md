@@ -26,7 +26,9 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 4
+market_rank:
+  key-managers: 5
+  secrets-management: 7
 cert_url: https://cloud.google.com/security/compliance
 sources:
 - https://cloud.google.com/kms/docs/key-management-service

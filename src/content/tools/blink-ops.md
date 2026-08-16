@@ -23,7 +23,9 @@ certifications:
 company_size:
 - pequeña
 - mediana
-market_rank: 11
+market_rank:
+  incident-management: 12
+  soar: 11
 sources:
   - https://www.gartner.com/reviews/market/it-service-management-platforms
 first_added: 2026-08-10

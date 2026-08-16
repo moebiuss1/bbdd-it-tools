@@ -38,7 +38,10 @@ sources:
 first_added: 2026-08-07
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 2
+market_rank:
+  identity-managers: 2
+  mfa: 2
+  sso: 2
 logo: /logos/microsoft-entra-id-azure-ad.png
 category: identity-managers
 ---

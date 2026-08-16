@@ -24,7 +24,8 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 9
+market_rank:
+  dlp: 9
 sources:
   - https://www.gartner.com/reviews/market/data-loss-prevention
 first_added: 2026-08-10

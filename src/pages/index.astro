@@ -3,23 +3,32 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import { getCategories, getToolCategories, toToolEntry, categorySizes, hasMeaningfulRank, isNewTool } from "@lib/tools";
+import { getCategories, getToolCategories, toToolEntry, categorySizes, rankIn, bestPublishableRank, MIN_RANKED_PEERS } from "@lib/tools";
 const base = import.meta.env.BASE_URL;
 const tools = (await getCollection("tools")).map(toToolEntry);
 const categories = await getCategories();
 const sizes = categorySizes(tools);
 
+/** Igual que en el directorio: el puesto se muestra solo si significa algo. */
+function rankBadge(data: (typeof tools)[number]["data"], catId: string): number | null {
+  const r = rankIn(data, catId);
+  if (r === null || r > 3) return null;
+  return (sizes.get(catId) ?? 0) >= MIN_RANKED_PEERS ? r : null;
+}
+
 const catTools = categories.map(cat => ({
   ...cat,
-  tools: tools.filter(t => getToolCategories(t.data).includes(cat.id)).sort((a,b) => (a.data.market_rank??999)-(b.data.market_rank??999))
+  tools: tools.filter(t => getToolCategories(t.data).includes(cat.id)).sort((a,b) => (rankIn(a.data, cat.id)??999)-(rankIn(b.data, cat.id)??999))
 })).filter(c => c.tools.length > 0);
 
 // Destacadas: primeros puestos, pero solo de categorías con competencia real.
 // Sin ese filtro entraban aquí herramientas que son "#1" de una categoría que
 // solo las contiene a ellas.
 const destacadas = tools
-  .filter(t => t.data.market_rank && t.data.market_rank <= 2 && hasMeaningfulRank(t.data, sizes))
-  .sort((a,b) => (a.data.market_rank??999)-(b.data.market_rank??999))
+  .map(t => ({ tool: t, best: bestPublishableRank(t.data, sizes) }))
+  .filter((x): x is { tool: typeof tools[number]; best: { rank: number; category: string } } =>
+    x.best !== null && x.best.rank <= 2)
+  .sort((a, b) => a.best.rank - b.best.rank)
   .slice(0, 6);
 
 // Últimas incorporaciones — por fecha de alta (`first_added`), no por
@@ -81,7 +90,7 @@ const nuevas = tools
         <a href={`${base}herramientas?sort=rank`} class="hidden sm:inline" style="font-size:14px;font-weight:500;color:#0066cc">Ver todas →</a>
       </div>
       <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {destacadas.map(tool => (
+        {destacadas.map(({ tool, best }) => (
           <a href={`${base}herramientas/${tool.slug}`} class="card tool-card group">
             <div class="tool-avatar">
               {tool.data.logo ? <img src={`${base}${tool.data.logo.replace(/^\//,'')}`} alt={tool.data.name} width="35" height="35" style="border-radius:10px;object-fit:contain" loading="lazy" /> : tool.data.name.charAt(0)}
@@ -89,7 +98,7 @@ const nuevas = tools
             <div class="min-w-0 flex-1">
               <div class="flex items-center gap-2">
                 <h3 class="tool-name" style="color:#1d1d1f">{tool.data.name}</h3>
-                {tool.data.market_rank && tool.data.market_rank <= 3 && hasMeaningfulRank(tool.data, sizes) && <span class="badge badge-amber badge-sm">#{tool.data.market_rank}</span>}
+                <span class="badge badge-amber badge-sm" title={`Puesto ${best.rank} en ${categories.find(c => c.id === best.category)?.name ?? best.category}`}>#{best.rank}</span>
               </div>
               <p class="tool-desc">{tool.data.description}</p>
               <div class="flex flex-wrap gap-1.5 mt-2">
@@ -119,8 +128,6 @@ const nuevas = tools
             <div class="min-w-0 flex-1">
               <div class="flex items-center gap-2">
                 <h3 class="tool-name" style="color:#1d1d1f">{tool.data.name}</h3>
-                {/* "Nuevo" solo durante los primeros 30 días desde el alta (NEW_TOOL_DAYS) */}
-                {isNewTool(tool.data) && <span class="badge badge-green badge-sm" title={`Añadida el ${new Date(tool.data.first_added!).toLocaleDateString('es-ES')}`}>Nuevo</span>}
               </div>
               <p class="tool-desc">{tool.data.description}</p>
               {tool.data.first_added && <p class="tool-date">En el directorio desde el {new Date(tool.data.first_added).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</p>}
@@ -154,7 +161,7 @@ const nuevas = tools
                     <div class="min-w-0 flex-1">
                       <div class="flex items-center gap-2">
                         <h3 class="tool-name" style="color:#1d1d1f">{tool.data.name}</h3>
-                        {tool.data.market_rank && tool.data.market_rank <= 3 && hasMeaningfulRank(tool.data, sizes) && <span class="badge badge-amber badge-sm">#{tool.data.market_rank}</span>}
+                        {(() => { const r = rankBadge(tool.data, cat.id); return r ? <span class="badge badge-amber badge-sm">#{r}</span> : null; })()}
                       </div>
                       <p class="tool-desc">{tool.data.description}</p>
                     </div>

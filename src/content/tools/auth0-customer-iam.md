@@ -27,7 +27,9 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 4
+market_rank:
+  identity-managers: 6
+  sso: 4
 sources:
   - https://www.gartner.com/reviews/market/access-management
 first_added: 2026-08-10

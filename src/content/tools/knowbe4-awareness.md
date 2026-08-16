@@ -25,7 +25,9 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 1
+market_rank:
+  email-security: 7
+  security-awareness: 1
 cert_url: https://trust.knowbe4.com/
 sources:
 - https://www.gartner.com/reviews/market/security-awareness-computer-based-training

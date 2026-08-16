@@ -31,8 +31,10 @@ sources:
 cert_url: https://www.everbridge.com/security-program-framework/
 first_added: 2026-08-10
 last_verified: '2026-08-12'
+logo: /logos/everbridge.png
 needs_review: false
-market_rank: 1
+market_rank:
+  business-continuity: 1
 ---
 
 Everbridge conecta la detección de una amenaza (meteorológica, física,

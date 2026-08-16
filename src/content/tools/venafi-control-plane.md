@@ -28,7 +28,9 @@ sources:
 first_added: 2026-08-07
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 7
+market_rank:
+  cert-managers: 6
+  certificate-lifecycle: 7
 logo: /logos/venafi-control-plane.png
 category: cert-managers
 ---

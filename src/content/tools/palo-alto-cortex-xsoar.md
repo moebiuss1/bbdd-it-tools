@@ -30,7 +30,9 @@ sources:
 first_added: 2026-08-07
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 3
+market_rank:
+  incident-management: 4
+  soar: 3
 logo: /logos/palo-alto-cortex-xsoar.png
 category: soar
 ---

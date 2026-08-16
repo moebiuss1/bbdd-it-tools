@@ -23,7 +23,9 @@ certifications:
 - SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 1
+market_rank:
+  ndr: 6
+  siem: 1
 sources:
   - https://www.gartner.com/reviews/market/network-detection-and-response
 first_added: 2026-08-10

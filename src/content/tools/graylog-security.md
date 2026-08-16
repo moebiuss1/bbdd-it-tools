@@ -23,7 +23,9 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 7
+market_rank:
+  log-management: 7
+  siem: 8
 sources:
   - https://www.gartner.com/reviews/market/observability-platforms
 first_added: 2026-08-10

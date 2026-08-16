@@ -26,7 +26,8 @@ certifications:
 - RGPD / GDPR
 company_size:
 - grande
-market_rank: 5
+market_rank:
+  dlp: 5
 sources:
   - https://www.gartner.com/reviews/market/data-loss-prevention
 first_added: 2026-08-10

@@ -3,6 +3,7 @@ name: Safetica DLP
 slug: safetica-dlp
 categories:
 - dlp
+- usb-device-control
 tags:
 - dlp
 - endpoint
@@ -23,7 +24,9 @@ certifications:
 company_size:
 - pequeña
 - mediana
-market_rank: 8
+market_rank:
+  dlp: 8
+  usb-device-control: 4
 sources:
   - https://www.gartner.com/reviews/market/data-loss-prevention
 first_added: 2026-08-10

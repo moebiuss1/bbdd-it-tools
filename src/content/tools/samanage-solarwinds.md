@@ -22,7 +22,8 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 3
+market_rank:
+  it-asset-managers: 4
 sources:
   - https://www.gartner.com/reviews/market/software-asset-management-tools
 first_added: 2026-08-10

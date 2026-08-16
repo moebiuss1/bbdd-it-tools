@@ -23,7 +23,10 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 7
+market_rank:
+  identity-managers: 11
+  mfa: 6
+  sso: 7
 sources:
   - https://www.gartner.com/reviews/market/access-management
 first_added: 2026-08-10

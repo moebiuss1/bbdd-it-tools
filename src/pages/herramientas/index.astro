@@ -3,15 +3,34 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import { getCategories, getFamilies, getTags, getToolCategories, computeToolScore, toToolEntry, categorySizes, hasMeaningfulRank, isNewTool } from "@lib/tools";
+import { getCategories, getFamilies, getTags, getToolCategories, computeToolScore, toToolEntry, categorySizes, rankIn, bestRank, MIN_RANKED_PEERS } from "@lib/tools";
 const base = import.meta.env.BASE_URL;
 const tools = (await getCollection("tools")).map(toToolEntry);
 const categories = await getCategories();
 const families = await getFamilies();
 
-// Ordenar por ranking
-const sortedTools = [...tools].sort((a,b) => (a.data.market_rank??999) - (b.data.market_rank??999));
+// El directorio se lee alfabéticamente. Ordenarlo por puesto de mercado obliga a
+// recorrer la categoría entera para localizar una herramienta concreta, que es el
+// motivo por el que casi todo el mundo abre esta página; el puesto sigue estando
+// disponible como criterio en el desplegable de orden y es el que manda en /ranking.
+const collatorNombres = new Intl.Collator("es", { sensitivity: "base" });
+const sortedTools = [...tools].sort((a, b) => collatorNombres.compare(a.data.name, b.data.name));
+// Para los datos estructurados sí se declara el orden de mercado: un ItemList
+// numerado es una clasificación, y alfabetizarlo diría que Ansible va primero.
+const rankedTools = [...tools].sort((a, b) => (bestRank(a.data) ?? 999) - (bestRank(b.data) ?? 999));
 const sizes = categorySizes(tools);
+
+/**
+ * Puesto que se muestra en la tarjeta, y solo si dice algo: el de la categoría
+ * bajo la que está listada, dentro de los tres primeros y con competencia real.
+ * Se calcula aquí y no en la plantilla porque el compilador de Astro lee un
+ * `<=` dentro del marcado como si abriera una etiqueta.
+ */
+function rankBadge(data: (typeof tools)[number]["data"], catId: string): number | null {
+  const r = rankIn(data, catId);
+  if (r === null || r > 3) return null;
+  return (sizes.get(catId) ?? 0) >= MIN_RANKED_PEERS ? r : null;
+}
 const groupByCat = categories.map(cat => ({
   ...cat,
   tools: sortedTools.filter(t => getToolCategories(t.data).includes(cat.id))
@@ -77,7 +96,7 @@ const jsonLd = {
     // Solo los primeros puestos: un ItemList de 182 entradas engorda cada
     // página sin decirle nada nuevo al buscador, que ya llega a las fichas por
     // el sitemap.
-    itemListElement: sortedTools.slice(0, 20).map((t, i) => ({
+    itemListElement: rankedTools.slice(0, 20).map((t, i) => ({
       "@type": "ListItem",
       position: i + 1,
       name: t.data.name,
@@ -106,9 +125,9 @@ const jsonLd = {
           <div class="filters-sort">
             <label for="sort-select">Ordenar</label>
             <select id="sort-select">
+              <option value="name">Alfabético</option>
               <option value="rank">Por ranking</option>
               <option value="score">Por puntuación</option>
-              <option value="name">Alfabético</option>
               <option value="added">Últimas incorporaciones</option>
               <option value="updated">Verificadas más recientemente</option>
             </select>
@@ -193,7 +212,7 @@ const jsonLd = {
                      data-slug={tool.slug}
                      data-name={tool.data.name}
                      data-type={tool.data.type}
-                     data-rank={tool.data.market_rank ?? 999}
+                     data-rank={rankIn(tool.data, cat.id) ?? 999}
                      data-score={s}
                      data-updated={tool.data.last_verified ? new Date(tool.data.last_verified).getTime() : 0}
                      data-added={tool.data.first_added ? new Date(tool.data.first_added).getTime() : 0}
@@ -205,7 +224,7 @@ const jsonLd = {
                       {tool.data.logo ? <img src={`${base}${tool.data.logo.replace(/^\//,'')}`} alt="" width="35" height="35" style="border-radius:10px;object-fit:contain" loading="lazy" /> : <span style="font-size:15px;font-weight:700;color:#6e6e73">{tool.data.name.charAt(0)}</span>}
                     </div>
                     <div class="min-w-0 flex-1">
-                      <div class="flex items-center gap-2"><h3 class="tool-name" style="color:#1d1d1f">{tool.data.name}</h3>{tool.data.market_rank&&tool.data.market_rank<=3&&hasMeaningfulRank(tool.data, sizes)&&<span class="badge badge-amber badge-sm">#{tool.data.market_rank}</span>}{isNewTool(tool.data)&&<span class="badge badge-green badge-sm">Nuevo</span>}</div>
+                      <div class="flex items-center gap-2"><h3 class="tool-name" style="color:#1d1d1f">{tool.data.name}</h3>{(() => { const r = rankBadge(tool.data, cat.id); return r ? <span class="badge badge-amber badge-sm">#{r}</span> : null; })()}</div>
                       <p class="tool-desc">{tool.data.description}</p>
                       <div class="flex flex-wrap items-center gap-1.5 mt-2">
                         <span class={`badge badge-sm ${tool.data.type==='opensource'?'badge-green':'badge-blue'}`}>{tool.data.type==='opensource'?'Open Source':'Comercial'}</span>
@@ -339,7 +358,7 @@ const jsonLd = {
      se queda vacío: lo que manda es `activeTag`, no el <select>. */
   const tagSelect = sel('tag-select');
   let activeTag = params.get('tag') || '';
-  let activeSort = params.get('sort') || 'rank';
+  let activeSort = params.get('sort') || 'name';
   let query = params.get('q') || '';
   let matchedSlugs: Set<string> | null = null;
   let searchFailed = false;

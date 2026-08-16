@@ -24,7 +24,8 @@ certifications:
 - SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 3
+market_rank:
+  nac: 3
 sources:
   - https://www.gartner.com/reviews/market/network-access-control
 first_added: 2026-08-10

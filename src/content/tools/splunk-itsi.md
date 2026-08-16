@@ -25,7 +25,8 @@ certifications:
 - FedRAMP
 company_size:
 - grande
-market_rank: 4
+market_rank:
+  kpi-ca-managers: 6
 sources:
   - https://www.splunk.com/en_us/products/it-service-intelligence.html
 first_added: 2026-08-12

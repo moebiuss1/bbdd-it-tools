@@ -3,6 +3,7 @@ name: Digital Guardian DLP
 slug: digital-guardian-dlp
 categories:
 - dlp
+- usb-device-control
 tags:
 - data-protection
 - endpoint
@@ -27,7 +28,9 @@ certifications:
 - SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 10
+market_rank:
+  dlp: 10
+  usb-device-control: 5
 sources:
 - https://cyberwebspider.com/cyber-security-news/10-best-data-loss-prevention-software-in-2025/
 - https://www.gartner.com/reviews/market/data-loss-prevention

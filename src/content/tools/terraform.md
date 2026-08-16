@@ -27,7 +27,9 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 1
+market_rank:
+  cloud-migration: 1
+  config-managers: 2
 repo: https://github.com/hashicorp/terraform
 license: BSL
 sources:

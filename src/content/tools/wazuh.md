@@ -39,7 +39,10 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 4
+market_rank:
+  ids: 5
+  log-management: 4
+  siem: 5
 repo: https://github.com/wazuh/wazuh
 license: AGPL-3.0
 sources:

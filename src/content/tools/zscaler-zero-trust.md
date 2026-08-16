@@ -29,7 +29,9 @@ certifications:
 - HIPAA
 company_size:
 - grande
-market_rank: 1
+market_rank:
+  firewall: 3
+  swg: 1
 cert_url: https://trust.zscaler.com
 sources:
   - https://www.gartner.com/reviews/market/network-firewalls

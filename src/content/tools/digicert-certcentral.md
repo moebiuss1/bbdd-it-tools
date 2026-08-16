@@ -33,7 +33,10 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 1
+market_rank:
+  cert-managers: 1
+  certificate-lifecycle: 1
+  eidas-trust: 1
 sources:
   - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
   - https://www.digicert.com/

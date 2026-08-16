@@ -33,8 +33,10 @@ sources:
 cert_url: https://konghq.com/compliance
 first_added: 2026-08-10
 last_verified: '2026-08-10'
+logo: /logos/kong-konnect.png
 needs_review: false
-market_rank: 1
+market_rank:
+  api-management: 1
 ---
 
 Kong Konnect gestiona de forma centralizada las instancias de Kong Gateway

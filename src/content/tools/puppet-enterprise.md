@@ -26,7 +26,8 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 2
+market_rank:
+  config-managers: 3
 sources:
 - https://www.gartner.com/reviews/market/continuous-configuration-automation-tools
 - https://www.puppet.com/docs/puppet/8/puppet_index.html

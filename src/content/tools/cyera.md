@@ -32,8 +32,10 @@ sources:
   - https://www.cyera.com/solution-briefs/cyera-dspm
 first_added: 2026-08-10
 last_verified: '2026-08-10'
+logo: /logos/cyera.png
 needs_review: false
-market_rank: 1
+market_rank:
+  llm-security: 1
 ---
 
 Cyera clasifica automáticamente los datos sensibles de una organización con

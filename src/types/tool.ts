@@ -22,7 +22,8 @@ export interface ToolFrontmatter {
   why_reference: string;
   certifications: string[];
   company_size: CompanySize[];
-  market_rank?: number;
+  /** Puesto por categoría (`{ siem: 2 }`). Un número suelto es el puesto en la categoría principal. */
+  market_rank?: number | Record<string, number>;
   logo?: string;
   repo?: string;
   license?: string;

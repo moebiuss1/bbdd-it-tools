@@ -23,7 +23,8 @@ certifications:
 - PCI DSS
 company_size:
 - grande
-market_rank: 1
+market_rank:
+  api-security: 2
 sources:
   - https://safeguard.sh/resources/blog/best-api-security-tools-2026
 first_added: 2026-08-10

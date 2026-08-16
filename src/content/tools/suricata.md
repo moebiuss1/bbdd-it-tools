@@ -32,7 +32,10 @@ last_verified: '2026-08-10'
 needs_review: false
 sources:
   - https://www.gartner.com/reviews/market/intrusion-prevention-systems
-market_rank: 2
+market_rank:
+  ids: 2
+  ips: 4
+  ndr: 5
 logo: /logos/suricata.png
 category: ips
 ---

@@ -27,7 +27,9 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 1
+market_rank:
+  cloud-cost: 1
+  it-asset-managers: 1
 sources:
   - https://itassetmanagement.net/2025/03/07/the-forrester-wave-sam-solutions-report-q1-2025/
   - https://www.flexera.com/

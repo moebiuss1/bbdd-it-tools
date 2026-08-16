@@ -31,8 +31,11 @@ sources:
 cert_url: https://www.drivelock.com/en/certifications
 first_added: 2026-08-10
 last_verified: '2026-08-10'
+logo: /logos/drivelock.png
 needs_review: false
-market_rank: 1
+market_rank:
+  application-control: 1
+  usb-device-control: 1
 ---
 
 DriveLock forma parte de la plataforma HYPERSECURE, que unifica control de

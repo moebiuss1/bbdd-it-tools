@@ -2,7 +2,9 @@
 name: ACL GRC
 slug: acl-grc
 categories:
+- audit-management
 - kpi-ca-managers
+- risk-management
 tags:
   - grc
   - auditoria
@@ -25,7 +27,10 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 5
+market_rank:
+  audit-management: 6
+  kpi-ca-managers: 7
+  risk-management: 6
 sources:
 - https://www.gartner.com/reviews/market/audit-management-solutions
 first_added: 2026-08-10

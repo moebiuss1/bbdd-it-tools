@@ -33,8 +33,10 @@ sources:
 cert_url: https://www.docusign.com/trust/compliance/certifications
 first_added: 2026-08-10
 last_verified: '2026-08-10'
+logo: /logos/docusign.png
 needs_review: false
-market_rank: 1
+market_rank:
+  eidas-trust: 2
 ---
 
 DocuSign ofrece distintos niveles de firma electrónica según el marco eIDAS:

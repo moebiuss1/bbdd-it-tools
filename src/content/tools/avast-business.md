@@ -24,7 +24,8 @@ certifications:
 company_size:
 - pequeña
 - mediana
-market_rank: 16
+market_rank:
+  antivirus: 15
 sources:
   - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 first_added: 2026-08-10

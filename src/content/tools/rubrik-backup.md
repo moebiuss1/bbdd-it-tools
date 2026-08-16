@@ -27,7 +27,10 @@ certifications:
 - FedRAMP
 company_size:
 - grande
-market_rank: 1
+market_rank:
+  business-continuity: 2
+  enterprise-backup: 1
+  saas-backup: 2
 cert_url: https://www.rubrik.com/trust
 sources:
   - https://www.gartner.com/reviews/market/enterprise-backup-and-recovery

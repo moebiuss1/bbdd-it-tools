@@ -26,7 +26,9 @@ certifications:
 - SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 4
+market_rank:
+  incident-management: 5
+  soar: 4
 sources:
   - https://www.gartner.com/reviews/market/it-service-management-platforms
 first_added: 2026-08-10

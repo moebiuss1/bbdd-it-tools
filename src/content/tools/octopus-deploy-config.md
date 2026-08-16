@@ -23,7 +23,9 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 4
+market_rank:
+  ci-cd: 8
+  config-managers: 6
 sources:
 - https://www.gartner.com/reviews/market/devops-platforms/vendor/octopus-deploy-125263461/product/octopus-deploy
 - https://octopus.com/docs/deployments

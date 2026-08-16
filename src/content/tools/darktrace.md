@@ -3,6 +3,7 @@ name: Darktrace DETECT
 slug: darktrace-detect
 categories:
 - ids
+- ndr
 tags:
   - ai
   - network
@@ -27,7 +28,9 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 3
+market_rank:
+  ids: 4
+  ndr: 1
 sources:
 - https://www.gartner.com/reviews/market/network-detection-and-response
 - https://darktrace.com/

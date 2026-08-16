@@ -2,8 +2,9 @@
 name: GitHub
 slug: github-git
 categories:
-  - scm
   - ci-cd
+  - code-quality
+  - scm
 tags:
 - git
 - scm
@@ -27,7 +28,10 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 1
+market_rank:
+  ci-cd: 1
+  code-quality: 5
+  scm: 1
 cert_url: https://github.com/security
 sources:
   - https://www.gartner.com/reviews/market/devops-platforms

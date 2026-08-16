@@ -11,20 +11,50 @@ export function getToolCategories(data: Pick<ToolFrontmatter, "categories" | "ca
   return data.category ? [data.category] : [];
 }
 
-/** Días durante los que una ficha recién dada de alta se considera novedad. */
-export const NEW_TOOL_DAYS = 30;
+/*
+ * No hay distintivo de "Nuevo" en el catálogo.
+ *
+ * `first_added` se sigue registrando y se muestra como fecha —en la ficha, en la
+ * portada y en /novedades, que agrupa las altas por semana—, pero sin badge: una
+ * tanda de altas pinta de verde media pantalla y el color acaba señalando cuándo
+ * se dio de alta la ficha, no si la herramienta merece atención.
+ */
 
 /**
- * ¿Es una incorporación reciente al directorio?
+ * Puesto de la herramienta en una categoría concreta.
  *
- * Se mide contra `first_added`, nunca contra `last_verified`: el pipeline
- * semanal reescribe la verificación de las 182 fichas a la vez, así que usar esa
- * fecha marcaba el catálogo entero como "Nuevo" —justo el tipo de dato inflado
- * que este directorio no se permite.
+ * El puesto solo significa algo dentro de un mercado: Rubrik y Druva son ambas
+ * "#1" —una en backup corporativo, otra en backup de SaaS— y publicarlo como un
+ * número suelto por ficha hacía que las dos apareciesen como #1 en las dos
+ * listas. Por eso el campo es un mapa `categoría → puesto` y toda la interfaz
+ * pide el puesto indicando en qué categoría se está mostrando la herramienta.
  */
-export function isNewTool(data: Pick<ToolFrontmatter, "first_added">, now = Date.now()): boolean {
-  if (!data.first_added) return false;
-  return now - new Date(data.first_added).getTime() < NEW_TOOL_DAYS * 86400000;
+export function rankIn(
+  data: Pick<ToolFrontmatter, "market_rank" | "categories" | "category">,
+  categoryId: string,
+): number | null {
+  const rank = data.market_rank;
+  if (!rank) return null;
+  // Compatibilidad: un número suelto es el puesto en la categoría principal.
+  if (typeof rank === "number") {
+    return getToolCategories(data)[0] === categoryId ? rank : null;
+  }
+  return rank[categoryId] ?? null;
+}
+
+/**
+ * Mejor puesto de la herramienta entre todas sus categorías.
+ * Para los sitios donde no hay categoría en pantalla (puntuación, comparador,
+ * índice de búsqueda) y hay que resumir su posición en un solo número.
+ */
+export function bestRank(
+  data: Pick<ToolFrontmatter, "market_rank" | "categories" | "category">,
+): number | null {
+  const rank = data.market_rank;
+  if (!rank) return null;
+  if (typeof rank === "number") return rank;
+  const values = Object.values(rank);
+  return values.length > 0 ? Math.min(...values) : null;
 }
 
 /** Nº de herramientas por categoría, para decidir si un puesto significa algo. */
@@ -42,17 +72,36 @@ export const MIN_RANKED_PEERS = 3;
 /**
  * ¿Merece esta herramienta lucir su puesto (#1, #2…) en un listado?
  *
- * 44 fichas tienen `market_rank: 1` y 15 de ellas lo son en una categoría con
- * una única herramienta: un "#1" sin competidores no es una posición de mercado,
- * es un artefacto de la taxonomía. El badge solo aparece cuando hay al menos
- * MIN_RANKED_PEERS herramientas con las que compararse.
+ * Un "#1" en una categoría sin competencia no es una posición de mercado sino un
+ * artefacto de la taxonomía: el badge solo aparece cuando la categoría en la que
+ * ocupa ese puesto tiene al menos MIN_RANKED_PEERS herramientas.
  */
 export function hasMeaningfulRank(
   data: Pick<ToolFrontmatter, "market_rank" | "categories" | "category">,
   sizes: Map<string, number>,
 ): boolean {
   if (!data.market_rank) return false;
-  return getToolCategories(data).some(c => (sizes.get(c) ?? 0) >= MIN_RANKED_PEERS);
+  return getToolCategories(data).some(
+    c => rankIn(data, c) !== null && (sizes.get(c) ?? 0) >= MIN_RANKED_PEERS,
+  );
+}
+
+/**
+ * Puesto publicable de una herramienta cuando el listado no está agrupado por
+ * categoría: el mejor de los que ocupa, con la categoría a la que corresponde
+ * para poder decirlo en el tooltip. Sin ella, un "#2" suelto no dice en qué.
+ */
+export function bestPublishableRank(
+  data: Pick<ToolFrontmatter, "market_rank" | "categories" | "category">,
+  sizes: Map<string, number>,
+): { rank: number; category: string } | null {
+  let best: { rank: number; category: string } | null = null;
+  for (const c of getToolCategories(data)) {
+    const rank = rankIn(data, c);
+    if (rank === null || (sizes.get(c) ?? 0) < MIN_RANKED_PEERS) continue;
+    if (!best || rank < best.rank) best = { rank, category: c };
+  }
+  return best;
 }
 
 export interface DataGap {
@@ -148,10 +197,11 @@ export function scoreAxes(data: ToolFrontmatter, body = ""): ScoreAxis[] {
   // las fuentes alojadas fuera de su dominio (analistas, laboratorios, prensa).
   const sources = independentSourceCount(data);
 
-  // 1. Posición de mercado (30) — decrece 3,5 puntos por puesto, suelo de 5
-  const rankValue = data.market_rank
-    ? Math.max(5, Math.round(30 - (data.market_rank - 1) * 3.5))
-    : 8;
+  // 1. Posición de mercado (30) — decrece 3,5 puntos por puesto, suelo de 5.
+  // Se toma el mejor puesto entre sus categorías: una herramienta que lidera un
+  // mercado y es secundaria en otro puntúa por lo que lidera.
+  const rank = bestRank(data);
+  const rankValue = rank ? Math.max(5, Math.round(30 - (rank - 1) * 3.5)) : 8;
 
   // 2. Garantías verificables (25) — misma exigencia, evidencia distinta
   let guaranteeValue: number;
@@ -204,7 +254,7 @@ export function scoreAxes(data: ToolFrontmatter, body = ""): ScoreAxis[] {
       label: "Posición de mercado",
       value: rankValue,
       max: 30,
-      detail: data.market_rank ? `Puesto #${data.market_rank} en su categoría` : "Sin posición asignada",
+      detail: rank ? `Puesto #${rank} en su categoría` : "Sin posición asignada",
     },
     {
       label: isOpenSource ? "Transparencia" : "Garantías auditadas",
@@ -274,7 +324,7 @@ export function sortTools(
 ): ToolEntry[] {
   return [...tools].sort((a, b) => {
     if (sortBy === "rank") {
-      return (a.data.market_rank ?? 999) - (b.data.market_rank ?? 999);
+      return (bestRank(a.data) ?? 999) - (bestRank(b.data) ?? 999);
     }
     if (sortBy === "name") {
       return a.data.name.localeCompare(b.data.name, "es");

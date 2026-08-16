@@ -5,6 +5,7 @@ categories:
 - audit-management
 - compliance-management
 - kpi-ca-managers
+- policy-management
 - risk-management
 tags:
   - grc
@@ -27,7 +28,12 @@ certifications:
 - ISO 27001
 company_size:
 - grande
-market_rank: 2
+market_rank:
+  audit-management: 4
+  compliance-management: 5
+  kpi-ca-managers: 4
+  policy-management: 4
+  risk-management: 4
 sources:
 - https://www.gartner.com/reviews/market/audit-management-solutions/vendor/archer/product/archer-audit-management
 first_added: 2026-08-10

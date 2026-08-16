@@ -2,8 +2,9 @@
 name: OneTrust
 slug: onetrust
 categories:
-- policy-management
 - compliance-management
+- policy-management
+- third-party-security
 tags:
 - compliance
 - saas
@@ -33,8 +34,12 @@ sources:
   - https://www.onetrust.com/news/onetrust-achieves-worlds-first-iso-27701/
 first_added: 2026-08-10
 last_verified: '2026-08-10'
+logo: /logos/onetrust.png
 needs_review: false
-market_rank: 1
+market_rank:
+  compliance-management: 1
+  policy-management: 1
+  third-party-security: 3
 ---
 
 OneTrust centraliza la gestión documental de cumplimiento normativo en un

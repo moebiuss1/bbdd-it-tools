@@ -2,6 +2,7 @@
 name: Forcepoint DLP
 categories:
 - dlp
+- usb-device-control
 type: comercial
 cost_model: presupuesto-personalizado
 cost_details: Licencia anual por usuario. Precio según módulos y número de endpoints.
@@ -31,7 +32,9 @@ last_verified: '2026-08-10'
 needs_review: false
 sources:
   - https://www.gartner.com/reviews/market/data-loss-prevention
-market_rank: 2
+market_rank:
+  dlp: 2
+  usb-device-control: 2
 logo: /logos/forcepoint-dlp.png
 category: dlp
 ---

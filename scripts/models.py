@@ -5,7 +5,7 @@ Espejo del schema Zod en src/content.config.ts
 
 from datetime import date, datetime
 from enum import Enum
-from typing import Optional
+from typing import Optional, Union
 from pydantic import BaseModel, Field, HttpUrl
 
 
@@ -69,7 +69,9 @@ class ToolFrontmatter(BaseModel):
     why_reference: str
     certifications: list[str] = Field(default_factory=list)
     company_size: list[CompanySize] = Field(default_factory=list)
-    market_rank: Optional[int] = None
+    # Puesto por categoría: {categoría: puesto}. Se admite un entero suelto en
+    # las fichas antiguas, donde significa el puesto en la categoría principal.
+    market_rank: Optional[Union[int, dict[str, int]]] = None
     logo: Optional[str] = None
     repo: Optional[str] = None
     license: Optional[str] = None

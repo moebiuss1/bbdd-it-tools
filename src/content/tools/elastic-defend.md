@@ -26,7 +26,10 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 8
+market_rank:
+  antivirus: 7
+  edr: 8
+  siem: 10
 repo: https://github.com/elastic/elasticsearch
 license: Elastic License 2.0
 sources:

@@ -31,8 +31,10 @@ sources:
   - https://www.litellm.ai
 first_added: 2026-08-10
 last_verified: '2026-08-10'
+logo: /logos/litellm.png
 needs_review: false
-market_rank: 1
+market_rank:
+  llm-security: 3
 ---
 
 LiteLLM actúa como una capa intermedia entre las aplicaciones de una

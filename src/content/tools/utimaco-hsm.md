@@ -24,7 +24,8 @@ certifications:
 - ISO 27001
 company_size:
 - grande
-market_rank: 7
+market_rank:
+  key-managers: 9
 sources:
 - https://www.gartner.com/reviews/product/utimaco-hardware-security-modules-hsm
 first_added: 2026-08-10

@@ -28,7 +28,10 @@ certifications:
 company_size:
 - pequeña
 - mediana
-market_rank: 6
+market_rank:
+  identity-managers: 10
+  mfa: 5
+  sso: 6
 sources:
   - https://www.gartner.com/reviews/market/access-management
 first_added: 2026-08-10

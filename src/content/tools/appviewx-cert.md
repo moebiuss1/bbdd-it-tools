@@ -23,7 +23,8 @@ certifications:
 - SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 5
+market_rank:
+  cert-managers: 5
 sources:
   - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 first_added: 2026-08-10

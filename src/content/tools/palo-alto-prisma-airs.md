@@ -33,8 +33,10 @@ sources:
 cert_url: https://www.paloaltonetworks.com/legal-notices/trust-center/certifications
 first_added: 2026-08-10
 last_verified: '2026-08-12'
+logo: /logos/palo-alto-prisma-airs.png
 needs_review: false
-market_rank: 1
+market_rank:
+  llm-security: 4
 ---
 
 Prisma AIRS asegura el ciclo de vida completo de un sistema de IA, desde el

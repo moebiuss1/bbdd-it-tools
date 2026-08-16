@@ -19,7 +19,7 @@ from datetime import date
 
 import yaml
 
-from yaml_io import read_tool, write_tool, list_all_slugs
+from yaml_io import read_tool, list_all_slugs
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
 CANDIDATES_FILE = os.path.join(DATA_DIR, "candidates.json")
@@ -98,7 +98,18 @@ def compute_rankings(config: dict) -> dict[str, list[dict]]:
         }
 
         for category in cats:
-            by_category.setdefault(category, []).append(dict(entry))
+            item = dict(entry)
+            # El puesto es por categoría: `market_rank` es un mapa
+            # {categoría: puesto}. Un número suelto (fichas antiguas) se
+            # interpreta como el puesto en la categoría principal.
+            mr = tool.get("market_rank")
+            if isinstance(mr, dict):
+                item["curated_rank"] = mr.get(category)
+            elif isinstance(mr, int) and category == cats[0]:
+                item["curated_rank"] = mr
+            else:
+                item["curated_rank"] = None
+            by_category.setdefault(category, []).append(item)
 
     # Calcular scores por categoría
     rankings: dict[str, list[dict]] = {}
@@ -128,10 +139,18 @@ def compute_rankings(config: dict) -> dict[str, list[dict]]:
             tool["score"] = round(score)
             tool["tier"] = get_tier(score, config)
 
-        # Ordenar por score descendente
-        tools.sort(key=lambda t: t["score"], reverse=True)
+        # Manda el puesto curado de la ficha; el score compuesto solo desempata
+        # a quien no lo tiene. Antes se ordenaba solo por score y se reescribía
+        # `market_rank` dentro de este bucle: como una herramienta pertenece a
+        # varias categorías, el fichero acababa con el puesto de la última que
+        # se procesara, y así aparecían dos "#1" en la misma lista. El puesto es
+        # dato editorial y el pipeline ya no lo toca.
+        tools.sort(key=lambda t: (
+            t["curated_rank"] if t["curated_rank"] is not None else 10_000,
+            -t["score"],
+            t["name"].lower(),
+        ))
 
-        # Asignar ranks
         rankings[category] = []
         for rank, tool in enumerate(tools, 1):
             rankings[category].append({
@@ -140,13 +159,6 @@ def compute_rankings(config: dict) -> dict[str, list[dict]]:
                 "score": tool["score"],
                 "tier": tool["tier"],
             })
-
-            # Actualizar market_rank en el frontmatter de la herramienta
-            existing = read_tool(tool["slug"])
-            if existing:
-                existing["market_rank"] = rank
-                body = existing.pop("_body", "")
-                write_tool(tool["slug"], existing, body)
 
     return rankings
 

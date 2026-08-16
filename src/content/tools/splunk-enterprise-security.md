@@ -34,7 +34,9 @@ certifications:
 - ENS Alta
 company_size:
 - grande
-market_rank: 1
+market_rank:
+  log-management: 1
+  siem: 2
 cert_url: https://www.splunk.com/en_us/about-splunk/splunk-data-security-and-privacy/compliance-at-splunk.html
 sources:
 - https://www.gartner.com/reviews/market/security-information-event-management

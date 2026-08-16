@@ -27,7 +27,8 @@ certifications:
 - HIPAA
 company_size:
 - grande
-market_rank: 7
+market_rank:
+  siem: 9
 sources:
 - https://www.gartner.com/reviews/market/security-information-event-management
 - https://www.securonix.com/

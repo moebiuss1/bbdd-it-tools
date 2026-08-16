@@ -3,13 +3,13 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import { getCategories, getToolCategories, toToolEntry } from "@lib/tools";
+import { getCategories, getToolCategories, toToolEntry, rankIn } from "@lib/tools";
 export async function getStaticPaths() { return (await getCategories()).map(c => ({ params: { categoria: c.id } })); }
 const base = import.meta.env.BASE_URL;
 const categories = await getCategories();
 const cat = categories.find(c => c.id === Astro.params.categoria); if (!cat) return Astro.rewrite("/404");
 const tools = (await getCollection("tools")).map(toToolEntry);
-const catTools = tools.filter(t => getToolCategories(t.data).includes(Astro.params.categoria as string)).sort((a,b) => (a.data.market_rank??999)-(b.data.market_rank??999));
+const catTools = tools.filter(t => getToolCategories(t.data).includes(cat.id)).sort((a,b) => (rankIn(a.data, cat.id)??999)-(rankIn(b.data, cat.id)??999));
 
 const site = Astro.site?.toString() ?? "https://moebiuss1.github.io/";
 const jsonLd = [

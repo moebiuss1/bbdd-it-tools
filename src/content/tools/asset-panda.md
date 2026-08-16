@@ -21,7 +21,8 @@ certifications:
 company_size:
 - pequeña
 - mediana
-market_rank: 6
+market_rank:
+  it-asset-managers: 7
 sources:
 - https://www.gartner.com/reviews/market/software-asset-management-tools
 first_added: 2026-08-10

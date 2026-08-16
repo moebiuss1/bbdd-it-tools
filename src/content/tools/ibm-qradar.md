@@ -30,7 +30,9 @@ certifications:
 - ENS Alta
 company_size:
 - grande
-market_rank: 3
+market_rank:
+  log-management: 3
+  siem: 4
 cert_url: https://www.ibm.com/trust
 sources:
 - https://www.gartner.com/reviews/market/security-information-event-management

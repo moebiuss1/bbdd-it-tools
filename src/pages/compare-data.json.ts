@@ -14,7 +14,7 @@ import { getCollection } from "astro:content";
 import type { APIRoute } from "astro";
 import {
   toToolEntry, getToolCategories, getCategories, computeToolScore,
-  scoreBreakdown, dataGaps, independentSourceCount, categorySizes, hasMeaningfulRank,
+  scoreBreakdown, dataGaps, independentSourceCount, categorySizes, bestPublishableRank,
 } from "@lib/tools";
 import { COST_MODEL_LABELS, COMPANY_SIZE_LABELS, TOOL_TYPE_LABELS } from "@lib/constants";
 
@@ -36,7 +36,7 @@ export const GET: APIRoute = async () => {
       isOpenSource: d.type === "opensource",
       categories: getToolCategories(d).map(catName),
       categoryIds: getToolCategories(d),
-      rank: hasMeaningfulRank(d, sizes) ? d.market_rank ?? null : null,
+      rank: bestPublishableRank(d, sizes)?.rank ?? null,
       cost: d.cost_model ? COST_MODEL_LABELS[d.cost_model] ?? d.cost_model : null,
       costDetails: d.cost_details ?? null,
       sizes: (d.company_size ?? []).map(s => COMPANY_SIZE_LABELS[s] ?? s),

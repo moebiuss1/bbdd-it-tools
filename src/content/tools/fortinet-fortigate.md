@@ -37,7 +37,11 @@ sources:
 first_added: 2026-08-07
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 1
+market_rank:
+  firewall: 1
+  ips: 1
+  ngfw: 1
+  sd-wan: 1
 logo: /logos/fortinet-fortigate.png
 category: firewall
 ---

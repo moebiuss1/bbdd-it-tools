@@ -34,7 +34,9 @@ sources:
 first_added: 2026-08-07
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 3
+market_rank:
+  antivirus: 3
+  edr: 3
 logo: /logos/microsoft-defender-for-endpoint.png
 category: antivirus
 ---

@@ -33,7 +33,9 @@ sources:
 first_added: 2026-08-07
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 1
+market_rank:
+  mam: 1
+  mdm: 1
 logo: /logos/microsoft-intune.png
 category: mdm
 ---

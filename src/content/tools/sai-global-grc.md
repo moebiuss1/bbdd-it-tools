@@ -3,6 +3,8 @@ name: SAI Global GRC
 slug: sai-global-grc
 categories:
 - kpi-ca-managers
+- policy-management
+- risk-management
 tags:
 - grc
 - compliance
@@ -22,7 +24,10 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 7
+market_rank:
+  kpi-ca-managers: 9
+  policy-management: 7
+  risk-management: 8
 sources:
 - https://www.gartner.com/reviews/market/integrated-risk-management/vendor/sai360
 first_added: 2026-08-10

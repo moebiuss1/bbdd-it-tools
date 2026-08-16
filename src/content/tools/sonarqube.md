@@ -35,8 +35,10 @@ sources:
 cert_url: https://www.sonarsource.com/trust-center/
 first_added: 2026-08-10
 last_verified: '2026-08-10'
+logo: /logos/sonarqube.png
 needs_review: false
-market_rank: 1
+market_rank:
+  code-quality: 1
 ---
 
 SonarQube analiza el código en cada commit o pull request y bloquea el

@@ -26,7 +26,9 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 8
+market_rank:
+  key-managers: 10
+  secrets-management: 9
 sources:
 - https://www.gartner.com/reviews/market/multicloud-key-management-as-a-service-kmaas
 first_added: 2026-08-10

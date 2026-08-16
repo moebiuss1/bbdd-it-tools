@@ -27,7 +27,9 @@ certifications:
 - HIPAA
 company_size:
 - grande
-market_rank: 2
+market_rank:
+  identity-managers: 3
+  pam: 6
 sources:
   - https://www.gartner.com/reviews/market/privileged-access-management
 first_added: 2026-08-10

@@ -24,7 +24,8 @@ certifications:
 company_size:
 - pequeña
 - mediana
-market_rank: 8
+market_rank:
+  mdm: 9
 sources:
   - https://www.gartner.com/reviews/market/unified-endpoint-management-tools
 first_added: 2026-08-10

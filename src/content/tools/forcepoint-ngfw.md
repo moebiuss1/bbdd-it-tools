@@ -23,7 +23,9 @@ certifications:
 - Common Criteria
 company_size:
 - grande
-market_rank: 8
+market_rank:
+  firewall: 8
+  ngfw: 8
 sources:
   - https://www.gartner.com/reviews/market/network-firewalls
 first_added: 2026-08-10

@@ -23,7 +23,8 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 1
+market_rank:
+  config-managers: 1
 sources:
 - https://www.gartner.com/reviews/market/continuous-configuration-automation-tools
 - https://docs.chef.io/platform_overview/

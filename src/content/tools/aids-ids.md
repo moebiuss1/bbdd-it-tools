@@ -22,13 +22,15 @@ certifications: []
 company_size:
 - pequeña
 - mediana
-market_rank: 8
+market_rank:
+  ids: 9
 repo: https://github.com/aide/aide
 license: GPL-2.0
 sources:
 - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 first_added: 2026-08-10
 last_verified: '2026-08-10'
+logo: /logos/aids-ids.png
 needs_review: false
 ---
 

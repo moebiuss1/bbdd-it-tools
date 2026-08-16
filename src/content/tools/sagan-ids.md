@@ -21,7 +21,8 @@ certifications: []
 company_size:
 - pequeña
 - mediana
-market_rank: 9
+market_rank:
+  ids: 11
 repo: https://github.com/quadrantsec/sagan
 license: GPL-2.0
 sources:

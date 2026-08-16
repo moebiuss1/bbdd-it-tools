@@ -30,7 +30,10 @@ certifications:
 - HIPAA
 company_size:
 - grande
-market_rank: 1
+market_rank:
+  key-managers: 2
+  pam: 1
+  secrets-management: 3
 sources:
 - https://www.gartner.com/reviews/market/privileged-access-management
 first_added: 2026-08-10

@@ -25,7 +25,8 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 6
+market_rank:
+  mdm: 7
 sources:
   - https://www.gartner.com/reviews/market/unified-endpoint-management-tools
 first_added: 2026-08-10

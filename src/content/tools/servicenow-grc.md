@@ -4,6 +4,7 @@ categories:
 - audit-management
 - compliance-management
 - kpi-ca-managers
+- policy-management
 - risk-management
 type: comercial
 cost_model: presupuesto-personalizado
@@ -32,7 +33,12 @@ first_added: 2026-08-07
 last_verified: '2026-08-10'
 needs_review: false
 sources: []
-market_rank: 1
+market_rank:
+  audit-management: 1
+  compliance-management: 2
+  kpi-ca-managers: 2
+  policy-management: 2
+  risk-management: 1
 logo: /logos/servicenow-grc.png
 category: kpi-ca-managers
 ---

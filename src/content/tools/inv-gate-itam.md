@@ -22,7 +22,8 @@ certifications:
 - SOC 2 Tipo II
 company_size:
 - mediana
-market_rank: 2
+market_rank:
+  it-asset-managers: 3
 sources:
   - https://www.gartner.com/reviews/market/software-asset-management-tools
 first_added: 2026-08-10

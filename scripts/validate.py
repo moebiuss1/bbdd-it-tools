@@ -88,6 +88,42 @@ def validate_all() -> list[str]:
             elif campo == "first_added":
                 errors.append(f"⚠️  {prefix} sin first_added (fecha de alta en el directorio)")
 
+        # El puesto es por categoría y solo vale para categorías que la ficha declara
+        rank = tool.get("market_rank")
+        cats = tool.get("categories") or ([tool["category"]] if tool.get("category") else [])
+        if isinstance(rank, dict):
+            for cat, pos in rank.items():
+                if cat not in cats:
+                    errors.append(f"❌ {prefix} puesto declarado en '{cat}', que no es categoría suya")
+                if not isinstance(pos, int) or pos < 1:
+                    errors.append(f"❌ {prefix} puesto inválido en '{cat}': {pos}")
+
+    errors.extend(validate_unique_ranks())
+    return errors
+
+
+def validate_unique_ranks() -> list[str]:
+    """Dos herramientas no pueden ocupar el mismo puesto en la misma categoría.
+
+    Es el error que motivó pasar `market_rank` de número suelto a mapa por
+    categoría: backup corporativo llegó a publicar dos "#1" porque cada ficha
+    guardaba el puesto de un mercado distinto. Se comprueba en el pipeline para
+    que no vuelva a colarse.
+    """
+    errors = []
+    ocupado: dict[str, dict[int, str]] = {}
+    for slug in list_all_slugs():
+        tool = read_tool(slug)
+        if not tool:
+            continue
+        rank = tool.get("market_rank")
+        if not isinstance(rank, dict):
+            continue
+        for cat, pos in rank.items():
+            previo = ocupado.setdefault(cat, {}).get(pos)
+            if previo:
+                errors.append(f"❌ [{cat}] puesto #{pos} duplicado: {previo} y {slug}")
+            ocupado[cat][pos] = slug
     return errors
 
 

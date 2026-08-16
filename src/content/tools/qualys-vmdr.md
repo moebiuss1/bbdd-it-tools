@@ -31,7 +31,8 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 1
+market_rank:
+  kpi-ca-managers: 1
 cert_url: https://success.qualys.com/support/s/standards
 sources:
   - https://www.gartner.com/reviews/market/vulnerability-assessment

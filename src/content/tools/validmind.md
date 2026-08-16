@@ -29,8 +29,10 @@ sources:
   - https://validmind.com/wp-content/uploads/2025/06/ValidMind-Product-Brief-Navigating-SS1-23-2.pdf
 first_added: 2026-08-10
 last_verified: '2026-08-10'
+logo: /logos/validmind.png
 needs_review: false
-market_rank: 1
+market_rank:
+  ai-governance: 2
 ---
 
 ValidMind automatiza gran parte del trabajo documental que tradicionalmente

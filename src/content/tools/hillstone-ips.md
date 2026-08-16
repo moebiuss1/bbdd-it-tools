@@ -21,7 +21,8 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 12
+market_rank:
+  ips: 14
 sources:
 - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 first_added: 2026-08-10

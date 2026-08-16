@@ -25,7 +25,10 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 8
+market_rank:
+  ids: 10
+  log-management: 8
+  siem: 11
 repo: https://github.com/Security-Onion-Solutions/securityonion
 license: GPL-2.0
 sources:

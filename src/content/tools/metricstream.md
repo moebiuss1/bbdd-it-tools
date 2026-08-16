@@ -2,8 +2,10 @@
 name: MetricStream
 slug: metricstream
 categories:
+- audit-management
 - compliance-management
 - kpi-ca-managers
+- policy-management
 - risk-management
 tags:
 - grc
@@ -26,7 +28,12 @@ certifications:
 - SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 2
+market_rank:
+  audit-management: 3
+  compliance-management: 4
+  kpi-ca-managers: 3
+  policy-management: 3
+  risk-management: 3
 sources:
 - https://www.gartner.com/reviews/market/audit-management-solutions/vendor/metricstream
 first_added: 2026-08-10

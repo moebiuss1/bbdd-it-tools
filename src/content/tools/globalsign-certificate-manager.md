@@ -4,6 +4,7 @@ slug: globalsign-certificate-manager
 categories:
 - cert-managers
 - certificate-lifecycle
+- eidas-trust
 tags:
   - pki
   - iot
@@ -26,7 +27,10 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 2
+market_rank:
+  cert-managers: 2
+  certificate-lifecycle: 2
+  eidas-trust: 3
 sources:
   - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 first_added: 2026-08-10

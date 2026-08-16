@@ -26,7 +26,10 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 2
+market_rank:
+  firewall: 4
+  ngfw: 3
+  sd-wan: 2
 sources:
   - https://www.gartner.com/reviews/market/network-firewalls
 first_added: 2026-08-10

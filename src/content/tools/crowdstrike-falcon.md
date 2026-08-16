@@ -37,7 +37,9 @@ certifications:
 company_size:
 - grande
 - mediana
-market_rank: 2
+market_rank:
+  antivirus: 2
+  edr: 2
 cert_url: https://trust.crowdstrike.com
 sources:
 - https://www.gartner.com/reviews/market/endpoint-protection-platforms

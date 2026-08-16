@@ -12,7 +12,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import { getCategories, getToolCategories, toToolEntry, isNewTool } from "@lib/tools";
+import { getCategories, getToolCategories, toToolEntry } from "@lib/tools";
 
 const base = import.meta.env.BASE_URL;
 const tools = (await getCollection("tools")).map(toToolEntry);
@@ -90,7 +90,6 @@ const sinFecha = tools.length - conFecha.length;
                   <span class="min-w-0 flex-1">
                     <span class="news-name">
                       {t.data.name}
-                      {isNewTool(t.data) && <span class="badge badge-green badge-sm" style="margin-left:6px">Nuevo</span>}
                     </span>
                     <span class="news-cats">{getToolCategories(t.data).map(catName).join(" · ")}</span>
                   </span>

@@ -36,7 +36,10 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 1
+market_rank:
+  identity-managers: 1
+  mfa: 1
+  sso: 1
 cert_url: https://trust.okta.com
 sources:
 - https://www.gartner.com/reviews/market/access-management

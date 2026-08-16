@@ -22,7 +22,8 @@ certifications:
 - FIPS 140-2
 company_size:
 - grande
-market_rank: 9
+market_rank:
+  ips: 12
 sources:
   - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 first_added: 2026-08-10

@@ -30,7 +30,10 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 4
+market_rank:
+  firewall: 5
+  swg: 5
+  waf: 2
 cert_url: https://www.cloudflare.com/trust-hub/
 sources:
   - https://www.gartner.com/reviews/market/network-firewalls

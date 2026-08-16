@@ -3,6 +3,7 @@ name: Datadog
 slug: datadog-monitoring
 categories:
   - infra-monitoring
+  - serverless-management
 tags:
   - monitorizacion
   - saas
@@ -26,7 +27,9 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 1
+market_rank:
+  infra-monitoring: 1
+  serverless-management: 5
 cert_url: https://trust.datadoghq.com
 sources:
 - https://www.gartner.com/reviews/market/observability-platforms

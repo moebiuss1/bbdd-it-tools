@@ -23,7 +23,8 @@ certifications:
 - ISO 27001
 company_size:
 - grande
-market_rank: 10
+market_rank:
+  siem: 12
 sources:
   - https://www.gartner.com/reviews/market/security-information-event-management
 first_added: 2026-08-10

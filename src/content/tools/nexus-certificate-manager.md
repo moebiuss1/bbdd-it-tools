@@ -23,7 +23,8 @@ certifications:
 - ISO 27001
 company_size:
 - grande
-market_rank: 8
+market_rank:
+  cert-managers: 7
 sources:
   - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 first_added: 2026-08-10

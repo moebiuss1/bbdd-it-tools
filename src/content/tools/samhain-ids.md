@@ -22,13 +22,15 @@ certifications: []
 company_size:
 - mediana
 - grande
-market_rank: 10
+market_rank:
+  ids: 12
 repo: https://www.la-samhna.de/samhain/
 license: GPL-2.0
 sources:
 - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 first_added: 2026-08-10
 last_verified: '2026-08-10'
+logo: /logos/samhain-ids.png
 needs_review: false
 ---
 

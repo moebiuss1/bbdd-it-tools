@@ -25,7 +25,9 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 7
+market_rank:
+  incident-management: 8
+  soar: 7
 sources:
   - https://www.gartner.com/reviews/market/it-service-management-platforms
 first_added: 2026-08-10

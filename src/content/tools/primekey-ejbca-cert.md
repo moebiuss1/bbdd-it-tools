@@ -24,7 +24,8 @@ certifications:
 - ISO 9001
 company_size:
 - grande
-market_rank: 4
+market_rank:
+  cert-managers: 4
 sources:
   - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 first_added: 2026-08-10

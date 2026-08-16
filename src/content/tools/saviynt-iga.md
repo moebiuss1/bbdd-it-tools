@@ -24,7 +24,9 @@ certifications:
 - SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 3
+market_rank:
+  identity-managers: 5
+  pam: 7
 sources:
   - https://www.gartner.com/reviews/market/privileged-access-management
 first_added: 2026-08-10

@@ -22,7 +22,8 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 11
+market_rank:
+  ids: 13
 repo: https://sourceforge.net/projects/rkhunter/
 license: GPL-2.0
 sources:

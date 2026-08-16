@@ -29,7 +29,9 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 3
+market_rank:
+  key-managers: 3
+  secrets-management: 4
 cert_url: https://learn.microsoft.com/en-us/azure/compliance/
 sources:
 - https://www.gartner.com/reviews/market/multicloud-key-management-as-a-service-kmaas

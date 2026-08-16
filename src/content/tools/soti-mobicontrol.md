@@ -2,6 +2,7 @@
 name: SOTI MobiControl
 slug: soti-mobicontrol
 categories:
+- mam
 - mdm
 tags:
 - mdm
@@ -24,7 +25,9 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 3
+market_rank:
+  mam: 4
+  mdm: 4
 sources:
   - https://www.gartner.com/reviews/market/unified-endpoint-management-tools
 first_added: 2026-08-10

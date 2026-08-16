@@ -21,7 +21,8 @@ certifications: []
 company_size:
 - mediana
 - grande
-market_rank: 7
+market_rank:
+  config-managers: 8
 repo: https://github.com/crossplane/crossplane
 license: Apache-2.0
 sources:

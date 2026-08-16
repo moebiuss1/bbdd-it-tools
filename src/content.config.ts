@@ -80,7 +80,25 @@ export const toolsCollection = defineCollection({
     why_reference: z.string().min(1, "Indica por qué es referente"),
     certifications: z.array(z.string()).default([]),
     company_size: z.array(z.enum(COMPANY_SIZES)).default([]),
-    market_rank: z.number().int().positive().nullable().optional(),
+    /**
+     * Puesto de mercado, **por categoría**: `{ "enterprise-backup": 3 }`.
+     *
+     * Era un único número por herramienta, y como una ficha pertenece a varias
+     * categorías el dato no podía ser correcto en todas a la vez: backup
+     * corporativo llegó a mostrar dos "#1" porque cada uno lo era en otro
+     * mercado. `compute_rankings.py` lo agravaba escribiendo el campo una vez
+     * por categoría, así que sobrevivía el de la última procesada.
+     *
+     * Se acepta todavía un número suelto por compatibilidad: se interpreta como
+     * el puesto en la categoría principal (la primera de `categories`).
+     */
+    market_rank: z
+      .union([
+        z.number().int().positive(),
+        z.record(z.string(), z.number().int().positive()),
+      ])
+      .nullable()
+      .optional(),
     logo: localPath.nullable().optional(),
     repo: httpUrl().nullable().optional(),
     license: z.string().nullable().optional(),

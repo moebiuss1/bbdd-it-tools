@@ -25,7 +25,9 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 2
+market_rank:
+  ids: 3
+  ndr: 4
 repo: https://github.com/zeek/zeek
 license: BSD-3-Clause
 sources:

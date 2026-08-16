@@ -30,8 +30,10 @@ sources:
 - https://www.serverless.com
 first_added: 2026-08-10
 last_verified: '2026-08-10'
+logo: /logos/serverless-framework.png
 needs_review: false
-market_rank: 1
+market_rank:
+  serverless-management: 1
 ---
 
 Serverless Framework abstrae el proveedor cloud subyacente y permite declarar

@@ -32,8 +32,10 @@ sources:
   - https://www.lakera.ai/risk/prompt-injection-attacks
 first_added: 2026-08-10
 last_verified: '2026-08-10'
+logo: /logos/lakera-guard.png
 needs_review: false
-market_rank: 1
+market_rank:
+  llm-security: 2
 ---
 
 Lakera Guard se sitúa entre el usuario/aplicación y el modelo de lenguaje,

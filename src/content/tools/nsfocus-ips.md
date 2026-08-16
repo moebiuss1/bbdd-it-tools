@@ -21,7 +21,8 @@ certifications:
 - Common Criteria
 company_size:
 - grande
-market_rank: 11
+market_rank:
+  ips: 13
 sources:
 - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 first_added: 2026-08-10

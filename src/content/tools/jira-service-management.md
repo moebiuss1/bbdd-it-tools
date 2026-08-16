@@ -34,8 +34,10 @@ sources:
 cert_url: https://www.atlassian.com/trust/compliance
 first_added: 2026-08-10
 last_verified: '2026-08-10'
+logo: /logos/jira-service-management.png
 needs_review: false
-market_rank: 1
+market_rank:
+  incident-management: 1
 ---
 
 Jira Service Management estructura la gestión de servicios IT en torno a

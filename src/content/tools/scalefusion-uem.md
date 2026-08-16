@@ -2,6 +2,7 @@
 name: Scalefusion UEM
 slug: scalefusion-uem
 categories:
+- mam
 - mdm
 tags:
 - mdm
@@ -23,7 +24,9 @@ certifications:
 company_size:
 - pequeña
 - mediana
-market_rank: 10
+market_rank:
+  mam: 8
+  mdm: 11
 sources:
   - https://www.gartner.com/reviews/market/unified-endpoint-management-tools
 first_added: 2026-08-10

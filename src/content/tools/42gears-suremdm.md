@@ -2,6 +2,7 @@
 name: 42Gears SureMDM
 slug: 42gears-suremdm
 categories:
+- mam
 - mdm
 tags:
 - mdm
@@ -22,7 +23,9 @@ certifications:
 company_size:
 - pequeña
 - mediana
-market_rank: 9
+market_rank:
+  mam: 7
+  mdm: 10
 sources:
   - https://www.gartner.com/reviews/market/unified-endpoint-management-tools
 first_added: 2026-08-10

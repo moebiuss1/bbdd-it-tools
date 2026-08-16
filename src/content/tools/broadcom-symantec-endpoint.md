@@ -25,7 +25,8 @@ certifications:
 - FedRAMP
 company_size:
 - grande
-market_rank: 4
+market_rank:
+  antivirus: 4
 sources:
   - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 first_added: 2026-08-10

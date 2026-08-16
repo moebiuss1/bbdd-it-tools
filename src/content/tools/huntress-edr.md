@@ -24,7 +24,8 @@ certifications:
 company_size:
 - pequeña
 - mediana
-market_rank: 18
+market_rank:
+  edr: 18
 sources:
   - https://www.gartner.com/reviews/market/endpoint-detection-and-response-solutions
 first_added: 2026-08-10

@@ -32,7 +32,9 @@ sources:
 first_added: 2026-08-07
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 6
+market_rank:
+  ids: 8
+  ips: 9
 logo: /logos/snort.png
 category: ids
 ---

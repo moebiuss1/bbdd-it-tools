@@ -28,7 +28,9 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 16
+market_rank:
+  antivirus: 16
+  edr: 16
 sources:
 - https://av-comparatives.org/business-security-test-march-june-2026/
 - https://www.gartner.com/reviews/market/endpoint-protection-platforms

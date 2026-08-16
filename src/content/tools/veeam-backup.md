@@ -28,7 +28,10 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 2
+market_rank:
+  business-continuity: 3
+  enterprise-backup: 2
+  saas-backup: 3
 sources:
   - https://www.gartner.com/reviews/market/enterprise-backup-and-recovery
 first_added: 2026-08-10

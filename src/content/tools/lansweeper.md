@@ -26,7 +26,8 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 8
+market_rank:
+  it-asset-managers: 8
 sources:
 - https://www.gartner.com/reviews/market/software-asset-management-tools
 first_added: 2026-08-10

@@ -3,6 +3,7 @@ name: ThreatLocker
 slug: threatlocker
 categories:
 - application-control
+- usb-device-control
 tags:
 - endpoint
 - zero-trust
@@ -31,8 +32,11 @@ sources:
 cert_url: https://www.threatlocker.com/software-security-audit
 first_added: 2026-08-10
 last_verified: '2026-08-10'
+logo: /logos/threatlocker.png
 needs_review: false
-market_rank: 2
+market_rank:
+  application-control: 2
+  usb-device-control: 3
 ---
 
 ThreatLocker invierte el modelo tradicional de antivirus: en lugar de intentar

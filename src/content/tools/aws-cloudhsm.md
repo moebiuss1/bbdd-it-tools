@@ -26,7 +26,8 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 6
+market_rank:
+  key-managers: 7
 sources:
 - https://docs.aws.amazon.com/cloudhsm/latest/userguide/introduction.html
 first_added: 2026-08-10

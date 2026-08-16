@@ -25,7 +25,9 @@ certifications:
 - FedRAMP
 company_size:
 - grande
-market_rank: 2
+market_rank:
+  incident-management: 3
+  soar: 1
 sources:
   - https://www.gartner.com/reviews/market/it-service-management-platforms
 first_added: 2026-08-10

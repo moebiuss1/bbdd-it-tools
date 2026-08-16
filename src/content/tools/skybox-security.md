@@ -22,7 +22,8 @@ certifications:
 - SOC 2 Tipo II
 company_size:
 - grande
-market_rank: 6
+market_rank:
+  kpi-ca-managers: 8
 sources:
 - https://www.gartner.com/reviews/market/security-threat-intelligence-services/vendor/skybox-security
 first_added: 2026-08-10

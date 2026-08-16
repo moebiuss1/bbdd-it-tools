@@ -28,7 +28,9 @@ company_size:
 - pequeña
 - mediana
 - grande
-market_rank: 14
+market_rank:
+  antivirus: 13
+  edr: 14
 sources:
   - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 first_added: 2026-08-10

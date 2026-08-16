@@ -31,7 +31,9 @@ sources:
 first_added: 2026-08-07
 last_verified: '2026-08-10'
 needs_review: false
-market_rank: 1
+market_rank:
+  incident-management: 2
+  it-asset-managers: 2
 logo: /logos/servicenow-itam.png
 category: it-asset-managers
 ---

@@ -27,7 +27,9 @@ certifications:
 - RGPD / GDPR
 company_size:
 - grande
-market_rank: 8
+market_rank:
+  antivirus: 8
+  edr: 9
 sources:
   - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 first_added: 2026-08-10

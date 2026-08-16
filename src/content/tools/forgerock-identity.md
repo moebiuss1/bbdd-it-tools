@@ -27,7 +27,10 @@ certifications:
 - FedRAMP
 company_size:
 - grande
-market_rank: 3
+market_rank:
+  identity-managers: 4
+  mfa: 3
+  sso: 3
 sources:
   - https://www.gartner.com/reviews/market/access-management
 first_added: 2026-08-10

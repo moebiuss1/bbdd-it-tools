@@ -28,7 +28,9 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 11
+market_rank:
+  antivirus: 11
+  edr: 12
 sources:
   - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 first_added: 2026-08-10

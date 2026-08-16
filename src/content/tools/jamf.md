@@ -2,6 +2,7 @@
 name: Jamf Pro
 slug: jamf-pro
 categories:
+- mam
 - mdm
 tags:
 - apple
@@ -27,7 +28,9 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 5
+market_rank:
+  mam: 6
+  mdm: 6
 sources:
 - https://www.jamf.com/resources/
 - https://www.gartner.com/reviews/market/unified-endpoint-management-tools

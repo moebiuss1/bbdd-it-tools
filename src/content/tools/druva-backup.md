@@ -26,7 +26,9 @@ certifications:
 company_size:
 - mediana
 - grande
-market_rank: 1
+market_rank:
+  enterprise-backup: 7
+  saas-backup: 1
 sources:
   - https://www.gartner.com/reviews/market/backup-as-a-service
 first_added: 2026-08-10
