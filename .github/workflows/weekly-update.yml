@@ -26,6 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      issues: write   # el aviso semanal del estado del catálogo
     steps:
       - uses: actions/checkout@v4
 
@@ -58,6 +59,31 @@ jobs:
 
       - name: Validar datos
         run: python scripts/validate.py
+
+      # Lo que ningún otro paso ve: que la herramienta haya dejado de existir.
+      # El síntoma es que su web empiece a redirigir a otro dominio, como pasó
+      # con Skybox (cerró y su dominio lo sirve Tufin) o con ForgeRock (absorbida
+      # por Ping). Nunca falla el pipeline: deja un informe y se abre un aviso.
+      - name: Vigilar el catálogo (cambios de dominio, fuentes, altas)
+        run: python scripts/check_catalog_health.py
+
+      - name: Abrir aviso si hay algo que revisar
+        if: hashFiles('data/catalog-health.md') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          titulo="Revisión del catálogo — $(date -u +%F)"
+          # Se reutiliza el aviso abierto en lugar de crear uno por semana: el
+          # historial de comentarios cuenta mejor la evolución que veinte issues.
+          # `|| true`: si la etiqueta aún no existe, gh devuelve error y aquí
+          # eso solo significa que hay que crear el primer aviso.
+          abierto=$(gh issue list --state open --label catalogo --limit 1 --json number --jq '.[0].number // empty' 2>/dev/null || true)
+          if [ -n "$abierto" ]; then
+            gh issue comment "$abierto" --body-file data/catalog-health.md
+          else
+            gh label create catalogo --color 0E8A16 --description "Avisos automáticos del estado del catálogo" 2>/dev/null || true
+            gh issue create --title "$titulo" --label catalogo --body-file data/catalog-health.md
+          fi
 
       - name: Commit cambios de datos
         run: |

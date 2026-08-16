@@ -30,6 +30,7 @@ company_size:
 market_rank:
   ai-governance: 3
 sources:
+- https://www.gartner.com/reviews/market/ai-governance-platforms
 - https://en.wikipedia.org/wiki/IBM_Watsonx
 first_added: &id001 2026-08-14
 last_verified: *id001

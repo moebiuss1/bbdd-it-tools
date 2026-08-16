@@ -27,6 +27,8 @@ company_size:
 - grande
 market_rank:
   ai-governance: 4
+sources:
+- https://www.gartner.com/reviews/market/ai-governance-platforms
 first_added: &id001 2026-08-14
 last_verified: *id001
 logo: /logos/fiddler-ai.png

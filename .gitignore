@@ -31,3 +31,4 @@ Thumbs.db
 # Configuración y skills locales de Claude Code: son del entorno de trabajo de
 # cada uno, no del proyecto.
 .claude/
+data/catalog-health.md

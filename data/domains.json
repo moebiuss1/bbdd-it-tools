@@ -1,0 +1,1074 @@
+{
+ "42crunch-api": {
+  "domain": "42crunch.com",
+  "status": 200
+ },
+ "42gears-suremdm": {
+  "domain": "42gears.com",
+  "status": 200
+ },
+ "abnormal-security": {
+  "domain": "abnormal.ai",
+  "status": 200
+ },
+ "acalvio-shadowplex": {
+  "domain": "acalvio.com",
+  "status": 200
+ },
+ "acronis-cyber-protect": {
+  "domain": "acronis.com",
+  "status": 200
+ },
+ "adobe-acrobat-sign": {
+  "domain": "adobe.com",
+  "status": 0
+ },
+ "aids-ids": {
+  "domain": "github.io",
+  "status": 200
+ },
+ "airlock-digital": {
+  "domain": "airlockdigital.com",
+  "status": 200
+ },
+ "akamai-app-api-protector": {
+  "domain": "akamai.com",
+  "status": 403
+ },
+ "ansible": {
+  "domain": "redhat.com",
+  "status": 200
+ },
+ "apache-jmeter": {
+  "domain": "apache.org",
+  "status": 200
+ },
+ "apptio-cloudability": {
+  "domain": "apptio.com",
+  "status": 200
+ },
+ "appviewx-cert": {
+  "domain": "appviewx.com",
+  "status": 200
+ },
+ "argo-cd": {
+  "domain": "github.io",
+  "status": 200
+ },
+ "aruba-clearpass": {
+  "domain": "arubanetworks.com",
+  "status": 403
+ },
+ "asset-panda": {
+  "domain": "assetpanda.com",
+  "status": 200
+ },
+ "auditboard": {
+  "domain": "optro.ai",
+  "status": 200
+ },
+ "auth0-customer-iam": {
+  "domain": "auth0.com",
+  "status": 200
+ },
+ "avast-business": {
+  "domain": "avast.com",
+  "status": 200
+ },
+ "avepoint-cloud-backup": {
+  "domain": "avepoint.com",
+  "status": 200
+ },
+ "aws-application-migration-service": {
+  "domain": "amazon.com",
+  "status": 200
+ },
+ "aws-cloudhsm": {
+  "domain": "amazon.com",
+  "status": 200
+ },
+ "aws-elastic-load-balancing": {
+  "domain": "amazon.com",
+  "status": 200
+ },
+ "aws-key-management-service-kms": {
+  "domain": "amazon.com",
+  "status": 200
+ },
+ "aws-sam": {
+  "domain": "amazon.com",
+  "status": 200
+ },
+ "aws-waf": {
+  "domain": "amazon.com",
+  "status": 200
+ },
+ "azure-api-management": {
+  "domain": "microsoft.com",
+  "status": 200
+ },
+ "azure-devops": {
+  "domain": "microsoft.com",
+  "status": 200
+ },
+ "azure-key-vault": {
+  "domain": "microsoft.com",
+  "status": 200
+ },
+ "azure-migrate": {
+  "domain": "microsoft.com",
+  "status": 200
+ },
+ "barracuda-cloudgen": {
+  "domain": "barracuda.com",
+  "status": 200
+ },
+ "barracuda-email-protection": {
+  "domain": "barracuda.com",
+  "status": 200
+ },
+ "beyondtrust": {
+  "domain": "beyondtrust.com",
+  "status": 403
+ },
+ "bitbucket": {
+  "domain": "bitbucket.org",
+  "status": 200
+ },
+ "bitdefender-gravityzone": {
+  "domain": "bitdefender.com",
+  "status": 200
+ },
+ "bitsight": {
+  "domain": "bitsight.com",
+  "status": 200
+ },
+ "blink-ops": {
+  "domain": "blinkops.com",
+  "status": 200
+ },
+ "brinqa-risk": {
+  "domain": "brinqa.com",
+  "status": 429
+ },
+ "broadcom-symantec-endpoint": {
+  "domain": "broadcom.com",
+  "status": 200
+ },
+ "carbon-black-app-control": {
+  "domain": "broadcom.com",
+  "status": 200
+ },
+ "cato-networks": {
+  "domain": "catonetworks.com",
+  "status": 200
+ },
+ "cfengine-config": {
+  "domain": "cfengine.com",
+  "status": 200
+ },
+ "check-point-firewall": {
+  "domain": "checkpoint.com",
+  "status": 200
+ },
+ "checkmarx-one": {
+  "domain": "checkmarx.com",
+  "status": 200
+ },
+ "chef-infra": {
+  "domain": "chef.io",
+  "status": 200
+ },
+ "chronicle-soar": {
+  "domain": "google.com",
+  "status": 200
+ },
+ "cisco-catalyst-sdwan": {
+  "domain": "cisco.com",
+  "status": 403
+ },
+ "cisco-firepower-ngips": {
+  "domain": "cisco.com",
+  "status": 403
+ },
+ "cisco-ise-nac": {
+  "domain": "cisco.com",
+  "status": 403
+ },
+ "cisco-secure-email": {
+  "domain": "cisco.com",
+  "status": 403
+ },
+ "cisco-secure-endpoint": {
+  "domain": "cisco.com",
+  "status": 403
+ },
+ "cisco-secure-ids": {
+  "domain": "cisco.com",
+  "status": 403
+ },
+ "cisco-umbrella": {
+  "domain": "cisco.com",
+  "status": 200
+ },
+ "citrix-netscaler": {
+  "domain": "netscaler.com",
+  "status": 200
+ },
+ "cloudflare-waf": {
+  "domain": "cloudflare.com",
+  "status": 200
+ },
+ "cloudhealth": {
+  "domain": "broadcom.com",
+  "status": 200
+ },
+ "code42-insider-risk": {
+  "domain": "mimecast.com",
+  "status": 200
+ },
+ "cofense-phishme": {
+  "domain": "cofense.com",
+  "status": 200
+ },
+ "cohesity-dataprotect": {
+  "domain": "cohesity.com",
+  "status": 200
+ },
+ "commvault-cloud": {
+  "domain": "commvault.com",
+  "status": 200
+ },
+ "cortado-mdm": {
+  "domain": "cortado.com",
+  "status": 200
+ },
+ "cortex-xdr": {
+  "domain": "paloaltonetworks.com",
+  "status": 200
+ },
+ "countercraft": {
+  "domain": "countercraftsec.com",
+  "status": 0
+ },
+ "credo-ai": {
+  "domain": "credo.ai",
+  "status": 200
+ },
+ "crossplane-config": {
+  "domain": "crossplane.io",
+  "status": 200
+ },
+ "crowdstrike-falcon": {
+  "domain": "crowdstrike.com",
+  "status": 200
+ },
+ "cyberark": {
+  "domain": "paloaltonetworks.com",
+  "status": 200
+ },
+ "cybereason-edr": {
+  "domain": "cybereason.com",
+  "status": 200
+ },
+ "cyera": {
+  "domain": "cyera.com",
+  "status": 200
+ },
+ "cyware-orchestrate": {
+  "domain": "cyware.com",
+  "status": 200
+ },
+ "d3-morpheus": {
+  "domain": "d3security.com",
+  "status": 200
+ },
+ "darktrace": {
+  "domain": "darktrace.com",
+  "status": 200
+ },
+ "datadog-monitoring": {
+  "domain": "datadoghq.com",
+  "status": 200
+ },
+ "delinea-secret-server": {
+  "domain": "delinea.com",
+  "status": 200
+ },
+ "dell-powerprotect": {
+  "domain": "dell.com",
+  "status": 403
+ },
+ "digicert-certcentral": {
+  "domain": "digicert.com",
+  "status": 200
+ },
+ "digital-guardian-dlp": {
+  "domain": "fortra.com",
+  "status": 403
+ },
+ "diligent-highbond": {
+  "domain": "diligent.com",
+  "status": 200
+ },
+ "docusign": {
+  "domain": "docusign.com",
+  "status": 200
+ },
+ "drivelock": {
+  "domain": "drivelock.com",
+  "status": 200
+ },
+ "druva-backup": {
+  "domain": "druva.com",
+  "status": 200
+ },
+ "dynatrace": {
+  "domain": "dynatrace.com",
+  "status": 200
+ },
+ "elastic-defend": {
+  "domain": "elastic.co",
+  "status": 200
+ },
+ "elastic-security": {
+  "domain": "elastic.co",
+  "status": 200
+ },
+ "entrust-keycontrol": {
+  "domain": "entrust.com",
+  "status": 403
+ },
+ "eset-protect": {
+  "domain": "eset.com",
+  "status": 200
+ },
+ "everbridge": {
+  "domain": "everbridge.com",
+  "status": 200
+ },
+ "exabeam-fusion": {
+  "domain": "exabeam.com",
+  "status": 200
+ },
+ "extrahop-revealx": {
+  "domain": "extrahop.com",
+  "status": 200
+ },
+ "f5-bigip-ips": {
+  "domain": "f5.com",
+  "status": 200
+ },
+ "fiddler-ai": {
+  "domain": "fiddler.ai",
+  "status": 200
+ },
+ "flexera-one": {
+  "domain": "flexera.com",
+  "status": 200
+ },
+ "forcepoint-dlp": {
+  "domain": "forcepoint.com",
+  "status": 200
+ },
+ "forcepoint-ngfw": {
+  "domain": "forcepoint.com",
+  "status": 200
+ },
+ "forescout-nac": {
+  "domain": "forescout.com",
+  "status": 403
+ },
+ "fortanix-dsm": {
+  "domain": "fortanix.com",
+  "status": 200
+ },
+ "fortideceptor": {
+  "domain": "fortinet.com",
+  "status": 200
+ },
+ "fortinac": {
+  "domain": "fortinet.com",
+  "status": 200
+ },
+ "fortinet-fortigate": {
+  "domain": "fortinet.com",
+  "status": 200
+ },
+ "gitea": {
+  "domain": "gitea.com",
+  "status": 200
+ },
+ "github-git": {
+  "domain": "github.com",
+  "status": 200
+ },
+ "gitlab-ci-config": {
+  "domain": "gitlab.com",
+  "status": 200
+ },
+ "globalsign-certificate-manager": {
+  "domain": "globalsign.com",
+  "status": 200
+ },
+ "google-apigee": {
+  "domain": "google.com",
+  "status": 200
+ },
+ "google-cloud-kms": {
+  "domain": "google.com",
+  "status": 200
+ },
+ "grafana": {
+  "domain": "grafana.com",
+  "status": 200
+ },
+ "grafana-k6": {
+  "domain": "k6.io",
+  "status": 200
+ },
+ "graylog-security": {
+  "domain": "graylog.org",
+  "status": 403
+ },
+ "haproxy": {
+  "domain": "haproxy.org",
+  "status": 200
+ },
+ "harness-cloud-cost": {
+  "domain": "harness.io",
+  "status": 200
+ },
+ "hashicorp-vault": {
+  "domain": "hashicorp.com",
+  "status": 429
+ },
+ "hashicorp-vault-pki": {
+  "domain": "hashicorp.com",
+  "status": 200
+ },
+ "hexnode-uem": {
+  "domain": "hexnode.com",
+  "status": 200
+ },
+ "hiddenlayer": {
+  "domain": "hiddenlayer.com",
+  "status": 200
+ },
+ "hillstone-ips": {
+  "domain": "hillstonenet.com",
+  "status": 200
+ },
+ "hoxhunt": {
+  "domain": "hoxhunt.com",
+  "status": 200
+ },
+ "hpe-aruba-edgeconnect": {
+  "domain": "hpe.com",
+  "status": 0
+ },
+ "huntress-edr": {
+  "domain": "huntress.com",
+  "status": 200
+ },
+ "ibm-api-connect": {
+  "domain": "ibm.com",
+  "status": 200
+ },
+ "ibm-openpages": {
+  "domain": "ibm.com",
+  "status": 200
+ },
+ "ibm-qradar": {
+  "domain": "ibm.com",
+  "status": 200
+ },
+ "ibm-watsonx-governance": {
+  "domain": "ibm.com",
+  "status": 200
+ },
+ "imperva-waf": {
+  "domain": "imperva.com",
+  "status": 200
+ },
+ "inv-gate-itam": {
+  "domain": "invgate.com",
+  "status": 200
+ },
+ "ivanti-application-control": {
+  "domain": "ivanti.com",
+  "status": 200
+ },
+ "ivanti-neurons-itam": {
+  "domain": "ivanti.com",
+  "status": 200
+ },
+ "ivanti-neurons-mdm": {
+  "domain": "ivanti.com",
+  "status": 200
+ },
+ "jamf": {
+  "domain": "jamf.com",
+  "status": 200
+ },
+ "jenkins": {
+  "domain": "jenkins.io",
+  "status": 200
+ },
+ "jira-service-management": {
+  "domain": "atlassian.com",
+  "status": 200
+ },
+ "jumpcloud": {
+  "domain": "jumpcloud.com",
+  "status": 200
+ },
+ "juniper-srx": {
+  "domain": "juniper.net",
+  "status": 200
+ },
+ "kaspersky-endpoint-security": {
+  "domain": "kaspersky.es",
+  "status": 200
+ },
+ "keycloak-identity": {
+  "domain": "keycloak.org",
+  "status": 200
+ },
+ "keyfactor-command": {
+  "domain": "keyfactor.com",
+  "status": 200
+ },
+ "knowbe4-awareness": {
+  "domain": "knowbe4.com",
+  "status": 200
+ },
+ "kong-konnect": {
+  "domain": "konghq.com",
+  "status": 200
+ },
+ "kubecost": {
+  "domain": "apptio.com",
+  "status": 200
+ },
+ "lakera-guard": {
+  "domain": "lakera.ai",
+  "status": 200
+ },
+ "lansweeper": {
+  "domain": "lansweeper.com",
+  "status": 200
+ },
+ "litellm": {
+  "domain": "litellm.ai",
+  "status": 200
+ },
+ "logicgate-risk-cloud": {
+  "domain": "logicgate.com",
+  "status": 200
+ },
+ "lumigo": {
+  "domain": "lumigo.io",
+  "status": 200
+ },
+ "malwarebytes-edr": {
+  "domain": "malwarebytes.com",
+  "status": 200
+ },
+ "manageengine-mdm": {
+  "domain": "manageengine.com",
+  "status": 200
+ },
+ "mcafee-ips": {
+  "domain": "trellix.com",
+  "status": 0
+ },
+ "metricstream": {
+  "domain": "metricstream.com",
+  "status": 200
+ },
+ "microsoft-defender-for-endpoint": {
+  "domain": "microsoft.com",
+  "status": 200
+ },
+ "microsoft-defender-office-365": {
+  "domain": "microsoft.com",
+  "status": 200
+ },
+ "microsoft-entra-id-azure-ad": {
+  "domain": "microsoft.com",
+  "status": 200
+ },
+ "microsoft-intune": {
+  "domain": "microsoft.com",
+  "status": 200
+ },
+ "microsoft-purview-dlp": {
+  "domain": "microsoft.com",
+  "status": 200
+ },
+ "microsoft-sentinel": {
+  "domain": "microsoft.com",
+  "status": 200
+ },
+ "mimecast-email": {
+  "domain": "mimecast.com",
+  "status": 200
+ },
+ "mlflow": {
+  "domain": "mlflow.org",
+  "status": 200
+ },
+ "modsecurity": {
+  "domain": "modsecurity.org",
+  "status": 200
+ },
+ "mosyle-fuse": {
+  "domain": "mosyle.com",
+  "status": 200
+ },
+ "mulesoft-anypoint": {
+  "domain": "mulesoft.com",
+  "status": 200
+ },
+ "navex-one": {
+  "domain": "navex.com",
+  "status": 200
+ },
+ "netskope-one": {
+  "domain": "netskope.com",
+  "status": 200
+ },
+ "netwitness-siem": {
+  "domain": "netwitness.com",
+  "status": 200
+ },
+ "new-relic": {
+  "domain": "newrelic.com",
+  "status": 200
+ },
+ "nexus-certificate-manager": {
+  "domain": "ingroupe.com",
+  "status": 200
+ },
+ "nginx": {
+  "domain": "nginx.org",
+  "status": 200
+ },
+ "nsfocus-ips": {
+  "domain": "nsfocusglobal.com",
+  "status": 200
+ },
+ "octopus-deploy-config": {
+  "domain": "octopus.com",
+  "status": 200
+ },
+ "okta": {
+  "domain": "okta.com",
+  "status": 200
+ },
+ "omnissa-workspace-one": {
+  "domain": "omnissa.com",
+  "status": 200
+ },
+ "one-identity-safeguard": {
+  "domain": "oneidentity.com",
+  "status": 202
+ },
+ "onelogin-identity": {
+  "domain": "onelogin.com",
+  "status": 202
+ },
+ "onetrust": {
+  "domain": "onetrust.com",
+  "status": 200
+ },
+ "ossec": {
+  "domain": "ossec.net",
+  "status": 200
+ },
+ "packetfence": {
+  "domain": "packetfence.com",
+  "status": 200
+ },
+ "palo-alto-cortex-xsoar": {
+  "domain": "paloaltonetworks.com",
+  "status": 200
+ },
+ "palo-alto-firewall": {
+  "domain": "paloaltonetworks.com",
+  "status": 200
+ },
+ "palo-alto-prisma-access": {
+  "domain": "paloaltonetworks.com",
+  "status": 200
+ },
+ "palo-alto-prisma-airs": {
+  "domain": "paloaltonetworks.com",
+  "status": 200
+ },
+ "palo-alto-threat-prevention": {
+  "domain": "paloaltonetworks.com",
+  "status": 200
+ },
+ "pdq-inventory": {
+  "domain": "pdq.com",
+  "status": 200
+ },
+ "perforce-helix-core": {
+  "domain": "perforce.com",
+  "status": 200
+ },
+ "ping-identity": {
+  "domain": "pingidentity.com",
+  "status": 200
+ },
+ "portnox-nac": {
+  "domain": "portnox.com",
+  "status": 200
+ },
+ "postman": {
+  "domain": "postman.com",
+  "status": 200
+ },
+ "prevalent-tprm": {
+  "domain": "mitratech.com",
+  "status": 200
+ },
+ "primekey-ejbca-cert": {
+  "domain": "keyfactor.com",
+  "status": 200
+ },
+ "prometheus": {
+  "domain": "prometheus.io",
+  "status": 200
+ },
+ "proofpoint-email": {
+  "domain": "proofpoint.com",
+  "status": 200
+ },
+ "proofpoint-security-awareness": {
+  "domain": "proofpoint.com",
+  "status": 200
+ },
+ "pulumi": {
+  "domain": "pulumi.com",
+  "status": 200
+ },
+ "puppet-enterprise": {
+  "domain": "puppet.com",
+  "status": 200
+ },
+ "qualys-vmdr": {
+  "domain": "qualys.com",
+  "status": 200
+ },
+ "rapid7-insightconnect": {
+  "domain": "rapid7.com",
+  "status": 200
+ },
+ "rkhunter-ids": {
+  "domain": "sourceforge.net",
+  "status": 403
+ },
+ "rsa-archer": {
+  "domain": "archerirm.com",
+  "status": 200
+ },
+ "rubrik-backup": {
+  "domain": "rubrik.com",
+  "status": 403
+ },
+ "safetica-dlp": {
+  "domain": "safetica.com",
+  "status": 200
+ },
+ "sagan-ids": {
+  "domain": "sagan.io",
+  "status": 200
+ },
+ "sailpoint": {
+  "domain": "sailpoint.com",
+  "status": 200
+ },
+ "salt-security-api": {
+  "domain": "salt.security",
+  "status": 200
+ },
+ "saltstack": {
+  "domain": "saltproject.io",
+  "status": 200
+ },
+ "samanage-solarwinds": {
+  "domain": "solarwinds.com",
+  "status": 200
+ },
+ "samhain-ids": {
+  "domain": "la-samhna.de",
+  "status": 200
+ },
+ "sans-security-awareness": {
+  "domain": "sans.org",
+  "status": 200
+ },
+ "saviynt-iga": {
+  "domain": "saviynt.com",
+  "status": 200
+ },
+ "scalefusion-uem": {
+  "domain": "scalefusion.com",
+  "status": 200
+ },
+ "sectigo-certificate-manager": {
+  "domain": "sectigo.com",
+  "status": 200
+ },
+ "security-onion": {
+  "domain": "securityonionsolutions.com",
+  "status": 200
+ },
+ "securityscorecard": {
+  "domain": "securityscorecard.com",
+  "status": 200
+ },
+ "securonix": {
+  "domain": "securonix.com",
+  "status": 200
+ },
+ "semgrep": {
+  "domain": "semgrep.dev",
+  "status": 200
+ },
+ "sentinelone-singularity": {
+  "domain": "sentinelone.com",
+  "status": 200
+ },
+ "serverless-framework": {
+  "domain": "serverless.com",
+  "status": 200
+ },
+ "servicenow-grc": {
+  "domain": "servicenow.com",
+  "status": 0
+ },
+ "servicenow-itam": {
+  "domain": "servicenow.com",
+  "status": 0
+ },
+ "skyhigh-dlp": {
+  "domain": "skyhighsecurity.com",
+  "status": 0
+ },
+ "smallstep-cert": {
+  "domain": "smallstep.com",
+  "status": 200
+ },
+ "smartbear-readyapi": {
+  "domain": "smartbear.com",
+  "status": 200
+ },
+ "snort": {
+  "domain": "snort.org",
+  "status": 200
+ },
+ "snort-ips": {
+  "domain": "cisco.com",
+  "status": 403
+ },
+ "snyk": {
+  "domain": "snyk.io",
+  "status": 200
+ },
+ "solarwinds-dlp": {
+  "domain": "solarwinds.com",
+  "status": 200
+ },
+ "sonarqube": {
+  "domain": "sonarsource.com",
+  "status": 200
+ },
+ "sonicwall-nsa": {
+  "domain": "sonicwall.com",
+  "status": 200
+ },
+ "sophos-intercept-x": {
+  "domain": "sophos.com",
+  "status": 0
+ },
+ "soti-mobicontrol": {
+  "domain": "soti.net",
+  "status": 200
+ },
+ "spacelift-config": {
+  "domain": "spacelift.io",
+  "status": 200
+ },
+ "spirion-dlp": {
+  "domain": "spirion.com",
+  "status": 200
+ },
+ "splunk-enterprise-security": {
+  "domain": "splunk.com",
+  "status": 200
+ },
+ "splunk-itsi": {
+  "domain": "splunk.com",
+  "status": 200
+ },
+ "splunk-soar": {
+  "domain": "splunk.com",
+  "status": 200
+ },
+ "sumo-logic-cloud-siem": {
+  "domain": "sumologic.com",
+  "status": 200
+ },
+ "suricata": {
+  "domain": "suricata.io",
+  "status": 200
+ },
+ "swimlane-turbine": {
+  "domain": "swimlane.com",
+  "status": 200
+ },
+ "symantec-dlp": {
+  "domain": "broadcom.com",
+  "status": 200
+ },
+ "t-pot-honeypot": {
+  "domain": "github.com",
+  "status": 200
+ },
+ "tenable-one": {
+  "domain": "tenable.com",
+  "status": 200
+ },
+ "terraform": {
+  "domain": "hashicorp.com",
+  "status": 200
+ },
+ "thales-ciphertrust": {
+  "domain": "thalesgroup.com",
+  "status": 200
+ },
+ "thinkst-canary": {
+  "domain": "canary.tools",
+  "status": 200
+ },
+ "threatlocker": {
+  "domain": "threatlocker.com",
+  "status": 200
+ },
+ "tines": {
+  "domain": "tines.com",
+  "status": 200
+ },
+ "torq": {
+  "domain": "torq.io",
+  "status": 200
+ },
+ "traceable-ai": {
+  "domain": "traceable.ai",
+  "status": 200
+ },
+ "trellix-dlp": {
+  "domain": "trellix.com",
+  "status": 0
+ },
+ "trellix-endpoint-security": {
+  "domain": "trellix.com",
+  "status": 0
+ },
+ "trend-micro-apex-one": {
+  "domain": "trendmicro.com",
+  "status": 200
+ },
+ "trend-micro-tippingpoint": {
+  "domain": "trendmicro.com",
+  "status": 200
+ },
+ "upguard": {
+  "domain": "upguard.com",
+  "status": 200
+ },
+ "utimaco-hsm": {
+  "domain": "utimaco.com",
+  "status": 200
+ },
+ "validmind": {
+  "domain": "validmind.com",
+  "status": 200
+ },
+ "vanta": {
+  "domain": "vanta.com",
+  "status": 200
+ },
+ "vectra-ai": {
+  "domain": "vectra.ai",
+  "status": 200
+ },
+ "veeam-backup": {
+  "domain": "veeam.com",
+  "status": 200
+ },
+ "venafi-control-plane": {
+  "domain": "paloaltonetworks.com",
+  "status": 200
+ },
+ "veracode": {
+  "domain": "veracode.com",
+  "status": 200
+ },
+ "veritas-netbackup": {
+  "domain": "cohesity.com",
+  "status": 200
+ },
+ "versa-networks": {
+  "domain": "versa-networks.com",
+  "status": 200
+ },
+ "vmware-carbon-black": {
+  "domain": "vmware.com",
+  "status": 200
+ },
+ "wallix-bastion": {
+  "domain": "wallix.com",
+  "status": 200
+ },
+ "watchguard-firebox": {
+  "domain": "watchguard.com",
+  "status": 200
+ },
+ "wazuh": {
+  "domain": "wazuh.com",
+  "status": 200
+ },
+ "withsecure-endpoint": {
+  "domain": "withsecure.com",
+  "status": 200
+ },
+ "wiz-ai-spm": {
+  "domain": "wiz.io",
+  "status": 200
+ },
+ "workiva": {
+  "domain": "workiva.com",
+  "status": 200
+ },
+ "zabbix": {
+  "domain": "zabbix.com",
+  "status": 200
+ },
+ "zeek-ids": {
+  "domain": "zeek.org",
+  "status": 200
+ },
+ "zerto": {
+  "domain": "zerto.com",
+  "status": 200
+ },
+ "zscaler-zero-trust": {
+  "domain": "zscaler.com",
+  "status": 200
+ }
+}

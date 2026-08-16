@@ -24,6 +24,7 @@ company_size:
 - mediana
 - grande
 sources:
+- https://www.gartner.com/reviews/market/ai-governance-platforms
 - https://trust.credo.ai/
 - https://www.credo.ai/product
 cert_url: https://trust.credo.ai/
