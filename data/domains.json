@@ -337,7 +337,7 @@
  },
  "entrust-keycontrol": {
   "domain": "entrust.com",
-  "status": 403
+  "status": 200
  },
  "eset-protect": {
   "domain": "eset.com",

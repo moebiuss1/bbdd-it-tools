@@ -93,6 +93,9 @@ search:
   user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
   rate_limit_seconds: 1.5
   max_results_per_query: 10
+  # Umbral de estrellas para que un repositorio cuente como candidato: por
+  # debajo casi todo son experimentos y forks, y el ruido tapa los hallazgos.
+  github_min_stars: 150
   timeout_seconds: 15
 
 # --- API keys (se leen de variables de entorno) ---
@@ -151,3 +154,40 @@ company_size_thresholds:
   small_max: 100
   medium_max: 1000
   # > 1000 es large
+
+# Temas de GitHub por categoría, cuando el identificador del catálogo no sirve
+# como etiqueta. `pam` es el caso claro: en GitHub significa los módulos de
+# autenticación de Linux, así que buscar por ahí devuelve gestores de sesión y
+# no gestores de accesos privilegiados.
+github_topics:
+  pam: privileged-access-management
+  scm: version-control
+  ids: intrusion-detection
+  ips: intrusion-prevention-system
+  mdm: mobile-device-management
+  mam: mobile-application-management
+  nac: network-access-control
+  dlp: data-loss-prevention
+  swg: secure-web-gateway
+  ndr: network-security-monitoring
+  sso: single-sign-on
+  mfa: multi-factor-authentication
+  scm-git: git
+  ci-cd: continuous-integration
+  config-managers: configuration-management
+  key-managers: key-management
+  cert-managers: pki
+  infra-monitoring: monitoring
+  log-management: log-analysis
+  code-quality: static-analysis
+  api-testing: api-testing
+  cloud-cost: finops
+  enterprise-backup: backup
+  saas-backup: backup
+  deception: honeypot
+  application-control: application-whitelisting
+  usb-device-control: device-control
+  security-awareness: phishing-simulation
+  third-party-security: vendor-risk-management
+  ai-governance: ml-governance
+  llm-security: llm-security

@@ -39,9 +39,11 @@ jobs:
       - name: Instalar dependencias Python
         run: pip install -r scripts/requirements.txt
 
-      - name: Buscar nuevas herramientas en Internet (Gartner, itsm.tools, GitHub, web)
+      - name: Buscar jugadores nuevos (API de GitHub y landscape de la CNCF)
         run: python scripts/fetch_candidates.py
-        continue-on-error: true # fuentes externas (DuckDuckGo, itsm.tools) pueden fallar/limitar; no debe frenar el pipeline
+        env:
+          GITHUB_TOKEN: ${{ github.token }}   # sube el límite de la API de búsqueda
+        continue-on-error: true # una fuente externa caída no debe frenar el pipeline
 
       - name: Crear/enriquecer fichas a partir de los candidatos descubiertos
         run: python scripts/enrich_tools.py --limit 20
@@ -59,6 +61,13 @@ jobs:
 
       - name: Validar datos
         run: python scripts/validate.py
+
+      # Los fabricantes publican los cuadrantes en los que salen, casi siempre con
+      # enlace a su mercado de Gartner Peer Insights. Es la única forma de obtener
+      # esas URLs sin tocar Gartner, que responde 403 a todo.
+      - name: Cosechar referencias de analistas de las webs de los fabricantes
+        run: python scripts/scan_analyst_sources.py
+        continue-on-error: true
 
       # Lo que ningún otro paso ve: que la herramienta haya dejado de existir.
       # El síntoma es que su web empiece a redirigir a otro dominio, como pasó

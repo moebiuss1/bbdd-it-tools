@@ -1,4 +1,2270 @@
 {
-  "candidates": {},
-  "mention_counts": {}
+  "candidates": {
+    "docker-mailserver": {
+      "name": "docker-mailserver",
+      "slug": "docker-mailserver",
+      "category": "antivirus",
+      "website": "https://docker-mailserver.github.io/docker-mailserver/latest/",
+      "description": "Production-ready fullstack but simple mail server (SMTP, IMAP, LDAP, Antispam, Antivirus, etc.) running inside a container.",
+      "source_type": "github",
+      "source_url": "https://github.com/docker-mailserver/docker-mailserver",
+      "mention_context": "18729 estrellas en GitHub"
+    },
+    "thefatrat": {
+      "name": "TheFatRat",
+      "slug": "thefatrat",
+      "category": "antivirus",
+      "website": "https://github.com/screetsec/TheFatRat",
+      "description": "Thefatrat a massive exploiting tool : Easy tool to generate backdoor and easy tool to post exploitation attack like browser attack and etc . This tool compiles a malware with popular payload and then the compiled malware can be execute on windows, android, mac . The malware that created with this to",
+      "source_type": "github",
+      "source_url": "https://github.com/screetsec/TheFatRat",
+      "mention_context": "11413 estrellas en GitHub"
+    },
+    "clamav": {
+      "name": "clamav",
+      "slug": "clamav",
+      "category": "antivirus",
+      "website": "https://www.clamav.net/",
+      "description": "ClamAV - Documentation is here: https://docs.clamav.net",
+      "source_type": "github",
+      "source_url": "https://github.com/Cisco-Talos/clamav",
+      "mention_context": "7138 estrellas en GitHub"
+    },
+    "loki": {
+      "name": "Loki",
+      "slug": "loki",
+      "category": "antivirus",
+      "website": "https://www.nextron-systems.com/compare-our-scanners/",
+      "description": "Loki - Simple IOC and YARA Scanner",
+      "source_type": "github",
+      "source_url": "https://github.com/Neo23x0/Loki",
+      "mention_context": "3775 estrellas en GitHub"
+    },
+    "apkid": {
+      "name": "APKiD",
+      "slug": "apkid",
+      "category": "antivirus",
+      "website": "https://github.com/rednaga/APKiD",
+      "description": "Android Application Identifier for Packers, Protectors, Obfuscators and Oddities - PEiD for Android",
+      "source_type": "github",
+      "source_url": "https://github.com/rednaga/APKiD",
+      "mention_context": "2558 estrellas en GitHub"
+    },
+    "illacceptanything": {
+      "name": "illacceptanything",
+      "slug": "illacceptanything",
+      "category": "antivirus",
+      "website": "https://github.com/illacceptanything/illacceptanything",
+      "description": "The project where literally anything* goes.",
+      "source_type": "github",
+      "source_url": "https://github.com/illacceptanything/illacceptanything",
+      "mention_context": "1961 estrellas en GitHub"
+    },
+    "winpayloads": {
+      "name": "Winpayloads",
+      "slug": "winpayloads",
+      "category": "antivirus",
+      "website": "https://github.com/nccgroup/Winpayloads",
+      "description": "Undetectable Windows Payload Generation",
+      "source_type": "github",
+      "source_url": "https://github.com/nccgroup/Winpayloads",
+      "mention_context": "1613 estrellas en GitHub"
+    },
+    "chimera": {
+      "name": "Chimera",
+      "slug": "chimera",
+      "category": "antivirus",
+      "website": "https://null-byte.com/bypass-amsi-0333967/",
+      "description": "Chimera is a PowerShell obfuscation script designed to bypass AMSI and commercial antivirus solutions.",
+      "source_type": "github",
+      "source_url": "https://github.com/tokyoneon/Chimera",
+      "mention_context": "1594 estrellas en GitHub"
+    },
+    "hrconvert2": {
+      "name": "HRConvert2",
+      "slug": "hrconvert2",
+      "category": "antivirus",
+      "website": "https://github.com/zelon88/HRConvert2",
+      "description": "A self-hosted file conversion server that supports 457 file formats in 26 languages.",
+      "source_type": "github",
+      "source_url": "https://github.com/zelon88/HRConvert2",
+      "mention_context": "1360 estrellas en GitHub"
+    },
+    "ai-gateway": {
+      "name": "AI-Gateway",
+      "slug": "ai-gateway",
+      "category": "api-management",
+      "website": "https://aka.ms/ai-gateway/labs",
+      "description": "Labs to explore AI Models, MCP servers, and Agents with the AI Gateway powered by Azure API Management and Microsoft Foundry 🚀",
+      "source_type": "github",
+      "source_url": "https://github.com/Azure-Samples/AI-Gateway",
+      "mention_context": "975 estrellas en GitHub"
+    },
+    "apiops": {
+      "name": "apiops",
+      "slug": "apiops",
+      "category": "api-management",
+      "website": "https://azure.github.io/apiops",
+      "description": "APIOps applies the concepts of GitOps and DevOps to API deployment. By using practices from these two methodologies, APIOps can enable everyone involved in the lifecycle of API design, development, and deployment with self-service and automated tools to ensure the quality of the specifications and A",
+      "source_type": "github",
+      "source_url": "https://github.com/Azure/apiops",
+      "mention_context": "444 estrellas en GitHub"
+    },
+    "crapi": {
+      "name": "crAPI",
+      "slug": "crapi",
+      "category": "api-security",
+      "website": "https://github.com/OWASP/crAPI",
+      "description": "completely ridiculous API (crAPI)",
+      "source_type": "github",
+      "source_url": "https://github.com/OWASP/crAPI",
+      "mention_context": "1556 estrellas en GitHub"
+    },
+    "api-securityempire": {
+      "name": "API-SecurityEmpire",
+      "slug": "api-securityempire",
+      "category": "api-security",
+      "website": "https://github.com/Cyber-Guy1/API-SecurityEmpire",
+      "description": "API Security Project aims to present unique attack & defense methods in API Security field",
+      "source_type": "github",
+      "source_url": "https://github.com/Cyber-Guy1/API-SecurityEmpire",
+      "mention_context": "1442 estrellas en GitHub"
+    },
+    "vuln-bank": {
+      "name": "vuln-bank",
+      "slug": "vuln-bank",
+      "category": "api-security",
+      "website": "https://vulnbank.org",
+      "description": "A deliberately vulnerable banking application designed for practicing Security Testing of Web App, APIs, AI integrated App and secure code reviews. Features common vulnerabilities found in real-world applications, making it an ideal platform for security professionals, developers, and enthusiasts to",
+      "source_type": "github",
+      "source_url": "https://github.com/Commando-X/vuln-bank",
+      "mention_context": "916 estrellas en GitHub"
+    },
+    "capital": {
+      "name": "capital",
+      "slug": "capital",
+      "category": "api-security",
+      "website": "https://github.com/Checkmarx/capital",
+      "description": "A built-to-be-vulnerable API application based on the OWASP top 10 API vulnerabilities. Use c{api}tal to learn, train and exploit API Security vulnerabilities within your own API Security CTF.  ",
+      "source_type": "github",
+      "source_url": "https://github.com/Checkmarx/capital",
+      "mention_context": "335 estrellas en GitHub"
+    },
+    "hoppscotch": {
+      "name": "hoppscotch",
+      "slug": "hoppscotch",
+      "category": "api-testing",
+      "website": "https://hoppscotch.io",
+      "description": "Open-Source API Development Ecosystem • https://hoppscotch.io • Offline, On-Prem & Cloud • Web, Desktop & CLI • Open-Source Alternative to Postman, Insomnia",
+      "source_type": "github",
+      "source_url": "https://github.com/hoppscotch/hoppscotch",
+      "mention_context": "80041 estrellas en GitHub"
+    },
+    "bruno": {
+      "name": "bruno",
+      "slug": "bruno",
+      "category": "api-testing",
+      "website": "https://www.usebruno.com/",
+      "description": "Opensource IDE For Exploring and Testing API's (lightweight alternative to Postman/Insomnia)",
+      "source_type": "github",
+      "source_url": "https://github.com/usebruno/bruno",
+      "mention_context": "46361 estrellas en GitHub"
+    },
+    "cli": {
+      "name": "cli",
+      "slug": "cli",
+      "category": "api-testing",
+      "website": "https://httpie.io",
+      "description": "🥧 HTTPie CLI  — modern, user-friendly command-line HTTP client for the API era. JSON support, colors, sessions, downloads, plugins & more.",
+      "source_type": "github",
+      "source_url": "https://github.com/httpie/cli",
+      "mention_context": "38424 estrellas en GitHub"
+    },
+    "mobile-security-framework-mobsf": {
+      "name": "Mobile-Security-Framework-MobSF",
+      "slug": "mobile-security-framework-mobsf",
+      "category": "api-testing",
+      "website": "https://opensecurity.in",
+      "description": "Mobile Security Framework (MobSF) is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing, malware analysis and security assessment framework capable of performing static and dynamic analysis.",
+      "source_type": "github",
+      "source_url": "https://github.com/MobSF/Mobile-Security-Framework-MobSF",
+      "mention_context": "21599 estrellas en GitHub"
+    },
+    "hurl": {
+      "name": "hurl",
+      "slug": "hurl",
+      "category": "api-testing",
+      "website": "https://hurl.dev",
+      "description": "Hurl, run and test HTTP requests with plain text.",
+      "source_type": "github",
+      "source_url": "https://github.com/Orange-OpenSource/hurl",
+      "mention_context": "19143 estrellas en GitHub"
+    },
+    "keploy": {
+      "name": "keploy",
+      "slug": "keploy",
+      "category": "api-testing",
+      "website": "https://keploy.io",
+      "description": "Open-source platform for creating safe, isolated production sandboxes for API, integration, and E2E testing.",
+      "source_type": "github",
+      "source_url": "https://github.com/keploy/keploy",
+      "mention_context": "18402 estrellas en GitHub"
+    },
+    "metersphere": {
+      "name": "metersphere",
+      "slug": "metersphere",
+      "category": "api-testing",
+      "website": "https://metersphere.io/",
+      "description": "MeterSphere 是新一代的开源持续测试工具，内置 AI 助手，让软件测试工作更简单、更高效，不再成为持续交付的瓶颈。",
+      "source_type": "github",
+      "source_url": "https://github.com/metersphere/metersphere",
+      "mention_context": "13445 estrellas en GitHub"
+    },
+    "http-prompt": {
+      "name": "http-prompt",
+      "slug": "http-prompt",
+      "category": "api-testing",
+      "website": "https://http-prompt.com",
+      "description": "An interactive command-line HTTP and API testing client built on top of HTTPie featuring autocomplete, syntax highlighting, and more. https://twitter.com/httpie",
+      "source_type": "github",
+      "source_url": "https://github.com/httpie/http-prompt",
+      "mention_context": "9108 estrellas en GitHub"
+    },
+    "karate": {
+      "name": "karate",
+      "slug": "karate",
+      "category": "api-testing",
+      "website": "https://docs.karatelabs.io",
+      "description": "Test Automation Made Simple",
+      "source_type": "github",
+      "source_url": "https://github.com/karatelabs/karate",
+      "mention_context": "8920 estrellas en GitHub"
+    },
+    "xh": {
+      "name": "xh",
+      "slug": "xh",
+      "category": "api-testing",
+      "website": "https://github.com/ducaale/xh",
+      "description": "Friendly and fast tool for sending HTTP requests",
+      "source_type": "github",
+      "source_url": "https://github.com/ducaale/xh",
+      "mention_context": "8020 estrellas en GitHub"
+    },
+    "arjun": {
+      "name": "Arjun",
+      "slug": "arjun",
+      "category": "api-testing",
+      "website": "https://github.com/s0md3v/Arjun",
+      "description": "HTTP parameter discovery suite.",
+      "source_type": "github",
+      "source_url": "https://github.com/s0md3v/Arjun",
+      "mention_context": "6380 estrellas en GitHub"
+    },
+    "cypress-realworld-app": {
+      "name": "cypress-realworld-app",
+      "slug": "cypress-realworld-app",
+      "category": "api-testing",
+      "website": "https://docs.cypress.io",
+      "description": "A payment application to demonstrate real-world usage of Cypress testing methods, patterns, and workflows.",
+      "source_type": "github",
+      "source_url": "https://github.com/cypress-io/cypress-realworld-app",
+      "mention_context": "5908 estrellas en GitHub"
+    },
+    "applocker-guidance": {
+      "name": "AppLocker-Guidance",
+      "slug": "applocker-guidance",
+      "category": "application-control",
+      "website": "https://github.com/nsacyber/AppLocker-Guidance",
+      "description": "Configuration guidance for implementing application whitelisting with AppLocker. #nsacyber",
+      "source_type": "github",
+      "source_url": "https://github.com/nsacyber/AppLocker-Guidance",
+      "mention_context": "244 estrellas en GitHub"
+    },
+    "infisical": {
+      "name": "infisical",
+      "slug": "infisical",
+      "category": "cert-managers",
+      "website": "https://infisical.com",
+      "description": "Infisical is the open-source platform for secrets, certificates, and privileged access management.",
+      "source_type": "github",
+      "source_url": "https://github.com/Infisical/infisical",
+      "mention_context": "28792 estrellas en GitHub"
+    },
+    "docker-openvpn": {
+      "name": "docker-openvpn",
+      "slug": "docker-openvpn",
+      "category": "cert-managers",
+      "website": "https://hub.docker.com/r/kylemanna/openvpn/",
+      "description": "🔒 OpenVPN server in a Docker container complete with an EasyRSA PKI CA",
+      "source_type": "github",
+      "source_url": "https://github.com/kylemanna/docker-openvpn",
+      "mention_context": "9087 estrellas en GitHub"
+    },
+    "certificates": {
+      "name": "certificates",
+      "slug": "certificates",
+      "category": "cert-managers",
+      "website": "https://smallstep.com/certificates",
+      "description": "🛡️ A private certificate authority (X.509 & SSH) & ACME server for secure automated certificate management, so you can use TLS everywhere & SSO for SSH.",
+      "source_type": "github",
+      "source_url": "https://github.com/smallstep/certificates",
+      "mention_context": "8751 estrellas en GitHub"
+    },
+    "boulder": {
+      "name": "boulder",
+      "slug": "boulder",
+      "category": "cert-managers",
+      "website": "https://github.com/letsencrypt/boulder",
+      "description": "An ACME-based certificate authority, written in Go. ",
+      "source_type": "github",
+      "source_url": "https://github.com/letsencrypt/boulder",
+      "mention_context": "5741 estrellas en GitHub"
+    },
+    "certipy": {
+      "name": "Certipy",
+      "slug": "certipy",
+      "category": "cert-managers",
+      "website": "https://github.com/ly4k/Certipy",
+      "description": "Tool for Active Directory Certificate Services enumeration and abuse",
+      "source_type": "github",
+      "source_url": "https://github.com/ly4k/Certipy",
+      "mention_context": "3629 estrellas en GitHub"
+    },
+    "automatedlab": {
+      "name": "AutomatedLab",
+      "slug": "automatedlab",
+      "category": "cert-managers",
+      "website": "https://github.com/AutomatedLab/AutomatedLab",
+      "description": "AutomatedLab is a provisioning solution and framework that lets you deploy complex labs on HyperV and Azure with simple PowerShell scripts. It supports all Windows operating systems from 2008 R2 to 2022, some Linux distributions and various products like AD, Exchange, PKI, IIS, etc.",
+      "source_type": "github",
+      "source_url": "https://github.com/AutomatedLab/AutomatedLab",
+      "mention_context": "2216 estrellas en GitHub"
+    },
+    "openvpn-install": {
+      "name": "openvpn-install",
+      "slug": "openvpn-install",
+      "category": "cert-managers",
+      "website": "https://github.com/hwdsl2/openvpn-install",
+      "description": "OpenVPN server installer for Ubuntu, Debian, AlmaLinux, Rocky Linux, CentOS, Fedora, openSUSE, Amazon Linux and Raspberry Pi OS. Includes interactive setup and client management.",
+      "source_type": "github",
+      "source_url": "https://github.com/hwdsl2/openvpn-install",
+      "mention_context": "1722 estrellas en GitHub"
+    },
+    "circl": {
+      "name": "circl",
+      "slug": "circl",
+      "category": "cert-managers",
+      "website": "http://blog.cloudflare.com/introducing-circl",
+      "description": "CIRCL: Cloudflare Interoperable Reusable Cryptographic Library",
+      "source_type": "github",
+      "source_url": "https://github.com/cloudflare/circl",
+      "mention_context": "1709 estrellas en GitHub"
+    },
+    "certify": {
+      "name": "certify",
+      "slug": "certify",
+      "category": "cert-managers",
+      "website": "https://certifytheweb.com",
+      "description": "Professional ACME Client for Windows (and now cross-platform via Certify Management Hub). Certificate Management UI, powered by Let's Encrypt and compatible with all ACME v2 CAs. Used by over 150,000 organisations. Download from certifytheweb.com",
+      "source_type": "github",
+      "source_url": "https://github.com/webprofusion/certify",
+      "mention_context": "1696 estrellas en GitHub"
+    },
+    "locksmith": {
+      "name": "Locksmith",
+      "slug": "locksmith",
+      "category": "cert-managers",
+      "website": "https://jakehildreth.github.io/Locksmith/",
+      "description": "A small tool built to find and fix common misconfigurations in Active Directory Certificate Services.",
+      "source_type": "github",
+      "source_url": "https://github.com/jakehildreth/Locksmith",
+      "mention_context": "1604 estrellas en GitHub"
+    },
+    "tongsuo": {
+      "name": "Tongsuo",
+      "slug": "tongsuo",
+      "category": "cert-managers",
+      "website": "https://www.tongsuo.net",
+      "description": "铜锁/Tongsuo is a Modern Cryptographic Primitives and Protocols Library",
+      "source_type": "github",
+      "source_url": "https://github.com/Tongsuo-Project/Tongsuo",
+      "mention_context": "1511 estrellas en GitHub"
+    },
+    "debops": {
+      "name": "debops",
+      "slug": "debops",
+      "category": "cert-managers",
+      "website": "https://debops.org/",
+      "description": "DebOps - Your Debian-based data center in a box",
+      "source_type": "github",
+      "source_url": "https://github.com/debops/debops",
+      "mention_context": "1417 estrellas en GitHub"
+    },
+    "pki-js": {
+      "name": "PKI.js",
+      "slug": "pki-js",
+      "category": "cert-managers",
+      "website": "http://pkijs.org",
+      "description": "PKI.js is a pure JavaScript library implementing the formats that are used in PKI applications (signing, encryption, certificate requests, OCSP and TSP requests/responses). It is built on WebCrypto (Web Cryptography API) and requires no plug-ins.",
+      "source_type": "github",
+      "source_url": "https://github.com/PeculiarVentures/PKI.js",
+      "mention_context": "1394 estrellas en GitHub"
+    },
+    "certspotter": {
+      "name": "certspotter",
+      "slug": "certspotter",
+      "category": "cert-managers",
+      "website": "https://sslmate.com/certspotter",
+      "description": "Lightweight Certificate Transparency Log Monitor",
+      "source_type": "github",
+      "source_url": "https://github.com/SSLMate/certspotter",
+      "mention_context": "1164 estrellas en GitHub"
+    },
+    "ios-mcp": {
+      "name": "ios-mcp",
+      "slug": "ios-mcp",
+      "category": "mdm",
+      "website": "https://github.com/witchan/ios-mcp",
+      "description": "iOS MCP: MCP management tool for jailbroken iPhones, enabling developers and AI agents to inspect and control devices.",
+      "source_type": "github",
+      "source_url": "https://github.com/witchan/ios-mcp",
+      "mention_context": "602 estrellas en GitHub"
+    },
+    "hmdm-server": {
+      "name": "hmdm-server",
+      "slug": "hmdm-server",
+      "category": "mdm",
+      "website": "https://h-mdm.com",
+      "description": "Mobile Device Management System for Android: web control panel. Manage Android devices, install and update apps, get device info. See website for more features!",
+      "source_type": "github",
+      "source_url": "https://github.com/h-mdm/hmdm-server",
+      "mention_context": "539 estrellas en GitHub"
+    },
+    "hmdm-android": {
+      "name": "hmdm-android",
+      "slug": "hmdm-android",
+      "category": "mdm",
+      "website": "https://h-mdm.com",
+      "description": "Mobile Device Management (MDM) System for Android (mobile agent - launcher). Used for silent app installation and sending the info to the server. See more info on the website!",
+      "source_type": "github",
+      "source_url": "https://github.com/h-mdm/hmdm-android",
+      "mention_context": "347 estrellas en GitHub"
+    },
+    "agent-beacon": {
+      "name": "agent-beacon",
+      "slug": "agent-beacon",
+      "category": "mdm",
+      "website": "https://docs.asymptotelabs.ai",
+      "description": "Agent Beacon is the world's first open-source telemetry layer for AI agents wherever they run: locally, in CI, or in the cloud.",
+      "source_type": "github",
+      "source_url": "https://github.com/Asymptote-Labs/agent-beacon",
+      "mention_context": "311 estrellas en GitHub"
+    },
+    "sftpgo": {
+      "name": "sftpgo",
+      "slug": "sftpgo",
+      "category": "mfa",
+      "website": "https://sftpgo.com",
+      "description": "Full-featured and highly configurable SFTP, HTTP/S, FTP/S and WebDAV server - S3, Google Cloud Storage, Azure Blob",
+      "source_type": "github",
+      "source_url": "https://github.com/drakkan/sftpgo",
+      "mention_context": "12398 estrellas en GitHub"
+    },
+    "aws-mfa": {
+      "name": "aws-mfa",
+      "slug": "aws-mfa",
+      "category": "mfa",
+      "website": "https://github.com/broamski/aws-mfa",
+      "description": "Manage AWS MFA Security Credentials",
+      "source_type": "github",
+      "source_url": "https://github.com/broamski/aws-mfa",
+      "mention_context": "1066 estrellas en GitHub"
+    },
+    "client": {
+      "name": "client",
+      "slug": "client",
+      "category": "mfa",
+      "website": "https://defguard.net",
+      "description": "Sole VPN client implementing Multi-Factor Authentication on WireGuard® VPN connection",
+      "source_type": "github",
+      "source_url": "https://github.com/DefGuard/client",
+      "mention_context": "365 estrellas en GitHub"
+    },
+    "aws-adfs": {
+      "name": "aws-adfs",
+      "slug": "aws-adfs",
+      "category": "mfa",
+      "website": "https://github.com/venth/aws-adfs",
+      "description": "Command line tool to ease aws cli authentication against ADFS (multi factor authentication with active directory)",
+      "source_type": "github",
+      "source_url": "https://github.com/venth/aws-adfs",
+      "mention_context": "292 estrellas en GitHub"
+    },
+    "adfsmfa": {
+      "name": "adfsmfa",
+      "slug": "adfsmfa",
+      "category": "mfa",
+      "website": "https://github.com/redhook62/adfsmfa",
+      "description": "MFA for ADFS (2012r2 -> 2025)",
+      "source_type": "github",
+      "source_url": "https://github.com/redhook62/adfsmfa",
+      "mention_context": "182 estrellas en GitHub"
+    },
+    "one-time": {
+      "name": "one-time",
+      "slug": "one-time",
+      "category": "mfa",
+      "website": "https://github.com/suvash/one-time",
+      "description": "One Time Password (TOTP and HOTP) library for Clojure. TOTP/HOTP is widely used for Two Factor / Multi Factor Authentication.",
+      "source_type": "github",
+      "source_url": "https://github.com/suvash/one-time",
+      "mention_context": "178 estrellas en GitHub"
+    },
+    "pig": {
+      "name": "pig",
+      "slug": "pig",
+      "category": "ndr",
+      "website": "https://github.com/rafael-santiago/pig",
+      "description": "A Linux packet crafting tool.",
+      "source_type": "github",
+      "source_url": "https://github.com/rafael-santiago/pig",
+      "mention_context": "479 estrellas en GitHub"
+    },
+    "respounder": {
+      "name": "respounder",
+      "slug": "respounder",
+      "category": "ndr",
+      "website": "https://github.com/codeexpress/respounder",
+      "description": "Respounder detects presence of responder in the network.",
+      "source_type": "github",
+      "source_url": "https://github.com/codeexpress/respounder",
+      "mention_context": "323 estrellas en GitHub"
+    },
+    "community-id-spec": {
+      "name": "community-id-spec",
+      "slug": "community-id-spec",
+      "category": "ndr",
+      "website": "https://github.com/corelight/community-id-spec",
+      "description": "An open standard for hashing network flows into identifiers, a.k.a \"Community IDs\".",
+      "source_type": "github",
+      "source_url": "https://github.com/corelight/community-id-spec",
+      "mention_context": "197 estrellas en GitHub"
+    },
+    "pan-os-python": {
+      "name": "pan-os-python",
+      "slug": "pan-os-python",
+      "category": "ngfw",
+      "website": "https://pan-os-python.readthedocs.io",
+      "description": "The PAN-OS SDK for Python is a package to help interact with Palo Alto Networks devices (including physical and virtualized Next-generation Firewalls and Panorama). The pan-os-python SDK is object oriented and mimics the traditional interaction with the device via the GUI or CLI/API.",
+      "source_type": "github",
+      "source_url": "https://github.com/PaloAltoNetworks/pan-os-python",
+      "mention_context": "398 estrellas en GitHub"
+    },
+    "pfsense": {
+      "name": "pfsense",
+      "slug": "pfsense",
+      "category": "ngfw",
+      "website": "https://www.youtube.com/playlist?list=PLozhsZB1lLUOnT2ROgDFGuTq69tqOK36s",
+      "description": ":large_blue_circle: REPOSITÓRIO CONGELADO: Curso GRÁTIS Netgate pfSense (2.6, 2.7 e Plus) Firewall  UTM (Unified Threat Management - Gerenciamento Unificado de Ameaças) / NGFW (Next Generation Firewall - Firewall de Última Geração)",
+      "source_type": "github",
+      "source_url": "https://github.com/vaamonde/pfsense",
+      "mention_context": "287 estrellas en GitHub"
+    },
+    "iron-skillet": {
+      "name": "iron-skillet",
+      "slug": "iron-skillet",
+      "category": "ngfw",
+      "website": "https://github.com/PaloAltoNetworks/iron-skillet",
+      "description": "IronSkillet is a set of day-one configuration templates for PAN-OS to enable alignment with security best practices. See the Quick Start section below to get started using the template configurations.",
+      "source_type": "github",
+      "source_url": "https://github.com/PaloAltoNetworks/iron-skillet",
+      "mention_context": "220 estrellas en GitHub"
+    },
+    "opnsense": {
+      "name": "opnsense",
+      "slug": "opnsense",
+      "category": "ngfw",
+      "website": "https://www.youtube.com/playlist?list=PLozhsZB1lLUO-szSBo9up1dGDrY5Et4e8",
+      "description": ":large_blue_circle: NOVO Curso GRÁTIS de Firewall e Proxy OPNsense NGFW UTM (Migração do pfSense para OPNSense)",
+      "source_type": "github",
+      "source_url": "https://github.com/vaamonde/opnsense",
+      "mention_context": "152 estrellas en GitHub"
+    },
+    "warpgate": {
+      "name": "warpgate",
+      "slug": "warpgate",
+      "category": "pam",
+      "website": "https://warpgate.null.page",
+      "description": "Fully transparent SSH, HTTPS, Kubernetes, database and RDP/VNC bastion/PAM that doesn't need additional client-side software",
+      "source_type": "github",
+      "source_url": "https://github.com/warp-tech/warpgate",
+      "mention_context": "7621 estrellas en GitHub"
+    },
+    "entraops": {
+      "name": "EntraOps",
+      "slug": "entraops",
+      "category": "pam",
+      "website": "https://www.entraops.com",
+      "description": "Community project to classify, identify and protect your privileges based on Enterprise Access Model (EAM)",
+      "source_type": "github",
+      "source_url": "https://github.com/Cloud-Architekt/EntraOps",
+      "mention_context": "297 estrellas en GitHub"
+    },
+    "jit-groups": {
+      "name": "jit-groups",
+      "slug": "jit-groups",
+      "category": "pam",
+      "website": "https://github.com/GoogleCloudPlatform/jit-groups",
+      "description": "JIT Groups is an open source application that lets you implement secure, self-service access management for Google Cloud using groups.",
+      "source_type": "github",
+      "source_url": "https://github.com/GoogleCloudPlatform/jit-groups",
+      "mention_context": "290 estrellas en GitHub"
+    },
+    "epv-api-scripts": {
+      "name": "epv-api-scripts",
+      "slug": "epv-api-scripts",
+      "category": "pam",
+      "website": "https://www.cyberark.com/best",
+      "description": "These API scripts enable CyberArk users to automate privileged account management task like account creation, user management, and more.",
+      "source_type": "github",
+      "source_url": "https://github.com/cyberark/epv-api-scripts",
+      "mention_context": "258 estrellas en GitHub"
+    },
+    "azureprivilegediam": {
+      "name": "AzurePrivilegedIAM",
+      "slug": "azureprivilegediam",
+      "category": "pam",
+      "website": "https://github.com/Cloud-Architekt/AzurePrivilegedIAM",
+      "description": "Docs and samples for privileged identity and access management in Microsoft Azure and Microsoft Entra.",
+      "source_type": "github",
+      "source_url": "https://github.com/Cloud-Architekt/AzurePrivilegedIAM",
+      "mention_context": "199 estrellas en GitHub"
+    },
+    "restic": {
+      "name": "restic",
+      "slug": "restic",
+      "category": "saas-backup",
+      "website": "https://restic.net",
+      "description": "Fast, secure, efficient backup program",
+      "source_type": "github",
+      "source_url": "https://github.com/restic/restic",
+      "mention_context": "35541 estrellas en GitHub"
+    },
+    "duplicati": {
+      "name": "duplicati",
+      "slug": "duplicati",
+      "category": "saas-backup",
+      "website": "https://github.com/duplicati/duplicati",
+      "description": "Store securely encrypted backups in the cloud!",
+      "source_type": "github",
+      "source_url": "https://github.com/duplicati/duplicati",
+      "mention_context": "14891 estrellas en GitHub"
+    },
+    "kopia": {
+      "name": "kopia",
+      "slug": "kopia",
+      "category": "saas-backup",
+      "website": "https://kopia.io",
+      "description": "Cross-platform backup tool for Windows, macOS & Linux with fast, incremental backups, client-side end-to-end encryption, compression and data deduplication. CLI and GUI included.",
+      "source_type": "github",
+      "source_url": "https://github.com/kopia/kopia",
+      "mention_context": "13875 estrellas en GitHub"
+    },
+    "borg": {
+      "name": "borg",
+      "slug": "borg",
+      "category": "saas-backup",
+      "website": "https://www.borgbackup.org/",
+      "description": "Deduplicating archiver with compression and authenticated encryption.",
+      "source_type": "github",
+      "source_url": "https://github.com/borgbackup/borg",
+      "mention_context": "13616 estrellas en GitHub"
+    },
+    "all-in-one": {
+      "name": "all-in-one",
+      "slug": "all-in-one",
+      "category": "saas-backup",
+      "website": "https://nextcloud.com/blog/nextcloud-all-in-one-introduces-automatic-domain-acquisition-dns-setup/",
+      "description": "📦 The official Nextcloud installation method. Provides easy deployment and maintenance with most features included in this one Nextcloud instance.",
+      "source_type": "github",
+      "source_url": "https://github.com/nextcloud/all-in-one",
+      "mention_context": "10269 estrellas en GitHub"
+    },
+    "velero": {
+      "name": "velero",
+      "slug": "velero",
+      "category": "saas-backup",
+      "website": "https://velero.io",
+      "description": "Backup and migrate Kubernetes applications and their persistent volumes",
+      "source_type": "github",
+      "source_url": "https://github.com/velero-io/velero",
+      "mention_context": "10217 estrellas en GitHub"
+    },
+    "wechatexporter": {
+      "name": "WechatExporter",
+      "slug": "wechatexporter",
+      "category": "saas-backup",
+      "website": "https://github.com/BlueMatthew/WechatExporter",
+      "description": "Wechat Chat History Exporter 微信聊天记录导出备份程序",
+      "source_type": "github",
+      "source_url": "https://github.com/BlueMatthew/WechatExporter",
+      "mention_context": "8378 estrellas en GitHub"
+    },
+    "elasticsearch-dump": {
+      "name": "elasticsearch-dump",
+      "slug": "elasticsearch-dump",
+      "category": "saas-backup",
+      "website": "https://github.com/elasticsearch-dump/elasticsearch-dump",
+      "description": "Import and export tools for elasticsearch & opensearch",
+      "source_type": "github",
+      "source_url": "https://github.com/elasticsearch-dump/elasticsearch-dump",
+      "mention_context": "7939 estrellas en GitHub"
+    },
+    "databasus": {
+      "name": "databasus",
+      "slug": "databasus",
+      "category": "saas-backup",
+      "website": "https://databasus.com",
+      "description": "PostgreSQL backup tool with Point-In-Time-Recovery and restore verification",
+      "source_type": "github",
+      "source_url": "https://github.com/databasus/databasus",
+      "mention_context": "7929 estrellas en GitHub"
+    },
+    "android-databackup": {
+      "name": "Android-DataBackup",
+      "slug": "android-databackup",
+      "category": "saas-backup",
+      "website": "https://DataBackupOfficial.github.io",
+      "description": "DataBackup for Android 7.0+",
+      "source_type": "github",
+      "source_url": "https://github.com/XayahSuSuSu/Android-DataBackup",
+      "mention_context": "7211 estrellas en GitHub"
+    },
+    "zerobyte": {
+      "name": "zerobyte",
+      "slug": "zerobyte",
+      "category": "saas-backup",
+      "website": "https://zerobyte.app",
+      "description": "Backup automation for self-hosters. Built on top of restic",
+      "source_type": "github",
+      "source_url": "https://github.com/nicotsx/zerobyte",
+      "mention_context": "6821 estrellas en GitHub"
+    },
+    "ludusavi": {
+      "name": "ludusavi",
+      "slug": "ludusavi",
+      "category": "saas-backup",
+      "website": "https://github.com/mtkennerly/ludusavi",
+      "description": "Backup tool for PC game saves",
+      "source_type": "github",
+      "source_url": "https://github.com/mtkennerly/ludusavi",
+      "mention_context": "6130 estrellas en GitHub"
+    },
+    "laravel-backup": {
+      "name": "laravel-backup",
+      "slug": "laravel-backup",
+      "category": "saas-backup",
+      "website": "https://spatie.be/docs/laravel-backup",
+      "description": "A package to backup your Laravel app",
+      "source_type": "github",
+      "source_url": "https://github.com/spatie/laravel-backup",
+      "mention_context": "6019 estrellas en GitHub"
+    },
+    "gogs": {
+      "name": "gogs",
+      "slug": "gogs",
+      "category": "scm",
+      "website": "https://gogs.io",
+      "description": "The painless way to host your own Git service",
+      "source_type": "github",
+      "source_url": "https://github.com/gogs/gogs",
+      "mention_context": "47738 estrellas en GitHub"
+    },
+    "gitoxide": {
+      "name": "gitoxide",
+      "slug": "gitoxide",
+      "category": "scm",
+      "website": "https://github.com/GitoxideLabs/gitoxide",
+      "description": "An idiomatic, lean, fast & safe pure Rust implementation of Git",
+      "source_type": "github",
+      "source_url": "https://github.com/GitoxideLabs/gitoxide",
+      "mention_context": "11779 estrellas en GitHub"
+    },
+    "libgit2": {
+      "name": "libgit2",
+      "slug": "libgit2",
+      "category": "scm",
+      "website": "https://www.libgit2.org",
+      "description": "A cross-platform, linkable library implementation of Git that you can use in your application.",
+      "source_type": "github",
+      "source_url": "https://github.com/libgit2/libgit2",
+      "mention_context": "10561 estrellas en GitHub"
+    },
+    "jupytext": {
+      "name": "jupytext",
+      "slug": "jupytext",
+      "category": "scm",
+      "website": "https://jupytext.org/",
+      "description": "Jupyter Notebooks as Markdown Documents, Julia, Python or R scripts",
+      "source_type": "github",
+      "source_url": "https://github.com/jupytext/jupytext",
+      "mention_context": "7229 estrellas en GitHub"
+    },
+    "clearml": {
+      "name": "clearml",
+      "slug": "clearml",
+      "category": "scm",
+      "website": "https://clear.ml/docs",
+      "description": "ClearML - Auto-Magical CI/CD to streamline your AI workload. Experiment Management, Data Management, Pipeline, Orchestration, Scheduling & Serving in one MLOps/LLMOps solution",
+      "source_type": "github",
+      "source_url": "https://github.com/clearml/clearml",
+      "mention_context": "6824 estrellas en GitHub"
+    },
+    "sparkleshare": {
+      "name": "SparkleShare",
+      "slug": "sparkleshare",
+      "category": "scm",
+      "website": "https://sparkleshare.org",
+      "description": "Share and collaborate by syncing with any Git repository instantly. Linux, macOS, and Windows",
+      "source_type": "github",
+      "source_url": "https://github.com/hbons/SparkleShare",
+      "mention_context": "4974 estrellas en GitHub"
+    },
+    "skillhub": {
+      "name": "skillhub",
+      "slug": "skillhub",
+      "category": "scm",
+      "website": "https://skill.xfyun.cn",
+      "description": "Self-hosted, open-source agent skill registry for enterprises. Publish & version skill packages, govern with RBAC and audit logs, deploy   on-premise with Docker or Kubernetes.",
+      "source_type": "github",
+      "source_url": "https://github.com/iflytek/skillhub",
+      "mention_context": "4916 estrellas en GitHub"
+    },
+    "libgit2sharp": {
+      "name": "libgit2sharp",
+      "slug": "libgit2sharp",
+      "category": "scm",
+      "website": "http://libgit2.github.com",
+      "description": "Git + .NET = ❤",
+      "source_type": "github",
+      "source_url": "https://github.com/libgit2/libgit2sharp",
+      "mention_context": "3449 estrellas en GitHub"
+    },
+    "sem": {
+      "name": "sem",
+      "slug": "sem",
+      "category": "scm",
+      "website": "https://ataraxy-labs.github.io/sem/",
+      "description": "Semantic version control => entity-level diffs, blame, and impact analysis on top of git. 28 languages via tree-sitter. Built for coding agents.",
+      "source_type": "github",
+      "source_url": "https://github.com/Ataraxy-Labs/sem",
+      "mention_context": "3302 estrellas en GitHub"
+    },
+    "straight-el": {
+      "name": "straight.el",
+      "slug": "straight-el",
+      "category": "scm",
+      "website": "https://github.com/radian-software/straight.el",
+      "description": "🍀 Next-generation, purely functional package manager for the Emacs hacker.",
+      "source_type": "github",
+      "source_url": "https://github.com/radian-software/straight.el",
+      "mention_context": "3023 estrellas en GitHub"
+    },
+    "nbdime": {
+      "name": "nbdime",
+      "slug": "nbdime",
+      "category": "scm",
+      "website": "http://nbdime.readthedocs.io",
+      "description": "Tools for diffing and merging of Jupyter notebooks.",
+      "source_type": "github",
+      "source_url": "https://github.com/jupyter/nbdime",
+      "mention_context": "2839 estrellas en GitHub"
+    },
+    "docmd": {
+      "name": "docmd",
+      "slug": "docmd",
+      "category": "scm",
+      "website": "https://docmd.io",
+      "description": "Build production-ready documentation from Markdown in seconds. No React, no bloat, just content.",
+      "source_type": "github",
+      "source_url": "https://github.com/docmd-io/docmd",
+      "mention_context": "2401 estrellas en GitHub"
+    },
+    "elfshaker": {
+      "name": "elfshaker",
+      "slug": "elfshaker",
+      "category": "scm",
+      "website": "https://github.com/elfshaker/elfshaker",
+      "description": "elfshaker stores binary objects efficiently",
+      "source_type": "github",
+      "source_url": "https://github.com/elfshaker/elfshaker",
+      "mention_context": "2336 estrellas en GitHub"
+    },
+    "dulwich": {
+      "name": "dulwich",
+      "slug": "dulwich",
+      "category": "scm",
+      "website": "https://www.dulwich.io/",
+      "description": "Pure-Python Git implementation",
+      "source_type": "github",
+      "source_url": "https://github.com/jelmer/dulwich",
+      "mention_context": "2271 estrellas en GitHub"
+    },
+    "cloud-custodian": {
+      "name": "Cloud Custodian",
+      "slug": "cloud-custodian",
+      "category": "unknown",
+      "website": "https://cloudcustodian.io/",
+      "description": "Provisioning · Automation & Configuration",
+      "source_type": "cncf",
+      "source_url": "https://cloudcustodian.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "kubeedge": {
+      "name": "KubeEdge",
+      "slug": "kubeedge",
+      "category": "unknown",
+      "website": "https://kubeedge.io/en/",
+      "description": "Provisioning · Automation & Configuration",
+      "source_type": "cncf",
+      "source_url": "https://kubeedge.io/en/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "metal3-io": {
+      "name": "metal3-io",
+      "slug": "metal3-io",
+      "category": "unknown",
+      "website": "https://metal3.io/",
+      "description": "Provisioning · Automation & Configuration",
+      "source_type": "cncf",
+      "source_url": "https://metal3.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "openyurt": {
+      "name": "OpenYurt",
+      "slug": "openyurt",
+      "category": "unknown",
+      "website": "https://openyurt.io/",
+      "description": "Provisioning · Automation & Configuration",
+      "source_type": "cncf",
+      "source_url": "https://openyurt.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "dragonfly": {
+      "name": "Dragonfly",
+      "slug": "dragonfly",
+      "category": "unknown",
+      "website": "https://d7y.io/",
+      "description": "Provisioning · Container Registry",
+      "source_type": "cncf",
+      "source_url": "https://d7y.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "harbor": {
+      "name": "Harbor",
+      "slug": "harbor",
+      "category": "unknown",
+      "website": "https://goharbor.io/",
+      "description": "Provisioning · Container Registry",
+      "source_type": "cncf",
+      "source_url": "https://goharbor.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "cert-manager": {
+      "name": "cert-manager",
+      "slug": "cert-manager",
+      "category": "unknown",
+      "website": "https://cert-manager.io/",
+      "description": "Provisioning · Security & Compliance",
+      "source_type": "cncf",
+      "source_url": "https://cert-manager.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "confidential-containers": {
+      "name": "Confidential Containers",
+      "slug": "confidential-containers",
+      "category": "unknown",
+      "website": "https://confidentialcontainers.org/",
+      "description": "Provisioning · Security & Compliance",
+      "source_type": "cncf",
+      "source_url": "https://confidentialcontainers.org/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "falco": {
+      "name": "Falco",
+      "slug": "falco",
+      "category": "unknown",
+      "website": "https://falco.org/",
+      "description": "Provisioning · Security & Compliance",
+      "source_type": "cncf",
+      "source_url": "https://falco.org/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "in-toto": {
+      "name": "in-toto",
+      "slug": "in-toto",
+      "category": "unknown",
+      "website": "https://in-toto.io",
+      "description": "Provisioning · Security & Compliance",
+      "source_type": "cncf",
+      "source_url": "https://in-toto.io",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "keycloak": {
+      "name": "Keycloak",
+      "slug": "keycloak",
+      "category": "unknown",
+      "website": "https://www.keycloak.org/",
+      "description": "Provisioning · Security & Compliance",
+      "source_type": "cncf",
+      "source_url": "https://www.keycloak.org/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "kubescape": {
+      "name": "Kubescape",
+      "slug": "kubescape",
+      "category": "unknown",
+      "website": "https://kubescape.io/",
+      "description": "Provisioning · Security & Compliance",
+      "source_type": "cncf",
+      "source_url": "https://kubescape.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "kyverno": {
+      "name": "Kyverno",
+      "slug": "kyverno",
+      "category": "unknown",
+      "website": "https://kyverno.io/",
+      "description": "Provisioning · Security & Compliance",
+      "source_type": "cncf",
+      "source_url": "https://kyverno.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "notary-project": {
+      "name": "Notary Project",
+      "slug": "notary-project",
+      "category": "unknown",
+      "website": "https://notaryproject.dev/",
+      "description": "Provisioning · Security & Compliance",
+      "source_type": "cncf",
+      "source_url": "https://notaryproject.dev/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "open-policy-agent-opa": {
+      "name": "Open Policy Agent (OPA)",
+      "slug": "open-policy-agent-opa",
+      "category": "unknown",
+      "website": "https://www.openpolicyagent.org/",
+      "description": "Provisioning · Security & Compliance",
+      "source_type": "cncf",
+      "source_url": "https://www.openpolicyagent.org/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "openfga": {
+      "name": "OpenFGA",
+      "slug": "openfga",
+      "category": "unknown",
+      "website": "https://openfga.dev",
+      "description": "Provisioning · Security & Compliance",
+      "source_type": "cncf",
+      "source_url": "https://openfga.dev",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "the-update-framework-tuf": {
+      "name": "The Update Framework (TUF)",
+      "slug": "the-update-framework-tuf",
+      "category": "unknown",
+      "website": "https://theupdateframework.github.io/",
+      "description": "Provisioning · Security & Compliance",
+      "source_type": "cncf",
+      "source_url": "https://theupdateframework.github.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "spiffe": {
+      "name": "SPIFFE",
+      "slug": "spiffe",
+      "category": "unknown",
+      "website": "https://spiffe.io/",
+      "description": "Provisioning · Key Management",
+      "source_type": "cncf",
+      "source_url": "https://spiffe.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "spire": {
+      "name": "SPIRE",
+      "slug": "spire",
+      "category": "unknown",
+      "website": "https://spiffe.io/spire/",
+      "description": "Provisioning · Key Management",
+      "source_type": "cncf",
+      "source_url": "https://spiffe.io/spire/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "cubefs": {
+      "name": "CubeFS",
+      "slug": "cubefs",
+      "category": "unknown",
+      "website": "https://cubefs.io/",
+      "description": "Runtime · Cloud Native Storage",
+      "source_type": "cncf",
+      "source_url": "https://cubefs.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "longhorn": {
+      "name": "Longhorn",
+      "slug": "longhorn",
+      "category": "unknown",
+      "website": "https://longhorn.io/",
+      "description": "Runtime · Cloud Native Storage",
+      "source_type": "cncf",
+      "source_url": "https://longhorn.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "rook": {
+      "name": "Rook",
+      "slug": "rook",
+      "category": "unknown",
+      "website": "https://rook.io/",
+      "description": "Runtime · Cloud Native Storage",
+      "source_type": "cncf",
+      "source_url": "https://rook.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "containerd": {
+      "name": "containerd",
+      "slug": "containerd",
+      "category": "unknown",
+      "website": "https://containerd.io/",
+      "description": "Runtime · Container Runtime",
+      "source_type": "cncf",
+      "source_url": "https://containerd.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "cri-o": {
+      "name": "CRI-O",
+      "slug": "cri-o",
+      "category": "unknown",
+      "website": "https://cri-o.io/",
+      "description": "Runtime · Container Runtime",
+      "source_type": "cncf",
+      "source_url": "https://cri-o.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "lima": {
+      "name": "Lima",
+      "slug": "lima",
+      "category": "unknown",
+      "website": "https://github.com/lima-vm/lima",
+      "description": "Runtime · Container Runtime",
+      "source_type": "cncf",
+      "source_url": "https://github.com/lima-vm/lima",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "cilium": {
+      "name": "Cilium",
+      "slug": "cilium",
+      "category": "unknown",
+      "website": "https://cilium.io/",
+      "description": "Runtime · Cloud Native Network",
+      "source_type": "cncf",
+      "source_url": "https://cilium.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "container-network-interface-cni": {
+      "name": "Container Network Interface (CNI)",
+      "slug": "container-network-interface-cni",
+      "category": "unknown",
+      "website": "https://www.cni.dev/",
+      "description": "Runtime · Cloud Native Network",
+      "source_type": "cncf",
+      "source_url": "https://www.cni.dev/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "crossplane": {
+      "name": "Crossplane",
+      "slug": "crossplane",
+      "category": "unknown",
+      "website": "https://crossplane.io/",
+      "description": "Orchestration & Management · Scheduling & Orchestration",
+      "source_type": "cncf",
+      "source_url": "https://crossplane.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "fluid": {
+      "name": "Fluid",
+      "slug": "fluid",
+      "category": "unknown",
+      "website": "https://fluid-cloudnative.github.io/",
+      "description": "Orchestration & Management · Scheduling & Orchestration",
+      "source_type": "cncf",
+      "source_url": "https://fluid-cloudnative.github.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "hami": {
+      "name": "HAMi",
+      "slug": "hami",
+      "category": "unknown",
+      "website": "https://project-hami.io/",
+      "description": "Orchestration & Management · Scheduling & Orchestration",
+      "source_type": "cncf",
+      "source_url": "https://project-hami.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "karmada": {
+      "name": "Karmada",
+      "slug": "karmada",
+      "category": "unknown",
+      "website": "https://karmada.io/",
+      "description": "Orchestration & Management · Scheduling & Orchestration",
+      "source_type": "cncf",
+      "source_url": "https://karmada.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "keda": {
+      "name": "KEDA",
+      "slug": "keda",
+      "category": "unknown",
+      "website": "https://keda.sh/",
+      "description": "Orchestration & Management · Scheduling & Orchestration",
+      "source_type": "cncf",
+      "source_url": "https://keda.sh/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "knative": {
+      "name": "Knative",
+      "slug": "knative",
+      "category": "unknown",
+      "website": "https://knative.dev",
+      "description": "Orchestration & Management · Scheduling & Orchestration",
+      "source_type": "cncf",
+      "source_url": "https://knative.dev",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "kubeflow": {
+      "name": "Kubeflow",
+      "slug": "kubeflow",
+      "category": "unknown",
+      "website": "https://kubeflow.org",
+      "description": "Orchestration & Management · Scheduling & Orchestration",
+      "source_type": "cncf",
+      "source_url": "https://kubeflow.org",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "kubernetes": {
+      "name": "Kubernetes",
+      "slug": "kubernetes",
+      "category": "unknown",
+      "website": "https://kubernetes.io/",
+      "description": "Orchestration & Management · Scheduling & Orchestration",
+      "source_type": "cncf",
+      "source_url": "https://kubernetes.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "volcano": {
+      "name": "Volcano",
+      "slug": "volcano",
+      "category": "unknown",
+      "website": "https://volcano.sh/",
+      "description": "Orchestration & Management · Scheduling & Orchestration",
+      "source_type": "cncf",
+      "source_url": "https://volcano.sh/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "wasmcloud": {
+      "name": "wasmCloud",
+      "slug": "wasmcloud",
+      "category": "unknown",
+      "website": "https://wasmcloud.com",
+      "description": "Orchestration & Management · Scheduling & Orchestration",
+      "source_type": "cncf",
+      "source_url": "https://wasmcloud.com",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "coredns": {
+      "name": "CoreDNS",
+      "slug": "coredns",
+      "category": "unknown",
+      "website": "https://coredns.io/",
+      "description": "Orchestration & Management · Coordination & Service Discovery",
+      "source_type": "cncf",
+      "source_url": "https://coredns.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "etcd": {
+      "name": "etcd",
+      "slug": "etcd",
+      "category": "unknown",
+      "website": "https://etcd.io/",
+      "description": "Orchestration & Management · Coordination & Service Discovery",
+      "source_type": "cncf",
+      "source_url": "https://etcd.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "k8gb": {
+      "name": "k8gb",
+      "slug": "k8gb",
+      "category": "unknown",
+      "website": "https://www.k8gb.io",
+      "description": "Orchestration & Management · Coordination & Service Discovery",
+      "source_type": "cncf",
+      "source_url": "https://www.k8gb.io",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "grpc": {
+      "name": "gRPC",
+      "slug": "grpc",
+      "category": "unknown",
+      "website": "https://grpc.io",
+      "description": "Orchestration & Management · Remote Procedure Call",
+      "source_type": "cncf",
+      "source_url": "https://grpc.io",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "contour": {
+      "name": "Contour",
+      "slug": "contour",
+      "category": "unknown",
+      "website": "https://projectcontour.io",
+      "description": "Orchestration & Management · Service Proxy",
+      "source_type": "cncf",
+      "source_url": "https://projectcontour.io",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "envoy": {
+      "name": "Envoy",
+      "slug": "envoy",
+      "category": "unknown",
+      "website": "https://www.envoyproxy.io",
+      "description": "Orchestration & Management · Service Proxy",
+      "source_type": "cncf",
+      "source_url": "https://www.envoyproxy.io",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "emissary-ingress": {
+      "name": "Emissary-Ingress",
+      "slug": "emissary-ingress",
+      "category": "unknown",
+      "website": "https://emissary-ingress.dev/",
+      "description": "Orchestration & Management · API Gateway",
+      "source_type": "cncf",
+      "source_url": "https://emissary-ingress.dev/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "istio": {
+      "name": "Istio",
+      "slug": "istio",
+      "category": "unknown",
+      "website": "https://istio.io/",
+      "description": "Orchestration & Management · Service Mesh",
+      "source_type": "cncf",
+      "source_url": "https://istio.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "linkerd": {
+      "name": "Linkerd",
+      "slug": "linkerd",
+      "category": "unknown",
+      "website": "https://linkerd.io/",
+      "description": "Orchestration & Management · Service Mesh",
+      "source_type": "cncf",
+      "source_url": "https://linkerd.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "tikv": {
+      "name": "TiKV",
+      "slug": "tikv",
+      "category": "unknown",
+      "website": "https://tikv.org",
+      "description": "App Definition and Development · Database",
+      "source_type": "cncf",
+      "source_url": "https://tikv.org",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "vitess": {
+      "name": "Vitess",
+      "slug": "vitess",
+      "category": "unknown",
+      "website": "https://vitess.io/",
+      "description": "App Definition and Development · Database",
+      "source_type": "cncf",
+      "source_url": "https://vitess.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "cloudevents": {
+      "name": "CloudEvents",
+      "slug": "cloudevents",
+      "category": "unknown",
+      "website": "https://cloudevents.io/",
+      "description": "App Definition and Development · Streaming & Messaging",
+      "source_type": "cncf",
+      "source_url": "https://cloudevents.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "nats": {
+      "name": "NATS",
+      "slug": "nats",
+      "category": "unknown",
+      "website": "https://nats.io/",
+      "description": "App Definition and Development · Streaming & Messaging",
+      "source_type": "cncf",
+      "source_url": "https://nats.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "strimzi": {
+      "name": "Strimzi",
+      "slug": "strimzi",
+      "category": "unknown",
+      "website": "https://strimzi.io/",
+      "description": "App Definition and Development · Streaming & Messaging",
+      "source_type": "cncf",
+      "source_url": "https://strimzi.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "artifact-hub": {
+      "name": "Artifact Hub",
+      "slug": "artifact-hub",
+      "category": "unknown",
+      "website": "https://artifacthub.io",
+      "description": "App Definition and Development · Application Definition & Image Build",
+      "source_type": "cncf",
+      "source_url": "https://artifacthub.io",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "backstage": {
+      "name": "Backstage",
+      "slug": "backstage",
+      "category": "unknown",
+      "website": "https://backstage.io/",
+      "description": "App Definition and Development · Application Definition & Image Build",
+      "source_type": "cncf",
+      "source_url": "https://backstage.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "buildpacks": {
+      "name": "Buildpacks",
+      "slug": "buildpacks",
+      "category": "unknown",
+      "website": "https://buildpacks.io/",
+      "description": "App Definition and Development · Application Definition & Image Build",
+      "source_type": "cncf",
+      "source_url": "https://buildpacks.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "dapr": {
+      "name": "Dapr",
+      "slug": "dapr",
+      "category": "unknown",
+      "website": "https://dapr.io",
+      "description": "App Definition and Development · Application Definition & Image Build",
+      "source_type": "cncf",
+      "source_url": "https://dapr.io",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "helm": {
+      "name": "Helm",
+      "slug": "helm",
+      "category": "unknown",
+      "website": "https://helm.sh/",
+      "description": "App Definition and Development · Application Definition & Image Build",
+      "source_type": "cncf",
+      "source_url": "https://helm.sh/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "kubevela": {
+      "name": "KubeVela",
+      "slug": "kubevela",
+      "category": "unknown",
+      "website": "https://kubevela.io",
+      "description": "App Definition and Development · Application Definition & Image Build",
+      "source_type": "cncf",
+      "source_url": "https://kubevela.io",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "kubevirt": {
+      "name": "KubeVirt",
+      "slug": "kubevirt",
+      "category": "unknown",
+      "website": "https://kubevirt.io/",
+      "description": "App Definition and Development · Application Definition & Image Build",
+      "source_type": "cncf",
+      "source_url": "https://kubevirt.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "microcks": {
+      "name": "Microcks",
+      "slug": "microcks",
+      "category": "unknown",
+      "website": "https://microcks.io",
+      "description": "App Definition and Development · Application Definition & Image Build",
+      "source_type": "cncf",
+      "source_url": "https://microcks.io",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "operator-framework": {
+      "name": "Operator Framework",
+      "slug": "operator-framework",
+      "category": "unknown",
+      "website": "https://operatorframework.io/",
+      "description": "App Definition and Development · Application Definition & Image Build",
+      "source_type": "cncf",
+      "source_url": "https://operatorframework.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "argo": {
+      "name": "Argo",
+      "slug": "argo",
+      "category": "unknown",
+      "website": "https://argoproj.github.io/",
+      "description": "App Definition and Development · Continuous Integration & Delivery",
+      "source_type": "cncf",
+      "source_url": "https://argoproj.github.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "flux": {
+      "name": "Flux",
+      "slug": "flux",
+      "category": "unknown",
+      "website": "https://fluxcd.io/",
+      "description": "App Definition and Development · Continuous Integration & Delivery",
+      "source_type": "cncf",
+      "source_url": "https://fluxcd.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "openkruise": {
+      "name": "OpenKruise",
+      "slug": "openkruise",
+      "category": "unknown",
+      "website": "https://openkruise.io/",
+      "description": "App Definition and Development · Continuous Integration & Delivery",
+      "source_type": "cncf",
+      "source_url": "https://openkruise.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "tekton": {
+      "name": "Tekton",
+      "slug": "tekton",
+      "category": "unknown",
+      "website": "https://tekton.dev",
+      "description": "App Definition and Development · Continuous Integration & Delivery",
+      "source_type": "cncf",
+      "source_url": "https://tekton.dev",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "flatcar-container-linux": {
+      "name": "Flatcar Container Linux",
+      "slug": "flatcar-container-linux",
+      "category": "unknown",
+      "website": "https://www.flatcar.org/",
+      "description": "Platform · Certified Kubernetes - Distribution",
+      "source_type": "cncf",
+      "source_url": "https://www.flatcar.org/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "openfeature": {
+      "name": "OpenFeature",
+      "slug": "openfeature",
+      "category": "unknown",
+      "website": "https://openfeature.dev/",
+      "description": "Observability and Analysis · Feature Flagging",
+      "source_type": "cncf",
+      "source_url": "https://openfeature.dev/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "chaos-mesh": {
+      "name": "Chaos Mesh",
+      "slug": "chaos-mesh",
+      "category": "unknown",
+      "website": "https://chaos-mesh.org/",
+      "description": "Observability and Analysis · Chaos Engineering",
+      "source_type": "cncf",
+      "source_url": "https://chaos-mesh.org/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "litmus": {
+      "name": "Litmus",
+      "slug": "litmus",
+      "category": "unknown",
+      "website": "https://litmuschaos.io/",
+      "description": "Observability and Analysis · Chaos Engineering",
+      "source_type": "cncf",
+      "source_url": "https://litmuschaos.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "opencost": {
+      "name": "OpenCost",
+      "slug": "opencost",
+      "category": "unknown",
+      "website": "https://www.opencost.io/",
+      "description": "Observability and Analysis · Continuous Optimization",
+      "source_type": "cncf",
+      "source_url": "https://www.opencost.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "cortex": {
+      "name": "Cortex",
+      "slug": "cortex",
+      "category": "unknown",
+      "website": "https://cortexmetrics.io/",
+      "description": "Observability and Analysis · Observability",
+      "source_type": "cncf",
+      "source_url": "https://cortexmetrics.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "fluentd": {
+      "name": "Fluentd",
+      "slug": "fluentd",
+      "category": "unknown",
+      "website": "https://www.fluentd.org/",
+      "description": "Observability and Analysis · Observability",
+      "source_type": "cncf",
+      "source_url": "https://www.fluentd.org/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "jaeger": {
+      "name": "Jaeger",
+      "slug": "jaeger",
+      "category": "unknown",
+      "website": "https://www.jaegertracing.io/",
+      "description": "Observability and Analysis · Observability",
+      "source_type": "cncf",
+      "source_url": "https://www.jaegertracing.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "opentelemetry": {
+      "name": "OpenTelemetry",
+      "slug": "opentelemetry",
+      "category": "unknown",
+      "website": "https://opentelemetry.io/",
+      "description": "Observability and Analysis · Observability",
+      "source_type": "cncf",
+      "source_url": "https://opentelemetry.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "prometheus": {
+      "name": "Prometheus",
+      "slug": "prometheus",
+      "category": "unknown",
+      "website": "https://prometheus.io/",
+      "description": "Observability and Analysis · Observability",
+      "source_type": "cncf",
+      "source_url": "https://prometheus.io/",
+      "mention_context": "proyecto graduated de la CNCF"
+    },
+    "thanos": {
+      "name": "Thanos",
+      "slug": "thanos",
+      "category": "unknown",
+      "website": "https://thanos.io/",
+      "description": "Observability and Analysis · Observability",
+      "source_type": "cncf",
+      "source_url": "https://thanos.io/",
+      "mention_context": "proyecto incubating de la CNCF"
+    },
+    "kserve": {
+      "name": "KServe",
+      "slug": "kserve",
+      "category": "unknown",
+      "website": "https://kserve.github.io/website/",
+      "description": "Inference · Framework",
+      "source_type": "cncf",
+      "source_url": "https://kserve.github.io/website/",
+      "mention_context": "proyecto incubating de la CNCF"
+    }
+  },
+  "mention_counts": {
+    "docker-mailserver": {
+      "github": 1
+    },
+    "thefatrat": {
+      "github": 1
+    },
+    "clamav": {
+      "github": 1
+    },
+    "loki": {
+      "github": 1
+    },
+    "apkid": {
+      "github": 1
+    },
+    "illacceptanything": {
+      "github": 1
+    },
+    "winpayloads": {
+      "github": 1
+    },
+    "chimera": {
+      "github": 1
+    },
+    "hrconvert2": {
+      "github": 1
+    },
+    "ai-gateway": {
+      "github": 1
+    },
+    "apiops": {
+      "github": 1
+    },
+    "crapi": {
+      "github": 1
+    },
+    "api-securityempire": {
+      "github": 1
+    },
+    "vuln-bank": {
+      "github": 1
+    },
+    "capital": {
+      "github": 1
+    },
+    "hoppscotch": {
+      "github": 1
+    },
+    "bruno": {
+      "github": 1
+    },
+    "cli": {
+      "github": 1
+    },
+    "mobile-security-framework-mobsf": {
+      "github": 1
+    },
+    "hurl": {
+      "github": 1
+    },
+    "keploy": {
+      "github": 1
+    },
+    "metersphere": {
+      "github": 1
+    },
+    "http-prompt": {
+      "github": 1
+    },
+    "karate": {
+      "github": 1
+    },
+    "xh": {
+      "github": 1
+    },
+    "arjun": {
+      "github": 1
+    },
+    "cypress-realworld-app": {
+      "github": 1
+    },
+    "applocker-guidance": {
+      "github": 1
+    },
+    "infisical": {
+      "github": 1
+    },
+    "docker-openvpn": {
+      "github": 1
+    },
+    "certificates": {
+      "github": 1
+    },
+    "boulder": {
+      "github": 1
+    },
+    "certipy": {
+      "github": 1
+    },
+    "automatedlab": {
+      "github": 1
+    },
+    "openvpn-install": {
+      "github": 1
+    },
+    "circl": {
+      "github": 1
+    },
+    "certify": {
+      "github": 1
+    },
+    "locksmith": {
+      "github": 1
+    },
+    "tongsuo": {
+      "github": 1
+    },
+    "debops": {
+      "github": 1
+    },
+    "pki-js": {
+      "github": 1
+    },
+    "certspotter": {
+      "github": 1
+    },
+    "ios-mcp": {
+      "github": 1
+    },
+    "hmdm-server": {
+      "github": 1
+    },
+    "hmdm-android": {
+      "github": 1
+    },
+    "agent-beacon": {
+      "github": 1
+    },
+    "sftpgo": {
+      "github": 1
+    },
+    "aws-mfa": {
+      "github": 1
+    },
+    "client": {
+      "github": 1
+    },
+    "aws-adfs": {
+      "github": 1
+    },
+    "adfsmfa": {
+      "github": 1
+    },
+    "one-time": {
+      "github": 1
+    },
+    "pig": {
+      "github": 1
+    },
+    "respounder": {
+      "github": 1
+    },
+    "community-id-spec": {
+      "github": 1
+    },
+    "pan-os-python": {
+      "github": 1
+    },
+    "pfsense": {
+      "github": 1
+    },
+    "iron-skillet": {
+      "github": 1
+    },
+    "opnsense": {
+      "github": 1
+    },
+    "warpgate": {
+      "github": 1
+    },
+    "entraops": {
+      "github": 1
+    },
+    "jit-groups": {
+      "github": 1
+    },
+    "epv-api-scripts": {
+      "github": 1
+    },
+    "azureprivilegediam": {
+      "github": 1
+    },
+    "restic": {
+      "github": 1
+    },
+    "duplicati": {
+      "github": 1
+    },
+    "kopia": {
+      "github": 1
+    },
+    "borg": {
+      "github": 1
+    },
+    "all-in-one": {
+      "github": 1
+    },
+    "velero": {
+      "github": 1
+    },
+    "wechatexporter": {
+      "github": 1
+    },
+    "elasticsearch-dump": {
+      "github": 1
+    },
+    "databasus": {
+      "github": 1
+    },
+    "android-databackup": {
+      "github": 1
+    },
+    "zerobyte": {
+      "github": 1
+    },
+    "ludusavi": {
+      "github": 1
+    },
+    "laravel-backup": {
+      "github": 1
+    },
+    "gogs": {
+      "github": 1
+    },
+    "gitoxide": {
+      "github": 1
+    },
+    "libgit2": {
+      "github": 1
+    },
+    "jupytext": {
+      "github": 1
+    },
+    "clearml": {
+      "github": 1
+    },
+    "sparkleshare": {
+      "github": 1
+    },
+    "skillhub": {
+      "github": 1
+    },
+    "libgit2sharp": {
+      "github": 1
+    },
+    "sem": {
+      "github": 1
+    },
+    "straight-el": {
+      "github": 1
+    },
+    "nbdime": {
+      "github": 1
+    },
+    "docmd": {
+      "github": 1
+    },
+    "elfshaker": {
+      "github": 1
+    },
+    "dulwich": {
+      "github": 1
+    },
+    "cloud-custodian": {
+      "cncf": 1
+    },
+    "kubeedge": {
+      "cncf": 1
+    },
+    "metal3-io": {
+      "cncf": 1
+    },
+    "openyurt": {
+      "cncf": 1
+    },
+    "dragonfly": {
+      "cncf": 1
+    },
+    "harbor": {
+      "cncf": 1
+    },
+    "cert-manager": {
+      "cncf": 1
+    },
+    "confidential-containers": {
+      "cncf": 1
+    },
+    "falco": {
+      "cncf": 1
+    },
+    "in-toto": {
+      "cncf": 1
+    },
+    "keycloak": {
+      "cncf": 1
+    },
+    "kubescape": {
+      "cncf": 1
+    },
+    "kyverno": {
+      "cncf": 1
+    },
+    "notary-project": {
+      "cncf": 1
+    },
+    "open-policy-agent-opa": {
+      "cncf": 1
+    },
+    "openfga": {
+      "cncf": 1
+    },
+    "the-update-framework-tuf": {
+      "cncf": 1
+    },
+    "spiffe": {
+      "cncf": 1
+    },
+    "spire": {
+      "cncf": 1
+    },
+    "cubefs": {
+      "cncf": 1
+    },
+    "longhorn": {
+      "cncf": 1
+    },
+    "rook": {
+      "cncf": 1
+    },
+    "containerd": {
+      "cncf": 1
+    },
+    "cri-o": {
+      "cncf": 1
+    },
+    "lima": {
+      "cncf": 1
+    },
+    "cilium": {
+      "cncf": 1
+    },
+    "container-network-interface-cni": {
+      "cncf": 1
+    },
+    "crossplane": {
+      "cncf": 1
+    },
+    "fluid": {
+      "cncf": 1
+    },
+    "hami": {
+      "cncf": 1
+    },
+    "karmada": {
+      "cncf": 1
+    },
+    "keda": {
+      "cncf": 1
+    },
+    "knative": {
+      "cncf": 1
+    },
+    "kubeflow": {
+      "cncf": 1
+    },
+    "kubernetes": {
+      "cncf": 1
+    },
+    "volcano": {
+      "cncf": 1
+    },
+    "wasmcloud": {
+      "cncf": 1
+    },
+    "coredns": {
+      "cncf": 1
+    },
+    "etcd": {
+      "cncf": 1
+    },
+    "k8gb": {
+      "cncf": 1
+    },
+    "grpc": {
+      "cncf": 1
+    },
+    "contour": {
+      "cncf": 1
+    },
+    "envoy": {
+      "cncf": 1
+    },
+    "emissary-ingress": {
+      "cncf": 1
+    },
+    "istio": {
+      "cncf": 1
+    },
+    "linkerd": {
+      "cncf": 1
+    },
+    "tikv": {
+      "cncf": 1
+    },
+    "vitess": {
+      "cncf": 1
+    },
+    "cloudevents": {
+      "cncf": 1
+    },
+    "nats": {
+      "cncf": 1
+    },
+    "strimzi": {
+      "cncf": 1
+    },
+    "artifact-hub": {
+      "cncf": 1
+    },
+    "backstage": {
+      "cncf": 1
+    },
+    "buildpacks": {
+      "cncf": 1
+    },
+    "dapr": {
+      "cncf": 1
+    },
+    "helm": {
+      "cncf": 1
+    },
+    "kubevela": {
+      "cncf": 1
+    },
+    "kubevirt": {
+      "cncf": 1
+    },
+    "microcks": {
+      "cncf": 1
+    },
+    "operator-framework": {
+      "cncf": 1
+    },
+    "argo": {
+      "cncf": 1
+    },
+    "flux": {
+      "cncf": 1
+    },
+    "openkruise": {
+      "cncf": 1
+    },
+    "tekton": {
+      "cncf": 1
+    },
+    "flatcar-container-linux": {
+      "cncf": 1
+    },
+    "openfeature": {
+      "cncf": 1
+    },
+    "chaos-mesh": {
+      "cncf": 1
+    },
+    "litmus": {
+      "cncf": 1
+    },
+    "opencost": {
+      "cncf": 1
+    },
+    "cortex": {
+      "cncf": 1
+    },
+    "fluentd": {
+      "cncf": 1
+    },
+    "jaeger": {
+      "cncf": 1
+    },
+    "opentelemetry": {
+      "cncf": 1
+    },
+    "prometheus": {
+      "cncf": 1
+    },
+    "thanos": {
+      "cncf": 1
+    },
+    "kserve": {
+      "cncf": 1
+    }
+  },
+  "github_stars": {
+    "https://github.com/docker-mailserver/docker-mailserver": 18729,
+    "https://github.com/screetsec/TheFatRat": 11413,
+    "https://github.com/Cisco-Talos/clamav": 7138,
+    "https://github.com/Neo23x0/Loki": 3775,
+    "https://github.com/rednaga/APKiD": 2558,
+    "https://github.com/illacceptanything/illacceptanything": 1961,
+    "https://github.com/nccgroup/Winpayloads": 1613,
+    "https://github.com/tokyoneon/Chimera": 1594,
+    "https://github.com/zelon88/HRConvert2": 1360,
+    "https://github.com/Azure-Samples/AI-Gateway": 975,
+    "https://github.com/Azure/apiops": 444,
+    "https://github.com/OWASP/crAPI": 1556,
+    "https://github.com/Cyber-Guy1/API-SecurityEmpire": 1442,
+    "https://github.com/Commando-X/vuln-bank": 916,
+    "https://github.com/Checkmarx/capital": 335,
+    "https://github.com/hoppscotch/hoppscotch": 80041,
+    "https://github.com/usebruno/bruno": 46361,
+    "https://github.com/httpie/cli": 38424,
+    "https://github.com/MobSF/Mobile-Security-Framework-MobSF": 21599,
+    "https://github.com/Orange-OpenSource/hurl": 19143,
+    "https://github.com/keploy/keploy": 18402,
+    "https://github.com/metersphere/metersphere": 13445,
+    "https://github.com/httpie/http-prompt": 9108,
+    "https://github.com/karatelabs/karate": 8920,
+    "https://github.com/ducaale/xh": 8020,
+    "https://github.com/s0md3v/Arjun": 6380,
+    "https://github.com/cypress-io/cypress-realworld-app": 5908,
+    "https://github.com/nsacyber/AppLocker-Guidance": 244,
+    "https://github.com/Infisical/infisical": 28792,
+    "https://github.com/kylemanna/docker-openvpn": 9087,
+    "https://github.com/smallstep/certificates": 8751,
+    "https://github.com/letsencrypt/boulder": 5741,
+    "https://github.com/ly4k/Certipy": 3629,
+    "https://github.com/AutomatedLab/AutomatedLab": 2216,
+    "https://github.com/hwdsl2/openvpn-install": 1722,
+    "https://github.com/cloudflare/circl": 1709,
+    "https://github.com/webprofusion/certify": 1696,
+    "https://github.com/jakehildreth/Locksmith": 1604,
+    "https://github.com/Tongsuo-Project/Tongsuo": 1511,
+    "https://github.com/debops/debops": 1417,
+    "https://github.com/PeculiarVentures/PKI.js": 1394,
+    "https://github.com/SSLMate/certspotter": 1164,
+    "https://github.com/witchan/ios-mcp": 602,
+    "https://github.com/h-mdm/hmdm-server": 539,
+    "https://github.com/h-mdm/hmdm-android": 347,
+    "https://github.com/Asymptote-Labs/agent-beacon": 311,
+    "https://github.com/drakkan/sftpgo": 12398,
+    "https://github.com/broamski/aws-mfa": 1066,
+    "https://github.com/DefGuard/client": 365,
+    "https://github.com/venth/aws-adfs": 292,
+    "https://github.com/redhook62/adfsmfa": 182,
+    "https://github.com/suvash/one-time": 178,
+    "https://github.com/rafael-santiago/pig": 479,
+    "https://github.com/codeexpress/respounder": 323,
+    "https://github.com/corelight/community-id-spec": 197,
+    "https://github.com/PaloAltoNetworks/pan-os-python": 398,
+    "https://github.com/vaamonde/pfsense": 287,
+    "https://github.com/PaloAltoNetworks/iron-skillet": 220,
+    "https://github.com/vaamonde/opnsense": 152,
+    "https://github.com/warp-tech/warpgate": 7621,
+    "https://github.com/Cloud-Architekt/EntraOps": 297,
+    "https://github.com/GoogleCloudPlatform/jit-groups": 290,
+    "https://github.com/cyberark/epv-api-scripts": 258,
+    "https://github.com/Cloud-Architekt/AzurePrivilegedIAM": 199,
+    "https://github.com/restic/restic": 35541,
+    "https://github.com/duplicati/duplicati": 14891,
+    "https://github.com/kopia/kopia": 13875,
+    "https://github.com/borgbackup/borg": 13616,
+    "https://github.com/nextcloud/all-in-one": 10269,
+    "https://github.com/velero-io/velero": 10217,
+    "https://github.com/BlueMatthew/WechatExporter": 8378,
+    "https://github.com/elasticsearch-dump/elasticsearch-dump": 7939,
+    "https://github.com/databasus/databasus": 7929,
+    "https://github.com/XayahSuSuSu/Android-DataBackup": 7211,
+    "https://github.com/nicotsx/zerobyte": 6821,
+    "https://github.com/mtkennerly/ludusavi": 6130,
+    "https://github.com/spatie/laravel-backup": 6019,
+    "https://github.com/gogs/gogs": 47738,
+    "https://github.com/GitoxideLabs/gitoxide": 11779,
+    "https://github.com/libgit2/libgit2": 10561,
+    "https://github.com/jupytext/jupytext": 7229,
+    "https://github.com/clearml/clearml": 6824,
+    "https://github.com/hbons/SparkleShare": 4974,
+    "https://github.com/iflytek/skillhub": 4916,
+    "https://github.com/libgit2/libgit2sharp": 3449,
+    "https://github.com/Ataraxy-Labs/sem": 3302,
+    "https://github.com/radian-software/straight.el": 3023,
+    "https://github.com/jupyter/nbdime": 2839,
+    "https://github.com/docmd-io/docmd": 2401,
+    "https://github.com/elfshaker/elfshaker": 2336,
+    "https://github.com/jelmer/dulwich": 2271
+  }
 }

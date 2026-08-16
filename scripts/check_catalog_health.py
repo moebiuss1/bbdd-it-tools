@@ -37,6 +37,7 @@ from yaml_io import list_all_slugs, read_tool
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
 DOMAINS_FILE = os.path.join(DATA_DIR, "domains.json")
+ANALYST_FILE = os.path.join(DATA_DIR, "analyst-sources.json")
 CANDIDATES_FILE = os.path.join(DATA_DIR, "candidates.json")
 REPORT_FILE = os.path.join(DATA_DIR, "catalog-health.md")
 
@@ -154,20 +155,63 @@ def check_sources() -> tuple[list[str], list[str]]:
 
 
 def check_discovery() -> list[str]:
-    """¿Está trayendo candidatos nuevos el rastreo de fuentes?"""
+    """Jugadores que las fuentes de descubrimiento ven y el catálogo no tiene."""
     if not os.path.exists(CANDIDATES_FILE):
-        return ["- El rastreo de candidatos no ha dejado ningún fichero: `fetch_candidates.py` no llegó a ejecutarse."]
+        return ["- `fetch_candidates.py` no ha dejado almacén de candidatos: no llegó a ejecutarse."]
     store = json.load(open(CANDIDATES_FILE, encoding="utf-8"))
     candidatos = store.get("candidates") or {}
-    menciones = store.get("mention_counts") or {}
-    if not candidatos and not menciones:
-        return [
-            "- El rastreo de candidatos está devolviendo **cero** resultados, así que el "
-            "catálogo no se está enterando de los jugadores nuevos. Las fuentes de "
-            "`fetch_candidates.py` (DuckDuckGo y itsm.tools) llevan tiempo bloqueando el "
-            "scraping; hay que sustituirlas o alimentar las altas a mano."
-        ]
-    return []
+    if not candidatos:
+        return ["- El rastreo de candidatos ha vuelto **vacío**. Revisar `fetch_candidates.py`: "
+                "sin descubrimiento, el catálogo deja de enterarse de los jugadores nuevos."]
+
+    conocidos = set()
+    for slug in list_all_slugs():
+        tool = read_tool(slug) or {}
+        conocidos.add(slug.lower())
+        conocidos.add(str(tool.get("name", "")).lower())
+        repo = (tool.get("repo") or "").rstrip("/").lower()
+        if repo:
+            conocidos.add(repo)
+
+    estrellas = store.get("github_stars", {})
+    nuevos = []
+    for slug, c in candidatos.items():
+        url = (c.get("source_url") or "").rstrip("/")
+        if slug.lower() in conocidos or str(c.get("name", "")).lower() in conocidos \
+                or url.lower() in conocidos:
+            continue
+        nuevos.append((estrellas.get(url, 0), c.get("name", slug),
+                       c.get("category", "?"), c.get("description", "")[:80]))
+    if not nuevos:
+        return []
+    nuevos.sort(reverse=True)
+    lineas = [f"- **{n}** ({cat}) — {e} estrellas. {d}" if e else f"- **{n}** ({cat}) — {d}"
+              for e, n, cat, d in nuevos[:15]]
+    return [f"{len(nuevos)} candidatos que el catálogo todavía no recoge. Los que más "
+            f"tracción tienen:\n\n" + "\n".join(lineas)]
+
+
+def check_analyst_markets() -> list[str]:
+    """Mercados de analista que el sector nombra y el catálogo no cita."""
+    if not os.path.exists(ANALYST_FILE):
+        return []
+    hallazgos = json.load(open(ANALYST_FILE, encoding="utf-8"))
+    vistos = {m for r in hallazgos.values() for m in r.get("peer_markets", [])}
+    citados = set()
+    for slug in list_all_slugs():
+        tool = read_tool(slug) or {}
+        for src in tool.get("sources") or []:
+            m = re.search(r"gartner\.com/reviews/market/([a-z0-9\-]+)", src)
+            if m:
+                citados.add(m.group(1).lower())
+    nuevos = sorted(vistos - citados)
+    if not nuevos:
+        return []
+    return ["Mercados de Gartner Peer Insights que enlazan los propios fabricantes y que "
+            "este catálogo no cita. Unos son categorías que faltan y otros son el mercado "
+            "de siempre rebautizado —los firewalls de red son ya *hybrid mesh firewall*—, "
+            "en cuyo caso lo que toca es actualizar la URL de las fichas.\n\n"
+            + "\n".join(f"- https://www.gartner.com/reviews/market/{m}" for m in nuevos)]
 
 
 def main() -> int:
@@ -180,6 +224,7 @@ def main() -> int:
     avisos_dominio, baseline = check_domains(tools)
     sin_externa, sin_ranking = check_sources()
     avisos_descubrimiento = check_discovery()
+    avisos_mercados = check_analyst_markets()
 
     os.makedirs(DATA_DIR, exist_ok=True)
     with open(DOMAINS_FILE, "w", encoding="utf-8") as f:
@@ -202,8 +247,11 @@ def main() -> int:
                       "(Gartner Peer Insights, Forrester, IDC, KuppingerCole, AV-Comparatives…). "
                       "Un blog o la web del fabricante no lo sustituyen.\n\n"
                       + ", ".join(sin_ranking))
+    if avisos_mercados:
+        partes.append("### Mercados de analista sin cubrir\n\n" + "\n".join(avisos_mercados))
     if avisos_descubrimiento:
-        partes.append("### Altas nuevas\n\n" + "\n".join(avisos_descubrimiento))
+        partes.append("### Jugadores nuevos que no están en el catálogo\n\n"
+                      + "\n".join(avisos_descubrimiento))
 
     if not partes:
         if os.path.exists(REPORT_FILE):

@@ -1,6 +1,24 @@
 """
-Descubrimiento de herramientas: busca candidatos en múltiples fuentes
-y acumula contadores de menciones en data/candidates.json.
+Descubrimiento de herramientas nuevas, con las fuentes que de verdad responden.
+
+Durante meses este script devolvió cero candidatos y nadie se enteró porque el
+paso corre con `continue-on-error`: raspaba el HTML de DuckDuckGo, que bloquea a
+los clientes automatizados, y los listados de itsm.tools, cuyos artículos ni
+siquiera existían. Un catálogo que quiere estar al día no puede depender de dos
+fuentes caídas.
+
+Ahora se usan dos que devuelven datos estructurados y no ponen trabas:
+
+  · **API de búsqueda de GitHub** — repositorios por tema y por palabra clave,
+    ordenados por estrellas. Descubre el software libre de cada categoría y, de
+    paso, trae el número de estrellas, que es la señal de adopción que
+    compute_rankings.py llevaba puesta a cero.
+  · **Landscape de la CNCF** — el inventario que mantiene la fundación con los
+    proyectos cloud native y su grado de madurez (graduado, incubación, sandbox).
+    La graduación es un aval público con criterios conocidos.
+
+Los contadores de menciones se acumulan igual que antes en data/candidates.json,
+así que el resto del pipeline no cambia.
 """
 
 import json
@@ -8,24 +26,19 @@ import os
 import re
 import sys
 import time
-import hashlib
 from datetime import date
-from urllib.parse import urljoin, urlparse
-from typing import Optional
 
 import httpx
 import yaml
-from bs4 import BeautifulSoup
 from slugify import slugify
 
 from models import Candidate
-from yaml_io import slugify_name
+from yaml_io import slugify_name, list_all_slugs, read_tool
 
 DATA_DIR = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), "..", "data"
 )
 CANDIDATES_FILE = os.path.join(DATA_DIR, "candidates.json")
-CACHE_DIR = os.path.join(DATA_DIR, "cache", "sites")
 CONFIG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.yaml")
 
 
@@ -48,271 +61,198 @@ def save_candidates_store(store: dict) -> None:
         json.dump(store, f, indent=2, ensure_ascii=False, default=str)
 
 
-def get_cache_path(url: str) -> str:
-    """Genera ruta de caché basada en hash de URL."""
-    url_hash = hashlib.md5(url.encode()).hexdigest()[:12]
-    return os.path.join(CACHE_DIR, f"{url_hash}.html")
-
-
-def fetch_url(url: str, config: dict) -> Optional[str]:
-    """Descarga una URL con caché y rate-limiting."""
-    cache_path = get_cache_path(url)
-    if os.path.exists(cache_path):
-        with open(cache_path, "r", encoding="utf-8") as f:
-            return f.read()
-
-    time.sleep(config.get("search", {}).get("rate_limit_seconds", 1.5))
-
-    try:
-        with httpx.Client(
-            timeout=config.get("search", {}).get("timeout_seconds", 15),
-            headers={"User-Agent": config.get("search", {}).get("user_agent", "BBDD-IT-Tools/1.0")},
-            follow_redirects=True,
-        ) as client:
-            resp = client.get(url)
-            resp.raise_for_status()
-
-            os.makedirs(CACHE_DIR, exist_ok=True)
-            html = resp.text
-            with open(cache_path, "w", encoding="utf-8") as f:
-                f.write(html)
-            return html
-    except Exception as e:
-        print(f"  ⚠ Error fetching {url}: {e}", file=sys.stderr)
-        return None
-
-
-def search_duckduckgo(query: str, config: dict) -> list[dict]:
-    """
-    Búsqueda con DuckDuckGo HTML (sin API key).
-    Retorna lista de {title, url, snippet}.
-    """
-    url = f"https://html.duckduckgo.com/html/?q={query}"
-    html = fetch_url(url, config)
-    if not html:
-        return []
-
-    soup = BeautifulSoup(html, "html.parser")
-    results = []
-    for result in soup.select(".result"):
-        title_el = result.select_one(".result__title a")
-        snippet_el = result.select_one(".result__snippet")
-        if title_el:
-            # separator=" " evita que palabras adyacentes a tags <b> (resaltado de
-            # keywords en los resultados de DuckDuckGo) queden pegadas sin espacio.
-            snippet = snippet_el.get_text(separator=" ", strip=True) if snippet_el else ""
-            snippet = re.sub(r"\s+", " ", snippet).strip()
-            results.append({
-                "title": re.sub(r"\s+", " ", title_el.get_text(separator=" ", strip=True)).strip(),
-                "url": title_el.get("href", ""),
-                "snippet": snippet,
-            })
-
-    return results[: config.get("search", {}).get("max_results_per_query", 10)]
-
-
-def extract_candidates_from_results(
-    results: list[dict],
-    category: str,
-    source_type: str,
-) -> list[Candidate]:
-    """Extrae nombres de herramientas de resultados de búsqueda."""
-    candidates = []
-
-    for r in results:
-        title = r.get("title", "")
-        snippet = r.get("snippet", "")
-
-        # Heurística simple: el título suele contener el nombre de la herramienta
-        # Intentamos extraer nombres que parezcan herramientas
-        # (esto se refina en enrich_tools.py)
-        name = title.split(" - ")[0].split(" | ")[0].split(" – ")[0].strip()
-        if len(name) < 3 or len(name) > 80:
-            continue
-        if any(
-            word in name.lower()
-            for word in ["best", "top", "mejores", "guide", "list", "review",
-                         "comparison", "magic quadrant", "gartner", "2026",
-                         "software", "solutions", "tools", "platform"]
-        ):
-            continue
-
-        candidates.append(Candidate(
-            name=name,
-            category=category,
-            source_type=source_type,
-            source_url=r.get("url"),
-            mention_context=snippet[:200] if snippet else None,
-        ))
-
-    return candidates
-
-
-def scrape_itsm_tools(config: dict) -> list[Candidate]:
-    """Scrapea itsm.tools en busca de listas de herramientas."""
-    candidates = []
-    html = fetch_url("https://itsm.tools", config)
-    if not html:
-        return candidates
-
-    soup = BeautifulSoup(html, "html.parser")
-
-    # Buscar enlaces a artículos que puedan ser listas/comparativas
-    for link in soup.select("a[href]"):
-        href = link.get("href", "")
-        text = link.get_text(strip=True).lower()
-        if not href.startswith("http"):
-            continue
-        if any(
-            kw in text or kw in href.lower()
-            for kw in ["tool", "software", "solution", "platform",
-                       "comparison", "guide", "best", "top", "review"]
-        ):
-            candidates.append(Candidate(
-                name=link.get_text(strip=True)[:80],
-                category="unknown",
-                source_type="editorial",
-                source_url=href,
-                mention_context=text[:200],
-            ))
-
-    return candidates
-
-
-def scrape_github_trending(category: str, config: dict) -> list[Candidate]:
-    """
-    Busca repositorios relevantes en GitHub.
-    Requiere GITHUB_TOKEN para más rate limit.
-    """
-    token = os.environ.get("GITHUB_TOKEN", "")
+def github_search(query: str, config: dict) -> list[dict]:
+    """Una consulta a la API de búsqueda de repositorios de GitHub."""
     headers = {
-        "Accept": "application/vnd.github.v3+json",
+        "Accept": "application/vnd.github+json",
         "User-Agent": config.get("search", {}).get("user_agent", "BBDD-IT-Tools/1.0"),
     }
+    # En Actions hay token y el límite pasa de 10 a 30 consultas por minuto.
+    token = os.environ.get("GITHUB_TOKEN", "")
     if token:
         headers["Authorization"] = f"Bearer {token}"
 
-    candidates = []
-
-    # Mapeo de categorías a topics de GitHub
-    topic_map = {
-        "edr": "edr",
-        "siem": "siem",
-        "soar": "soar",
-        "firewall": "firewall",
-        "antivirus": "antivirus",
-        "identity-managers": "iam",
-        "dlp": "dlp",
-        "ids": "ids",
-        "ips": "ips",
-    }
-
-    topic = topic_map.get(category, category.replace("-", ""))
-
+    time.sleep(config.get("search", {}).get("rate_limit_seconds", 2))
     try:
-        time.sleep(config.get("search", {}).get("rate_limit_seconds", 1.5))
-        with httpx.Client(timeout=15, headers=headers) as client:
+        with httpx.Client(timeout=20, headers=headers) as client:
             resp = client.get(
-                f"https://api.github.com/search/repositories",
-                params={
-                    "q": f"topic:{topic} stars:>100",
-                    "sort": "stars",
-                    "order": "desc",
-                    "per_page": 10,
-                },
+                "https://api.github.com/search/repositories",
+                params={"q": query, "sort": "stars", "order": "desc", "per_page": 15},
             )
-            if resp.status_code == 200:
-                data = resp.json()
-                for repo in data.get("items", []):
-                    candidates.append(Candidate(
-                        name=repo.get("name", ""),
-                        slug=slugify(repo.get("name", "")),
-                        category=category,
-                        website=repo.get("html_url", ""),
-                        description=repo.get("description", ""),
-                        source_type="github",
-                        source_url=repo.get("html_url", ""),
-                    ))
+        if resp.status_code != 200:
+            print(f"  ⚠ GitHub respondió {resp.status_code} a «{query}»", file=sys.stderr)
+            return []
+        return resp.json().get("items", [])
     except Exception as e:
-        print(f"  ⚠ GitHub API error for {category}: {e}", file=sys.stderr)
+        print(f"  ⚠ GitHub falló en «{query}»: {e}", file=sys.stderr)
+        return []
 
-    return candidates
+
+# Un repositorio muy estrellado no siempre es una herramienta: las listas
+# "awesome", los cursos y los libros dominan cualquier búsqueda por texto.
+NO_ES_HERRAMIENTA = re.compile(
+    r"\bawesome\b|\bguide\b|\btutorial\b|\bcourse\b|\bcheat[- ]?sheet\b|\broadmap\b|"
+    r"\bexamples?\b|\bdemo\b|\bbook\b|\bnotes\b|\blearning\b|\bcollection\b|"
+    r"\blist of\b|\bresources\b|\bstudy\b|\btraining\b|\bwriteups?\b", re.I)
+
+
+def search_github(category: str, config: dict, estrellas: dict = None) -> list[Candidate]:
+    """Proyectos abiertos relevantes de una categoría, por tema declarado.
+
+    Solo se consulta por `topic:`, que es la etiqueta que pone el propio
+    mantenedor. La búsqueda por texto libre se probó y devolvía sobre todo
+    ruido —listas "awesome", cursos, repositorios de apuntes—: en una tanda
+    trajo 264 resultados de los que apenas una decena eran herramientas.
+    """
+    cat_config = config.get("categories", {}).get(category, {})
+    topic = (cat_config.get("github_topic")
+             or config.get("github_topics", {}).get(category)
+             or category.replace("-", ""))
+    termino = cat_config.get("github_query", category.replace("-", " "))
+    minimo = config.get("search", {}).get("github_min_stars", 150)
+
+    estrellas = {} if estrellas is None else estrellas
+    vistos, candidatos = set(), []
+    for query in (f"topic:{topic} stars:>{minimo}",):
+        for repo in github_search(query, config):
+            full = repo.get("full_name", "")
+            if full in vistos:
+                continue
+            vistos.add(full)
+            nombre = repo.get("name", "")
+            descripcion = (repo.get("description") or "").strip()
+            if not nombre or not descripcion:
+                continue
+            if NO_ES_HERRAMIENTA.search(nombre) or NO_ES_HERRAMIENTA.search(descripcion):
+                continue
+            if repo.get("archived"):
+                continue
+            candidatos.append(Candidate(
+                name=nombre,
+                slug=slugify(nombre),
+                category=category,
+                website=repo.get("homepage") or repo.get("html_url", ""),
+                description=(repo.get("description") or "")[:300],
+                source_type="github",
+                source_url=repo.get("html_url", ""),
+                mention_context=f"{repo.get('stargazers_count', 0)} estrellas en GitHub",
+            ))
+            estrellas[repo.get("html_url", "")] = repo.get("stargazers_count", 0)
+    return candidatos
+
+
+def fetch_cncf_landscape(config: dict) -> list[Candidate]:
+    """Proyectos del landscape de la CNCF, con su grado de madurez.
+
+    Es un YAML público de un megabyte largo, sin API key ni bloqueo. Para este
+    catálogo interesa sobre todo la madurez: un proyecto graduado ha pasado una
+    auditoría de seguridad y tiene adopción demostrada, que es justo lo que
+    distingue a un referente de una promesa.
+    """
+    url = ("https://raw.githubusercontent.com/cncf/landscape/master/landscape.yml")
+    candidatos = []
+    try:
+        with httpx.Client(timeout=40, follow_redirects=True) as client:
+            resp = client.get(url)
+        if resp.status_code != 200:
+            print(f"  ⚠ El landscape de la CNCF respondió {resp.status_code}", file=sys.stderr)
+            return candidatos
+        data = yaml.safe_load(resp.text)
+    except Exception as e:
+        print(f"  ⚠ No se pudo leer el landscape de la CNCF: {e}", file=sys.stderr)
+        return candidatos
+
+    # El YAML trae subcategorías y listas vacías como `null`, no como lista
+    for categoria in data.get("landscape") or []:
+        for subcat in categoria.get("subcategories") or []:
+            for item in subcat.get("items") or []:
+                madurez = item.get("project")  # graduated | incubating | sandbox
+                if madurez not in ("graduated", "incubating"):
+                    continue
+                nombre = item.get("name", "")
+                if not nombre:
+                    continue
+                candidatos.append(Candidate(
+                    name=nombre,
+                    slug=slugify(nombre),
+                    category="unknown",
+                    website=item.get("homepage_url", ""),
+                    description=f"{categoria.get('name', '')} · {subcat.get('name', '')}",
+                    source_type="cncf",
+                    source_url=item.get("homepage_url", ""),
+                    mention_context=f"proyecto {madurez} de la CNCF",
+                ))
+    return candidatos
+
+
+def categorias_del_catalogo(config: dict) -> list[str]:
+    """Las categorías reales del directorio, no solo las descritas en config.yaml.
+
+    config.yaml enumera quince y el catálogo tiene cincuenta y seis: buscar solo
+    por las primeras dejaba dos tercios de las categorías sin vigilancia de
+    jugadores nuevos.
+    """
+    ids = set(config.get("categories", {}))
+    for slug in list_all_slugs():
+        tool = read_tool(slug)
+        if not tool:
+            continue
+        cats = tool.get("categories") or ([tool["category"]] if tool.get("category") else [])
+        ids.update(cats)
+    return sorted(ids)
+
+
+def registrar(store: dict, candidatos: list[Candidate]) -> int:
+    """Acumula candidatos y menciones en el almacén. Devuelve cuántos son nuevos."""
+    nuevos = 0
+    for c in candidatos:
+        slug = c.slug or slugify_name(c.name)
+        c.slug = slug
+        menciones = store["mention_counts"].setdefault(slug, {})
+        menciones[c.source_type] = menciones.get(c.source_type, 0) + 1
+        if slug not in store["candidates"]:
+            store["candidates"][slug] = c.model_dump()
+            nuevos += 1
+        else:
+            existente = store["candidates"][slug]
+            for campo in ("website", "description", "source_url", "mention_context"):
+                if getattr(c, campo, None) and not existente.get(campo):
+                    existente[campo] = getattr(c, campo)
+    return nuevos
 
 
 def fetch_all_candidates(config: dict, categories: list[str] = None) -> None:
-    """
-    Punto de entrada principal: busca candidatos para todas las categorías
-    y actualiza el almacén persistente.
-    """
+    """Recorre las fuentes vivas y actualiza el almacén de candidatos."""
     store = load_candidates_store()
+    store.setdefault("candidates", {})
+    store.setdefault("mention_counts", {})
+    # Estrellas por repositorio: es la única señal de adopción medible que tiene
+    # el pipeline, y compute_rankings.py la llevaba puesta a cero.
+    estrellas = store.setdefault("github_stars", {})
 
     if categories is None:
-        categories = list(config.get("categories", {}).keys())
+        categories = categorias_del_catalogo(config)
 
     total_new = 0
 
     for category in categories:
-        cat_config = config["categories"].get(category, {})
-        queries = cat_config.get("queries", [])
-        print(f"\n📡 Buscando: {category} ({len(queries)} queries)")
-
-        for query in queries:
-            print(f"  🔍 {query[:60]}...")
-            try:
-                results = search_duckduckgo(query, config)
-                candidates = extract_candidates_from_results(results, category, "web_search")
-
-                for c in candidates:
-                    slug = c.slug or slugify_name(c.name)
-                    c.slug = slug
-
-                    # Actualizar contadores de menciones
-                    if slug not in store["mention_counts"]:
-                        store["mention_counts"][slug] = {}
-                    store["mention_counts"][slug][c.source_type] = (
-                        store["mention_counts"][slug].get(c.source_type, 0) + 1
-                    )
-
-                    # Guardar candidato
-                    if slug not in store["candidates"]:
-                        store["candidates"][slug] = c.model_dump()
-                        total_new += 1
-                    else:
-                        # Actualizar si el nuevo tiene más info
-                        existing = store["candidates"][slug]
-                        if c.website and not existing.get("website"):
-                            existing["website"] = c.website
-                        if c.description and not existing.get("description"):
-                            existing["description"] = c.description
-
-            except Exception as e:
-                print(f"  ❌ Error en query '{query[:40]}': {e}", file=sys.stderr)
-
-        # GitHub search
+        print(f"\n📡 GitHub: {category}")
         try:
-            gh_candidates = scrape_github_trending(category, config)
-            for c in gh_candidates:
-                slug = c.slug or slugify_name(c.name)
-                c.slug = slug
-                if slug not in store["candidates"]:
-                    store["candidates"][slug] = c.model_dump()
-                    total_new += 1
+            candidatos = search_github(category, config, estrellas)
+            nuevos = registrar(store, candidatos)
+            total_new += nuevos
+            print(f"  ✅ {len(candidatos)} repositorios ({nuevos} nuevos)")
         except Exception as e:
-            print(f"  ⚠ GitHub search error: {e}", file=sys.stderr)
+            print(f"  ❌ Error en {category}: {e}", file=sys.stderr)
 
-    # ITSM.tools
-    print("\n📡 Escaneando itsm.tools...")
+    print("\n📡 Landscape de la CNCF")
     try:
-        itsm_candidates = scrape_itsm_tools(config)
-        for c in itsm_candidates:
-            slug = c.slug or slugify_name(c.name)
-            c.slug = slug
-            if slug not in store["candidates"]:
-                store["candidates"][slug] = c.model_dump()
-                total_new += 1
-        print(f"  ✅ {len(itsm_candidates)} candidatos de itsm.tools")
+        candidatos = fetch_cncf_landscape(config)
+        nuevos = registrar(store, candidatos)
+        total_new += nuevos
+        print(f"  ✅ {len(candidatos)} proyectos graduados o en incubación ({nuevos} nuevos)")
     except Exception as e:
-        print(f"  ⚠ itsm.tools error: {e}", file=sys.stderr)
+        print(f"  ❌ Error con la CNCF: {e}", file=sys.stderr)
 
     save_candidates_store(store)
     print(f"\n📊 Total: {len(store['candidates'])} candidatos en almacén ({total_new} nuevos)")

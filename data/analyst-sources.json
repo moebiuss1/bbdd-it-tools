@@ -1,0 +1,773 @@
+{
+ "abnormal-security": {
+  "mq": [],
+  "name": "Abnormal Security",
+  "peer_markets": [],
+  "slug": "abnormal-security",
+  "wave": [
+   "Email, Messaging"
+  ]
+ },
+ "auditboard": {
+  "mq": [
+   "Governance"
+  ],
+  "name": "Optro (antes AuditBoard)",
+  "peer_markets": [],
+  "slug": "auditboard",
+  "wave": [
+   "Governance"
+  ]
+ },
+ "azure-api-management": {
+  "mq": [
+   "Cloud Database Management Systems",
+   "Cloud-Native Application Platforms",
+   "Container Management",
+   "Data Science and Machine Learning Platforms",
+   "Desktop as a Service",
+   "Distributed Hybrid Infrastructure",
+   "Integration Platform as a Service",
+   "Strategic Cloud Platform Services"
+  ],
+  "name": "Azure API Management",
+  "peer_markets": [],
+  "slug": "azure-api-management",
+  "wave": [
+   "DevOps Platforms"
+  ]
+ },
+ "azure-devops": {
+  "mq": [
+   "Cloud Database Management Systems",
+   "Cloud-Native Application Platforms",
+   "Container Management",
+   "Data Science and Machine Learning Platforms",
+   "Desktop as a Service",
+   "Distributed Hybrid Infrastructure",
+   "Integration Platform as a Service",
+   "Strategic Cloud Platform Services"
+  ],
+  "name": "Azure DevOps",
+  "peer_markets": [],
+  "slug": "azure-devops",
+  "wave": [
+   "DevOps Platforms"
+  ]
+ },
+ "azure-key-vault": {
+  "mq": [
+   "Cloud Database Management Systems",
+   "Cloud-Native Application Platforms",
+   "Container Management",
+   "Data Science and Machine Learning Platforms",
+   "Desktop as a Service",
+   "Distributed Hybrid Infrastructure",
+   "Integration Platform as a Service",
+   "Strategic Cloud Platform Services"
+  ],
+  "name": "Azure Key Vault",
+  "peer_markets": [],
+  "slug": "azure-key-vault",
+  "wave": [
+   "DevOps Platforms"
+  ]
+ },
+ "azure-migrate": {
+  "mq": [
+   "Cloud Database Management Systems",
+   "Cloud-Native Application Platforms",
+   "Container Management",
+   "Data Science and Machine Learning Platforms",
+   "Desktop as a Service",
+   "Distributed Hybrid Infrastructure",
+   "Integration Platform as a Service",
+   "Strategic Cloud Platform Services"
+  ],
+  "name": "Azure Migrate",
+  "peer_markets": [],
+  "slug": "azure-migrate",
+  "wave": [
+   "DevOps Platforms"
+  ]
+ },
+ "bitsight": {
+  "mq": [],
+  "name": "Bitsight",
+  "peer_markets": [
+   "cyber-threat-intelligence-products-and-services"
+  ],
+  "slug": "bitsight",
+  "wave": [
+   "Cybersecurity Risk Rating Platforms",
+   "Cybersecurity Risk Ratings Platforms",
+   "Cybersecurity Risk Ratings Platforms Download report Bitsight Named a"
+  ]
+ },
+ "check-point-firewall": {
+  "mq": [
+   "Email Security",
+   "Email Security Platforms",
+   "Endpoint Protection Platforms",
+   "Hybrid Mesh Firewalls",
+   "SASE Platforms",
+   "Single Vendor SASE",
+   "Single-Vendor SASE"
+  ],
+  "name": "Check Point Quantum",
+  "peer_markets": [],
+  "slug": "check-point-firewall",
+  "wave": [
+   "Cloud Workload Security",
+   "Endpoint Detection and Response",
+   "Enterprise Email Security",
+   "Enterprise Firewall Solutions",
+   "Enterprise Firewalls",
+   "Mobile Threat Protection",
+   "Zero Trust Platform Providers",
+   "Zero Trust eXtended Ecosystem Platform Providers"
+  ]
+ },
+ "checkmarx-one": {
+  "mq": [
+   "Application Security Testing",
+   "Software Supply Chain Security"
+  ],
+  "name": "Checkmarx One",
+  "peer_markets": [
+   "application-security-testing"
+  ],
+  "slug": "checkmarx-one",
+  "wave": [
+   "Static Application Security Testing",
+   "Static Application Security Testing Solutions",
+   "for SAST"
+  ]
+ },
+ "cisco-umbrella": {
+  "mq": [],
+  "name": "Cisco Umbrella",
+  "peer_markets": [
+   "security-service-edge"
+  ],
+  "slug": "cisco-umbrella",
+  "wave": []
+ },
+ "code42-insider-risk": {
+  "mq": [
+   "Email Security"
+  ],
+  "name": "Mimecast Incydr",
+  "peer_markets": [],
+  "slug": "code42-insider-risk",
+  "wave": [
+   "Human Risk Management Solutions"
+  ]
+ },
+ "cohesity-dataprotect": {
+  "mq": [
+   "Data Center Backup and Recovery Solutions"
+  ],
+  "name": "Cohesity DataProtect",
+  "peer_markets": [
+   "backup-and-data-protection-platforms",
+   "hybrid-cloud-storage"
+  ],
+  "slug": "cohesity-dataprotect",
+  "wave": []
+ },
+ "commvault-cloud": {
+  "mq": [
+   "Backup and Data Protection Platforms"
+  ],
+  "name": "Commvault Cloud",
+  "peer_markets": [],
+  "slug": "commvault-cloud",
+  "wave": [
+   "Data Resilience Solutions"
+  ]
+ },
+ "credo-ai": {
+  "mq": [],
+  "name": "Credo AI",
+  "peer_markets": [],
+  "slug": "credo-ai",
+  "wave": [
+   "AI Governance",
+   "AI Governance Platforms",
+   "AI Governance Solutions"
+  ]
+ },
+ "crowdstrike-falcon": {
+  "mq": [
+   "Cyberthreat Intelligence Skip to Main Content Fal",
+   "Endpoint Protection"
+  ],
+  "name": "CrowdStrike Falcon",
+  "peer_markets": [],
+  "slug": "crowdstrike-falcon",
+  "wave": []
+ },
+ "cyware-orchestrate": {
+  "mq": [],
+  "name": "Cyware Orchestrate",
+  "peer_markets": [
+   "security-threat-intelligence-products-and-services"
+  ],
+  "slug": "cyware-orchestrate",
+  "wave": []
+ },
+ "datadog-monitoring": {
+  "mq": [
+   "Digital Experience Monitoring",
+   "Observability Platforms"
+  ],
+  "name": "Datadog",
+  "peer_markets": [],
+  "slug": "datadog-monitoring",
+  "wave": []
+ },
+ "delinea-secret-server": {
+  "mq": [
+   "Privileged Access Management Analyst Report"
+  ],
+  "name": "Delinea Secret Server",
+  "peer_markets": [
+   "privileged-access-management"
+  ],
+  "slug": "delinea-secret-server",
+  "wave": []
+ },
+ "druva-backup": {
+  "mq": [
+   "Backup and Data Protection Platforms"
+  ],
+  "name": "Druva Data Resiliency Cloud",
+  "peer_markets": [],
+  "slug": "druva-backup",
+  "wave": [
+   "Data Resilience Solutions"
+  ]
+ },
+ "dynatrace": {
+  "mq": [
+   "Observability Platforms"
+  ],
+  "name": "Dynatrace",
+  "peer_markets": [],
+  "slug": "dynatrace",
+  "wave": [
+   "AIOps Platforms"
+  ]
+ },
+ "elastic-defend": {
+  "mq": [
+   "Observability Platforms"
+  ],
+  "name": "Elastic Defend",
+  "peer_markets": [],
+  "slug": "elastic-defend",
+  "wave": [
+   "Extended Detection And Response Platforms",
+   "XDR Platforms"
+  ]
+ },
+ "elastic-security": {
+  "mq": [
+   "Observability Platforms"
+  ],
+  "name": "Elastic Security",
+  "peer_markets": [],
+  "slug": "elastic-security",
+  "wave": [
+   "Extended Detection And Response Platforms",
+   "XDR Platforms"
+  ]
+ },
+ "eset-protect": {
+  "mq": [],
+  "name": "ESET PROTECT",
+  "peer_markets": [
+   "endpoint-protection-platforms"
+  ],
+  "slug": "eset-protect",
+  "wave": []
+ },
+ "exabeam-fusion": {
+  "mq": [
+   "Security Information and Event Management"
+  ],
+  "name": "Exabeam Fusion SIEM",
+  "peer_markets": [],
+  "slug": "exabeam-fusion",
+  "wave": []
+ },
+ "extrahop-revealx": {
+  "mq": [
+   "Network Detection and Response"
+  ],
+  "name": "ExtraHop RevealX",
+  "peer_markets": [],
+  "slug": "extrahop-revealx",
+  "wave": [
+   "Network Analysis And Visibility Solutions"
+  ]
+ },
+ "flexera-one": {
+  "mq": [
+   "SaaS Management Platforms",
+   "second consecutive year"
+  ],
+  "name": "Flexera One",
+  "peer_markets": [],
+  "slug": "flexera-one",
+  "wave": []
+ },
+ "fortideceptor": {
+  "mq": [
+   "Email Security",
+   "Hybrid Mesh Firewall",
+   "SASE Platforms",
+   "Security Information and Event Management"
+  ],
+  "name": "Fortinet FortiDeceptor",
+  "peer_markets": [],
+  "slug": "fortideceptor",
+  "wave": []
+ },
+ "fortinac": {
+  "mq": [
+   "Email Security",
+   "Hybrid Mesh Firewall",
+   "SASE Platforms",
+   "Security Information and Event Management"
+  ],
+  "name": "FortiNAC",
+  "peer_markets": [],
+  "slug": "fortinac",
+  "wave": []
+ },
+ "fortinet-fortigate": {
+  "mq": [
+   "Email Security",
+   "Hybrid Mesh Firewall",
+   "SASE Platforms",
+   "Security Information and Event Management"
+  ],
+  "name": "Fortinet FortiGate",
+  "peer_markets": [],
+  "slug": "fortinet-fortigate",
+  "wave": []
+ },
+ "grafana": {
+  "mq": [
+   "Observability Platforms"
+  ],
+  "name": "Grafana",
+  "peer_markets": [],
+  "slug": "grafana",
+  "wave": []
+ },
+ "hexnode-uem": {
+  "mq": [
+   "Endpoint Management Tools"
+  ],
+  "name": "Hexnode UEM",
+  "peer_markets": [],
+  "slug": "hexnode-uem",
+  "wave": []
+ },
+ "hillstone-ips": {
+  "mq": [
+   "Enterprise Network Firewalls Market Segment by Gartner",
+   "Enterprise Network Firewalls for a Fifth Year Learn More",
+   "Enterprise Network Firewalls for a Fourth Year Learn More",
+   "Enterprise Network Firewalls for a Third Year Learn More",
+   "Fifth Consecutive Year",
+   "Fourth Consecutive Year",
+   "Intrusion Detection and Prevention Systems",
+   "Network Firewalls",
+   "Network Firewalls Hillstone Networks named as a Visionary in",
+   "Network Firewalls Learn More",
+   "Network Firewalls by Hillstone Networks",
+   "Network Firewalls here",
+   "Third Consecutive Year",
+   "Unified Threat Management Hillstone has maintained",
+   "Unified Threat Management by Gartner"
+  ],
+  "name": "Hillstone NIPS",
+  "peer_markets": [
+   "network-detection-and-response"
+  ],
+  "slug": "hillstone-ips",
+  "wave": []
+ },
+ "imperva-waf": {
+  "mq": [],
+  "name": "Imperva Web Application Firewall",
+  "peer_markets": [
+   "api-protection",
+   "cloud-web-application-and-api-protection",
+   "online-fraud-detection"
+  ],
+  "slug": "imperva-waf",
+  "wave": [
+   "Web Application Firewall Solutions"
+  ]
+ },
+ "inv-gate-itam": {
+  "mq": [],
+  "name": "InvGate Assets",
+  "peer_markets": [
+   "it-service-management-platforms"
+  ],
+  "slug": "inv-gate-itam",
+  "wave": []
+ },
+ "jamf": {
+  "mq": [
+   "Endpoint Management Tools"
+  ],
+  "name": "Jamf Pro",
+  "peer_markets": [],
+  "slug": "jamf",
+  "wave": []
+ },
+ "jumpcloud": {
+  "mq": [],
+  "name": "JumpCloud",
+  "peer_markets": [
+   "endpoint-management-tools"
+  ],
+  "slug": "jumpcloud",
+  "wave": []
+ },
+ "logicgate-risk-cloud": {
+  "mq": [
+   "GRC Tools",
+   "Governance"
+  ],
+  "name": "LogicGate Risk Cloud",
+  "peer_markets": [],
+  "slug": "logicgate-risk-cloud",
+  "wave": [
+   "Governance",
+   "Third-Party Risk Management Platforms"
+  ]
+ },
+ "microsoft-sentinel": {
+  "mq": [
+   "Cloud Database Management Systems",
+   "Cloud-Native Application Platforms",
+   "Container Management",
+   "Data Science and Machine Learning Platforms",
+   "Desktop as a Service",
+   "Distributed Hybrid Infrastructure",
+   "Integration Platform as a Service",
+   "Strategic Cloud Platform Services"
+  ],
+  "name": "Microsoft Sentinel",
+  "peer_markets": [],
+  "slug": "microsoft-sentinel",
+  "wave": [
+   "DevOps Platforms"
+  ]
+ },
+ "mimecast-email": {
+  "mq": [
+   "Email Security"
+  ],
+  "name": "Mimecast Email Security",
+  "peer_markets": [],
+  "slug": "mimecast-email",
+  "wave": [
+   "Human Risk Management Solutions"
+  ]
+ },
+ "octopus-deploy-config": {
+  "mq": [],
+  "name": "Octopus Deploy",
+  "peer_markets": [
+   "devops-platforms"
+  ],
+  "slug": "octopus-deploy-config",
+  "wave": []
+ },
+ "okta": {
+  "mq": [
+   "Access Management"
+  ],
+  "name": "Okta Identity Cloud",
+  "peer_markets": [],
+  "slug": "okta",
+  "wave": []
+ },
+ "omnissa-workspace-one": {
+  "mq": [
+   "Endpoint Management Tools"
+  ],
+  "name": "Omnissa Workspace ONE",
+  "peer_markets": [],
+  "slug": "omnissa-workspace-one",
+  "wave": []
+ },
+ "onetrust": {
+  "mq": [
+   "AI Governance Platforms"
+  ],
+  "name": "OneTrust",
+  "peer_markets": [],
+  "slug": "onetrust",
+  "wave": [
+   "Privacy Management Software"
+  ]
+ },
+ "ping-identity": {
+  "mq": [
+   "Access Management"
+  ],
+  "name": "Ping Identity",
+  "peer_markets": [],
+  "slug": "ping-identity",
+  "wave": [
+   "Close Ping Identity Named a Leader in CIAM in the",
+   "Customer Identity and Access Management",
+   "Dec 6, 2024 -minute read Darryl Jones VP"
+  ]
+ },
+ "proofpoint-email": {
+  "mq": [
+   "Email Security for the second consecutive year"
+  ],
+  "name": "Proofpoint Email Security",
+  "peer_markets": [],
+  "slug": "proofpoint-email",
+  "wave": []
+ },
+ "proofpoint-security-awareness": {
+  "mq": [
+   "Email Security for the second consecutive year"
+  ],
+  "name": "Proofpoint Security Awareness Training",
+  "peer_markets": [],
+  "slug": "proofpoint-security-awareness",
+  "wave": []
+ },
+ "rapid7-insightconnect": {
+  "mq": [
+   "Exposure Assessment Platforms",
+   "Security Information and Event Management"
+  ],
+  "name": "Rapid7 InsightConnect",
+  "peer_markets": [],
+  "slug": "rapid7-insightconnect",
+  "wave": []
+ },
+ "samanage-solarwinds": {
+  "mq": [
+   "Observability Platforms"
+  ],
+  "name": "SolarWinds Service Desk",
+  "peer_markets": [],
+  "slug": "samanage-solarwinds",
+  "wave": []
+ },
+ "sentinelone-singularity": {
+  "mq": [
+   "Endpoint Protection"
+  ],
+  "name": "SentinelOne Singularity",
+  "peer_markets": [],
+  "slug": "sentinelone-singularity",
+  "wave": []
+ },
+ "solarwinds-dlp": {
+  "mq": [
+   "Observability Platforms"
+  ],
+  "name": "SolarWinds Access Rights Manager",
+  "peer_markets": [],
+  "slug": "solarwinds-dlp",
+  "wave": []
+ },
+ "splunk-enterprise-security": {
+  "mq": [
+   "Security Information and Event Management"
+  ],
+  "name": "Splunk Enterprise Security",
+  "peer_markets": [
+   "observability-platforms",
+   "security-information-event-management"
+  ],
+  "slug": "splunk-enterprise-security",
+  "wave": [
+   "Security Analytics Platforms"
+  ]
+ },
+ "splunk-itsi": {
+  "mq": [
+   "Security Information and Event Management"
+  ],
+  "name": "Splunk IT Service Intelligence (ITSI)",
+  "peer_markets": [
+   "observability-platforms",
+   "security-information-event-management"
+  ],
+  "slug": "splunk-itsi",
+  "wave": [
+   "Security Analytics Platforms"
+  ]
+ },
+ "splunk-soar": {
+  "mq": [
+   "Security Information and Event Management"
+  ],
+  "name": "Splunk SOAR",
+  "peer_markets": [
+   "observability-platforms",
+   "security-information-event-management"
+  ],
+  "slug": "splunk-soar",
+  "wave": [
+   "Security Analytics Platforms"
+  ]
+ },
+ "tenable-one": {
+  "mq": [
+   "Exposure Assessment Platforms"
+  ],
+  "name": "Tenable One",
+  "peer_markets": [
+   "cloud-native-application-protection-platforms",
+   "exposure-assessment-platforms",
+   "it-security",
+   "software-supply-chain-security",
+   "vulnerability-assessment"
+  ],
+  "slug": "tenable-one",
+  "wave": []
+ },
+ "trend-micro-apex-one": {
+  "mq": [],
+  "name": "Trend Micro Apex One",
+  "peer_markets": [],
+  "slug": "trend-micro-apex-one",
+  "wave": [
+   "Endpoint Security"
+  ]
+ },
+ "trend-micro-tippingpoint": {
+  "mq": [],
+  "name": "Trend Micro TippingPoint",
+  "peer_markets": [],
+  "slug": "trend-micro-tippingpoint",
+  "wave": [
+   "Endpoint Security"
+  ]
+ },
+ "vectra-ai": {
+  "mq": [
+   "Network Detection and Response"
+  ],
+  "name": "Vectra AI",
+  "peer_markets": [
+   "network-detection-and-response"
+  ],
+  "slug": "vectra-ai",
+  "wave": []
+ },
+ "veeam-backup": {
+  "mq": [
+   "Backup and Data Protection Platforms",
+   "Data Center Backup & Recovery Solutions from",
+   "Data Protection Leader in The Forrester Wave"
+  ],
+  "name": "Veeam Backup & Replication",
+  "peer_markets": [],
+  "slug": "veeam-backup",
+  "wave": []
+ },
+ "veritas-netbackup": {
+  "mq": [
+   "Data Center Backup and Recovery Solutions"
+  ],
+  "name": "NetBackup (Cohesity)",
+  "peer_markets": [
+   "backup-and-data-protection-platforms",
+   "hybrid-cloud-storage"
+  ],
+  "slug": "veritas-netbackup",
+  "wave": []
+ },
+ "versa-networks": {
+  "mq": [
+   "SASE Platforms",
+   "SASE Platforms summary chart 1 Gartner",
+   "Single-Vendor SASE"
+  ],
+  "name": "Versa Networks",
+  "peer_markets": [
+   "single-vendor-sase"
+  ],
+  "slug": "versa-networks",
+  "wave": [
+   "Secure Access Service Edge Solutions",
+   "Zero Trust Edge Solution"
+  ]
+ },
+ "wallix-bastion": {
+  "mq": [],
+  "name": "WALLIX Bastion",
+  "peer_markets": [],
+  "slug": "wallix-bastion",
+  "wave": [
+   "Privileged Identity Management"
+  ]
+ },
+ "watchguard-firebox": {
+  "mq": [],
+  "name": "WatchGuard Firebox",
+  "peer_markets": [
+   "hybrid-mesh-firewall"
+  ],
+  "slug": "watchguard-firebox",
+  "wave": []
+ },
+ "withsecure-endpoint": {
+  "mq": [
+   "Endpoint Protection"
+  ],
+  "name": "WithSecure Elements",
+  "peer_markets": [],
+  "slug": "withsecure-endpoint",
+  "wave": [
+   "Managed Detection and Response Services In Europe"
+  ]
+ },
+ "wiz-ai-spm": {
+  "mq": [],
+  "name": "Wiz AI-SPM",
+  "peer_markets": [
+   "cloud-security-posture-management-tools"
+  ],
+  "slug": "wiz-ai-spm",
+  "wave": [
+   "CNAP, Q1",
+   "CNAPP, Q1",
+   "Cloud Native Application Protection Solutions",
+   "evaluation Read what companies fall under the Leaders"
+  ]
+ },
+ "zscaler-zero-trust": {
+  "mq": [
+   "SASE Platforms",
+   "Security Service Edge"
+  ],
+  "name": "Zscaler Zero Trust Exchange",
+  "peer_markets": [],
+  "slug": "zscaler-zero-trust",
+  "wave": [
+   "Secure Access Service Edge Solutions"
+  ]
+ }
+}

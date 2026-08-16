@@ -28,7 +28,8 @@ company_size:
 market_rank:
   kpi-ca-managers: 7
 sources:
-  - https://www.splunk.com/en_us/products/it-service-intelligence.html
+- https://www.splunk.com/en_us/products/it-service-intelligence.html
+- https://www.gartner.com/reviews/market/observability-platforms
 first_added: 2026-08-12
 last_verified: '2026-08-11'
 needs_review: false

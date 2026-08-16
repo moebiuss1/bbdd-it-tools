@@ -59,6 +59,11 @@ def compute_rankings(config: dict) -> dict[str, list[dict]]:
     """
     store = load_candidates_store()
     mention_counts = store.get("mention_counts", {})
+    # Estrellas por URL de repositorio, tal como las deja fetch_candidates.py.
+    # Se cruzan con el campo `repo` de la ficha, que es exacto; casar por nombre
+    # fallaba en cuanto el repositorio no se llamaba igual que el producto
+    # (graylog2-server frente a Graylog Security).
+    estrellas = store.get("github_stars", {})
     slugs = list_all_slugs()
     weights = config.get("ranking_weights", {})
 
@@ -81,7 +86,8 @@ def compute_rankings(config: dict) -> dict[str, list[dict]]:
         # Señales (independientes de la categoría)
         mentions = sum(mention_counts.get(slug, {}).values())
         gartner_mentions = mention_counts.get(slug, {}).get("gartner", 0)
-        github_stars = 0  # se podría obtener de GitHub API
+        repo_url = (tool.get("repo") or "").rstrip("/")
+        github_stars = estrellas.get(repo_url, 0)
         cert_count = len(tool.get("certifications", []))
 
         # Log de github stars (evitar log(0))
