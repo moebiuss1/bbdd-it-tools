@@ -1,5 +1,5 @@
 ---
-name: Code42 Incydr
+name: Mimecast Incydr
 slug: code42-insider-risk
 categories:
 - dlp
@@ -11,10 +11,10 @@ tags:
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$25/usuario/año.
-website: https://www.code42.com
+website: https://www.mimecast.com/products/incydr/
 description: Plataforma de detección de riesgos internos y protección de datos con monitorización de movimientos de archivos,
   detección de exfiltración y respuesta a incidentes de datos. Enfoque en riesgos de empleados y terceros.
-why_reference: Code42 Incydr ha sido destacada en informes de Forrester y Gartner para gestión de riesgos internos. Su enfoque
+why_reference: Mimecast Incydr ha sido destacada en informes de Forrester y Gartner para gestión de riesgos internos. Su enfoque
   en la detección de movimientos de datos de empleados —sin bloquear la productividad— la diferencia de las soluciones DLP
   tradicionales.
 certifications:
@@ -32,7 +32,7 @@ last_verified: '2026-08-10'
 needs_review: false
 logo: /logos/code42-insider-risk.png
 ---
-Code42 Incydr aborda la fuga de datos desde un ángulo distinto al DLP clásico: en lugar de clasificar el contenido y
+Mimecast Incydr aborda la fuga de datos desde un ángulo distinto al DLP clásico: en lugar de clasificar el contenido y
 bloquear lo que encaje en una regla, registra todo movimiento de ficheros —a USB, a la nube personal, a repositorios
 de código, al correo web— y señala el comportamiento anómalo de una persona concreta.
 
@@ -47,3 +47,5 @@ Ese enfoque evita el trabajo interminable de clasificación previa, pero implica
 identificadas, con las consecuencias legales que eso tiene en la UE: exige base jurídica, información a la plantilla
 y, con frecuencia, consulta a la representación laboral. No sustituye a un DLP de contenido cuando la obligación es
 impedir la salida de un tipo de dato concreto.
+
+Mimecast compró Code42 en 2024 y el producto se vende hoy como Mimecast Incydr, dentro de su plataforma de riesgo humano.

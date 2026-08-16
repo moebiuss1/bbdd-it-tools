@@ -1,5 +1,5 @@
 ---
-name: AuditBoard
+name: Optro (antes AuditBoard)
 slug: auditboard
 categories:
 - audit-management
@@ -16,7 +16,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción modular por número de usuarios y módulos contratados (auditoría, riesgo, cumplimiento,
   SOX).
-website: https://www.auditboard.com
+website: https://optro.ai
 cert_url: https://trust.auditboard.com
 description: Plataforma de auditoría interna, riesgo y cumplimiento con gestión del plan de auditoría, papeles de
   trabajo, hallazgos, controles SOX y seguimiento de la remediación.
@@ -48,3 +48,5 @@ AuditBoard cubre el ciclo completo de la auditoría interna: evaluación de ries
 El módulo de controles internos y SOX es su origen y sigue siendo su punto fuerte: matriz de riesgos y controles, pruebas por ciclo, evidencia solicitada directamente a los responsables mediante peticiones automatizadas y estado de cumplimiento en tiempo real, sin la ronda de correos y hojas de cálculo que caracteriza el proceso tradicional.
 
 Alrededor han crecido los módulos de riesgo operativo, cumplimiento normativo y riesgo de terceros, que comparten el mismo inventario de riesgos y controles, de modo que un control probado por auditoría vale también como evidencia para cumplimiento en lugar de volver a solicitarse.
+
+AuditBoard opera desde 2026 bajo la marca Optro; el producto y su base de clientes son los mismos.

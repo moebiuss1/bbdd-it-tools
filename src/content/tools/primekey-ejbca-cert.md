@@ -1,5 +1,5 @@
 ---
-name: PrimeKey EJBCA Enterprise
+name: Keyfactor EJBCA Enterprise
 slug: primekey-ejbca-cert
 categories:
 - cert-managers
@@ -12,7 +12,7 @@ tags:
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$15,000/año.
-website: https://www.primekey.com
+website: https://www.keyfactor.com/primekey/
 cert_url: https://www.keyfactor.com/security-compliance/
 description: Plataforma PKI empresarial basada en EJBCA con gestión de certificados para identidades humanas, dispositivos,
   servidores y firma de código. Certificación Common Criteria EAL4+ para entornos gubernamentales y defensa.
@@ -34,4 +34,6 @@ needs_review: false
 logo: /logos/primekey-ejbca-cert.png
 ---
 
-PrimeKey EJBCA Enterprise proporciona capacidades avanzadas en la categoría cert-managers para organizaciones que necesitan gestionar sus entornos IT con soluciones respaldadas por analistas independientes.
+Keyfactor EJBCA Enterprise proporciona capacidades avanzadas en la categoría cert-managers para organizaciones que necesitan gestionar sus entornos IT con soluciones respaldadas por analistas independientes.
+
+PrimeKey se integró en Keyfactor, que mantiene EJBCA como su plataforma de PKI.

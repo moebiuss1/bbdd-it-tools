@@ -1,5 +1,5 @@
 ---
-name: Digital Guardian DLP
+name: Fortra Data Loss Prevention
 slug: digital-guardian-dlp
 categories:
 - dlp
@@ -15,12 +15,12 @@ type: comercial
 cost_model: suscripción
 cost_details: Licencia anual basada en número de endpoints. Desde ~$40,000/año para despliegue mínimo. Modelo SaaS y on-premise
   disponibles.
-website: https://www.digitalguardian.com
+website: https://www.fortra.com/platform/data-loss-prevention
 cert_url: https://trust.fortra.com/
 description: Plataforma DLP con telemetría profunda de endpoint que protege datos sensibles tanto dentro como fuera de la
   red corporativa. Especializada en entornos de defensa, farmacéutico y manufactura donde la protección de propiedad intelectual
   y datos clasificados es crítica.
-why_reference: Digital Guardian (parte de Fortra desde 2022) es reconocida como una de las soluciones DLP más completas para
+why_reference: Fortra DLP (parte de Fortra desde 2022) es reconocida como una de las soluciones DLP más completas para
   la protección de datos en endpoints, especialmente en escenarios off-network donde otras soluciones pierden visibilidad.
   Su capacidad de capturar telemetría a nivel de kernel —incluyendo movimientos de ratón y pulsaciones de teclas en contextos
   de investigación— la hace única en sectores de defensa y alta regulación.
@@ -40,9 +40,9 @@ needs_review: false
 logo: /logos/digital-guardian-dlp.png
 ---
 
-Digital Guardian es la plataforma DLP diseñada para la protección de datos en los
+Fortra DLP es la plataforma DLP diseñada para la protección de datos en los
 entornos más exigentes. A diferencia de las soluciones DLP tradicionales que
-dependen de la inspección de tráfico de red, Digital Guardian opera a nivel de
+dependen de la inspección de tráfico de red, Fortra DLP opera a nivel de
 endpoint con visibilidad completa incluso cuando los dispositivos están fuera de
 la red corporativa.
 - DLP endpoint-first: Visibilidad y control de datos dentro y fuera de la red
@@ -54,3 +54,5 @@ la red corporativa.
 - Plantillas de políticas preconfiguradas para GDPR, HIPAA, PCI DSS, ITAR
 - Registro completo de movimientos de datos con evidencia para auditoría
 - Informes de exposición de datos y tendencias de incidentes
+
+Digital Guardian pasó a Fortra y el producto se comercializa hoy como Fortra Data Loss Prevention.

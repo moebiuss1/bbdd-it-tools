@@ -29,9 +29,9 @@ company_size:
 - pequeña
 - mediana
 market_rank:
-  identity-managers: 10
-  mfa: 5
-  sso: 6
+  identity-managers: 9
+  mfa: 4
+  sso: 5
 sources:
   - https://www.gartner.com/reviews/market/access-management
 first_added: 2026-08-10

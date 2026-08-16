@@ -14,7 +14,7 @@ tags:
 type: comercial
 cost_model: suscripción
 cost_details: Licencia anual basada en número de cuentas privilegiadas gestionadas. Desde ~$50,000/año para despliegues básicos.
-website: https://www.cyberark.com
+website: https://www.paloaltonetworks.com/idira
 description: Plataforma líder de gestión de accesos privilegiados (PAM) que protege cuentas administrativas, credenciales
   y secretos en entornos híbridos. Incluye vaulting de contraseñas, rotación automática, grabación de sesiones y gestión de
   identidades de máquina con CyberArk Conjur.
@@ -54,3 +54,5 @@ just-in-time con elevación temporal de privilegios.
 - Trazabilidad completa de quién accedió, a qué y qué hizo (grabación de sesiones)
 - Rotación automática de credenciales con intervalo configurable
 - Informes predefinidos para PCI DSS (Req. 7, 8), SOX, NIST 800-53, ISO 27001 (A.9)
+
+Palo Alto Networks completó la compra de CyberArk en febrero de 2026 y agrupó su cartera bajo la marca Idira; la marca CyberArk se mantiene y los clientes conservan la plataforma.

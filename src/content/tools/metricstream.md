@@ -29,11 +29,11 @@ certifications:
 company_size:
 - grande
 market_rank:
-  audit-management: 3
+  audit-management: 4
   compliance-management: 4
   kpi-ca-managers: 3
   policy-management: 3
-  risk-management: 3
+  risk-management: 4
 sources:
 - https://www.gartner.com/reviews/market/audit-management-solutions/vendor/metricstream
 first_added: 2026-08-10

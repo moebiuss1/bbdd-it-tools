@@ -23,7 +23,7 @@ company_size:
 - pequeña
 - mediana
 market_rank:
-  ids: 9
+  ids: 8
 repo: https://github.com/aide/aide
 license: GPL-2.0
 sources:

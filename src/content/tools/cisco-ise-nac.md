@@ -28,7 +28,7 @@ certifications:
 company_size:
 - grande
 market_rank:
-  identity-managers: 8
+  identity-managers: 7
   nac: 1
 sources:
   - https://www.gartner.com/reviews/market/network-access-control

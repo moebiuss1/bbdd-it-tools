@@ -13,7 +13,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción por número de proveedores gestionados; también en modalidad de servicio gestionado con
   analistas.
-website: https://www.prevalent.net
+website: https://mitratech.com/products/prevalent/
 description: Plataforma de gestión del riesgo de terceros centrada en el ciclo de vida completo del proveedor, desde
   la diligencia previa a la contratación hasta la salida.
 why_reference: Prevalent es uno de los especialistas puros de riesgo de terceros que Gartner sigue en su mercado,
@@ -41,3 +41,5 @@ Prevalent organiza el riesgo de terceros como un ciclo de vida y no como una cam
 Durante la relación mantiene el seguimiento de los compromisos contractuales y de los planes de remediación, y en la salida gestiona la lista de comprobación de terminación: retirada de accesos, devolución o destrucción de datos y cierre de integraciones, que es la fase que casi ningún programa documenta.
 
 Su modalidad de servicio gestionado, con analistas que persiguen las respuestas de los proveedores y validan las evidencias, resuelve el cuello de botella real de estos programas, que casi nunca es la herramienta sino el tiempo del equipo.
+
+Mitratech compró Prevalent en 2024 y la mantiene como su línea de riesgo de terceros.

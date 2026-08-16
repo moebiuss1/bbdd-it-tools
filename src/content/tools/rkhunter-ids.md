@@ -23,7 +23,7 @@ company_size:
 - mediana
 - grande
 market_rank:
-  ids: 13
+  ids: 12
 repo: https://sourceforge.net/projects/rkhunter/
 license: GPL-2.0
 sources:

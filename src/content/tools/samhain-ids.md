@@ -23,7 +23,7 @@ company_size:
 - mediana
 - grande
 market_rank:
-  ids: 12
+  ids: 11
 repo: https://www.la-samhna.de/samhain/
 license: GPL-2.0
 sources:

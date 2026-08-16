@@ -12,7 +12,7 @@ tags:
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$10,000/año.
-website: https://www.nexusgroup.com
+website: https://nexus.ingroupe.com
 description: Plataforma de gestión de certificados digitales con automatización del ciclo de vida, integración con smart cards
   y soporte para identidades de dispositivos IoT. Especializada en entornos de administración pública y defensa.
 why_reference: Nexus (parte de IN Groupe) es uno de los proveedores europeos de confianza digital más importantes, con fuerte

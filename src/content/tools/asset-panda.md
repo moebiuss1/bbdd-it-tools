@@ -22,7 +22,7 @@ company_size:
 - pequeña
 - mediana
 market_rank:
-  it-asset-managers: 7
+  it-asset-managers: 6
 sources:
 - https://www.gartner.com/reviews/market/software-asset-management-tools
 first_added: 2026-08-10

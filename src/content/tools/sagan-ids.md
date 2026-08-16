@@ -22,7 +22,7 @@ company_size:
 - pequeña
 - mediana
 market_rank:
-  ids: 11
+  ids: 10
 repo: https://github.com/quadrantsec/sagan
 license: GPL-2.0
 sources:

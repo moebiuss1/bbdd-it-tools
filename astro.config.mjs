@@ -79,6 +79,27 @@ function externalizeInlineScripts() {
  * único que permite GitHub Pages (no hay cabeceras HTTP que emitir un 301).
  * El mapa es el mismo `categoryAliases` de src/data/categories.ts.
  */
+/**
+ * Fichas retiradas del catálogo, con la categoría a la que se manda al visitante.
+ *
+ * Se borran las herramientas que han dejado de existir —Skybox cerró en febrero
+ * de 2025, la marca MVISION la retiró Trellix, ForgeRock se disolvió en Ping—,
+ * pero sus URLs estuvieron publicadas e indexadas y no pueden pasar a devolver
+ * un 404: cada una redirige a la categoría donde estaba, que es donde el
+ * visitante encontrará las alternativas vivas.
+ */
+const retiredTools = Object.fromEntries(
+  Object.entries({
+    "acl-grc": "audit-management",
+    "forgerock-identity": "identity-managers",
+    "mcafee-trellix-legacy": "edr",
+    "sai-global-grc": "risk-management",
+    "skybox-security": "kpi-ca-managers",
+    "snow-software": "it-asset-managers",
+    "tripwire-ids": "ids",
+  }).map(([slug, cat]) => [`/herramientas/${slug}`, `${BASE}categorias/${cat}`]),
+);
+
 const categoryRedirects = Object.fromEntries(
   Object.entries({
     "ai-data-security": "llm-security",
@@ -115,7 +136,7 @@ export default defineConfig({
   site: SITE,
   base: BASE,
   output: "static",
-  redirects: categoryRedirects,
+  redirects: { ...categoryRedirects, ...retiredTools },
   integrations: [sitemap(), externalizeInlineScripts()],
   markdown: {
     rehypePlugins: [[rehypeSanitize, markdownSchema]],

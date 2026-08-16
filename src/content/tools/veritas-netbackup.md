@@ -1,5 +1,5 @@
 ---
-name: Veritas NetBackup
+name: NetBackup (Cohesity)
 slug: veritas-netbackup
 categories:
 - enterprise-backup
@@ -14,7 +14,7 @@ type: comercial
 cost_model: licencia-perpetua
 cost_details: Licencia por capacidad o por número de servidores, perpetua o por suscripción. Appliances integrados
   disponibles.
-website: https://www.veritas.com/protection/netbackup
+website: https://www.cohesity.com/platform/netbackup/
 cert_url: https://www.veritas.com/trust
 description: Plataforma de backup empresarial de mayor recorrido del mercado, con soporte de prácticamente cualquier
   sistema operativo, hipervisor, base de datos y cabina del centro de datos.
@@ -44,3 +44,5 @@ NetBackup se diseñó para el centro de datos grande y heterogéneo: decenas de 
 Las versiones recientes han incorporado lo que exige el escenario actual: almacenamiento inmutable e indeleble en su propio dispositivo y en almacenamiento de objetos, detección de anomalías en las copias, aislamiento del plano de gestión y orquestación de la recuperación con planes ejecutables y comprobables.
 
 Su gestión centralizada permite operar decenas de dominios de copia distribuidos geográficamente con políticas comunes e informes de cumplimiento del nivel de servicio, que es el requisito habitual cuando la protección de datos se audita.
+
+Cohesity absorbió el negocio de protección de datos de Veritas en diciembre de 2024; NetBackup se vende hoy dentro de su catálogo.

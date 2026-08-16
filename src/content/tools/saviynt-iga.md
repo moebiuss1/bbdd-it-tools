@@ -26,7 +26,7 @@ certifications:
 company_size:
 - grande
 market_rank:
-  identity-managers: 5
+  identity-managers: 4
   pam: 7
 sources:
   - https://www.gartner.com/reviews/market/privileged-access-management

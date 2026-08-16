@@ -25,7 +25,7 @@ company_size:
 - pequeña
 - mediana
 market_rank:
-  edr: 18
+  edr: 17
 sources:
   - https://www.gartner.com/reviews/market/endpoint-detection-and-response-solutions
 first_added: 2026-08-10

@@ -6,7 +6,7 @@ categories:
 type: comercial
 cost_model: presupuesto-personalizado
 cost_details: Licencia anual según número de certificados gestionados.
-website: https://www.venafi.com
+website: https://www.cyberark.com/products/machine-identity-security/
 description: Plataforma de gestión del ciclo de vida de certificados digitales y claves criptográficas para entornos empresariales.
   Automatiza emisión, renovación y revocación de certificados.
 why_reference: Líder en gestión de identidades de máquinas. Venafi es el referente en PKI empresarial y machine identity management,
@@ -40,3 +40,5 @@ Plataforma de gestión del ciclo de vida de certificados digitales y claves crip
 Líder en gestión de identidades de máquinas. Venafi es el referente en PKI empresarial y machine identity management, protegiendo las identidades de máquinas que ya superan en número a las humanas.
 
 Licencia anual según número de certificados gestionados.
+
+Venafi pasó a CyberArk en 2024 y, tras la compra de esta por Palo Alto Networks, su tecnología de identidad de máquina se integra en la plataforma Idira.

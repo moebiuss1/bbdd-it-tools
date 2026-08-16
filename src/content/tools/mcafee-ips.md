@@ -1,5 +1,5 @@
 ---
-name: McAfee Network Security (IPS)
+name: Trellix Intrusion Prevention System
 slug: mcafee-ips
 categories:
 - ips
@@ -11,7 +11,7 @@ tags:
 type: comercial
 cost_model: suscripción
 cost_details: Enterprise quote. Desde ~$15,000/año.
-website: https://www.trellix.com
+website: https://www.trellix.com/products/intrusion-prevention-system/
 cert_url: https://www.trellix.com/trust/information-security/certifications/
 description: Plataforma IPS con inspección avanzada de amenazas, detección de exploits y prevención de intrusiones. Ahora
   integrada en Trellix Network Security con capacidades XDR.
@@ -46,3 +46,5 @@ Al tratarse de una plataforma en transición de marca, lo primero que hay que ve
 calendario de soporte del modelo concreto y la continuidad de las suscripciones de firmas. En parques con equipos
 antiguos ya instalados, la decisión relevante suele ser si migrar a la línea actual de Trellix o sustituir por un
 NGFW que absorba la función de IPS.
+
+El IPS de red de McAfee Enterprise se vende hoy como Trellix Intrusion Prevention System.

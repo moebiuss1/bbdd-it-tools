@@ -26,7 +26,7 @@ company_size:
 - mediana
 - grande
 market_rank:
-  ids: 10
+  ids: 9
   log-management: 8
   siem: 11
 repo: https://github.com/Security-Onion-Solutions/securityonion

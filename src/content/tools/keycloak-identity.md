@@ -26,8 +26,8 @@ company_size:
 - mediana
 - grande
 market_rank:
-  identity-managers: 12
-  sso: 8
+  identity-managers: 11
+  sso: 7
 repo: https://github.com/keycloak/keycloak
 license: Apache-2.0
 sources:

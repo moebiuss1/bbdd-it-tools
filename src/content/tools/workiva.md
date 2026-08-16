@@ -29,7 +29,7 @@ certifications:
 company_size:
 - grande
 market_rank:
-  audit-management: 5
+  audit-management: 6
   compliance-management: 7
 sources:
 - https://www.gartner.com/reviews/market/audit-management-solutions

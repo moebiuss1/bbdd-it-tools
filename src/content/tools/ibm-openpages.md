@@ -28,7 +28,7 @@ certifications:
 company_size:
 - grande
 market_rank:
-  risk-management: 5
+  risk-management: 6
 sources:
 - https://www.gartner.com/reviews/market/it-risk-management-solutions
 first_added: &id001 2026-08-14

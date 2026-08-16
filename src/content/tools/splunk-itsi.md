@@ -26,7 +26,7 @@ certifications:
 company_size:
 - grande
 market_rank:
-  kpi-ca-managers: 6
+  kpi-ca-managers: 7
 sources:
   - https://www.splunk.com/en_us/products/it-service-intelligence.html
 first_added: 2026-08-12

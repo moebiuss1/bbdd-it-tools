@@ -1,5 +1,5 @@
 ---
-name: CloudHealth
+name: CloudHealth by Broadcom
 slug: cloudhealth
 categories:
 - cloud-cost
@@ -14,7 +14,7 @@ type: comercial
 cost_model: suscripción
 cost_details: Suscripción según el volumen de gasto cloud gestionado; muy usada también por proveedores de servicios
   gestionados.
-website: https://www.cloudhealthtech.com
+website: https://www.broadcom.com/products/software/finops/cloudhealth
 description: Plataforma de gestión financiera y de gobierno multinube con informes de coste, políticas automatizadas,
   recomendaciones de ahorro y facturación para clientes finales.
 why_reference: CloudHealth es una de las plataformas FinOps con mayor base instalada, especialmente entre proveedores

@@ -28,9 +28,9 @@ certifications:
 company_size:
 - grande
 market_rank:
-  identity-managers: 7
-  mfa: 4
-  sso: 5
+  identity-managers: 6
+  mfa: 3
+  sso: 4
 sources:
   - https://www.gartner.com/reviews/market/access-management
 first_added: 2026-08-10

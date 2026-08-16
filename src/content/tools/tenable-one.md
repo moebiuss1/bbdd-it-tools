@@ -32,7 +32,7 @@ company_size:
 - mediana
 - grande
 market_rank:
-  kpi-ca-managers: 5
+  kpi-ca-managers: 6
 cert_url: https://www.tenable.com/trust
 sources:
   - https://www.gartner.com/reviews/market/vulnerability-assessment

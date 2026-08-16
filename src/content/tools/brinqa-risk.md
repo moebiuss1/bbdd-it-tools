@@ -22,7 +22,7 @@ certifications:
 company_size:
 - grande
 market_rank:
-  kpi-ca-managers: 10
+  kpi-ca-managers: 8
 sources:
 - https://www.gartner.com/reviews/market/exposure-assessment-platforms/vendor/brinqa
 first_added: 2026-08-10

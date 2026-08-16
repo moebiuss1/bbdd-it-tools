@@ -29,11 +29,11 @@ certifications:
 company_size:
 - grande
 market_rank:
-  audit-management: 4
+  audit-management: 5
   compliance-management: 5
-  kpi-ca-managers: 4
+  kpi-ca-managers: 5
   policy-management: 4
-  risk-management: 4
+  risk-management: 5
 sources:
 - https://www.gartner.com/reviews/market/audit-management-solutions/vendor/archer/product/archer-audit-management
 first_added: 2026-08-10
