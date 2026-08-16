@@ -258,17 +258,26 @@ def enrich_tool(slug: str, candidate: dict, config: dict, mention_counts: dict) 
     return is_new
 
 
-def enrich_all(config: dict, limit: int = None) -> dict:
+def enrich_all(config: dict, limit: int = None, allow_new: bool = False) -> dict:
     """
-    Punto de entrada principal: enriquece todos los candidatos
-    que no tengan ficha todavía o necesiten revisión.
+    Enriquece las fichas del catálogo con lo descubierto por el rastreo.
+
+    Por defecto **no crea fichas nuevas**. Antes sí lo hacía, y con el
+    descubrimiento arreglado eso significaba publicar cada lunes hasta veinte
+    fichas automáticas con descripciones de relleno ("X es una herramienta de
+    Y", "Referente en el ámbito de Y") a partir de lo que más estrellas tuviera
+    en GitHub: entraban servidores de correo, clientes HTTP y proyectos de la
+    CNCF sin categoría. Este directorio dice de cada herramienta que es un
+    referente, y eso lo decide una persona: los candidatos se listan en el aviso
+    semanal y el alta se hace a mano. `--allow-new` mantiene el comportamiento
+    antiguo para quien lo quiera puntualmente.
     """
     store = load_candidates_store()
     candidates = store.get("candidates", {})
     mention_counts = store.get("mention_counts", {})
     existing_slugs = set(list_all_slugs())
 
-    stats = {"added": 0, "updated": 0, "skipped": 0}
+    stats = {"added": 0, "updated": 0, "skipped": 0, "proposed": 0}
     count = 0
 
     # Ordenar candidatos por menciones (los más mencionados primero)
@@ -283,6 +292,9 @@ def enrich_all(config: dict, limit: int = None) -> dict:
             break
 
         is_new = slug not in existing_slugs
+        if is_new and not allow_new:
+            stats["proposed"] += 1
+            continue
         label = "NUEVO" if is_new else "EXISTE"
 
         print(f"  📝 [{label}] {candidate.get('name', slug)[:60]}")
@@ -306,8 +318,14 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Enriquece/crea fichas de herramientas a partir de candidatos descubiertos")
     parser.add_argument("--limit", type=int, default=None, help="Máximo de herramientas a procesar en esta ejecución")
+    parser.add_argument("--allow-new", action="store_true",
+                        help="Crear fichas para candidatos que no están en el catálogo "
+                             "(desactivado por defecto: el alta es una decisión editorial)")
     args = parser.parse_args()
 
     config = load_config()
-    stats = enrich_all(config, limit=args.limit)
+    stats = enrich_all(config, limit=args.limit, allow_new=args.allow_new)
     print(f"\n📊 Resultados: {stats['added']} añadidas, {stats['updated']} actualizadas, {stats['skipped']} sin cambios")
+    if stats.get("proposed"):
+        print(f"   {stats['proposed']} candidatos nuevos NO se han dado de alta: el alta es "
+              f"editorial y se propone en el aviso semanal (data/catalog-health.md).")
