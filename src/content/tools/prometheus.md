@@ -34,7 +34,7 @@ sources:
 - https://prometheus.io/
 certifications: []
 first_added: 2026-08-14
-last_verified: '2026-08-16'
+last_verified: '2026-08-17'
 logo: /logos/prometheus.png
 needs_review: false
 ---

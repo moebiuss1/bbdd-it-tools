@@ -30,7 +30,7 @@ tags:
 - saas
 slug: servicenow-grc
 first_added: 2026-08-07
-last_verified: '2026-08-16'
+last_verified: '2026-08-17'
 needs_review: false
 sources: []
 market_rank:

@@ -12,15 +12,14 @@ tags:
 - multi-cloud
 type: comercial
 cost_model: licencia-perpetua
-cost_details: Licencia por capacidad o por número de servidores, perpetua o por suscripción. Appliances integrados
-  disponibles.
+cost_details: Licencia por capacidad o por número de servidores, perpetua o por suscripción. Appliances integrados disponibles.
 website: https://www.cohesity.com/platform/netbackup/
 cert_url: https://www.veritas.com/trust
-description: Plataforma de backup empresarial de mayor recorrido del mercado, con soporte de prácticamente cualquier
-  sistema operativo, hipervisor, base de datos y cabina del centro de datos.
-why_reference: NetBackup es el estándar histórico de la copia de seguridad corporativa a gran escala y sigue protegiendo
-  el núcleo de buena parte de las mayores organizaciones del mundo. Ninguna otra plataforma iguala su matriz de
-  compatibilidad con sistemas heredados, cintas y bases de datos empresariales.
+description: Plataforma de backup empresarial de mayor recorrido del mercado, con soporte de prácticamente cualquier sistema
+  operativo, hipervisor, base de datos y cabina del centro de datos.
+why_reference: NetBackup es el estándar histórico de la copia de seguridad corporativa a gran escala y sigue protegiendo el
+  núcleo de buena parte de las mayores organizaciones del mundo. Ninguna otra plataforma iguala su matriz de compatibilidad
+  con sistemas heredados, cintas y bases de datos empresariales.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

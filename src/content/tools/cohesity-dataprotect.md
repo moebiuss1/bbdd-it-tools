@@ -13,15 +13,14 @@ tags:
 - data-management
 type: comercial
 cost_model: suscripción
-cost_details: Suscripción por capacidad protegida (front-end TB), sobre appliance propio, hardware certificado o
-  nube.
+cost_details: Suscripción por capacidad protegida (front-end TB), sobre appliance propio, hardware certificado o nube.
 website: https://www.cohesity.com/products/data-protect/
 cert_url: https://www.cohesity.com/trust/
-description: Plataforma de protección de datos sobre un sistema de ficheros distribuido que combina copia, recuperación
-  instantánea y análisis del contenido protegido.
-why_reference: Cohesity es líder del mercado de backup y recuperación empresarial de Gartner y, tras integrar el
-  negocio de Veritas, uno de los dos mayores proveedores de protección de datos del mundo. Su arquitectura de escalado
-  horizontal permite recuperar máquinas virtuales directamente desde la copia, sin esperar a restaurar.
+description: Plataforma de protección de datos sobre un sistema de ficheros distribuido que combina copia, recuperación instantánea
+  y análisis del contenido protegido.
+why_reference: Cohesity es líder del mercado de backup y recuperación empresarial de Gartner y, tras integrar el negocio de
+  Veritas, uno de los dos mayores proveedores de protección de datos del mundo. Su arquitectura de escalado horizontal permite
+  recuperar máquinas virtuales directamente desde la copia, sin esperar a restaurar.
 certifications:
 - ISO 27001
 - SOC 2 Tipo II

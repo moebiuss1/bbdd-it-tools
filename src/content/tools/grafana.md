@@ -37,7 +37,7 @@ sources:
 - https://en.wikipedia.org/wiki/Grafana
 - https://github.com/grafana/grafana
 first_added: 2026-08-14
-last_verified: '2026-08-16'
+last_verified: '2026-08-17'
 logo: /logos/grafana.png
 needs_review: false
 ---
