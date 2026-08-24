@@ -34,7 +34,7 @@ sources:
 - https://en.wikipedia.org/wiki/ModSecurity
 - https://github.com/owasp-modsecurity/ModSecurity
 first_added: 2026-08-14
-last_verified: '2026-08-17'
+last_verified: '2026-08-24'
 logo: /logos/modsecurity.png
 needs_review: false
 ---

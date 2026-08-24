@@ -149,7 +149,7 @@
  },
  "brinqa-risk": {
   "domain": "brinqa.com",
-  "status": 429
+  "status": 200
  },
  "broadcom-symantec-endpoint": {
   "domain": "broadcom.com",

@@ -272,7 +272,7 @@ const rankings: Record<string, RankingEntry[]> = {
   "infra-monitoring": [
     { slug: "datadog-monitoring", rank: 1, score: 24, tier: "Nicho" },
     { slug: "prometheus", rank: 2, score: 72, tier: "Visionario" },
-    { slug: "grafana", rank: 3, score: 55, tier: "Retador" },
+    { slug: "grafana", rank: 3, score: 56, tier: "Retador" },
     { slug: "dynatrace", rank: 4, score: 28, tier: "Nicho" },
     { slug: "new-relic", rank: 5, score: 28, tier: "Nicho" },
     { slug: "zabbix", rank: 6, score: 18, tier: "Nicho" },

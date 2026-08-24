@@ -501,7 +501,9 @@
   "name": "Okta Identity Cloud",
   "peer_markets": [],
   "slug": "okta",
-  "wave": []
+  "wave": [
+   "Workforce Identity Security Platforms 21 May"
+  ]
  },
  "omnissa-workspace-one": {
   "mq": [
@@ -583,6 +585,15 @@
   "wave": [
    "Cloud Workload Security"
   ]
+ },
+ "solarwinds-dlp": {
+  "mq": [
+   "Observability Platforms"
+  ],
+  "name": "SolarWinds Access Rights Manager",
+  "peer_markets": [],
+  "slug": "solarwinds-dlp",
+  "wave": []
  },
  "splunk-enterprise-security": {
   "mq": [

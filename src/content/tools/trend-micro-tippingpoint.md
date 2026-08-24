@@ -28,7 +28,7 @@ tags:
 - red
 slug: trend-micro-tippingpoint
 first_added: 2026-08-07
-last_verified: '2026-08-17'
+last_verified: '2026-08-24'
 needs_review: false
 sources:
 - https://www.gartner.com/reviews/market/intrusion-prevention-systems

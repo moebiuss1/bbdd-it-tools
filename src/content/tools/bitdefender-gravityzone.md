@@ -30,7 +30,7 @@ slug: bitdefender-gravityzone
 sources:
 - https://www.gartner.com/reviews/market/endpoint-protection-platforms
 first_added: 2026-08-07
-last_verified: '2026-08-17'
+last_verified: '2026-08-24'
 needs_review: false
 market_rank:
   antivirus: 5
