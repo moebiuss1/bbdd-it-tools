@@ -925,7 +925,7 @@
  },
  "suricata": {
   "domain": "suricata.io",
-  "status": 202
+  "status": 200
  },
  "swimlane-turbine": {
   "domain": "swimlane.com",

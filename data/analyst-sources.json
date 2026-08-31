@@ -505,15 +505,6 @@
    "Workforce Identity Security Platforms 21 May"
   ]
  },
- "omnissa-workspace-one": {
-  "mq": [
-   "Endpoint Management Tools"
-  ],
-  "name": "Omnissa Workspace ONE",
-  "peer_markets": [],
-  "slug": "omnissa-workspace-one",
-  "wave": []
- },
  "onetrust": {
   "mq": [
    "AI Governance Platforms"
@@ -586,13 +577,15 @@
    "Cloud Workload Security"
   ]
  },
- "solarwinds-dlp": {
+ "sonarqube": {
   "mq": [
-   "Observability Platforms"
+   "Technical Debt Management",
+   "Technical Debt Management Tools report here",
+   "technical debt category"
   ],
-  "name": "SolarWinds Access Rights Manager",
+  "name": "SonarQube",
   "peer_markets": [],
-  "slug": "solarwinds-dlp",
+  "slug": "sonarqube",
   "wave": []
  },
  "splunk-enterprise-security": {

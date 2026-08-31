@@ -31,7 +31,7 @@ slug: snort
 sources:
 - https://www.gartner.com/reviews/market/intrusion-prevention-systems
 first_added: 2026-08-07
-last_verified: '2026-08-24'
+last_verified: '2026-08-31'
 needs_review: false
 market_rank:
   ids: 7

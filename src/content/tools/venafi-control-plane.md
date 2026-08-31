@@ -26,7 +26,7 @@ slug: venafi-control-plane
 sources:
 - https://www.gartner.com/reviews/market/certificate-lifecycle-management-clm
 first_added: 2026-08-07
-last_verified: '2026-08-24'
+last_verified: '2026-08-31'
 needs_review: false
 market_rank:
   cert-managers: 6
