@@ -3716,1166 +3716,1166 @@
       "github": 4
     },
     "thefatrat": {
-      "github": 5
-    },
-    "clamav": {
-      "github": 5
-    },
-    "loki": {
-      "github": 5
-    },
-    "apkid": {
-      "github": 5
-    },
-    "illacceptanything": {
-      "github": 5
-    },
-    "winpayloads": {
-      "github": 5
-    },
-    "chimera": {
-      "github": 5
-    },
-    "hrconvert2": {
-      "github": 5
-    },
-    "ai-gateway": {
-      "github": 5
-    },
-    "apiops": {
-      "github": 5
-    },
-    "crapi": {
-      "github": 5
-    },
-    "api-securityempire": {
-      "github": 5
-    },
-    "vuln-bank": {
-      "github": 5
-    },
-    "capital": {
-      "github": 5
-    },
-    "hoppscotch": {
-      "github": 5
-    },
-    "bruno": {
-      "github": 5
-    },
-    "cli": {
-      "github": 5
-    },
-    "mobile-security-framework-mobsf": {
-      "github": 9
-    },
-    "hurl": {
-      "github": 5
-    },
-    "keploy": {
-      "github": 5
-    },
-    "metersphere": {
-      "github": 5
-    },
-    "http-prompt": {
-      "github": 5
-    },
-    "karate": {
-      "github": 5
-    },
-    "xh": {
-      "github": 5
-    },
-    "arjun": {
-      "github": 5
-    },
-    "cypress-realworld-app": {
-      "github": 5
-    },
-    "applocker-guidance": {
-      "github": 5
-    },
-    "infisical": {
-      "github": 5
-    },
-    "docker-openvpn": {
-      "github": 5
-    },
-    "certificates": {
-      "github": 5
-    },
-    "boulder": {
-      "github": 5
-    },
-    "certipy": {
-      "github": 5
-    },
-    "automatedlab": {
-      "github": 5
-    },
-    "openvpn-install": {
-      "github": 5
-    },
-    "circl": {
-      "github": 5
-    },
-    "certify": {
-      "github": 5
-    },
-    "locksmith": {
-      "github": 5
-    },
-    "tongsuo": {
-      "github": 5
-    },
-    "debops": {
-      "github": 5
-    },
-    "pki-js": {
-      "github": 5
-    },
-    "certspotter": {
-      "github": 5
-    },
-    "ios-mcp": {
-      "github": 5
-    },
-    "hmdm-server": {
-      "github": 5
-    },
-    "hmdm-android": {
-      "github": 5
-    },
-    "agent-beacon": {
-      "github": 5
-    },
-    "sftpgo": {
-      "github": 5
-    },
-    "aws-mfa": {
-      "github": 5
-    },
-    "client": {
-      "github": 5
-    },
-    "aws-adfs": {
-      "github": 5
-    },
-    "adfsmfa": {
-      "github": 5
-    },
-    "one-time": {
-      "github": 5
-    },
-    "pig": {
-      "github": 5
-    },
-    "respounder": {
-      "github": 5
-    },
-    "community-id-spec": {
-      "github": 5
-    },
-    "pan-os-python": {
-      "github": 5
-    },
-    "pfsense": {
-      "github": 9
-    },
-    "iron-skillet": {
-      "github": 5
-    },
-    "opnsense": {
-      "github": 5
-    },
-    "warpgate": {
-      "github": 5
-    },
-    "entraops": {
-      "github": 5
-    },
-    "jit-groups": {
-      "github": 5
-    },
-    "epv-api-scripts": {
-      "github": 5
-    },
-    "azureprivilegediam": {
-      "github": 5
-    },
-    "restic": {
-      "github": 9
-    },
-    "duplicati": {
-      "github": 9
-    },
-    "kopia": {
-      "github": 9
-    },
-    "borg": {
-      "github": 9
-    },
-    "all-in-one": {
-      "github": 9
-    },
-    "velero": {
-      "github": 9
-    },
-    "wechatexporter": {
-      "github": 9
-    },
-    "elasticsearch-dump": {
-      "github": 9
-    },
-    "databasus": {
-      "github": 9
-    },
-    "android-databackup": {
-      "github": 9
-    },
-    "zerobyte": {
-      "github": 9
-    },
-    "ludusavi": {
-      "github": 9
-    },
-    "laravel-backup": {
-      "github": 9
-    },
-    "gogs": {
-      "github": 5
-    },
-    "gitoxide": {
-      "github": 5
-    },
-    "libgit2": {
-      "github": 5
-    },
-    "jupytext": {
-      "github": 5
-    },
-    "clearml": {
-      "github": 5
-    },
-    "sparkleshare": {
-      "github": 5
-    },
-    "skillhub": {
-      "github": 5
-    },
-    "libgit2sharp": {
-      "github": 5
-    },
-    "sem": {
-      "github": 5
-    },
-    "straight-el": {
-      "github": 5
-    },
-    "nbdime": {
-      "github": 5
-    },
-    "docmd": {
-      "github": 5
-    },
-    "elfshaker": {
-      "github": 5
-    },
-    "dulwich": {
-      "github": 5
-    },
-    "cloud-custodian": {
-      "cncf": 5
-    },
-    "kubeedge": {
-      "cncf": 5
-    },
-    "metal3-io": {
-      "cncf": 5
-    },
-    "openyurt": {
-      "cncf": 5
-    },
-    "dragonfly": {
-      "cncf": 5
-    },
-    "harbor": {
-      "cncf": 5
-    },
-    "cert-manager": {
-      "cncf": 5
-    },
-    "confidential-containers": {
-      "cncf": 5
-    },
-    "falco": {
-      "cncf": 5
-    },
-    "in-toto": {
-      "cncf": 5
-    },
-    "keycloak": {
-      "cncf": 5
-    },
-    "kubescape": {
-      "cncf": 5
-    },
-    "kyverno": {
-      "cncf": 5
-    },
-    "notary-project": {
-      "cncf": 5
-    },
-    "open-policy-agent-opa": {
-      "cncf": 5
-    },
-    "openfga": {
-      "cncf": 5
-    },
-    "the-update-framework-tuf": {
-      "cncf": 5
-    },
-    "spiffe": {
-      "cncf": 5
-    },
-    "spire": {
-      "cncf": 5
-    },
-    "cubefs": {
-      "cncf": 5
-    },
-    "longhorn": {
-      "cncf": 5
-    },
-    "rook": {
-      "cncf": 5
-    },
-    "containerd": {
-      "cncf": 5
-    },
-    "cri-o": {
-      "cncf": 5
-    },
-    "lima": {
-      "cncf": 5
-    },
-    "cilium": {
-      "cncf": 5
-    },
-    "container-network-interface-cni": {
-      "cncf": 5
-    },
-    "crossplane": {
-      "cncf": 5
-    },
-    "fluid": {
-      "cncf": 5
-    },
-    "hami": {
-      "cncf": 5
-    },
-    "karmada": {
-      "cncf": 5
-    },
-    "keda": {
-      "cncf": 5
-    },
-    "knative": {
-      "cncf": 5
-    },
-    "kubeflow": {
-      "cncf": 5
-    },
-    "kubernetes": {
-      "cncf": 5
-    },
-    "volcano": {
-      "cncf": 5
-    },
-    "wasmcloud": {
-      "cncf": 5
-    },
-    "coredns": {
-      "cncf": 5
-    },
-    "etcd": {
-      "cncf": 5
-    },
-    "k8gb": {
-      "cncf": 5
-    },
-    "grpc": {
-      "cncf": 5
-    },
-    "contour": {
-      "cncf": 5
-    },
-    "envoy": {
-      "cncf": 5
-    },
-    "emissary-ingress": {
-      "cncf": 5
-    },
-    "istio": {
-      "cncf": 5
-    },
-    "linkerd": {
-      "cncf": 5
-    },
-    "tikv": {
-      "cncf": 5
-    },
-    "vitess": {
-      "cncf": 5
-    },
-    "cloudevents": {
-      "cncf": 5
-    },
-    "nats": {
-      "cncf": 5
-    },
-    "strimzi": {
-      "cncf": 5
-    },
-    "artifact-hub": {
-      "cncf": 5
-    },
-    "backstage": {
-      "cncf": 5
-    },
-    "buildpacks": {
-      "cncf": 5
-    },
-    "dapr": {
-      "cncf": 5
-    },
-    "helm": {
-      "cncf": 5
-    },
-    "kubevela": {
-      "cncf": 5
-    },
-    "kubevirt": {
-      "cncf": 5
-    },
-    "microcks": {
-      "cncf": 5
-    },
-    "operator-framework": {
-      "cncf": 5
-    },
-    "argo": {
-      "cncf": 5
-    },
-    "flux": {
-      "cncf": 5
-    },
-    "openkruise": {
-      "cncf": 5
-    },
-    "tekton": {
-      "cncf": 5
-    },
-    "flatcar-container-linux": {
-      "cncf": 5
-    },
-    "openfeature": {
-      "cncf": 5
-    },
-    "chaos-mesh": {
-      "cncf": 5
-    },
-    "litmus": {
-      "cncf": 5
-    },
-    "opencost": {
-      "cncf": 5,
-      "github": 4
-    },
-    "cortex": {
-      "cncf": 5
-    },
-    "fluentd": {
-      "cncf": 5
-    },
-    "jaeger": {
-      "cncf": 5
-    },
-    "opentelemetry": {
-      "cncf": 5
-    },
-    "prometheus": {
-      "cncf": 5,
-      "github": 4
-    },
-    "thanos": {
-      "cncf": 5
-    },
-    "kserve": {
-      "cncf": 5
-    },
-    "harness": {
-      "github": 4
-    },
-    "jenkins": {
-      "github": 4
-    },
-    "dagger": {
-      "github": 4
-    },
-    "volkswagen": {
-      "github": 4
-    },
-    "origin": {
-      "github": 4
-    },
-    "concourse": {
-      "github": 4
-    },
-    "gocd": {
-      "github": 4
-    },
-    "flagsmith": {
-      "github": 4
-    },
-    "buildbot": {
-      "github": 4
-    },
-    "moderncppstarter": {
-      "github": 4
-    },
-    "ftp-deploy-action": {
-      "github": 4
-    },
-    "cds": {
-      "github": 4
-    },
-    "infracost": {
-      "github": 4
-    },
-    "thebytebook": {
-      "github": 4
-    },
-    "ec2instances-info": {
-      "github": 4
-    },
-    "krr": {
-      "github": 4
-    },
-    "ice": {
-      "github": 4
-    },
-    "openmeter": {
-      "github": 4
-    },
-    "optscale": {
-      "github": 4
-    },
-    "crane": {
-      "github": 4
-    },
-    "vscode-infracost": {
-      "github": 4
-    },
-    "cloudburn": {
-      "github": 4
-    },
-    "valqore": {
-      "github": 4
-    },
-    "azure-cost-cli": {
-      "github": 4
-    },
-    "openops": {
-      "github": 4
-    },
-    "imhex": {
-      "github": 4
-    },
-    "ruff": {
-      "github": 4
-    },
-    "shellcheck": {
-      "github": 4
-    },
-    "code-review-graph": {
-      "github": 4
-    },
-    "swiftlint": {
-      "github": 4
-    },
-    "php-parser": {
-      "github": 4
-    },
-    "semgrep": {
-      "github": 4
-    },
-    "infer": {
-      "github": 4
-    },
-    "bytecode-viewer": {
-      "github": 4
-    },
-    "ast-grep": {
-      "github": 4
-    },
-    "phpstan": {
-      "github": 4
-    },
-    "php-cs-fixer": {
-      "github": 4
-    },
-    "nacos": {
-      "github": 4
-    },
-    "apollo": {
-      "github": 4
-    },
-    "salt": {
-      "github": 4
-    },
-    "zookeeper": {
-      "github": 4
-    },
-    "fleet": {
-      "github": 4
-    },
-    "pyinfra": {
-      "github": 4
-    },
-    "dynaconf": {
-      "github": 4
-    },
-    "mgmt": {
-      "github": 4
-    },
-    "koanf": {
-      "github": 4
-    },
-    "ghostty-config": {
-      "github": 4
-    },
-    "codex-keysmith": {
-      "github": 4
-    },
-    "config-rs": {
-      "github": 4
-    },
-    "habitat": {
-      "github": 4
-    },
-    "autorandr": {
-      "github": 4
-    },
-    "kcl": {
-      "github": 4
-    },
-    "tpotce": {
-      "github": 4
-    },
-    "cowrie": {
-      "github": 4
-    },
-    "hfish": {
-      "github": 4
-    },
-    "beelzebub": {
       "github": 6
     },
-    "pyrdp": {
-      "github": 4
+    "clamav": {
+      "github": 6
     },
-    "sshesame": {
-      "github": 4
+    "loki": {
+      "github": 6
     },
-    "conpot": {
-      "github": 4
+    "apkid": {
+      "github": 6
     },
-    "acra": {
+    "illacceptanything": {
+      "github": 6
+    },
+    "winpayloads": {
+      "github": 6
+    },
+    "chimera": {
+      "github": 6
+    },
+    "hrconvert2": {
+      "github": 6
+    },
+    "ai-gateway": {
+      "github": 6
+    },
+    "apiops": {
+      "github": 6
+    },
+    "crapi": {
+      "github": 6
+    },
+    "api-securityempire": {
+      "github": 6
+    },
+    "vuln-bank": {
+      "github": 6
+    },
+    "capital": {
+      "github": 6
+    },
+    "hoppscotch": {
+      "github": 6
+    },
+    "bruno": {
+      "github": 6
+    },
+    "cli": {
+      "github": 6
+    },
+    "mobile-security-framework-mobsf": {
+      "github": 11
+    },
+    "hurl": {
+      "github": 6
+    },
+    "keploy": {
+      "github": 6
+    },
+    "metersphere": {
+      "github": 6
+    },
+    "http-prompt": {
+      "github": 6
+    },
+    "karate": {
+      "github": 6
+    },
+    "xh": {
+      "github": 6
+    },
+    "arjun": {
+      "github": 6
+    },
+    "cypress-realworld-app": {
+      "github": 6
+    },
+    "applocker-guidance": {
+      "github": 6
+    },
+    "infisical": {
+      "github": 6
+    },
+    "docker-openvpn": {
+      "github": 6
+    },
+    "certificates": {
+      "github": 6
+    },
+    "boulder": {
+      "github": 6
+    },
+    "certipy": {
+      "github": 6
+    },
+    "automatedlab": {
+      "github": 6
+    },
+    "openvpn-install": {
+      "github": 6
+    },
+    "circl": {
+      "github": 6
+    },
+    "certify": {
+      "github": 6
+    },
+    "locksmith": {
+      "github": 6
+    },
+    "tongsuo": {
+      "github": 6
+    },
+    "debops": {
+      "github": 6
+    },
+    "pki-js": {
+      "github": 6
+    },
+    "certspotter": {
+      "github": 6
+    },
+    "ios-mcp": {
+      "github": 6
+    },
+    "hmdm-server": {
+      "github": 6
+    },
+    "hmdm-android": {
+      "github": 6
+    },
+    "agent-beacon": {
+      "github": 6
+    },
+    "sftpgo": {
+      "github": 6
+    },
+    "aws-mfa": {
+      "github": 6
+    },
+    "client": {
+      "github": 6
+    },
+    "aws-adfs": {
+      "github": 6
+    },
+    "adfsmfa": {
+      "github": 6
+    },
+    "one-time": {
+      "github": 6
+    },
+    "pig": {
+      "github": 6
+    },
+    "respounder": {
+      "github": 6
+    },
+    "community-id-spec": {
+      "github": 6
+    },
+    "pan-os-python": {
+      "github": 6
+    },
+    "pfsense": {
+      "github": 11
+    },
+    "iron-skillet": {
+      "github": 6
+    },
+    "opnsense": {
+      "github": 6
+    },
+    "warpgate": {
+      "github": 6
+    },
+    "entraops": {
+      "github": 6
+    },
+    "jit-groups": {
+      "github": 6
+    },
+    "epv-api-scripts": {
+      "github": 6
+    },
+    "azureprivilegediam": {
+      "github": 6
+    },
+    "restic": {
+      "github": 11
+    },
+    "duplicati": {
+      "github": 11
+    },
+    "kopia": {
+      "github": 11
+    },
+    "borg": {
+      "github": 11
+    },
+    "all-in-one": {
+      "github": 11
+    },
+    "velero": {
+      "github": 11
+    },
+    "wechatexporter": {
+      "github": 11
+    },
+    "elasticsearch-dump": {
+      "github": 11
+    },
+    "databasus": {
+      "github": 11
+    },
+    "android-databackup": {
+      "github": 11
+    },
+    "zerobyte": {
+      "github": 11
+    },
+    "ludusavi": {
+      "github": 11
+    },
+    "laravel-backup": {
+      "github": 11
+    },
+    "gogs": {
+      "github": 6
+    },
+    "gitoxide": {
+      "github": 6
+    },
+    "libgit2": {
+      "github": 6
+    },
+    "jupytext": {
+      "github": 6
+    },
+    "clearml": {
+      "github": 6
+    },
+    "sparkleshare": {
+      "github": 6
+    },
+    "skillhub": {
+      "github": 6
+    },
+    "libgit2sharp": {
+      "github": 6
+    },
+    "sem": {
+      "github": 6
+    },
+    "straight-el": {
+      "github": 6
+    },
+    "nbdime": {
+      "github": 6
+    },
+    "docmd": {
+      "github": 6
+    },
+    "elfshaker": {
+      "github": 6
+    },
+    "dulwich": {
+      "github": 6
+    },
+    "cloud-custodian": {
+      "cncf": 6
+    },
+    "kubeedge": {
+      "cncf": 6
+    },
+    "metal3-io": {
+      "cncf": 6
+    },
+    "openyurt": {
+      "cncf": 6
+    },
+    "dragonfly": {
+      "cncf": 6
+    },
+    "harbor": {
+      "cncf": 6
+    },
+    "cert-manager": {
+      "cncf": 6
+    },
+    "confidential-containers": {
+      "cncf": 6
+    },
+    "falco": {
+      "cncf": 6
+    },
+    "in-toto": {
+      "cncf": 6
+    },
+    "keycloak": {
+      "cncf": 6
+    },
+    "kubescape": {
+      "cncf": 6
+    },
+    "kyverno": {
+      "cncf": 6
+    },
+    "notary-project": {
+      "cncf": 6
+    },
+    "open-policy-agent-opa": {
+      "cncf": 6
+    },
+    "openfga": {
+      "cncf": 6
+    },
+    "the-update-framework-tuf": {
+      "cncf": 6
+    },
+    "spiffe": {
+      "cncf": 6
+    },
+    "spire": {
+      "cncf": 6
+    },
+    "cubefs": {
+      "cncf": 6
+    },
+    "longhorn": {
+      "cncf": 6
+    },
+    "rook": {
+      "cncf": 6
+    },
+    "containerd": {
+      "cncf": 6
+    },
+    "cri-o": {
+      "cncf": 6
+    },
+    "lima": {
+      "cncf": 6
+    },
+    "cilium": {
+      "cncf": 6
+    },
+    "container-network-interface-cni": {
+      "cncf": 6
+    },
+    "crossplane": {
+      "cncf": 6
+    },
+    "fluid": {
+      "cncf": 6
+    },
+    "hami": {
+      "cncf": 6
+    },
+    "karmada": {
+      "cncf": 6
+    },
+    "keda": {
+      "cncf": 6
+    },
+    "knative": {
+      "cncf": 6
+    },
+    "kubeflow": {
+      "cncf": 6
+    },
+    "kubernetes": {
+      "cncf": 6
+    },
+    "volcano": {
+      "cncf": 6
+    },
+    "wasmcloud": {
+      "cncf": 6
+    },
+    "coredns": {
+      "cncf": 6
+    },
+    "etcd": {
+      "cncf": 6
+    },
+    "k8gb": {
+      "cncf": 6
+    },
+    "grpc": {
+      "cncf": 6
+    },
+    "contour": {
+      "cncf": 6
+    },
+    "envoy": {
+      "cncf": 6
+    },
+    "emissary-ingress": {
+      "cncf": 6
+    },
+    "istio": {
+      "cncf": 6
+    },
+    "linkerd": {
+      "cncf": 6
+    },
+    "tikv": {
+      "cncf": 6
+    },
+    "vitess": {
+      "cncf": 6
+    },
+    "cloudevents": {
+      "cncf": 6
+    },
+    "nats": {
+      "cncf": 6
+    },
+    "strimzi": {
+      "cncf": 6
+    },
+    "artifact-hub": {
+      "cncf": 6
+    },
+    "backstage": {
+      "cncf": 6
+    },
+    "buildpacks": {
+      "cncf": 6
+    },
+    "dapr": {
+      "cncf": 6
+    },
+    "helm": {
+      "cncf": 6
+    },
+    "kubevela": {
+      "cncf": 6
+    },
+    "kubevirt": {
+      "cncf": 6
+    },
+    "microcks": {
+      "cncf": 6
+    },
+    "operator-framework": {
+      "cncf": 6
+    },
+    "argo": {
+      "cncf": 6
+    },
+    "flux": {
+      "cncf": 6
+    },
+    "openkruise": {
+      "cncf": 6
+    },
+    "tekton": {
+      "cncf": 6
+    },
+    "flatcar-container-linux": {
+      "cncf": 6
+    },
+    "openfeature": {
+      "cncf": 6
+    },
+    "chaos-mesh": {
+      "cncf": 6
+    },
+    "litmus": {
+      "cncf": 6
+    },
+    "opencost": {
+      "cncf": 6,
+      "github": 5
+    },
+    "cortex": {
+      "cncf": 6
+    },
+    "fluentd": {
+      "cncf": 6
+    },
+    "jaeger": {
+      "cncf": 6
+    },
+    "opentelemetry": {
+      "cncf": 6
+    },
+    "prometheus": {
+      "cncf": 6,
+      "github": 5
+    },
+    "thanos": {
+      "cncf": 6
+    },
+    "kserve": {
+      "cncf": 6
+    },
+    "harness": {
+      "github": 5
+    },
+    "jenkins": {
+      "github": 5
+    },
+    "dagger": {
+      "github": 5
+    },
+    "volkswagen": {
+      "github": 5
+    },
+    "origin": {
+      "github": 5
+    },
+    "concourse": {
+      "github": 5
+    },
+    "gocd": {
+      "github": 5
+    },
+    "flagsmith": {
+      "github": 5
+    },
+    "buildbot": {
+      "github": 5
+    },
+    "moderncppstarter": {
+      "github": 5
+    },
+    "ftp-deploy-action": {
+      "github": 5
+    },
+    "cds": {
+      "github": 5
+    },
+    "infracost": {
+      "github": 5
+    },
+    "thebytebook": {
+      "github": 5
+    },
+    "ec2instances-info": {
+      "github": 5
+    },
+    "krr": {
+      "github": 5
+    },
+    "ice": {
+      "github": 5
+    },
+    "openmeter": {
+      "github": 5
+    },
+    "optscale": {
+      "github": 5
+    },
+    "crane": {
+      "github": 5
+    },
+    "vscode-infracost": {
+      "github": 5
+    },
+    "cloudburn": {
+      "github": 5
+    },
+    "valqore": {
+      "github": 5
+    },
+    "azure-cost-cli": {
+      "github": 5
+    },
+    "openops": {
+      "github": 5
+    },
+    "imhex": {
+      "github": 5
+    },
+    "ruff": {
+      "github": 5
+    },
+    "shellcheck": {
+      "github": 5
+    },
+    "code-review-graph": {
+      "github": 5
+    },
+    "swiftlint": {
+      "github": 5
+    },
+    "php-parser": {
+      "github": 5
+    },
+    "semgrep": {
+      "github": 5
+    },
+    "infer": {
+      "github": 5
+    },
+    "bytecode-viewer": {
+      "github": 5
+    },
+    "ast-grep": {
+      "github": 5
+    },
+    "phpstan": {
+      "github": 5
+    },
+    "php-cs-fixer": {
+      "github": 5
+    },
+    "nacos": {
+      "github": 5
+    },
+    "apollo": {
+      "github": 5
+    },
+    "salt": {
+      "github": 5
+    },
+    "zookeeper": {
+      "github": 5
+    },
+    "fleet": {
+      "github": 5
+    },
+    "pyinfra": {
+      "github": 5
+    },
+    "dynaconf": {
+      "github": 5
+    },
+    "mgmt": {
+      "github": 5
+    },
+    "koanf": {
+      "github": 5
+    },
+    "ghostty-config": {
+      "github": 5
+    },
+    "codex-keysmith": {
+      "github": 5
+    },
+    "config-rs": {
+      "github": 5
+    },
+    "habitat": {
+      "github": 5
+    },
+    "autorandr": {
+      "github": 5
+    },
+    "kcl": {
+      "github": 5
+    },
+    "tpotce": {
+      "github": 5
+    },
+    "cowrie": {
+      "github": 5
+    },
+    "hfish": {
+      "github": 5
+    },
+    "beelzebub": {
       "github": 8
     },
+    "pyrdp": {
+      "github": 5
+    },
+    "sshesame": {
+      "github": 5
+    },
+    "conpot": {
+      "github": 5
+    },
+    "acra": {
+      "github": 10
+    },
     "honeytrap": {
-      "github": 4
+      "github": 5
     },
     "ehoney": {
-      "github": 4
+      "github": 5
     },
     "invisible-captcha": {
-      "github": 4
+      "github": 5
     },
     "hellpot": {
-      "github": 4
+      "github": 5
     },
     "ddos-rootsec": {
       "github": 3
     },
     "gitleaks": {
-      "github": 4
+      "github": 5
     },
     "lazyfs": {
-      "github": 4
+      "github": 5
     },
     "gitlab-watchman": {
-      "github": 4
+      "github": 5
     },
     "bypassav": {
-      "github": 4
+      "github": 5
     },
     "elkeid": {
-      "github": 4
+      "github": 5
     },
     "fibratus": {
       "github": 3
     },
     "bestedrofthemarket": {
-      "github": 4
+      "github": 5
     },
     "bluespawn": {
-      "github": 4
+      "github": 5
     },
     "whids": {
-      "github": 4
+      "github": 5
     },
     "telemetrysourcerer": {
-      "github": 4
+      "github": 5
     },
     "driploader": {
-      "github": 4
+      "github": 5
     },
     "imonitor": {
-      "github": 4
+      "github": 5
     },
     "pyramid": {
-      "github": 4
+      "github": 5
     },
     "cyberblue": {
-      "github": 8
+      "github": 10
     },
     "brightintosh": {
-      "github": 4
+      "github": 5
     },
     "rmeye": {
-      "github": 4
+      "github": 5
     },
     "frp": {
-      "github": 4
+      "github": 5
     },
     "nps": {
-      "github": 4
+      "github": 5
     },
     "safeline": {
-      "github": 8
+      "github": 10
     },
     "teleport": {
-      "github": 4
+      "github": 5
     },
     "rathole": {
-      "github": 4
+      "github": 5
     },
     "opensnitch": {
-      "github": 4
+      "github": 5
     },
     "portmaster": {
-      "github": 4
+      "github": 5
     },
     "simplewall": {
-      "github": 4
+      "github": 5
     },
     "ufw-docker": {
-      "github": 4
+      "github": 5
     },
     "lanproxy": {
-      "github": 4
+      "github": 5
     },
     "rethink-app": {
-      "github": 4
+      "github": 5
     },
     "esp-wifi-repeater": {
-      "github": 4
+      "github": 5
     },
     "windowsspyblocker": {
-      "github": 4
+      "github": 5
     },
     "osquery": {
-      "github": 4
+      "github": 5
     },
     "fail2ban": {
-      "github": 4
+      "github": 5
     },
     "maltrail": {
-      "github": 4
+      "github": 5
     },
     "watchyourlan": {
-      "github": 4
+      "github": 5
     },
     "ossec-hids": {
-      "github": 4
+      "github": 5
     },
     "pi-alert": {
-      "github": 4
+      "github": 5
     },
     "ipban": {
-      "github": 4
+      "github": 5
     },
     "linux-malware-detect": {
-      "github": 4
+      "github": 5
     },
     "flightsim": {
-      "github": 4
+      "github": 5
     },
     "wazuh-docker": {
-      "github": 8
+      "github": 10
     },
     "ruview": {
-      "github": 4
+      "github": 5
     },
     "uptime-kuma": {
-      "github": 4
+      "github": 5
     },
     "worldmonitor": {
-      "github": 4
+      "github": 5
     },
     "netdata": {
-      "github": 4
+      "github": 5
     },
     "grafana": {
-      "github": 4
+      "github": 5
     },
     "huginn": {
-      "github": 4
+      "github": 5
     },
     "sentry": {
-      "github": 4
+      "github": 5
     },
     "pm2": {
-      "github": 4
+      "github": 5
     },
     "glance": {
-      "github": 4
+      "github": 5
     },
     "glances": {
-      "github": 4
+      "github": 5
     },
     "changedetection-io": {
-      "github": 4
+      "github": 5
     },
     "langfuse": {
-      "github": 4
+      "github": 5
     },
     "signoz": {
-      "github": 4
+      "github": 5
     },
     "influxdb": {
-      "github": 4
+      "github": 5
     },
     "suricata": {
-      "github": 4
+      "github": 5
     },
     "ockam": {
-      "github": 4
+      "github": 5
     },
     "gpg-tui": {
-      "github": 4
+      "github": 5
     },
     "rememory": {
-      "github": 4
+      "github": 5
     },
     "veramo": {
-      "github": 4
+      "github": 5
     },
     "confidential-computing-zoo": {
-      "github": 4
+      "github": 5
     },
     "kms": {
-      "github": 4
+      "github": 5
     },
     "pykmip": {
-      "github": 4
+      "github": 5
     },
     "trustee": {
-      "github": 4
+      "github": 5
     },
     "wazuh": {
-      "github": 8
+      "github": 10
     },
     "lnav": {
-      "github": 4
+      "github": 5
     },
     "graylog2-server": {
-      "github": 8
+      "github": 10
     },
     "scrapydweb": {
-      "github": 4
+      "github": 5
     },
     "datastation": {
-      "github": 4
+      "github": 5
     },
     "nerdlog": {
-      "github": 4
+      "github": 5
     },
     "tirreno": {
-      "github": 4
+      "github": 5
     },
     "advertools": {
-      "github": 4
+      "github": 5
     },
     "lazyjournal": {
-      "github": 4
+      "github": 5
     },
     "thinkphp-gui-tools": {
-      "github": 4
+      "github": 5
     },
     "dae": {
-      "github": 4
+      "github": 5
     },
     "openp2p": {
-      "github": 4
+      "github": 5
     },
     "glorytun": {
-      "github": 4
+      "github": 5
     },
     "candy": {
-      "github": 4
+      "github": 5
     },
     "phishingclub": {
       "github": 4
     },
     "sigma": {
-      "github": 4
+      "github": 5
     },
     "redelk": {
-      "github": 4
+      "github": 5
     },
     "aisoc": {
-      "github": 8
+      "github": 10
     },
     "victorialogs": {
-      "github": 4
+      "github": 5
     },
     "elastdocker": {
-      "github": 4
+      "github": 5
     },
     "matano": {
-      "github": 4
+      "github": 5
     },
     "pfelk": {
-      "github": 4
+      "github": 5
     },
     "agentic-soc-platform": {
-      "github": 8
+      "github": 10
     },
     "shuffle": {
-      "github": 4
+      "github": 5
     },
     "w5": {
-      "github": 4
+      "github": 5
     },
     "see": {
-      "github": 4
+      "github": 5
     },
     "threatingestor": {
-      "github": 4
+      "github": 5
     },
     "utmstack": {
-      "github": 4
+      "github": 5
     },
     "xcyclopedia": {
-      "github": 4
+      "github": 5
     },
     "admyral": {
-      "github": 4
+      "github": 5
     },
     "laravel-soar": {
-      "github": 4
+      "github": 5
     },
     "postee": {
-      "github": 4
+      "github": 5
     },
     "allama": {
       "github": 4
     },
     "pangolin": {
-      "github": 4
+      "github": 5
     },
     "casdoor": {
-      "github": 4
+      "github": 5
     },
     "polis": {
-      "github": 4
+      "github": 5
     },
     "maxkey": {
-      "github": 4
+      "github": 5
     },
     "ssoready": {
-      "github": 4
+      "github": 5
     },
     "rauthy": {
-      "github": 4
+      "github": 5
     },
     "hass-oidc-auth": {
-      "github": 4
+      "github": 5
     },
     "aws-google-auth": {
-      "github": 4
+      "github": 5
     },
     "oauth2-server": {
-      "github": 4
+      "github": 5
     },
     "wp-discourse": {
-      "github": 4
+      "github": 5
     },
     "oxauth": {
-      "github": 4
+      "github": 5
     },
     "aspnetsaml": {
-      "github": 4
+      "github": 5
     },
     "hass-openid": {
-      "github": 4
+      "github": 5
     },
     "reactjs-social-login": {
-      "github": 4
+      "github": 5
     },
     "esp-steppermotor-server": {
-      "github": 4
+      "github": 5
     },
     "fungen-ai-powered-funscript-generator": {
-      "github": 4
+      "github": 5
     },
     "esp-flexystepper": {
-      "github": 4
+      "github": 5
     },
     "crowdsec": {
-      "github": 4
+      "github": 5
     },
     "bunkerweb": {
-      "github": 4
+      "github": 5
     },
     "modsecurity": {
-      "github": 4
+      "github": 5
     },
     "wafw00f": {
-      "github": 4
+      "github": 5
     },
     "htrace-sh": {
-      "github": 4
+      "github": 5
     },
     "coraza": {
-      "github": 4
+      "github": 5
     },
     "padrino-framework": {
-      "github": 4
+      "github": 5
     },
     "coreruleset": {
-      "github": 4
+      "github": 5
     },
     "sh": {
-      "github": 4
+      "github": 5
     },
     "openrasp": {
-      "github": 4
+      "github": 5
     },
     "whatwaf": {
-      "github": 4
+      "github": 5
     },
     "llm-app": {
-      "github": 2
+      "github": 3
     },
     "strix": {
-      "github": 2
+      "github": 3
     },
     "ifixai": {
-      "github": 2
+      "github": 3
     },
     "garak": {
-      "github": 2
+      "github": 3
     },
     "guardrails": {
-      "github": 2
+      "github": 3
     },
     "giskard-oss": {
-      "github": 2
+      "github": 3
     },
     "ai-infra-guard": {
-      "github": 2
+      "github": 3
     },
     "jailbreak-llms": {
-      "github": 2
+      "github": 3
     },
     "nono": {
-      "github": 2
+      "github": 3
     },
     "agentic-security": {
-      "github": 2
+      "github": 3
     },
     "cyberstrike": {
-      "github": 2
+      "github": 3
     },
     "fuzzyai": {
-      "github": 2
+      "github": 3
     },
     "adr": {
       "github": 1
     },
     "hermes-relay": {
-      "github": 2
+      "github": 3
     },
     "herpaderping": {
-      "github": 1
+      "github": 2
     },
     "kql": {
-      "github": 1
+      "github": 2
     }
   },
   "github_stars": {
     "https://github.com/docker-mailserver/docker-mailserver": 18791,
-    "https://github.com/screetsec/TheFatRat": 11450,
-    "https://github.com/Cisco-Talos/clamav": 7189,
-    "https://github.com/Neo23x0/Loki": 3787,
-    "https://github.com/rednaga/APKiD": 2566,
+    "https://github.com/screetsec/TheFatRat": 11464,
+    "https://github.com/Cisco-Talos/clamav": 7218,
+    "https://github.com/Neo23x0/Loki": 3789,
+    "https://github.com/rednaga/APKiD": 2569,
     "https://github.com/illacceptanything/illacceptanything": 1960,
-    "https://github.com/nccgroup/Winpayloads": 1616,
+    "https://github.com/nccgroup/Winpayloads": 1618,
     "https://github.com/tokyoneon/Chimera": 1598,
-    "https://github.com/zelon88/HRConvert2": 1364,
-    "https://github.com/Azure-Samples/AI-Gateway": 981,
+    "https://github.com/zelon88/HRConvert2": 1368,
+    "https://github.com/Azure-Samples/AI-Gateway": 983,
     "https://github.com/Azure/apiops": 448,
-    "https://github.com/OWASP/crAPI": 1567,
+    "https://github.com/OWASP/crAPI": 1569,
     "https://github.com/Cyber-Guy1/API-SecurityEmpire": 1446,
-    "https://github.com/Commando-X/vuln-bank": 925,
+    "https://github.com/Commando-X/vuln-bank": 929,
     "https://github.com/Checkmarx/capital": 336,
-    "https://github.com/hoppscotch/hoppscotch": 80126,
-    "https://github.com/usebruno/bruno": 46665,
-    "https://github.com/httpie/cli": 38473,
-    "https://github.com/MobSF/Mobile-Security-Framework-MobSF": 21673,
-    "https://github.com/Orange-OpenSource/hurl": 19170,
-    "https://github.com/keploy/keploy": 18439,
-    "https://github.com/metersphere/metersphere": 13484,
+    "https://github.com/hoppscotch/hoppscotch": 80233,
+    "https://github.com/usebruno/bruno": 46802,
+    "https://github.com/httpie/cli": 38488,
+    "https://github.com/MobSF/Mobile-Security-Framework-MobSF": 21719,
+    "https://github.com/Orange-OpenSource/hurl": 19190,
+    "https://github.com/keploy/keploy": 18442,
+    "https://github.com/metersphere/metersphere": 13508,
     "https://github.com/httpie/http-prompt": 9108,
-    "https://github.com/karatelabs/karate": 8932,
-    "https://github.com/ducaale/xh": 8044,
-    "https://github.com/s0md3v/Arjun": 6389,
-    "https://github.com/cypress-io/cypress-realworld-app": 5912,
-    "https://github.com/nsacyber/AppLocker-Guidance": 244,
-    "https://github.com/Infisical/infisical": 29044,
+    "https://github.com/karatelabs/karate": 8946,
+    "https://github.com/ducaale/xh": 8062,
+    "https://github.com/s0md3v/Arjun": 6396,
+    "https://github.com/cypress-io/cypress-realworld-app": 5913,
+    "https://github.com/nsacyber/AppLocker-Guidance": 245,
+    "https://github.com/Infisical/infisical": 29154,
     "https://github.com/kylemanna/docker-openvpn": 9089,
-    "https://github.com/smallstep/certificates": 8797,
-    "https://github.com/letsencrypt/boulder": 5745,
-    "https://github.com/ly4k/Certipy": 3649,
-    "https://github.com/AutomatedLab/AutomatedLab": 2222,
-    "https://github.com/hwdsl2/openvpn-install": 1730,
-    "https://github.com/cloudflare/circl": 1714,
-    "https://github.com/webprofusion/certify": 1701,
+    "https://github.com/smallstep/certificates": 8842,
+    "https://github.com/letsencrypt/boulder": 5747,
+    "https://github.com/ly4k/Certipy": 3660,
+    "https://github.com/AutomatedLab/AutomatedLab": 2225,
+    "https://github.com/hwdsl2/openvpn-install": 1735,
+    "https://github.com/cloudflare/circl": 1715,
+    "https://github.com/webprofusion/certify": 1703,
     "https://github.com/jakehildreth/Locksmith": 1608,
-    "https://github.com/Tongsuo-Project/Tongsuo": 1522,
-    "https://github.com/debops/debops": 1418,
-    "https://github.com/PeculiarVentures/PKI.js": 1397,
-    "https://github.com/SSLMate/certspotter": 1172,
-    "https://github.com/witchan/ios-mcp": 625,
-    "https://github.com/h-mdm/hmdm-server": 542,
+    "https://github.com/Tongsuo-Project/Tongsuo": 1525,
+    "https://github.com/debops/debops": 1419,
+    "https://github.com/PeculiarVentures/PKI.js": 1399,
+    "https://github.com/SSLMate/certspotter": 1173,
+    "https://github.com/witchan/ios-mcp": 632,
+    "https://github.com/h-mdm/hmdm-server": 544,
     "https://github.com/h-mdm/hmdm-android": 349,
-    "https://github.com/Asymptote-Labs/agent-beacon": 320,
-    "https://github.com/drakkan/sftpgo": 12470,
+    "https://github.com/Asymptote-Labs/agent-beacon": 329,
+    "https://github.com/drakkan/sftpgo": 12496,
     "https://github.com/broamski/aws-mfa": 1066,
     "https://github.com/DefGuard/client": 365,
     "https://github.com/venth/aws-adfs": 292,
@@ -4884,248 +4884,248 @@
     "https://github.com/rafael-santiago/pig": 478,
     "https://github.com/codeexpress/respounder": 323,
     "https://github.com/corelight/community-id-spec": 197,
-    "https://github.com/PaloAltoNetworks/pan-os-python": 397,
-    "https://github.com/vaamonde/pfsense": 287,
+    "https://github.com/PaloAltoNetworks/pan-os-python": 398,
+    "https://github.com/vaamonde/pfsense": 288,
     "https://github.com/PaloAltoNetworks/iron-skillet": 220,
     "https://github.com/vaamonde/opnsense": 152,
-    "https://github.com/warp-tech/warpgate": 7753,
-    "https://github.com/Cloud-Architekt/EntraOps": 302,
+    "https://github.com/warp-tech/warpgate": 7844,
+    "https://github.com/Cloud-Architekt/EntraOps": 303,
     "https://github.com/GoogleCloudPlatform/jit-groups": 289,
     "https://github.com/cyberark/epv-api-scripts": 258,
-    "https://github.com/Cloud-Architekt/AzurePrivilegedIAM": 204,
-    "https://github.com/restic/restic": 35797,
-    "https://github.com/duplicati/duplicati": 14952,
-    "https://github.com/kopia/kopia": 13995,
-    "https://github.com/borgbackup/borg": 13672,
-    "https://github.com/nextcloud/all-in-one": 10356,
-    "https://github.com/velero-io/velero": 10260,
-    "https://github.com/BlueMatthew/WechatExporter": 8427,
-    "https://github.com/elasticsearch-dump/elasticsearch-dump": 7940,
-    "https://github.com/databasus/databasus": 8387,
-    "https://github.com/XayahSuSuSu/Android-DataBackup": 7291,
-    "https://github.com/nicotsx/zerobyte": 6879,
-    "https://github.com/mtkennerly/ludusavi": 6212,
-    "https://github.com/spatie/laravel-backup": 6019,
-    "https://github.com/gogs/gogs": 47787,
-    "https://github.com/GitoxideLabs/gitoxide": 11907,
-    "https://github.com/libgit2/libgit2": 10579,
-    "https://github.com/jupytext/jupytext": 7237,
-    "https://github.com/clearml/clearml": 6849,
-    "https://github.com/hbons/SparkleShare": 4981,
-    "https://github.com/iflytek/skillhub": 4926,
-    "https://github.com/libgit2/libgit2sharp": 3458,
-    "https://github.com/Ataraxy-Labs/sem": 3326,
-    "https://github.com/radian-software/straight.el": 3028,
+    "https://github.com/Cloud-Architekt/AzurePrivilegedIAM": 205,
+    "https://github.com/restic/restic": 35912,
+    "https://github.com/duplicati/duplicati": 14973,
+    "https://github.com/kopia/kopia": 14063,
+    "https://github.com/borgbackup/borg": 13695,
+    "https://github.com/nextcloud/all-in-one": 10390,
+    "https://github.com/velero-io/velero": 10283,
+    "https://github.com/BlueMatthew/WechatExporter": 8443,
+    "https://github.com/elasticsearch-dump/elasticsearch-dump": 7941,
+    "https://github.com/databasus/databasus": 8452,
+    "https://github.com/XayahSuSuSu/Android-DataBackup": 7322,
+    "https://github.com/nicotsx/zerobyte": 6907,
+    "https://github.com/mtkennerly/ludusavi": 6241,
+    "https://github.com/spatie/laravel-backup": 6022,
+    "https://github.com/gogs/gogs": 47806,
+    "https://github.com/GitoxideLabs/gitoxide": 11926,
+    "https://github.com/libgit2/libgit2": 10585,
+    "https://github.com/jupytext/jupytext": 7242,
+    "https://github.com/clearml/clearml": 6860,
+    "https://github.com/hbons/SparkleShare": 4982,
+    "https://github.com/iflytek/skillhub": 5044,
+    "https://github.com/libgit2/libgit2sharp": 3456,
+    "https://github.com/Ataraxy-Labs/sem": 3335,
+    "https://github.com/radian-software/straight.el": 3027,
     "https://github.com/jupyter/nbdime": 2841,
-    "https://github.com/docmd-io/docmd": 2434,
-    "https://github.com/elfshaker/elfshaker": 2336,
-    "https://github.com/jelmer/dulwich": 2274,
-    "https://github.com/harness/harness": 38185,
-    "https://github.com/jenkinsci/jenkins": 26520,
-    "https://github.com/dagger/dagger": 16219,
-    "https://github.com/auchenberg/volkswagen": 15462,
-    "https://github.com/openshift/origin": 8681,
-    "https://github.com/concourse/concourse": 7894,
+    "https://github.com/docmd-io/docmd": 2442,
+    "https://github.com/elfshaker/elfshaker": 2337,
+    "https://github.com/jelmer/dulwich": 2278,
+    "https://github.com/harness/harness": 38262,
+    "https://github.com/jenkinsci/jenkins": 26536,
+    "https://github.com/dagger/dagger": 16229,
+    "https://github.com/auchenberg/volkswagen": 15463,
+    "https://github.com/openshift/origin": 8684,
+    "https://github.com/concourse/concourse": 7898,
     "https://github.com/gocd/gocd": 7433,
-    "https://github.com/Flagsmith/flagsmith": 6534,
-    "https://github.com/buildbot/buildbot": 5471,
-    "https://github.com/TheLartians/ModernCppStarter": 5395,
-    "https://github.com/SamKirkland/FTP-Deploy-Action": 5192,
-    "https://github.com/ovh/cds": 4837,
-    "https://github.com/infracost/infracost": 12499,
-    "https://github.com/isno/theByteBook": 8548,
-    "https://github.com/opencost/opencost": 6716,
-    "https://github.com/vantage-sh/ec2instances.info": 5761,
-    "https://github.com/robusta-dev/krr": 4703,
+    "https://github.com/Flagsmith/flagsmith": 6539,
+    "https://github.com/buildbot/buildbot": 5472,
+    "https://github.com/TheLartians/ModernCppStarter": 5399,
+    "https://github.com/SamKirkland/FTP-Deploy-Action": 5203,
+    "https://github.com/ovh/cds": 4838,
+    "https://github.com/infracost/infracost": 12508,
+    "https://github.com/isno/theByteBook": 8547,
+    "https://github.com/opencost/opencost": 6731,
+    "https://github.com/vantage-sh/ec2instances.info": 5762,
+    "https://github.com/robusta-dev/krr": 4710,
     "https://github.com/Teevity/ice": 2878,
-    "https://github.com/openmeterio/openmeter": 2239,
-    "https://github.com/hystax/optscale": 2176,
-    "https://github.com/gocrane/crane": 2052,
+    "https://github.com/openmeterio/openmeter": 2248,
+    "https://github.com/hystax/optscale": 2181,
+    "https://github.com/gocrane/crane": 2055,
     "https://github.com/infracost/vscode-infracost": 1837,
-    "https://github.com/towardsthecloud/cloudburn": 1781,
-    "https://github.com/valqore/valqore": 1879,
+    "https://github.com/towardsthecloud/cloudburn": 1785,
+    "https://github.com/valqore/valqore": 1945,
     "https://github.com/mivano/azure-cost-cli": 1122,
-    "https://github.com/openops-cloud/openops": 1061,
-    "https://github.com/WerWolv/ImHex": 54616,
-    "https://github.com/astral-sh/ruff": 49406,
-    "https://github.com/koalaman/shellcheck": 39963,
-    "https://github.com/tirth8205/code-review-graph": 31041,
-    "https://github.com/realm/SwiftLint": 19717,
-    "https://github.com/nikic/PHP-Parser": 17461,
-    "https://github.com/semgrep/semgrep": 16455,
-    "https://github.com/facebook/infer": 15693,
-    "https://github.com/Konloch/bytecode-viewer": 15621,
-    "https://github.com/ast-grep/ast-grep": 15705,
-    "https://github.com/phpstan/phpstan": 14092,
+    "https://github.com/openops-cloud/openops": 1065,
+    "https://github.com/WerWolv/ImHex": 54734,
+    "https://github.com/astral-sh/ruff": 49534,
+    "https://github.com/koalaman/shellcheck": 40004,
+    "https://github.com/tirth8205/code-review-graph": 31231,
+    "https://github.com/realm/SwiftLint": 19720,
+    "https://github.com/nikic/PHP-Parser": 17465,
+    "https://github.com/semgrep/semgrep": 16537,
+    "https://github.com/facebook/infer": 15704,
+    "https://github.com/Konloch/bytecode-viewer": 15633,
+    "https://github.com/ast-grep/ast-grep": 15781,
+    "https://github.com/phpstan/phpstan": 14100,
     "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer": 13547,
-    "https://github.com/alibaba/nacos": 33326,
-    "https://github.com/apolloconfig/apollo": 29806,
-    "https://github.com/saltstack/salt": 15636,
-    "https://github.com/apache/zookeeper": 12793,
-    "https://github.com/fleetdm/fleet": 6795,
-    "https://github.com/pyinfra-dev/pyinfra": 5970,
-    "https://github.com/dynaconf/dynaconf": 4324,
-    "https://github.com/purpleidea/mgmt": 4310,
-    "https://github.com/knadh/koanf": 4186,
-    "https://github.com/zerebos/ghostty-config": 4166,
-    "https://github.com/Jia-Ethan/codex-keysmith": 4197,
+    "https://github.com/alibaba/nacos": 33347,
+    "https://github.com/apolloconfig/apollo": 29803,
+    "https://github.com/saltstack/salt": 15649,
+    "https://github.com/apache/zookeeper": 12798,
+    "https://github.com/fleetdm/fleet": 6818,
+    "https://github.com/pyinfra-dev/pyinfra": 5980,
+    "https://github.com/dynaconf/dynaconf": 4326,
+    "https://github.com/purpleidea/mgmt": 4314,
+    "https://github.com/knadh/koanf": 4192,
+    "https://github.com/zerebos/ghostty-config": 4181,
+    "https://github.com/Jia-Ethan/codex-keysmith": 4349,
     "https://github.com/rust-cli/config-rs": 3206,
     "https://github.com/habitat-sh/habitat": 2750,
-    "https://github.com/phillipberndt/autorandr": 2712,
-    "https://github.com/kcl-lang/kcl": 2407,
-    "https://github.com/telekom-security/tpotce": 9451,
-    "https://github.com/cowrie/cowrie": 6510,
-    "https://github.com/hacklcx/HFish": 4535,
-    "https://github.com/beelzebub-labs/beelzebub": 2168,
-    "https://github.com/GoSecure/pyrdp": 1780,
+    "https://github.com/phillipberndt/autorandr": 2713,
+    "https://github.com/kcl-lang/kcl": 2409,
+    "https://github.com/telekom-security/tpotce": 9467,
+    "https://github.com/cowrie/cowrie": 6522,
+    "https://github.com/hacklcx/HFish": 4539,
+    "https://github.com/beelzebub-labs/beelzebub": 2170,
+    "https://github.com/GoSecure/pyrdp": 1779,
     "https://github.com/jaksi/sshesame": 1742,
-    "https://github.com/mushorg/conpot": 1520,
-    "https://github.com/cossacklabs/acra": 1491,
-    "https://github.com/honeytrap/honeytrap": 1307,
+    "https://github.com/mushorg/conpot": 1519,
+    "https://github.com/cossacklabs/acra": 1492,
+    "https://github.com/honeytrap/honeytrap": 1308,
     "https://github.com/seccome/Ehoney": 1270,
     "https://github.com/markets/invisible_captcha": 1250,
-    "https://github.com/yunginnanet/HellPot": 1148,
+    "https://github.com/yunginnanet/HellPot": 1153,
     "https://github.com/R00tS3c/DDOS-RootSec": 1053,
-    "https://github.com/gitleaks/gitleaks": 29033,
+    "https://github.com/gitleaks/gitleaks": 29150,
     "https://github.com/dsrhaslab/lazyfs": 225,
     "https://github.com/PaperMtn/gitlab-watchman": 206,
     "https://github.com/matro7sh/BypassAV": 3436,
-    "https://github.com/bytedance/Elkeid": 2673,
+    "https://github.com/bytedance/Elkeid": 2674,
     "https://github.com/rabbitstack/fibratus": 2536,
     "https://github.com/Xacone/BestEdrOfTheMarket": 1556,
-    "https://github.com/ION28/BLUESPAWN": 1335,
-    "https://github.com/0xrawsec/whids": 1313,
-    "https://github.com/jthuraisamy/TelemetrySourcerer": 862,
+    "https://github.com/ION28/BLUESPAWN": 1336,
+    "https://github.com/0xrawsec/whids": 1314,
+    "https://github.com/jthuraisamy/TelemetrySourcerer": 865,
     "https://github.com/xuanxuan0/DripLoader": 837,
-    "https://github.com/wecooperate/iMonitor": 832,
+    "https://github.com/wecooperate/iMonitor": 834,
     "https://github.com/naksyn/Pyramid": 774,
     "https://github.com/cyberblu3s/CyberBlue": 547,
     "https://github.com/niklasr22/BrightIntosh": 551,
     "https://github.com/RoomaSec/RmEye": 532,
-    "https://github.com/fatedier/frp": 109121,
-    "https://github.com/ehang-io/nps": 34191,
-    "https://github.com/chaitin/SafeLine": 22471,
-    "https://github.com/gravitational/teleport": 20865,
-    "https://github.com/rathole-org/rathole": 14089,
-    "https://github.com/evilsocket/opensnitch": 14018,
-    "https://github.com/safing/portmaster": 13637,
-    "https://github.com/henrypp/simplewall": 8899,
-    "https://github.com/chaifeng/ufw-docker": 6757,
-    "https://github.com/ffay/lanproxy": 5853,
-    "https://github.com/pfsense/pfsense": 5723,
-    "https://github.com/celzero/rethink-app": 5356,
-    "https://github.com/martin-ger/esp_wifi_repeater": 5246,
-    "https://github.com/crazy-max/WindowsSpyBlocker": 5168,
-    "https://github.com/osquery/osquery": 23533,
-    "https://github.com/fail2ban/fail2ban": 18512,
-    "https://github.com/stamparm/maltrail": 8590,
-    "https://github.com/aceberg/WatchYourLAN": 7607,
-    "https://github.com/ossec/ossec-hids": 5052,
-    "https://github.com/pucherot/Pi.Alert": 2747,
-    "https://github.com/DigitalRuby/IPBan": 2181,
-    "https://github.com/rfxn/linux-malware-detect": 1494,
-    "https://github.com/alphasoc/flightsim": 1364,
-    "https://github.com/wazuh/wazuh-docker": 1173,
-    "https://github.com/ruvnet/RuView": 92157,
-    "https://github.com/louislam/uptime-kuma": 90792,
-    "https://github.com/koala73/worldmonitor": 85165,
-    "https://github.com/netdata/netdata": 80374,
-    "https://github.com/grafana/grafana": 76533,
-    "https://github.com/prometheus/prometheus": 65920,
-    "https://github.com/huginn/huginn": 49876,
-    "https://github.com/getsentry/sentry": 44689,
-    "https://github.com/Unitech/pm2": 43287,
-    "https://github.com/glanceapp/glance": 36752,
-    "https://github.com/nicolargo/glances": 33485,
-    "https://github.com/dgtlmoon/changedetection.io": 33425,
-    "https://github.com/langfuse/langfuse": 33971,
-    "https://github.com/SigNoz/signoz": 31981,
-    "https://github.com/influxdata/influxdb": 31731,
-    "https://github.com/OISF/suricata": 6584,
-    "https://github.com/build-trust/ockam": 4633,
-    "https://github.com/orhun/gpg-tui": 1755,
-    "https://github.com/eljojo/rememory": 1432,
+    "https://github.com/fatedier/frp": 109257,
+    "https://github.com/ehang-io/nps": 34207,
+    "https://github.com/chaitin/SafeLine": 22510,
+    "https://github.com/gravitational/teleport": 20891,
+    "https://github.com/rathole-org/rathole": 14122,
+    "https://github.com/evilsocket/opensnitch": 14042,
+    "https://github.com/safing/portmaster": 13681,
+    "https://github.com/henrypp/simplewall": 8920,
+    "https://github.com/chaifeng/ufw-docker": 6781,
+    "https://github.com/ffay/lanproxy": 5851,
+    "https://github.com/pfsense/pfsense": 5730,
+    "https://github.com/celzero/rethink-app": 5383,
+    "https://github.com/martin-ger/esp_wifi_repeater": 5250,
+    "https://github.com/crazy-max/WindowsSpyBlocker": 5169,
+    "https://github.com/osquery/osquery": 23550,
+    "https://github.com/fail2ban/fail2ban": 18554,
+    "https://github.com/stamparm/maltrail": 8597,
+    "https://github.com/aceberg/WatchYourLAN": 7613,
+    "https://github.com/ossec/ossec-hids": 5055,
+    "https://github.com/pucherot/Pi.Alert": 2756,
+    "https://github.com/DigitalRuby/IPBan": 2183,
+    "https://github.com/rfxn/linux-malware-detect": 1497,
+    "https://github.com/alphasoc/flightsim": 1363,
+    "https://github.com/wazuh/wazuh-docker": 1172,
+    "https://github.com/ruvnet/RuView": 92687,
+    "https://github.com/louislam/uptime-kuma": 91075,
+    "https://github.com/koala73/worldmonitor": 85744,
+    "https://github.com/netdata/netdata": 80454,
+    "https://github.com/grafana/grafana": 76650,
+    "https://github.com/prometheus/prometheus": 65989,
+    "https://github.com/huginn/huginn": 49911,
+    "https://github.com/getsentry/sentry": 44741,
+    "https://github.com/Unitech/pm2": 43288,
+    "https://github.com/glanceapp/glance": 36903,
+    "https://github.com/nicolargo/glances": 33534,
+    "https://github.com/dgtlmoon/changedetection.io": 33678,
+    "https://github.com/langfuse/langfuse": 34289,
+    "https://github.com/SigNoz/signoz": 32039,
+    "https://github.com/influxdata/influxdb": 31732,
+    "https://github.com/OISF/suricata": 6614,
+    "https://github.com/build-trust/ockam": 4637,
+    "https://github.com/orhun/gpg-tui": 1759,
+    "https://github.com/eljojo/rememory": 1446,
     "https://github.com/decentralized-identity/veramo": 543,
     "https://github.com/intel/confidential-computing-zoo": 361,
-    "https://github.com/Cosmian/kms": 350,
-    "https://github.com/OpenKMIP/PyKMIP": 298,
-    "https://github.com/confidential-containers/trustee": 181,
-    "https://github.com/wazuh/wazuh": 16732,
-    "https://github.com/tstack/lnav": 10626,
-    "https://github.com/Graylog2/graylog2-server": 8122,
-    "https://github.com/my8100/scrapydweb": 3410,
+    "https://github.com/Cosmian/kms": 352,
+    "https://github.com/OpenKMIP/PyKMIP": 300,
+    "https://github.com/confidential-containers/trustee": 183,
+    "https://github.com/wazuh/wazuh": 16796,
+    "https://github.com/tstack/lnav": 10637,
+    "https://github.com/Graylog2/graylog2-server": 8124,
+    "https://github.com/my8100/scrapydweb": 3411,
     "https://github.com/multiprocessio/datastation": 2954,
-    "https://github.com/dimonomid/nerdlog": 1550,
+    "https://github.com/dimonomid/nerdlog": 1555,
     "https://github.com/tirrenotechnologies/tirreno": 1507,
-    "https://github.com/eliasdabbas/advertools": 1449,
-    "https://github.com/Lifailon/lazyjournal": 1392,
-    "https://github.com/bewhale/thinkphp_gui_tools": 790,
-    "https://github.com/daeuniverse/dae": 6132,
-    "https://github.com/openp2p-cn/openp2p": 2024,
+    "https://github.com/eliasdabbas/advertools": 1450,
+    "https://github.com/Lifailon/lazyjournal": 1398,
+    "https://github.com/bewhale/thinkphp_gui_tools": 791,
+    "https://github.com/daeuniverse/dae": 6142,
+    "https://github.com/openp2p-cn/openp2p": 2025,
     "https://github.com/angt/glorytun": 765,
     "https://github.com/lanthora/candy": 687,
     "https://github.com/phishingclub/phishingclub": 247,
-    "https://github.com/SigmaHQ/sigma": 10962,
-    "https://github.com/outflanknl/RedELK": 2668,
-    "https://github.com/beenuar/AiSOC": 2362,
-    "https://github.com/VictoriaMetrics/VictoriaLogs": 2206,
+    "https://github.com/SigmaHQ/sigma": 10994,
+    "https://github.com/outflanknl/RedELK": 2669,
+    "https://github.com/beenuar/AiSOC": 2371,
+    "https://github.com/VictoriaMetrics/VictoriaLogs": 2238,
     "https://github.com/sherifabdlnaby/elastdocker": 2068,
-    "https://github.com/matanolabs/matano": 1694,
+    "https://github.com/matanolabs/matano": 1696,
     "https://github.com/pfelk/pfelk": 1224,
-    "https://github.com/FunnyWolf/agentic-soc-platform": 1166,
-    "https://github.com/Shuffle/Shuffle": 2423,
-    "https://github.com/w5teams/w5": 1548,
+    "https://github.com/FunnyWolf/agentic-soc-platform": 1170,
+    "https://github.com/Shuffle/Shuffle": 2426,
+    "https://github.com/w5teams/w5": 1547,
     "https://github.com/myide/see": 1479,
-    "https://github.com/pedramamini/ThreatIngestor": 926,
+    "https://github.com/pedramamini/ThreatIngestor": 925,
     "https://github.com/utmstack/UTMStack": 581,
     "https://github.com/strontic/xcyclopedia": 484,
-    "https://github.com/Hey-Telo/admyral": 340,
+    "https://github.com/Hey-Telo/admyral": 339,
     "https://github.com/guanguans/laravel-soar": 222,
     "https://github.com/aquasecurity/postee": 205,
     "https://github.com/digitranslab/allama": 199,
-    "https://github.com/fosrl/pangolin": 22559,
-    "https://github.com/casdoor/casdoor": 14301,
-    "https://github.com/ory/polis": 2262,
-    "https://github.com/dromara/MaxKey": 1940,
-    "https://github.com/ssoready/ssoready": 1534,
-    "https://github.com/sebadob/rauthy": 1301,
-    "https://github.com/christiaangoossens/hass-oidc-auth": 1050,
+    "https://github.com/fosrl/pangolin": 22659,
+    "https://github.com/casdoor/casdoor": 14356,
+    "https://github.com/ory/polis": 2263,
+    "https://github.com/dromara/MaxKey": 1947,
+    "https://github.com/ssoready/ssoready": 1535,
+    "https://github.com/sebadob/rauthy": 1314,
+    "https://github.com/christiaangoossens/hass-oidc-auth": 1058,
     "https://github.com/cevoaustralia/aws-google-auth": 550,
     "https://github.com/jobmission/oauth2-server": 547,
     "https://github.com/discourse/wp-discourse": 543,
     "https://github.com/GluuFederation/oxAuth": 425,
     "https://github.com/jitbit/AspNetSaml": 421,
-    "https://github.com/cavefire/hass-openid": 206,
+    "https://github.com/cavefire/hass-openid": 207,
     "https://github.com/cuongdevjs/reactjs-social-login": 184,
     "https://github.com/pkerspe/ESP-StepperMotor-Server": 286,
-    "https://github.com/ack00gar/FunGen-AI-Powered-Funscript-Generator": 201,
-    "https://github.com/pkerspe/ESP-FlexyStepper": 182,
-    "https://github.com/crowdsecurity/crowdsec": 14686,
-    "https://github.com/bunkerity/bunkerweb": 10887,
-    "https://github.com/owasp-modsecurity/ModSecurity": 9758,
-    "https://github.com/EnableSecurity/wafw00f": 6532,
-    "https://github.com/trimstray/htrace.sh": 3861,
-    "https://github.com/corazawaf/coraza": 3775,
-    "https://github.com/padrino/padrino-framework": 3399,
-    "https://github.com/coreruleset/coreruleset": 3251,
-    "https://github.com/kejilion/sh": 3115,
-    "https://github.com/baidu/openrasp": 2987,
-    "https://github.com/Ekultek/WhatWaf": 2923,
-    "https://github.com/pathwaycom/llm-app": 58965,
-    "https://github.com/usestrix/strix": 59634,
-    "https://github.com/ifixai-ai/iFixAi": 11874,
-    "https://github.com/NVIDIA/garak": 9081,
-    "https://github.com/NVIDIA-NeMo/Guardrails": 7032,
-    "https://github.com/Giskard-AI/giskard-oss": 5798,
-    "https://github.com/Tencent/AI-Infra-Guard": 6090,
-    "https://github.com/verazuo/jailbreak_llms": 3795,
-    "https://github.com/nolabs-ai/nono": 3899,
-    "https://github.com/msoedov/agentic_security": 1980,
-    "https://github.com/CyberStrikeus/CyberStrike": 2162,
+    "https://github.com/ack00gar/FunGen-AI-Powered-Funscript-Generator": 199,
+    "https://github.com/pkerspe/ESP-FlexyStepper": 180,
+    "https://github.com/crowdsecurity/crowdsec": 14782,
+    "https://github.com/bunkerity/bunkerweb": 10911,
+    "https://github.com/owasp-modsecurity/ModSecurity": 9774,
+    "https://github.com/EnableSecurity/wafw00f": 6536,
+    "https://github.com/trimstray/htrace.sh": 3859,
+    "https://github.com/corazawaf/coraza": 3792,
+    "https://github.com/padrino/padrino-framework": 3400,
+    "https://github.com/coreruleset/coreruleset": 3259,
+    "https://github.com/kejilion/sh": 3128,
+    "https://github.com/baidu/openrasp": 2988,
+    "https://github.com/Ekultek/WhatWaf": 2924,
+    "https://github.com/pathwaycom/llm-app": 58953,
+    "https://github.com/usestrix/strix": 61029,
+    "https://github.com/ifixai-ai/iFixAi": 13143,
+    "https://github.com/NVIDIA/garak": 9133,
+    "https://github.com/NVIDIA-NeMo/Guardrails": 7076,
+    "https://github.com/Giskard-AI/giskard-oss": 5805,
+    "https://github.com/Tencent/AI-Infra-Guard": 6172,
+    "https://github.com/verazuo/jailbreak_llms": 3805,
+    "https://github.com/nolabs-ai/nono": 3995,
+    "https://github.com/msoedov/agentic_security": 1987,
+    "https://github.com/CyberStrikeus/CyberStrike": 2604,
     "https://github.com/cyberark/FuzzyAI": 1571,
     "https://github.com/uber/ADR": 1493,
-    "https://github.com/Codename-11/hermes-relay": 181,
-    "https://github.com/jxy-s/herpaderping": 1210,
+    "https://github.com/Codename-11/hermes-relay": 194,
+    "https://github.com/jxy-s/herpaderping": 1211,
     "https://github.com/LearningKijo/KQL": 491
   }
 }

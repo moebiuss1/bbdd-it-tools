@@ -204,7 +204,6 @@
  },
  "crowdstrike-falcon": {
   "mq": [
-   "Cyberthreat Intelligence Skip to Main Content Fal",
    "Endpoint Protection"
   ],
   "name": "CrowdStrike Falcon",
@@ -305,17 +304,6 @@
   ],
   "slug": "eset-protect",
   "wave": []
- },
- "extrahop-revealx": {
-  "mq": [
-   "Network Detection and Response"
-  ],
-  "name": "ExtraHop RevealX",
-  "peer_markets": [],
-  "slug": "extrahop-revealx",
-  "wave": [
-   "Network Analysis And Visibility Solutions"
-  ]
  },
  "flexera-one": {
   "mq": [
@@ -501,9 +489,7 @@
   "name": "Okta Identity Cloud",
   "peer_markets": [],
   "slug": "okta",
-  "wave": [
-   "Workforce Identity Security Platforms 21 May"
-  ]
+  "wave": []
  },
  "onetrust": {
   "mq": [
@@ -577,6 +563,15 @@
    "Cloud Workload Security"
   ]
  },
+ "solarwinds-dlp": {
+  "mq": [
+   "Observability Platforms"
+  ],
+  "name": "SolarWinds Access Rights Manager",
+  "peer_markets": [],
+  "slug": "solarwinds-dlp",
+  "wave": []
+ },
  "sonarqube": {
   "mq": [
    "Technical Debt Management",
@@ -586,6 +581,15 @@
   "name": "SonarQube",
   "peer_markets": [],
   "slug": "sonarqube",
+  "wave": []
+ },
+ "sonicwall-nsa": {
+  "mq": [
+   "Unified SASE Learn More"
+  ],
+  "name": "SonicWall NSa",
+  "peer_markets": [],
+  "slug": "sonicwall-nsa",
   "wave": []
  },
  "splunk-enterprise-security": {
@@ -739,10 +743,7 @@
   ]
  },
  "zscaler-zero-trust": {
-  "mq": [
-   "SASE Platforms",
-   "Security Service Edge"
-  ],
+  "mq": [],
   "name": "Zscaler Zero Trust Exchange",
   "peer_markets": [],
   "slug": "zscaler-zero-trust",
