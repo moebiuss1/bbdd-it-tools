@@ -220,6 +220,15 @@
   "slug": "cybereason-edr",
   "wave": []
  },
+ "cyera": {
+  "mq": [],
+  "name": "Cyera",
+  "peer_markets": [],
+  "slug": "cyera",
+  "wave": [
+   "Sensitive Data Discovery And Classification Solutions"
+  ]
+ },
  "cyware-orchestrate": {
   "mq": [],
   "name": "Cyware Orchestrate",
@@ -241,7 +250,8 @@
  },
  "delinea-secret-server": {
   "mq": [
-   "Privileged Access Management Analyst Report"
+   "PAM. Centrify was named a Leader in the",
+   "Privileged Access Management"
   ],
   "name": "Delinea Secret Server",
   "peer_markets": [
@@ -563,15 +573,6 @@
    "Cloud Workload Security"
   ]
  },
- "solarwinds-dlp": {
-  "mq": [
-   "Observability Platforms"
-  ],
-  "name": "SolarWinds Access Rights Manager",
-  "peer_markets": [],
-  "slug": "solarwinds-dlp",
-  "wave": []
- },
  "sonarqube": {
   "mq": [
    "Technical Debt Management",
@@ -648,6 +649,16 @@
   ],
   "slug": "tenable-one",
   "wave": []
+ },
+ "vanta": {
+  "mq": [],
+  "name": "Vanta",
+  "peer_markets": [],
+  "slug": "vanta",
+  "wave": [
+   "Governance",
+   "Read more SOC 2 checklist Read more State of Trust"
+  ]
  },
  "vectra-ai": {
   "mq": [

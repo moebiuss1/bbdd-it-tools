@@ -35,7 +35,7 @@ sources:
 - https://en.wikipedia.org/wiki/Semgrep
 - https://github.com/semgrep/semgrep
 first_added: 2026-08-14
-last_verified: '2026-09-07'
+last_verified: '2026-09-14'
 logo: /logos/semgrep.png
 needs_review: false
 ---

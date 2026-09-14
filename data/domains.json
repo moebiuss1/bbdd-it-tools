@@ -904,8 +904,8 @@
   "status": 200
  },
  "spirion-dlp": {
-  "domain": "spirion.com",
-  "status": 200
+  "domain": "archtis.com",
+  "status": 403
  },
  "splunk-enterprise-security": {
   "domain": "splunk.com",
@@ -1061,7 +1061,7 @@
  },
  "zeek-ids": {
   "domain": "zeek.org",
-  "status": 200
+  "status": 429
  },
  "zerto": {
   "domain": "zerto.com",

@@ -4,10 +4,10 @@ slug: pdq-inventory
 categories:
 - it-asset-managers
 tags:
-  - itam
-  - windows
-  - scanning
-  - deployment
+- itam
+- windows
+- scanning
+- deployment
 type: comercial
 cost_model: suscripción
 cost_details: Desde ~$1,500/admin/año.
