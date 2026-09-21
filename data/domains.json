@@ -241,7 +241,7 @@
  },
  "cortado-mdm": {
   "domain": "cortado.com",
-  "status": 403
+  "status": 200
  },
  "cortex-xdr": {
   "domain": "paloaltonetworks.com",
@@ -373,7 +373,7 @@
  },
  "forcepoint-ngfw": {
   "domain": "forcepoint.com",
-  "status": 200
+  "status": 404
  },
  "forescout-nac": {
   "domain": "forescout.com",
@@ -925,7 +925,7 @@
  },
  "suricata": {
   "domain": "suricata.io",
-  "status": 200
+  "status": 202
  },
  "swimlane-turbine": {
   "domain": "swimlane.com",
@@ -1061,7 +1061,7 @@
  },
  "zeek-ids": {
   "domain": "zeek.org",
-  "status": 429
+  "status": 200
  },
  "zerto": {
   "domain": "zerto.com",

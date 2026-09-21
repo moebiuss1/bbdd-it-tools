@@ -121,7 +121,6 @@
  },
  "bitsight": {
   "mq": [
-   "Cyber Threat Intelligence Technologies",
    "Cyberthreat Intelligence Technologies"
   ],
   "name": "Bitsight",
@@ -209,7 +208,9 @@
   "name": "CrowdStrike Falcon",
   "peer_markets": [],
   "slug": "crowdstrike-falcon",
-  "wave": []
+  "wave": [
+   "External Threat Intelligence Service Providers"
+  ]
  },
  "cybereason-edr": {
   "mq": [],
@@ -250,8 +251,7 @@
  },
  "delinea-secret-server": {
   "mq": [
-   "PAM. Centrify was named a Leader in the",
-   "Privileged Access Management"
+   "Privileged Access Management View the Analyst Report Analyst Report"
   ],
   "name": "Delinea Secret Server",
   "peer_markets": [
@@ -314,6 +314,20 @@
   ],
   "slug": "eset-protect",
   "wave": []
+ },
+ "extrahop-revealx": {
+  "mq": [
+   "Network Detection and Response",
+   "Network Detection and Response 29 May"
+  ],
+  "name": "ExtraHop RevealX",
+  "peer_markets": [],
+  "slug": "extrahop-revealx",
+  "wave": [
+   "Network Analysis And Visibility",
+   "Network Analysis And Visibility Solutions",
+   "Network Analysis and Visibility"
+  ]
  },
  "flexera-one": {
   "mq": [
@@ -525,24 +539,6 @@
    "Dec 6, 2024 -minute read Darryl Jones VP"
   ]
  },
- "proofpoint-email": {
-  "mq": [
-   "Email Security for the second consecutive year"
-  ],
-  "name": "Proofpoint Email Security",
-  "peer_markets": [],
-  "slug": "proofpoint-email",
-  "wave": []
- },
- "proofpoint-security-awareness": {
-  "mq": [
-   "Email Security for the second consecutive year"
-  ],
-  "name": "Proofpoint Security Awareness Training",
-  "peer_markets": [],
-  "slug": "proofpoint-security-awareness",
-  "wave": []
- },
  "rapid7-insightconnect": {
   "mq": [
    "Exposure Assessment Platforms",
@@ -572,6 +568,15 @@
   "wave": [
    "Cloud Workload Security"
   ]
+ },
+ "solarwinds-dlp": {
+  "mq": [
+   "Observability Platforms"
+  ],
+  "name": "SolarWinds Access Rights Manager",
+  "peer_markets": [],
+  "slug": "solarwinds-dlp",
+  "wave": []
  },
  "sonarqube": {
   "mq": [
