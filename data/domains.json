@@ -61,7 +61,7 @@
  },
  "asset-panda": {
   "domain": "assetpanda.com",
-  "status": 403
+  "status": 200
  },
  "auditboard": {
   "domain": "optro.ai",
@@ -268,7 +268,7 @@
   "status": 200
  },
  "cybereason-edr": {
-  "domain": "cybereason.com",
+  "domain": "levelblue.com",
   "status": 200
  },
  "cyera": {
@@ -373,7 +373,7 @@
  },
  "forcepoint-ngfw": {
   "domain": "forcepoint.com",
-  "status": 404
+  "status": 200
  },
  "forescout-nac": {
   "domain": "forescout.com",
@@ -564,8 +564,8 @@
   "status": 200
  },
  "logicgate-risk-cloud": {
-  "domain": "logicgate.com",
-  "status": 403
+  "domain": "logicgate.ai",
+  "status": 200
  },
  "lumigo": {
   "domain": "lumigo.io",
@@ -805,7 +805,7 @@
  },
  "samhain-ids": {
   "domain": "la-samhna.de",
-  "status": 200
+  "status": 0
  },
  "sans-security-awareness": {
   "domain": "sans.org",

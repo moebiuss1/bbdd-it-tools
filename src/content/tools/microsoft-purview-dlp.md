@@ -30,7 +30,7 @@ slug: microsoft-purview-dlp
 sources:
 - https://www.gartner.com/reviews/market/data-loss-prevention
 first_added: 2026-08-07
-last_verified: '2026-09-21'
+last_verified: '2026-09-28'
 needs_review: false
 market_rank:
   dlp: 1

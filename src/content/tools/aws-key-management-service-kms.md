@@ -32,7 +32,7 @@ tags:
 - automatizacion
 slug: aws-key-management-service-kms
 first_added: 2026-08-07
-last_verified: '2026-09-21'
+last_verified: '2026-09-28'
 needs_review: false
 sources: []
 market_rank:

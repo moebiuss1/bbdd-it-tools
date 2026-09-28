@@ -209,17 +209,9 @@
   "peer_markets": [],
   "slug": "crowdstrike-falcon",
   "wave": [
-   "External Threat Intelligence Service Providers"
+   "External Threat Intelligence Service Providers",
+   "Proactive Security Platforms"
   ]
- },
- "cybereason-edr": {
-  "mq": [],
-  "name": "Cybereason",
-  "peer_markets": [
-   "endpoint-detection-and-response-solutions"
-  ],
-  "slug": "cybereason-edr",
-  "wave": []
  },
  "cyera": {
   "mq": [],
@@ -468,6 +460,18 @@
    "External Threat Intelligence Services"
   ]
  },
+ "logicgate-risk-cloud": {
+  "mq": [
+   "GRC Tools"
+  ],
+  "name": "LogicGate Risk Cloud",
+  "peer_markets": [],
+  "slug": "logicgate-risk-cloud",
+  "wave": [
+   "Governance",
+   "Third-Party Risk Management Platforms"
+  ]
+ },
  "microsoft-sentinel": {
   "mq": [
    "Cloud Database Management Systems",
@@ -568,15 +572,6 @@
   "wave": [
    "Cloud Workload Security"
   ]
- },
- "solarwinds-dlp": {
-  "mq": [
-   "Observability Platforms"
-  ],
-  "name": "SolarWinds Access Rights Manager",
-  "peer_markets": [],
-  "slug": "solarwinds-dlp",
-  "wave": []
  },
  "sonarqube": {
   "mq": [
