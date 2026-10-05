@@ -28,7 +28,7 @@ tags:
 - endpoint
 slug: forcepoint-dlp
 first_added: 2026-08-07
-last_verified: '2026-09-28'
+last_verified: '2026-10-05'
 needs_review: false
 sources:
 - https://www.gartner.com/reviews/market/data-loss-prevention

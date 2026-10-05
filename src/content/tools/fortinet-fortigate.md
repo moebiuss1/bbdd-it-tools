@@ -37,7 +37,7 @@ slug: fortinet-fortigate
 sources:
 - https://www.gartner.com/reviews/market/network-firewalls
 first_added: 2026-08-07
-last_verified: '2026-09-28'
+last_verified: '2026-10-05'
 needs_review: false
 market_rank:
   firewall: 1

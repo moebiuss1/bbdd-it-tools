@@ -19,6 +19,66 @@
    "Governance"
   ]
  },
+ "aws-application-migration-service": {
+  "mq": [
+   "SCPS AI for Small Businesses Solutions designed for your business",
+   "Strategic Cloud Platform Services"
+  ],
+  "name": "AWS Application Migration Service",
+  "peer_markets": [],
+  "slug": "aws-application-migration-service",
+  "wave": []
+ },
+ "aws-cloudhsm": {
+  "mq": [
+   "SCPS AI for Small Businesses Solutions designed for your business",
+   "Strategic Cloud Platform Services"
+  ],
+  "name": "AWS CloudHSM",
+  "peer_markets": [],
+  "slug": "aws-cloudhsm",
+  "wave": []
+ },
+ "aws-elastic-load-balancing": {
+  "mq": [
+   "SCPS AI for Small Businesses Solutions designed for your business",
+   "Strategic Cloud Platform Services"
+  ],
+  "name": "AWS Elastic Load Balancing",
+  "peer_markets": [],
+  "slug": "aws-elastic-load-balancing",
+  "wave": []
+ },
+ "aws-key-management-service-kms": {
+  "mq": [
+   "SCPS AI for Small Businesses Solutions designed for your business",
+   "Strategic Cloud Platform Services"
+  ],
+  "name": "AWS Key Management Service (KMS)",
+  "peer_markets": [],
+  "slug": "aws-key-management-service-kms",
+  "wave": []
+ },
+ "aws-sam": {
+  "mq": [
+   "SCPS AI for Small Businesses Solutions designed for your business",
+   "Strategic Cloud Platform Services"
+  ],
+  "name": "AWS Serverless Application Model (SAM)",
+  "peer_markets": [],
+  "slug": "aws-sam",
+  "wave": []
+ },
+ "aws-waf": {
+  "mq": [
+   "SCPS AI for Small Businesses Solutions designed for your business",
+   "Strategic Cloud Platform Services"
+  ],
+  "name": "AWS WAF",
+  "peer_markets": [],
+  "slug": "aws-waf",
+  "wave": []
+ },
  "azure-api-management": {
   "mq": [
    "Cloud Database Management Systems",
@@ -89,23 +149,6 @@
   "slug": "azure-migrate",
   "wave": [
    "DevOps Platforms"
-  ]
- },
- "beyondtrust": {
-  "mq": [
-   "Privileged Access Management"
-  ],
-  "name": "BeyondTrust",
-  "peer_markets": [
-   "privileged-access-management"
-  ],
-  "slug": "beyondtrust",
-  "wave": [
-   "Leader for PIM",
-   "Privileged Identity Management",
-   "Privileged Identity Management Solutions",
-   "evaluation for PIM",
-   "is an evaluation of vendors in the software"
   ]
  },
  "bitdefender-gravityzone": {
@@ -331,6 +374,24 @@
   "slug": "flexera-one",
   "wave": []
  },
+ "forcepoint-dlp": {
+  "mq": [],
+  "name": "Forcepoint DLP",
+  "peer_markets": [],
+  "slug": "forcepoint-dlp",
+  "wave": [
+   "Data Security Platforms"
+  ]
+ },
+ "forcepoint-ngfw": {
+  "mq": [],
+  "name": "Forcepoint NGFW",
+  "peer_markets": [],
+  "slug": "forcepoint-ngfw",
+  "wave": [
+   "Data Security Platforms"
+  ]
+ },
  "fortideceptor": {
   "mq": [
    "Email Security",
@@ -460,18 +521,6 @@
    "External Threat Intelligence Services"
   ]
  },
- "logicgate-risk-cloud": {
-  "mq": [
-   "GRC Tools"
-  ],
-  "name": "LogicGate Risk Cloud",
-  "peer_markets": [],
-  "slug": "logicgate-risk-cloud",
-  "wave": [
-   "Governance",
-   "Third-Party Risk Management Platforms"
-  ]
- },
  "microsoft-sentinel": {
   "mq": [
    "Cloud Database Management Systems",
@@ -538,9 +587,7 @@
   "peer_markets": [],
   "slug": "ping-identity",
   "wave": [
-   "Close Ping Identity Named a Leader in CIAM in the",
-   "Customer Identity and Access Management",
-   "Dec 6, 2024 -minute read Darryl Jones VP"
+   "Customer Identity and Access Management"
   ]
  },
  "rapid7-insightconnect": {
@@ -561,17 +608,6 @@
   "peer_markets": [],
   "slug": "sentinelone-singularity",
   "wave": []
- },
- "skyhigh-dlp": {
-  "mq": [
-   "Security Service Edge"
-  ],
-  "name": "Skyhigh Security DLP",
-  "peer_markets": [],
-  "slug": "skyhigh-dlp",
-  "wave": [
-   "Cloud Workload Security"
-  ]
  },
  "sonarqube": {
   "mq": [

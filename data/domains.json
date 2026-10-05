@@ -61,7 +61,7 @@
  },
  "asset-panda": {
   "domain": "assetpanda.com",
-  "status": 200
+  "status": 403
  },
  "auditboard": {
   "domain": "optro.ai",
@@ -129,7 +129,7 @@
  },
  "beyondtrust": {
   "domain": "beyondtrust.com",
-  "status": 200
+  "status": 403
  },
  "bitbucket": {
   "domain": "bitbucket.org",
@@ -145,7 +145,7 @@
  },
  "blink-ops": {
   "domain": "blinkops.com",
-  "status": 200
+  "status": 403
  },
  "brinqa-risk": {
   "domain": "brinqa.com",
@@ -564,8 +564,8 @@
   "status": 200
  },
  "logicgate-risk-cloud": {
-  "domain": "logicgate.ai",
-  "status": 200
+  "domain": "logicgate.com",
+  "status": 403
  },
  "lumigo": {
   "domain": "lumigo.io",
@@ -805,7 +805,7 @@
  },
  "samhain-ids": {
   "domain": "la-samhna.de",
-  "status": 0
+  "status": 200
  },
  "sans-security-awareness": {
   "domain": "sans.org",
@@ -857,7 +857,7 @@
  },
  "skyhigh-dlp": {
   "domain": "skyhighsecurity.com",
-  "status": 200
+  "status": 403
  },
  "smallstep-cert": {
   "domain": "smallstep.com",
@@ -925,7 +925,7 @@
  },
  "suricata": {
   "domain": "suricata.io",
-  "status": 202
+  "status": 200
  },
  "swimlane-turbine": {
   "domain": "swimlane.com",
