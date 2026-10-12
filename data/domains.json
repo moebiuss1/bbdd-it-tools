@@ -21,7 +21,7 @@
  },
  "adobe-acrobat-sign": {
   "domain": "adobe.com",
-  "status": 0
+  "status": 403
  },
  "aids-ids": {
   "domain": "github.io",
@@ -61,7 +61,7 @@
  },
  "asset-panda": {
   "domain": "assetpanda.com",
-  "status": 403
+  "status": 200
  },
  "auditboard": {
   "domain": "optro.ai",
@@ -129,7 +129,7 @@
  },
  "beyondtrust": {
   "domain": "beyondtrust.com",
-  "status": 403
+  "status": 200
  },
  "bitbucket": {
   "domain": "bitbucket.org",
@@ -173,7 +173,7 @@
  },
  "checkmarx-one": {
   "domain": "checkmarx.com",
-  "status": 403
+  "status": 200
  },
  "chef-infra": {
   "domain": "chef.io",
@@ -349,7 +349,7 @@
  },
  "exabeam-fusion": {
   "domain": "exabeam.com",
-  "status": 403
+  "status": 200
  },
  "extrahop-revealx": {
   "domain": "extrahop.com",
@@ -537,7 +537,7 @@
  },
  "keyfactor-command": {
   "domain": "keyfactor.com",
-  "status": 403
+  "status": 500
  },
  "knowbe4-awareness": {
   "domain": "knowbe4.com",
@@ -564,8 +564,8 @@
   "status": 200
  },
  "logicgate-risk-cloud": {
-  "domain": "logicgate.com",
-  "status": 403
+  "domain": "logicgate.ai",
+  "status": 200
  },
  "lumigo": {
   "domain": "lumigo.io",
@@ -637,11 +637,11 @@
  },
  "netskope-one": {
   "domain": "netskope.com",
-  "status": 403
+  "status": 200
  },
  "netwitness-siem": {
   "domain": "netwitness.com",
-  "status": 403
+  "status": 200
  },
  "new-relic": {
   "domain": "newrelic.com",
@@ -725,7 +725,7 @@
  },
  "portnox-nac": {
   "domain": "portnox.com",
-  "status": 403
+  "status": 200
  },
  "postman": {
   "domain": "postman.com",
@@ -733,11 +733,11 @@
  },
  "prevalent-tprm": {
   "domain": "mitratech.com",
-  "status": 403
+  "status": 200
  },
  "primekey-ejbca-cert": {
   "domain": "keyfactor.com",
-  "status": 403
+  "status": 200
  },
  "prometheus": {
   "domain": "prometheus.io",
@@ -833,7 +833,7 @@
  },
  "securonix": {
   "domain": "securonix.com",
-  "status": 403
+  "status": 200
  },
  "semgrep": {
   "domain": "semgrep.dev",
@@ -965,7 +965,7 @@
  },
  "torq": {
   "domain": "torq.io",
-  "status": 403
+  "status": 200
  },
  "traceable-ai": {
   "domain": "traceable.ai",

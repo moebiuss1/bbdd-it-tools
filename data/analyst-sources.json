@@ -151,6 +151,23 @@
    "DevOps Platforms"
   ]
  },
+ "beyondtrust": {
+  "mq": [
+   "Privileged Access Management"
+  ],
+  "name": "BeyondTrust",
+  "peer_markets": [
+   "privileged-access-management"
+  ],
+  "slug": "beyondtrust",
+  "wave": [
+   "Leader for PIM",
+   "Privileged Identity Management",
+   "Privileged Identity Management Solutions",
+   "evaluation for PIM",
+   "is an evaluation of vendors in the software"
+  ]
+ },
  "bitdefender-gravityzone": {
   "mq": [],
   "name": "Bitdefender GravityZone",
@@ -199,6 +216,22 @@
    "Mobile Threat Protection",
    "Zero Trust Platform Providers",
    "Zero Trust eXtended Ecosystem Platform Providers"
+  ]
+ },
+ "checkmarx-one": {
+  "mq": [
+   "Application Security Testing",
+   "Software Supply Chain Security"
+  ],
+  "name": "Checkmarx One",
+  "peer_markets": [
+   "application-security-testing"
+  ],
+  "slug": "checkmarx-one",
+  "wave": [
+   "Static Application Security Testing",
+   "Static Application Security Testing Solutions",
+   "for SAST"
   ]
  },
  "cisco-umbrella": {
@@ -252,8 +285,16 @@
   "peer_markets": [],
   "slug": "crowdstrike-falcon",
   "wave": [
+   "Attack Surface Management Solutions",
+   "Cloud Workload Security",
+   "Cybersecurity Incident Response Services",
+   "Extended Detection and Response",
    "External Threat Intelligence Service Providers",
-   "Proactive Security Platforms"
+   "Managed Detection And Response Services In Europe",
+   "Managed Detection and Response",
+   "Managed Detection and Response Services",
+   "Proactive Security Platforms",
+   "Unified Vulnerability Management Solutions"
   ]
  },
  "cyera": {
@@ -319,7 +360,7 @@
  },
  "elastic-defend": {
   "mq": [
-   "Observability Platforms"
+   "Enterprise AI Search"
   ],
   "name": "Elastic Defend",
   "peer_markets": [],
@@ -331,7 +372,7 @@
  },
  "elastic-security": {
   "mq": [
-   "Observability Platforms"
+   "Enterprise AI Search"
   ],
   "name": "Elastic Security",
   "peer_markets": [],
@@ -348,6 +389,15 @@
    "endpoint-protection-platforms"
   ],
   "slug": "eset-protect",
+  "wave": []
+ },
+ "exabeam-fusion": {
+  "mq": [
+   "Security Information and Event Management"
+  ],
+  "name": "Exabeam Fusion SIEM",
+  "peer_markets": [],
+  "slug": "exabeam-fusion",
   "wave": []
  },
  "extrahop-revealx": {
@@ -521,6 +571,28 @@
    "External Threat Intelligence Services"
   ]
  },
+ "kong-konnect": {
+  "mq": [],
+  "name": "Kong Konnect",
+  "peer_markets": [],
+  "slug": "kong-konnect",
+  "wave": [
+   "API MANAGEMENT SOFTWARE TRILLIONS OF TOKENS",
+   "API Management Software"
+  ]
+ },
+ "logicgate-risk-cloud": {
+  "mq": [
+   "GRC Tools"
+  ],
+  "name": "LogicGate Risk Cloud",
+  "peer_markets": [],
+  "slug": "logicgate-risk-cloud",
+  "wave": [
+   "Governance",
+   "Third-Party Risk Management Platforms"
+  ]
+ },
  "microsoft-sentinel": {
   "mq": [
    "Cloud Database Management Systems",
@@ -549,6 +621,15 @@
   "wave": [
    "Human Risk Management Solutions"
   ]
+ },
+ "netwitness-siem": {
+  "mq": [
+   "Network Detection and Response"
+  ],
+  "name": "NetWitness SIEM",
+  "peer_markets": [],
+  "slug": "netwitness-siem",
+  "wave": []
  },
  "octopus-deploy-config": {
   "mq": [],
@@ -587,7 +668,9 @@
   "peer_markets": [],
   "slug": "ping-identity",
   "wave": [
-   "Customer Identity and Access Management"
+   "Customer Identity and Access Management",
+   "Customer Identity and Access Management Solutions",
+   "for CIAM"
   ]
  },
  "rapid7-insightconnect": {
@@ -618,15 +701,6 @@
   "name": "SonarQube",
   "peer_markets": [],
   "slug": "sonarqube",
-  "wave": []
- },
- "sonicwall-nsa": {
-  "mq": [
-   "Unified SASE Learn More"
-  ],
-  "name": "SonicWall NSa",
-  "peer_markets": [],
-  "slug": "sonicwall-nsa",
   "wave": []
  },
  "splunk-enterprise-security": {
