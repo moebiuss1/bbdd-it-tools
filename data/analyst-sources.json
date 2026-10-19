@@ -179,21 +179,6 @@
    "Extended Detection And Response Platforms"
   ]
  },
- "bitsight": {
-  "mq": [
-   "Cyberthreat Intelligence Technologies"
-  ],
-  "name": "Bitsight",
-  "peer_markets": [
-   "cyber-threat-intelligence-products-and-services"
-  ],
-  "slug": "bitsight",
-  "wave": [
-   "Cybersecurity Risk Rating Platforms",
-   "Cybersecurity Risk Ratings Platforms",
-   "Cybersecurity Risk Ratings Platforms Download report Bitsight Named a"
-  ]
- },
  "check-point-firewall": {
   "mq": [
    "Email Security",
@@ -216,22 +201,6 @@
    "Mobile Threat Protection",
    "Zero Trust Platform Providers",
    "Zero Trust eXtended Ecosystem Platform Providers"
-  ]
- },
- "checkmarx-one": {
-  "mq": [
-   "Application Security Testing",
-   "Software Supply Chain Security"
-  ],
-  "name": "Checkmarx One",
-  "peer_markets": [
-   "application-security-testing"
-  ],
-  "slug": "checkmarx-one",
-  "wave": [
-   "Static Application Security Testing",
-   "Static Application Security Testing Solutions",
-   "for SAST"
   ]
  },
  "cisco-umbrella": {
@@ -389,15 +358,6 @@
    "endpoint-protection-platforms"
   ],
   "slug": "eset-protect",
-  "wave": []
- },
- "exabeam-fusion": {
-  "mq": [
-   "Security Information and Event Management"
-  ],
-  "name": "Exabeam Fusion SIEM",
-  "peer_markets": [],
-  "slug": "exabeam-fusion",
   "wave": []
  },
  "extrahop-revealx": {
@@ -577,20 +537,7 @@
   "peer_markets": [],
   "slug": "kong-konnect",
   "wave": [
-   "API MANAGEMENT SOFTWARE TRILLIONS OF TOKENS",
    "API Management Software"
-  ]
- },
- "logicgate-risk-cloud": {
-  "mq": [
-   "GRC Tools"
-  ],
-  "name": "LogicGate Risk Cloud",
-  "peer_markets": [],
-  "slug": "logicgate-risk-cloud",
-  "wave": [
-   "Governance",
-   "Third-Party Risk Management Platforms"
   ]
  },
  "microsoft-sentinel": {
@@ -622,15 +569,6 @@
    "Human Risk Management Solutions"
   ]
  },
- "netwitness-siem": {
-  "mq": [
-   "Network Detection and Response"
-  ],
-  "name": "NetWitness SIEM",
-  "peer_markets": [],
-  "slug": "netwitness-siem",
-  "wave": []
- },
  "octopus-deploy-config": {
   "mq": [],
   "name": "Octopus Deploy",
@@ -656,9 +594,7 @@
   "name": "OneTrust",
   "peer_markets": [],
   "slug": "onetrust",
-  "wave": [
-   "Privacy Management Software"
-  ]
+  "wave": []
  },
  "ping-identity": {
   "mq": [
@@ -668,9 +604,9 @@
   "peer_markets": [],
   "slug": "ping-identity",
   "wave": [
+   "CIAM style bg-pattern",
    "Customer Identity and Access Management",
-   "Customer Identity and Access Management Solutions",
-   "for CIAM"
+   "Customer Identity and Access Management Solutions"
   ]
  },
  "rapid7-insightconnect": {
@@ -696,7 +632,7 @@
   "mq": [
    "Technical Debt Management",
    "Technical Debt Management Tools report here",
-   "technical debt category"
+   "technical debt management tools"
   ],
   "name": "SonarQube",
   "peer_markets": [],

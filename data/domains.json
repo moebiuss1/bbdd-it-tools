@@ -61,7 +61,7 @@
  },
  "asset-panda": {
   "domain": "assetpanda.com",
-  "status": 200
+  "status": 403
  },
  "auditboard": {
   "domain": "optro.ai",
@@ -141,7 +141,7 @@
  },
  "bitsight": {
   "domain": "bitsight.com",
-  "status": 200
+  "status": 403
  },
  "blink-ops": {
   "domain": "blinkops.com",
@@ -173,7 +173,7 @@
  },
  "checkmarx-one": {
   "domain": "checkmarx.com",
-  "status": 200
+  "status": 403
  },
  "chef-infra": {
   "domain": "chef.io",
@@ -349,7 +349,7 @@
  },
  "exabeam-fusion": {
   "domain": "exabeam.com",
-  "status": 200
+  "status": 403
  },
  "extrahop-revealx": {
   "domain": "extrahop.com",
@@ -537,7 +537,7 @@
  },
  "keyfactor-command": {
   "domain": "keyfactor.com",
-  "status": 500
+  "status": 403
  },
  "knowbe4-awareness": {
   "domain": "knowbe4.com",
@@ -564,8 +564,8 @@
   "status": 200
  },
  "logicgate-risk-cloud": {
-  "domain": "logicgate.ai",
-  "status": 200
+  "domain": "logicgate.com",
+  "status": 403
  },
  "lumigo": {
   "domain": "lumigo.io",
@@ -637,11 +637,11 @@
  },
  "netskope-one": {
   "domain": "netskope.com",
-  "status": 200
+  "status": 403
  },
  "netwitness-siem": {
   "domain": "netwitness.com",
-  "status": 200
+  "status": 403
  },
  "new-relic": {
   "domain": "newrelic.com",
@@ -725,7 +725,7 @@
  },
  "portnox-nac": {
   "domain": "portnox.com",
-  "status": 200
+  "status": 403
  },
  "postman": {
   "domain": "postman.com",
@@ -733,11 +733,11 @@
  },
  "prevalent-tprm": {
   "domain": "mitratech.com",
-  "status": 200
+  "status": 403
  },
  "primekey-ejbca-cert": {
   "domain": "keyfactor.com",
-  "status": 200
+  "status": 403
  },
  "prometheus": {
   "domain": "prometheus.io",
@@ -833,7 +833,7 @@
  },
  "securonix": {
   "domain": "securonix.com",
-  "status": 200
+  "status": 403
  },
  "semgrep": {
   "domain": "semgrep.dev",
@@ -965,7 +965,7 @@
  },
  "torq": {
   "domain": "torq.io",
-  "status": 200
+  "status": 403
  },
  "traceable-ai": {
   "domain": "traceable.ai",
@@ -984,7 +984,7 @@
   "status": 200
  },
  "trend-micro-tippingpoint": {
-  "domain": "trendmicro.com",
+  "domain": "trendaisecurity.com",
   "status": 200
  },
  "upguard": {
