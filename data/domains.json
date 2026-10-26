@@ -129,7 +129,7 @@
  },
  "beyondtrust": {
   "domain": "beyondtrust.com",
-  "status": 200
+  "status": 403
  },
  "bitbucket": {
   "domain": "bitbucket.org",
@@ -469,7 +469,7 @@
  },
  "huntress-edr": {
   "domain": "huntress.com",
-  "status": 200
+  "status": 403
  },
  "ibm-api-connect": {
   "domain": "ibm.com",

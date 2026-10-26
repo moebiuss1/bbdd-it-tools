@@ -151,23 +151,6 @@
    "DevOps Platforms"
   ]
  },
- "beyondtrust": {
-  "mq": [
-   "Privileged Access Management"
-  ],
-  "name": "BeyondTrust",
-  "peer_markets": [
-   "privileged-access-management"
-  ],
-  "slug": "beyondtrust",
-  "wave": [
-   "Leader for PIM",
-   "Privileged Identity Management",
-   "Privileged Identity Management Solutions",
-   "evaluation for PIM",
-   "is an evaluation of vendors in the software"
-  ]
- },
  "bitdefender-gravityzone": {
   "mq": [],
   "name": "Bitdefender GravityZone",
@@ -631,7 +614,6 @@
  "sonarqube": {
   "mq": [
    "Technical Debt Management",
-   "Technical Debt Management Tools report here",
    "technical debt management tools"
   ],
   "name": "SonarQube",
@@ -702,8 +684,7 @@
   "peer_markets": [],
   "slug": "vanta",
   "wave": [
-   "Governance",
-   "Read more SOC 2 checklist Read more State of Trust"
+   "Governance"
   ]
  },
  "vectra-ai": {
@@ -757,7 +738,9 @@
   ]
  },
  "wallix-bastion": {
-  "mq": [],
+  "mq": [
+   "PAM. WALLIX ACADEMY FREE TRIAL IAG IDAAS PAM English Deutsch"
+  ],
   "name": "WALLIX Bastion",
   "peer_markets": [],
   "slug": "wallix-bastion",
