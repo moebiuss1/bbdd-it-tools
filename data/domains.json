@@ -13,7 +13,7 @@
  },
  "acalvio-shadowplex": {
   "domain": "acalvio.com",
-  "status": 403
+  "status": 200
  },
  "acronis-cyber-protect": {
   "domain": "acronis.com",
@@ -45,7 +45,7 @@
  },
  "apptio-cloudability": {
   "domain": "apptio.com",
-  "status": 403
+  "status": 200
  },
  "appviewx-cert": {
   "domain": "appviewx.com",
@@ -61,7 +61,7 @@
  },
  "asset-panda": {
   "domain": "assetpanda.com",
-  "status": 403
+  "status": 200
  },
  "auditboard": {
   "domain": "optro.ai",
@@ -129,7 +129,7 @@
  },
  "beyondtrust": {
   "domain": "beyondtrust.com",
-  "status": 403
+  "status": 200
  },
  "bitbucket": {
   "domain": "bitbucket.org",
@@ -173,7 +173,7 @@
  },
  "checkmarx-one": {
   "domain": "checkmarx.com",
-  "status": 403
+  "status": 200
  },
  "chef-infra": {
   "domain": "chef.io",
@@ -233,11 +233,11 @@
  },
  "cohesity-dataprotect": {
   "domain": "cohesity.com",
-  "status": 200
+  "status": 403
  },
  "commvault-cloud": {
   "domain": "commvault.com",
-  "status": 403
+  "status": 200
  },
  "cortado-mdm": {
   "domain": "cortado.com",
@@ -349,7 +349,7 @@
  },
  "exabeam-fusion": {
   "domain": "exabeam.com",
-  "status": 403
+  "status": 200
  },
  "extrahop-revealx": {
   "domain": "extrahop.com",
@@ -525,7 +525,7 @@
  },
  "juniper-srx": {
   "domain": "juniper.net",
-  "status": 200
+  "status": 0
  },
  "kaspersky-endpoint-security": {
   "domain": "kaspersky.com",
@@ -537,7 +537,7 @@
  },
  "keyfactor-command": {
   "domain": "keyfactor.com",
-  "status": 403
+  "status": 200
  },
  "knowbe4-awareness": {
   "domain": "knowbe4.com",
@@ -549,7 +549,7 @@
  },
  "kubecost": {
   "domain": "apptio.com",
-  "status": 403
+  "status": 200
  },
  "lakera-guard": {
   "domain": "lakera.ai",
@@ -557,19 +557,19 @@
  },
  "lansweeper": {
   "domain": "lansweeper.com",
-  "status": 403
+  "status": 200
  },
  "litellm": {
   "domain": "litellm.ai",
   "status": 200
  },
  "logicgate-risk-cloud": {
-  "domain": "logicgate.com",
-  "status": 403
+  "domain": "logicgate.ai",
+  "status": 200
  },
  "lumigo": {
   "domain": "lumigo.io",
-  "status": 403
+  "status": 200
  },
  "malwarebytes-edr": {
   "domain": "malwarebytes.com",
@@ -585,7 +585,7 @@
  },
  "metricstream": {
   "domain": "metricstream.com",
-  "status": 403
+  "status": 200
  },
  "microsoft-defender-for-endpoint": {
   "domain": "microsoft.com",
@@ -637,11 +637,11 @@
  },
  "netskope-one": {
   "domain": "netskope.com",
-  "status": 403
+  "status": 200
  },
  "netwitness-siem": {
   "domain": "netwitness.com",
-  "status": 403
+  "status": 200
  },
  "new-relic": {
   "domain": "newrelic.com",
@@ -725,7 +725,7 @@
  },
  "portnox-nac": {
   "domain": "portnox.com",
-  "status": 403
+  "status": 200
  },
  "postman": {
   "domain": "postman.com",
@@ -733,11 +733,11 @@
  },
  "prevalent-tprm": {
   "domain": "mitratech.com",
-  "status": 403
+  "status": 200
  },
  "primekey-ejbca-cert": {
   "domain": "keyfactor.com",
-  "status": 403
+  "status": 200
  },
  "prometheus": {
   "domain": "prometheus.io",
@@ -757,7 +757,7 @@
  },
  "puppet-enterprise": {
   "domain": "puppet.com",
-  "status": 403
+  "status": 200
  },
  "qualys-vmdr": {
   "domain": "qualys.com",
@@ -773,7 +773,7 @@
  },
  "rsa-archer": {
   "domain": "archerirm.com",
-  "status": 403
+  "status": 200
  },
  "rubrik-backup": {
   "domain": "rubrik.com",
@@ -833,7 +833,7 @@
  },
  "securonix": {
   "domain": "securonix.com",
-  "status": 403
+  "status": 200
  },
  "semgrep": {
   "domain": "semgrep.dev",
@@ -857,7 +857,7 @@
  },
  "skyhigh-dlp": {
   "domain": "skyhighsecurity.com",
-  "status": 403
+  "status": 200
  },
  "smallstep-cert": {
   "domain": "smallstep.com",
@@ -905,7 +905,7 @@
  },
  "spirion-dlp": {
   "domain": "archtis.com",
-  "status": 403
+  "status": 200
  },
  "splunk-enterprise-security": {
   "domain": "splunk.com",
@@ -921,7 +921,7 @@
  },
  "sumo-logic-cloud-siem": {
   "domain": "sumologic.com",
-  "status": 403
+  "status": 200
  },
  "suricata": {
   "domain": "suricata.io",
@@ -965,7 +965,7 @@
  },
  "torq": {
   "domain": "torq.io",
-  "status": 403
+  "status": 200
  },
  "traceable-ai": {
   "domain": "traceable.ai",
@@ -993,7 +993,7 @@
  },
  "utimaco-hsm": {
   "domain": "utimaco.com",
-  "status": 403
+  "status": 200
  },
  "validmind": {
   "domain": "validmind.com",
@@ -1017,11 +1017,11 @@
  },
  "veracode": {
   "domain": "veracode.com",
-  "status": 403
+  "status": 200
  },
  "veritas-netbackup": {
   "domain": "cohesity.com",
-  "status": 200
+  "status": 403
  },
  "versa-networks": {
   "domain": "versa-networks.com",

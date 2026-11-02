@@ -32,7 +32,7 @@ sources:
 - https://github.com/jenkinsci/jenkins
 certifications: []
 first_added: 2026-08-14
-last_verified: '2026-10-26'
+last_verified: '2026-11-02'
 logo: /logos/jenkins.png
 needs_review: false
 ---

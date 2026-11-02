@@ -19,6 +19,16 @@
    "Governance"
   ]
  },
+ "avepoint-cloud-backup": {
+  "mq": [
+   "AI Agent Management Platforms",
+   "AI Agent Management Platforms report to learn"
+  ],
+  "name": "AvePoint Cloud Backup",
+  "peer_markets": [],
+  "slug": "avepoint-cloud-backup",
+  "wave": []
+ },
  "aws-application-migration-service": {
   "mq": [
    "SCPS AI for Small Businesses Solutions designed for your business",
@@ -151,6 +161,24 @@
    "DevOps Platforms"
   ]
  },
+ "beyondtrust": {
+  "mq": [
+   "Privileged Access Management"
+  ],
+  "name": "BeyondTrust",
+  "peer_markets": [
+   "privileged-access-management"
+  ],
+  "slug": "beyondtrust",
+  "wave": [
+   "Leader for PIM",
+   "Privileged Identity Management",
+   "Privileged Identity Management Solutions",
+   "Privileged Identity Management report",
+   "evaluation for PIM",
+   "is an evaluation of vendors in the software"
+  ]
+ },
  "bitdefender-gravityzone": {
   "mq": [],
   "name": "Bitdefender GravityZone",
@@ -186,6 +214,19 @@
    "Zero Trust eXtended Ecosystem Platform Providers"
   ]
  },
+ "checkmarx-one": {
+  "mq": [],
+  "name": "Checkmarx One",
+  "peer_markets": [
+   "application-security-testing"
+  ],
+  "slug": "checkmarx-one",
+  "wave": [
+   "Static Application Security Testing",
+   "Static Application Security Testing Solutions",
+   "for SAST"
+  ]
+ },
  "cisco-umbrella": {
   "mq": [],
   "name": "Cisco Umbrella",
@@ -206,17 +247,16 @@
    "Human Risk Management Solutions"
   ]
  },
- "cohesity-dataprotect": {
+ "commvault-cloud": {
   "mq": [
-   "Data Center Backup and Recovery Solutions"
+   "Backup and Data Protection Platforms"
   ],
-  "name": "Cohesity DataProtect",
-  "peer_markets": [
-   "backup-and-data-protection-platforms",
-   "hybrid-cloud-storage"
-  ],
-  "slug": "cohesity-dataprotect",
-  "wave": []
+  "name": "Commvault Cloud",
+  "peer_markets": [],
+  "slug": "commvault-cloud",
+  "wave": [
+   "Data Resilience Solutions"
+  ]
  },
  "credo-ai": {
   "mq": [],
@@ -275,10 +315,14 @@
   "name": "Datadog",
   "peer_markets": [],
   "slug": "datadog-monitoring",
-  "wave": []
+  "wave": [
+   "AIOps Platforms"
+  ]
  },
  "delinea-secret-server": {
   "mq": [
+   "PAM. Centrify was named a Leader in the",
+   "Privileged Access Management",
    "Privileged Access Management View the Analyst Report Analyst Report"
   ],
   "name": "Delinea Secret Server",
@@ -341,6 +385,15 @@
    "endpoint-protection-platforms"
   ],
   "slug": "eset-protect",
+  "wave": []
+ },
+ "exabeam-fusion": {
+  "mq": [
+   "Security Information and Event Management"
+  ],
+  "name": "Exabeam Fusion SIEM",
+  "peer_markets": [],
+  "slug": "exabeam-fusion",
   "wave": []
  },
  "extrahop-revealx": {
@@ -523,6 +576,17 @@
    "API Management Software"
   ]
  },
+ "logicgate-risk-cloud": {
+  "mq": [
+   "GRC Tools"
+  ],
+  "name": "LogicGate Risk Cloud",
+  "peer_markets": [],
+  "slug": "logicgate-risk-cloud",
+  "wave": [
+   "Third-Party Risk Management Platforms"
+  ]
+ },
  "microsoft-sentinel": {
   "mq": [
    "Cloud Database Management Systems",
@@ -552,6 +616,15 @@
    "Human Risk Management Solutions"
   ]
  },
+ "netwitness-siem": {
+  "mq": [
+   "Network Detection and Response"
+  ],
+  "name": "NetWitness SIEM",
+  "peer_markets": [],
+  "slug": "netwitness-siem",
+  "wave": []
+ },
  "octopus-deploy-config": {
   "mq": [],
   "name": "Octopus Deploy",
@@ -580,9 +653,7 @@
   "wave": []
  },
  "ping-identity": {
-  "mq": [
-   "Access Management"
-  ],
+  "mq": [],
   "name": "Ping Identity",
   "peer_markets": [],
   "slug": "ping-identity",
@@ -590,6 +661,17 @@
    "CIAM style bg-pattern",
    "Customer Identity and Access Management",
    "Customer Identity and Access Management Solutions"
+  ]
+ },
+ "qualys-vmdr": {
+  "mq": [],
+  "name": "Qualys VMDR",
+  "peer_markets": [],
+  "slug": "qualys-vmdr",
+  "wave": [
+   "CNAPP Wave leader for",
+   "Cloud Native Application Protection Solutions",
+   "Cloud-Native Application Protection Platforms"
   ]
  },
  "rapid7-insightconnect": {
@@ -602,6 +684,26 @@
   "slug": "rapid7-insightconnect",
   "wave": []
  },
+ "rsa-archer": {
+  "mq": [
+   "Governance"
+  ],
+  "name": "RSA Archer",
+  "peer_markets": [],
+  "slug": "rsa-archer",
+  "wave": [
+   "Third-Party Risk Management Platforms"
+  ]
+ },
+ "saviynt-iga": {
+  "mq": [
+   "Privileged Access Management"
+  ],
+  "name": "Saviynt IGA",
+  "peer_markets": [],
+  "slug": "saviynt-iga",
+  "wave": []
+ },
  "sentinelone-singularity": {
   "mq": [
    "Endpoint Protection"
@@ -610,6 +712,17 @@
   "peer_markets": [],
   "slug": "sentinelone-singularity",
   "wave": []
+ },
+ "skyhigh-dlp": {
+  "mq": [],
+  "name": "Skyhigh Security DLP",
+  "peer_markets": [
+   "security-service-edge"
+  ],
+  "slug": "skyhigh-dlp",
+  "wave": [
+   "Cloud Workload Security"
+  ]
  },
  "sonarqube": {
   "mq": [
@@ -709,18 +822,6 @@
   "slug": "veeam-backup",
   "wave": []
  },
- "veritas-netbackup": {
-  "mq": [
-   "Data Center Backup and Recovery Solutions"
-  ],
-  "name": "NetBackup (Cohesity)",
-  "peer_markets": [
-   "backup-and-data-protection-platforms",
-   "hybrid-cloud-storage"
-  ],
-  "slug": "veritas-netbackup",
-  "wave": []
- },
  "versa-networks": {
   "mq": [
    "SASE Platforms",
@@ -728,9 +829,7 @@
    "Single-Vendor SASE"
   ],
   "name": "Versa Networks",
-  "peer_markets": [
-   "single-vendor-sase"
-  ],
+  "peer_markets": [],
   "slug": "versa-networks",
   "wave": [
    "Secure Access Service Edge Solutions",
