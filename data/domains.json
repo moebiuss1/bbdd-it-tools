@@ -429,7 +429,7 @@
  },
  "graylog-security": {
   "domain": "graylog.org",
-  "status": 403
+  "status": 200
  },
  "haproxy": {
   "domain": "haproxy.org",
@@ -677,7 +677,7 @@
  },
  "onelogin-identity": {
   "domain": "onelogin.com",
-  "status": 202
+  "status": 200
  },
  "onetrust": {
   "domain": "onetrust.com",
@@ -841,7 +841,7 @@
  },
  "sentinelone-singularity": {
   "domain": "sentinelone.com",
-  "status": 200
+  "status": 429
  },
  "serverless-framework": {
   "domain": "serverless.com",
@@ -909,7 +909,7 @@
  },
  "splunk-enterprise-security": {
   "domain": "splunk.com",
-  "status": 200
+  "status": 403
  },
  "splunk-itsi": {
   "domain": "splunk.com",
@@ -917,7 +917,7 @@
  },
  "splunk-soar": {
   "domain": "splunk.com",
-  "status": 200
+  "status": 403
  },
  "sumo-logic-cloud-siem": {
   "domain": "sumologic.com",

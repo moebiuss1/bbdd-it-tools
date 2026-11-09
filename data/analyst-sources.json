@@ -21,8 +21,7 @@
  },
  "avepoint-cloud-backup": {
   "mq": [
-   "AI Agent Management Platforms",
-   "AI Agent Management Platforms report to learn"
+   "AI Agent Management Platforms"
   ],
   "name": "AvePoint Cloud Backup",
   "peer_markets": [],
@@ -238,6 +237,7 @@
  },
  "code42-insider-risk": {
   "mq": [
+   "Digital Communications Governance and Archiving Solutions",
    "Email Security"
   ],
   "name": "Mimecast Incydr",
@@ -282,8 +282,6 @@
    "Cybersecurity Incident Response Services",
    "Extended Detection and Response",
    "External Threat Intelligence Service Providers",
-   "Managed Detection And Response Services In Europe",
-   "Managed Detection and Response",
    "Managed Detection and Response Services",
    "Proactive Security Platforms",
    "Unified Vulnerability Management Solutions"
@@ -426,7 +424,8 @@
   "peer_markets": [],
   "slug": "forcepoint-dlp",
   "wave": [
-   "Data Security Platforms"
+   "Data Security Platforms",
+   "Strong Performer"
   ]
  },
  "forcepoint-ngfw": {
@@ -435,7 +434,8 @@
   "peer_markets": [],
   "slug": "forcepoint-ngfw",
   "wave": [
-   "Data Security Platforms"
+   "Data Security Platforms",
+   "Strong Performer"
   ]
  },
  "fortideceptor": {
@@ -607,6 +607,7 @@
  },
  "mimecast-email": {
   "mq": [
+   "Digital Communications Governance and Archiving Solutions",
    "Email Security"
   ],
   "name": "Mimecast Email Security",
@@ -636,11 +637,21 @@
  },
  "okta": {
   "mq": [
-   "Access Management"
+   "Access Management",
+   "Customer Identity and Access Management"
   ],
   "name": "Okta Identity Cloud",
   "peer_markets": [],
   "slug": "okta",
+  "wave": []
+ },
+ "one-identity-safeguard": {
+  "mq": [
+   "Privileged Access Management"
+  ],
+  "name": "One Identity Safeguard",
+  "peer_markets": [],
+  "slug": "one-identity-safeguard",
   "wave": []
  },
  "onetrust": {
@@ -704,15 +715,6 @@
   "slug": "saviynt-iga",
   "wave": []
  },
- "sentinelone-singularity": {
-  "mq": [
-   "Endpoint Protection"
-  ],
-  "name": "SentinelOne Singularity",
-  "peer_markets": [],
-  "slug": "sentinelone-singularity",
-  "wave": []
- },
  "skyhigh-dlp": {
   "mq": [],
   "name": "Skyhigh Security DLP",
@@ -722,6 +724,15 @@
   "slug": "skyhigh-dlp",
   "wave": [
    "Cloud Workload Security"
+  ]
+ },
+ "snyk": {
+  "mq": [],
+  "name": "Snyk",
+  "peer_markets": [],
+  "slug": "snyk",
+  "wave": [
+   "Agentic Development Security Tools"
   ]
  },
  "sonarqube": {
@@ -744,20 +755,6 @@
    "security-information-event-management"
   ],
   "slug": "splunk-enterprise-security",
-  "wave": [
-   "Security Analytics Platforms"
-  ]
- },
- "splunk-itsi": {
-  "mq": [
-   "Security Information and Event Management"
-  ],
-  "name": "Splunk IT Service Intelligence (ITSI)",
-  "peer_markets": [
-   "observability-platforms",
-   "security-information-event-management"
-  ],
-  "slug": "splunk-itsi",
   "wave": [
    "Security Analytics Platforms"
   ]
@@ -802,6 +799,7 @@
  },
  "vectra-ai": {
   "mq": [
+   "NDR, and what it reveals about the future of AI-driven network security",
    "Network Detection and Response"
   ],
   "name": "Vectra AI",

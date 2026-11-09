@@ -29,7 +29,7 @@ slug: servicenow-itam
 sources:
 - https://www.gartner.com/reviews/market/it-service-management-platforms
 first_added: 2026-08-07
-last_verified: '2026-11-02'
+last_verified: '2026-11-09'
 needs_review: false
 market_rank:
   incident-management: 2
