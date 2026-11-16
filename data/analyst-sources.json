@@ -235,18 +235,6 @@
   "slug": "cisco-umbrella",
   "wave": []
  },
- "code42-insider-risk": {
-  "mq": [
-   "Digital Communications Governance and Archiving Solutions",
-   "Email Security"
-  ],
-  "name": "Mimecast Incydr",
-  "peer_markets": [],
-  "slug": "code42-insider-risk",
-  "wave": [
-   "Human Risk Management Solutions"
-  ]
- },
  "commvault-cloud": {
   "mq": [
    "Backup and Data Protection Platforms"
@@ -278,7 +266,6 @@
   "slug": "crowdstrike-falcon",
   "wave": [
    "Attack Surface Management Solutions",
-   "Cloud Workload Security",
    "Cybersecurity Incident Response Services",
    "Extended Detection and Response",
    "External Threat Intelligence Service Providers",
@@ -410,8 +397,7 @@
  },
  "flexera-one": {
   "mq": [
-   "SaaS Management Platforms",
-   "second consecutive year"
+   "SaaS Management Platforms"
   ],
   "name": "Flexera One",
   "peer_markets": [],
@@ -424,8 +410,7 @@
   "peer_markets": [],
   "slug": "forcepoint-dlp",
   "wave": [
-   "Data Security Platforms",
-   "Strong Performer"
+   "Data Security Platforms"
   ]
  },
  "forcepoint-ngfw": {
@@ -434,8 +419,7 @@
   "peer_markets": [],
   "slug": "forcepoint-ngfw",
   "wave": [
-   "Data Security Platforms",
-   "Strong Performer"
+   "Data Security Platforms"
   ]
  },
  "fortideceptor": {
@@ -605,18 +589,6 @@
    "DevOps Platforms"
   ]
  },
- "mimecast-email": {
-  "mq": [
-   "Digital Communications Governance and Archiving Solutions",
-   "Email Security"
-  ],
-  "name": "Mimecast Email Security",
-  "peer_markets": [],
-  "slug": "mimecast-email",
-  "wave": [
-   "Human Risk Management Solutions"
-  ]
- },
  "netwitness-siem": {
   "mq": [
    "Network Detection and Response"
@@ -744,20 +716,6 @@
   "peer_markets": [],
   "slug": "sonarqube",
   "wave": []
- },
- "splunk-enterprise-security": {
-  "mq": [
-   "Security Information and Event Management"
-  ],
-  "name": "Splunk Enterprise Security",
-  "peer_markets": [
-   "observability-platforms",
-   "security-information-event-management"
-  ],
-  "slug": "splunk-enterprise-security",
-  "wave": [
-   "Security Analytics Platforms"
-  ]
  },
  "splunk-soar": {
   "mq": [

@@ -429,7 +429,7 @@
  },
  "graylog-security": {
   "domain": "graylog.org",
-  "status": 200
+  "status": 403
  },
  "haproxy": {
   "domain": "haproxy.org",
@@ -621,7 +621,7 @@
  },
  "modsecurity": {
   "domain": "modsecurity.org",
-  "status": 200
+  "status": 0
  },
  "mosyle-fuse": {
   "domain": "mosyle.com",
@@ -677,7 +677,7 @@
  },
  "onelogin-identity": {
   "domain": "onelogin.com",
-  "status": 200
+  "status": 202
  },
  "onetrust": {
   "domain": "onetrust.com",
@@ -917,7 +917,7 @@
  },
  "splunk-soar": {
   "domain": "splunk.com",
-  "status": 403
+  "status": 200
  },
  "sumo-logic-cloud-siem": {
   "domain": "sumologic.com",

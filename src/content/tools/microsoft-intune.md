@@ -32,7 +32,7 @@ slug: microsoft-intune
 sources:
 - https://www.gartner.com/reviews/market/unified-endpoint-management-tools
 first_added: 2026-08-07
-last_verified: '2026-11-09'
+last_verified: '2026-11-16'
 needs_review: false
 market_rank:
   mam: 1
